@@ -1,26 +1,309 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sans);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-heading: var(--font-heading);
+  --color-horizon-cream: var(--horizon-cream);
+  --color-horizon-peach: var(--horizon-peach);
+  --color-horizon-sky: var(--horizon-sky);
+  --color-horizon-navy: var(--horizon-navy);
+  --color-horizon-border: var(--horizon-border);
+  --color-horizon-muted: var(--horizon-muted);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-section-muted: var(--section-muted);
+  --color-section-accent: var(--section-accent);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* Horizon palette — cream · peach · sky · navy */
+  --horizon-cream: #fff9e1;
+  --horizon-peach: #ffe5d9;
+  --horizon-sky: #bde0fe;
+  --horizon-navy: #0d1b2a;
+  --horizon-border: #e8dcc8;
+  --horizon-muted: #415a77;
+
+  /* Semantic tokens → horizon (use bg-primary, bg-muted, etc. in components) */
+  --background: var(--horizon-cream);
+  --foreground: var(--horizon-navy);
+  --card: #ffffff;
+  --card-foreground: var(--horizon-navy);
+  --popover: #ffffff;
+  --popover-foreground: var(--horizon-navy);
+  --primary: var(--horizon-navy);
+  --primary-foreground: #ffffff;
+  --secondary: var(--horizon-peach);
+  --secondary-foreground: var(--horizon-navy);
+  --muted: var(--horizon-peach);
+  --muted-foreground: var(--horizon-muted);
+  --accent: var(--horizon-sky);
+  --accent-foreground: var(--horizon-navy);
+  --section-muted: var(--horizon-peach);
+  --section-accent: var(--horizon-sky);
+  --destructive: #c1121f;
+  --border: var(--horizon-border);
+  --input: var(--horizon-border);
+  --ring: var(--horizon-navy);
+  --chart-1: var(--horizon-sky);
+  --chart-2: var(--horizon-peach);
+  --chart-3: var(--horizon-navy);
+  --chart-4: var(--horizon-muted);
+  --chart-5: var(--horizon-cream);
+  --radius: 1rem;
+  --sidebar: var(--horizon-cream);
+  --sidebar-foreground: var(--horizon-navy);
+  --sidebar-primary: var(--horizon-navy);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--horizon-peach);
+  --sidebar-accent-foreground: var(--horizon-navy);
+  --sidebar-border: var(--horizon-border);
+  --sidebar-ring: var(--horizon-navy);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-horizon-cream font-sans text-horizon-navy antialiased;
+  }
+
+  html {
+    scroll-padding-top: 5.5rem;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--horizon-sky) 65%, transparent);
+    color: var(--horizon-navy);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Below-fold sections: layout hint only (content-visibility breaks scroll reveal on some mobile browsers) */
+.landing-section-deferred {
+  contain-intrinsic-size: auto 32rem;
+}
+
+/* Site-wide scroll reveal — visible until JS enables motion (fixes LAN / slow hydration) */
+.motion-reveal {
+  --motion-delay: 0ms;
+  --motion-duration: 900ms;
+  --motion-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-reveal-from: translate3d(0, 32px, 0);
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+html.motion-js .motion-reveal:not(.motion-reveal--visible) {
+  opacity: 0;
+  transform: var(--motion-reveal-from);
+  transition:
+    opacity var(--motion-duration) var(--motion-ease) var(--motion-delay),
+    transform var(--motion-duration) var(--motion-ease) var(--motion-delay);
+}
+
+html.motion-js .motion-reveal--visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition:
+    opacity var(--motion-duration) var(--motion-ease) var(--motion-delay),
+    transform var(--motion-duration) var(--motion-ease) var(--motion-delay);
+}
+
+.motion-reveal--up {
+  --motion-reveal-from: translate3d(0, 32px, 0);
+}
+
+.motion-reveal--down {
+  --motion-reveal-from: translate3d(0, -32px, 0);
+}
+
+.motion-reveal--left {
+  --motion-reveal-from: translate3d(32px, 0, 0);
+}
+
+.motion-reveal--right {
+  --motion-reveal-from: translate3d(-32px, 0, 0);
+}
+
+.motion-reveal--none {
+  --motion-reveal-from: translate3d(0, 0, 0);
+}
+
+.motion-card {
+  transition:
+    transform 0.35s var(--motion-ease),
+    border-color 0.35s ease,
+    background-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.motion-card:hover {
+  transform: translateY(-4px);
+}
+
+.motion-line {
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 0.85s var(--motion-ease);
+  transition-delay: calc(var(--motion-delay) + 140ms);
+}
+
+.motion-reveal--visible .motion-line {
+  transform: scaleX(1);
+}
+
+.faq-item .faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-item[open] .faq-answer {
+  grid-template-rows: 1fr;
+}
+
+.faq-item .faq-answer-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.clients-marquee {
+  --clients-marquee-duration: 52s;
+  mask-image: linear-gradient(to right,
+      transparent,
+      black 6%,
+      black 94%,
+      transparent);
+}
+
+.clients-marquee__track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 0.5rem;
+  animation: clients-marquee-scroll var(--clients-marquee-duration) linear infinite;
+}
+
+.clients-marquee__track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes clients-marquee-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .motion-reveal,
+  .motion-reveal--visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .motion-line {
+    transform: scaleX(1);
+    transition: none;
+  }
+
+  .clients-marquee {
+    mask-image: none;
+  }
+
+  .clients-marquee__track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 72rem;
+    margin-inline: auto;
+    padding-inline: 0.5rem;
+  }
+
+  .clients-marquee__duplicate {
+    display: none;
+  }
+
+  .motion-card,
+  .motion-card:hover {
+    transform: none;
+    transition: none;
+  }
+
+  .motion-line {
+    transform: scaleX(1);
+    transition: none;
+  }
+
+  .faq-item .faq-answer {
+    grid-template-rows: 1fr;
+    transition: none;
+  }
+
+  .faq-item[open] {
+    box-shadow: none;
+  }
+
+  button,
+  a {
+    transition: none;
+  }
 }

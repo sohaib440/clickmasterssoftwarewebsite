@@ -1,0 +1,15 @@
+export { AboutSection } from "./about-section";
+export { BlogSection } from "./blog-section";
+export { ClientsSection } from "./clients-section";
+export { Reveal } from "./reveal";
+export { ContactSection } from "./contact-section";
+export { FaqSection } from "./faq-section";
+export { HeroSection } from "./hero-section";
+export { ProcessSection } from "./process-section";
+export { ProjectsSection } from "./projects-section";
+export { ServicesSection } from "./services-section";
+export { SiteFooter } from "./site-footer";
+export { SiteHeader } from "./site-header";
+export { TeamSection } from "./team-section";
+export { TechStackSection } from "./tech-stack-section";
+export { TestimonialsSection } from "./testimonials-section";
