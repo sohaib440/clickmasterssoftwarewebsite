@@ -32,7 +32,7 @@ export const homeHero = {
 } as const;
 
 export const trustedPartnersSection: { label: string; fallbackText: string } = {
-  label: "Trusted by industry leaders",
+  label: "",
   fallbackText:
     "Trusted partners including Google, Microsoft, Amazon, Apple, Meta, Netflix, and more.",
 };

@@ -86,46 +86,50 @@ export function HeroSection() {
               </div>
             </div>
 
-            <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
-              {ratingBadges.map((badge, index) => (
-                <div
-                  key={badge.slug}
-                  className={
-                    "flex items-center justify-center rounded-3xl border p-3 shadow-sm " +
-                    (index < 3
-                      ? "border-transparent bg-horizon-navy text-white"
-                      : "border-horizon-border/20 bg-white/90")
-                  }
-                >
-                  <Image
-                    src={badge.logo}
-                    alt={badge.name}
-                    width={160}
-                    height={48}
-                    className="h-10 w-auto object-contain"
-                  />
-                </div>
-              ))}
+            {/* Rating badges: show after the images so they sit at the bottom of the images column */}
+            <div className="mt-6 items-end">
+              <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+                {ratingBadges.map((badge, index) => (
+                  <div
+                    key={badge.slug}
+                    className={
+                      "flex items-center justify-center rounded-3xl border p-3 shadow-sm " +
+                      (index < 3
+                        ? "border-transparent bg-horizon-navy text-white"
+                        : "border-horizon-border/20 bg-white/90")
+                    }
+                  >
+                    <Image
+                      src={badge.logo}
+                      alt={badge.name}
+                      width={160}
+                      height={48}
+                      className="h-10 w-auto object-contain"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <dl className="mt-6 grid grid-cols-2 gap-6 sm:grid-cols-4">
-              {stats.map((stat, i) => (
-                <Reveal
-                  key={stat.label}
-                  immediate
-                  delay={i * motionStagger}
-                  direction="up"
-                  className={cn(i > 0 && "sm:border-l sm:border-horizon-navy/10 sm:pl-4")}
-                >
-                  <dt className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
-                    {stat.value}
-                  </dt>
-                  <dd className="mt-2 text-sm text-horizon-muted">{stat.label}</dd>
-                </Reveal>
-              ))}
-            </dl>
           </Reveal>
         </div>
+
+        <dl className="mt-6 grid grid-cols-2 gap-6 sm:grid-cols-4">
+          {stats.map((stat, i) => (
+            <Reveal
+              key={stat.label}
+              immediate
+              delay={i * motionStagger}
+              direction="up"
+              className={cn(i > 0 && "sm:border-l sm:border-horizon-navy/10 sm:pl-4")}
+            >
+              <dt className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
+                {stat.value}
+              </dt>
+              <dd className="mt-2 text-sm text-horizon-muted">{stat.label}</dd>
+            </Reveal>
+          ))}
+        </dl>
       </div>
     </section>
   );
