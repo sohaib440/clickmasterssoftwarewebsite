@@ -8,7 +8,7 @@ export const contactApiPath = "/api/contact";
 export const container =
   "mx-auto w-full min-w-0 px-2 sm:px-3 lg:max-w-[calc(100%-400px)] lg:px-0";
 
-export const sectionPad = "py-10 md:py-14 lg:py-16";
+export const sectionPad = "py-8 md:py-8 lg:py-10";
 export const sectionPadBottom = "pb-10 md:pb-14";
 
 export const card =
