@@ -1,8 +1,8 @@
-import { type Client, clients, clientsSection } from "@/lib/landing/data";
+import { type Client, clients, trustedPartnersSection } from "@/lib/landing/data";
 import { overline } from "@/lib/landing/constants";
 import { cn } from "@/lib/utils";
 
-function ClientLogo({ client }: { client: Client }) {
+function PartnerLogo({ client }: { client: Client }) {
   return (
     <div className="flex h-12 shrink-0 items-center justify-center px-8 md:h-14 md:px-10">
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -19,32 +19,32 @@ function ClientLogo({ client }: { client: Client }) {
   );
 }
 
-export function ClientsSection() {
+export function TrustedPartnersSection() {
   const track = [...clients, ...clients];
 
   return (
     <section
-      id="clients"
+      id="trusted-partners"
       className="w-full border-y border-horizon-border/60 bg-horizon-cream py-8 md:py-10"
-      aria-label="Clients"
+      aria-label="Trusted Partners"
     >
-      <p className={cn(overline, "mb-6 text-center")}>{clientsSection.label}</p>
+      <p className={cn(overline, "mb-6 text-center")}>{trustedPartnersSection.label}</p>
 
-      <div className="clients-marquee overflow-hidden">
-        <ul className="clients-marquee__track list-none" aria-hidden>
+      <div className="partners-marquee overflow-hidden">
+        <ul className="partners-marquee__track list-none" aria-hidden>
           {track.map((client, index) => (
             <li
               key={`${client.slug}-${index}`}
-              className={cn(index >= clients.length && "clients-marquee__duplicate")}
+              className={cn(index >= clients.length && "partners-marquee__duplicate")}
             >
-              <ClientLogo client={client} />
+              <PartnerLogo client={client} />
             </li>
           ))}
         </ul>
       </div>
 
       <p className="mx-auto mt-6 max-w-2xl px-4 text-center text-sm text-horizon-muted md:hidden">
-        {clientsSection.fallbackText}
+        {trustedPartnersSection.fallbackText}
       </p>
 
       <ul className="sr-only">

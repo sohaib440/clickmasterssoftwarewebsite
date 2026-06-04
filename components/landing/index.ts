@@ -1,6 +1,6 @@
 export { AboutSection } from "./about-section";
 export { BlogSection } from "./blog-section";
-export { ClientsSection } from "./clients-section";
+export { TrustedPartnersSection } from "./clients-section";
 export { IndustriesSection } from "./industries-section";
 export { Reveal } from "./reveal";
 export { ContactSection } from "./contact-section";

@@ -216,8 +216,8 @@ html.motion-js .motion-reveal--visible {
   overflow: hidden;
 }
 
-.clients-marquee {
-  --clients-marquee-duration: 52s;
+.partners-marquee {
+  --partners-marquee-duration: 52s;
   mask-image: linear-gradient(to right,
       transparent,
       black 6%,
@@ -225,19 +225,19 @@ html.motion-js .motion-reveal--visible {
       transparent);
 }
 
-.clients-marquee__track {
+.partners-marquee__track {
   display: flex;
   width: max-content;
   align-items: center;
   gap: 0.5rem;
-  animation: clients-marquee-scroll var(--clients-marquee-duration) linear infinite;
+  animation: partners-marquee-scroll var(--partners-marquee-duration) linear infinite;
 }
 
-.clients-marquee__track:hover {
+.partners-marquee__track:hover {
   animation-play-state: paused;
 }
 
-@keyframes clients-marquee-scroll {
+@keyframes partners-marquee-scroll {
   from {
     transform: translate3d(0, 0, 0);
   }
@@ -264,11 +264,11 @@ html.motion-js .motion-reveal--visible {
     transition: none;
   }
 
-  .clients-marquee {
+  .partners-marquee {
     mask-image: none;
   }
 
-  .clients-marquee__track {
+  .partners-marquee__track {
     animation: none;
     flex-wrap: wrap;
     justify-content: center;
@@ -278,7 +278,7 @@ html.motion-js .motion-reveal--visible {
     padding-inline: 0.5rem;
   }
 
-  .clients-marquee__duplicate {
+  .partners-marquee__duplicate {
     display: none;
   }
 

@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { HomeJsonLd } from "@/components/seo/home-json-ld";
 import {
   AboutSection,
-  ClientsSection,
+  TrustedPartnersSection,
   FaqSection,
   HeroSection,
   IndustriesSection,
@@ -58,7 +58,7 @@ export default function Home() {
       <SiteHeader />
       <HeroSection />
       <main className="flex w-full flex-1 flex-col">
-        <ClientsSection />
+        <TrustedPartnersSection />
         <IndustriesSection />
         <DeferredSection>
           <AboutSection />

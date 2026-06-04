@@ -31,9 +31,9 @@ export const homeHero = {
   secondaryHref: "#projects",
 } as const;
 
-export const clientsSection = {
+export const trustedPartnersSection = {
   fallbackText:
-    "Worked with companies in retail, healthcare, logistics, finance, and education.",
+    "Trusted partners including Google, Microsoft, Amazon, Apple, Meta, Netflix, and more.",
 } as const;
 
 export type ContactSelectOption = {
@@ -286,14 +286,22 @@ export type Client = {
 };
 
 export const clients: Client[] = [
-  { slug: "meridian-bank", name: "Meridian Bank", logo: "/clients/meridian-bank.svg" },
-  { slug: "northline-health", name: "Northline Health", logo: "/clients/northline-health.svg" },
-  { slug: "cargo-pulse", name: "CargoPulse", logo: "/clients/cargo-pulse.svg" },
-  { slug: "ledgerly", name: "Ledgerly", logo: "/clients/ledgerly.svg" },
-  { slug: "aurora-retail", name: "Aurora Retail", logo: "/clients/aurora-retail.svg" },
-  { slug: "vela-analytics", name: "Vela Analytics", logo: "/clients/vela-analytics.svg" },
-  { slug: "harbor-mutual", name: "Harbor Mutual", logo: "/clients/harbor-mutual.svg" },
-  { slug: "prism-edtech", name: "Prism EdTech", logo: "/clients/prism-edtech.svg" },
+  { slug: "google", name: "Google", logo: "/trustedPartners/google.svg" },
+  { slug: "microsoft", name: "Microsoft", logo: "/trustedPartners/microsoft.svg" },
+  { slug: "amazon", name: "Amazon", logo: "/trustedPartners/amazon.svg" },
+  { slug: "apple", name: "Apple", logo: "/trustedPartners/apple.svg" },
+  { slug: "meta", name: "Meta", logo: "/trustedPartners/meta.svg" },
+  { slug: "netflix", name: "Netflix", logo: "/trustedPartners/netflix.svg" },
+  { slug: "adobe", name: "Adobe", logo: "/trustedPartners/adobe.svg" },
+  { slug: "salesforce", name: "Salesforce", logo: "/trustedPartners/salesforce.svg" },
+  { slug: "ibm", name: "IBM", logo: "/trustedPartners/ibm.svg" },
+  { slug: "intel", name: "Intel", logo: "/trustedPartners/intel.svg" },
+  { slug: "nvidia", name: "Nvidia", logo: "/trustedPartners/nvidia.svg" },
+  { slug: "tesla", name: "Tesla", logo: "/trustedPartners/tesla.svg" },
+  { slug: "shopify", name: "Shopify", logo: "/trustedPartners/shopify.svg" },
+  { slug: "slack", name: "Slack", logo: "/trustedPartners/slack.svg" },
+  { slug: "oracle", name: "Oracle", logo: "/trustedPartners/oracle.svg" },
+  { slug: "cisco", name: "Cisco", logo: "/trustedPartners/cisco.svg" },
 ];
 
 export const projects = [
