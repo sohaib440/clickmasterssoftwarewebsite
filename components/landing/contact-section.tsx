@@ -24,7 +24,7 @@ export function ContactSection() {
           </h2>
         </Reveal>
         <Reveal delay={motionStagger * 2}>
-          <p className="mt-4 max-w-lg text-horizon-muted">{homeContact.subtext}</p>
+          <p className="mt-4 max-w-lg text-left text-horizon-muted">{homeContact.subtext}</p>
         </Reveal>
 
         <Reveal delay={motionStagger * 3}>
@@ -32,8 +32,8 @@ export function ContactSection() {
         </Reveal>
 
         <Reveal delay={motionStagger * 4}>
-          <p className="mt-4 text-sm text-horizon-muted">{homeContact.reassurance}</p>
-          <p className="mt-3 text-sm text-horizon-muted">
+          <p className="mt-4 text-sm text-left text-horizon-muted">{homeContact.reassurance}</p>
+          <p className="mt-3 text-sm text-left text-horizon-muted">
             <Link
               href={contactPath}
               className="font-medium text-horizon-navy underline-offset-4 hover:underline"

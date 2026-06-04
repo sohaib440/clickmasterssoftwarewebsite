@@ -2,7 +2,7 @@ import Link from "next/link";
 import { CardImage } from "@/components/landing/card-image";
 import { Reveal } from "@/components/landing/reveal";
 import { SectionHeading } from "@/components/landing/section-heading";
-import { cardSoft, container, iconMuted, sectionPad, sectionPadBottom } from "@/lib/landing/constants";
+import { cardSoft, container, iconMuted, sectionPad, sectionPadBottom, btnPrimary, contactPath } from "@/lib/landing/constants";
 import { getAllMainCategories, mainCategoryPath } from "@/lib/content";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
@@ -17,10 +17,10 @@ export function ServicesSection() {
           overlineText="What we do"
           title={
             <>
-              Four <span className="italic">disciplines</span>.
+              Full-service <span className="italic">software development</span>
             </>
           }
-          description="Everything you need, built to work together."
+          description="Everything you need under one roof to launch, scale, and maintain your digital product."
         />
       </div>
 
@@ -60,7 +60,7 @@ export function ServicesSection() {
                   <h3 className="mt-3 font-heading text-xl font-medium text-horizon-navy group-hover:underline">
                     {category.label}
                   </h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-horizon-muted">
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-left text-horizon-muted">
                     {category.tagline}
                   </p>
                   <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-horizon-navy group-hover:underline">
@@ -72,6 +72,11 @@ export function ServicesSection() {
           </li>
         ))}
       </ul>
+      <div className="mx-auto mt-8 flex justify-center">
+        <Link href={contactPath} className={btnPrimary}>
+          Explore all services
+        </Link>
+      </div>
     </section>
   );
 }

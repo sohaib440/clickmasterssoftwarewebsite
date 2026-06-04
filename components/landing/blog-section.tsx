@@ -55,7 +55,7 @@ export function BlogSection({ showHeading = true }: BlogSectionProps) {
                     <h3 className="mt-2 font-heading text-xl font-medium leading-snug text-horizon-navy group-hover:underline md:text-2xl">
                       {post.title}
                     </h3>
-                    <p className="mt-2 flex-1 text-sm leading-relaxed text-horizon-muted">
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-left text-horizon-muted">
                       {post.excerpt}
                     </p>
                     <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-horizon-navy">

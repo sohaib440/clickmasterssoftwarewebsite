@@ -24,7 +24,7 @@ export function TestimonialsSection() {
           {testimonials.map((item, i) => (
             <li key={item.author}>
               <Reveal delay={i * motionStagger} className={cn(card, "flex h-full flex-col p-4 lg:p-5")}>
-                <blockquote className="flex-1 text-sm leading-relaxed text-horizon-muted md:text-[15px]">
+                <blockquote className="flex-1 text-sm leading-relaxed text-left text-horizon-muted md:text-[15px]">
                   &ldquo;{item.quote}&rdquo;
                 </blockquote>
                 <footer className="mt-4 flex items-center gap-2.5 border-t border-horizon-border pt-4">

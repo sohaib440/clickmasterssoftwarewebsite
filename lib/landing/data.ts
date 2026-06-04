@@ -21,20 +21,20 @@ export const contactInfo = {
 } as const;
 
 export const homeHero = {
-  eyebrow: "Software Development Company in Islamabad, Pakistan",
-  headlineBefore: "We build software at the",
-  headlineEmphasis: "edge of results",
+  eyebrow: "Leading Software Development Company in Pakistan",
+  headlineBefore: "A global software development company",
+  headlineEmphasis: "that builds products businesses rely on",
   subtext:
-    "Next Software Development is a full-service software company based in Islamabad, Pakistan. We design and build custom software, web applications, mobile apps, CRM systems and ERP platforms for startups, growing businesses and enterprises across Pakistan and globally.",
-  primaryCta: "Start Your Project",
-  secondaryCta: "See Our Work",
+    "Next Software Development Company helps startups, small and medium-sized businesses, and enterprises across the United States, United Kingdom, United Arab Emirates, Canada, Australia, and Pakistan build powerful, scalable digital products. From idea to launch and beyond we deliver software that drives real business growth.",
+  primaryCta: "Get a Free Quote",
+  secondaryCta: "View Our Work",
   secondaryHref: "#projects",
 } as const;
 
 export const clientsSection = {
-  label: "Trusted by businesses across Pakistan, UK & UAE",
+  label: "Trusted by businesses across Pakistan, the United States, the United Kingdom, the United Arab Emirates, Canada, and Australia",
   fallbackText:
-    "Worked with companies in retail, healthcare, logistics, finance and education.",
+    "Worked with companies in retail, healthcare, logistics, finance, and education.",
 } as const;
 
 export type ContactSelectOption = {
@@ -44,10 +44,10 @@ export type ContactSelectOption = {
 
 export const contactProjectTypes: ContactSelectOption[] = [
   { value: "custom-software", label: "Custom software / product" },
-  { value: "erp", label: "ERP system" },
-  { value: "crm", label: "CRM platform" },
-  { value: "ai-agent", label: "AI agent / automation" },
-  { value: "mobile-app", label: "Mobile app" },
+  { value: "erp", label: "Enterprise resource planning system" },
+  { value: "crm", label: "Customer relationship management platform" },
+  { value: "ai-agent", label: "Artificial intelligence agent / automation" },
+  { value: "mobile-app", label: "Mobile application" },
   { value: "ecommerce", label: "E-commerce platform" },
   { value: "integration", label: "Integration / API work" },
   { value: "other", label: "Other" },
@@ -63,7 +63,7 @@ export const contactBudgetRanges: ContactSelectOption[] = [
 ];
 
 export const contactTimelineOptions: ContactSelectOption[] = [
-  { value: "asap", label: "ASAP / within 1 month" },
+  { value: "asap", label: "As soon as possible / within 1 month" },
   { value: "1-3-months", label: "1 – 3 months" },
   { value: "3-6-months", label: "3 – 6 months" },
   { value: "6-plus-months", label: "6+ months" },
@@ -124,64 +124,93 @@ export const serviceCategories = getServiceNavCategories();
 
 export const processSteps = [
   {
-    step: "1",
-    title: "Discover",
+    step: "01",
+    title: "Discover & Business Analysis",
     description:
-      "We start every engagement with deep listening. We learn your business, your users, your constraints and your goals and produce a specification document that everyone agrees on before anything is built.",
+      "We start by deeply understanding your business, your users, and your goals. We document functional requirements, define success metrics, and align on scope before any design or code begins.",
   },
   {
-    step: "2",
-    title: "Define",
+    step: "02",
+    title: "Architecture & Technical Planning",
     description:
-      "Architecture, technology choices, project milestones, timelines and fixed pricing are all confirmed in writing before development starts. No scope creep. No surprises.",
+      "Our senior engineers define the system architecture, select the optimal technology stack, and create a detailed technical specification. You receive a full project plan with milestones, deliverables, timeline, and cost breakdown all agreed upfront.",
   },
   {
-    step: "3",
-    title: "Build",
+    step: "03",
+    title: "UI/UX Design & Prototyping",
     description:
-      "Our in-house team in Islamabad builds in 2-week agile sprints. You receive a working, testable build every fortnight. Progress is always visible and feedback is always welcome.",
+      "Our designers create wireframes and clickable prototypes that bring your product to life before development begins. You review and approve the design at every stage your feedback drives every design decision we make.",
   },
   {
-    step: "4",
-    title: "Launch",
+    step: "04",
+    title: "Agile Development in Sprints",
     description:
-      "We deploy, configure monitoring, run final QA across all environments and hand over full documentation. Then we stick around with a 30-day warranty and optional ongoing support.",
+      "We develop your software in 2-week agile sprints, with a working demo shared at the end of each sprint. You see real progress continuously not just at the finish line.",
+  },
+  {
+    step: "05",
+    title: "Quality Assurance & Security Testing",
+    description:
+      "Every feature is tested across functional, performance, security, and cross-device dimensions before release. We use both manual QA and automated testing frameworks to ensure your software is production-ready and resilient.",
+  },
+  {
+    step: "06",
+    title: "Launch, Handover & Ongoing Support",
+    description:
+      "We manage your go-live smoothly and provide full handover documentation, code access, and team training. After launch, we offer flexible maintenance and support plans so your software evolves as your business grows.",
   },
 ];
 
 export const stats = [
-  { value: "120+", label: "Projects delivered" },
-  { value: "98%", label: "Client satisfaction" },
-  { value: "99.7%", label: "On-time delivery" },
-  { value: "24", label: "In-house experts" },
+  { value: "250+", label: "Software projects delivered" },
+  { value: "15+", label: "Countries served worldwide" },
+  { value: "10+", label: "Years of development experience" },
+  { value: "98%", label: "Client satisfaction rate" },
 ];
 
 export const aboutSection = {
   teamLink: "/about#team",
   teamCta: "Meet our team",
   paragraphs: [
-    "Next Software Development is not a one-project agency. We are a dedicated software company based in Islamabad that builds long-term technology partnerships. Our clients come back to us not just for one app or one website, but as their permanent technology team. We are fast, honest and obsessively focused on quality. We take full ownership of every project from the first line of code to the last deployment, and we are still here when you need us six months after launch.",
+    "Next Software Development Company is a globally trusted software development company headquartered in Pakistan, with clients and delivery experience spanning the United States, United Kingdom, United Arab Emirates, Canada, and Australia. We were founded with one belief: that great software should be accessible to every business not just the Fortune 500.",
+    "Our team of 60+ software engineers, user interface and user experience designers, quality assurance specialists, and project managers has spent over a decade turning complex business challenges into clean, efficient, and scalable digital solutions. Whether you need a mobile application for your startup, a custom enterprise resource planning system for your manufacturing business, or an enterprise software-as-a-service platform, we have built it before and we can build it for you.",
+    "As a software development company that operates at the intersection of global quality and competitive pricing, Next Software Development Company gives international clients the best of both worlds English-speaking, timezone-flexible developers with world-class technical skills at a fraction of the cost of Western development firms.",
   ],
   values: [
     {
-      title: "Client First",
+      title: "Proven delivery record",
       description:
-        "Every decision we make is measured against one question: does this serve the client's goal? Your success is our only metric. We do not cut corners, recommend unnecessary features or inflate timelines.",
+        "Decade-long track record with 250+ delivered software projects across 20+ industries.",
     },
     {
-      title: "Craft in Use",
+      title: "Senior-only teams",
       description:
-        "Beautiful software is software that works. We obsess over the details — performance, usability, reliability — because the best technology is the kind your users never have to think about.",
+        "Senior-only development teams no junior developers on client projects.",
     },
     {
-      title: "Your Ownership",
+      title: "Timezone overlap",
       description:
-        "You own everything we build. Every line of code, every design file, every database. We sign NDAs, transfer full intellectual property rights and never hold your project hostage.",
+        "Timezone-flexible delivery we overlap with United States, United Kingdom, and United Arab Emirates business hours.",
+    },
+    {
+      title: "Transparent pricing",
+      description:
+        "Transparent, fixed-price contracts with zero hidden costs.",
+    },
+    {
+      title: "Post-launch support",
+      description:
+        "Post-launch support included in every engagement we do not disappear after go-live.",
+    },
+    {
+      title: "ISO-compliant processes",
+      description:
+        "ISO-compliant development processes and data security best practices.",
     },
   ],
   image: {
     src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=75",
-    alt: "Team collaborating in a bright studio space",
+    alt: "Professional team collaborating in a bright office space",
     width: 1000,
     height: 700,
   },
@@ -199,7 +228,7 @@ export type TechStackTab = {
 };
 
 export const techStackIntro =
-  "Proven technologies chosen for performance, scalability and long-term maintainability not trend-chasing.";
+  "Modern technologies chosen for performance, scalability, and right-fit engineering. We use the tools that match your business goals not buzz.";
 
 export const techStackTabs: TechStackTab[] = [
   {
@@ -270,53 +299,79 @@ export const clients: Client[] = [
 
 export const projects = [
   {
-    slug: "lahore-crm",
-    title: "Lahore Sales CRM",
-    category: "CRM Development · Pakistan",
+    slug: "mediconnect-pro",
+    title: "MediConnect Pro",
+    category: "Healthcare · USA",
     description:
-      "A fully custom CRM built for a Lahore-based sales team replacing three disconnected tools with one unified platform.",
+      "A telehealth platform connecting 12,000+ patients with licensed doctors via video consultations. Reduced patient wait times by 60% and expanded clinic reach by 300% within six months.",
     image: {
-      src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=75",
-      alt: "CRM dashboard for sales team",
+      src: "https://images.unsplash.com/photo-1535378917044-8d2e7c431f1d?auto=format&fit=crop&w=800&q=75",
+      alt: "Telehealth medical platform dashboard",
       width: 1200,
       height: 750,
     },
   },
   {
-    slug: "uae-healthcare",
-    title: "UAE Clinic Platform",
-    category: "Healthcare Software · UAE",
+    slug: "finedge-erp",
+    title: "FinEdge ERP",
+    category: "FinTech · UAE",
     description:
-      "A patient management and appointment booking system serving three clinics across the UAE, built on Next.js and Node.js.",
+      "A comprehensive ERP system replacing five legacy tools for a mid-size financial services firm. Reduced operational overhead by 40% and achieved full regulatory compliance in the UAE.",
     image: {
-      src: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=75",
-      alt: "Healthcare appointment software",
+      src: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=75",
+      alt: "Financial dashboard for ERP software",
       width: 1200,
       height: 750,
     },
   },
   {
-    slug: "pk-marketplace",
-    title: "Pakistan Marketplace",
-    category: "E-Commerce · Pakistan",
+    slug: "retailflow-pos",
+    title: "RetailFlow POS",
+    category: "E-Commerce · UK",
     description:
-      "A multi-vendor marketplace with JazzCash and Easypaisa integration handling over 500 daily transactions within three weeks of launch.",
+      "A cloud-based POS and inventory management system deployed across 30 retail branches. Reduced stock discrepancies by 85% and cut checkout time by 35%.",
     image: {
-      src: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=75",
-      alt: "E-commerce marketplace interface",
+      src: "https://images.unsplash.com/photo-1519337265831-281ec6cc8514?auto=format&fit=crop&w=800&q=75",
+      alt: "Retail point of sale software interface",
       width: 1200,
       height: 750,
     },
   },
   {
-    slug: "islamabad-erp",
-    title: "Islamabad Manufacturing ERP",
-    category: "ERP Development · Pakistan",
+    slug: "eduspark-lms",
+    title: "EduSpark LMS",
+    category: "EdTech · Canada",
     description:
-      "A custom ERP replacing five spreadsheets for an Islamabad-based manufacturer cutting monthly reporting time from two days to two hours.",
+      "An e-learning management system serving 8,000+ students at a private university. Course completion rates increased by 45% following the platform launch.",
     image: {
-      src: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=75",
-      alt: "ERP analytics and reporting",
+      src: "https://images.unsplash.com/photo-1518976024611-48863e63e1ea?auto=format&fit=crop&w=800&q=75",
+      alt: "Learning management system dashboard",
+      width: 1200,
+      height: 750,
+    },
+  },
+  {
+    slug: "cargotrack",
+    title: "CargoTrack",
+    category: "Logistics · Pakistan / UAE",
+    description:
+      "A real-time shipment tracking platform processing 600+ deliveries daily. Reduced customer support queries by 70% by giving clients live GPS visibility of every shipment.",
+    image: {
+      src: "https://images.unsplash.com/photo-1518606373137-37c89441d7b2?auto=format&fit=crop&w=800&q=75",
+      alt: "Logistics tracking dashboard on screen",
+      width: 1200,
+      height: 750,
+    },
+  },
+  {
+    slug: "propertyhub",
+    title: "PropertyHub",
+    category: "Real Estate · Australia",
+    description:
+      "A property listing and agent CRM platform with AI-powered search recommendations. Time-on-site increased by 120% and lead generation doubled in the first quarter.",
+    image: {
+      src: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=75",
+      alt: "Real estate platform interface",
       width: 1200,
       height: 750,
     },
@@ -513,21 +568,21 @@ export const faqs: FaqItem[] = [
     tag: "Pricing",
     question: "How much does it cost to hire a software development company?",
     answer:
-      "Software development costs vary widely based on project scope, complexity, and the team you hire. As a Pakistan-based software development company, we offer highly competitive rates compared to US or UK firms — typically 40–60% lower for the same quality of work. We provide a detailed, transparent quote after a free discovery call. Projects range from PKR 150,000 for a simple MVP to PKR 3,500,000+ for enterprise platforms.",
+      "Software development costs vary widely based on project scope, complexity, and the team you hire. As a Pakistan-based software development company, we offer highly competitive rates compared to US or UK firms typically 40–60% lower for the same quality of work. We provide a detailed, transparent quote after a free discovery call. Projects range from PKR 150,000 for a simple MVP to PKR 3,500,000+ for enterprise platforms.",
   },
   {
     column: "left",
     tag: "Timeline",
     question: "How long does it take to build custom software?",
     answer:
-      "Timelines depend on scope. A simple web app or MVP can be built in 6-10 weeks. A mid-complexity mobile application takes 3-5 months. A full enterprise software platform can take 6-12 months. We always provide a detailed timeline during the planning phase and stick to it — our on-time delivery rate is 94%.",
+      "Timelines depend on scope. A simple web app or MVP can be built in 6-10 weeks. A mid-complexity mobile application takes 3-5 months. A full enterprise software platform can take 6-12 months. We always provide a detailed timeline during the planning phase and stick to it our on-time delivery rate is 94%.",
   },
   {
     column: "left",
     tag: "Global",
     question: "Do you work with clients outside Pakistan?",
     answer:
-      "Yes — the majority of our clients are based internationally, including the USA, UK, UAE, Canada, and Australia. We are a remote-first software development company with communication processes and timezone flexibility designed for international collaboration. We use Slack, Zoom, Jira, and Confluence to keep every client fully in the loop regardless of location.",
+      "Yes the majority of our clients are based internationally, including the USA, UK, UAE, Canada, and Australia. We are a remote-first software development company with communication processes and timezone flexibility designed for international collaboration. We use Slack, Zoom, Jira, and Confluence to keep every client fully in the loop regardless of location.",
   },
   {
     column: "right",
@@ -548,14 +603,14 @@ export const faqs: FaqItem[] = [
     tag: "Quality",
     question: "How do you ensure the quality of your software?",
     answer:
-      "Quality is built into every stage of our process — not added at the end. We conduct code reviews, write unit and integration tests, perform manual QA testing, run automated regression testing, and carry out security audits before every release. Our QA team works in parallel with development to catch issues early, which keeps costs low and launch timelines on schedule.",
+      "Quality is built into every stage of our process not added at the end. We conduct code reviews, write unit and integration tests, perform manual QA testing, run automated regression testing, and carry out security audits before every release. Our QA team works in parallel with development to catch issues early, which keeps costs low and launch timelines on schedule.",
   },
   {
     column: "right",
     tag: "Legal",
     question: "Is my project idea safe with you? Do you sign NDAs?",
     answer:
-      "Yes — absolutely. We sign a mutual Non-Disclosure Agreement (NDA) before any project discussion begins. Your idea, your business data, and all project details are fully confidential. Our team follows strict internal data security policies and we are happy to involve your legal team in reviewing our standard NDA.",
+      "Yes absolutely. We sign a mutual Non-Disclosure Agreement (NDA) before any project discussion begins. Your idea, your business data, and all project details are fully confidential. Our team follows strict internal data security policies and we are happy to involve your legal team in reviewing our standard NDA.",
   },
 ];
 
@@ -572,7 +627,7 @@ export const homeContact = {
 
 export const footerBrand = {
   description:
-    "A software development company in Islamabad, Pakistan. Building software that lasts.",
+    "A globally trusted software development company headquartered in Pakistan. Building software that lasts for clients in the USA, UK, UAE, Canada, Australia, and beyond.",
   copyright: "© 2026 Next Software Development Company. All rights reserved.",
 } as const;
 

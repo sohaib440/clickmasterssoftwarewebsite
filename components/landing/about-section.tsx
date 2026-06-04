@@ -14,11 +14,7 @@ export function AboutSection() {
       <div className={cn(container, sectionPad)}>
         <SectionHeading
           overlineText="About us"
-          title={
-            <>
-              A software company built for the <span className="italic">long run</span>
-            </>
-          }
+          title="Who Is Next Software Development Company?"
           className="mb-10 md:mb-12"
         />
 
@@ -26,7 +22,7 @@ export function AboutSection() {
           <div className="min-w-0 space-y-5">
             {aboutSection.paragraphs.map((paragraph, i) => (
               <Reveal key={i} delay={i * motionStagger}>
-                <p className="text-base leading-relaxed text-horizon-muted md:text-lg">
+                <p className="text-base leading-relaxed text-left text-horizon-muted md:text-lg">
                   {paragraph}
                 </p>
               </Reveal>
@@ -56,7 +52,7 @@ export function AboutSection() {
                 <h3 className="font-heading text-xl font-medium text-horizon-navy">
                   {value.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-horizon-muted">
+                <p className="mt-3 text-sm leading-relaxed text-left text-horizon-muted">
                   {value.description}
                 </p>
               </Reveal>

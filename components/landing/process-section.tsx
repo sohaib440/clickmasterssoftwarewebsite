@@ -1,6 +1,7 @@
+import Link from "next/link";
 import { Reveal } from "@/components/landing/reveal";
 import { SectionHeading } from "@/components/landing/section-heading";
-import { container, sectionPad } from "@/lib/landing/constants";
+import { container, sectionPad, btnPrimary, contactPath } from "@/lib/landing/constants";
 import { motionStagger } from "@/lib/landing/motion";
 import { processSteps } from "@/lib/landing/data";
 import { cn } from "@/lib/utils";
@@ -13,9 +14,10 @@ export function ProcessSection() {
           overlineText="How we work"
           title={
             <>
-              From brief to launch <span className="italic">and beyond</span>
+              Our software development process <span className="italic">transparent, agile, and built around you</span>
             </>
           }
+          description="Every software development company claims to follow best practices. At Next Software Development Company, we show you exactly what that means at every stage of your project."
           className="mb-8 md:mb-10"
         />
 
@@ -29,13 +31,18 @@ export function ProcessSection() {
                 <h3 className="mt-4 font-heading text-xl font-medium text-horizon-navy">
                   {item.title}
                 </h3>
-                <p className="mt-2 max-w-[200px] text-sm leading-relaxed text-horizon-muted">
+                <p className="mt-2 max-w-[200px] text-sm leading-relaxed text-left text-horizon-muted">
                   {item.description}
                 </p>
               </Reveal>
             </li>
           ))}
         </ol>
+        <div className="mt-10 text-center">
+          <Link href={contactPath} className={btnPrimary}>
+            Start your project
+          </Link>
+        </div>
       </div>
     </section>
   );

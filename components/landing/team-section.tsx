@@ -22,7 +22,7 @@ export function TeamSection() {
         />
 
         <Reveal delay={motionStagger}>
-          <p className="mb-8 max-w-3xl text-base leading-relaxed text-horizon-muted md:mb-10 md:text-lg">
+          <p className="mb-8 max-w-3xl text-base leading-relaxed text-left text-horizon-muted md:mb-10 md:text-lg">
             {teamIntro}
           </p>
         </Reveal>
@@ -41,7 +41,7 @@ export function TeamSection() {
                 <div className="border-t border-horizon-border bg-white p-3 text-left md:p-4">
                   <h3 className="font-heading text-lg font-medium text-horizon-navy">{member.name}</h3>
                   <p className="mt-1 text-sm font-medium text-horizon-muted">{member.role}</p>
-                  <p className="mt-2 text-xs leading-relaxed text-horizon-muted md:text-sm">
+                  <p className="mt-2 text-xs leading-relaxed text-left text-horizon-muted md:text-sm">
                     {member.bio}
                   </p>
                 </div>

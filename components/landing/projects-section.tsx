@@ -44,7 +44,7 @@ export function ProjectsSection() {
                     {project.title}
                   </h3>
                   <p className="mt-1 text-sm font-medium text-horizon-muted">{project.category}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-horizon-muted">
+                  <p className="mt-3 text-sm leading-relaxed text-left text-horizon-muted">
                     {project.description}
                   </p>
                 </div>

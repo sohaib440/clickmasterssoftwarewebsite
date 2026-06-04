@@ -7,6 +7,7 @@ import {
   ClientsSection,
   FaqSection,
   HeroSection,
+  IndustriesSection,
   ProcessSection,
   ProjectsSection,
   ServicesSection,
@@ -58,6 +59,7 @@ export default function Home() {
       <HeroSection />
       <main className="flex w-full flex-1 flex-col">
         <ClientsSection />
+        <IndustriesSection />
         <DeferredSection>
           <AboutSection />
         </DeferredSection>

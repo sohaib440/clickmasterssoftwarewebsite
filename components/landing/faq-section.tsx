@@ -68,7 +68,7 @@ function FaqColumn({ column, startIndex }: { column: "left" | "right"; startInde
 
               <div className="faq-answer border-t border-horizon-border/70">
                 <div className="faq-answer-inner px-5 pb-5 pt-1 md:px-6 md:pb-6 md:pl-[4.25rem]">
-                  <p className="text-sm leading-relaxed text-horizon-muted md:text-[15px]">
+                  <p className="text-sm leading-relaxed text-left text-horizon-muted md:text-[15px]">
                     {faq.answer}
                   </p>
                 </div>
@@ -99,7 +99,7 @@ export function FaqSection() {
 
       <div className={cn(container, sectionPad, "relative")}>
         <SectionHeading
-          overlineText="FAQs"
+          overlineText="Frequently asked questions"
           title={
             <>
               Questions, <span className="italic">answered</span>
@@ -124,7 +124,7 @@ export function FaqSection() {
               <h3 className="mt-2 font-heading text-2xl font-medium leading-snug text-horizon-navy">
                 We&apos;re happy to walk you through everything on a call
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-horizon-muted">
+              <p className="mt-3 text-sm leading-relaxed text-left text-horizon-muted">
                 Every software project is different. Tell us about your goals and we&apos;ll share
                 how our Islamabad team would approach discovery, delivery and launch.
               </p>

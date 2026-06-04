@@ -30,7 +30,7 @@ export function HeroSection() {
             </Reveal>
 
             <Reveal immediate delay={motionStagger * 2}>
-              <p className="mt-4 max-w-xl text-base leading-relaxed text-horizon-muted md:text-lg">
+              <p className="mt-4 max-w-xl text-base leading-relaxed text-left text-horizon-muted md:text-lg">
                 {homeHero.subtext}
               </p>
             </Reveal>
