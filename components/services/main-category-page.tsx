@@ -31,7 +31,7 @@ const defaultSections = {
   approach: { title: "Our approach" },
   related: { title: "Explore more capabilities" },
   cta: {
-    title: "Ready to build with Next Software Development Company?",
+    title: "Ready to build with Software Development Company?",
     description: (label: string) =>
       `Tell us about your ${label.toLowerCase()} needs—we'll respond within one business day.`,
     buttonLabel: "Get in touch",
@@ -278,9 +278,9 @@ export function MainCategoryPage({ category }: Props) {
           <div className={cn(container, sectionPad, "text-center")}>
             <Reveal>
               <h2 className="font-heading text-3xl font-normal md:text-4xl">
-                {sections.cta.title.includes("Next Software Development Company") ? (
+                {sections.cta.title.includes("Software Development Company") ? (
                   <>
-                    Ready to build with <span className="italic">Next Software Development Company</span>?
+                    Ready to build with <span className="italic">Software Development Company</span>?
                   </>
                 ) : (
                   sections.cta.title

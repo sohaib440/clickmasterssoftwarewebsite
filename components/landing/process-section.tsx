@@ -17,7 +17,7 @@ export function ProcessSection() {
               Our software development process <span className="italic">transparent, agile, and built around you</span>
             </>
           }
-          description="Every software development company claims to follow best practices. At Next Software Development Company, we show you exactly what that means at every stage of your project."
+          description="Every software development company claims to follow best practices. At Software Development Company, we show you exactly what that means at every stage of your project."
           className="mb-8 md:mb-10"
         />
 

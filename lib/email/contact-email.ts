@@ -179,7 +179,7 @@ async function sendViaSmtp(data: ContactFormData): Promise<void> {
     text: formatPlainText(data),
     html: formatHtml(data),
     headers: {
-      "X-Contact-Form": "Next Software Development Company-website",
+      "X-Contact-Form": "Software Development Company-website",
     },
   });
 }

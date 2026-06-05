@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!category) return { title: "Not found" };
 
   return {
-    title: `${category.label} | Next Software Development Company Software`,
+    title: `${category.label} | Software Development Company`,
     description: category.metaDescription,
   };
 }

@@ -14,7 +14,7 @@ export function AboutSection() {
       <div className={cn(container, sectionPad)}>
         <SectionHeading
           overlineText="About us"
-          title="Who Is Next Software Development Company?"
+          title="Who Is Software Development Company?"
           className="mb-10 md:mb-12"
         />
 

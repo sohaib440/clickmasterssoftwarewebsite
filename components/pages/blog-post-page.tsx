@@ -53,7 +53,7 @@ export function BlogPostPage({ post }: BlogPostPageProps) {
             />
           </Reveal>
 
-          <div className="prose-Next Software Development Company mx-auto mt-10 max-w-3xl space-y-6">
+          <div className="prose-Software Development Company mx-auto mt-10 max-w-3xl space-y-6">
             {post.body.map((paragraph, i) => (
               <Reveal key={i} delay={motionStagger * (i + 2)}>
                 <p className="text-base leading-relaxed text-horizon-muted md:text-lg">

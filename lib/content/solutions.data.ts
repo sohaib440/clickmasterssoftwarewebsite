@@ -41,7 +41,7 @@ export const solutions: SolutionContent[] = [
     description:
       "Our ERP solutions connect departments, automate workflows, and give leadership real-time visibility—from procurement and production to accounting and reporting.",
     metaDescription:
-      "Custom ERP software for finance, inventory, and operations. Next Software Development Company Software builds scalable enterprise resource planning systems.",
+      "Custom ERP software for finance, inventory, and operations. Software Development Company Software builds scalable enterprise resource planning systems.",
     heroImage: img(
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=75",
       "Enterprise dashboard with charts and KPIs"
@@ -116,7 +116,7 @@ export const solutions: SolutionContent[] = [
     description:
       "We build CRM platforms that help sales and success teams track leads, manage accounts, and forecast revenue without fighting clunky software.",
     metaDescription:
-      "Custom CRM development for sales pipelines, account management, and customer success. Built by Next Software Development Company Software.",
+      "Custom CRM development for sales pipelines, account management, and customer success. Built by Software Development Company Software.",
     heroImage: img(
       "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=75",
       "Sales team reviewing CRM dashboard"
@@ -188,7 +188,7 @@ export const solutions: SolutionContent[] = [
     description:
       "We design and deploy AI agents for support, sales, and internal ops—grounded in your data, guarded by policies, and measurable in production.",
     metaDescription:
-      "Custom AI agents for support, sales, and operations. RAG, tool use, and safe deployment by Next Software Development Company Software.",
+      "Custom AI agents for support, sales, and operations. RAG, tool use, and safe deployment by Software Development Company Software.",
     heroImage: img(
       "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=75",
       "Abstract AI and neural network visualization"
@@ -260,7 +260,7 @@ export const solutions: SolutionContent[] = [
     description:
       "Human resource management systems for employee records, leave, payroll hooks, performance cycles, and self-service portals tailored to your policies.",
     metaDescription:
-      "Custom HRMS software for employee management, leave, and HR workflows. Next Software Development Company Software builds people platforms.",
+      "Custom HRMS software for employee management, leave, and HR workflows. Software Development Company Software builds people platforms.",
     heroImage: img(
       "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=75",
       "HR team in a modern office"
@@ -332,7 +332,7 @@ export const solutions: SolutionContent[] = [
     description:
       "Inventory systems for warehouses and retail: receiving, picking, transfers, barcodes, and alerts when SKUs run low.",
     metaDescription:
-      "Inventory management software for warehouses and retail. Real-time stock tracking by Next Software Development Company Software.",
+      "Inventory management software for warehouses and retail. Real-time stock tracking by Software Development Company Software.",
     heroImage: img(
       "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=75",
       "Warehouse shelves and logistics"
@@ -404,7 +404,7 @@ export const solutions: SolutionContent[] = [
     description:
       "Custom e-commerce platforms with catalog management, checkout, payments, promotions, and admin tools built for your brand and catalog complexity.",
     metaDescription:
-      "Custom e-commerce platform development. Storefronts, checkout, and admin by Next Software Development Company Software.",
+      "Custom e-commerce platform development. Storefronts, checkout, and admin by Software Development Company Software.",
     heroImage: img(
       "https://images.unsplash.com/photo-1472851291508-62bd40d0d974?auto=format&fit=crop&w=800&q=75",
       "Online shopping on laptop and phone"
@@ -476,7 +476,7 @@ export const solutions: SolutionContent[] = [
     description:
       "Analytics platforms that pull from your databases and SaaS tools—unified KPIs, drill-downs, and scheduled reports without spreadsheet chaos.",
     metaDescription:
-      "Custom business analytics dashboards and BI tools. Data visualization by Next Software Development Company Software.",
+      "Custom business analytics dashboards and BI tools. Data visualization by Software Development Company Software.",
     heroImage: img(
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=75",
       "Analytics charts on a monitor"
@@ -548,7 +548,7 @@ export const solutions: SolutionContent[] = [
     description:
       "Custom workflow engines for approvals, onboarding, ticketing, and cross-system automation—visual builders optional, rock-solid execution required.",
     metaDescription:
-      "Workflow automation software for approvals and business processes. Built by Next Software Development Company Software.",
+      "Workflow automation software for approvals and business processes. Built by Software Development Company Software.",
     heroImage: img(
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=75",
       "Business planning and workflow diagrams"
