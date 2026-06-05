@@ -5,6 +5,8 @@ import { useEffect, useRef, useState } from "react";
 import type { MouseEvent as ReactMouseEvent } from "react";
 import { SectionHeading } from "@/components/landing/section-heading";
 import { techStackIntro, techStackLogos } from "@/lib/landing/data";
+import { container, sectionPad } from "@/lib/landing/constants";
+import { cn } from "@/lib/utils";
 
 const CREAM = "#F5F0E4";
 const NAVY = "#0E1B2E";
@@ -227,9 +229,9 @@ export function TechStackSection() {
 
   return (
     <section className="relative w-full overflow-hidden" style={{ background: CREAM }}>
-      <div style={{ height: 4, background: `linear-gradient(90deg, ${YELLOW} 0%, ${NAVY} 100%)` }} />
+      <div className={cn(container, sectionPad, "relative z-10")}> 
+        <div style={{ height: 4, background: `linear-gradient(90deg, ${YELLOW} 0%, ${NAVY} 100%)` }} />
 
-      <div className="relative z-10 pt-16 pb-8 px-6">
         <SectionHeading
           overlineText="Tech stack"
           title="Our tech universe"
@@ -237,13 +239,12 @@ export function TechStackSection() {
           align="left"
           className="mb-12"
         />
-      </div>
 
-      <div
-        ref={containerRef}
-        className="relative w-full select-none"
-        style={{ height: 640, cursor: dragId !== null ? 'grabbing' : 'default', overflow: 'hidden' }}
-      >
+        <div
+          ref={containerRef}
+          className="relative w-full select-none"
+          style={{ height: 640, cursor: dragId !== null ? 'grabbing' : 'default', overflow: 'hidden' }}
+        >
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -339,6 +340,7 @@ export function TechStackSection() {
 
 
       <div style={{ height: 4, background: `linear-gradient(90deg, ${NAVY} 0%, ${YELLOW} 100%)` }} />
-    </section>
+    </div>
+  </section>
   );
 }

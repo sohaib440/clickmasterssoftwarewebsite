@@ -301,7 +301,6 @@ export const techStackLogos = [
   { id: "clojure", name: "Clojure", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/clojure/clojure-original.svg" },
   { id: "groovy", name: "Groovy", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/groovy/groovy-original.svg" },
   { id: "perl", name: "Perl", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/perl/perl-original.svg" },
-  { id: "lua", name: "Lua", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/lua/lua-original.svg" },
   { id: "r", name: "R", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" },
   { id: "julia", name: "Julia", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/julia/julia-original.svg" },
   { id: "dart", name: "Dart", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" },
@@ -309,7 +308,6 @@ export const techStackLogos = [
   { id: "nim", name: "Nim", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nim/nim-original.svg" },
 
   { id: "ocaml", name: "OCaml", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ocaml/ocaml-original.svg" },
-  { id: "cobol", name: "COBOL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cobol/cobol-original.svg" },
   { id: "fortran", name: "Fortran", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fortran/fortran-original.svg" },
   { id: "html5", name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
   { id: "css3", name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
