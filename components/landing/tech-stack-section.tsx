@@ -38,18 +38,20 @@ function createBubbles(w: number, h: number): Bubble[] {
   const cols = Math.ceil(Math.sqrt(count * (w / h)));
   const rows = Math.ceil(count / cols);
   return techStackLogos.map((logo, i) => {
-    const r = 44 + Math.random() * 22;
+    const r = 38 + Math.random() * 20;
     const col = i % cols;
     const row = Math.floor(i / cols);
     const cellW = w / cols;
     const cellH = (h * 0.72) / rows;
+    const startY = cellH * row + r + 8;
+    const dropOffset = 80 + Math.random() * 80;
     return {
       id: i,
       logo,
       x: cellW * col + cellW / 2 + (Math.random() - 0.5) * 16,
-      y: cellH * row + r + 8 + (Math.random() - 0.5) * 8,
+      y: startY - dropOffset,
       vx: (Math.random() - 0.5) * 2,
-      vy: Math.random() * 1,
+      vy: 0,
       r,
       mass: r * r,
     };
@@ -243,7 +245,7 @@ export function TechStackSection() {
         <div
           ref={containerRef}
           className="relative w-full select-none"
-          style={{ height: 640, cursor: dragId !== null ? 'grabbing' : 'default', overflow: 'hidden' }}
+          style={{ height: 640, cursor: dragId !== null ? 'grabbing' : 'default', overflow: 'visible' }}
         >
         <div
           className="absolute inset-0 pointer-events-none"
