@@ -47,7 +47,7 @@ export function SiteHeader() {
           <div
             className={cn(
               "grid min-w-0 w-full grid-cols-[auto_1fr_auto] items-center gap-1.5 px-3 transition-all duration-500 sm:gap-2 sm:px-4",
-              scrolled ? "h-14 md:h-13" : "h-14 md:h-16"
+              scrolled ? "h-14 lg:h-13" : "h-14 lg:h-16"
             )}
           >
             <Link
@@ -58,7 +58,7 @@ export function SiteHeader() {
             </Link>
 
             <nav
-              className="hidden min-w-0 items-center justify-center justify-self-center gap-1 md:flex md:flex-wrap lg:gap-2"
+              className="hidden min-w-0 items-center justify-center justify-self-center gap-1 lg:flex lg:gap-2"
               aria-label="Main"
             >
               <ServicesNavDropdown />
@@ -74,13 +74,13 @@ export function SiteHeader() {
               ))}
             </nav>
 
-            <div className="flex items-center justify-self-end gap-2 md:justify-self-end">
+            <div className="flex items-center justify-self-end gap-2 lg:justify-self-end">
               <button
                 type="button"
                 aria-expanded={mobileMenuOpen}
                 aria-controls="mobile-navigation"
                 onClick={() => setMobileMenuOpen((open) => !open)}
-                className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-horizon-border bg-white text-horizon-navy transition-colors hover:bg-horizon-peach/50 md:hidden"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-horizon-border bg-white text-horizon-navy transition-colors hover:bg-horizon-peach/50 lg:hidden"
               >
                 <span className="sr-only">
                   {mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
@@ -108,7 +108,7 @@ export function SiteHeader() {
             id="mobile-navigation"
             aria-hidden={!mobileMenuOpen}
             className={cn(
-              "md:hidden overflow-x-hidden overflow-y-auto transition-[max-height,opacity,padding] duration-300 ease-out",
+              "lg:hidden overflow-x-hidden overflow-y-auto transition-[max-height,opacity,padding] duration-300 ease-out",
               mobileMenuOpen
                 ? "max-h-[calc(100vh-6rem)] opacity-100 pt-3 pb-4"
                 : "max-h-0 opacity-0 py-0"
