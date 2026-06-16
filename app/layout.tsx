@@ -29,6 +29,10 @@ export const metadata: Metadata = {
   },
   description: siteMetadata.description,
   keywords: [...siteMetadata.keywords],
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+  },
 };
 
 export default function RootLayout({

@@ -16,7 +16,7 @@ export function ProjectsSection() {
           overlineText="Our work"
           title={
             <>
-              Recent <span className="italic">projects</span>
+              Recent <span className="italic">projects</span>D
             </>
           }
         />
