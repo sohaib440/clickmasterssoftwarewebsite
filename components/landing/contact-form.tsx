@@ -100,7 +100,7 @@ export function ContactForm({
     return (
       <form
         className={cn(
-          "mt-6 flex max-w-2xl flex-col gap-2 sm:flex-row sm:items-stretch",
+          "mt-6 w-full max-w-3xl space-y-3 sm:space-y-0 sm:flex sm:items-stretch sm:gap-3",
           className
         )}
         onSubmit={(e) => {
@@ -121,7 +121,7 @@ export function ContactForm({
           type="text"
           name="name"
           placeholder="Name"
-          className={cn(inputField, "flex-1")}
+          className={cn(inputField, "w-full sm:flex-[0.9] text-sm")}
         />
         <label className="sr-only" htmlFor="contact-home-email">
           Email
@@ -131,9 +131,9 @@ export function ContactForm({
           type="email"
           name="email"
           placeholder="Email"
-          className={cn(inputField, "flex-1")}
+          className={cn(inputField, "w-full sm:flex-1 text-sm")}
         />
-        <button type="submit" className={cn(btnPrimary, "shrink-0 px-8")}>
+        <button type="submit" className={cn(btnPrimary, "w-full sm:w-auto shrink-0 px-8 text-sm sm:text-base")}>
           Get Started
         </button>
       </form>

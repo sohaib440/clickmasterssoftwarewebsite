@@ -120,7 +120,7 @@ function ServiceCard({ service, index }: { service: (typeof services)[number]; i
   const { accent } = service;
   const spanClass =
     service.span === 'wide'
-      ? 'sm:col-span-2'
+      ? 'sm:col-span-2 xl:col-span-2'
       : service.span === 'tall'
       ? 'xl:row-span-2'
       : '';
@@ -135,8 +135,7 @@ function ServiceCard({ service, index }: { service: (typeof services)[number]; i
     >
       <Link href={route || '/services'}>
         <div
-          className={`group relative flex flex-col justify-between cursor-pointer ${service.span === 'tall' ? 'h-full min-h-145' : 'h-115'
-            } rounded-[40px] border bg-white/40 backdrop-blur-2xl p-8 overflow-hidden transition-all duration-500 hover:bg-white/60`}
+          className={`group relative flex flex-col justify-between cursor-pointer ${service.span === 'tall' ? 'h-full min-h-[28rem] md:min-h-[32rem]' : 'min-h-[22rem] md:min-h-[26rem] xl:h-full'} rounded-[40px] border bg-white/40 backdrop-blur-2xl p-6 sm:p-8 overflow-hidden transition-all duration-500 hover:bg-white/60`}
           style={{ borderColor: `${accent}77` }}
         >
           <div
@@ -170,7 +169,7 @@ function ServiceCard({ service, index }: { service: (typeof services)[number]; i
                 style={{ background: accent }}
               />
               {service.image ? (
-                <div className="relative w-56 h-56 overflow-hidden rounded-[32px]">
+                <div className="relative w-40 h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 overflow-hidden rounded-[32px]">
                   <img src={service.image} alt={service.title} className="object-cover w-full h-full" />
                 </div>
               ) : (
@@ -179,10 +178,10 @@ function ServiceCard({ service, index }: { service: (typeof services)[number]; i
             </div>
 
             <div className='mb-6'>
-              <h3 className="text-2xl font-bold text-foreground mb-2 tracking-tight">
+              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2 tracking-tight">
                 {service.title}
               </h3>
-              <p className="text-sm text-muted-foreground/90 leading-relaxed line-clamp-2">
+              <p className="text-sm md:text-base text-muted-foreground/90 leading-relaxed line-clamp-2">
                 {service.description}
               </p>
 
@@ -228,7 +227,7 @@ export function ServicesSection() {
           />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 auto-rows-[460px] gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 auto-rows-min xl:auto-rows-[460px] gap-8">
           {services.map((service, i) => (
             <ServiceCard key={service.title} service={service} index={i} />
           ))}

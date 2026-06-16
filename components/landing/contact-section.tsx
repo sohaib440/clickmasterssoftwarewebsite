@@ -18,13 +18,13 @@ export function ContactSection() {
           <p className={overline}>{homeContact.overline}</p>
         </Reveal>
         <Reveal delay={motionStagger}>
-          <h2 className="mt-4 max-w-2xl font-heading text-4xl font-normal leading-[1.12] text-horizon-navy md:text-5xl lg:text-6xl">
+          <h2 className="mt-4 max-w-3xl font-heading text-3xl font-normal leading-[1.12] text-horizon-navy sm:text-4xl md:text-5xl lg:text-6xl">
             {homeContact.titleBefore}{" "}
             <span className="italic">{homeContact.titleEmphasis}</span>
           </h2>
         </Reveal>
         <Reveal delay={motionStagger * 2}>
-          <p className="mt-4 max-w-lg text-left text-horizon-muted">{homeContact.subtext}</p>
+          <p className="mt-4 max-w-lg text-sm sm:text-base text-left text-horizon-muted">{homeContact.subtext}</p>
         </Reveal>
 
         <Reveal delay={motionStagger * 3}>
@@ -32,8 +32,8 @@ export function ContactSection() {
         </Reveal>
 
         <Reveal delay={motionStagger * 4}>
-          <p className="mt-4 text-sm text-left text-horizon-muted">{homeContact.reassurance}</p>
-          <p className="mt-3 text-sm text-left text-horizon-muted">
+          <p className="mt-4 text-xs sm:text-sm text-left text-horizon-muted">{homeContact.reassurance}</p>
+          <p className="mt-3 text-xs sm:text-sm text-left text-horizon-muted">
             <Link
               href={contactPath}
               className="font-medium text-horizon-navy underline-offset-4 hover:underline"
@@ -43,7 +43,7 @@ export function ContactSection() {
             for budget, timeline, and project type—or email{" "}
             <Link
               href={`mailto:${contactInfo.email}`}
-              className="font-medium text-horizon-navy underline-offset-4 hover:underline"
+              className="font-medium text-horizon-navy underline-offset-4 hover:underline break-all"
             >
               {contactInfo.email}
             </Link>
