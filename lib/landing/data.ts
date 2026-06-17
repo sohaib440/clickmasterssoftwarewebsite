@@ -4,12 +4,38 @@ import { Mail, Share2 } from "lucide-react";
 import { siteBrand } from "@/lib/landing/brand";
 import { contactPath } from "@/lib/landing/constants";
 
-export const navLinks = [
-  { label: "About", href: "/about" },
-  { label: "Work", href: "#projects" },
-  { label: "Blog", href: "/blog" },
+export type NavChild = {
+  label: string;
+  href: string;
+};
+
+export type NavLink = {
+  label: string;
+  href: string;
+  children?: NavChild[];
+};
+
+export const navLinks: readonly NavLink[] = [
+  {
+    label: "About",
+    href: "/about",
+    children: [{ label: "Our Team", href: "/about#team" }],
+  },
+  { label: "Services", href: "/software-development" },
+  { label: "Solutions", href: "/solutions" },
+  { label: "Projects", href: "#projects" },
+  { label: "Industries", href: "/industries" },
   { label: "Contact", href: contactPath },
-] as const;
+  {
+    label: "Resources",
+    href: "/#",
+    children: [
+      { label: "Blogs", href: "/blog" },
+      { label: "Demos", href: "/demos" },
+      { label: "Case Study", href: "/case-study" },
+    ],
+  },
+];
 
 export const navCtaLabel = "Get a Free Quote";
 

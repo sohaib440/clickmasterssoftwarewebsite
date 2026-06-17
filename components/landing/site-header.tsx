@@ -2,9 +2,18 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 
 import dynamic from "next/dynamic";
+
+type NavLink = {
+  label: string;
+  href: string;
+  children?: {
+    label: string;
+    href: string;
+  }[];
+};
 
 const ServicesNavDropdown = dynamic(
   () =>
@@ -19,7 +28,7 @@ const ServicesNavDropdown = dynamic(
 );
 import { btnPrimary, contactPath, container } from "@/lib/landing/constants";
 import { siteBrand } from "@/lib/landing/brand";
-import { navCtaLabel, navLinks } from "@/lib/landing/data";
+import { footerColumns, navCtaLabel, navLinks } from "@/lib/landing/data";
 import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
@@ -61,17 +70,45 @@ export function SiteHeader() {
               className="hidden min-w-0 items-center justify-center justify-self-center gap-1 lg:flex lg:gap-2"
               aria-label="Main"
             >
-              <ServicesNavDropdown />
+              {navLinks.map((link, linkIndex) =>
+                link.label === "Services" ? (
+                  <ServicesNavDropdown key="services-dropdown" />
+                ) : (
+                  <div key={`${link.href}-${linkIndex}`} className={link.children ? "relative inline-flex group" : ""}>
+                    <Link
+                      href={link.href}
+                      className={cn(
+                        "inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm text-horizon-muted transition-colors whitespace-nowrap",
+                        "hover:bg-horizon-peach/50 hover:text-horizon-navy focus:outline-none focus:ring-2 focus:ring-horizon-sky/50"
+                      )}
+                    >
+                      {link.label}
+                      {link.children ? (
+                        <ChevronDown
+                          className="size-4 transition-transform duration-300 group-hover:rotate-180 group-focus-within:rotate-180"
+                          aria-hidden
+                        />
+                      ) : null}
+                    </Link>
 
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="rounded-lg px-3 py-2 text-sm text-horizon-muted transition-colors hover:bg-horizon-peach/50 hover:text-horizon-navy whitespace-nowrap"
-                >
-                  {link.label}
-                </Link>
-              ))}
+                    {link.children ? (
+                      <div className="pointer-events-none absolute left-0 top-full z-50 mt-1 min-w-[9rem] max-w-[12rem] overflow-hidden rounded-2xl border border-horizon-border bg-white shadow-xl shadow-horizon-navy/10 opacity-0 transition-all duration-200 ease-out translate-y-1 group-hover:pointer-events-auto group-focus-within:pointer-events-auto group-hover:opacity-100 group-focus-within:opacity-100 group-hover:translate-y-0 group-focus-within:translate-y-0">
+                        <div className="flex flex-col p-2">
+                          {link.children.map((child, childIndex) => (
+                            <Link
+                              key={`${child.href}-${childIndex}`}
+                              href={child.href}
+                              className="rounded-xl px-4 py-2 text-sm text-horizon-navy transition-colors hover:bg-horizon-sky/10"
+                            >
+                              {child.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ) : null}
+                  </div>
+                )
+              )}
             </nav>
 
             <div className="flex items-center justify-self-end gap-2 lg:justify-self-end">
@@ -114,25 +151,65 @@ export function SiteHeader() {
                 : "max-h-0 opacity-0 py-0"
             )}
           >
-            <nav className="space-y-2 px-3 sm:px-4">
-              <div className="space-y-2 rounded-3xl border border-horizon-border bg-white/95 p-3 shadow-sm">
-                {navLinks.map((link) => (
+            <nav className="space-y-4 px-3 sm:px-4">
+              <div className="space-y-3 rounded-3xl border border-horizon-border bg-white/95 p-4 shadow-sm">
+                <div className="space-y-1 border-b border-horizon-border/70 pb-4">
+                  <p className="text-xs font-medium uppercase tracking-[0.25em] text-horizon-muted">
+                    Main menu
+                  </p>
+                  {navLinks.map((link, linkIndex) => (
+                    <div key={`${link.href}-${linkIndex}`}>
+                      <Link
+                        href={link.href}
+                        onClick={closeMobileMenu}
+                        className="block w-full rounded-2xl px-3 py-3 text-sm font-medium text-horizon-navy transition-colors hover:bg-horizon-sky/20"
+                      >
+                        {link.label}
+                      </Link>
+                      {link.children ? (
+                        <div className="space-y-2 pl-4 pt-1">
+                          {link.children.map((child, childIndex) => (
+                            <Link
+                              key={`${child.href}-${childIndex}`}
+                              href={child.href}
+                              onClick={closeMobileMenu}
+                              className="block w-full rounded-2xl px-3 py-3 text-sm text-horizon-navy transition-colors hover:bg-horizon-sky/20"
+                            >
+                              {child.label}
+                            </Link>
+                          ))}
+                        </div>
+                      ) : null}
+                    </div>
+                  ))}
                   <Link
-                    key={link.href}
-                    href={link.href}
+                    href={contactPath}
                     onClick={closeMobileMenu}
-                    className="block w-full rounded-2xl px-3 py-3 text-sm font-medium text-horizon-navy transition-colors hover:bg-horizon-sky/20"
+                    className="block w-full rounded-2xl bg-horizon-navy px-3 py-3 text-sm font-semibold text-white transition-colors hover:bg-horizon-navy/90"
                   >
-                    {link.label}
+                    {navCtaLabel}
                   </Link>
+                </div>
+
+                {footerColumns.map((column) => (
+                  <div key={column.title} className="space-y-1">
+                    <p className="text-xs font-medium uppercase tracking-[0.25em] text-horizon-muted">
+                      {column.title}
+                    </p>
+                    <div className="space-y-2">
+                      {column.links.map((link, linkIndex) => (
+                        <Link
+                          key={`${column.title}-${link.href}-${linkIndex}`}
+                          href={link.href}
+                          onClick={closeMobileMenu}
+                          className="block w-full rounded-2xl px-3 py-3 text-sm text-horizon-navy transition-colors hover:bg-horizon-sky/20"
+                        >
+                          {link.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 ))}
-                <Link
-                  href={contactPath}
-                  onClick={closeMobileMenu}
-                  className="block w-full rounded-2xl bg-horizon-navy px-3 py-3 text-sm font-semibold text-white transition-colors hover:bg-horizon-navy/90"
-                >
-                  {navCtaLabel}
-                </Link>
               </div>
             </nav>
           </div>
