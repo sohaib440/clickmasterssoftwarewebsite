@@ -803,8 +803,8 @@ export const footerColumns = [
     title: "Services",
     links: [
       { label: "Software Development", href: "/software-development" },
-      { label: "Web Development", href: "/software-development/web-development" },
-      { label: "Mobile Development", href: "/software-development/mobile-app-development" },
+      { label: "Web Development", href: "/web-development" },
+      { label: "Mobile Development", href: "/mobile-app-development" },
       { label: "UI/UX Design", href: "/design-ux" },
       { label: "E-Commerce Development", href: "/solutions/ecommerce" },
       { label: "AI & Automation", href: "/solutions/ai-agent" },
