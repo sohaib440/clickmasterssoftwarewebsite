@@ -123,8 +123,8 @@ export function MainCategoryPage({ category }: Props) {
           </div>
         </section>
 
-                   <section> <div><TrustedPartnersSection/></div></section>
-                   <section> <div><IndustriesSection/></div></section>
+        <TrustedPartnersSection />
+
         <section className="w-full bg-white" aria-labelledby="offerings-heading">
           <div className={cn(container, sectionPad)}>
             <Reveal>
@@ -174,6 +174,8 @@ export function MainCategoryPage({ category }: Props) {
             </ul>
           </div>
         </section>
+
+        <IndustriesSection />
 
         <section className="w-full bg-horizon-peach/50">
           <div className={cn(container, sectionPad)}>
