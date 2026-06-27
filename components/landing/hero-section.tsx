@@ -1,10 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import { CardImage } from "@/components/landing/card-image";
+import { RatingBadges } from "@/components/landing/rating-badges";
 import { Reveal } from "@/components/landing/reveal";
 import { btnOutline, btnPrimary, card, contactPath, container, overline, sectionPad } from "@/lib/landing/constants";
-import { heroImages, homeHero, ratingBadges, stats } from "@/lib/landing/data";
+import { heroImages, homeHero, stats } from "@/data/landingPage";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
 
@@ -87,29 +87,7 @@ export function HeroSection() {
             </div>
 
             {/* Rating badges: show after the images so they sit at the bottom of the images column */}
-            <div className="mt-6 items-end">
-              <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
-                {ratingBadges.map((badge, index) => (
-                  <div
-                    key={badge.slug}
-                    className={
-                      "flex items-center justify-center rounded-3xl border p-3 shadow-sm " +
-                      (index < 3
-                        ? "border-transparent bg-horizon-navy text-white"
-                        : "border-horizon-border/20 bg-white/90")
-                    }
-                  >
-                    <Image
-                      src={badge.logo}
-                      alt={badge.name}
-                      width={160}
-                      height={48}
-                      className="h-10 w-auto object-contain"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
+            <RatingBadges className="mt-6" />
 
           </Reveal>
         </div>

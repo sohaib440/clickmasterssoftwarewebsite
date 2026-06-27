@@ -5,7 +5,7 @@ import { Reveal } from "@/components/landing/reveal";
 import { SectionHeading } from "@/components/landing/section-heading";
 import { btnOutline, card, container, sectionPad, sectionPadBottom } from "@/lib/landing/constants";
 import { motionStagger } from "@/lib/landing/motion";
-import { projects } from "@/lib/landing/data";
+import { projects } from "@/data/landingPage";
 import { cn } from "@/lib/utils";
 
 export function ProjectsSection() {
@@ -16,7 +16,7 @@ export function ProjectsSection() {
           overlineText="Our work"
           title={
             <>
-              Recent <span className="italic">projects</span>D
+              Recent <span className="italic">projects</span>
             </>
           }
         />

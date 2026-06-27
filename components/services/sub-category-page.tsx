@@ -2,12 +2,14 @@ import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
 import { CardImage } from "@/components/landing/card-image";
+import { RatingBadges } from "@/components/landing/rating-badges";
 import { Reveal } from "@/components/landing/reveal";
 import { SiteFooter } from "@/components/landing/site-footer";
 import { SiteHeader } from "@/components/landing/site-header";
 import {
   btnOutline,
   btnPrimary,
+  btnOnDark,
   card,
   cardSoft,
   contactPath,
@@ -17,6 +19,7 @@ import {
 } from "@/lib/landing/constants";
 import type { SubCategoryPageData } from "@/lib/content/types";
 import { mainCategoryPath, subCategoryPath } from "@/lib/content";
+import { defaultSubCategorySections } from "@/data/subServices";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
 
@@ -25,7 +28,7 @@ type Props = {
 };
 
 /**
- * Reusable sub-category page renders any /{mainSlug}/{subSlug} from categories.data.ts
+ * Reusable sub-category page renders any /{mainSlug}/{subSlug} from data/subServices.tsx
  */
 export function SubCategoryPage({ data }: Props) {
   const { main, sub } = data;
@@ -91,6 +94,7 @@ export function SubCategoryPage({ data }: Props) {
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>
+                <RatingBadges className="mt-6" />
               </Reveal>
             </div>
           </div>
@@ -186,14 +190,10 @@ export function SubCategoryPage({ data }: Props) {
                 Let&apos;s talk about <span className="italic">{sub.label}</span>
               </h2>
               <p className="mx-auto mt-4 max-w-lg text-sm text-white/75 md:text-base">
-                Share your goals for {sub.label.toLowerCase()}—we&apos;ll reply within one business
-                day.
+                {defaultSubCategorySections.cta.description(sub.label)}
               </p>
-              <Link
-                href={contactPath}
-                className="mt-8 inline-flex h-11 items-center justify-center rounded-full bg-white px-8 text-sm font-medium text-horizon-navy transition-transform hover:scale-[1.02] active:scale-[0.98]"
-              >
-                Get in touch
+              <Link href={defaultSubCategorySections.cta.buttonHref} className={cn("mt-8", btnOnDark)}>
+                {defaultSubCategorySections.cta.buttonLabel}
               </Link>
             </Reveal>
           </div>

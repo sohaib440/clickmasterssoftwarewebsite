@@ -28,7 +28,7 @@ const ServicesNavDropdown = dynamic(
 );
 import { btnPrimary, contactPath, container } from "@/lib/landing/constants";
 import { siteBrand } from "@/lib/landing/brand";
-import { footerColumns, navCtaLabel, navLinks } from "@/lib/landing/data";
+import { footerColumns, navCtaLabel, navLinks } from "@/data/landingPage";
 import { cn } from "@/lib/utils";
 
 export function SiteHeader() {

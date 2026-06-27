@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import type { PointerEvent as ReactPointerEvent } from "react";
 import { SectionHeading } from "@/components/landing/section-heading";
-import { techStackIntro, techStackLogos } from "@/lib/landing/data";
+import { techStackIntro, techStackLogos } from "@/data/landingPage";
 import { container, sectionPad } from "@/lib/landing/constants";
 import { cn } from "@/lib/utils";
 

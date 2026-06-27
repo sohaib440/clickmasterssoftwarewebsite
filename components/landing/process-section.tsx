@@ -3,7 +3,7 @@ import { Reveal } from "@/components/landing/reveal";
 import { SectionHeading } from "@/components/landing/section-heading";
 import { container, sectionPad, btnPrimary, contactPath } from "@/lib/landing/constants";
 import { motionStagger } from "@/lib/landing/motion";
-import { processSteps } from "@/lib/landing/data";
+import { processSteps } from "@/data/landingPage";
 import { cn } from "@/lib/utils";
 
 export function ProcessSection() {

@@ -158,7 +158,7 @@ export type ServiceCategory = {
 
 import { getServiceNavCategories } from "@/lib/content";
 
-/** Nav dropdown auto-generated from lib/content/categories.data.ts */
+/** Nav dropdown auto-generated from data/services.tsx via lib/content */
 export const serviceCategories = getServiceNavCategories();
 
 export const processSteps = [

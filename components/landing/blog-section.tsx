@@ -6,7 +6,7 @@ import { Reveal } from "@/components/landing/reveal";
 import { SectionHeading } from "@/components/landing/section-heading";
 import { cardSoft, container, overline, sectionPad } from "@/lib/landing/constants";
 import { motionStagger } from "@/lib/landing/motion";
-import { blogPosts } from "@/lib/landing/data";
+import { blogPosts } from "@/data/landingPage";
 import { blogPostPath } from "@/lib/landing/blog";
 import { cn } from "@/lib/utils";
 

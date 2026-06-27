@@ -8,7 +8,7 @@ import { Reveal } from "@/components/landing/reveal";
 import { container } from "@/lib/landing/constants";
 import { siteBrand } from "@/lib/landing/brand";
 import { motionStagger } from "@/lib/landing/motion";
-import { footerBrand, footerColumns, footerLegal } from "@/lib/landing/data";
+import { footerBrand, footerColumns, footerLegal } from "@/data/landingPage";
 import { cn } from "@/lib/utils";
 
 export function SiteFooter() {

@@ -2,121 +2,13 @@
 
 // using native <img> for public/static images to avoid Next/Image loader issues
 import Link from 'next/link';
-import {
-  ArrowUpRight,
-  ShieldCheck,
-  Globe2,
-  Smartphone,
-  BrainCircuit,
-  Palette,
-  Database,
-  Server,
-  Sparkles,
-} from 'lucide-react';
+import { ArrowUpRight, Sparkles } from 'lucide-react';
 import { SectionHeading } from '@/components/landing/section-heading';
 import { container, sectionPad, btnPrimary } from '@/lib/landing/constants';
+import { serviceRoutes, services, type ServiceCard } from '@/data/services';
 import { cn } from '@/lib/utils';
 
-const serviceRoutes = {
-  'Software Development': '/software-development',
-  'Web Development': '/web-development',
-  'Mobile Development': '/mobile-development',
-  'Artificial Intelligence': '/artificial-intelligence-ai',
-  'UI/UX Systems': '/design-ui-ux',
-  'Cloud & DevOps': '/cloud-and-devops',
-  'Machine Learning': '/machine-learning-ml',
-  'Data Services': '/data-services',
-  'Testing & QA': '/testing-and-qa',
-};
-
-const services = [
-  {
-    title: 'Software Development',
-    description: 'Custom software solutions tailored to your business needs.',
-    image: '/services/Software development.png',
-    Icon: ShieldCheck,
-    AltIcon: Globe2,
-    tag: 'Enterprise',
-    span: 'wide',
-    accent: '#3b82f6',
-  },
-  {
-    title: 'Web Development',
-    description: 'Modern web applications with responsive design and seamless user experience.',
-    image: '/services/Web Development.png',
-    Icon: Globe2,
-    AltIcon: Server,
-    tag: 'Web3 Ready',
-    accent: '#ec4899',
-  },
-  {
-    title: 'Mobile Development',
-    description: 'Build secure and scalable mobile applications for iOS and Android.',
-    image: '/services/Mobile Application Development.png',
-    Icon: Smartphone,
-    AltIcon: ShieldCheck,
-    tag: 'Cross-Platform',
-    accent: '#10b981',
-  },
-  {
-    title: 'Artificial Intelligence',
-    description: 'AI-powered monitoring systems with predictive threat intelligence.',
-    image: '/services/Artificial Intelligence.png',
-    Icon: BrainCircuit,
-    AltIcon: Database,
-    tag: 'Intelligence',
-    span: 'tall',
-    accent: '#8b5cf6',
-  },
-  {
-    title: 'UI/UX Systems',
-    description: 'Elegant digital experiences focused on usability and conversion.',
-    image: '/services/UI-UX.png',
-    Icon: Palette,
-    AltIcon: Globe2,
-    tag: 'Design',
-    accent: '#f59e0b',
-  },
-  {
-    title: 'Cloud & DevOps',
-    description: 'Secure cloud-native infrastructure with scalable DevOps workflows.',
-    image: '/services/CloudOPs and Devops.png',
-    Icon: Database,
-    AltIcon: Server,
-    tag: 'DevSecOps',
-    span: 'wide',
-    accent: '#0ea5e9',
-  },
-  {
-    title: 'Machine Learning',
-    description: 'Scalable infrastructure architecture with maximum uptime and reliability.',
-    image: '/services/Machine Learning.png',
-    Icon: Server,
-    AltIcon: BrainCircuit,
-    tag: 'Reliability',
-    accent: '#14b8a6',
-  },
-  {
-    title: 'Data Services',
-    description: 'Data engineering, warehousing, and analytics solutions.',
-    image: '/services/Data Services.png',
-    Icon: Database,
-    AltIcon: Palette,
-    tag: 'Platform',
-    accent: '#6366f1',
-  },
-  {
-    title: 'Testing & QA',
-    description: 'Scalable infrastructure architecture with maximum uptime and reliability.',
-    image: '/services/Testing-and-QA.png',
-    Icon: Database,
-    AltIcon: Palette,
-    tag: 'Platform',
-    accent: '#42f560',
-  },
-];
-
-function ServiceCard({ service, index }: { service: (typeof services)[number]; index: number }) {
+function ServiceCard({ service, index }: { service: ServiceCard; index: number }) {
   const { accent } = service;
   const spanClass =
     service.span === 'wide'
@@ -125,7 +17,7 @@ function ServiceCard({ service, index }: { service: (typeof services)[number]; i
       ? 'xl:row-span-2'
       : '';
 
-  const route = serviceRoutes[service.title as keyof typeof serviceRoutes];
+  const route = serviceRoutes[service.title];
 
   return (
     <div

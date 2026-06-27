@@ -25,7 +25,7 @@ import {
   contactInfo,
   contactProjectTypes,
   contactTimelineOptions,
-} from "@/lib/landing/data";
+} from "@/data/landingPage";
 import { cn } from "@/lib/utils";
 
 type ContactFormProps = {

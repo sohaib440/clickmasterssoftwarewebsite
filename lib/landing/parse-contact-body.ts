@@ -1,4 +1,4 @@
-import type { ContactFormData } from "@/lib/landing/data";
+import type { ContactFormData } from "@/data/landingPage";
 
 function field(value: unknown): string {
   if (typeof value === "string") return value.trim();

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ContactForm } from "@/components/landing/contact-form";
 import { Reveal } from "@/components/landing/reveal";
 import { contactPath, container, overline, sectionPad } from "@/lib/landing/constants";
-import { contactInfo, homeContact } from "@/lib/landing/data";
+import { contactInfo, homeContact } from "@/data/landingPage";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
 

@@ -1,12 +1,12 @@
 import nodemailer from "nodemailer";
 
 import { siteBrand } from "@/lib/landing/brand";
-import type { ContactFormData } from "@/lib/landing/data";
+import type { ContactFormData } from "@/data/landingPage";
 import {
   contactBudgetRanges,
   contactProjectTypes,
   contactTimelineOptions,
-} from "@/lib/landing/data";
+} from "@/data/landingPage";
 
 function labelFor(
   options: { value: string; label: string }[],

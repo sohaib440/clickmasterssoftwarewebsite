@@ -1,10 +1,9 @@
-import { ChevronDown, MessageCircle } from "lucide-react";
-import Link from "next/link";
+import { ChevronDown } from "lucide-react";
 
 import { Reveal } from "@/components/landing/reveal";
 import { SectionHeading } from "@/components/landing/section-heading";
-import { btnOutline, btnPrimary, card, contactPath, container, overline, sectionPad } from "@/lib/landing/constants";
-import { faqIntro, faqs } from "@/lib/landing/data";
+import { container, sectionPad } from "@/lib/landing/constants";
+import { faqIntro, faqs } from "@/data/landingPage";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
 
@@ -24,7 +23,6 @@ function FaqColumn({ column, startIndex }: { column: "left" | "right"; startInde
                 "transition-[border-color,box-shadow,background-color] duration-300",
                 "open:border-horizon-sky/70 open:bg-white open:shadow-[0_8px_28px_rgba(13,27,42,0.08)]"
               )}
-              open={index === 0}
             >
               <summary
                 className={cn(
@@ -109,40 +107,9 @@ export function FaqSection() {
           className="mb-10 md:mb-12"
         />
 
-        <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
-          <Reveal className="lg:col-span-4 lg:pt-1">
-            <aside
-              className={cn(
-                card,
-                "sticky top-24 border-horizon-border/80 bg-white/90 p-6 backdrop-blur-sm lg:p-7"
-              )}
-            >
-              <span className="flex size-11 items-center justify-center rounded-xl bg-horizon-sky/50 text-horizon-navy ring-1 ring-horizon-sky/50">
-                <MessageCircle className="size-5" strokeWidth={1.5} aria-hidden />
-              </span>
-              <p className={cn(overline, "mt-5")}>Free consultation</p>
-              <h3 className="mt-2 font-heading text-2xl font-medium leading-snug text-horizon-navy">
-                We&apos;re happy to walk you through everything on a call
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-left text-horizon-muted">
-                Every software project is different. Tell us about your goals and we&apos;ll share
-                how our Islamabad team would approach discovery, delivery and launch.
-              </p>
-              <div className="mt-6 flex flex-col gap-2 sm:flex-row lg:flex-col">
-                <Link href={contactPath} className={btnPrimary}>
-                  Get a Free Quote
-                </Link>
-                <Link href={contactPath} className={btnOutline}>
-                  Contact us
-                </Link>
-              </div>
-            </aside>
-          </Reveal>
-
-          <div className="grid gap-6 md:grid-cols-2 lg:col-span-8">
-            <FaqColumn column="left" startIndex={0} />
-            <FaqColumn column="right" startIndex={leftCount} />
-          </div>
+        <div className="grid gap-6 md:grid-cols-2 lg:gap-10">
+          <FaqColumn column="left" startIndex={0} />
+          <FaqColumn column="right" startIndex={leftCount} />
         </div>
       </div>
     </section>

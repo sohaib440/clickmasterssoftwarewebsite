@@ -23,6 +23,10 @@ export const btnPrimary =
 export const btnOutline =
   "inline-flex h-11 items-center justify-center rounded-full border border-horizon-navy/15 bg-white/80 px-4 sm:px-6 text-sm font-medium text-horizon-navy backdrop-blur-sm transition-[transform,background-color,border-color] duration-300 hover:bg-horizon-peach/60 hover:scale-[1.02] active:scale-[0.98]";
 
+/** CTA on dark (navy) sections — sky accent from the Horizon palette */
+export const btnOnDark =
+  "inline-flex h-11 items-center justify-center rounded-full bg-horizon-sky px-8 text-sm font-medium text-horizon-navy ring-1 ring-white/10 transition-[transform,background-color,box-shadow] duration-300 hover:bg-horizon-sky/90 hover:scale-[1.02] hover:shadow-[0_8px_28px_rgba(189,224,254,0.28)] active:scale-[0.98]";
+
 export const inputField =
   "h-12 w-full rounded-full border border-horizon-border bg-white px-5 text-sm text-horizon-navy placeholder:text-horizon-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-horizon-navy/20";
 

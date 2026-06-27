@@ -4,7 +4,7 @@ import { CardImage } from "@/components/landing/card-image";
 import { Reveal } from "@/components/landing/reveal";
 import { SectionHeading } from "@/components/landing/section-heading";
 import { btnOutline, card, cardSoft, container, sectionPad } from "@/lib/landing/constants";
-import { aboutSection } from "@/lib/landing/data";
+import { aboutSection } from "@/data/landingPage";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
 

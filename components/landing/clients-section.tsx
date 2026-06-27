@@ -1,4 +1,4 @@
-import { type Client, clients, trustedPartnersSection } from "@/lib/landing/data";
+import { type Client, clients, trustedPartnersSection } from "@/data/landingPage";
 import { overline } from "@/lib/landing/constants";
 import { cn } from "@/lib/utils";
 

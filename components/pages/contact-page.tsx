@@ -8,7 +8,7 @@ import { PageBreadcrumb } from "@/components/layout/page-breadcrumb";
 import { PageHero } from "@/components/layout/page-hero";
 import { card, container, overline, sectionPad } from "@/lib/landing/constants";
 import type { ContactFormState } from "@/lib/landing/contact-form-state";
-import { contactInfo } from "@/lib/landing/data";
+import { contactInfo } from "@/data/landingPage";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
 

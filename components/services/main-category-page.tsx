@@ -1,13 +1,19 @@
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, Check } from "lucide-react";
-
+import { TestimonialsSection } from "../landing";
+import { IndustriesSection } from "@/components/landing/industries-section";
+import { TrustedPartnersSection } from "@/components/landing/clients-section";
+import { FaqSection } from "@/components/landing/faq-section";
+import { ProjectsSection } from "@/components/landing/projects-section";
 import { CardImage } from "@/components/landing/card-image";
+import { RatingBadges } from "@/components/landing/rating-badges";
 import { Reveal } from "@/components/landing/reveal";
 import { SiteFooter } from "@/components/landing/site-footer";
 import { SiteHeader } from "@/components/landing/site-header";
 import {
   btnOutline,
   btnPrimary,
+  btnOnDark,
   card,
   cardSoft,
   contactPath,
@@ -18,57 +24,42 @@ import {
 import { CleanCategoryUrl } from "@/components/services/clean-category-url";
 import type { MainCategoryContent } from "@/lib/content/types";
 import { getAllMainCategories, mainCategoryPath, subCategoryPath } from "@/lib/content";
+import { defaultCategorySections } from "@/data/services";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
-
-const defaultSections = {
-  offerings: {
-    title: "What we deliver", // use plain text; add italic in sections.offerings.title override if needed
-    subtitle: (label: string) =>
-      `Focused capabilities within ${label.toLowerCase()}—each scoped to your timeline and team.`,
-  },
-  highlights: { title: "Why teams choose us" },
-  approach: { title: "Our approach" },
-  related: { title: "Explore more capabilities" },
-  cta: {
-    title: "Ready to build with Software Development Company?",
-    description: (label: string) =>
-      `Tell us about your ${label.toLowerCase()} needs—we'll respond within one business day.`,
-    buttonLabel: "Get in touch",
-    buttonHref: contactPath,
-  },
-};
 
 type Props = {
   category: MainCategoryContent;
 };
 
 /**
- * Reusable main category page renders any entry from lib/content/categories.data.ts
+ * Reusable main category page renders any entry from data/services.tsx
  */
 export function MainCategoryPage({ category }: Props) {
   const siblings = getAllMainCategories().filter((c) => c.slug !== category.slug);
   const sections = {
     offerings: {
-      title: category.sections?.offerings?.title ?? defaultSections.offerings.title,
+      title: category.sections?.offerings?.title ?? defaultCategorySections.offerings.title,
       subtitle:
         category.sections?.offerings?.subtitle ??
-        defaultSections.offerings.subtitle(category.label),
+        defaultCategorySections.offerings.subtitle(category.label),
     },
     highlights: {
-      title: category.sections?.highlights?.title ?? defaultSections.highlights.title,
+      title: category.sections?.highlights?.title ?? defaultCategorySections.highlights.title,
     },
     approach: {
-      title: category.sections?.approach?.title ?? defaultSections.approach.title,
+      title: category.sections?.approach?.title ?? defaultCategorySections.approach.title,
     },
     related: {
-      title: category.sections?.related?.title ?? defaultSections.related.title,
+      title: category.sections?.related?.title ?? defaultCategorySections.related.title,
     },
     cta: {
-      title: category.sections?.cta?.title ?? defaultSections.cta.title,
-      description: category.sections?.cta?.description ?? defaultSections.cta.description(category.label),
-      buttonLabel: category.sections?.cta?.buttonLabel ?? defaultSections.cta.buttonLabel,
-      buttonHref: category.sections?.cta?.buttonHref ?? defaultSections.cta.buttonHref,
+      title: category.sections?.cta?.title ?? defaultCategorySections.cta.title,
+      description:
+        category.sections?.cta?.description ??
+        defaultCategorySections.cta.description(category.label),
+      buttonLabel: category.sections?.cta?.buttonLabel ?? defaultCategorySections.cta.buttonLabel,
+      buttonHref: category.sections?.cta?.buttonHref ?? defaultCategorySections.cta.buttonHref,
     },
   };
 
@@ -117,7 +108,6 @@ export function MainCategoryPage({ category }: Props) {
                   </div>
                 </Reveal>
               </div>
-
               <Reveal immediate delay={motionStagger * 2} direction="right">
                 <div className={cn(card, "overflow-hidden p-0")}>
                   <CardImage
@@ -125,13 +115,16 @@ export function MainCategoryPage({ category }: Props) {
                     className="aspect-[4/3] w-full lg:aspect-[5/4]"
                     priority
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
+                    />
                 </div>
+                <RatingBadges className="mt-6" />
               </Reveal>
             </div>
           </div>
         </section>
 
+                   <section> <div><TrustedPartnersSection/></div></section>
+                   <section> <div><IndustriesSection/></div></section>
         <section className="w-full bg-white" aria-labelledby="offerings-heading">
           <div className={cn(container, sectionPad)}>
             <Reveal>
@@ -234,6 +227,8 @@ export function MainCategoryPage({ category }: Props) {
           </div>
         </section>
 
+        <ProjectsSection />
+
         {siblings.length > 0 ? (
           <section className="w-full bg-horizon-cream">
             <div className={cn(container, sectionPad)}>
@@ -274,6 +269,9 @@ export function MainCategoryPage({ category }: Props) {
           </section>
         ) : null}
 
+<div><TestimonialsSection/></div>
+        <FaqSection />
+
         <section className="w-full bg-horizon-navy text-white">
           <div className={cn(container, sectionPad, "text-center")}>
             <Reveal>
@@ -289,17 +287,13 @@ export function MainCategoryPage({ category }: Props) {
               <p className="mx-auto mt-4 max-w-lg text-sm text-white/75 md:text-base">
                 {sections.cta.description}
               </p>
-              <Link
-                href={sections.cta.buttonHref}
-                className="mt-8 inline-flex h-11 items-center justify-center rounded-full bg-white px-8 text-sm font-medium text-horizon-navy transition-transform hover:scale-[1.02] active:scale-[0.98]"
-              >
+              <Link href={sections.cta.buttonHref} className={cn("mt-8", btnOnDark)}>
                 {sections.cta.buttonLabel}
               </Link>
             </Reveal>
           </div>
         </section>
       </main>
-
       <SiteFooter />
     </div>
   );
