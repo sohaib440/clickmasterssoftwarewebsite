@@ -4,9 +4,8 @@
 export const contactPath = "/contact";
 /** Contact form POST target (works without client JS) */
 export const contactApiPath = "/api/contact";
-/** 200px inset from viewport edges on lg+ */
 export const container =
-  "mx-auto w-full min-w-0 px-4 sm:px-6 lg:px-8 xl:px-12 max-w-[1400px]";
+  "mx-auto w-full min-w-0 px-4 sm:px-6 lg:px-8 xl:px-12 max-w-[1830px]";
 
 export const sectionPad = "py-8 md:py-8 lg:py-10";
 export const sectionPadBottom = "pb-10 md:pb-14";
