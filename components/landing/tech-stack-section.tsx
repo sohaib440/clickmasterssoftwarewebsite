@@ -261,12 +261,12 @@ export function TechStackSection() {
           title="Our tech universe"
           description={techStackIntro}
           align="left"
-          className="mb-12"
+          className=""
         />
 
         <div
           ref={containerRef}
-          className="relative w-full select-none h-[28rem] sm:h-[36rem] lg:h-[44rem]"
+          className="relative w-full select-none h-[20rem] sm:h-[20rem] lg:h-[20rem]"
           style={{ cursor: dragId !== null ? 'grabbing' : 'default', overflow: 'visible', touchAction: 'none', userSelect: 'none' }}
         >
 
