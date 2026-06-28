@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CardImage } from "@/components/landing/card-image";
 import { Reveal } from "@/components/landing/reveal";
 import { SectionHeading } from "@/components/landing/section-heading";
-import { btnOutline, card, container, sectionPad, sectionPadBottom } from "@/lib/landing/constants";
+import { btnOutlineDark, card, container, sectionPad, sectionPadBottom } from "@/lib/landing/constants";
 import { motionStagger } from "@/lib/landing/motion";
 import { projects } from "@/data/landingPage";
 import { cn } from "@/lib/utils";
@@ -19,6 +19,7 @@ export function ProjectsSection() {
               Recent <span className="italic">projects</span>
             </>
           }
+          dark
         />
       </div>
 
@@ -56,7 +57,7 @@ export function ProjectsSection() {
 
       <div className={cn(container, "pb-10 md:pb-14")}>
         <Reveal>
-          <Link href="#projects" className={btnOutline}>
+          <Link href="#projects" className={btnOutlineDark}>
             View all projects →
           </Link>
         </Reveal>

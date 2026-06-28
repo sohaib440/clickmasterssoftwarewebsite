@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CardImage } from "@/components/landing/card-image";
 import { RatingBadges } from "@/components/landing/rating-badges";
 import { Reveal } from "@/components/landing/reveal";
-import { btnOutline, btnPrimary, card, contactPath, container, overline, sectionPad } from "@/lib/landing/constants";
+import { btnOutlineDark, btnPrimary, card, contactPath, container, overline, sectionPad } from "@/lib/landing/constants";
 import { heroImages, homeHero, stats } from "@/data/landingPage";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
@@ -16,8 +16,7 @@ export function HeroSection() {
       className="relative w-full bg-black text-white"
       aria-label="Introduction"
     >
-      <div className="absolute inset-x-0 top-0 h-72 bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.18),transparent_35%),radial-gradient(circle_at_top_right,rgba(255,255,255,0.08),transparent_40%)] pointer-events-none" />
-      <div className={cn(container, sectionPad, "relative z-10")}> 
+      <div className={cn(container, sectionPad, "relative z-10")}>
         <div className="grid items-center gap-6 lg:grid-cols-2 lg:gap-8">
           <div className="min-w-0">
             <Reveal immediate delay={0}>
@@ -43,7 +42,7 @@ export function HeroSection() {
                   <Link href={contactPath} className={btnPrimary}>
                     {homeHero.primaryCta}
                   </Link>
-                  <Link href={homeHero.secondaryHref} className={btnOutline}>
+                  <Link href={homeHero.secondaryHref} className={btnOutlineDark}>
                     {homeHero.secondaryCta} →
                   </Link>
                 </div>
@@ -100,12 +99,12 @@ export function HeroSection() {
               immediate
               delay={i * motionStagger}
               direction="up"
-              className={cn(i > 0 && "sm:border-l sm:border-horizon-navy/10 sm:pl-4")}
+              className={cn(i > 0 && "sm:border-l sm:border-white/15 sm:pl-4")}
             >
-              <dt className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
+              <dt className="font-heading text-3xl font-normal text-white md:text-4xl">
                 {stat.value}
               </dt>
-              <dd className="mt-2 text-sm text-horizon-muted">{stat.label}</dd>
+              <dd className="mt-2 text-sm text-white/70">{stat.label}</dd>
             </Reveal>
           ))}
         </dl>

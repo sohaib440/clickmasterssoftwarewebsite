@@ -103,13 +103,13 @@
 }
 
 @layer utilities {
-  .bg-black :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label, a, button) {
+  .bg-black :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label) {
     color: inherit;
   }
 
-  .bg-white :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label, a, button),
-  .bg-horizon-cream :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label, a, button) {
-    color: var(--horizon-navy) !important;
+  .bg-white :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label),
+  .bg-horizon-cream :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label) {
+    color: var(--horizon-navy);
   }
 }
 

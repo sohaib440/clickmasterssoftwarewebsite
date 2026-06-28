@@ -36,14 +36,14 @@ export function ContactSection() {
           <p className="mt-3 text-xs sm:text-sm text-left text-white/60">
             <Link
               href={contactPath}
-              className="font-medium text-horizon-navy underline-offset-4 hover:underline"
+              className="font-medium text-white underline-offset-4 hover:underline"
             >
               Open full contact form
             </Link>{" "}
             for budget, timeline, and project type—or email{" "}
             <Link
               href={`mailto:${contactInfo.email}`}
-              className="font-medium text-horizon-navy underline-offset-4 hover:underline break-all"
+              className="font-medium text-white underline-offset-4 hover:underline break-all"
             >
               {contactInfo.email}
             </Link>
