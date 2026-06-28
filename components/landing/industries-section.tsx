@@ -217,7 +217,7 @@ export function IndustriesSection() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <section ref={ref} className="w-full bg-[#f5fbfb]">
+    <section ref={ref} className="w-full bg-white text-black">
       <div className={`${container} ${sectionPad}`}>
         <div className="mb-12">
             <SectionHeading

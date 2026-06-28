@@ -53,7 +53,7 @@ function DeferredSection({ children }: { children: React.ReactNode }) {
 
 export default function Home() {
   return (
-    <div className="flex min-h-full w-full flex-col bg-horizon-cream text-foreground">
+    <div className="flex min-h-full w-full flex-col bg-black text-white">
       <HomeJsonLd />
       <SiteHeader />
       <HeroSection />

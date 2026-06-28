@@ -11,20 +11,20 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative w-full bg-gradient-to-b from-horizon-cream via-horizon-peach/70 to-horizon-sky"
+      className="relative w-full bg-black text-white"
     >
       <div className={cn(container, sectionPad)}>
         <Reveal delay={0}>
           <p className={overline}>{homeContact.overline}</p>
         </Reveal>
         <Reveal delay={motionStagger}>
-          <h2 className="mt-4 max-w-3xl font-heading text-3xl font-normal leading-[1.12] text-horizon-navy sm:text-4xl md:text-5xl lg:text-6xl">
+          <h2 className="mt-4 max-w-3xl font-heading text-3xl font-normal leading-[1.12] text-white sm:text-4xl md:text-5xl lg:text-6xl">
             {homeContact.titleBefore}{" "}
             <span className="italic">{homeContact.titleEmphasis}</span>
           </h2>
         </Reveal>
         <Reveal delay={motionStagger * 2}>
-          <p className="mt-4 max-w-lg text-sm sm:text-base text-left text-horizon-muted">{homeContact.subtext}</p>
+          <p className="mt-4 max-w-lg text-sm sm:text-base text-left text-white/70">{homeContact.subtext}</p>
         </Reveal>
 
         <Reveal delay={motionStagger * 3}>
@@ -32,8 +32,8 @@ export function ContactSection() {
         </Reveal>
 
         <Reveal delay={motionStagger * 4}>
-          <p className="mt-4 text-xs sm:text-sm text-left text-horizon-muted">{homeContact.reassurance}</p>
-          <p className="mt-3 text-xs sm:text-sm text-left text-horizon-muted">
+          <p className="mt-4 text-xs sm:text-sm text-left text-white/60">{homeContact.reassurance}</p>
+          <p className="mt-3 text-xs sm:text-sm text-left text-white/60">
             <Link
               href={contactPath}
               className="font-medium text-horizon-navy underline-offset-4 hover:underline"

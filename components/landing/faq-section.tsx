@@ -85,7 +85,7 @@ export function FaqSection() {
   return (
     <section
       id="faqs"
-      className="relative w-full overflow-hidden bg-gradient-to-b from-white via-horizon-cream to-horizon-peach/30"
+      className="relative w-full overflow-hidden bg-white text-horizon-navy"
     >
       <div
         className="pointer-events-none absolute inset-0 overflow-hidden"

@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="w-full bg-horizon-cream">
+    <section id="projects" className="w-full bg-black text-white">
       <div className={cn(container, sectionPad, "pb-6")}>
         <SectionHeading
           overlineText="Our work"
@@ -40,11 +40,11 @@ export function ProjectsSection() {
                   />
                 </div>
                 <div className="p-4 md:p-5">
-                  <h3 className="font-heading text-2xl font-medium text-horizon-navy md:text-3xl">
+                  <h3 className="font-heading text-2xl font-medium text-white md:text-3xl">
                     {project.title}
                   </h3>
-                  <p className="mt-1 text-sm font-medium text-horizon-muted">{project.category}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-left text-horizon-muted">
+                  <p className="mt-1 text-sm font-medium text-white/70">{project.category}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-left text-white/70">
                     {project.description}
                   </p>
                 </div>

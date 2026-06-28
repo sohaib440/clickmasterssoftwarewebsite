@@ -57,13 +57,13 @@
 }
 
 :root {
-  /* Horizon palette cream · peach · sky · navy */
-  --horizon-cream: #fff9e1;
-  --horizon-peach: #ffe5d9;
-  --horizon-sky: #bde0fe;
-  --horizon-navy: #0d1b2a;
-  --horizon-border: #e8dcc8;
-  --horizon-muted: #415a77;
+  /* Black & white theme */
+  --horizon-cream: #ffffff;
+  --horizon-peach: #f5f5f5;
+  --horizon-sky: #e0e0e0;
+  --horizon-navy: #111111;
+  --horizon-border: #d4d4d4;
+  --horizon-muted: #6b6b6b;
 
   /* Semantic tokens → horizon (use bg-primary, bg-muted, etc. in components) */
   --background: var(--horizon-cream);
@@ -72,22 +72,22 @@
   --card-foreground: var(--horizon-navy);
   --popover: #ffffff;
   --popover-foreground: var(--horizon-navy);
-  --primary: var(--horizon-navy);
-  --primary-foreground: #ffffff;
+  --primary: #d4af37;
+  --primary-foreground: #111111;
   --secondary: var(--horizon-peach);
   --secondary-foreground: var(--horizon-navy);
-  --muted: var(--horizon-peach);
+  --muted: var(--horizon-sky);
   --muted-foreground: var(--horizon-muted);
-  --accent: var(--horizon-sky);
-  --accent-foreground: var(--horizon-navy);
+  --accent: #d4af37;
+  --accent-foreground: #111111;
   --section-muted: var(--horizon-peach);
   --section-accent: var(--horizon-sky);
   --destructive: #c1121f;
   --border: var(--horizon-border);
-  --input: var(--horizon-border);
+  --input: #ededed;
   --ring: var(--horizon-navy);
-  --chart-1: var(--horizon-sky);
-  --chart-2: var(--horizon-peach);
+  --chart-1: #d4af37;
+  --chart-2: var(--horizon-sky);
   --chart-3: var(--horizon-navy);
   --chart-4: var(--horizon-muted);
   --chart-5: var(--horizon-cream);
@@ -100,6 +100,17 @@
   --sidebar-accent-foreground: var(--horizon-navy);
   --sidebar-border: var(--horizon-border);
   --sidebar-ring: var(--horizon-navy);
+}
+
+@layer utilities {
+  .bg-black :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label, a, button) {
+    color: inherit;
+  }
+
+  .bg-white :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label, a, button),
+  .bg-horizon-cream :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label, a, button) {
+    color: var(--horizon-navy) !important;
+  }
 }
 
 @layer base {
@@ -122,8 +133,8 @@
   }
 
   ::selection {
-    background: color-mix(in srgb, var(--horizon-sky) 65%, transparent);
-    color: var(--horizon-navy);
+    background: color-mix(in srgb, var(--primary) 35%, transparent);
+    color: var(--foreground);
   }
 }
 

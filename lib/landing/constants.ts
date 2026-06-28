@@ -16,15 +16,18 @@ export const card =
 export const cardSoft =
   "motion-card overflow-hidden rounded-2xl border border-horizon-border bg-white text-horizon-navy shadow-none";
 
+export const cardDark =
+  "motion-card overflow-hidden rounded-2xl border border-white/10 bg-zinc-950 text-white shadow-none";
+
 export const btnPrimary =
-  "inline-flex h-11 items-center justify-center rounded-full bg-horizon-navy px-4 sm:px-6 text-sm font-medium text-white transition-[transform,background-color] duration-300 hover:bg-horizon-navy/90 hover:scale-[1.02] active:scale-[0.98]";
+  "inline-flex h-11 items-center justify-center rounded-full bg-primary px-4 sm:px-6 text-sm font-medium text-primary-foreground shadow-sm transition-[transform,background-color] duration-300 hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_10%)] hover:scale-[1.02] active:scale-[0.98]";
 
 export const btnOutline =
-  "inline-flex h-11 items-center justify-center rounded-full border border-horizon-navy/15 bg-white/80 px-4 sm:px-6 text-sm font-medium text-horizon-navy backdrop-blur-sm transition-[transform,background-color,border-color] duration-300 hover:bg-horizon-peach/60 hover:scale-[1.02] active:scale-[0.98]";
+  "inline-flex h-11 items-center justify-center rounded-full border border-horizon-navy/15 bg-white/90 px-4 sm:px-6 text-sm font-medium text-horizon-navy backdrop-blur-sm transition-[transform,background-color,border-color,color] duration-300 hover:bg-primary/10 hover:text-foreground hover:scale-[1.02] active:scale-[0.98]";
 
-/** CTA on dark (navy) sections — sky accent from the Horizon palette */
+/** CTA on dark (navy) sections — gold accent from the new palette */
 export const btnOnDark =
-  "inline-flex h-11 items-center justify-center rounded-full bg-horizon-sky px-8 text-sm font-medium text-horizon-navy ring-1 ring-white/10 transition-[transform,background-color,box-shadow] duration-300 hover:bg-horizon-sky/90 hover:scale-[1.02] hover:shadow-[0_8px_28px_rgba(189,224,254,0.28)] active:scale-[0.98]";
+  "inline-flex h-11 items-center justify-center rounded-full bg-primary px-8 text-sm font-medium text-primary-foreground ring-1 ring-white/15 transition-[transform,background-color,box-shadow] duration-300 hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_10%)] hover:scale-[1.02] hover:shadow-[0_8px_28px_rgba(212,175,55,0.22)] active:scale-[0.98]";
 
 export const inputField =
   "h-12 w-full rounded-full border border-horizon-border bg-white px-5 text-sm text-horizon-navy placeholder:text-horizon-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-horizon-navy/20";

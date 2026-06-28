@@ -27,7 +27,7 @@ function ServiceCard({ service, index }: { service: ServiceCard; index: number }
     >
       <Link href={route || '/services'}>
         <div
-          className={`group relative flex flex-col justify-between cursor-pointer ${service.span === 'tall' ? 'h-full min-h-[28rem] md:min-h-[32rem]' : 'min-h-[22rem] md:min-h-[26rem] xl:h-full'} rounded-[40px] border bg-white/40 backdrop-blur-2xl p-6 sm:p-8 overflow-hidden transition-all duration-500 hover:bg-white/60`}
+          className={`group relative flex flex-col justify-between cursor-pointer ${service.span === 'tall' ? 'h-full min-h-[28rem] md:min-h-[32rem]' : 'min-h-[22rem] md:min-h-[26rem] xl:h-full'} rounded-[40px] border bg-white/10 backdrop-blur-2xl p-6 sm:p-8 overflow-hidden transition-all duration-500 hover:bg-white/15`}
           style={{ borderColor: `${accent}77` }}
         >
           <div
@@ -70,10 +70,10 @@ function ServiceCard({ service, index }: { service: ServiceCard; index: number }
             </div>
 
             <div className='mb-6'>
-              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2 tracking-tight">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-2 tracking-tight">
                 {service.title}
               </h3>
-              <p className="text-sm md:text-base text-muted-foreground/90 leading-relaxed line-clamp-2">
+              <p className="text-sm md:text-base text-white/70 leading-relaxed line-clamp-2">
                 {service.description}
               </p>
 
@@ -98,11 +98,11 @@ function ServiceCard({ service, index }: { service: ServiceCard; index: number }
 
 export function ServicesSection() {
   return (
-    <section id="services" className="relative  bg-background overflow-hidden">
+    <section id="services" className="relative bg-black text-white overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-500/15 blur-[120px]" />
-        <div className="absolute top-[20%] right-[-10%] w-[40%] h-[40%] rounded-full bg-purple-500/15 blur-[120px]" />
-        <div className="absolute bottom-[-10%] left-[20%] w-[40%] h-[40%] rounded-full bg-emerald-500/15 blur-[120px]" />
+        <div className="absolute top-[-15%] left-[-10%] w-[40%] h-[40%] rounded-full bg-[rgba(212,175,55,0.18)] blur-[120px]" />
+        <div className="absolute top-[10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-[rgba(255,255,255,0.08)] blur-[120px]" />
+        <div className="absolute bottom-[-10%] left-[20%] w-[40%] h-[40%] rounded-full bg-[rgba(212,175,55,0.12)] blur-[120px]" />
       </div>
 
       <div className={cn(container, sectionPad, 'relative z-10')}>
@@ -116,6 +116,7 @@ export function ServicesSection() {
             }
             description="We blend cutting-edge technology with world-class design to build products that define industries."
             align="left"
+            dark
           />
         </div>
 

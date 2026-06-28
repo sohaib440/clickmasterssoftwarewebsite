@@ -13,10 +13,11 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative w-full bg-gradient-to-b from-horizon-cream via-horizon-cream to-horizon-sky"
+      className="relative w-full bg-black text-white"
       aria-label="Introduction"
     >
-      <div className={cn(container, sectionPad)}>
+      <div className="absolute inset-x-0 top-0 h-72 bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.18),transparent_35%),radial-gradient(circle_at_top_right,rgba(255,255,255,0.08),transparent_40%)] pointer-events-none" />
+      <div className={cn(container, sectionPad, "relative z-10")}> 
         <div className="grid items-center gap-6 lg:grid-cols-2 lg:gap-8">
           <div className="min-w-0">
             <Reveal immediate delay={0}>
@@ -24,14 +25,14 @@ export function HeroSection() {
             </Reveal>
 
             <Reveal immediate delay={motionStagger}>
-              <h1 className="mt-3 max-w-3xl font-heading text-4xl font-normal leading-[1.12] tracking-tight text-horizon-navy sm:text-5xl lg:text-6xl">
+              <h1 className="mt-3 max-w-3xl font-heading text-4xl font-normal leading-[1.12] tracking-tight text-white sm:text-5xl lg:text-6xl">
                 {homeHero.headlineBefore}{" "}
                 <span className="italic">{homeHero.headlineEmphasis}</span>
               </h1>
             </Reveal>
 
             <Reveal immediate delay={motionStagger * 2}>
-              <p className="mt-4 max-w-xl text-base leading-relaxed text-left text-horizon-muted md:text-lg">
+              <p className="mt-4 max-w-xl text-base leading-relaxed text-left text-white/70 md:text-lg">
                 {homeHero.subtext}
               </p>
             </Reveal>

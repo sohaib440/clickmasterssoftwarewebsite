@@ -252,16 +252,16 @@ export function TechStackSection() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden" style={{ background: CREAM }}>
-            <div className="w-full" style={{ height: 4, background: `linear-gradient(90deg, ${NAVY} 0%, ${YELLOW} 100%)` }} />
+    <section className="relative w-full overflow-hidden bg-black text-white">
+      <div className="w-full" style={{ height: 4, background: `linear-gradient(90deg, ${NAVY} 0%, ${YELLOW} 100%)` }} />
 
-      <div className={cn(container, sectionPad, "relative z-10")}> 
+      <div className={cn(container, sectionPad, "relative z-10")}>
         <SectionHeading
           overlineText="Tech stack"
           title="Our tech universe"
           description={techStackIntro}
           align="left"
-          className=""
+          dark
         />
 
         <div
