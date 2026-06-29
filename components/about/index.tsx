@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-import { AboutSection } from "@/components/home/about-section";
-import { Reveal } from "@/components/shared/reveal";
-import { TeamSection } from "@/components/home/team-section";
-import { MarketingShell } from "@/components/shared/layout/marketing-shell";
-import { PageBreadcrumb } from "@/components/shared/layout/page-breadcrumb";
+import { AboutSection } from "@/components/landing/about-section";
+import { Reveal } from "@/components/landing/reveal";
+import { TeamSection } from "@/components/landing/team-section";
+import { MarketingShell } from "@/components/layout/marketing-shell";
+import { PageBreadcrumb } from "@/components/layout/page-breadcrumb";
 import { btnPrimary, contactPath, container, sectionPad } from "@/lib/landing/constants";
 import { stats } from "@/data/landingPage";
 import { motionStagger } from "@/lib/landing/motion";
