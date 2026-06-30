@@ -1,11 +1,6 @@
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-
-import { CardImage } from "@/components/landing/card-image";
-import { Reveal } from "@/components/landing/reveal";
+import { BlogFlipCard } from "@/components/landing/blog-flip-card";
 import { SectionHeading } from "@/components/landing/section-heading";
-import { cardSoft, container, overline, sectionPad } from "@/lib/landing/constants";
-import { motionStagger } from "@/lib/landing/motion";
+import { container, sectionPad } from "@/lib/landing/constants";
 import { blogPosts } from "@/data/landingPage";
 import { blogPostPath } from "@/lib/landing/blog";
 import { cn } from "@/lib/utils";
@@ -14,60 +9,50 @@ type BlogSectionProps = {
   showHeading?: boolean;
 };
 
+const blogSectionDescription =
+  "Practical notes on software delivery, discovery, and building products that scale — written by the team behind your projects.";
+
+function getFrontTitle(category: string) {
+  const short = category.split(" ").slice(0, 2).join(" ");
+  return short.length > 22 ? category.split(" ")[0] : short;
+}
+
 export function BlogSection({ showHeading = true }: BlogSectionProps) {
-  const featured = blogPosts.slice(0, 2);
+  const featured = blogPosts.slice(0, 3);
 
   return (
-    <section id="blog" className="w-full bg-horizon-sky">
+    <section id="blog" className="w-full bg-black text-white">
       <div className={cn(container, sectionPad, !showHeading && "pt-0 md:pt-0")}>
         {showHeading ? (
           <SectionHeading
+            dark
             overlineText="From the blog"
             title={
               <>
                 Insights from <span className="italic">our team</span>
               </>
             }
+            description={blogSectionDescription}
             className="mb-8 md:mb-10"
           />
         ) : null}
 
-        <ul className="grid gap-4 md:grid-cols-2">
-          {featured.map((post, i) => (
-            <li key={post.slug}>
-              <Reveal delay={i * motionStagger} className="h-full">
-                <Link
-                  href={blogPostPath(post.slug)}
-                  className={cn(
-                    cardSoft,
-                    "group flex h-full flex-col overflow-hidden p-0 transition-colors hover:border-horizon-peach hover:bg-white"
-                  )}
-                >
-                  <div className="aspect-[16/10] w-full overflow-hidden">
-                    <CardImage
-                      {...post.image}
-                      className="aspect-[16/10] transition-transform duration-500 group-hover:scale-[1.03]"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                  </div>
-                  <div className="flex flex-1 flex-col p-4 md:p-5">
-                    <p className={overline}>{post.category}</p>
-                    <h3 className="mt-2 font-heading text-xl font-medium leading-snug text-horizon-navy group-hover:underline md:text-2xl">
-                      {post.title}
-                    </h3>
-                    <p className="mt-2 flex-1 text-sm leading-relaxed text-left text-horizon-muted">
-                      {post.excerpt}
-                    </p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-horizon-navy">
-                      Read article →
-                      <ArrowUpRight className="size-4 opacity-0 transition-opacity group-hover:opacity-100" />
-                    </span>
-                  </div>
-                </Link>
-              </Reveal>
-            </li>
+        <div className="grid gap-5 sm:gap-6 md:grid-cols-2 xl:grid-cols-3 xl:gap-7">
+          {featured.map((post, index) => (
+            <BlogFlipCard
+              key={post.slug}
+              href={blogPostPath(post.slug)}
+              image={post.image}
+              index={index}
+              frontTitle={getFrontTitle(post.category)}
+              category={post.category}
+              title={post.title}
+              excerpt={post.excerpt}
+              date={post.date}
+              readTime={post.readTime}
+            />
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );
