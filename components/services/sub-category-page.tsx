@@ -7,10 +7,10 @@ import { Reveal } from "@/components/landing/reveal";
 import { SiteFooter } from "@/components/landing/site-footer";
 import { SiteHeader } from "@/components/landing/site-header";
 import {
-  btnOutline,
+  btnOutlineDark,
   btnPrimary,
   btnOnDark,
-  card,
+  cardDark,
   cardSoft,
   contactPath,
   container,
@@ -38,38 +38,38 @@ export function SubCategoryPage({ data }: Props) {
   const siblings = main.subCategories.filter((s) => s.slug !== sub.slug);
 
   return (
-    <div className="flex min-h-full w-full flex-col bg-horizon-cream text-foreground">
+    <div className="flex min-h-full w-full flex-col bg-black text-foreground">
       <SiteHeader />
 
       <main className="flex-1">
-        <section className="relative w-full overflow-hidden bg-gradient-to-b from-horizon-cream via-horizon-cream to-horizon-sky">
+        <section className="relative w-full overflow-hidden bg-black text-white">
           <div className={cn(container, sectionPad)}>
             <Reveal immediate>
-              <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-horizon-muted">
-                <Link href="/" className="hover:text-horizon-navy">
+              <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-white/60">
+                <Link href="/" className="hover:text-white">
                   Home
                 </Link>
                 <span aria-hidden>/</span>
-                <Link href={mainCategoryPath(main.slug)} className="hover:text-horizon-navy">
+                <Link href={mainCategoryPath(main.slug)} className="hover:text-white">
                   {main.label}
                 </Link>
                 <span aria-hidden>/</span>
-                <span className="text-horizon-navy">{sub.label}</span>
+                <span className="text-white">{sub.label}</span>
               </nav>
             </Reveal>
 
             <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10">
               <div className="min-w-0">
                 <Reveal immediate delay={motionStagger}>
-                  <p className={overline}>{main.label}</p>
+                  <p className={cn(overline, "text-white/60")}>{main.label}</p>
                 </Reveal>
                 <Reveal immediate delay={motionStagger * 2}>
-                  <h1 className="mt-4 font-heading text-4xl font-normal leading-[1.1] tracking-tight text-horizon-navy sm:text-5xl lg:text-[3.25rem]">
+                  <h1 className="mt-4 font-heading text-4xl font-normal leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
                     {sub.label}
                   </h1>
                 </Reveal>
                 <Reveal immediate delay={motionStagger * 3}>
-                  <p className="mt-5 max-w-xl text-base leading-relaxed text-horizon-muted md:text-lg">
+                  <p className="mt-5 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
                     {tagline}
                   </p>
                 </Reveal>
@@ -78,7 +78,7 @@ export function SubCategoryPage({ data }: Props) {
                     <Link href={contactPath} className={btnPrimary}>
                       Start a project
                     </Link>
-                    <Link href={contactPath} className={btnOutline}>
+                    <Link href={contactPath} className={btnOutlineDark}>
                       Contact us
                     </Link>
                   </div>
@@ -86,7 +86,7 @@ export function SubCategoryPage({ data }: Props) {
               </div>
 
               <Reveal immediate delay={motionStagger * 2} direction="right">
-                <div className={cn(card, "overflow-hidden p-0")}>
+                <div className={cn(cardDark, "overflow-hidden p-0")}>
                   <CardImage
                     {...heroImage}
                     className="aspect-[4/3] w-full lg:aspect-[5/4]"
@@ -126,21 +126,21 @@ export function SubCategoryPage({ data }: Props) {
           </section>
         )}
 
-        <section className="w-full bg-horizon-peach/50">
+        <section className="w-full bg-black text-white">
           <div className={cn(container, sectionPad)}>
             <Reveal>
-              <h2 className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
+              <h2 className="font-heading text-3xl font-normal text-white md:text-4xl">
                 Why <span className="italic">{sub.label}</span> with Software Development Company
               </h2>
             </Reveal>
             <ul className="mt-10 grid gap-4 md:grid-cols-3">
               {highlights.map((item, i) => (
                 <li key={item.title}>
-                  <Reveal delay={i * motionStagger} className={cn(card, "h-full p-6")}>
-                    <h3 className="font-heading text-lg font-medium text-horizon-navy">
+                  <Reveal delay={i * motionStagger} className={cn(cardDark, "h-full p-6")}>
+                    <h3 className="font-heading text-lg font-medium text-white">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-horizon-muted">
+                    <p className="mt-2 text-sm leading-relaxed text-white/70">
                       {item.description}
                     </p>
                   </Reveal>

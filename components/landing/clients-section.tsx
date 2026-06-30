@@ -19,16 +19,25 @@ function PartnerLogo({ client }: { client: Client }) {
   );
 }
 
-export function TrustedPartnersSection() {
+export function TrustedPartnersSection({
+  className,
+  labelClassName,
+}: {
+  className?: string;
+  labelClassName?: string;
+} = {}) {
   const track = [...clients, ...clients];
 
   return (
     <section
       id="trusted-partners"
-      className="w-full border-y border-horizon-border/60 bg-horizon-cream py-0"
+      className={cn(
+        "w-full border-y border-horizon-border/60 bg-horizon-cream py-0",
+        className
+      )}
       aria-label="Trusted Partners"
     >
-      <p className={cn(overline, "mb-6 text-center")}>{trustedPartnersSection.label}</p>
+      <p className={cn(overline, "mb-6 text-center", labelClassName)}>{trustedPartnersSection.label}</p>
 
       <div className="partners-marquee overflow-hidden">
         <ul className="partners-marquee__track list-none" aria-hidden>

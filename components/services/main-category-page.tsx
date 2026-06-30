@@ -11,10 +11,11 @@ import { Reveal } from "@/components/landing/reveal";
 import { SiteFooter } from "@/components/landing/site-footer";
 import { SiteHeader } from "@/components/landing/site-header";
 import {
-  btnOutline,
+  btnOutlineDark,
   btnPrimary,
   btnOnDark,
   card,
+  cardDark,
   cardSoft,
   contactPath,
   container,
@@ -64,36 +65,36 @@ export function MainCategoryPage({ category }: Props) {
   };
 
   return (
-    <div className="flex min-h-full w-full flex-col bg-horizon-cream text-foreground">
+    <div className="flex min-h-full w-full flex-col bg-black text-foreground">
       <CleanCategoryUrl mainSlug={category.slug} />
       <SiteHeader />
 
       <main className="flex-1">
-        <section className="relative w-full overflow-hidden bg-gradient-to-b from-horizon-cream via-horizon-cream to-horizon-sky">
+        <section className="relative w-full overflow-hidden bg-black text-white">
           <div className={cn(container, sectionPad)}>
             <Reveal immediate>
-              <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-horizon-muted">
-                <Link href="/" className="inline-flex items-center gap-1.5 hover:text-horizon-navy">
+              <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-white/60">
+                <Link href="/" className="inline-flex items-center gap-1.5 hover:text-white">
                   <ArrowLeft className="size-4" aria-hidden />
                   Home
                 </Link>
                 <span aria-hidden>/</span>
-                <span className="text-horizon-navy">{category.label}</span>
+                <span className="text-white">{category.label}</span>
               </nav>
             </Reveal>
 
             <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10">
               <div className="min-w-0">
                 <Reveal immediate delay={motionStagger}>
-                  <p className={overline}>{category.label}</p>
+                  <p className={cn(overline, "text-white/60")}>{category.label}</p>
                 </Reveal>
                 <Reveal immediate delay={motionStagger * 2}>
-                  <h1 className="mt-4 font-heading text-4xl font-normal leading-[1.1] tracking-tight text-horizon-navy sm:text-5xl lg:text-[3.25rem]">
+                  <h1 className="mt-4 font-heading text-4xl font-normal leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
                     {category.tagline}
                   </h1>
                 </Reveal>
                 <Reveal immediate delay={motionStagger * 3}>
-                  <p className="mt-5 max-w-xl text-base leading-relaxed text-horizon-muted md:text-lg">
+                  <p className="mt-5 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
                     {category.description}
                   </p>
                 </Reveal>
@@ -102,14 +103,14 @@ export function MainCategoryPage({ category }: Props) {
                     <Link href={contactPath} className={btnPrimary}>
                       Start a project
                     </Link>
-                    <Link href={contactPath} className={btnOutline}>
+                    <Link href={contactPath} className={btnOutlineDark}>
                       Contact us
                     </Link>
                   </div>
                 </Reveal>
               </div>
               <Reveal immediate delay={motionStagger * 2} direction="right">
-                <div className={cn(card, "overflow-hidden p-0")}>
+                <div className={cn(cardDark, "overflow-hidden p-0")}>
                   <CardImage
                     {...category.heroImage}
                     className="aspect-[4/3] w-full lg:aspect-[5/4]"
@@ -123,18 +124,18 @@ export function MainCategoryPage({ category }: Props) {
           </div>
         </section>
 
-        <TrustedPartnersSection />
+        <TrustedPartnersSection className="border-horizon-border/60 bg-white" />
 
-        <section className="w-full bg-white" aria-labelledby="offerings-heading">
+        <section className="w-full bg-black text-white" aria-labelledby="offerings-heading">
           <div className={cn(container, sectionPad)}>
             <Reveal>
               <h2
                 id="offerings-heading"
-                className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl"
+                className="font-heading text-3xl font-normal text-white md:text-4xl"
               >
                 {sections.offerings.title}
               </h2>
-              <p className="mt-3 max-w-2xl text-horizon-muted">{sections.offerings.subtitle}</p>
+              <p className="mt-3 max-w-2xl text-white/70">{sections.offerings.subtitle}</p>
             </Reveal>
 
             <ul className="mt-10 grid gap-4 sm:grid-cols-2">
@@ -144,8 +145,8 @@ export function MainCategoryPage({ category }: Props) {
                     <Link
                       href={subCategoryPath(category.slug, sub.slug)}
                       className={cn(
-                        cardSoft,
-                        "group flex h-full flex-col overflow-hidden p-0 transition-colors hover:border-horizon-sky"
+                        cardDark,
+                        "group flex h-full flex-col overflow-hidden p-0 transition-colors hover:border-white/25"
                       )}
                     >
                       {sub.image ? (
@@ -156,13 +157,13 @@ export function MainCategoryPage({ category }: Props) {
                         />
                       ) : null}
                       <div className="flex flex-1 flex-col p-6 lg:p-7">
-                        <h3 className="font-heading text-xl font-medium text-horizon-navy group-hover:underline">
+                        <h3 className="font-heading text-xl font-medium text-white group-hover:underline">
                           {sub.label}
                         </h3>
-                        <p className="mt-3 flex-1 text-sm leading-relaxed text-horizon-muted">
+                        <p className="mt-3 flex-1 text-sm leading-relaxed text-white/70">
                           {sub.description}
                         </p>
-                        <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-horizon-navy">
+                        <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-white">
                           Learn more
                           <ArrowUpRight className="size-4" aria-hidden />
                         </span>
