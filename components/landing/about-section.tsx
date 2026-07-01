@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 
 export function AboutSection() {
   return (
-    <section id="about" className="w-full bg-white">
+    <section id="about" className="w-full bg-white text-horizon-navy">
       <div className={cn(container, sectionPad)}>
         <SectionHeading
           overlineText="About us"
@@ -22,7 +22,7 @@ export function AboutSection() {
           <div className="min-w-0 space-y-5">
             {aboutSection.paragraphs.map((paragraph, i) => (
               <Reveal key={i} delay={i * motionStagger}>
-                <p className="text-base leading-relaxed text-left text-horizon-muted md:text-lg">
+                <p className="text-base leading-relaxed text-left text-horizon-navy md:text-lg">
                   {paragraph}
                 </p>
               </Reveal>

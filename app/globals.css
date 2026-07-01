@@ -108,7 +108,6 @@
     color: var(--horizon-navy);
   }
 
-  .bg-black :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label),
   .bg-horizon-navy :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label) {
     color: inherit;
   }
