@@ -43,7 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={cn("h-full antialiased", inter.variable, playfair.variable)}>
-      <body className="min-h-full w-full font-sans" suppressHydrationWarning>
+      <body className="min-h-full w-full overflow-x-clip font-sans" suppressHydrationWarning>
         <MotionInit />
         {children}
       </body>

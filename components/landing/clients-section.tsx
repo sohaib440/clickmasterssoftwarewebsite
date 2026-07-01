@@ -32,7 +32,7 @@ export function TrustedPartnersSection({
     <section
       id="trusted-partners"
       className={cn(
-        "w-full border-y border-horizon-border/60 bg-horizon-cream py-0",
+        "w-full overflow-x-clip border-y border-horizon-border/60 bg-horizon-cream py-0",
         className
       )}
       aria-label="Trusted Partners"

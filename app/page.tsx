@@ -53,11 +53,11 @@ function DeferredSection({ children }: { children: React.ReactNode }) {
 
 export default function Home() {
   return (
-    <div className="flex min-h-full w-full flex-col bg-black text-white">
+    <div className="flex min-h-full w-full max-w-full flex-col overflow-x-clip bg-black text-white">
       <HomeJsonLd />
       <SiteHeader />
       <HeroSection />
-      <main className="flex w-full flex-1 flex-col">
+      <main className="flex w-full max-w-full flex-1 flex-col overflow-x-clip">
         <TrustedPartnersSection />
         <DeferredSection>
           <AboutSection />

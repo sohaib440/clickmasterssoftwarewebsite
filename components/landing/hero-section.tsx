@@ -13,11 +13,11 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative w-full bg-black text-white"
+      className="relative w-full overflow-x-clip bg-black text-white"
       aria-label="Introduction"
     >
-      <div className={cn(container, sectionPad, "relative z-10")}>
-        <div className="grid items-center gap-6 lg:grid-cols-2 lg:gap-8">
+      <div className={cn(container, sectionPad, "relative z-10 min-w-0")}>
+        <div className="grid min-w-0 items-center gap-6 lg:grid-cols-2 lg:gap-8">
           <div className="min-w-0">
             <Reveal immediate delay={0}>
               <p className={overline}>{homeHero.eyebrow}</p>
@@ -54,9 +54,9 @@ export function HeroSection() {
             immediate
             delay={motionStagger * 2}
             direction="right"
-            className="relative mx-auto w-full max-w-lg lg:mx-0 lg:max-w-none"
+            className="relative mx-auto w-full min-w-0 max-w-lg lg:mx-0 lg:max-w-none"
           >
-            <div className="grid grid-cols-12 gap-1.5">
+            <div className="grid min-w-0 w-full grid-cols-12 gap-1.5">
               <div className={cn(card, "col-span-12 p-0 sm:col-span-7 sm:row-span-2")}>
                 <CardImage
                   {...main}

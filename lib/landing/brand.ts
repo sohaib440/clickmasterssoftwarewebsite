@@ -4,9 +4,15 @@ export const siteBrand = {
   shortName: "Next",
   legalName: "Software Development Company",
   location: "Islamabad, Pakistan",
-  email: "hello@nextsoftwaredevelopment.com",
-  phone: "+92 XXX XXXXXXX",
+  email: "nextsoftwaredevelopmentcompany@gmail.com",
+  phone: "+92 3710510083",
   url: "https://nextsoftwaredevelopment.com",
+  logo: {
+    src: "/brand/next-logo.png",
+    alt: "Next Software Development Company",
+    width: 640,
+    height: 128,
+  },
 } as const;
 
 export const siteMetadata = {

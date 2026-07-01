@@ -266,8 +266,8 @@ export function TechStackSection() {
 
         <div
           ref={containerRef}
-          className="relative w-full select-none h-[20rem] sm:h-[20rem] lg:h-[20rem]"
-          style={{ cursor: dragId !== null ? 'grabbing' : 'default', overflow: 'visible', touchAction: 'none', userSelect: 'none' }}
+          className="relative w-full h-[20rem] select-none overflow-hidden sm:h-[20rem] lg:h-[20rem]"
+          style={{ cursor: dragId !== null ? 'grabbing' : 'default', touchAction: 'none', userSelect: 'none' }}
         >
 
         {bubbles.length > 0 && techStackLogos.map((logo, i) => {

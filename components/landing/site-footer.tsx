@@ -5,6 +5,7 @@ import { Mail, MapPin, Phone, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
 import { Reveal } from "@/components/landing/reveal";
+import { SiteLogo } from "@/components/landing/site-logo";
 import { container } from "@/lib/landing/constants";
 import { siteBrand } from "@/lib/landing/brand";
 import { motionStagger } from "@/lib/landing/motion";
@@ -25,14 +26,12 @@ export function SiteFooter() {
   };
 
   return (
-    <footer className="w-full bg-horizon-navy text-white">
+    <footer className="w-full bg-black text-white">
       <div className={cn(container, "py-10 md:py-12")}>
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
           <Reveal className="lg:col-span-4">
             <div className="space-y-6">
-              <Link href="/" className="font-heading text-xl font-medium text-white md:text-2xl">
-                {siteBrand.name}
-              </Link>
+              <SiteLogo imageClassName="h-16 w-auto max-w-[24rem] md:h-20 md:max-w-[28rem] lg:max-w-[32rem]" />
               <p className="max-w-sm text-sm leading-relaxed text-white/70">
                 {footerBrand.description}
               </p>

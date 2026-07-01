@@ -118,12 +118,16 @@
     @apply border-border outline-ring/50;
   }
 
-  body {
-    @apply bg-horizon-cream font-sans text-horizon-navy antialiased;
-  }
-
   html {
     scroll-padding-top: 5.5rem;
+    overflow-x: clip;
+    max-width: 100%;
+  }
+
+  body {
+    @apply bg-horizon-cream font-sans text-horizon-navy antialiased;
+    overflow-x: clip;
+    max-width: 100%;
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -151,6 +155,7 @@
   --motion-reveal-from: translate3d(0, 32px, 0);
   opacity: 1;
   transform: translate3d(0, 0, 0);
+  max-width: 100%;
 }
 
 html.motion-js .motion-reveal:not(.motion-reveal--visible) {
