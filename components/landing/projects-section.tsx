@@ -212,7 +212,7 @@ export function ProjectsSection() {
               height={cardDimensions.height}
               cardDistance={cardDimensions.cardDistance}
               verticalDistance={cardDimensions.verticalDistance}
-              delay={4000}
+              delay={2500}
               pauseOnHover
               skewAmount={5}
               easing="power"

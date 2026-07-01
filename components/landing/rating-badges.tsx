@@ -5,19 +5,20 @@ import { cn } from "@/lib/utils";
 
 type Props = {
   className?: string;
+  variant?: "default" | "dark";
 };
 
-export function RatingBadges({ className }: Props) {
+export function RatingBadges({ className, variant = "default" }: Props) {
   return (
-    <div className={cn("grid grid-cols-2 gap-2 sm:grid-cols-4", className)}>
-      {ratingBadges.map((badge, index) => (
+    <div className={cn("grid grid-cols-2 gap-3 sm:grid-cols-4", className)}>
+      {ratingBadges.map((badge) => (
         <div
           key={badge.slug}
           className={cn(
-            "flex items-center justify-center rounded-3xl border p-3 shadow-sm",
-            index < 3
-              ? "border-transparent bg-horizon-navy text-white"
-              : "border-horizon-border/20 bg-white/90"
+            "flex items-center justify-center rounded-2xl border p-3",
+            variant === "dark"
+              ? "border-white/10 bg-zinc-950/80"
+              : "border-horizon-border/20 bg-white/90 shadow-sm"
           )}
         >
           <Image

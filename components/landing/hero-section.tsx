@@ -1,51 +1,120 @@
+import { Briefcase, Globe, Layers, ShieldCheck, Users } from "lucide-react";
 import Link from "next/link";
 
-import { CardImage } from "@/components/landing/card-image";
+import { HeroCtaForm } from "@/components/landing/hero-cta-form";
 import { RatingBadges } from "@/components/landing/rating-badges";
 import { Reveal } from "@/components/landing/reveal";
-import { btnOutlineDark, btnPrimary, card, contactPath, container, overline, sectionPad } from "@/lib/landing/constants";
-import { heroImages, homeHero, stats } from "@/data/landingPage";
+import {
+  btnOutlineDark,
+  btnPrimary,
+  contactPath,
+  container,
+  sectionPad,
+} from "@/lib/landing/constants";
+import { heroBackgroundVideo, heroFeatures, homeHero, stats } from "@/data/landingPage";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
 
-export function HeroSection() {
-  const [main, topRight, bottomRight] = heroImages;
+const statIcons = {
+  users: Users,
+  briefcase: Briefcase,
+  layers: Layers,
+  "shield-check": ShieldCheck,
+} as const;
 
+export function HeroSection() {
   return (
     <section
       className="relative w-full overflow-x-clip bg-black text-white"
       aria-label="Introduction"
     >
-      <div className={cn(container, sectionPad, "relative z-10 min-w-0")}>
-        <div className="grid min-w-0 items-center gap-6 lg:grid-cols-2 lg:gap-8">
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden>
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="hero-bg-video h-full w-full object-cover opacity-35"
+          src={heroBackgroundVideo}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/90" />
+      </div>
+
+      <div
+        className="pointer-events-none absolute -right-24 top-16 z-[1] h-72 w-72 rounded-full border border-primary/20"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute -left-16 bottom-32 z-[1] h-48 w-48 rounded-full border border-primary/10"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute right-8 top-8 z-[1] h-24 w-24 opacity-30"
+        style={{
+          backgroundImage: "radial-gradient(circle, #d4af37 1px, transparent 1px)",
+          backgroundSize: "8px 8px",
+        }}
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute bottom-48 left-6 z-[1] h-16 w-16 opacity-20"
+        style={{
+          backgroundImage: "radial-gradient(circle, #d4af37 1px, transparent 1px)",
+          backgroundSize: "6px 6px",
+        }}
+        aria-hidden
+      />
+
+      <div className={cn(container, sectionPad, "relative z-10 min-w-0 pb-10 md:pb-14")}>
+        <div className="grid min-w-0 items-center gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-16 xl:gap-20">
           <div className="min-w-0">
             <Reveal immediate delay={0}>
-              <p className={overline}>{homeHero.eyebrow}</p>
+              <div className="inline-flex items-center gap-2 rounded-full border border-primary/50 px-4 py-1.5">
+                <Globe className="h-3.5 w-3.5 shrink-0 text-primary" aria-hidden />
+                <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-white/90 sm:text-[11px]">
+                  {homeHero.eyebrow}
+                </span>
+              </div>
             </Reveal>
 
             <Reveal immediate delay={motionStagger}>
-              <h1 className="mt-3 max-w-3xl font-heading text-4xl font-normal leading-[1.12] tracking-tight text-white sm:text-5xl lg:text-6xl">
+              <h1 className="mt-5 max-w-2xl font-heading text-4xl font-normal leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
                 {homeHero.headlineBefore}{" "}
-                <span className="italic">{homeHero.headlineEmphasis}</span>
+                <span className="text-primary">{homeHero.headlineEmphasis}</span>{" "}
+                {homeHero.headlineAfter}
               </h1>
             </Reveal>
 
             <Reveal immediate delay={motionStagger * 2}>
-              <p className="mt-4 max-w-xl text-base leading-relaxed text-left text-white/70 md:text-lg">
-                {homeHero.subtext}
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
+                {homeHero.subtextBefore}
+                <span className="font-medium text-primary">{homeHero.subtextHighlight}</span>
+                {homeHero.subtextAfter}
               </p>
             </Reveal>
 
+            <Reveal immediate delay={motionStagger * 2.5}>
+              <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-3">
+                {heroFeatures.map(({ icon: Icon, label }) => (
+                  <li key={label} className="flex items-center gap-2.5">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full border border-primary/40 bg-primary/10">
+                      <Icon className="h-4 w-4 text-primary" aria-hidden />
+                    </span>
+                    <span className="text-sm font-medium text-white">{label}</span>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+
             <Reveal immediate delay={motionStagger * 3}>
-              <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center">
-                <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
-                  <Link href={contactPath} className={btnPrimary}>
-                    {homeHero.primaryCta}
-                  </Link>
-                  <Link href={homeHero.secondaryHref} className={btnOutlineDark}>
-                    {homeHero.secondaryCta} →
-                  </Link>
-                </div>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                <Link href={contactPath} className={btnPrimary}>
+                  {homeHero.primaryCta} →
+                </Link>
+                <Link href={homeHero.secondaryHref} className={btnOutlineDark}>
+                  {homeHero.secondaryCta} →
+                </Link>
               </div>
             </Reveal>
           </div>
@@ -54,60 +123,40 @@ export function HeroSection() {
             immediate
             delay={motionStagger * 2}
             direction="right"
-            className="relative mx-auto w-full min-w-0 max-w-lg lg:mx-0 lg:max-w-none"
+            className="relative mx-auto w-full min-w-0 max-w-[400px] shrink-0 lg:mx-0 lg:w-[400px]"
           >
-            <div className="grid min-w-0 w-full grid-cols-12 gap-1.5">
-              <div className={cn(card, "col-span-12 p-0 sm:col-span-7 sm:row-span-2")}>
-                <CardImage
-                  {...main}
-                  className="aspect-[4/3] h-full sm:aspect-auto sm:min-h-[280px]"
-                  priority
-                  quality={80}
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
-                />
-              </div>
-
-              <div className={cn(card, "col-span-12 p-0 sm:col-span-5")}>
-                <CardImage
-                  {...topRight}
-                  className="aspect-[4/5]"
-                  sizes="(max-width: 1024px) 40vw, 280px"
-                  quality={70}
-                />
-              </div>
-
-              <div className={cn(card, "col-span-12 p-0 sm:col-span-5")}>
-                <CardImage
-                  {...bottomRight}
-                  className="aspect-[4/3]"
-                  sizes="(max-width: 1024px) 40vw, 280px"
-                  quality={70}
-                />
-              </div>
-            </div>
-
-            {/* Rating badges: show after the images so they sit at the bottom of the images column */}
-            <RatingBadges className="mt-6" />
-
+            <HeroCtaForm />
           </Reveal>
         </div>
 
-        <dl className="mt-6 grid grid-cols-2 gap-6 sm:grid-cols-4">
-          {stats.map((stat, i) => (
-            <Reveal
-              key={stat.label}
-              immediate
-              delay={i * motionStagger}
-              direction="up"
-              className={cn(i > 0 && "sm:border-l sm:border-white/15 sm:pl-4")}
-            >
-              <dt className="font-heading text-3xl font-normal text-white md:text-4xl">
-                {stat.value}
-              </dt>
-              <dd className="mt-2 text-sm text-white/70">{stat.label}</dd>
-            </Reveal>
-          ))}
-        </dl>
+        <Reveal immediate delay={motionStagger * 3.5}>
+          <RatingBadges variant="dark" className="mt-10" />
+        </Reveal>
+
+        <Reveal immediate delay={motionStagger * 4}>
+          <div className="mt-6 rounded-2xl border border-white/10 bg-zinc-950/90 px-4 py-6 sm:px-8">
+            <dl className="grid grid-cols-2 gap-6 sm:grid-cols-4 sm:gap-0">
+              {stats.map((stat, i) => {
+                const Icon = statIcons[stat.icon];
+                return (
+                  <div
+                    key={stat.label}
+                    className={cn(
+                      "flex flex-col items-center text-center sm:px-4",
+                      i > 0 && "sm:border-l sm:border-white/10"
+                    )}
+                  >
+                    <Icon className="mb-2 h-5 w-5 text-primary" aria-hidden />
+                    <dt className="font-heading text-2xl font-normal text-white md:text-3xl">
+                      {stat.value}
+                    </dt>
+                    <dd className="mt-1 text-xs text-white/60 sm:text-sm">{stat.label}</dd>
+                  </div>
+                );
+              })}
+            </dl>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

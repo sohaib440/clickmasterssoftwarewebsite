@@ -264,6 +264,10 @@ html.motion-js .motion-reveal--visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .hero-bg-video {
+    display: none;
+  }
+
   html {
     scroll-behavior: auto;
   }

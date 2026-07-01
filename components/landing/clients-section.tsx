@@ -13,7 +13,7 @@ function PartnerLogo({ client }: { client: Client }) {
         height={64}
         loading="lazy"
         decoding="async"
-        className="h-10 w-auto max-w-[14rem] object-contain opacity-55 grayscale transition-[opacity,filter] duration-300 hover:opacity-100 hover:grayscale-0 md:h-12 md:max-w-[16rem]"
+        className="h-10 w-auto max-w-[14rem] object-contain  duration-300 hover:opacity-100 hover:grayscale-0 md:h-12 md:max-w-[16rem]"
       />
     </div>
   );

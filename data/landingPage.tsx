@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { Mail, Share2 } from "lucide-react";
+import { BarChart3, Mail, Rocket, Share2, Shield } from "lucide-react";
 
 import { siteBrand } from "@/lib/landing/brand";
 import { contactPath } from "@/lib/landing/constants";
@@ -48,13 +48,29 @@ export const contactInfo = {
 
 export const homeHero = {
   eyebrow: "Leading Software Development Company in Pakistan",
-  headlineBefore: "A global software development company",
-  headlineEmphasis: "that builds products businesses rely on",
-  subtext:
-    "Software Development Company helps startups, small and medium-sized businesses, and enterprises across the United States, United Kingdom, United Arab Emirates, Canada, Australia, and Pakistan build powerful, scalable digital products. From idea to launch and beyond we deliver software that drives real business growth.",
+  headlineBefore: "We build",
+  headlineEmphasis: "powerful software",
+  headlineAfter: "that businesses depend on",
+  subtextBefore: "Empowering startups, SMBs, and enterprises worldwide with ",
+  subtextHighlight: "scalable, secure, and innovative",
+  subtextAfter: " digital solutions that drive growth and create real impact.",
   primaryCta: "Get a Free Quote",
   secondaryCta: "View Our Work",
   secondaryHref: "#projects",
+} as const;
+
+export const heroFeatures = [
+  { icon: Rocket, label: "Scalable Solutions" },
+  { icon: Shield, label: "Secure & Reliable" },
+  { icon: BarChart3, label: "Business Growth" },
+] as const;
+
+export const heroBackgroundVideo = "/heroSection/software development company.mp4";
+
+export const heroCtaForm = {
+  title: "Get a free quote",
+  subtitle: "Share your details and we'll respond within one business day.",
+  submitLabel: "Send message",
 } as const;
 
 export const trustedPartnersSection: { label: string; fallbackText: string } = {
@@ -126,7 +142,11 @@ export type ImageAsset = {
   height: number;
 };
 
-export const heroImages: ImageAsset[] = [
+export type HeroImageAsset = ImageAsset & {
+  caption?: string;
+};
+
+export const heroImages: HeroImageAsset[] = [
   {
     src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=75",
     alt: "Laptop with code on a bright desk",
@@ -138,12 +158,14 @@ export const heroImages: ImageAsset[] = [
     alt: "Developer working at a monitor",
     width: 480,
     height: 600,
+    caption: "Clean. Scalable. Efficient Code",
   },
   {
     src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=480&q=75",
     alt: "Analytics dashboard on screen",
     width: 480,
     height: 360,
+    caption: "Data-Driven Solutions",
   },
 ];
 
@@ -164,36 +186,42 @@ export const serviceCategories = getServiceNavCategories();
 export const processSteps = [
   {
     step: "01",
+    shortLabel: "Discover",
     title: "Discover & Business Analysis",
     description:
       "We start by deeply understanding your business, your users, and your goals. We document functional requirements, define success metrics, and align on scope before any design or code begins.",
   },
   {
     step: "02",
+    shortLabel: "Architecture",
     title: "Architecture & Technical Planning",
     description:
       "Our senior engineers define the system architecture, select the optimal technology stack, and create a detailed technical specification. You receive a full project plan with milestones, deliverables, timeline, and cost breakdown all agreed upfront.",
   },
   {
     step: "03",
+    shortLabel: "Design",
     title: "UI/UX Design & Prototyping",
     description:
       "Our designers create wireframes and clickable prototypes that bring your product to life before development begins. You review and approve the design at every stage your feedback drives every design decision we make.",
   },
   {
     step: "04",
+    shortLabel: "Development",
     title: "Agile Development in Sprints",
     description:
       "We develop your software in 2-week agile sprints, with a working demo shared at the end of each sprint. You see real progress continuously not just at the finish line.",
   },
   {
     step: "05",
+    shortLabel: "QA & Security",
     title: "Quality Assurance & Security Testing",
     description:
       "Every feature is tested across functional, performance, security, and cross-device dimensions before release. We use both manual QA and automated testing frameworks to ensure your software is production-ready and resilient.",
   },
   {
     step: "06",
+    shortLabel: "Launch",
     title: "Launch, Handover & Ongoing Support",
     description:
       "We manage your go-live smoothly and provide full handover documentation, code access, and team training. After launch, we offer flexible maintenance and support plans so your software evolves as your business grows.",
@@ -201,10 +229,10 @@ export const processSteps = [
 ];
 
 export const stats = [
-  { value: "250+", label: "Software projects delivered" },
-  { value: "15+", label: "Countries served worldwide" },
-  { value: "10+", label: "Years of development experience" },
-  { value: "98%", label: "Client satisfaction rate" },
+  { value: "250+", label: "Happy Clients", icon: "users" as const },
+  { value: "15+", label: "Years of Experience", icon: "briefcase" as const },
+  { value: "10+", label: "Countries Served", icon: "layers" as const },
+  { value: "98%", label: "Client Satisfaction", icon: "shield-check" as const },
 ];
 
 export const aboutSection = {
@@ -267,100 +295,372 @@ export type TechStackTab = {
 };
 
 export const techStackIntro =
-  "Modern technologies chosen for performance, scalability, and right-fit engineering. We use the tools that match your business goals not buzz.";
+  "We engineer across the full software delivery spectrum — from pixel-perfect interfaces and resilient APIs to data platforms, cloud infrastructure, and production AI. Every technology below reflects real project experience: selected for performance, security, team velocity, and long-term maintainability at scale.";
+
+export type TechStackLogoGroup = {
+  id: string;
+  label: string;
+  description: string;
+  logoIds: string[];
+};
+
+export const techStackLogoGroupMeta: TechStackLogoGroup[] = [
+  {
+    id: "frontend",
+    label: "Frontend",
+    description:
+      "Component-driven UIs, design systems, and modern build pipelines — from semantic HTML/CSS and TypeScript through React, Next.js, Vue, Svelte, state management, testing, and accessibility-ready production apps.",
+    logoIds: [
+      "html5",
+      "css3",
+      "javascript",
+      "typescript",
+      "react",
+      "nextjs",
+      "vuejs",
+      "nuxtjs",
+      "angular",
+      "svelte",
+      "redux",
+      "zustand",
+      "tailwindcss",
+      "bootstrap",
+      "sass",
+      "postcss",
+      "vite",
+      "webpack",
+      "graphql",
+      "jest",
+      "cypress",
+      "storybook",
+      "figma",
+      "materialui",
+    ],
+  },
+  {
+    id: "backend",
+    label: "Backend",
+    description:
+      "Secure APIs, microservices, and enterprise backends — REST, GraphQL, and event-driven architectures built with Node.js, Python, Java, .NET, Go, PHP, Ruby, Rust, and battle-tested frameworks like Express, NestJS, Django, Laravel, and Spring.",
+    logoIds: [
+      "nodejs",
+      "express",
+      "nestjs",
+      "python",
+      "django",
+      "flask",
+      "dotnet",
+      "csharp",
+      "java",
+      "spring",
+      "kotlin",
+      "go",
+      "rust",
+      "php",
+      "laravel",
+      "ruby",
+      "scala",
+      "graphql",
+      "apachekafka",
+      "nginx",
+    ],
+  },
+  {
+    id: "mobile",
+    label: "Mobile",
+    description:
+      "Native and cross-platform mobile products — React Native and Flutter for shared codebases, plus Swift and Kotlin for platform-native performance, offline support, push notifications, and App Store / Play Store delivery.",
+    logoIds: ["reactnative", "flutter", "swift", "kotlin", "android", "dart", "ionic"],
+  },
+  {
+    id: "databases",
+    label: "Databases",
+    description:
+      "Relational, document, cache, and search data layers — PostgreSQL, MySQL, MongoDB, Redis, Elasticsearch, and Firebase for transactional integrity, real-time sync, analytics, and high-throughput read/write workloads.",
+    logoIds: [
+      "postgresql",
+      "mysql",
+      "mariadb",
+      "mongodb",
+      "redis",
+      "sqlite",
+      "firebase",
+      "elasticsearch",
+      "cassandra",
+    ],
+  },
+  {
+    id: "devops",
+    label: "DevOps & Cloud",
+    description:
+      "CI/CD, containers, orchestration, and cloud-native ops — Docker, Kubernetes, Terraform, Jenkins, GitHub Actions, GitLab CI, plus AWS, Google Cloud, Azure, Vercel, Netlify, and DigitalOcean for reliable deployments.",
+    logoIds: [
+      "docker",
+      "kubernetes",
+      "terraform",
+      "jenkins",
+      "github",
+      "gitlab",
+      "linux",
+      "nginx",
+      "ansible",
+      "prometheus",
+      "grafana",
+      "aws",
+      "gcp",
+      "azure",
+      "vercel",
+      "netlify",
+      "digitalocean",
+      "heroku",
+    ],
+  },
+  {
+    id: "ai",
+    label: "Models / AI",
+    description:
+      "Machine learning and intelligent automation — TensorFlow, PyTorch, Keras, OpenAI, and the Python data stack (Pandas, Jupyter, SciPy) for predictive models, NLP, computer vision, and production AI integrations.",
+    logoIds: [
+      "openai",
+      "tensorflow",
+      "pytorch",
+      "keras",
+      "opencv",
+      "pandas",
+      "jupyter",
+      "scipy",
+      "r",
+    ],
+  },
+];
 
 export const techStackTabs: TechStackTab[] = [
   {
     id: "frontend",
     label: "Frontend",
-    items: ["Next.js", "React.js", "Vue.js", "Tailwind CSS", "TypeScript"],
+    items: [
+      "Next.js",
+      "React",
+      "Vue.js",
+      "Nuxt",
+      "Svelte",
+      "TypeScript",
+      "Tailwind CSS",
+      "Redux",
+      "Vite",
+      "Webpack",
+      "Jest",
+      "Cypress",
+      "Storybook",
+      "GraphQL",
+    ],
   },
   {
     id: "backend",
     label: "Backend",
-    items: ["Node.js", "Python", "Laravel", "Django", ".NET"],
+    items: [
+      "Node.js",
+      "Express",
+      "NestJS",
+      "Python",
+      "Django",
+      "Flask",
+      "Java",
+      "Spring",
+      ".NET",
+      "C#",
+      "Go",
+      "Rust",
+      "PHP",
+      "Laravel",
+      "Ruby",
+      "Kafka",
+    ],
   },
   {
     id: "mobile",
     label: "Mobile",
-    items: ["React Native", "Flutter", "Swift", "Kotlin"],
+    items: ["React Native", "Flutter", "Swift", "Kotlin", "Android", "Dart", "Ionic"],
   },
   {
     id: "database",
     label: "Database",
-    items: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Firebase"],
+    items: [
+      "PostgreSQL",
+      "MySQL",
+      "MariaDB",
+      "MongoDB",
+      "Redis",
+      "SQLite",
+      "Elasticsearch",
+      "Cassandra",
+      "Firebase",
+    ],
   },
   {
     id: "cloud",
     label: "Cloud",
-    items: ["AWS", "Google Cloud", "Azure", "DigitalOcean", "Vercel"],
+    items: [
+      "AWS",
+      "Google Cloud",
+      "Azure",
+      "DigitalOcean",
+      "Vercel",
+      "Netlify",
+      "Heroku",
+    ],
   },
   {
     id: "devops",
     label: "DevOps",
-    items: ["Docker", "Kubernetes", "GitHub Actions", "Terraform", "Linux"],
+    items: [
+      "Docker",
+      "Kubernetes",
+      "Terraform",
+      "Jenkins",
+      "GitHub Actions",
+      "GitLab CI",
+      "Linux",
+      "Nginx",
+      "Ansible",
+      "Prometheus",
+      "Grafana",
+    ],
   },
   {
     id: "ai",
     label: "AI & ML",
-    items: ["OpenAI API", "LangChain", "TensorFlow", "PyTorch", "Hugging Face"],
+    items: [
+      "OpenAI",
+      "TensorFlow",
+      "PyTorch",
+      "Keras",
+      "OpenCV",
+      "Pandas",
+      "Jupyter",
+      "SciPy",
+      "R",
+    ],
   },
 ];
 
-export const techStackLogos = [
-  { id: "dotnet", name: ".NET", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" },
-  { id: "dotnetframework", name: ".NET Framework", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" },
-  { id: "csharp", name: "C#", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" },
-  { id: "java", name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
-  { id: "kotlin", name: "Kotlin", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" },
-  { id: "scala", name: "Scala", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scala/scala-original.svg" },
-  { id: "python", name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-  { id: "nodejs", name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-  { id: "php", name: "PHP", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
-  { id: "go", name: "Go", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg" },
-  { id: "ruby", name: "Ruby", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg" },
-  { id: "rust", name: "Rust", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg" },
-  
-  { id: "clojure", name: "Clojure", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/clojure/clojure-original.svg" },
-  { id: "perl", name: "Perl", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/perl/perl-original.svg" },
-  { id: "r", name: "R", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" },
-  { id: "dart", name: "Dart", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" },
-  { id: "crystal", name: "Crystal", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/crystal/crystal-original.svg" },
+const DEVICON = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons";
 
-  { id: "fortran", name: "Fortran", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fortran/fortran-original.svg" },
-  { id: "html5", name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-  { id: "css3", name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-  { id: "javascript", name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-  { id: "typescript", name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
-  { id: "react", name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-  { id: "redux", name: "Redux", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
+export const techStackLogos = [
+  // Backend languages & runtimes
+  { id: "dotnet", name: ".NET", icon: `${DEVICON}/dotnetcore/dotnetcore-original.svg` },
+  { id: "csharp", name: "C#", icon: `${DEVICON}/csharp/csharp-original.svg` },
+  { id: "java", name: "Java", icon: `${DEVICON}/java/java-original.svg` },
+  { id: "kotlin", name: "Kotlin", icon: `${DEVICON}/kotlin/kotlin-original.svg` },
+  { id: "scala", name: "Scala", icon: `${DEVICON}/scala/scala-original.svg` },
+  { id: "python", name: "Python", icon: `${DEVICON}/python/python-original.svg` },
+  { id: "nodejs", name: "Node.js", icon: `${DEVICON}/nodejs/nodejs-original.svg` },
+  { id: "express", name: "Express", icon: `${DEVICON}/express/express-original.svg` },
+  { id: "nestjs", name: "NestJS", icon: `${DEVICON}/nestjs/nestjs-plain.svg` },
+  { id: "django", name: "Django", icon: `${DEVICON}/django/django-plain.svg` },
+  { id: "flask", name: "Flask", icon: `${DEVICON}/flask/flask-original.svg` },
+  { id: "spring", name: "Spring", icon: `${DEVICON}/spring/spring-original.svg` },
+  { id: "php", name: "PHP", icon: `${DEVICON}/php/php-original.svg` },
+  { id: "laravel", name: "Laravel", icon: `${DEVICON}/laravel/laravel-original.svg` },
+  { id: "go", name: "Go", icon: `${DEVICON}/go/go-original-wordmark.svg` },
+  { id: "ruby", name: "Ruby", icon: `${DEVICON}/ruby/ruby-original.svg` },
+  { id: "rust", name: "Rust", icon: `${DEVICON}/rust/rust-original.svg` },
+  { id: "r", name: "R", icon: `${DEVICON}/r/r-original.svg` },
+  { id: "dart", name: "Dart", icon: `${DEVICON}/dart/dart-original.svg` },
+  { id: "apachekafka", name: "Kafka", icon: `${DEVICON}/apachekafka/apachekafka-original.svg` },
+
+  // Frontend core
+  { id: "html5", name: "HTML5", icon: `${DEVICON}/html5/html5-original.svg` },
+  { id: "css3", name: "CSS3", icon: `${DEVICON}/css3/css3-original.svg` },
+  { id: "javascript", name: "JavaScript", icon: `${DEVICON}/javascript/javascript-original.svg` },
+  { id: "typescript", name: "TypeScript", icon: `${DEVICON}/typescript/typescript-original.svg` },
+  { id: "react", name: "React", icon: `${DEVICON}/react/react-original.svg` },
+  { id: "redux", name: "Redux", icon: `${DEVICON}/redux/redux-original.svg` },
   { id: "zustand", name: "Zustand", icon: "https://zustand-demo.pmnd.rs/favicon.ico" },
-  { id: "nextjs", name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
-  { id: "vuejs", name: "Vue.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" },
-  { id: "angular", name: "Angular", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" },
-  { id: "tailwindcss", name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
-  { id: "bootstrap", name: "Bootstrap", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
-  { id: "sass", name: "Sass", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" },
-  { id: "postcss", name: "PostCSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postcss/postcss-original.svg" },
-  { id: "docker", name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
-  { id: "kubernetes", name: "Kubernetes", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" },
-  { id: "jenkins", name: "Jenkins", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" },
+  { id: "nextjs", name: "Next.js", icon: `${DEVICON}/nextjs/nextjs-original.svg` },
+  { id: "vuejs", name: "Vue.js", icon: `${DEVICON}/vuejs/vuejs-original.svg` },
+  { id: "nuxtjs", name: "Nuxt", icon: `${DEVICON}/nuxtjs/nuxtjs-original.svg` },
+  { id: "angular", name: "Angular", icon: `${DEVICON}/angularjs/angularjs-original.svg` },
+  { id: "svelte", name: "Svelte", icon: `${DEVICON}/svelte/svelte-original.svg` },
+  { id: "tailwindcss", name: "Tailwind CSS", icon: `${DEVICON}/tailwindcss/tailwindcss-original.svg` },
+  { id: "bootstrap", name: "Bootstrap", icon: `${DEVICON}/bootstrap/bootstrap-original.svg` },
+  { id: "sass", name: "Sass", icon: `${DEVICON}/sass/sass-original.svg` },
+  { id: "postcss", name: "PostCSS", icon: `${DEVICON}/postcss/postcss-original.svg` },
+  { id: "vite", name: "Vite", icon: `${DEVICON}/vitejs/vitejs-original.svg` },
+  { id: "webpack", name: "Webpack", icon: `${DEVICON}/webpack/webpack-original.svg` },
+  { id: "graphql", name: "GraphQL", icon: `${DEVICON}/graphql/graphql-plain.svg` },
+  { id: "jest", name: "Jest", icon: `${DEVICON}/jest/jest-plain.svg` },
+  { id: "cypress", name: "Cypress", icon: `${DEVICON}/cypressio/cypressio-plain.svg` },
+  { id: "storybook", name: "Storybook", icon: `${DEVICON}/storybook/storybook-original.svg` },
+  { id: "figma", name: "Figma", icon: `${DEVICON}/figma/figma-original.svg` },
+  { id: "materialui", name: "Material UI", icon: `${DEVICON}/materialui/materialui-original.svg` },
+
+  // Mobile
+  { id: "reactnative", name: "React Native", icon: `${DEVICON}/reactnative/reactnative-original.svg` },
+  { id: "flutter", name: "Flutter", icon: `${DEVICON}/flutter/flutter-original.svg` },
+  { id: "swift", name: "Swift", icon: `${DEVICON}/swift/swift-original.svg` },
+  { id: "android", name: "Android", icon: `${DEVICON}/android/android-plain.svg` },
+  { id: "ionic", name: "Ionic", icon: `${DEVICON}/ionic/ionic-original.svg` },
+
+  // Databases
+  { id: "postgresql", name: "PostgreSQL", icon: `${DEVICON}/postgresql/postgresql-original.svg` },
+  { id: "mysql", name: "MySQL", icon: `${DEVICON}/mysql/mysql-original.svg` },
+  { id: "mariadb", name: "MariaDB", icon: `${DEVICON}/mariadb/mariadb-original.svg` },
+  { id: "mongodb", name: "MongoDB", icon: `${DEVICON}/mongodb/mongodb-original.svg` },
+  { id: "redis", name: "Redis", icon: `${DEVICON}/redis/redis-original.svg` },
+  { id: "sqlite", name: "SQLite", icon: `${DEVICON}/sqlite/sqlite-original.svg` },
+  { id: "firebase", name: "Firebase", icon: `${DEVICON}/firebase/firebase-plain.svg` },
+  { id: "elasticsearch", name: "Elasticsearch", icon: `${DEVICON}/elasticsearch/elasticsearch-original.svg` },
+  { id: "cassandra", name: "Cassandra", icon: `${DEVICON}/cassandra/cassandra-original.svg` },
+
+  // DevOps & cloud
+  { id: "docker", name: "Docker", icon: `${DEVICON}/docker/docker-original.svg` },
+  { id: "kubernetes", name: "Kubernetes", icon: `${DEVICON}/kubernetes/kubernetes-plain.svg` },
+  { id: "jenkins", name: "Jenkins", icon: `${DEVICON}/jenkins/jenkins-original.svg` },
   { id: "gitlab", name: "GitLab CI", icon: "https://about.gitlab.com/images/press/logo/png/gitlab-icon-rgb.png" },
-  { id: "github", name: "GitHub Actions", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
-  { id: "terraform", name: "Terraform", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" },
-  { id: "azure", name: "Azure", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" },
-  { id: "aws", name: "AWS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
-  { id: "gcp", name: "Google Cloud", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" },
+  { id: "github", name: "GitHub Actions", icon: `${DEVICON}/github/github-original.svg` },
+  { id: "terraform", name: "Terraform", icon: `${DEVICON}/terraform/terraform-original.svg` },
+  { id: "linux", name: "Linux", icon: `${DEVICON}/linux/linux-original.svg` },
+  { id: "nginx", name: "Nginx", icon: `${DEVICON}/nginx/nginx-original.svg` },
+  { id: "ansible", name: "Ansible", icon: `${DEVICON}/ansible/ansible-original.svg` },
+  { id: "prometheus", name: "Prometheus", icon: `${DEVICON}/prometheus/prometheus-original.svg` },
+  { id: "grafana", name: "Grafana", icon: `${DEVICON}/grafana/grafana-original.svg` },
+  { id: "azure", name: "Azure", icon: `${DEVICON}/azure/azure-original.svg` },
+  { id: "aws", name: "AWS", icon: `${DEVICON}/amazonwebservices/amazonwebservices-original-wordmark.svg` },
+  { id: "gcp", name: "Google Cloud", icon: `${DEVICON}/googlecloud/googlecloud-original.svg` },
   { id: "vercel", name: "Vercel", icon: "https://vercel.com/favicon.ico" },
-  { id: "postgresql", name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
-  { id: "mysql", name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
-  { id: "mongodb", name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-  { id: "redis", name: "Redis", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
-  { id: "firebase", name: "Firebase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
-  { id: "tensorflow", name: "TensorFlow", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
-  { id: "pytorch", name: "PyTorch", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" },
+  { id: "netlify", name: "Netlify", icon: `${DEVICON}/netlify/netlify-original.svg` },
+  { id: "digitalocean", name: "DigitalOcean", icon: `${DEVICON}/digitalocean/digitalocean-original.svg` },
+  { id: "heroku", name: "Heroku", icon: `${DEVICON}/heroku/heroku-original.svg` },
+
+  // AI / ML
+  { id: "tensorflow", name: "TensorFlow", icon: `${DEVICON}/tensorflow/tensorflow-original.svg` },
+  { id: "pytorch", name: "PyTorch", icon: `${DEVICON}/pytorch/pytorch-original.svg` },
+  { id: "keras", name: "Keras", icon: `${DEVICON}/keras/keras-original.svg` },
+  { id: "opencv", name: "OpenCV", icon: `${DEVICON}/opencv/opencv-original.svg` },
+  { id: "pandas", name: "Pandas", icon: `${DEVICON}/pandas/pandas-original.svg` },
+  { id: "jupyter", name: "Jupyter", icon: `${DEVICON}/jupyter/jupyter-original.svg` },
+  { id: "scipy", name: "SciPy", icon: "https://cdn.simpleicons.org/scipy/8CAAE6" },
   { id: "openai", name: "OpenAI", icon: "https://openai.com/favicon.ico" },
 ];
+
+export type TechStackLogo = (typeof techStackLogos)[number];
+
+const techStackLogoMap = new Map(techStackLogos.map((logo) => [logo.id, logo]));
+
+function pickTechStackLogos(ids: string[]): TechStackLogo[] {
+  return ids.flatMap((id) => {
+    const logo = techStackLogoMap.get(id);
+    return logo ? [logo] : [];
+  });
+}
+
+export const techStackLogoGroups = techStackLogoGroupMeta.map((group) => ({
+  id: group.id,
+  label: group.label,
+  description: group.description,
+  logos: pickTechStackLogos(group.logoIds),
+}));
 
 /** @deprecated Used only if legacy stack UI is restored */
 export type TechStackCategory = {

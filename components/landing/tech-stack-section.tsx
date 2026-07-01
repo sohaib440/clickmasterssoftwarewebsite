@@ -1,17 +1,18 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import type { PointerEvent as ReactPointerEvent } from "react";
 import { SectionHeading } from "@/components/landing/section-heading";
-import { techStackIntro, techStackLogos } from "@/data/landingPage";
+import {
+  type TechStackLogo,
+  techStackIntro,
+  techStackLogoGroups,
+} from "@/data/landingPage";
 import { container, sectionPad } from "@/lib/landing/constants";
 import { cn } from "@/lib/utils";
 
-const CREAM = "#F5F0E4";
-const NAVY = "#0E1B2E";
-const YELLOW = "#F5C842";
-const YELLOW_DARK = "#D4A800";
+const GOLD = "#d4af37";
+const GOLD_MUTED = "rgba(212, 175, 55, 0.35)";
 
 const GRAVITY = 0.38;
 const RESTITUTION = 0.52;
@@ -22,11 +23,9 @@ const MAX_VELOCITY = 18;
 
 const getNow = () => performance.now();
 
-type TechLogo = typeof techStackLogos[number];
-
 interface Bubble {
   id: number;
-  logo: TechLogo;
+  logo: TechStackLogo;
   x: number;
   y: number;
   vx: number;
@@ -35,30 +34,42 @@ interface Bubble {
   mass: number;
 }
 
-function createBubbles(w: number, h: number): Bubble[] {
-  const count = techStackLogos.length;
-  const sizeScale = Math.min(1, Math.max(0.5, w / 1200));
-  const cols = Math.max(3, Math.ceil(Math.sqrt(count * (w / h))));
+function createBubbles(logos: TechStackLogo[], w: number, h: number): Bubble[] {
+  const count = logos.length;
+  if (count === 0) return [];
+
+  const fillRatio = Math.min(0.5, 0.28 + 14 / count);
+  const areaPerBubble = (w * h * fillRatio) / count;
+  const baseR = Math.sqrt(areaPerBubble / Math.PI);
+  const minR = Math.max(16, Math.min(w, h) * 0.055);
+  const densityCap = (w / Math.max(2, Math.ceil(Math.sqrt(count * 1.1)))) * 0.44;
+  const maxR = Math.max(
+    minR,
+    Math.min(68, w * 0.15, h * 0.17, baseR * 1.1, densityCap)
+  );
+
+  const cols =
+    count <= 4 ? 2 : count <= 8 ? 3 : count <= 14 ? 4 : Math.max(4, Math.ceil(Math.sqrt(count)));
   const rows = Math.ceil(count / cols);
-  return techStackLogos.map((logo, i) => {
-    const r = Math.max(16, (26 + Math.random() * 14) * sizeScale);
+
+  return logos.map((logo, i) => {
+    const r = Math.min(maxR, Math.max(minR, baseR * (0.95 + Math.random() * 0.1)));
     const col = i % cols;
     const row = Math.floor(i / cols);
     const cellW = w / cols;
-    const cellH = (h * 0.72) / rows;
+    const cellH = h / rows;
     const centerX = cellW * col + cellW / 2;
-    const startY = cellH * row + r + 12;
-    const offsetX = (Math.random() - 0.5) * Math.min(12, cellW * 0.16);
-    const offsetY = Math.min(18, cellH * 0.25 + Math.random() * 8);
-    const initialY = Math.min(h - r - 8, startY + offsetY);
-    const initialVY = w < 768 ? 0.5 + Math.random() * 0.3 : 0;
+    const centerY = cellH * row + cellH / 2;
+    const offsetX = (Math.random() - 0.5) * Math.min(cellW * 0.22, w * 0.08);
+    const offsetY = (Math.random() - 0.5) * Math.min(cellH * 0.22, h * 0.08);
+    const initialY = Math.min(h - r - 8, Math.max(r + 8, centerY + offsetY));
     return {
       id: i,
       logo,
-      x: Math.min(Math.max(centerX + offsetX, r), w - r),
+      x: Math.min(Math.max(centerX + offsetX, r + 6), w - r - 6),
       y: initialY,
-      vx: (Math.random() - 0.5) * (w < 768 ? 1.2 : 2),
-      vy: initialVY,
+      vx: (Math.random() - 0.5) * 1.4,
+      vy: w < 768 ? 0.35 + Math.random() * 0.2 : 0,
       r,
       mass: r * r,
     };
@@ -104,7 +115,7 @@ function stepPhysics(bs: Bubble[], w: number, h: number, draggingId: number) {
       const dx = b.x - a.x;
       const dy = b.y - a.y;
       const dist = Math.sqrt(dx * dx + dy * dy) || 0.001;
-      const minDist = a.r + b.r + 3;
+      const minDist = a.r + b.r + 2;
       if (dist >= minDist) continue;
       const overlap = (minDist - dist) / 2;
       const nx = dx / dist;
@@ -136,7 +147,7 @@ function stepPhysics(bs: Bubble[], w: number, h: number, draggingId: number) {
   }
 }
 
-export function TechStackSection() {
+function TechBubbleCanvas({ logos }: { logos: readonly TechStackLogo[] }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const bubblesRef = useRef<Bubble[]>([]);
   const domRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -151,6 +162,7 @@ export function TechStackSection() {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const [dragId, setDragId] = useState<number | null>(null);
   const [bubbles, setBubbles] = useState<Bubble[]>([]);
+  const [activeName, setActiveName] = useState<string | null>(null);
 
   useEffect(() => {
     const el = containerRef.current;
@@ -158,14 +170,19 @@ export function TechStackSection() {
 
     const initialize = () => {
       const { width, height } = el.getBoundingClientRect();
-      if (width <= 0 || height <= 0) return;
-      const nextBubbles = createBubbles(width, height);
+      if (width <= 0 || height <= 0) {
+        requestAnimationFrame(initialize);
+        return;
+      }
+      const nextBubbles = createBubbles([...logos], width, height);
       bubblesRef.current = nextBubbles;
+      domRefs.current = new Array(nextBubbles.length).fill(null);
       setBubbles(nextBubbles);
+      setActiveName(null);
     };
 
-    initialize();
-    const observer = new ResizeObserver(() => initialize());
+    requestAnimationFrame(initialize);
+    const observer = new ResizeObserver(() => requestAnimationFrame(initialize));
     observer.observe(el);
 
     const loop = () => {
@@ -186,7 +203,7 @@ export function TechStackSection() {
       cancelAnimationFrame(rafRef.current);
       observer.disconnect();
     };
-  }, []);
+  }, [logos]);
 
   useEffect(() => {
     const getPos = (e: PointerEvent) => {
@@ -196,10 +213,11 @@ export function TechStackSection() {
 
     const onMove = (e: globalThis.PointerEvent) => {
       if (!dragRef.current) return;
+      const rect = containerRef.current!.getBoundingClientRect();
       const pos = getPos(e);
       const b = bubblesRef.current[dragRef.current.id];
-      b.x = pos.x - dragRef.current.offsetX;
-      b.y = pos.y - dragRef.current.offsetY;
+      b.x = Math.min(Math.max(pos.x - dragRef.current.offsetX, b.r), rect.width - b.r);
+      b.y = Math.min(Math.max(pos.y - dragRef.current.offsetY, b.r), rect.height - b.r);
       b.vx = 0;
       b.vy = 0;
       const now = getNow();
@@ -249,100 +267,241 @@ export function TechStackSection() {
       history: [{ x: pos.x, y: pos.y, t: getNow() }],
     };
     setDragId(id);
+    setActiveName(b.logo.name);
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-black text-white">
-      <div className="w-full" style={{ height: 4, background: `linear-gradient(90deg, ${NAVY} 0%, ${YELLOW} 100%)` }} />
-
-      <div className={cn(container, sectionPad, "relative z-10")}>
-        <SectionHeading
-          overlineText="Tech stack"
-          title="Our tech universe"
-          description={techStackIntro}
-          align="left"
-          dark
+    <div className="relative">
+      <div
+        ref={containerRef}
+        className="relative h-[22rem] overflow-hidden rounded-2xl border border-white/10 bg-[radial-gradient(circle_at_50%_0%,rgba(212,175,55,0.08),transparent_55%),linear-gradient(180deg,rgba(255,255,255,0.04)_0%,transparent_100%)] sm:h-[26rem] lg:h-[28rem]"
+        style={{
+          cursor: dragId !== null ? "grabbing" : "default",
+          touchAction: "none",
+          userSelect: "none",
+        }}
+      >
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.18]"
+          style={{
+            backgroundImage: "radial-gradient(circle, rgba(212,175,55,0.8) 1px, transparent 1px)",
+            backgroundSize: "24px 24px",
+          }}
+          aria-hidden
         />
 
-        <div
-          ref={containerRef}
-          className="relative w-full h-[20rem] select-none overflow-hidden sm:h-[20rem] lg:h-[20rem]"
-          style={{ cursor: dragId !== null ? 'grabbing' : 'default', touchAction: 'none', userSelect: 'none' }}
-        >
+        {bubbles.length > 0 &&
+          logos.map((logo, i) => {
+            const b = bubbles[i];
+            if (!b) return null;
+            const size = b.r * 2;
+            const isHovered = hoveredId === i;
+            const isDragging = dragId === i;
+            const active = isHovered || isDragging;
+            const iconSize = Math.min(46, Math.max(20, b.r * 0.52));
+            const labelSize = Math.max(7, Math.min(9, b.r * 0.13));
 
-        {bubbles.length > 0 && techStackLogos.map((logo, i) => {
-          const b = bubbles[i];
-          if (!b) return null;
-          const size = b.r * 2;
-          const isHovered = hoveredId === i;
-          const isDragging = dragId === i;
-          const active = isHovered || isDragging;
-          const iconSize = Math.min(56, Math.max(16, b.r * 0.55));
-          const showName = b.r >= 28;
-          return (
-            <div
-              key={logo.id}
-              ref={(el) => { domRefs.current[i] = el; }}
-              className="absolute top-0 left-0"
-              style={{ width: size, height: size, minWidth: 48, minHeight: 48, willChange: 'transform' }}
-              onPointerEnter={() => setHoveredId(i)}
-              onPointerLeave={() => setHoveredId(null)}
-              onPointerDown={(e) => onBubblePointerDown(e, i)}
-            >
+            return (
               <div
-                className="relative flex flex-col items-center justify-center rounded-full"
-                style={{
-                  width: size,
-                  height: size,
-                  background: active ? YELLOW : '#ffffff',
-                  border: `2.5px solid ${active ? YELLOW_DARK : `${NAVY}22`}`,
-                  boxShadow: isDragging
-                    ? `0 20px 60px rgba(0,0,0,0.22), 0 0 0 5px ${YELLOW}70`
-                    : isHovered
-                    ? `0 12px 36px ${YELLOW}50, 0 0 0 3px ${YELLOW}60`
-                    : `0 4px 16px rgba(0,0,0,0.1), inset 0 1.5px 0 rgba(255,255,255,0.75)`,
-                  cursor: isDragging ? 'grabbing' : 'grab',
-                  transform: isDragging ? 'scale(1.1)' : isHovered ? 'scale(1.06)' : 'scale(1)',
-                  transition: isDragging ? 'none' : 'transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease',
+                key={logo.id}
+                ref={(el) => {
+                  domRefs.current[i] = el;
                 }}
+                className="absolute top-0 left-0"
+                style={{ width: size, height: size, willChange: "transform" }}
+                onPointerEnter={() => {
+                  setHoveredId(i);
+                  setActiveName(logo.name);
+                }}
+                onPointerLeave={() => {
+                  setHoveredId(null);
+                  if (dragId === null) setActiveName(null);
+                }}
+                onPointerDown={(e) => onBubblePointerDown(e, i)}
               >
-                <div className="flex items-center justify-center rounded-full overflow-hidden" style={{ width: iconSize, height: iconSize }}>
-                  <Image
+                <div
+                  className="relative flex flex-col items-center justify-center rounded-full px-1.5 backdrop-blur-sm"
+                  style={{
+                    width: size,
+                    height: size,
+                    background: active
+                      ? "linear-gradient(145deg, #ffffff 0%, #f5f0e4 100%)"
+                      : "linear-gradient(145deg, rgba(255,255,255,0.96) 0%, rgba(245,240,228,0.9) 100%)",
+                    border: active ? `2px solid ${GOLD}` : "1.5px solid rgba(212,175,55,0.25)",
+                    boxShadow: isDragging
+                      ? `0 16px 40px rgba(0,0,0,0.4), 0 0 0 3px ${GOLD_MUTED}`
+                      : isHovered
+                        ? `0 10px 28px rgba(0,0,0,0.3), 0 0 0 2px ${GOLD_MUTED}`
+                        : "0 4px 14px rgba(0,0,0,0.18)",
+                    cursor: isDragging ? "grabbing" : "grab",
+                    transform: isDragging ? "scale(1.05)" : isHovered ? "scale(1.04)" : "scale(1)",
+                    transition: isDragging
+                      ? "none"
+                      : "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
+                  }}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
                     src={logo.icon}
-                    alt={logo.name}
+                    alt=""
                     width={iconSize}
                     height={iconSize}
-                    className="max-w-full max-h-full"
-                    style={{ filter: active ? 'none' : 'brightness(0.95)' }}
-                    unoptimized
+                    loading="lazy"
+                    decoding="async"
+                    draggable={false}
+                    className="max-h-full max-w-full shrink-0 object-contain"
                   />
+                  {logo.name ? (
+                    <span
+                      className="mt-0.5 line-clamp-1 max-w-[92%] text-center font-medium leading-tight text-zinc-700"
+                      style={{ fontSize: labelSize }}
+                    >
+                      {logo.name}
+                    </span>
+                  ) : null}
                 </div>
-                {showName && (
+              </div>
+            );
+          })}
+      </div>
+
+      <div className="pointer-events-none absolute inset-x-0 bottom-4 flex justify-center px-4">
+        <div
+          className={cn(
+            "rounded-full border border-white/15 bg-black/70 px-4 py-2 text-xs text-white/80 backdrop-blur-md transition-opacity duration-200",
+            activeName ? "opacity-100" : "opacity-0"
+          )}
+        >
+          {activeName ?? "Hover a technology"}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function TechStackSection() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeGroup = techStackLogoGroups[activeIndex];
+  const totalTools = techStackLogoGroups.reduce((sum, g) => sum + g.logos.length, 0);
+
+  return (
+    <section className="relative w-full overflow-hidden border-y border-white/10 bg-black text-white">
+      <div
+        className="pointer-events-none absolute -right-32 top-0 h-96 w-96 rounded-full bg-primary/5 blur-3xl"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-primary/5 blur-3xl"
+        aria-hidden
+      />
+
+      <div className={cn(container, sectionPad, "relative z-10")}>
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <SectionHeading
+            overlineText="Technology stack"
+            title={
+              <>
+                Built with{" "}
+                <span className="text-primary">proven, modern tools</span>
+              </>
+            }
+            description={techStackIntro}
+            align="left"
+            dark
+            className="max-w-3xl"
+          />
+          <div className="shrink-0 rounded-2xl border border-primary/25 bg-primary/5 px-5 py-4 text-center lg:text-right">
+            <p className="font-heading text-3xl text-primary">{totalTools}+</p>
+            <p className="mt-1 text-[11px] uppercase tracking-[0.16em] text-white/50">
+              Technologies mastered
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-10 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-zinc-950/90 via-black to-zinc-950/90 p-4 shadow-[0_32px_80px_rgba(0,0,0,0.45)] sm:p-6">
+          <div className="flex flex-col gap-6 lg:flex-row">
+            <nav
+              className="flex gap-2 overflow-x-auto pb-1 lg:w-56 lg:shrink-0 lg:flex-col lg:overflow-visible lg:pb-0"
+              aria-label="Technology categories"
+            >
+              {techStackLogoGroups.map((group, index) => {
+                const isActive = index === activeIndex;
+                return (
+                  <button
+                    key={group.id}
+                    type="button"
+                    onClick={() => setActiveIndex(index)}
+                    className={cn(
+                      "group flex min-w-[9.5rem] shrink-0 items-center justify-between gap-3 rounded-xl border px-4 py-3 text-left transition-all duration-200 lg:min-w-0 lg:w-full",
+                      isActive
+                        ? "border-primary/50 bg-primary/10 shadow-[inset_0_1px_0_rgba(212,175,55,0.2)]"
+                        : "border-white/10 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.04]"
+                    )}
+                  >
+                    <div>
+                      <p
+                        className={cn(
+                          "text-[10px] font-medium uppercase tracking-[0.18em]",
+                          isActive ? "text-primary" : "text-white/35"
+                        )}
+                      >
+                        {String(index + 1).padStart(2, "0")}
+                      </p>
+                      <p
+                        className={cn(
+                          "mt-0.5 font-heading text-sm",
+                          isActive ? "text-white" : "text-white/70"
+                        )}
+                      >
+                        {group.label}
+                      </p>
+                    </div>
+                    <span
+                      className={cn(
+                        "rounded-full px-2 py-0.5 text-[10px] font-medium",
+                        isActive
+                          ? "bg-primary/20 text-primary"
+                          : "bg-white/5 text-white/40"
+                      )}
+                    >
+                      {group.logos.length}
+                    </span>
+                  </button>
+                );
+              })}
+            </nav>
+
+            <div className="min-w-0 flex-1">
+              <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+                <div>
+                  <h3 className="font-heading text-xl text-white sm:text-2xl">
+                    {activeGroup.label}
+                  </h3>
+                  <p className="mt-1 max-w-2xl text-sm leading-relaxed text-white/55">
+                    {activeGroup.description}
+                  </p>
+                </div>
+                <p className="text-[11px] uppercase tracking-[0.14em] text-white/35">
+                  Drag · Explore
+                </p>
+              </div>
+
+              <TechBubbleCanvas key={activeGroup.id} logos={activeGroup.logos} />
+
+              <div className="mt-5 flex flex-wrap gap-2">
+                {activeGroup.logos.map((logo) => (
                   <span
-                    className="font-bold text-center leading-tight mt-2 px-2 hidden md:block"
-                    style={{
-                      color: active ? NAVY : '#374151',
-                      fontSize: Math.max(9, b.r * 0.14),
-                    }}
+                    key={logo.id}
+                    className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[11px] font-medium text-white/65 transition-colors hover:border-primary/30 hover:bg-primary/10 hover:text-white"
                   >
                     {logo.name}
                   </span>
-                )}
-                {/* bubble highlight removed for simpler mobile/touch experience */}
-                {isDragging && (
-                  <div
-                    className="absolute inset-0 rounded-full pointer-events-none"
-                    style={{ border: `2px dashed ${NAVY}40`, transform: 'scale(1.15)' }}
-                  />
-                )}
+                ))}
               </div>
             </div>
-          );
-        })}
+          </div>
+        </div>
       </div>
-      </div>
-
-      <div className="w-full" style={{ height: 4, background: `linear-gradient(90deg, ${NAVY} 0%, ${YELLOW} 100%)` }} />
     </section>
   );
 }

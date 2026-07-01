@@ -9,6 +9,26 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "images.unsplash.com",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.jsdelivr.net",
+      },
+      {
+        protocol: "https",
+        hostname: "about.gitlab.com",
+      },
+      {
+        protocol: "https",
+        hostname: "vercel.com",
+      },
+      {
+        protocol: "https",
+        hostname: "openai.com",
+      },
+      {
+        protocol: "https",
+        hostname: "zustand-demo.pmnd.rs",
+      },
     ],
   },
   experimental: {
