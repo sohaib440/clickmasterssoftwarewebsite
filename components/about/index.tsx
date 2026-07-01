@@ -37,7 +37,7 @@ export function AboutPage() {
       <section className="w-full bg-horizon-navy text-white">
         <div className={cn(container, sectionPad, "text-center")}>
           <Reveal>
-            <h2 className="font-heading text-3xl font-normal md:text-4xl">
+            <h2 className="font-heading text-3xl font-normal text-white md:text-4xl">
               Ready to work <span className="italic">together</span>?
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-sm text-white/75 md:text-base">
