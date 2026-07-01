@@ -4,12 +4,38 @@ import { Mail, Share2 } from "lucide-react";
 import { siteBrand } from "@/lib/landing/brand";
 import { contactPath } from "@/lib/landing/constants";
 
-export const navLinks = [
-  { label: "About", href: "/about" },
-  { label: "Work", href: "#projects" },
-  { label: "Blog", href: "/blog" },
+export type NavChild = {
+  label: string;
+  href: string;
+};
+
+export type NavLink = {
+  label: string;
+  href: string;
+  children?: NavChild[];
+};
+
+export const navLinks: readonly NavLink[] = [
+  {
+    label: "About",
+    href: "/about",
+    children: [{ label: "Our Team", href: "/about#team" }],
+  },
+  { label: "Services", href: "/software-development" },
+  { label: "Solutions", href: "/solutions" },
+  { label: "Projects", href: "#projects" },
+  { label: "Industries", href: "/industries" },
   { label: "Contact", href: contactPath },
-] as const;
+  {
+    label: "Resources",
+    href: "/#",
+    children: [
+      { label: "Blogs", href: "/blog" },
+      { label: "Demos", href: "/demos" },
+      { label: "Case Study", href: "/case-study" },
+    ],
+  },
+];
 
 export const navCtaLabel = "Get a Free Quote";
 
@@ -132,7 +158,7 @@ export type ServiceCategory = {
 
 import { getServiceNavCategories } from "@/lib/content";
 
-/** Nav dropdown auto-generated from lib/content/categories.data.ts */
+/** Nav dropdown auto-generated from data/services.tsx via lib/content */
 export const serviceCategories = getServiceNavCategories();
 
 export const processSteps = [
@@ -381,8 +407,8 @@ export const projects = [
     description:
       "A telehealth platform connecting 12,000+ patients with licensed doctors via video consultations. Reduced patient wait times by 60% and expanded clinic reach by 300% within six months.",
     image: {
-      src: "https://images.unsplash.com/photo-1535378917044-8d2e7c431f1d?auto=format&fit=crop&w=800&q=75",
-      alt: "Telehealth medical platform dashboard",
+      src: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&h=750&q=80",
+      alt: "Telehealth medical platform dashboard on a laptop",
       width: 1200,
       height: 750,
     },
@@ -394,8 +420,8 @@ export const projects = [
     description:
       "A comprehensive ERP system replacing five legacy tools for a mid-size financial services firm. Reduced operational overhead by 40% and achieved full regulatory compliance in the UAE.",
     image: {
-      src: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=75",
-      alt: "Financial dashboard for ERP software",
+      src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=750&q=80",
+      alt: "Financial analytics dashboard for ERP software",
       width: 1200,
       height: 750,
     },
@@ -407,8 +433,8 @@ export const projects = [
     description:
       "A cloud-based POS and inventory management system deployed across 30 retail branches. Reduced stock discrepancies by 85% and cut checkout time by 35%.",
     image: {
-      src: "https://images.unsplash.com/photo-1519337265831-281ec6cc8514?auto=format&fit=crop&w=800&q=75",
-      alt: "Retail point of sale software interface",
+      src: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&h=750&q=80",
+      alt: "Retail point of sale checkout software",
       width: 1200,
       height: 750,
     },
@@ -420,8 +446,8 @@ export const projects = [
     description:
       "An e-learning management system serving 8,000+ students at a private university. Course completion rates increased by 45% following the platform launch.",
     image: {
-      src: "https://images.unsplash.com/photo-1518976024611-48863e63e1ea?auto=format&fit=crop&w=800&q=75",
-      alt: "Learning management system dashboard",
+      src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&h=750&q=80",
+      alt: "Students collaborating with an online learning platform",
       width: 1200,
       height: 750,
     },
@@ -433,8 +459,8 @@ export const projects = [
     description:
       "A real-time shipment tracking platform processing 600+ deliveries daily. Reduced customer support queries by 70% by giving clients live GPS visibility of every shipment.",
     image: {
-      src: "https://images.unsplash.com/photo-1518606373137-37c89441d7b2?auto=format&fit=crop&w=800&q=75",
-      alt: "Logistics tracking dashboard on screen",
+      src: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&h=750&q=80",
+      alt: "Logistics warehouse and shipment tracking dashboard",
       width: 1200,
       height: 750,
     },
@@ -446,12 +472,77 @@ export const projects = [
     description:
       "A property listing and agent CRM platform with AI-powered search recommendations. Time-on-site increased by 120% and lead generation doubled in the first quarter.",
     image: {
-      src: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=75",
-      alt: "Real estate platform interface",
+      src: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&h=750&q=80",
+      alt: "Modern real estate property listing platform",
       width: 1200,
       height: 750,
     },
   },
+  {
+    slug: "insightai",
+    title: "InsightAI",
+    category: "Artificial Intelligence · USA",
+    description:
+      "A document intelligence platform that extracts, classifies, and summarizes contracts for legal teams. Cut manual review time by 75% and improved audit accuracy across 50,000+ documents.",
+    image: {
+      src: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&h=750&q=80",
+      alt: "AI-powered document analysis dashboard",
+      width: 1200,
+      height: 750,
+    },
+  },
+  {
+    slug: "payflow-saas",
+    title: "PayFlow SaaS",
+    category: "FinTech · Singapore",
+    description:
+      "A subscription billing and invoicing platform for B2B SaaS companies. Automated recurring payments for 200+ merchants and reduced failed transaction rates by 28%.",
+    image: {
+      src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&h=750&q=80",
+      alt: "SaaS billing and analytics dashboard",
+      width: 1200,
+      height: 750,
+    },
+  },
+  {
+    slug: "workforce-hrm",
+    title: "Workforce HRM",
+    category: "HR Tech · Pakistan",
+    description:
+      "An all-in-one HRMS with payroll, attendance, and performance reviews for mid-size enterprises. Onboarded 15,000 employees across 40 branches with 99.9% payroll accuracy.",
+    image: {
+      src: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&h=750&q=80",
+      alt: "Human resources management software interface",
+      width: 1200,
+      height: 750,
+    },
+  },
+  {
+    slug: "factoryops",
+    title: "FactoryOps",
+    category: "Manufacturing · Germany",
+    description:
+      "An IoT-enabled production monitoring system tracking machine uptime, defects, and throughput in real time. Reduced unplanned downtime by 32% across three factory floors.",
+    image: {
+      src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&h=750&q=80",
+      alt: "Smart factory operations monitoring dashboard",
+      width: 1200,
+      height: 750,
+    },
+  },
+  // {
+  //   slug: "guestvue",
+  //   title: "GuestVue",
+  //   category: "Hospitality · UAE",
+  //   description:
+  //     "A hotel guest experience app with mobile check-in, room service, and concierge chat. Guest satisfaction scores rose 40% and front-desk wait times dropped by half.",
+  //   image: {
+  //     src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&h=750&q=80",
+  //     alt: "Hotel guest experience mobile application",
+  //     width: 1200,
+  //     height: 750,
+  //   },
+  // },
 ];
 
 export const teamIntro =
@@ -586,10 +677,10 @@ export const blogPosts: BlogPost[] = [
     readTime: "8 min",
     category: "Software Development",
     image: {
-      src: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=640&q=75",
+      src: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&h=750&q=80",
       alt: "Team planning software project",
-      width: 800,
-      height: 500,
+      width: 1200,
+      height: 750,
     },
     body: [
       "Choosing a software development company in Pakistan is not about picking the lowest quote or the flashiest portfolio. It is about finding a partner who will still answer the phone six months after launch.",
@@ -607,16 +698,37 @@ export const blogPosts: BlogPost[] = [
     readTime: "6 min",
     category: "Product Strategy",
     image: {
-      src: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=640&q=75",
+      src: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1200&h=750&q=80",
       alt: "Product discovery workshop",
-      width: 800,
-      height: 500,
+      width: 1200,
+      height: 750,
     },
     body: [
       "Discovery is not a sales exercise. It is a short, structured phase where we map users, workflows, integrations, risks and success metrics then agree on a fixed scope and price before build.",
       "A proper discovery deliverable includes user stories, a technical architecture sketch, milestone plan, and explicit out-of-scope list. Stakeholders sign off so there is one shared truth.",
       "Skipping discovery feels faster until rework piles up: wrong database choices, missing compliance requirements, or features nobody actually uses. That is when budgets blow past PKR estimates and trust erodes.",
       "Whether you work with Software Development Company or another firm, invest in discovery. It is the cheapest insurance on any custom software project.",
+    ],
+  },
+  {
+    slug: "weekly-demos-keep-software-on-track",
+    title: "Why weekly demos keep software projects on track",
+    excerpt:
+      "Long gaps between demos hide problems until they are expensive. A simple weekly rhythm keeps stakeholders aligned and teams shipping visible progress.",
+    date: "Mar 15, 2026",
+    readTime: "5 min",
+    category: "Engineering",
+    image: {
+      src: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1200&h=750&q=80",
+      alt: "Developer reviewing software on laptop",
+      width: 1200,
+      height: 750,
+    },
+    body: [
+      "Weekly demos are not status meetings. They are working sessions where the team shows real software — even if rough — and collects feedback before the next sprint.",
+      "When demos slip to monthly, assumptions pile up. Product owners discover misaligned UI late. Integrations fail quietly. Budget conversations get harder because nobody saw progress.",
+      "A good demo cadence includes a short agenda: what shipped, what is blocked, what is next. Recordings help remote stakeholders. Notes become the living changelog.",
+      "If your vendor resists regular demos, treat that as a signal. Transparency should be default, not a premium add-on.",
     ],
   },
 ];
@@ -712,8 +824,8 @@ export const footerColumns = [
     title: "Services",
     links: [
       { label: "Software Development", href: "/software-development" },
-      { label: "Web Development", href: "/software-development/web-development" },
-      { label: "Mobile Development", href: "/software-development/mobile-app-development" },
+      { label: "Web Development", href: "/web-development" },
+      { label: "Mobile Development", href: "/mobile-app-development" },
       { label: "UI/UX Design", href: "/design-ux" },
       { label: "E-Commerce Development", href: "/solutions/ecommerce" },
       { label: "AI & Automation", href: "/solutions/ai-agent" },

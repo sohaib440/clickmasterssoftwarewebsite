@@ -13,7 +13,7 @@ import {
   overline,
   sectionPad,
 } from "@/lib/landing/constants";
-import type { BlogPost } from "@/lib/landing/data";
+import type { BlogPost } from "@/data/landingPage";
 import { blogIndexPath } from "@/lib/landing/blog";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";

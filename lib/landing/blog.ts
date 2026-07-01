@@ -1,6 +1,6 @@
-import { blogPosts } from "@/lib/landing/data";
+import { blogPosts } from "@/data/landingPage";
 
-export type { BlogPost } from "@/lib/landing/data";
+export type { BlogPost } from "@/data/landingPage";
 
 export function getAllBlogPosts() {
   return blogPosts;

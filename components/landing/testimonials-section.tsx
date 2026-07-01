@@ -3,7 +3,7 @@ import { Reveal } from "@/components/landing/reveal";
 import { SectionHeading } from "@/components/landing/section-heading";
 import { card, container, sectionPad } from "@/lib/landing/constants";
 import { motionStagger } from "@/lib/landing/motion";
-import { testimonials } from "@/lib/landing/data";
+import { testimonials } from "@/data/landingPage";
 import { cn } from "@/lib/utils";
 
 export function TestimonialsSection() {

@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import type { MouseEvent as ReactMouseEvent } from "react";
+import type { PointerEvent as ReactPointerEvent } from "react";
 import { SectionHeading } from "@/components/landing/section-heading";
-import { techStackIntro, techStackLogos } from "@/lib/landing/data";
+import { techStackIntro, techStackLogos } from "@/data/landingPage";
 import { container, sectionPad } from "@/lib/landing/constants";
 import { cn } from "@/lib/utils";
 
@@ -13,10 +13,12 @@ const NAVY = "#0E1B2E";
 const YELLOW = "#F5C842";
 const YELLOW_DARK = "#D4A800";
 
-const GRAVITY = 0.45;
-const RESTITUTION = 0.72;
-const FRICTION = 0.985;
-const DAMPING = 0.999;
+const GRAVITY = 0.38;
+const RESTITUTION = 0.52;
+const FRICTION = 0.86;
+const DAMPING = 0.995;
+const MIN_VELOCITY = 0.08;
+const MAX_VELOCITY = 18;
 
 const getNow = () => performance.now();
 
@@ -35,23 +37,28 @@ interface Bubble {
 
 function createBubbles(w: number, h: number): Bubble[] {
   const count = techStackLogos.length;
-  const cols = Math.ceil(Math.sqrt(count * (w / h)));
+  const sizeScale = Math.min(1, Math.max(0.5, w / 1200));
+  const cols = Math.max(3, Math.ceil(Math.sqrt(count * (w / h))));
   const rows = Math.ceil(count / cols);
   return techStackLogos.map((logo, i) => {
-    const r = 38 + Math.random() * 20;
+    const r = Math.max(16, (26 + Math.random() * 14) * sizeScale);
     const col = i % cols;
     const row = Math.floor(i / cols);
     const cellW = w / cols;
     const cellH = (h * 0.72) / rows;
-    const startY = cellH * row + r + 8;
-    const dropOffset = 80 + Math.random() * 80;
+    const centerX = cellW * col + cellW / 2;
+    const startY = cellH * row + r + 12;
+    const offsetX = (Math.random() - 0.5) * Math.min(12, cellW * 0.16);
+    const offsetY = Math.min(18, cellH * 0.25 + Math.random() * 8);
+    const initialY = Math.min(h - r - 8, startY + offsetY);
+    const initialVY = w < 768 ? 0.5 + Math.random() * 0.3 : 0;
     return {
       id: i,
       logo,
-      x: cellW * col + cellW / 2 + (Math.random() - 0.5) * 16,
-      y: startY - dropOffset,
-      vx: (Math.random() - 0.5) * 2,
-      vy: 0,
+      x: Math.min(Math.max(centerX + offsetX, r), w - r),
+      y: initialY,
+      vx: (Math.random() - 0.5) * (w < 768 ? 1.2 : 2),
+      vy: initialVY,
       r,
       mass: r * r,
     };
@@ -64,6 +71,8 @@ function stepPhysics(bs: Bubble[], w: number, h: number, draggingId: number) {
     b.vy += GRAVITY;
     b.vx *= DAMPING;
     b.vy *= DAMPING;
+    b.vx = Math.max(-MAX_VELOCITY, Math.min(MAX_VELOCITY, b.vx));
+    b.vy = Math.max(-MAX_VELOCITY, Math.min(MAX_VELOCITY, b.vy));
     b.x += b.vx;
     b.y += b.vy;
 
@@ -83,8 +92,9 @@ function stepPhysics(bs: Bubble[], w: number, h: number, draggingId: number) {
       b.y = h - b.r;
       b.vy = -Math.abs(b.vy) * RESTITUTION;
       b.vx *= FRICTION;
-      if (Math.abs(b.vy) < 0.5) b.vy = 0;
     }
+    if (Math.abs(b.vx) < MIN_VELOCITY) b.vx = 0;
+    if (Math.abs(b.vy) < MIN_VELOCITY) b.vy = 0;
   }
 
   for (let i = 0; i < bs.length; i++) {
@@ -145,11 +155,18 @@ export function TechStackSection() {
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
-    const w = el.clientWidth;
-    const h = el.clientHeight;
-    const nextBubbles = createBubbles(w, h);
-    bubblesRef.current = nextBubbles;
-    setBubbles(nextBubbles);
+
+    const initialize = () => {
+      const { width, height } = el.getBoundingClientRect();
+      if (width <= 0 || height <= 0) return;
+      const nextBubbles = createBubbles(width, height);
+      bubblesRef.current = nextBubbles;
+      setBubbles(nextBubbles);
+    };
+
+    initialize();
+    const observer = new ResizeObserver(() => initialize());
+    observer.observe(el);
 
     const loop = () => {
       const { width, height } = el.getBoundingClientRect();
@@ -165,16 +182,19 @@ export function TechStackSection() {
     };
 
     rafRef.current = requestAnimationFrame(loop);
-    return () => cancelAnimationFrame(rafRef.current);
+    return () => {
+      cancelAnimationFrame(rafRef.current);
+      observer.disconnect();
+    };
   }, []);
 
   useEffect(() => {
-    const getPos = (e: MouseEvent) => {
+    const getPos = (e: PointerEvent) => {
       const rect = containerRef.current!.getBoundingClientRect();
       return { x: e.clientX - rect.left, y: e.clientY - rect.top };
     };
 
-    const onMove = (e: globalThis.MouseEvent) => {
+    const onMove = (e: globalThis.PointerEvent) => {
       if (!dragRef.current) return;
       const pos = getPos(e);
       const b = bubblesRef.current[dragRef.current.id];
@@ -207,15 +227,17 @@ export function TechStackSection() {
       setDragId(null);
     };
 
-    window.addEventListener("mousemove", onMove);
-    window.addEventListener("mouseup", onUp);
+    window.addEventListener("pointermove", onMove);
+    window.addEventListener("pointerup", onUp);
+    window.addEventListener("pointercancel", onUp);
     return () => {
-      window.removeEventListener("mousemove", onMove);
-      window.removeEventListener("mouseup", onUp);
+      window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("pointerup", onUp);
+      window.removeEventListener("pointercancel", onUp);
     };
   }, []);
 
-  const onBubbleMouseDown = (e: ReactMouseEvent<HTMLDivElement>, id: number) => {
+  const onBubblePointerDown = (e: ReactPointerEvent<HTMLDivElement>, id: number) => {
     e.preventDefault();
     const rect = containerRef.current!.getBoundingClientRect();
     const pos = { x: e.clientX - rect.left, y: e.clientY - rect.top };
@@ -230,40 +252,23 @@ export function TechStackSection() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden" style={{ background: CREAM }}>
-            <div className="w-full" style={{ height: 4, background: `linear-gradient(90deg, ${NAVY} 0%, ${YELLOW} 100%)` }} />
+    <section className="relative w-full overflow-hidden bg-black text-white">
+      <div className="w-full" style={{ height: 4, background: `linear-gradient(90deg, ${NAVY} 0%, ${YELLOW} 100%)` }} />
 
-      <div className={cn(container, sectionPad, "relative z-10")}> 
+      <div className={cn(container, sectionPad, "relative z-10")}>
         <SectionHeading
           overlineText="Tech stack"
           title="Our tech universe"
           description={techStackIntro}
           align="left"
-          className="mb-12"
+          dark
         />
 
         <div
           ref={containerRef}
-          className="relative w-full select-none"
-          style={{ height: 640, cursor: dragId !== null ? 'grabbing' : 'default', overflow: 'visible' }}
+          className="relative w-full h-[20rem] select-none overflow-hidden sm:h-[20rem] lg:h-[20rem]"
+          style={{ cursor: dragId !== null ? 'grabbing' : 'default', touchAction: 'none', userSelect: 'none' }}
         >
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage: `radial-gradient(circle, ${NAVY}15 1px, transparent 1px)`,
-            backgroundSize: '38px 38px',
-          }}
-        />
-        <div
-          className="absolute inset-0 pointer-events-none z-10"
-          style={{
-            background: `radial-gradient(ellipse 95% 95% at 50% 50%, transparent 55%, ${CREAM}dd 100%)`,
-          }}
-        />
-        <div
-          className="absolute bottom-0 left-0 right-0 h-8 pointer-events-none z-10"
-          style={{ background: `linear-gradient(to top, ${CREAM}, transparent)` }}
-        />
 
         {bubbles.length > 0 && techStackLogos.map((logo, i) => {
           const b = bubbles[i];
@@ -272,16 +277,17 @@ export function TechStackSection() {
           const isHovered = hoveredId === i;
           const isDragging = dragId === i;
           const active = isHovered || isDragging;
-          const iconSize = Math.min(56, Math.max(28, b.r * 0.8));
+          const iconSize = Math.min(56, Math.max(16, b.r * 0.55));
+          const showName = b.r >= 28;
           return (
             <div
               key={logo.id}
               ref={(el) => { domRefs.current[i] = el; }}
               className="absolute top-0 left-0"
-              style={{ width: size, height: size, willChange: 'transform' }}
-              onMouseEnter={() => setHoveredId(i)}
-              onMouseLeave={() => setHoveredId(null)}
-              onMouseDown={(e) => onBubbleMouseDown(e, i)}
+              style={{ width: size, height: size, minWidth: 48, minHeight: 48, willChange: 'transform' }}
+              onPointerEnter={() => setHoveredId(i)}
+              onPointerLeave={() => setHoveredId(null)}
+              onPointerDown={(e) => onBubblePointerDown(e, i)}
             >
               <div
                 className="relative flex flex-col items-center justify-center rounded-full"
@@ -300,7 +306,7 @@ export function TechStackSection() {
                   transition: isDragging ? 'none' : 'transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease',
                 }}
               >
-                <div className="flex items-center justify-center rounded-full" style={{ width: iconSize, height: iconSize }}>
+                <div className="flex items-center justify-center rounded-full overflow-hidden" style={{ width: iconSize, height: iconSize }}>
                   <Image
                     src={logo.icon}
                     alt={logo.name}
@@ -311,21 +317,18 @@ export function TechStackSection() {
                     unoptimized
                   />
                 </div>
-                <span
-                  className="font-bold text-center leading-tight mt-2 px-2"
-                  style={{
-                    color: active ? NAVY : '#374151',
-                    fontSize: Math.max(9, b.r * 0.15),
-                  }}
-                >
-                  {logo.name}
-                </span>
-                <div
-                  className="absolute inset-0 rounded-full pointer-events-none"
-                  style={{
-                    background: 'radial-gradient(ellipse 55% 38% at 36% 26%, rgba(255,255,255,0.6) 0%, transparent 70%)',
-                  }}
-                />
+                {showName && (
+                  <span
+                    className="font-bold text-center leading-tight mt-2 px-2 hidden md:block"
+                    style={{
+                      color: active ? NAVY : '#374151',
+                      fontSize: Math.max(9, b.r * 0.14),
+                    }}
+                  >
+                    {logo.name}
+                  </span>
+                )}
+                {/* bubble highlight removed for simpler mobile/touch experience */}
                 {isDragging && (
                   <div
                     className="absolute inset-0 rounded-full pointer-events-none"

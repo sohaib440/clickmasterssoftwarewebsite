@@ -2,130 +2,22 @@
 
 // using native <img> for public/static images to avoid Next/Image loader issues
 import Link from 'next/link';
-import {
-  ArrowUpRight,
-  ShieldCheck,
-  Globe2,
-  Smartphone,
-  BrainCircuit,
-  Palette,
-  Database,
-  Server,
-  Sparkles,
-} from 'lucide-react';
+import { ArrowUpRight, Sparkles } from 'lucide-react';
 import { SectionHeading } from '@/components/landing/section-heading';
 import { container, sectionPad, btnPrimary } from '@/lib/landing/constants';
+import { serviceRoutes, services, type ServiceCard } from '@/data/services';
 import { cn } from '@/lib/utils';
 
-const serviceRoutes = {
-  'Software Development': '/software-development',
-  'Web Development': '/web-development',
-  'Mobile Development': '/mobile-development',
-  'Artificial Intelligence': '/artificial-intelligence-ai',
-  'UI/UX Systems': '/design-ui-ux',
-  'Cloud & DevOps': '/cloud-and-devops',
-  'Machine Learning': '/machine-learning-ml',
-  'Data Services': '/data-services',
-  'Testing & QA': '/testing-and-qa',
-};
-
-const services = [
-  {
-    title: 'Software Development',
-    description: 'Custom software solutions tailored to your business needs.',
-    image: '/services/Software development.png',
-    Icon: ShieldCheck,
-    AltIcon: Globe2,
-    tag: 'Enterprise',
-    span: 'wide',
-    accent: '#3b82f6',
-  },
-  {
-    title: 'Web Development',
-    description: 'Modern web applications with responsive design and seamless user experience.',
-    image: '/services/Web Development.png',
-    Icon: Globe2,
-    AltIcon: Server,
-    tag: 'Web3 Ready',
-    accent: '#ec4899',
-  },
-  {
-    title: 'Mobile Development',
-    description: 'Build secure and scalable mobile applications for iOS and Android.',
-    image: '/services/Mobile Application Development.png',
-    Icon: Smartphone,
-    AltIcon: ShieldCheck,
-    tag: 'Cross-Platform',
-    accent: '#10b981',
-  },
-  {
-    title: 'Artificial Intelligence',
-    description: 'AI-powered monitoring systems with predictive threat intelligence.',
-    image: '/services/Artificial Intelligence.png',
-    Icon: BrainCircuit,
-    AltIcon: Database,
-    tag: 'Intelligence',
-    span: 'tall',
-    accent: '#8b5cf6',
-  },
-  {
-    title: 'UI/UX Systems',
-    description: 'Elegant digital experiences focused on usability and conversion.',
-    image: '/services/UI-UX.png',
-    Icon: Palette,
-    AltIcon: Globe2,
-    tag: 'Design',
-    accent: '#f59e0b',
-  },
-  {
-    title: 'Cloud & DevOps',
-    description: 'Secure cloud-native infrastructure with scalable DevOps workflows.',
-    image: '/services/CloudOPs and Devops.png',
-    Icon: Database,
-    AltIcon: Server,
-    tag: 'DevSecOps',
-    span: 'wide',
-    accent: '#0ea5e9',
-  },
-  {
-    title: 'Machine Learning',
-    description: 'Scalable infrastructure architecture with maximum uptime and reliability.',
-    image: '/services/Machine Learning.png',
-    Icon: Server,
-    AltIcon: BrainCircuit,
-    tag: 'Reliability',
-    accent: '#14b8a6',
-  },
-  {
-    title: 'Data Services',
-    description: 'Data engineering, warehousing, and analytics solutions.',
-    image: '/services/Data Services.png',
-    Icon: Database,
-    AltIcon: Palette,
-    tag: 'Platform',
-    accent: '#6366f1',
-  },
-  {
-    title: 'Testing & QA',
-    description: 'Scalable infrastructure architecture with maximum uptime and reliability.',
-    image: '/services/Testing-and-QA.png',
-    Icon: Database,
-    AltIcon: Palette,
-    tag: 'Platform',
-    accent: '#42f560',
-  },
-];
-
-function ServiceCard({ service, index }: { service: (typeof services)[number]; index: number }) {
+function ServiceCard({ service, index }: { service: ServiceCard; index: number }) {
   const { accent } = service;
   const spanClass =
     service.span === 'wide'
-      ? 'sm:col-span-2'
+      ? 'sm:col-span-2 xl:col-span-2'
       : service.span === 'tall'
       ? 'xl:row-span-2'
       : '';
 
-  const route = serviceRoutes[service.title as keyof typeof serviceRoutes];
+  const route = serviceRoutes[service.title];
 
   return (
     <div
@@ -135,8 +27,7 @@ function ServiceCard({ service, index }: { service: (typeof services)[number]; i
     >
       <Link href={route || '/services'}>
         <div
-          className={`group relative flex flex-col justify-between cursor-pointer ${service.span === 'tall' ? 'h-full min-h-145' : 'h-115'
-            } rounded-[40px] border bg-white/40 backdrop-blur-2xl p-8 overflow-hidden transition-all duration-500 hover:bg-white/60`}
+          className={`group relative flex flex-col justify-between cursor-pointer ${service.span === 'tall' ? 'h-full min-h-[28rem] md:min-h-[32rem]' : 'min-h-[22rem] md:min-h-[26rem] xl:h-full'} rounded-[40px] border bg-white/10 backdrop-blur-2xl p-6 sm:p-8 overflow-hidden transition-all duration-500 hover:bg-white/15`}
           style={{ borderColor: `${accent}77` }}
         >
           <div
@@ -170,7 +61,7 @@ function ServiceCard({ service, index }: { service: (typeof services)[number]; i
                 style={{ background: accent }}
               />
               {service.image ? (
-                <div className="relative w-56 h-56 overflow-hidden rounded-[32px]">
+                <div className="relative w-40 h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 overflow-hidden rounded-[32px]">
                   <img src={service.image} alt={service.title} className="object-cover w-full h-full" />
                 </div>
               ) : (
@@ -179,10 +70,10 @@ function ServiceCard({ service, index }: { service: (typeof services)[number]; i
             </div>
 
             <div className='mb-6'>
-              <h3 className="text-2xl font-bold text-foreground mb-2 tracking-tight">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-2 tracking-tight">
                 {service.title}
               </h3>
-              <p className="text-sm text-muted-foreground/90 leading-relaxed line-clamp-2">
+              <p className="text-sm md:text-base text-white/70 leading-relaxed line-clamp-2">
                 {service.description}
               </p>
 
@@ -207,11 +98,11 @@ function ServiceCard({ service, index }: { service: (typeof services)[number]; i
 
 export function ServicesSection() {
   return (
-    <section id="services" className="relative  bg-background overflow-hidden">
+    <section id="services" className="relative bg-black text-white overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-500/15 blur-[120px]" />
-        <div className="absolute top-[20%] right-[-10%] w-[40%] h-[40%] rounded-full bg-purple-500/15 blur-[120px]" />
-        <div className="absolute bottom-[-10%] left-[20%] w-[40%] h-[40%] rounded-full bg-emerald-500/15 blur-[120px]" />
+        <div className="absolute top-[-15%] left-[-10%] w-[40%] h-[40%] rounded-full bg-[rgba(212,175,55,0.18)] blur-[120px]" />
+        <div className="absolute top-[10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-[rgba(255,255,255,0.08)] blur-[120px]" />
+        <div className="absolute bottom-[-10%] left-[20%] w-[40%] h-[40%] rounded-full bg-[rgba(212,175,55,0.12)] blur-[120px]" />
       </div>
 
       <div className={cn(container, sectionPad, 'relative z-10')}>
@@ -225,10 +116,11 @@ export function ServicesSection() {
             }
             description="We blend cutting-edge technology with world-class design to build products that define industries."
             align="left"
+            dark
           />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 auto-rows-[460px] gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 auto-rows-min xl:auto-rows-[460px] gap-8">
           {services.map((service, i) => (
             <ServiceCard key={service.title} service={service} index={i} />
           ))}

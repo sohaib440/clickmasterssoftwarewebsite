@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import { card, iconMuted } from "@/lib/landing/constants";
-import { techStackTabs } from "@/lib/landing/data";
+import { techStackTabs } from "@/data/landingPage";
 import { cn } from "@/lib/utils";
 
 export function TechStackTabs() {

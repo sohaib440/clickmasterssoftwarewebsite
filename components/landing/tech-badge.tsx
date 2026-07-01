@@ -1,4 +1,4 @@
-import type { Technology } from "@/lib/landing/data";
+import type { Technology } from "@/data/landingPage";
 import { cn } from "@/lib/utils";
 
 type TechBadgeProps = {

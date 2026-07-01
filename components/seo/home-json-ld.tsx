@@ -1,4 +1,4 @@
-import { faqs } from "@/lib/landing/data";
+import { faqs } from "@/data/landingPage";
 import { faqPageJsonLd, organizationJsonLd } from "@/lib/landing/structured-data";
 
 export function HomeJsonLd() {

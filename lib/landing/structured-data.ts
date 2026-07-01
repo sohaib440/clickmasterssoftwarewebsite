@@ -1,5 +1,5 @@
 import { siteBrand } from "@/lib/landing/brand";
-import type { FaqItem } from "@/lib/landing/data";
+import type { FaqItem } from "@/data/landingPage";
 
 export function organizationJsonLd() {
   return {

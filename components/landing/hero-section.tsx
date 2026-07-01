@@ -1,10 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import { CardImage } from "@/components/landing/card-image";
+import { RatingBadges } from "@/components/landing/rating-badges";
 import { Reveal } from "@/components/landing/reveal";
-import { btnOutline, btnPrimary, card, contactPath, container, overline, sectionPad } from "@/lib/landing/constants";
-import { heroImages, homeHero, ratingBadges, stats } from "@/lib/landing/data";
+import { btnOutlineDark, btnPrimary, card, contactPath, container, overline, sectionPad } from "@/lib/landing/constants";
+import { heroImages, homeHero, stats } from "@/data/landingPage";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
 
@@ -13,25 +13,25 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative w-full bg-gradient-to-b from-horizon-cream via-horizon-cream to-horizon-sky"
+      className="relative w-full overflow-x-clip bg-black text-white"
       aria-label="Introduction"
     >
-      <div className={cn(container, sectionPad)}>
-        <div className="grid items-center gap-6 lg:grid-cols-2 lg:gap-8">
+      <div className={cn(container, sectionPad, "relative z-10 min-w-0")}>
+        <div className="grid min-w-0 items-center gap-6 lg:grid-cols-2 lg:gap-8">
           <div className="min-w-0">
             <Reveal immediate delay={0}>
               <p className={overline}>{homeHero.eyebrow}</p>
             </Reveal>
 
             <Reveal immediate delay={motionStagger}>
-              <h1 className="mt-3 max-w-3xl font-heading text-4xl font-normal leading-[1.12] tracking-tight text-horizon-navy sm:text-5xl lg:text-6xl">
+              <h1 className="mt-3 max-w-3xl font-heading text-4xl font-normal leading-[1.12] tracking-tight text-white sm:text-5xl lg:text-6xl">
                 {homeHero.headlineBefore}{" "}
                 <span className="italic">{homeHero.headlineEmphasis}</span>
               </h1>
             </Reveal>
 
             <Reveal immediate delay={motionStagger * 2}>
-              <p className="mt-4 max-w-xl text-base leading-relaxed text-left text-horizon-muted md:text-lg">
+              <p className="mt-4 max-w-xl text-base leading-relaxed text-left text-white/70 md:text-lg">
                 {homeHero.subtext}
               </p>
             </Reveal>
@@ -42,7 +42,7 @@ export function HeroSection() {
                   <Link href={contactPath} className={btnPrimary}>
                     {homeHero.primaryCta}
                   </Link>
-                  <Link href={homeHero.secondaryHref} className={btnOutline}>
+                  <Link href={homeHero.secondaryHref} className={btnOutlineDark}>
                     {homeHero.secondaryCta} →
                   </Link>
                 </div>
@@ -54,9 +54,9 @@ export function HeroSection() {
             immediate
             delay={motionStagger * 2}
             direction="right"
-            className="relative mx-auto w-full max-w-lg lg:mx-0 lg:max-w-none"
+            className="relative mx-auto w-full min-w-0 max-w-lg lg:mx-0 lg:max-w-none"
           >
-            <div className="grid grid-cols-12 gap-1.5">
+            <div className="grid min-w-0 w-full grid-cols-12 gap-1.5">
               <div className={cn(card, "col-span-12 p-0 sm:col-span-7 sm:row-span-2")}>
                 <CardImage
                   {...main}
@@ -87,29 +87,7 @@ export function HeroSection() {
             </div>
 
             {/* Rating badges: show after the images so they sit at the bottom of the images column */}
-            <div className="mt-6 items-end">
-              <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
-                {ratingBadges.map((badge, index) => (
-                  <div
-                    key={badge.slug}
-                    className={
-                      "flex items-center justify-center rounded-3xl border p-3 shadow-sm " +
-                      (index < 3
-                        ? "border-transparent bg-horizon-navy text-white"
-                        : "border-horizon-border/20 bg-white/90")
-                    }
-                  >
-                    <Image
-                      src={badge.logo}
-                      alt={badge.name}
-                      width={160}
-                      height={48}
-                      className="h-10 w-auto object-contain"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
+            <RatingBadges className="mt-6" />
 
           </Reveal>
         </div>
@@ -121,12 +99,12 @@ export function HeroSection() {
               immediate
               delay={i * motionStagger}
               direction="up"
-              className={cn(i > 0 && "sm:border-l sm:border-horizon-navy/10 sm:pl-4")}
+              className={cn(i > 0 && "sm:border-l sm:border-white/15 sm:pl-4")}
             >
-              <dt className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
+              <dt className="font-heading text-3xl font-normal text-white md:text-4xl">
                 {stat.value}
               </dt>
-              <dd className="mt-2 text-sm text-horizon-muted">{stat.label}</dd>
+              <dd className="mt-2 text-sm text-white/70">{stat.label}</dd>
             </Reveal>
           ))}
         </dl>
