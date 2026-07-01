@@ -29,6 +29,13 @@ export const metadata: Metadata = {
   },
   description: siteMetadata.description,
   keywords: [...siteMetadata.keywords],
+  icons: {
+    icon: [{ url: siteBrand.favicon, type: "image/png" }],
+    apple: [{ url: siteBrand.appleIcon, type: "image/png" }],
+  },
+  verification: {
+    google: "Nfu_VzU_CiwEP8RUZP8rojwAijeduR9oYaHc7T40xQY",
+  },
 };
 
 export const viewport = {
