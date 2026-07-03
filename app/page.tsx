@@ -2,15 +2,12 @@ import type { Metadata } from "next";
 
 import { HomeJsonLd } from "@/components/seo/home-json-ld";
 import {
-  AboutSection,
   BlogSection,
   ContactSection,
   TrustedPartnersSection,
   FaqSection,
   HeroSection,
-  IndustriesSection,
   ProcessSection,
-  ProjectsSection,
   ServicesSection,
   SiteFooter,
   SiteHeader,
@@ -45,20 +42,13 @@ export default function Home() {
       <main className="flex w-full max-w-full flex-1 flex-col overflow-x-clip">
         <TrustedPartnersSection />
         <DeferredSection>
-          <AboutSection />
-        </DeferredSection>
-        <DeferredSection>
           <ServicesSection />
         </DeferredSection>
-        <IndustriesSection />
         <DeferredSection>
           <TechStackSection />
         </DeferredSection>
         <DeferredSection>
           <ProcessSection />
-        </DeferredSection>
-        <DeferredSection>
-          <ProjectsSection />
         </DeferredSection>
         <TeamSection />
         <TestimonialsSection />

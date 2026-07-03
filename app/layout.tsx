@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 
+import { ClearStaleServiceWorker } from "@/components/dev/clear-stale-sw";
 import { MotionInit } from "@/components/motion-init";
+import { LegacyHashRedirect } from "@/components/project/project-hash-redirect";
 import { siteBrand, siteMetadata } from "@/lib/landing/brand";
 import "./globals.css";
 import { cn } from "@/lib/utils";
@@ -51,7 +53,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn("h-full antialiased", inter.variable, playfair.variable)}>
       <body className="min-h-full w-full overflow-x-clip font-sans" suppressHydrationWarning>
+        <ClearStaleServiceWorker />
         <MotionInit />
+        <LegacyHashRedirect />
         {children}
       </body>
     </html>

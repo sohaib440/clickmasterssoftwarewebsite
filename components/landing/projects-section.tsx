@@ -1,11 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 import CardSwap, { Card } from "@/components/landing/card-swap";
-import { container, overline, sectionPad } from "@/lib/landing/constants";
+import { btnOutlineDark, container, overline, projectPath, sectionPad } from "@/lib/landing/constants";
 import { showcaseProjects } from "@/data/projectShowcase";
 import { cn } from "@/lib/utils";
 
@@ -287,6 +288,13 @@ export function ProjectsSection() {
                 <ChevronRight className="size-4" />
               </button>
             </div>
+          </div>
+
+          <div className="mt-8 flex justify-center sm:mt-10">
+            <Link href={projectPath} className={btnOutlineDark}>
+              View all projects
+              <ArrowUpRight className="ml-2 size-4" aria-hidden />
+            </Link>
           </div>
         </div>
       </div>
