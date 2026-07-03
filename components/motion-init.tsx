@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 
-/** Enables scroll-reveal styles only after hydration (content stays visible without JS). */
+/** Enables scroll-reveal styles before paint to avoid a post-hydration flash. */
 export function MotionInit() {
-  useEffect(() => {
+  useLayoutEffect(() => {
     document.documentElement.classList.add("motion-js");
   }, []);
 

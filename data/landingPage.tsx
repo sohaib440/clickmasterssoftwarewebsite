@@ -229,8 +229,8 @@ export const processSteps = [
 ];
 
 export const stats = [
-  { value: "250+", label: "Happy Clients", icon: "users" as const },
-  { value: "15+", label: "Years of Experience", icon: "briefcase" as const },
+  { value: "50+", label: "Happy Clients", icon: "users" as const },
+  { value: "4+", label: "Years of Experience", icon: "briefcase" as const },
   { value: "10+", label: "Countries Served", icon: "layers" as const },
   { value: "98%", label: "Client Satisfaction", icon: "shield-check" as const },
 ];
@@ -276,8 +276,8 @@ export const aboutSection = {
     },
   ],
   image: {
-    src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=75",
-    alt: "Professional team collaborating in a bright office space",
+    src: "/about us/software development company.png",
+    alt: "Next Software Development Company team",
     width: 1000,
     height: 700,
   },

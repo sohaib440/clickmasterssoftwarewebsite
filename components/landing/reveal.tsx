@@ -66,9 +66,8 @@ export function Reveal({
     }
 
     if (immediate) {
-      setVisible(false);
-      const id = requestAnimationFrame(() => setVisible(true));
-      return () => cancelAnimationFrame(id);
+      setVisible(true);
+      return;
     }
 
     const el = ref.current;

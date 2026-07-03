@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 
 import { HomeJsonLd } from "@/components/seo/home-json-ld";
 import {
   AboutSection,
+  BlogSection,
+  ContactSection,
   TrustedPartnersSection,
   FaqSection,
   HeroSection,
@@ -13,27 +14,11 @@ import {
   ServicesSection,
   SiteFooter,
   SiteHeader,
+  TeamSection,
   TechStackSection,
+  TestimonialsSection,
 } from "@/components/landing";
 import { siteMetadata } from "@/lib/landing/brand";
-
-const TeamSection = dynamic(
-  () => import("@/components/landing/team-section").then((m) => ({ default: m.TeamSection }))
-);
-
-const TestimonialsSection = dynamic(() =>
-  import("@/components/landing/testimonials-section").then((m) => ({
-    default: m.TestimonialsSection,
-  }))
-);
-
-const BlogSection = dynamic(() =>
-  import("@/components/landing/blog-section").then((m) => ({ default: m.BlogSection }))
-);
-
-const ContactSection = dynamic(() =>
-  import("@/components/landing/contact-section").then((m) => ({ default: m.ContactSection }))
-);
 
 export const metadata: Metadata = {
   title: siteMetadata.title,
