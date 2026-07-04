@@ -62,11 +62,11 @@ export function SiteHeader() {
             scrolled ? "h-[4.5rem] lg:h-20" : "h-[4.75rem] lg:h-[5.25rem]"
           )}
         >
-          {/* <SiteLogo
+          <SiteLogo
             priority
             className="min-w-0 max-w-[58vw] justify-self-start sm:max-w-none"
             imageClassName="h-12 w-auto max-w-[17rem] sm:h-[3.25rem] sm:max-w-[19rem] md:h-14 md:max-w-[22rem] lg:h-16 lg:max-w-[24rem]"
-          /> */}
+          />
 
           <nav
             className="hidden min-w-0 items-center justify-center justify-self-center gap-1 lg:flex lg:gap-2"
