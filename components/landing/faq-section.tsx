@@ -1,18 +1,25 @@
 import { ChevronDown } from "lucide-react";
+import Link from "next/link";
 
 import { Reveal } from "@/components/landing/reveal";
 import { SectionHeading } from "@/components/landing/section-heading";
 import { container, sectionPad } from "@/lib/landing/constants";
-import { faqIntro, faqs } from "@/data/landingPage";
+import { faqIntro, faqs, type FaqItem } from "@/data/landingPage";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
 
-function FaqColumn({ column, startIndex }: { column: "left" | "right"; startIndex: number }) {
-  const items = faqs.filter((f) => f.column === column);
+type FaqColumnProps = {
+  column: "left" | "right";
+  startIndex: number;
+  items: FaqItem[];
+};
+
+function FaqColumn({ column, startIndex, items }: FaqColumnProps) {
+  const columnItems = items.filter((f) => f.column === column);
 
   return (
     <div className="flex flex-col gap-3">
-      {items.map((faq, i) => {
+      {columnItems.map((faq, i) => {
         const index = startIndex + i;
         return (
           <Reveal key={faq.question} delay={i * motionStagger}>
@@ -79,13 +86,35 @@ function FaqColumn({ column, startIndex }: { column: "left" | "right"; startInde
   );
 }
 
-export function FaqSection() {
-  const leftCount = faqs.filter((f) => f.column === "left").length;
+type FaqSectionProps = {
+  items?: FaqItem[];
+  intro?: string;
+  overlineText?: string;
+  title?: React.ReactNode;
+  footerCta?: string;
+  footerHref?: string;
+  className?: string;
+};
+
+export function FaqSection({
+  items = faqs,
+  intro = faqIntro,
+  overlineText = "Frequently asked questions",
+  title = (
+    <>
+      Questions, <span className="italic">answered</span>
+    </>
+  ),
+  footerCta,
+  footerHref,
+  className,
+}: FaqSectionProps = {}) {
+  const leftCount = items.filter((f) => f.column === "left").length;
 
   return (
     <section
       id="faqs"
-      className="relative w-full overflow-hidden bg-white text-horizon-navy"
+      className={cn("relative w-full overflow-hidden bg-white text-horizon-navy", className)}
     >
       <div
         className="pointer-events-none absolute inset-0 overflow-hidden"
@@ -97,20 +126,27 @@ export function FaqSection() {
 
       <div className={cn(container, sectionPad, "relative")}>
         <SectionHeading
-          overlineText="Frequently asked questions"
-          title={
-            <>
-              Questions, <span className="italic">answered</span>
-            </>
-          }
-          description={faqIntro}
+          overlineText={overlineText}
+          title={title}
+          description={intro}
           className="mb-10 md:mb-12"
         />
 
         <div className="grid gap-6 md:grid-cols-2 lg:gap-10">
-          <FaqColumn column="left" startIndex={0} />
-          <FaqColumn column="right" startIndex={leftCount} />
+          <FaqColumn column="left" startIndex={0} items={items} />
+          <FaqColumn column="right" startIndex={leftCount} items={items} />
         </div>
+
+        {footerCta && footerHref ? (
+          <Reveal delay={motionStagger * 2} className="mt-10 text-center md:mt-12">
+            <Link
+              href={footerHref}
+              className="text-sm font-medium text-horizon-navy underline-offset-4 hover:text-primary hover:underline"
+            >
+              {footerCta} →
+            </Link>
+          </Reveal>
+        ) : null}
       </div>
     </section>
   );

@@ -2,6 +2,14 @@
 
 /** Primary destination for site-wide CTAs */
 export const contactPath = "/contact";
+/** Portfolio / projects listing */
+export const projectPath = "/project";
+/** About us page */
+export const aboutPath = "/about";
+/** Industries listing */
+export const industriesPath = "/industries";
+/** Case studies listing */
+export const caseStudyPath = "/case-study";
 /** Contact form POST target (works without client JS) */
 export const contactApiPath = "/api/contact";
 export const container =

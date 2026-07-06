@@ -155,11 +155,11 @@ export const mainCategories: MainCategoryContent[] = [
     label: "Software Development",
     exploreCta: "Explore software development",
     tagline:
-      "Custom software that fits your business exactly CRM systems, ERP platforms, SaaS products, HRM tools, POS software and enterprise applications built from the ground up for companies in Pakistan and beyond.",
+      "Custom Software Development That Solves Real Business Problems",
     description:
-      "We partner with teams to design and build custom software—from greenfield platforms to modernizing legacy systems. Our engineers embed with yours, ship in tight loops, and leave codebases your team can own for years.",
+      "We design, build, and maintain custom software for startups, SMBs, and enterprises across the USA, UK, UAE, Canada, and Australia — as well as businesses here in Pakistan.",
     metaDescription:
-      "Custom software, web, mobile, and API development. Software Development Company Software builds maintainable products with senior engineers and weekly delivery.",
+      "Custom software development for startups & enterprises in the USA, UK, UAE, Canada & Australia. Fixed-price, senior-only delivery from Pakistan. Get a free quote.",
     heroImage: {
       src: "/services/Software development.png",
       alt: "Software development services",

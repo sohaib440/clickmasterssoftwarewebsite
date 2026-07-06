@@ -33,3 +33,37 @@ export function faqPageJsonLd(faqs: FaqItem[]) {
     })),
   };
 }
+
+export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: `${siteBrand.url}${item.path}`,
+    })),
+  };
+}
+
+export function servicePageOrganizationJsonLd() {
+  return {
+    ...organizationJsonLd(),
+    "@type": ["Organization", "ProfessionalService"],
+    areaServed: [
+      { "@type": "Country", name: "Pakistan" },
+      { "@type": "Country", name: "United States" },
+      { "@type": "Country", name: "United Kingdom" },
+      { "@type": "Country", name: "United Arab Emirates" },
+      { "@type": "Country", name: "Canada" },
+      { "@type": "Country", name: "Australia" },
+    ],
+    knowsAbout: [
+      "Custom software development",
+      "Enterprise software development",
+      "SaaS development",
+      "Dedicated development teams",
+    ],
+  };
+}
