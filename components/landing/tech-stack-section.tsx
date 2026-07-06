@@ -2,13 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { PointerEvent as ReactPointerEvent } from "react";
+import { LandingContainer } from "@/components/landing/landing-container";
 import { SectionHeading } from "@/components/landing/section-heading";
 import {
   type TechStackLogo,
   techStackIntro,
   techStackLogoGroups,
 } from "@/data/landingPage";
-import { container, sectionPad } from "@/lib/landing/constants";
 import { cn } from "@/lib/utils";
 
 const GOLD = "#d4af37";
@@ -395,7 +395,7 @@ export function TechStackSection() {
         aria-hidden
       />
 
-      <div className={cn(container, sectionPad, "relative z-10")}>
+      <LandingContainer className="relative z-10">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading
             overlineText="Technology stack"
@@ -501,7 +501,7 @@ export function TechStackSection() {
             </div>
           </div>
         </div>
-      </div>
+      </LandingContainer>
     </section>
   );
 }

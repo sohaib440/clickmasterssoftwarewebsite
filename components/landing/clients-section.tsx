@@ -1,5 +1,5 @@
 import { type Client, clients, trustedPartnersSection } from "@/data/landingPage";
-import { overline } from "@/lib/landing/constants";
+import { overline, container } from "@/lib/landing/constants";
 import { cn } from "@/lib/utils";
 
 function PartnerLogo({ client }: { client: Client }) {
@@ -37,7 +37,9 @@ export function TrustedPartnersSection({
       )}
       aria-label="Trusted Partners"
     >
-      <p className={cn(overline, "mb-6 text-center", labelClassName)}>{trustedPartnersSection.label}</p>
+      <div className={cn(container, "py-8 md:py-10")}>
+        <p className={cn(overline, "text-center", labelClassName)}>{trustedPartnersSection.label}</p>
+      </div>
 
       <div className="partners-marquee overflow-hidden">
         <ul className="partners-marquee__track list-none" aria-hidden>
@@ -52,9 +54,11 @@ export function TrustedPartnersSection({
         </ul>
       </div>
 
-      <p className="mx-auto mt-6 max-w-2xl px-4 text-center text-sm text-horizon-muted md:hidden">
-        {trustedPartnersSection.fallbackText}
-      </p>
+      <div className={cn(container, "mt-6 md:hidden")}>
+        <p className="mx-auto max-w-2xl text-center text-sm text-horizon-muted">
+          {trustedPartnersSection.fallbackText}
+        </p>
+      </div>
 
       <ul className="sr-only">
         {clients.map((client) => (

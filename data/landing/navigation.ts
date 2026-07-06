@@ -8,6 +8,7 @@ import {
   contactPath,
   industriesPath,
   projectPath,
+  teamPath,
 } from "@/lib/landing/constants";
 
 import type { NavChild, NavLink } from "./types";
@@ -18,7 +19,7 @@ export const navLinks: readonly NavLink[] = [
   {
     label: "About",
     href: aboutPath,
-    children: [{ label: "Our Team", href: `${aboutPath}#team` }],
+    children: [{ label: "Our Team", href: teamPath }],
   },
   { label: "Services", href: "/software-development" },
   { label: "Solutions", href: "/solutions" },

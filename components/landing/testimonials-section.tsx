@@ -1,7 +1,8 @@
 import { CardImage } from "@/components/landing/card-image";
+import { LandingContainer, sectionHeadingGap } from "@/components/landing/landing-container";
 import { Reveal } from "@/components/landing/reveal";
 import { SectionHeading } from "@/components/landing/section-heading";
-import { card, container, sectionPad } from "@/lib/landing/constants";
+import { card } from "@/lib/landing/constants";
 import { motionStagger } from "@/lib/landing/motion";
 import { testimonials } from "@/data/landingPage";
 import { cn } from "@/lib/utils";
@@ -9,7 +10,7 @@ import { cn } from "@/lib/utils";
 export function TestimonialsSection() {
   return (
     <section id="testimonials" className="w-full bg-horizon-cream">
-      <div className={cn(container, sectionPad)}>
+      <LandingContainer>
         <SectionHeading
           overlineText="Testimonials"
           title={
@@ -17,7 +18,7 @@ export function TestimonialsSection() {
               What <span className="italic">partners</span> say
             </>
           }
-          className="mb-8 md:mb-10"
+          className={sectionHeadingGap}
         />
 
         <ul className="grid grid-cols-1 gap-4 md:grid-cols-3">
@@ -40,7 +41,7 @@ export function TestimonialsSection() {
             </li>
           ))}
         </ul>
-      </div>
+      </LandingContainer>
     </section>
   );
 }

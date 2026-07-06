@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { AboutSection } from "@/components/landing/about-section";
 import { Reveal } from "@/components/landing/reveal";
-import { TeamSection } from "@/components/landing/team-section";
+import { TeamTeaser } from "@/components/team/team-teaser";
 import { MarketingShell } from "@/components/layout/marketing-shell";
 import { PageBreadcrumb } from "@/components/layout/page-breadcrumb";
 import { btnPrimary, contactPath, container, sectionPad } from "@/lib/landing/constants";
@@ -33,7 +33,7 @@ export function AboutPage() {
           </dl>
         </div>
       </section>
-      <TeamSection />
+      <TeamTeaser />
       <section className="w-full bg-horizon-navy text-white">
         <div className={cn(container, sectionPad, "text-center")}>
           <Reveal>

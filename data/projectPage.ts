@@ -6,7 +6,7 @@ export const projectPageMeta = {
     eyebrow: "Our Work",
     title: "Projects built for real businesses",
     description:
-      "A selection of platforms we've designed, engineered, and deployed — from SaaS products and ERP systems to healthcare and retail software.",
+      "A selection of platforms we've designed, engineered, and deployed from SaaS products and ERP systems to healthcare and retail software.",
   },
   cta: {
     title: "Have a project in mind?",

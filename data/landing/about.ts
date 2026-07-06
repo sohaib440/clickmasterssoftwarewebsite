@@ -1,7 +1,7 @@
-import { aboutPath } from "@/lib/landing/constants";
+import { teamPath } from "@/lib/landing/constants";
 
 export const aboutSection = {
-  teamLink: `${aboutPath}#team`,
+  teamLink: teamPath,
   teamCta: "Meet our team",
   paragraphs: [
     "Software Development Company is a globally trusted software development company headquartered in Pakistan, with clients and delivery experience spanning the United States, United Kingdom, United Arab Emirates, Canada, and Australia. We were founded with one belief: that great software should be accessible to every business not just the Fortune 500.",

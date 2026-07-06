@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
+import { MainCategoryPage } from "@/components/services/main-category-page";
 import { SoftwareDevelopmentJsonLd } from "@/components/seo/software-development-json-ld";
-import { SoftwareDevelopmentPage } from "@/components/services/software-development-page";
+import { getMainCategoryBySlug } from "@/lib/content";
 import { softwareDevelopmentMeta } from "@/data/softwareDevelopmentPage";
 
 export const metadata: Metadata = {
@@ -18,10 +20,13 @@ export const metadata: Metadata = {
 };
 
 export default function SoftwareDevelopmentRoute() {
+  const category = getMainCategoryBySlug("software-development");
+  if (!category) notFound();
+
   return (
     <>
       <SoftwareDevelopmentJsonLd />
-      <SoftwareDevelopmentPage />
+      <MainCategoryPage category={category} />
     </>
   );
 }

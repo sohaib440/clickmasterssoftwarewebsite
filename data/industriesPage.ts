@@ -11,12 +11,12 @@ export type Industry = {
 export const industriesPageMeta = {
   title: "Industries We Serve",
   description:
-    "Custom software for healthcare, fintech, retail, logistics, education, and more — built around your industry's workflows, compliance needs, and growth goals.",
+    "Custom software for healthcare, fintech, retail, logistics, education, and more built around your industry's workflows, compliance needs, and growth goals.",
   hero: {
     eyebrow: "Industries",
     title: "Software built for your sector",
     description:
-      "We design and ship custom platforms for regulated, fast-moving, and operationally complex industries — from hospitals and banks to retailers and logistics fleets.",
+      "We design and ship custom platforms for regulated, fast-moving, and operationally complex industries from hospitals and banks to retailers and logistics fleets.",
   },
   cta: {
     title: "Don't see your industry listed?",

@@ -1,10 +1,12 @@
 import type { LucideIcon } from "lucide-react";
 import {
   BrainCircuit,
+  ClipboardCheck,
   Cloud,
   Code2,
   Database,
   Globe2,
+  LineChart,
   Palette,
   Server,
   Shield,
@@ -157,7 +159,7 @@ export const mainCategories: MainCategoryContent[] = [
     tagline:
       "Custom Software Development That Solves Real Business Problems",
     description:
-      "We design, build, and maintain custom software for startups, SMBs, and enterprises across the USA, UK, UAE, Canada, and Australia — as well as businesses here in Pakistan.",
+      "We design, build, and maintain custom software for startups, SMBs, and enterprises across the USA, UK, UAE, Canada, and Australia as well as businesses here in Pakistan.",
     metaDescription:
       "Custom software development for startups & enterprises in the USA, UK, UAE, Canada & Australia. Fixed-price, senior-only delivery from Pakistan. Get a free quote.",
     heroImage: {
@@ -370,6 +372,177 @@ export const mainCategories: MainCategoryContent[] = [
         step: "04",
         title: "Operate & improve",
         description: "Ongoing reviews as the product and threat landscape evolve.",
+      },
+    ],
+  },
+  {
+    slug: "artificial-intelligence-ai",
+    icon: BrainCircuit,
+    label: "Artificial Intelligence",
+    exploreCta: "Explore AI services",
+    tagline: "AI systems that automate work and unlock smarter decisions",
+    description:
+      "We design and ship production AI—from intelligent agents and workflow automation to NLP and computer vision—integrated into your product with clear guardrails, observability, and human oversight where it matters.",
+    metaDescription:
+      "Custom AI development: agents, automation, NLP, and computer vision for startups and enterprises. Production-ready delivery from Pakistan with US, UK, and UAE timezone overlap.",
+    heroImage: {
+      src: "/services/Artificial Intelligence.png",
+      alt: "Artificial intelligence services",
+      width: 800,
+      height: 800,
+    },
+    subCategories: subServicesByCategory["artificial-intelligence-ai"],
+    highlights: [
+      {
+        title: "Production-first AI",
+        description:
+          "We ship models and agents inside real products—not slide decks—with monitoring, fallbacks, and cost controls.",
+      },
+      {
+        title: "Responsible by design",
+        description:
+          "Privacy, prompt safety, and evaluation harnesses built in before features reach your users.",
+      },
+      {
+        title: "Integrated delivery",
+        description:
+          "AI wired to your APIs, data, and UX by the same engineers who build the rest of your stack.",
+      },
+    ],
+    approach: [
+      {
+        step: "01",
+        title: "Define the use case",
+        description: "Map workflows, data sources, and success metrics so AI solves a real business problem.",
+      },
+      {
+        step: "02",
+        title: "Prototype & evaluate",
+        description: "Rapid experiments with benchmarked quality, latency, and cost before full build-out.",
+      },
+      {
+        step: "03",
+        title: "Integrate & harden",
+        description: "Production APIs, guardrails, logging, and human-in-the-loop paths where needed.",
+      },
+      {
+        step: "04",
+        title: "Monitor & improve",
+        description: "Feedback loops, retraining plans, and iteration as usage and data evolve.",
+      },
+    ],
+  },
+  {
+    slug: "machine-learning-ml",
+    icon: LineChart,
+    label: "Machine Learning",
+    exploreCta: "Explore ML services",
+    tagline: "Machine learning models trained on your data, deployed at scale",
+    description:
+      "We build custom ML pipelines—from feature engineering and model training to MLOps and inference APIs—so predictions and recommendations run reliably in production, not just in notebooks.",
+    metaDescription:
+      "Custom machine learning development: predictive models, MLOps, and analytics pipelines. Senior ML engineers for international clients.",
+    heroImage: {
+      src: "/services/Machine Learning.png",
+      alt: "Machine learning services",
+      width: 800,
+      height: 800,
+    },
+    subCategories: subServicesByCategory["machine-learning-ml"],
+    highlights: [
+      {
+        title: "End-to-end ML",
+        description:
+          "Data prep, training, deployment, and monitoring handled by one team—no handoffs between silos.",
+      },
+      {
+        title: "Explainable outcomes",
+        description:
+          "Metrics, dashboards, and documentation stakeholders can trust—not black-box demos.",
+      },
+      {
+        title: "Scalable inference",
+        description:
+          "Batch or real-time serving architectures sized for your traffic and budget.",
+      },
+    ],
+    approach: [
+      {
+        step: "01",
+        title: "Data & feasibility",
+        description: "Audit data quality, label strategy, and whether ML is the right tool for the job.",
+      },
+      {
+        step: "02",
+        title: "Train & validate",
+        description: "Iterative modeling with held-out evaluation and bias checks before promotion.",
+      },
+      {
+        step: "03",
+        title: "Deploy & serve",
+        description: "Pipelines, APIs, and infrastructure for reliable inference in your environment.",
+      },
+      {
+        step: "04",
+        title: "Measure & retrain",
+        description: "Drift detection, performance tracking, and scheduled model updates.",
+      },
+    ],
+  },
+  {
+    slug: "testing-and-qa",
+    icon: ClipboardCheck,
+    label: "Testing & QA",
+    exploreCta: "Explore QA services",
+    tagline: "Quality assurance that catches issues before your users do",
+    description:
+      "Manual and automated testing across web, mobile, and APIs—functional, regression, performance, and security—so you ship with confidence and fewer production surprises.",
+    metaDescription:
+      "Software QA and test automation for web, mobile, and APIs. Manual testing, Selenium/Cypress automation, and performance testing from a senior-led team.",
+    heroImage: {
+      src: "/services/Testing-and-QA.png",
+      alt: "Software testing and QA services",
+      width: 800,
+      height: 800,
+    },
+    subCategories: subServicesByCategory["testing-and-qa"],
+    highlights: [
+      {
+        title: "Risk-based testing",
+        description:
+          "We prioritize what breaks your business—checkout, auth, integrations—not checkbox coverage.",
+      },
+      {
+        title: "Automation where it pays",
+        description:
+          "Regression suites that run on every build without flaky tests that erode trust.",
+      },
+      {
+        title: "Clear reporting",
+        description:
+          "Repro steps, severity, and release readiness your team can act on immediately.",
+      },
+    ],
+    approach: [
+      {
+        step: "01",
+        title: "Assess & plan",
+        description: "Review architecture, critical paths, and existing coverage to define a QA strategy.",
+      },
+      {
+        step: "02",
+        title: "Design test cases",
+        description: "Functional, edge-case, and regression scenarios aligned to user journeys.",
+      },
+      {
+        step: "03",
+        title: "Execute & automate",
+        description: "Manual passes plus automation for high-value, repeatable checks.",
+      },
+      {
+        step: "04",
+        title: "Report & gate releases",
+        description: "Actionable defect reports and go/no-go input before production deploys.",
       },
     ],
   },

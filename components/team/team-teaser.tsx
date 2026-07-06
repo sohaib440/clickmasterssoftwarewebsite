@@ -1,14 +1,20 @@
+import Link from "next/link";
+
 import { CardImage } from "@/components/landing/card-image";
 import { LandingContainer, sectionHeadingGap } from "@/components/landing/landing-container";
 import { Reveal } from "@/components/landing/reveal";
 import { SectionHeading } from "@/components/landing/section-heading";
+import { btnOutline, teamPath } from "@/lib/landing/constants";
+import { teamIntro, teamMembers } from "@/data/landing/team";
 import { motionStagger } from "@/lib/landing/motion";
-import { teamIntro, teamMembers } from "@/data/landingPage";
 import { cn } from "@/lib/utils";
 
-export function TeamSection() {
+/** Compact team preview for the About page links to the full /team page */
+export function TeamTeaser() {
+  const preview = teamMembers.slice(0, 6);
+
   return (
-    <section id="team" className="w-full bg-white text-horizon-navy">
+    <section className="w-full bg-white text-horizon-navy">
       <LandingContainer>
         <SectionHeading
           overlineText="Our people"
@@ -22,23 +28,23 @@ export function TeamSection() {
         />
 
         <Reveal delay={motionStagger}>
-          <p className="mb-8 max-w-3xl text-base leading-relaxed text-left text-horizon-navy md:mb-10 md:text-lg">
+          <p className="max-w-3xl text-base leading-relaxed text-horizon-navy md:text-lg">
             {teamIntro}
           </p>
         </Reveal>
 
         <ul
-          className="grid grid-cols-2 gap-[5px] bg-horizon-border/40 sm:grid-cols-3 lg:grid-cols-6"
-          aria-label="Team portraits"
+          className="mt-8 grid grid-cols-3 gap-[5px] bg-horizon-border/40 sm:grid-cols-6"
+          aria-label="Team preview"
         >
-          {teamMembers.map((member, i) => (
+          {preview.map((member, i) => (
             <li key={member.name} className="aspect-square overflow-hidden bg-white">
               <Reveal delay={i * motionStagger} className="h-full w-full">
                 <figure className="group relative h-full w-full overflow-hidden">
                   <CardImage
                     {...member.image}
                     className="aspect-square h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
+                    sizes="(max-width: 640px) 33vw, 16vw"
                   />
                   <figcaption className="sr-only">
                     {member.name}, {member.role}
@@ -48,6 +54,12 @@ export function TeamSection() {
             </li>
           ))}
         </ul>
+
+        <div className="mt-8">
+          <Link href={teamPath} className={cn(btnOutline)}>
+            Meet the full team →
+          </Link>
+        </div>
       </LandingContainer>
     </section>
   );

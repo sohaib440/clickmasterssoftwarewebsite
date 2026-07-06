@@ -1,14 +1,14 @@
 import Link from "next/link";
 
+import { LandingContainer, sectionHeadingGap } from "@/components/landing/landing-container";
 import { ProcessStepsGrid } from "@/components/landing/process-steps-grid";
 import { SectionHeading } from "@/components/landing/section-heading";
-import { container, sectionPad, btnPrimary, contactPath } from "@/lib/landing/constants";
-import { cn } from "@/lib/utils";
+import { btnPrimary, contactPath } from "@/lib/landing/constants";
 
 export function ProcessSection() {
   return (
     <section id="process" className="w-full bg-white text-horizon-navy">
-      <div className={cn(container, sectionPad)}>
+      <LandingContainer>
         <SectionHeading
           overlineText="How we work"
           title={
@@ -18,7 +18,7 @@ export function ProcessSection() {
             </>
           }
           description="Every software development company claims to follow best practices. At Software Development Company, we show you exactly what that means at every stage of your project."
-          className="mb-10 md:mb-12"
+          className={sectionHeadingGap}
         />
 
         <ProcessStepsGrid />
@@ -28,7 +28,7 @@ export function ProcessSection() {
             Start your project
           </Link>
         </div>
-      </div>
+      </LandingContainer>
     </section>
   );
 }
