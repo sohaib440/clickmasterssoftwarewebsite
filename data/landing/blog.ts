@@ -60,7 +60,7 @@ export const blogPosts: BlogPost[] = [
       height: 750,
     },
     body: [
-      "Weekly demos are not status meetings. They are working sessions where the team shows real software — even if rough — and collects feedback before the next sprint.",
+      "Weekly demos are not status meetings. They are working sessions where the team shows real software even if rough and collects feedback before the next sprint.",
       "When demos slip to monthly, assumptions pile up. Product owners discover misaligned UI late. Integrations fail quietly. Budget conversations get harder because nobody saw progress.",
       "A good demo cadence includes a short agenda: what shipped, what is blocked, what is next. Recordings help remote stakeholders. Notes become the living changelog.",
       "If your vendor resists regular demos, treat that as a signal. Transparency should be default, not a premium add-on.",

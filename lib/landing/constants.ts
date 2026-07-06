@@ -6,17 +6,22 @@ export const contactPath = "/contact";
 export const projectPath = "/project";
 /** About us page */
 export const aboutPath = "/about";
+/** Team page */
+export const teamPath = "/team";
 /** Industries listing */
 export const industriesPath = "/industries";
 /** Case studies listing */
 export const caseStudyPath = "/case-study";
 /** Contact form POST target (works without client JS) */
 export const contactApiPath = "/api/contact";
-export const container =
-  "mx-auto w-full min-w-0 px-4 sm:px-6 lg:px-8 xl:px-12 max-w-[1830px]";
+/** Shared horizontal layout keep all landing sections aligned to the same edges */
+export const pageMaxWidth = "max-w-[1400px]";
+export const pageGutter = "px-5 sm:px-6 lg:px-8";
+export const container = `mx-auto w-full min-w-0 ${pageGutter} ${pageMaxWidth}`;
 
-export const sectionPad = "py-8 md:py-8 lg:py-10";
-export const sectionPadBottom = "pb-10 md:pb-14";
+export const sectionPad = "py-12 md:py-14 lg:py-16";
+export const sectionHeadingGap = "mb-8 md:mb-10";
+export const sectionPadBottom = "pb-12 md:pb-14 lg:pb-16";
 
 export const card =
   "motion-card overflow-hidden rounded-2xl border border-horizon-border bg-white text-horizon-navy shadow-none";

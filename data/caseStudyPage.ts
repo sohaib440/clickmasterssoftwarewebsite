@@ -95,7 +95,7 @@ export const caseStudyPageMeta = {
     eyebrow: "Case Studies",
     title: "How we solve real product problems",
     description:
-      "Each engagement below covers the business challenge, what we built, and measurable outcomes — so you can see how we think before we write a line of code.",
+      "Each engagement below covers the business challenge, what we built, and measurable outcomes so you can see how we think before we write a line of code.",
   },
   bookCall: {
     title: "Want the full story behind one of our builds?",

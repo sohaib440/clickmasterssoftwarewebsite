@@ -15,7 +15,7 @@ export type {
 };
 
 export const techStackIntro =
-  "We engineer across the full software delivery spectrum — from pixel-perfect interfaces and resilient APIs to data platforms, cloud infrastructure, and production AI. Every technology below reflects real project experience: selected for performance, security, team velocity, and long-term maintainability at scale.";
+  "We engineer across the full software delivery spectrum from pixel-perfect interfaces and resilient APIs to data platforms, cloud infrastructure, and production AI. Every technology below reflects real project experience: selected for performance, security, team velocity, and long-term maintainability at scale.";
 
 
 export const techStackLogoGroupMeta: TechStackLogoGroup[] = [
@@ -23,7 +23,7 @@ export const techStackLogoGroupMeta: TechStackLogoGroup[] = [
     id: "frontend",
     label: "Frontend",
     description:
-      "Component-driven UIs, design systems, and modern build pipelines — from semantic HTML/CSS and TypeScript through React, Next.js, Vue, Svelte, state management, testing, and accessibility-ready production apps.",
+      "Component-driven UIs, design systems, and modern build pipelines from semantic HTML/CSS and TypeScript through React, Next.js, Vue, Svelte, state management, testing, and accessibility-ready production apps.",
     logoIds: [
       "html5",
       "css3",
@@ -55,7 +55,7 @@ export const techStackLogoGroupMeta: TechStackLogoGroup[] = [
     id: "backend",
     label: "Backend",
     description:
-      "Secure APIs, microservices, and enterprise backends — REST, GraphQL, and event-driven architectures built with Node.js, Python, Java, .NET, Go, PHP, Ruby, Rust, and battle-tested frameworks like Express, NestJS, Django, Laravel, and Spring.",
+      "Secure APIs, microservices, and enterprise backends REST, GraphQL, and event-driven architectures built with Node.js, Python, Java, .NET, Go, PHP, Ruby, Rust, and battle-tested frameworks like Express, NestJS, Django, Laravel, and Spring.",
     logoIds: [
       "nodejs",
       "express",
@@ -83,14 +83,14 @@ export const techStackLogoGroupMeta: TechStackLogoGroup[] = [
     id: "mobile",
     label: "Mobile",
     description:
-      "Native and cross-platform mobile products — React Native and Flutter for shared codebases, plus Swift and Kotlin for platform-native performance, offline support, push notifications, and App Store / Play Store delivery.",
+      "Native and cross-platform mobile products React Native and Flutter for shared codebases, plus Swift and Kotlin for platform-native performance, offline support, push notifications, and App Store / Play Store delivery.",
     logoIds: ["reactnative", "flutter", "swift", "kotlin", "android", "dart", "ionic"],
   },
   {
     id: "databases",
     label: "Databases",
     description:
-      "Relational, document, cache, and search data layers — PostgreSQL, MySQL, MongoDB, Redis, Elasticsearch, and Firebase for transactional integrity, real-time sync, analytics, and high-throughput read/write workloads.",
+      "Relational, document, cache, and search data layers PostgreSQL, MySQL, MongoDB, Redis, Elasticsearch, and Firebase for transactional integrity, real-time sync, analytics, and high-throughput read/write workloads.",
     logoIds: [
       "postgresql",
       "mysql",
@@ -107,7 +107,7 @@ export const techStackLogoGroupMeta: TechStackLogoGroup[] = [
     id: "devops",
     label: "DevOps & Cloud",
     description:
-      "CI/CD, containers, orchestration, and cloud-native ops — Docker, Kubernetes, Terraform, Jenkins, GitHub Actions, GitLab CI, plus AWS, Google Cloud, Azure, Vercel, Netlify, and DigitalOcean for reliable deployments.",
+      "CI/CD, containers, orchestration, and cloud-native ops Docker, Kubernetes, Terraform, Jenkins, GitHub Actions, GitLab CI, plus AWS, Google Cloud, Azure, Vercel, Netlify, and DigitalOcean for reliable deployments.",
     logoIds: [
       "docker",
       "kubernetes",
@@ -133,7 +133,7 @@ export const techStackLogoGroupMeta: TechStackLogoGroup[] = [
     id: "ai",
     label: "Models / AI",
     description:
-      "Machine learning and intelligent automation — TensorFlow, PyTorch, Keras, OpenAI, and the Python data stack (Pandas, Jupyter, SciPy) for predictive models, NLP, computer vision, and production AI integrations.",
+      "Machine learning and intelligent automation TensorFlow, PyTorch, Keras, OpenAI, and the Python data stack (Pandas, Jupyter, SciPy) for predictive models, NLP, computer vision, and production AI integrations.",
     logoIds: [
       "openai",
       "tensorflow",

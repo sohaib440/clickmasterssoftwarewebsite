@@ -4,7 +4,8 @@
 import Link from 'next/link';
 import { ArrowUpRight, Sparkles } from 'lucide-react';
 import { SectionHeading } from '@/components/landing/section-heading';
-import { container, sectionPad, btnPrimary } from '@/lib/landing/constants';
+import { LandingContainer, sectionHeadingGap } from '@/components/landing/landing-container';
+import { btnPrimary } from '@/lib/landing/constants';
 import { serviceRoutes, services, type ServiceCard } from '@/data/services';
 import { cn } from '@/lib/utils';
 
@@ -105,20 +106,19 @@ export function ServicesSection() {
         <div className="absolute bottom-[-10%] left-[20%] w-[40%] h-[40%] rounded-full bg-[rgba(212,175,55,0.12)] blur-[120px]" />
       </div>
 
-      <div className={cn(container, sectionPad, 'relative z-10')}>
-        <div className="mb-24">
-          <SectionHeading
-            overlineText="What we do"
-            title={
-              <>
-                Innovating your <span className="italic">digital future</span>
-              </>
-            }
-            description="We blend cutting-edge technology with world-class design to build products that define industries."
-            align="left"
-            dark
-          />
-        </div>
+      <LandingContainer className="relative z-10">
+        <SectionHeading
+          overlineText="What we do"
+          title={
+            <>
+              Innovating your <span className="italic">digital future</span>
+            </>
+          }
+          description="We blend cutting-edge technology with world-class design to build products that define industries."
+          align="left"
+          dark
+          className={sectionHeadingGap}
+        />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 auto-rows-min xl:auto-rows-[460px] gap-8">
           {services.map((service, i) => (
@@ -131,7 +131,7 @@ export function ServicesSection() {
             Explore all services
           </Link>
         </div>
-      </div>
+      </LandingContainer>
     </section>
   );
 }

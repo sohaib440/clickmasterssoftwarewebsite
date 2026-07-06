@@ -2,14 +2,13 @@ import { Briefcase, Globe, Layers, ShieldCheck, Users } from "lucide-react";
 import Link from "next/link";
 
 import { HeroCtaForm } from "@/components/landing/hero-cta-form";
+import { LandingContainer } from "@/components/landing/landing-container";
 import { RatingBadges } from "@/components/landing/rating-badges";
 import { Reveal } from "@/components/landing/reveal";
 import {
   btnOutlineDark,
   btnPrimary,
   contactPath,
-  container,
-  sectionPad,
 } from "@/lib/landing/constants";
 import { heroBackgroundVideo, heroFeatures, homeHero, stats } from "@/data/landingPage";
 import { motionStagger } from "@/lib/landing/motion";
@@ -66,7 +65,7 @@ export function HeroSection() {
         aria-hidden
       />
 
-      <div className={cn(container, sectionPad, "relative z-10 min-w-0 pb-10 md:pb-14")}>
+      <LandingContainer className="relative z-10">
         <div className="grid min-w-0 items-center gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-16 xl:gap-20">
           <div className="min-w-0">
             <Reveal immediate delay={0}>
@@ -157,7 +156,7 @@ export function HeroSection() {
             </dl>
           </div>
         </Reveal>
-      </div>
+      </LandingContainer>
     </section>
   );
 }

@@ -199,7 +199,7 @@ export function IndustriesPageContent() {
                 Ready to build for your <span className="italic">industry</span>?
               </h2>
               <p className="mx-auto mt-4 max-w-lg text-sm text-white/75 md:text-base">
-                Share your sector, constraints, and goals — we&apos;ll respond within one business
+                Share your sector, constraints, and goals we&apos;ll respond within one business
                 day with a clear path forward.
               </p>
               <Link href={contactPath} className={cn("mt-8", btnOnDark)}>

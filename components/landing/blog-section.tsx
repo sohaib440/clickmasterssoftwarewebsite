@@ -1,6 +1,6 @@
+import { LandingContainer, sectionHeadingGap } from "@/components/landing/landing-container";
 import { BlogFlipCard } from "@/components/landing/blog-flip-card";
 import { SectionHeading } from "@/components/landing/section-heading";
-import { container, sectionPad } from "@/lib/landing/constants";
 import { blogPosts } from "@/data/landingPage";
 import { blogPostPath } from "@/lib/landing/blog";
 import { cn } from "@/lib/utils";
@@ -10,7 +10,7 @@ type BlogSectionProps = {
 };
 
 const blogSectionDescription =
-  "Practical notes on software delivery, discovery, and building products that scale — written by the team behind your projects.";
+  "Practical notes on software delivery, discovery, and building products that scale written by the team behind your projects.";
 
 function getFrontTitle(category: string) {
   const short = category.split(" ").slice(0, 2).join(" ");
@@ -22,7 +22,7 @@ export function BlogSection({ showHeading = true }: BlogSectionProps) {
 
   return (
     <section id="blog" className="w-full bg-black text-white">
-      <div className={cn(container, sectionPad, !showHeading && "pt-0 md:pt-0")}>
+      <LandingContainer className={!showHeading ? "pt-0 md:pt-0" : undefined}>
         {showHeading ? (
           <SectionHeading
             dark
@@ -33,7 +33,7 @@ export function BlogSection({ showHeading = true }: BlogSectionProps) {
               </>
             }
             description={blogSectionDescription}
-            className="mb-8 md:mb-10"
+            className={sectionHeadingGap}
           />
         ) : null}
 
@@ -53,7 +53,7 @@ export function BlogSection({ showHeading = true }: BlogSectionProps) {
             />
           ))}
         </div>
-      </div>
+      </LandingContainer>
     </section>
   );
 }

@@ -8,12 +8,14 @@ type SiteLogoProps = {
   className?: string;
   imageClassName?: string;
   priority?: boolean;
+  onNavigate?: () => void;
 };
 
-export function SiteLogo({ className, imageClassName, priority = false }: SiteLogoProps) {
+export function SiteLogo({ className, imageClassName, priority = false, onNavigate }: SiteLogoProps) {
   return (
     <Link
       href="/"
+      onClick={onNavigate}
       className={cn("inline-flex shrink-0 transition-opacity hover:opacity-90", className)}
       aria-label={siteBrand.name}
     >

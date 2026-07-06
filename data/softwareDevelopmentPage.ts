@@ -1,5 +1,5 @@
 import type { FaqItem } from "@/data/landingPage";
-import { contactPath, projectPath, aboutPath } from "@/lib/landing/constants";
+import { contactPath, projectPath, teamPath } from "@/lib/landing/constants";
 
 export const softwareDevelopmentMeta = {
   title: "Software Development Company | Next Software Dev",
@@ -21,6 +21,12 @@ export const softwareDevelopmentHero = {
   primaryHref: contactPath,
   secondaryCta: "See Our Work",
   secondaryHref: projectPath,
+  heroImage: {
+    src: "/about us/software development company.png",
+    alt: "Software development team at work",
+    width: 1000,
+    height: 700,
+  },
 } as const;
 
 export const softwareDevelopmentStats = [
@@ -229,7 +235,7 @@ export const softwareDevelopmentTeam = {
   intro:
     "Every project on this site is delivered by a small, senior, hands-on team based in Islamabad, Pakistan not outsourced further, not handed to juniors. When you work with us, you work with the people actually writing your code.",
   cta: "Meet the full team",
-  ctaHref: `${aboutPath}#team`,
+  ctaHref: teamPath,
 } as const;
 
 export const softwareDevelopmentFaqs: FaqItem[] = [

@@ -140,4 +140,100 @@ export const subServicesByCategory: SubServicesMap = {
         "SOC 2, HIPAA, or GDPR-aligned controls integrated into how you build and operate.",
     },
   ],
+  "artificial-intelligence-ai": [
+    {
+      slug: "ai-agents",
+      label: "AI Agents & Assistants",
+      description:
+        "Task-oriented agents that integrate with your tools—Slack, CRM, support desks—and automate repeatable workflows.",
+      image: {
+        src: "/services/Artificial Intelligence.png",
+        alt: "AI agents and assistants",
+        width: 800,
+        height: 500,
+      },
+    },
+    {
+      slug: "intelligent-automation",
+      label: "Intelligent Automation",
+      description:
+        "RPA plus AI for document processing, classification, routing, and approval flows across operations.",
+    },
+    {
+      slug: "nlp-solutions",
+      label: "NLP & Chatbots",
+      description:
+        "Search, summarization, classification, and conversational interfaces grounded in your content and policies.",
+    },
+    {
+      slug: "computer-vision",
+      label: "Computer Vision",
+      description:
+        "Image and video analysis for inspection, moderation, identity checks, and visual search use cases.",
+    },
+  ],
+  "machine-learning-ml": [
+    {
+      slug: "predictive-models",
+      label: "Predictive Models",
+      description:
+        "Forecasting, churn prediction, demand planning, and risk scoring built on your historical data.",
+      image: {
+        src: "/services/Machine Learning.png",
+        alt: "Predictive machine learning models",
+        width: 800,
+        height: 500,
+      },
+    },
+    {
+      slug: "recommendation-systems",
+      label: "Recommendation Systems",
+      description:
+        "Personalized content, product, and offer ranking tuned for engagement and business KPIs.",
+    },
+    {
+      slug: "mlops",
+      label: "MLOps & Pipelines",
+      description:
+        "Training pipelines, feature stores, model registry, and deployment automation for repeatable ML delivery.",
+    },
+    {
+      slug: "model-monitoring",
+      label: "Model Monitoring",
+      description:
+        "Drift detection, performance dashboards, and alerting so models stay accurate after launch.",
+    },
+  ],
+  "testing-and-qa": [
+    {
+      slug: "manual-qa",
+      label: "Manual QA & Exploratory Testing",
+      description:
+        "Structured test passes and exploratory sessions that find edge cases automation misses.",
+      image: {
+        src: "/services/Testing-and-QA.png",
+        alt: "Manual software QA testing",
+        width: 800,
+        height: 500,
+      },
+    },
+    {
+      slug: "test-automation",
+      label: "Test Automation",
+      description:
+        "Selenium, Cypress, Playwright, and API automation suites integrated into your CI/CD pipeline.",
+    },
+    {
+      slug: "performance-testing",
+      label: "Performance & Load Testing",
+      description:
+        "Stress, soak, and spike tests with clear bottlenecks identified before high-traffic events.",
+    },
+    {
+      slug: "security-qa",
+      label: "Security & Regression QA",
+      description:
+        "Regression packs for releases plus security-focused test cases for auth, payments, and data access.",
+    },
+  ],
 };

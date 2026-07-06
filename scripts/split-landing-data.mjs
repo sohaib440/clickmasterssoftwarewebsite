@@ -204,7 +204,7 @@ ${slice(1042, 1103)}
 
 write(
   "index.ts",
-  `/** Landing page content — split by domain; import from @/data/landingPage or @/data/landing */
+  `/** Landing page content split by domain; import from @/data/landingPage or @/data/landing */
 
 export * from "./types";
 export * from "./navigation";

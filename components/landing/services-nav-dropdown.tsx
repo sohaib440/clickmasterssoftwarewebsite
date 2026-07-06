@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 
-const serviceItems = [
+export const serviceNavItems = [
   { label: "Software Development", href: "/software-development" },
   { label: "Website Development", href: "/software-development/web-development" },
   { label: "Mobile Development", href: "/software-development/mobile-app-development" },
@@ -11,7 +11,7 @@ const serviceItems = [
   { label: "Database Services", href: "/data-services" },
   { label: "Cloud Services", href: "/cloud-devops" },
   { label: "DevOps Services", href: "/cloud-devops" },
-];
+] as const;
 
 export function ServicesNavDropdown() {
   return (
@@ -30,7 +30,7 @@ export function ServicesNavDropdown() {
       <div className="pointer-events-none absolute left-0 top-full z-50 mt-1 min-w-[12rem] overflow-hidden rounded-2xl border border-white/10 bg-black opacity-0 shadow-xl shadow-black/40 transition-all duration-200 ease-out translate-y-1 group-hover:pointer-events-auto group-focus-within:pointer-events-auto group-hover:opacity-100 group-focus-within:opacity-100 group-hover:translate-y-0 group-focus-within:translate-y-0">
         <div className="p-3">
           <div className="space-y-1">
-            {serviceItems.map((item, index) => (
+            {serviceNavItems.map((item, index) => (
               <Link
                 key={`${item.href}-${index}`}
                 href={item.href}
