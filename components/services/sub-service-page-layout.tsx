@@ -1,10 +1,22 @@
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
+import { AboutSection } from "@/components/landing/about-section";
+import { BlogSection } from "@/components/landing/blog-section";
 import { CardImage } from "@/components/landing/card-image";
+import { TrustedPartnersSection } from "@/components/landing/clients-section";
+import { ContactSection } from "@/components/landing/contact-section";
+import { FaqSection } from "@/components/landing/faq-section";
+import { IndustriesSection } from "@/components/landing/industries-section";
+import { ProcessSection } from "@/components/landing/process-section";
+import { ProjectsSection } from "@/components/landing/projects-section";
 import { Reveal } from "@/components/landing/reveal";
+import { ServicesSection } from "@/components/landing/services-section";
 import { SiteFooter } from "@/components/landing/site-footer";
 import { SiteHeader } from "@/components/landing/site-header";
+import { TeamSection } from "@/components/landing/team-section";
+import { TechStackSection } from "@/components/landing/tech-stack-section";
+import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import {
   btnOnDark,
   btnOutlineDark,
@@ -118,6 +130,9 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
           </div>
         </section>
 
+        <TrustedPartnersSection className="border-horizon-border/60 bg-white" />
+        <AboutSection />
+
         {/* Detail copy */}
         <section className="w-full bg-white">
           <div className={cn(container, sectionPad)}>
@@ -152,6 +167,10 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
           </div>
         </section>
 
+        <ServicesSection />
+        <IndustriesSection />
+        <TechStackSection />
+
         {/* Benefits dark cards */}
         <section className="w-full bg-black text-white">
           <div className={cn(container, sectionPad)}>
@@ -170,6 +189,8 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
             </ul>
           </div>
         </section>
+
+        <ProcessSection />
 
         {/* Process timeline */}
         <section className="w-full border-y border-horizon-border/60 bg-horizon-cream">
@@ -204,6 +225,9 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
             </ol>
           </div>
         </section>
+
+        <ProjectsSection />
+        <TeamSection />
 
         {/* Related sub-services */}
         {relatedSubs.items.length > 0 ? (
@@ -245,6 +269,11 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
             </div>
           </section>
         ) : null}
+
+        <TestimonialsSection />
+        <BlogSection />
+        <FaqSection />
+        <ContactSection />
 
         {/* CTA */}
         <section className="w-full bg-horizon-navy text-white">

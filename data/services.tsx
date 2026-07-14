@@ -11,7 +11,6 @@ import {
   Server,
   Shield,
   ShieldCheck,
-  Smartphone,
 } from "lucide-react";
 
 import { contactPath } from "@/lib/landing/constants";
@@ -32,13 +31,11 @@ export type ServiceCard = {
 
 export const serviceRoutes: Record<string, string> = {
   "Software Development": "/software-development",
-  "Web Development": "/software-development/web-development",
-  "Mobile Development": "/software-development/mobile-app-development",
   "Artificial Intelligence": "/artificial-intelligence-ai",
-  "UI/UX Systems": "/design-ux",
+  "Design & UI/UX": "/design-ux",
   "Cloud & DevOps": "/cloud-devops",
   "Machine Learning": "/machine-learning-ml",
-  "Data Services": "/data-security",
+  "Data & Analytics": "/data-security",
   "Testing & QA": "/testing-and-qa",
 };
 export const services: ServiceCard[] = [
@@ -53,24 +50,6 @@ export const services: ServiceCard[] = [
     accent: "#3b82f6",
   },
   {
-    title: "Web Development",
-    description: "Modern web applications with responsive design and seamless user experience.",
-    image: "/services/Web Development.png",
-    Icon: Globe2,
-    AltIcon: Server,
-    tag: "Web3 Ready",
-    accent: "#ec4899",
-  },
-  {
-    title: "Mobile Development",
-    description: "Build secure and scalable mobile applications for iOS and Android.",
-    image: "/services/Mobile Application Development.png",
-    Icon: Smartphone,
-    AltIcon: ShieldCheck,
-    tag: "Cross-Platform",
-    accent: "#10b981",
-  },
-  {
     title: "Artificial Intelligence",
     description: "AI-powered monitoring systems with predictive threat intelligence.",
     image: "/services/Artificial Intelligence.png",
@@ -81,7 +60,7 @@ export const services: ServiceCard[] = [
     accent: "#8b5cf6",
   },
   {
-    title: "UI/UX Systems",
+    title: "Design & UI/UX",
     description: "Elegant digital experiences focused on usability and conversion.",
     image: "/services/UI-UX.png",
     Icon: Palette,
@@ -101,7 +80,7 @@ export const services: ServiceCard[] = [
   },
   {
     title: "Machine Learning",
-    description: "Scalable infrastructure architecture with maximum uptime and reliability.",
+    description: "Models and ML pipelines that turn data into reliable product features.",
     image: "/services/Machine Learning.png",
     Icon: Server,
     AltIcon: BrainCircuit,
@@ -109,7 +88,7 @@ export const services: ServiceCard[] = [
     accent: "#14b8a6",
   },
   {
-    title: "Data Services",
+    title: "Data & Analytics",
     description: "Data engineering, warehousing, and analytics solutions.",
     image: "/services/Data Services.png",
     Icon: Database,
@@ -119,11 +98,11 @@ export const services: ServiceCard[] = [
   },
   {
     title: "Testing & QA",
-    description: "Scalable infrastructure architecture with maximum uptime and reliability.",
+    description: "Quality engineering and test automation for confident releases.",
     image: "/services/Testing-and-QA.png",
-    Icon: Database,
-    AltIcon: Palette,
-    tag: "Platform",
+    Icon: ClipboardCheck,
+    AltIcon: ShieldCheck,
+    tag: "Quality",
     accent: "#42f560",
   },
 ];

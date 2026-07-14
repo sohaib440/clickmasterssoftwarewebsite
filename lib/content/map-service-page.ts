@@ -60,7 +60,7 @@ export function mapMainCategoryToServicePage(
       primaryCta: defaultPrimaryCta,
       secondaryCta: defaultSecondaryCta,
     },
-    offerings: {
+    capabilities: {
       title: sections.offerings.title,
       subtitle: sections.offerings.subtitle,
       items: category.subCategories.map((sub) => ({

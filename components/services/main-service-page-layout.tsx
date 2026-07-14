@@ -1,10 +1,16 @@
 import Link from "next/link";
 import { ArrowUpRight, Check } from "lucide-react";
 
+import { AboutSection } from "@/components/landing/about-section";
+import { BlogSection } from "@/components/landing/blog-section";
 import { TrustedPartnersSection } from "@/components/landing/clients-section";
+import { ContactSection } from "@/components/landing/contact-section";
 import { FaqSection } from "@/components/landing/faq-section";
 import { IndustriesSection } from "@/components/landing/industries-section";
+import { ProcessSection } from "@/components/landing/process-section";
 import { ProjectsSection } from "@/components/landing/projects-section";
+import { TeamSection } from "@/components/landing/team-section";
+import { TechStackSection } from "@/components/landing/tech-stack-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { CardImage } from "@/components/landing/card-image";
 import { RatingBadges } from "@/components/landing/rating-badges";
@@ -36,7 +42,16 @@ type MainServicePageLayoutProps = {
 };
 
 export function MainServicePageLayout({ content }: MainServicePageLayoutProps) {
-  const { mainSlug, breadcrumbs, hero, offerings, highlights, approach, related, cta } = content;
+  const {
+    mainSlug,
+    breadcrumbs,
+    hero,
+    capabilities,
+    highlights,
+    approach,
+    related,
+    cta,
+  } = content;
 
   const primaryCta = hero.primaryCta ?? { label: "Get a Free Quote", href: contactPath };
   const secondaryCta = hero.secondaryCta ?? { label: "See Our Work", href: projectPath };
@@ -101,24 +116,25 @@ export function MainServicePageLayout({ content }: MainServicePageLayoutProps) {
         </section>
 
         <TrustedPartnersSection className="border-horizon-border/60 bg-white" />
+        <AboutSection />
 
-        {offerings.items.length > 0 ? (
-          <section className="w-full bg-black text-white" aria-labelledby="offerings-heading">
+        {capabilities.items.length > 0 ? (
+          <section className="w-full bg-black text-white" aria-labelledby="capabilities-heading">
             <div className={cn(container, sectionPad)}>
               <Reveal>
                 <h2
-                  id="offerings-heading"
+                  id="capabilities-heading"
                   className="font-heading text-3xl font-normal text-white md:text-4xl"
                 >
-                  {offerings.title}
+                  {capabilities.title}
                 </h2>
-                {offerings.subtitle ? (
-                  <p className="mt-3 max-w-2xl text-white/70">{offerings.subtitle}</p>
+                {capabilities.subtitle ? (
+                  <p className="mt-3 max-w-2xl text-white/70">{capabilities.subtitle}</p>
                 ) : null}
               </Reveal>
 
               <ul className="mt-10 grid gap-4 sm:grid-cols-2">
-                {offerings.items.map((item, index) => (
+                {capabilities.items.map((item, index) => (
                   <li key={`${item.href}-${index}`}>
                     <Reveal delay={index * motionStagger} className="h-full">
                       <Link
@@ -157,6 +173,7 @@ export function MainServicePageLayout({ content }: MainServicePageLayoutProps) {
         ) : null}
 
         <IndustriesSection />
+        <TechStackSection />
 
         <section className="w-full bg-horizon-peach/50 text-horizon-navy">
           <div className={cn(container, sectionPad)}>
@@ -185,9 +202,11 @@ export function MainServicePageLayout({ content }: MainServicePageLayoutProps) {
           </div>
         </section>
 
+        <ProcessSection />
         <ServiceApproachSection title={approach.title} steps={approach.steps} />
 
         <ProjectsSection />
+        <TeamSection />
 
         {related && related.items.length > 0 ? (
           <section className="w-full bg-horizon-cream text-horizon-navy">
@@ -230,7 +249,9 @@ export function MainServicePageLayout({ content }: MainServicePageLayoutProps) {
         ) : null}
 
         <TestimonialsSection />
+        <BlogSection />
         <FaqSection />
+        <ContactSection />
 
         <section className="w-full bg-horizon-navy text-white">
           <div className={cn(container, sectionPad, "text-center")}>
