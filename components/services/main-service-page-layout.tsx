@@ -16,7 +16,7 @@ import { CardImage } from "@/components/landing/card-image";
 import { RatingBadges } from "@/components/landing/rating-badges";
 import { Reveal } from "@/components/landing/reveal";
 import { SiteFooter } from "@/components/landing/site-footer";
-import { SiteHeader } from "@/components/landing/site-header";
+import { SiteHeader } from "@/components/landing/navbar";
 import { ServiceBreadcrumbs } from "@/components/services/shared/service-breadcrumbs";
 import { ServiceApproachSection } from "@/components/services/service-approach-section";
 import { CleanCategoryUrl } from "@/components/services/clean-category-url";

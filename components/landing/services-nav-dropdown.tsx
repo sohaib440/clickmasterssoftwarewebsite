@@ -3,15 +3,9 @@
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 
-export const serviceNavItems = [
-  { label: "Software Development", href: "/software-development" },
-  { label: "Website Development", href: "/software-development/web-development" },
-  { label: "Mobile Development", href: "/software-development/mobile-app-development" },
-  { label: "Design UI/UX", href: "/design-ux" },
-  { label: "Database Services", href: "/data-services" },
-  { label: "Cloud Services", href: "/cloud-devops" },
-  { label: "DevOps Services", href: "/cloud-devops" },
-] as const;
+import { serviceNavItems } from "@/components/landing/navbar";
+
+export { serviceNavItems };
 
 export function ServicesNavDropdown() {
   return (
@@ -27,7 +21,7 @@ export function ServicesNavDropdown() {
         />
       </Link>
 
-      <div className="pointer-events-none absolute left-0 top-full z-50 mt-1 min-w-[12rem] overflow-hidden rounded-2xl border border-white/10 bg-black opacity-0 shadow-xl shadow-black/40 transition-all duration-200 ease-out translate-y-1 group-hover:pointer-events-auto group-focus-within:pointer-events-auto group-hover:opacity-100 group-focus-within:opacity-100 group-hover:translate-y-0 group-focus-within:translate-y-0">
+      <div className="pointer-events-none absolute left-0 top-full z-50 mt-1 min-w-[16rem] overflow-hidden rounded-2xl border border-white/10 bg-black opacity-0 shadow-xl shadow-black/40 transition-all duration-200 ease-out translate-y-1 group-hover:pointer-events-auto group-focus-within:pointer-events-auto group-hover:opacity-100 group-focus-within:opacity-100 group-hover:translate-y-0 group-focus-within:translate-y-0">
         <div className="p-3">
           <div className="space-y-1">
             {serviceNavItems.map((item, index) => (

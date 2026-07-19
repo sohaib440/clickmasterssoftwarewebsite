@@ -15,7 +15,7 @@ export const caseStudyPath = "/case-study";
 /** Contact form POST target (works without client JS) */
 export const contactApiPath = "/api/contact";
 /** Shared horizontal layout keep all landing sections aligned to the same edges */
-export const pageMaxWidth = "max-w-[1400px]";
+export const pageMaxWidth = "max-w-[1750px]";
 export const pageGutter = "px-5 sm:px-6 lg:px-8";
 export const container = `mx-auto w-full min-w-0 ${pageGutter} ${pageMaxWidth}`;
 

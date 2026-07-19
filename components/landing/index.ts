@@ -10,7 +10,17 @@ export { ProcessSection } from "./process-section";
 export { ProjectsSection } from "./projects-section";
 export { ServicesSection } from "./services-section";
 export { SiteFooter } from "./site-footer";
-export { SiteHeader } from "./site-header";
+export {
+  Navbar,
+  SiteHeader,
+  navLinks,
+  navCtaLabel,
+  serviceNavItems,
+  footerBrand,
+  footerColumns,
+  footerLegal,
+  socialLinks,
+} from "./navbar";
 export { SiteLogo } from "./site-logo";
 export { TeamSection } from "./team-section";
 export { TechStackSection } from "./tech-stack-section";

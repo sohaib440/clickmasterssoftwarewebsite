@@ -4,25 +4,20 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ArrowRight, ChevronDown, X } from "lucide-react";
 
-import { serviceNavItems } from "@/components/landing/services-nav-dropdown";
+import {
+  navCtaLabel,
+  navLinks,
+  type NavLink,
+} from "@/components/landing/navbar";
 import { SiteLogo } from "@/components/landing/site-logo";
 import { btnPrimary, contactPath } from "@/lib/landing/constants";
 import { siteBrand } from "@/lib/landing/brand";
-import type { NavLink } from "@/data/landing/navigation";
-import { navCtaLabel, navLinks } from "@/data/landingPage";
 import { cn } from "@/lib/utils";
 
 type MobileNavProps = {
   open: boolean;
   onClose: () => void;
 };
-
-function getMobileChildren(link: NavLink) {
-  if (link.label === "Services") {
-    return serviceNavItems.map((item) => ({ label: item.label, href: item.href }));
-  }
-  return link.children ?? [];
-}
 
 function MobileNavAccordion({
   link,
@@ -34,14 +29,17 @@ function MobileNavAccordion({
   defaultOpen?: boolean;
 }) {
   const [expanded, setExpanded] = useState(defaultOpen);
-  const children = getMobileChildren(link);
+  const children = link.children ?? [];
   const hasChildren = children.length > 0;
 
   if (!hasChildren) {
     return (
       <Link
         href={link.href}
-        onClick={onClose}
+        onClick={(event) => {
+          if (link.href === "#") event.preventDefault();
+          else onClose();
+        }}
         className="flex items-center justify-between rounded-2xl px-4 py-3.5 text-[15px] font-medium text-white transition-colors active:bg-white/10"
       >
         {link.label}
@@ -80,7 +78,10 @@ function MobileNavAccordion({
               <Link
                 key={`${child.href}-${index}`}
                 href={child.href}
-                onClick={onClose}
+                onClick={(event) => {
+                  if (child.href === "#") event.preventDefault();
+                  else onClose();
+                }}
                 className="block rounded-xl px-3 py-2.5 text-sm text-white/70 transition-colors active:bg-white/10 active:text-white"
               >
                 {child.label}
@@ -171,7 +172,10 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
           <Link
             href={contactPath}
             onClick={onClose}
-            className={cn(btnPrimary, "flex h-12 w-full items-center justify-center gap-2 rounded-2xl text-sm font-semibold")}
+            className={cn(
+              btnPrimary,
+              "flex h-12 w-full items-center justify-center gap-2 rounded-2xl text-sm font-semibold"
+            )}
           >
             {navCtaLabel}
             <ArrowRight className="size-4" aria-hidden />
