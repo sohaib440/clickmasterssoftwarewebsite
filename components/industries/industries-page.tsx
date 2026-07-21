@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowUpRight, Building2 } from "lucide-react";
 
 import { Reveal } from "@/components/landing/reveal";
 import { SiteFooter } from "@/components/landing/site-footer";
-import { SiteHeader } from "@/components/landing/site-header";
+import { SiteHeader } from "@/components/landing/navbar";
 import {
   btnOnDark,
   btnPrimary,

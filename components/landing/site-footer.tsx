@@ -9,7 +9,7 @@ import { SiteLogo } from "@/components/landing/site-logo";
 import { container } from "@/lib/landing/constants";
 import { siteBrand } from "@/lib/landing/brand";
 import { motionStagger } from "@/lib/landing/motion";
-import { footerBrand, footerColumns, footerLegal } from "@/data/landingPage";
+import { footerBrand, footerColumns, footerLegal } from "@/components/landing/navbar";
 import { cn } from "@/lib/utils";
 
 export function SiteFooter() {
@@ -100,6 +100,9 @@ export function SiteFooter() {
                           <li key={`${column.title}-${link.href}-${linkIndex}`}>
                             <Link
                               href={link.href}
+                              onClick={(event) => {
+                                if (link.href === "#") event.preventDefault();
+                              }}
                               className="text-sm text-white/80 transition-colors hover:text-white"
                             >
                               {link.label}
@@ -121,6 +124,9 @@ export function SiteFooter() {
                           <li key={`${column.title}-${link.href}-${linkIndex}`}>
                             <Link
                               href={link.href}
+                              onClick={(event) => {
+                                if (link.href === "#") event.preventDefault();
+                              }}
                               className="text-sm text-white/80 transition-colors hover:text-white"
                             >
                               {link.label}
@@ -142,8 +148,11 @@ export function SiteFooter() {
             <div className="flex flex-wrap gap-4">
               {footerLegal.map((link) => (
                 <Link
-                  key={link.href}
+                  key={link.label}
                   href={link.href}
+                  onClick={(event) => {
+                    if (link.href === "#") event.preventDefault();
+                  }}
                   className="transition-colors hover:text-white/80"
                 >
                   {link.label}

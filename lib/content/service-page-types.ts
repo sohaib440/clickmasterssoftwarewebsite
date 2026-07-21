@@ -43,7 +43,8 @@ export type MainServicePageContent = {
   mainSlug: string;
   breadcrumbs: ServiceBreadcrumb[];
   hero: ServiceHeroContent;
-  offerings: {
+  /** Sub-services for the current main category */
+  capabilities: {
     title: string;
     subtitle?: string;
     items: ServiceOfferingItem[];

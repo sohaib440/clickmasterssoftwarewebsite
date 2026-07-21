@@ -37,7 +37,7 @@ export function TrustedPartnersSection({
       )}
       aria-label="Trusted Partners"
     >
-      <div className={cn(container, "py-8 md:py-10")}>
+      <div className={cn(container, "py-2 md:py-2")}>
         <p className={cn(overline, "text-center", labelClassName)}>{trustedPartnersSection.label}</p>
       </div>
 

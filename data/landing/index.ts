@@ -1,7 +1,6 @@
 /** Landing page content split by domain; import from @/data/landingPage or @/data/landing */
 
 export * from "./types";
-export * from "./navigation";
 export * from "./hero";
 export * from "./contact";
 export * from "./trust";

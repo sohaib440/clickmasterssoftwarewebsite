@@ -1,5 +1,5 @@
 import { SiteFooter } from "@/components/landing/site-footer";
-import { SiteHeader } from "@/components/landing/site-header";
+import { SiteHeader } from "@/components/landing/navbar";
 
 type MarketingShellProps = {
   children: React.ReactNode;
