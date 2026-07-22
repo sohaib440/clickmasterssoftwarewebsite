@@ -40,6 +40,21 @@ export function TeamSection() {
                     className="aspect-square h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
                   />
+                  <div
+                    className={cn(
+                      "pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/90 via-black/55 to-transparent p-3 pt-12 sm:p-4",
+                      "opacity-100 transition-opacity duration-300",
+                      "md:opacity-0 md:group-hover:opacity-100 md:group-focus-within:opacity-100"
+                    )}
+                    aria-hidden
+                  >
+                    <p className="font-heading text-base font-medium !text-white sm:text-lg md:translate-y-2 md:transition-transform md:duration-300 md:group-hover:translate-y-0">
+                      {member.name}
+                    </p>
+                    <p className="mt-0.5 text-xs !text-white sm:text-sm md:translate-y-2 md:transition-transform md:duration-300 md:delay-75 md:group-hover:translate-y-0">
+                      {member.role}
+                    </p>
+                  </div>
                   <figcaption className="sr-only">
                     {member.name}, {member.role}
                   </figcaption>
