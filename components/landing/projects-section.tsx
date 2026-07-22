@@ -7,8 +7,16 @@ import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 import CardSwap, { Card } from "@/components/landing/card-swap";
 import { btnOutlineDark, container, overline, projectPath, sectionPad } from "@/lib/landing/constants";
-import { showcaseProjects } from "@/data/projectShowcase";
+import { showcaseProjects, type ShowcaseProject } from "@/data/projectShowcase";
 import { cn } from "@/lib/utils";
+
+type ProjectsSectionProps = {
+  projects?: ShowcaseProject[];
+  overlineText?: string;
+  title?: React.ReactNode;
+  showViewAll?: boolean;
+  id?: string;
+};
 
 const PROJECT_FADE_MS = 700;
 const SLIDE_FADE_MS = 500;
@@ -95,15 +103,25 @@ function useCardSwapDimensions() {
   return dimensions;
 }
 
-export function ProjectsSection() {
+export function ProjectsSection({
+  projects = showcaseProjects,
+  overlineText = "Our work",
+  title = (
+    <>
+      Recent <span className="italic">projects</span>
+    </>
+  ),
+  showViewAll = true,
+  id = "projects",
+}: ProjectsSectionProps) {
   const cardDimensions = useCardSwapDimensions();
   const [activeProject, setActiveProject] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
   const [projectVisible, setProjectVisible] = useState(true);
   const [slideVisible, setSlideVisible] = useState(true);
 
-  const project = showcaseProjects[activeProject];
-  const slide = project.slides[activeSlide] ?? project.slides[0];
+  const project = projects[activeProject] ?? projects[0];
+  const slide = project?.slides[activeSlide] ?? project?.slides[0];
 
   const selectProject = useCallback(
     (index: number) => {
@@ -123,11 +141,11 @@ export function ProjectsSection() {
   );
 
   const goNextProject = () => {
-    selectProject((activeProject + 1) % showcaseProjects.length);
+    selectProject((activeProject + 1) % projects.length);
   };
 
   const goPrevProject = () => {
-    selectProject((activeProject - 1 + showcaseProjects.length) % showcaseProjects.length);
+    selectProject((activeProject - 1 + projects.length) % projects.length);
   };
 
   const handleFrontChange = useCallback(
@@ -143,13 +161,15 @@ export function ProjectsSection() {
     [activeSlide]
   );
 
+  if (!project || !slide) return null;
+
   return (
-    <section id="projects" className="w-full overflow-hidden bg-black text-white">
+    <section id={id} className="w-full overflow-hidden bg-black text-white">
       <div className={cn(container, sectionPad)}>
         <div className="mb-6 md:mb-8">
-          <p className={cn(overline, "text-white/60")}>Our work</p>
+          <p className={cn(overline, "text-white/60")}>{overlineText}</p>
           <h2 className="mt-3 font-heading text-3xl font-normal leading-tight text-white md:text-4xl lg:text-5xl">
-            Recent <span className="italic">projects</span>
+            {title}
           </h2>
         </div>
 
@@ -258,7 +278,7 @@ export function ProjectsSection() {
               </button>
 
               <div className="-mx-1 flex flex-1 items-center gap-2 overflow-x-auto px-1 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                {showcaseProjects.map((item, index) => (
+                {projects.map((item, index) => (
                   <button
                     key={item.slug}
                     type="button"
@@ -290,12 +310,14 @@ export function ProjectsSection() {
             </div>
           </div>
 
-          <div className="mt-8 flex justify-center sm:mt-10">
-            <Link href={projectPath} className={btnOutlineDark}>
-              View all projects
-              <ArrowUpRight className="ml-2 size-4" aria-hidden />
-            </Link>
-          </div>
+          {showViewAll ? (
+            <div className="mt-8 flex justify-center sm:mt-10">
+              <Link href={projectPath} className={btnOutlineDark}>
+                View all projects
+                <ArrowUpRight className="ml-2 size-4" aria-hidden />
+              </Link>
+            </div>
+          ) : null}
         </div>
       </div>
     </section>

@@ -1,9 +1,7 @@
-import Link from "next/link";
-
 import { ContactForm } from "@/components/landing/contact-form";
 import { Reveal } from "@/components/landing/reveal";
-import { contactPath, container, overline, sectionPad } from "@/lib/landing/constants";
-import { contactInfo, homeContact } from "@/data/landingPage";
+import { container, overline, sectionPad } from "@/lib/landing/constants";
+import { homeContact } from "@/data/landingPage";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
 
@@ -33,21 +31,6 @@ export function ContactSection() {
 
         <Reveal delay={motionStagger * 4}>
           <p className="mt-4 text-xs sm:text-sm text-left text-white/60">{homeContact.reassurance}</p>
-          <p className="mt-3 text-xs sm:text-sm text-left text-white/60">
-            <Link
-              href={contactPath}
-              className="font-medium text-white underline-offset-4 hover:underline"
-            >
-              Open full contact form
-            </Link>{" "}
-            for budget, timeline, and project type—or email{" "}
-            <Link
-              href={`mailto:${contactInfo.email}`}
-              className="font-medium text-white underline-offset-4 hover:underline break-all"
-            >
-              {contactInfo.email}
-            </Link>
-          </p>
         </Reveal>
       </div>
     </section>
