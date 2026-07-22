@@ -44,7 +44,7 @@ export function AboutSection({ content }: AboutSectionProps = {}) {
   return (
     <section id="about" className="w-full bg-white text-horizon-navy">
       <div className={cn(container, sectionPad)}>
-        <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] lg:gap-10 xl:grid-cols-[minmax(0,1fr)_minmax(0,24rem)] xl:gap-12">
+        <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,30rem)] lg:gap-10 xl:grid-cols-[minmax(0,1.3fr)_minmax(0,36rem)] xl:gap-12">
           <div className="min-w-0">
             <SectionHeading
               overlineText={data.overlineText ?? "About us"}
@@ -52,7 +52,7 @@ export function AboutSection({ content }: AboutSectionProps = {}) {
               className="mb-4 md:mb-5"
             />
 
-            <div className="space-y-5">
+            <div className="max-w-4xl space-y-5">
               {data.paragraphs.map((paragraph, i) => (
                 <Reveal key={i} delay={i * motionStagger}>
                   <p className="text-base leading-relaxed text-left text-horizon-navy md:text-lg">
@@ -69,11 +69,11 @@ export function AboutSection({ content }: AboutSectionProps = {}) {
           </div>
 
           <Reveal delay={motionStagger} direction="right" className="w-full justify-self-end">
-            <div className={cn(card, "mx-auto w-full max-w-sm overflow-hidden p-0 sm:max-w-md lg:mx-0 lg:max-w-none")}>
+            <div className={cn(card, "mx-auto w-full max-w-xl overflow-hidden p-0 lg:mx-0 lg:max-w-none")}>
               <CardImage
                 {...data.image}
-                className="aspect-[4/3] w-full object-cover"
-                sizes="(max-width: 1024px) 90vw, 384px"
+                className="aspect-[5/4] w-full object-cover"
+                sizes="(max-width: 1024px) 90vw, 576px"
               />
             </div>
           </Reveal>
