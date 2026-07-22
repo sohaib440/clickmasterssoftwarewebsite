@@ -93,26 +93,21 @@ export function SubLocationsSection({
       </div>
 
       <div className={cn(container, sectionPad, "relative")}>
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-end lg:gap-12">
-          <Reveal>
-            <p className={cn(overline, "text-white/55")}>Coverage</p>
-            <h2
-              id="sub-locations-heading"
-              className="mt-3 max-w-xl font-heading text-3xl font-normal leading-[1.12] tracking-tight md:text-4xl lg:text-[2.75rem]"
-            >
-              Cities we serve across <span className="italic text-primary/95">{country}</span>
-            </h2>
-          </Reveal>
-
-          <Reveal delay={motionStagger}>
-            <p className="max-w-xl text-base leading-relaxed text-white/70 md:text-lg lg:justify-self-end lg:text-right">
-              {copy}
-            </p>
-            <p className="mt-4 text-sm font-medium text-white/45 lg:text-right">
-              <span className="text-primary">{cities.length}</span> cities · nationwide delivery
-            </p>
-          </Reveal>
-        </div>
+        <Reveal>
+          <p className={cn(overline, "text-white/55")}>Coverage</p>
+          <h2
+            id="sub-locations-heading"
+            className="mt-3 max-w-xl font-heading text-3xl font-normal leading-[1.12] tracking-tight md:text-4xl lg:text-[2.75rem]"
+          >
+            Cities we serve across <span className="italic text-primary/95">{country}</span>
+          </h2>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
+            {copy}
+          </p>
+          <p className="mt-4 text-sm font-medium text-white/45">
+            <span className="text-primary">{cities.length}</span> cities · nationwide delivery
+          </p>
+        </Reveal>
 
         <ul className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-3 xl:gap-5">
           {cities.map((city, index) => (
