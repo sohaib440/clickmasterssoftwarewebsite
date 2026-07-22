@@ -42,7 +42,17 @@ function IndustryCell({
   );
 }
 
-export function IndustriesSection() {
+type IndustriesSectionProps = {
+  overlineText?: string;
+  title?: React.ReactNode;
+  description?: string;
+};
+
+export function IndustriesSection({
+  overlineText = "Industries",
+  title = "Industries We Serve",
+  description = "Software tailored to the workflows, compliance needs, and growth goals of every sector we work with.",
+}: IndustriesSectionProps = {}) {
   return (
     <section id="industries" className="relative w-full overflow-hidden bg-[#f0f1f3] text-horizon-navy">
       <div
@@ -58,9 +68,9 @@ export function IndustriesSection() {
 
       <div className={cn(container, sectionPad, "relative")}>
         <SectionHeading
-          overlineText="Industries"
-          title="Industries We Serve"
-          description="Software tailored to the workflows, compliance needs, and growth goals of every sector we work with."
+          overlineText={overlineText}
+          title={title}
+          description={description}
           className="mb-8 md:mb-10"
         />
       </div>

@@ -9,7 +9,7 @@ import {
   navLinks,
   type NavLink,
 } from "@/components/landing/navbar";
-import { SiteLogo } from "@/components/landing/site-logo";
+// import { SiteLogo } from "@/components/landing/site-logo";
 import { btnPrimary, contactPath } from "@/lib/landing/constants";
 import { siteBrand } from "@/lib/landing/brand";
 import { cn } from "@/lib/utils";
@@ -135,11 +135,12 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
         )}
       >
         <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
-          <SiteLogo
+          {/* <SiteLogo
             className="min-w-0"
             imageClassName="h-10 w-auto max-w-[11rem] sm:max-w-[13rem]"
             onNavigate={onClose}
-          />
+          /> */}
+          <span className="text-sm font-medium text-white/80">Menu</span>
           <button
             type="button"
             onClick={onClose}
