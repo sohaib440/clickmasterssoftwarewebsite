@@ -33,11 +33,13 @@ export function LocationHero({ location }: LocationHeroProps) {
       <div className={cn(container, sectionPad, "relative")}>
         <Reveal immediate>
           <ServiceBreadcrumbs
-            items={[
-              { label: "Home", href: "/" },
-              { label: "Locations", href: "#" },
-              { label: location.country },
-            ]}
+            items={
+              location.breadcrumbs ?? [
+                { label: "Home", href: "/" },
+                { label: "Locations", href: "/location" },
+                { label: location.country },
+              ]
+            }
           />
         </Reveal>
 

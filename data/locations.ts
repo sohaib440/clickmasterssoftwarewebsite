@@ -55,6 +55,10 @@ export type LocationPageContent = {
     title?: string;
     description?: string;
   };
+  breadcrumbs?: {
+    label: string;
+    href?: string;
+  }[];
   heroImage: {
     src: string;
     alt: string;
@@ -83,96 +87,106 @@ export type LocationPageContent = {
   };
 };
 
-/** Pakistan city targets pages can be added later under /location/{slug} */
+/** City pages live at /location/software-house-and-software-company-in-{city} */
+const locationBasePath = "/location";
+
+function cityLocationSlug(citySlug: string) {
+  return `software-house-and-software-company-in-${citySlug}`;
+}
+
+function cityLocationHref(citySlug: string) {
+  return `${locationBasePath}/${cityLocationSlug(citySlug)}`;
+}
+
 export const pakistanCities: LocationCity[] = [
   {
-    slug: "software-house-in-islamabad",
-    label: "Software house in Islamabad",
-    href: "#",
+    slug: cityLocationSlug("islamabad"),
+    label: "Software house and software company in Islamabad",
+    href: cityLocationHref("islamabad"),
     city: "Islamabad",
     blurb: "HMS, clinic ERP, and government-ready platforms in the capital.",
   },
   {
-    slug: "software-house-in-rawalpindi",
-    label: "Software house in Rawalpindi",
-    href: "#",
+    slug: cityLocationSlug("rawalpindi"),
+    label: "Software house and software company in Rawalpindi",
+    href: cityLocationHref("rawalpindi"),
     city: "Rawalpindi",
     blurb: "Twin-city delivery for clinics, schools, and service businesses.",
   },
   {
-    slug: "software-houses-in-lahore",
-    label: "Software houses in Lahore",
-    href: "#",
+    slug: cityLocationSlug("lahore"),
+    label: "Software house and software company in Lahore",
+    href: cityLocationHref("lahore"),
     city: "Lahore",
     blurb: "Product teams, startups, and enterprise builds in Punjab’s tech hub.",
   },
   {
-    slug: "software-house-in-faisalabad",
-    label: "Software house in Faisalabad",
-    href: "#",
+    slug: cityLocationSlug("faisalabad"),
+    label: "Software house and software company in Faisalabad",
+    href: cityLocationHref("faisalabad"),
     city: "Faisalabad",
     blurb: "ERP and ops software for industry and growing local businesses.",
   },
   {
-    slug: "software-house-in-multan",
-    label: "Software house in Multan",
-    href: "#",
+    slug: cityLocationSlug("multan"),
+    label: "Software house and software company in Multan",
+    href: cityLocationHref("multan"),
     city: "Multan",
     blurb: "Custom web and mobile systems for regional companies scaling up.",
   },
   {
-    slug: "software-house-in-gujranwala",
-    label: "Software house in Gujranwala",
-    href: "#",
+    slug: cityLocationSlug("gujranwala"),
+    label: "Software house and software company in Gujranwala",
+    href: cityLocationHref("gujranwala"),
     city: "Gujranwala",
     blurb: "Manufacturing and trade workflows digitized for local operators.",
   },
   {
-    slug: "software-companies-in-karachi",
-    label: "Software companies in Karachi",
-    href: "#",
+    slug: cityLocationSlug("karachi"),
+    label: "Software house and software company in Karachi",
+    href: cityLocationHref("karachi"),
     city: "Karachi",
     blurb: "High-scale retail, logistics, and fintech systems for Pakistan’s largest city.",
   },
   {
-    slug: "software-house-in-peshawar",
-    label: "Software house in Peshawar",
-    href: "#",
+    slug: cityLocationSlug("peshawar"),
+    label: "Software house and software company in Peshawar",
+    href: cityLocationHref("peshawar"),
     city: "Peshawar",
     blurb: "Reliable web apps and internal tools for KPK organizations.",
   },
   {
-    slug: "software-house-in-bahawalpur",
-    label: "Software house in Bahawalpur",
-    href: "#",
+    slug: cityLocationSlug("bahawalpur"),
+    label: "Software house and software company in Bahawalpur",
+    href: cityLocationHref("bahawalpur"),
     city: "Bahawalpur",
     blurb: "Practical software for education and regional commerce.",
   },
   {
-    slug: "software-house-in-abbottabad",
-    label: "Software house in Abbottabad",
-    href: "#",
+    slug: cityLocationSlug("abbottabad"),
+    label: "Software house and software company in Abbottabad",
+    href: cityLocationHref("abbottabad"),
     city: "Abbottabad",
     blurb: "Lean digital products for schools, clinics, and local services.",
   },
   {
-    slug: "software-house-in-rahim-yar-khan",
-    label: "Software house in Rahim Yar Khan",
-    href: "#",
+    slug: cityLocationSlug("rahim-yar-khan"),
+    label: "Software house and software company in Rahim Yar Khan",
+    href: cityLocationHref("rahim-yar-khan"),
     city: "Rahim Yar Khan",
     blurb: "Ops and inventory systems for south Punjab businesses.",
   },
   {
-    slug: "okara-software-house",
-    label: "Okara software house",
-    href: "#",
+    slug: cityLocationSlug("okara"),
+    label: "Software house and software company in Okara",
+    href: cityLocationHref("okara"),
     city: "Okara",
     blurb: "Affordable custom software for SMEs and agribusiness teams.",
   },
   {
-    slug: "software-house-in-sialkot",
-    label: "Software house in Sialkot",
-    href: "#",
+    slug: cityLocationSlug("sialkot"),
+    label: "Software house and software company in Sialkot",
+    href: cityLocationHref("sialkot"),
     city: "Sialkot",
     blurb: "Export-ready platforms for manufacturers and trading houses.",
   },
