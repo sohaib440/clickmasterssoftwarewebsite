@@ -83,7 +83,7 @@ export type LocationPageContent = {
   };
 };
 
-/** Pakistan city targets — pages can be added later under /location/{slug} */
+/** Pakistan city targets pages can be added later under /location/{slug} */
 export const pakistanCities: LocationCity[] = [
   {
     slug: "software-house-in-islamabad",
@@ -374,7 +374,7 @@ export const pakistanLocation: LocationPageContent = {
     },
   ],
   facts: {
-    title: "Pakistan software house — facts & figures",
+    title: "Pakistan software house facts & figures",
     subtitle:
       "A national footprint with senior delivery from Islamabad—serving clinics, schools, startups, and enterprises across major Pakistani cities.",
     items: [
