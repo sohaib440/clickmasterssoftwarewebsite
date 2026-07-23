@@ -54,18 +54,7 @@ export function IndustriesSection({
   description = "Software tailored to the workflows, compliance needs, and growth goals of every sector we work with.",
 }: IndustriesSectionProps = {}) {
   return (
-    <section id="industries" className="relative w-full overflow-hidden bg-[#f0f1f3] text-horizon-navy">
-      <div
-        className="pointer-events-none absolute inset-0 opacity-70"
-        aria-hidden
-        style={{
-          backgroundImage: `
-            linear-gradient(118deg, transparent 42%, rgba(255, 255, 255, 0.85) 42%, rgba(255, 255, 255, 0.35) 58%, transparent 58%),
-            linear-gradient(242deg, transparent 38%, rgba(228, 231, 236, 0.65) 38%, rgba(228, 231, 236, 0.25) 54%, transparent 54%)
-          `,
-        }}
-      />
-
+    <section id="industries" className="relative w-full overflow-hidden bg-white text-horizon-navy">
       <div className={cn(container, sectionPad, "relative")}>
         <SectionHeading
           overlineText={overlineText}

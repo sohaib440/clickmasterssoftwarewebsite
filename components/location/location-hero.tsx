@@ -33,6 +33,7 @@ export function LocationHero({ location }: LocationHeroProps) {
       <div className={cn(container, sectionPad, "relative")}>
         <Reveal immediate>
           <ServiceBreadcrumbs
+            className="mb-6"
             items={
               location.breadcrumbs ?? [
                 { label: "Home", href: "/" },
@@ -43,23 +44,30 @@ export function LocationHero({ location }: LocationHeroProps) {
           />
         </Reveal>
 
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
-          <div className="min-w-0 lg:max-w-xl">
+        <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-10">
+          <div className="flex min-w-0 flex-col gap-5 lg:max-w-2xl lg:pt-1 xl:max-w-3xl">
             <Reveal immediate delay={motionStagger}>
               <p className={cn(overline, "text-white/60")}>{location.eyebrow}</p>
             </Reveal>
             <Reveal immediate delay={motionStagger * 2}>
-              <h1 className="mt-4 font-heading text-4xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.15rem]">
+              <h1 className="font-heading text-4xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.15rem]">
                 {location.title}
               </h1>
             </Reveal>
             <Reveal immediate delay={motionStagger * 3}>
-              <p className="mt-5 text-base leading-relaxed text-white/70 md:text-lg">
-                {location.description}
-              </p>
+              <div className="flex flex-col gap-4">
+                <p className="text-justify text-base leading-relaxed text-white/70 md:text-lg">
+                  {location.description}
+                </p>
+                {location.descriptionSecondary ? (
+                  <p className="text-justify text-base leading-relaxed text-white/70 md:text-lg">
+                    {location.descriptionSecondary}
+                  </p>
+                ) : null}
+              </div>
             </Reveal>
             <Reveal immediate delay={motionStagger * 4}>
-              <div className="mt-8 flex flex-col gap-2 sm:flex-row sm:items-center">
+              <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:items-center">
                 <Link href={contactPath} className={btnPrimary}>
                   Get a Free Quote
                 </Link>
@@ -70,16 +78,23 @@ export function LocationHero({ location }: LocationHeroProps) {
             </Reveal>
           </div>
 
-          <Reveal immediate delay={motionStagger * 2} direction="right" className="min-w-0">
-            <div className={cn(cardDark, "overflow-hidden p-0")}>
-              <CardImage
-                {...location.heroImage}
-                className="aspect-[4/3] w-full lg:aspect-[5/4]"
-                priority
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
+          <Reveal
+            immediate
+            delay={motionStagger * 2}
+            direction="right"
+            className="mx-auto w-full min-w-0 max-w-[380px] sm:max-w-[420px] lg:mx-0 lg:justify-self-end"
+          >
+            <div className="flex flex-col gap-4">
+              <div className={cn(cardDark, "overflow-hidden p-0")}>
+                <CardImage
+                  {...location.heroImage}
+                  className="aspect-[5/4] w-full"
+                  priority
+                  sizes="(max-width: 1024px) 420px, 380px"
+                />
+              </div>
+              <RatingBadges variant="dark" />
             </div>
-            <RatingBadges variant="dark" className="mt-6" />
           </Reveal>
         </div>
       </div>

@@ -107,8 +107,7 @@ export function BlogFlipCard({
             className="h-full w-full object-cover grayscale-[35%] brightness-[0.72] contrast-[1.08] saturate-[0.85]"
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/95 via-[#1e3a8a]/45 to-[#1e40af]/25" />
-          <div className="absolute inset-0 bg-blue-950/20 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-black/55" />
         </>
       }
       back={
@@ -166,8 +165,7 @@ export function BlogViewAllFlipCard({
             className="h-full w-full object-cover grayscale-[35%] brightness-[0.72] contrast-[1.08] saturate-[0.85]"
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/95 via-[#1e3a8a]/45 to-[#1e40af]/25" />
-          <div className="absolute inset-0 bg-blue-950/20 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-black/55" />
         </>
       }
       back={

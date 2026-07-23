@@ -12,20 +12,28 @@ import {
   overline,
   sectionPad,
 } from "@/lib/landing/constants";
-import { projectPageMeta } from "@/data/projectPage";
 import { projects } from "@/data/landingPage";
-import { softwareDevelopmentProjects } from "@/data/softwareDevelopmentPage";
+import { projectDetailPath } from "@/data/projects";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
 
-const customProjects = softwareDevelopmentProjects.items.map((item, index) => ({
-  slug: `custom-${index + 1}`,
-  title: item.title,
-  category: item.industry,
-  description: item.description,
-  highlights: item.highlights,
-  image: projects[index % projects.length]?.image ?? projects[0].image,
-}));
+export const projectPageContent = {
+  metaTitle: "Our Work & Software Projects",
+  metaDescription:
+    "Explore custom software, SaaS, ERP, CRM, and mobile apps we've designed and shipped for clients in the USA, UK, UAE, Canada, Australia, and Pakistan.",
+  hero: {
+    eyebrow: "Our Work",
+    title: "Projects built for real businesses",
+    description:
+      "A selection of platforms we've designed, engineered, and deployed from SaaS products and ERP systems to healthcare and retail software.",
+  },
+  cta: {
+    title: "Have a project in mind?",
+    description:
+      "Tell us what you're building. We'll respond within one business day with a clear path forward.",
+    button: "Start your project",
+  },
+} as const;
 
 export function ProjectsPageContent() {
   return (
@@ -33,7 +41,6 @@ export function ProjectsPageContent() {
       <SiteHeader />
 
       <main className="flex-1">
-        {/* Hero */}
         <section className="relative overflow-hidden bg-black text-white">
           <div className="pointer-events-none absolute inset-0" aria-hidden>
             <div className="absolute -left-20 top-0 h-72 w-72 rounded-full bg-primary/10 blur-[100px]" />
@@ -53,18 +60,17 @@ export function ProjectsPageContent() {
             </Reveal>
 
             <Reveal immediate delay={motionStagger}>
-              <p className={cn(overline, "text-white/60")}>{projectPageMeta.hero.eyebrow}</p>
+              <p className={cn(overline, "text-white/60")}>{projectPageContent.hero.eyebrow}</p>
               <h1 className="mt-4 max-w-4xl font-heading text-4xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
-                {projectPageMeta.hero.title}
+                {projectPageContent.hero.title}
               </h1>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
-                {projectPageMeta.hero.description}
+                {projectPageContent.hero.description}
               </p>
             </Reveal>
           </div>
         </section>
 
-        {/* Portfolio grid */}
         <section className="bg-white text-horizon-navy">
           <div className={cn(container, sectionPad)}>
             <Reveal>
@@ -80,9 +86,10 @@ export function ProjectsPageContent() {
               {projects.map((project, i) => (
                 <li key={project.slug} id={project.slug}>
                   <Reveal delay={i * motionStagger}>
-                    <article
+                    <Link
+                      href={projectDetailPath(project.slug)}
                       className={cn(
-                        "group overflow-hidden rounded-2xl border border-horizon-border bg-white",
+                        "group block overflow-hidden rounded-2xl border border-horizon-border bg-white",
                         "transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 hover:border-horizon-sky hover:shadow-[0_20px_50px_-24px_rgba(13,27,42,0.18)]",
                       )}
                     >
@@ -105,15 +112,12 @@ export function ProjectsPageContent() {
                         <p className="mt-3 text-sm leading-relaxed text-horizon-muted md:text-[15px]">
                           {project.description}
                         </p>
-                        <Link
-                          href={contactPath}
-                          className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-horizon-navy transition-colors group-hover:text-primary"
-                        >
-                          Discuss a similar build
+                        <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-horizon-navy transition-colors group-hover:text-primary">
+                          View project
                           <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                        </Link>
+                        </span>
                       </div>
-                    </article>
+                    </Link>
                   </Reveal>
                 </li>
               ))}
@@ -121,63 +125,17 @@ export function ProjectsPageContent() {
           </div>
         </section>
 
-        {/* Custom builds from software development page */}
-        <section className="border-t border-horizon-border bg-horizon-peach/35 text-horizon-navy">
-          <div className={cn(container, sectionPad)}>
-            <Reveal>
-              <h2 className="font-heading text-2xl font-normal md:text-3xl">
-                Recent <span className="italic">custom builds</span>
-              </h2>
-              <p className="mt-2 max-w-2xl text-sm text-horizon-muted md:text-base">
-                ERP, CRM, healthcare, and retail platforms engineered for specific business
-                workflows.
-              </p>
-            </Reveal>
-
-            <ul className="mt-10 grid gap-5 sm:grid-cols-2">
-              {customProjects.map((project, i) => (
-                <li key={project.slug} id={project.slug}>
-                  <Reveal delay={i * motionStagger}>
-                    <article className="h-full rounded-2xl border border-horizon-border bg-white p-5 md:p-6">
-                      <p className="text-xs font-medium uppercase tracking-[0.16em] text-horizon-muted">
-                        {project.category}
-                      </p>
-                      <h3 className="mt-2 font-heading text-lg font-medium text-horizon-navy md:text-xl">
-                        {project.title}
-                      </h3>
-                      <p className="mt-2 text-sm leading-relaxed text-horizon-muted">
-                        {project.description}
-                      </p>
-                      <ul className="mt-4 flex flex-wrap gap-2">
-                        {project.highlights.map((highlight) => (
-                          <li
-                            key={highlight}
-                            className="rounded-full border border-horizon-border bg-horizon-cream px-3 py-1 text-xs text-horizon-navy"
-                          >
-                            {highlight}
-                          </li>
-                        ))}
-                      </ul>
-                    </article>
-                  </Reveal>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        {/* CTA */}
         <section className="bg-horizon-navy text-white">
           <div className={cn(container, sectionPad, "text-center")}>
             <Reveal>
               <h2 className="font-heading text-3xl font-normal md:text-4xl">
-                {projectPageMeta.cta.title}
+                {projectPageContent.cta.title}
               </h2>
               <p className="mx-auto mt-4 max-w-lg text-sm text-white/75 md:text-base">
-                {projectPageMeta.cta.description}
+                {projectPageContent.cta.description}
               </p>
               <Link href={contactPath} className={cn("mt-8", btnOnDark)}>
-                {projectPageMeta.cta.button} →
+                {projectPageContent.cta.button} →
               </Link>
             </Reveal>
           </div>

@@ -6,8 +6,18 @@ import { useCallback, useEffect, useState } from "react";
 import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 import CardSwap, { Card } from "@/components/landing/card-swap";
-import { btnOutlineDark, container, overline, projectPath, sectionPad } from "@/lib/landing/constants";
-import { showcaseProjects, type ShowcaseProject } from "@/data/projectShowcase";
+import {
+  btnOutlineDark,
+  container,
+  overline,
+  projectPath,
+  sectionPad,
+} from "@/lib/landing/constants";
+import {
+  projectDetailPath,
+  showcaseProjects,
+  type ShowcaseProject,
+} from "@/data/projects";
 import { cn } from "@/lib/utils";
 
 type ProjectsSectionProps = {
@@ -185,7 +195,12 @@ export function ProjectsSection({
                 {project.category}
               </p>
               <h3 className="mt-3 font-heading text-2xl font-normal leading-tight text-white sm:text-3xl md:text-4xl lg:text-5xl">
-                {project.title}
+                <Link
+                  href={projectDetailPath(project.slug)}
+                  className="transition-colors hover:text-primary"
+                >
+                  {project.title}
+                </Link>
               </h3>
               <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/70 sm:mt-5 sm:text-base md:text-lg">
                 {project.description}
@@ -203,6 +218,14 @@ export function ProjectsSection({
                   ))}
                 </ul>
               ) : null}
+
+              <Link
+                href={projectDetailPath(project.slug)}
+                className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-white transition-colors hover:text-primary"
+              >
+                View case study
+                <ArrowUpRight className="size-4" aria-hidden />
+              </Link>
             </div>
 
             <div
@@ -249,7 +272,7 @@ export function ProjectsSection({
                     className="h-full w-full object-cover transition-opacity duration-700 ease-in-out"
                     sizes={cardDimensions.imageSizes}
                   />
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/45 to-transparent p-4 sm:p-5">
+                  <div className="absolute inset-x-0 bottom-0 bg-black/80 p-4 sm:p-5">
                     <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-primary">
                       {item.label}
                     </p>

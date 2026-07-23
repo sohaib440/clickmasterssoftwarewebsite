@@ -43,11 +43,11 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${location.title} | Next Software Development Company`,
-    description: location.description,
+    title: location.metaTitle ?? location.title,
+    description: location.metaDescription ?? location.description,
     openGraph: {
-      title: location.title,
-      description: location.description,
+      title: location.metaTitle ?? location.title,
+      description: location.metaDescription ?? location.description,
       type: "website",
     },
   };
@@ -92,10 +92,10 @@ export default async function CityLocationPage({ params }: CityLocationPageProps
         <ProjectsSection
           id="case-work"
           projects={location.projects}
-          overlineText={location.caseWork?.overlineText ?? "Case work"}
+          overlineText={location.caseWork?.overlineText ?? "Recent projects"}
           title={
             <>
-              Case studies from <span className="italic">{cityName}</span>
+              Recent projects from <span className="italic">{cityName}</span>
             </>
           }
         />

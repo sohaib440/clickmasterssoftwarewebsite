@@ -23,11 +23,11 @@ import { btnOnDark, container, sectionPad } from "@/lib/landing/constants";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Software House & Top Rated Software Company in Pakistan",
-  description: pakistanLocation.description,
+  title: pakistanLocation.metaTitle ?? pakistanLocation.title,
+  description: pakistanLocation.metaDescription ?? pakistanLocation.description,
   openGraph: {
-    title: "Software House & Top Rated Software Company in Pakistan",
-    description: pakistanLocation.description,
+    title: pakistanLocation.metaTitle ?? pakistanLocation.title,
+    description: pakistanLocation.metaDescription ?? pakistanLocation.description,
     type: "website",
   },
 };
@@ -73,14 +73,14 @@ export default function PakistanLocationPage() {
         {/* 7. Local proof metrics */}
         <LocationFactsSection facts={location.facts} />
 
-        {/* 8. Location case work — same design as Recent projects */}
+        {/* 8. Recent projects */}
         <ProjectsSection
           id="case-work"
           projects={location.projects}
-          overlineText={location.caseWork?.overlineText ?? "Case work"}
+          overlineText={location.caseWork?.overlineText ?? "Recent projects"}
           title={
             <>
-              Case studies from <span className="italic">Pakistan</span>
+              Recent projects from <span className="italic">Pakistan</span>
             </>
           }
         />
