@@ -15,8 +15,8 @@ export const teamMembers = [
   },
   {
     name: "Abdullah Mehdi",
-    role: "Head of Design",
-    bio: "UI/UX designer with a background in product design for SaaS companies in the UK and Pakistan.",
+    role: "Machine Learning Engineer",
+    bio: "Machine learning engineer with 2 years of experience in building machine learning models.",
     image: {
       src: "/team/Abdullah-Medhi.png",
       alt: "Portrait of Abdullah Medhi",
@@ -26,8 +26,8 @@ export const teamMembers = [
   },
   {
     name: "Izaan Ali",
-    role: "Project Manager",
-    bio: "Certified Scrum Master keeping every project on time, on budget and well-communicated.",
+    role: "DevOps Engineer",
+    bio: "DevOps engineer with 2 years of experience in building and managing cloud infrastructure.",
     image: {
       src: "/team/Izaan-Ali.png",
       alt: "Portrait of Izaan Ali",
@@ -37,8 +37,8 @@ export const teamMembers = [
   },
   {
     name: "Haider Saleem",
-    role: "Mobile Developer",
-    bio: "React Native specialist who has shipped 12 apps to the App Store and Play Store.",
+    role: "Data Engineer",
+    bio: "Data engineer with 2 years of experience in building data pipelines.",
     image: {
       src: "/team/Haider-Saleem.png",
       alt: "Portrait of Haider Saleem",
@@ -48,8 +48,8 @@ export const teamMembers = [
   },
   {
     name: "Abdul Hadi",
-    role: "Software Engineer",
-    bio: "Software engineer focused on building reliable, user-facing products.",
+    role: "IOS Developer",
+    bio: "IOS developer with 2 years of experience in building iOS applications.",
     image: {
       src: "/team/Abdul-Hadi.jpeg",
       alt: "Portrait of Abdul Hadi",
