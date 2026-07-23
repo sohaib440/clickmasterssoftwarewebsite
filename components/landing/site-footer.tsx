@@ -5,7 +5,7 @@ import { Mail, MapPin, Phone, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
 import { Reveal } from "@/components/landing/reveal";
-// import { SiteLogo } from "@/components/landing/site-logo";
+import { SiteLogo } from "@/components/landing/site-logo";
 import { container } from "@/lib/landing/constants";
 import { siteBrand } from "@/lib/landing/brand";
 import { motionStagger } from "@/lib/landing/motion";
@@ -31,7 +31,7 @@ export function SiteFooter() {
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
           <Reveal className="lg:col-span-4">
             <div className="space-y-6">
-              {/* <SiteLogo imageClassName="h-16 w-auto max-w-[24rem] md:h-20 md:max-w-[28rem] lg:max-w-[32rem]" /> */}
+              <SiteLogo imageClassName="h-16 w-auto max-w-[24rem] md:h-20 md:max-w-[28rem] lg:max-w-[32rem]" />
               <p className="max-w-sm text-sm leading-relaxed text-white/70">
                 {footerBrand.description}
               </p>
