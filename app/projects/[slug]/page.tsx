@@ -9,6 +9,7 @@ import { Reveal } from "@/components/landing/reveal";
 import { SiteFooter } from "@/components/landing/site-footer";
 import { SiteHeader } from "@/components/landing/navbar";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
+import { ProjectHeroSlideshow } from "@/components/project/project-hero-slideshow";
 import {
   getAllProjectSlugs,
   getProjectBySlug,
@@ -152,14 +153,10 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               </div>
 
               <Reveal immediate delay={motionStagger * 2} direction="right">
-                <div className="overflow-hidden rounded-2xl border border-white/10">
-                  <CardImage
-                    {...project.image}
-                    className="aspect-[16/10] w-full"
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 45vw"
-                  />
-                </div>
+                <ProjectHeroSlideshow
+                  slides={project.slides}
+                  fallbackImage={project.image}
+                />
               </Reveal>
             </div>
           </div>
@@ -274,23 +271,26 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             <Reveal>
               <SectionHeading overlineText="Module pictures" title="Product modules" light />
             </Reveal>
-            <ul className="mt-10 grid gap-6 md:grid-cols-3">
+            <ul className="mt-10 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 md:grid-cols-3">
               {project.modulePictures.map((slide, index) => (
-                <li key={`${slide.label}-${index}`}>
-                  <Reveal delay={index * motionStagger}>
-                    <article className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]">
+                <li key={`${slide.label}-${index}`} className="contents">
+                  <Reveal
+                    delay={index * motionStagger}
+                    className="row-span-2 grid grid-rows-subgrid gap-y-0 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]"
+                  >
+                    <div className="min-w-0 self-start">
                       <CardImage
                         {...slide.image}
-                        className="aspect-[4/3] w-full"
-                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="h-auto w-full"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
-                      <div className="p-5">
-                        <h3 className="font-heading text-lg text-white">{slide.label}</h3>
-                        <p className="mt-2 text-sm leading-relaxed text-white/65">
-                          {slide.caption}
-                        </p>
-                      </div>
-                    </article>
+                    </div>
+                    <div className="flex flex-col p-5">
+                      <h3 className="font-heading text-lg text-white">{slide.label}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-white/65">
+                        {slide.caption}
+                      </p>
+                    </div>
                   </Reveal>
                 </li>
               ))}
@@ -369,7 +369,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                       >
                         <CardImage
                           {...item.image}
-                          className="aspect-[16/10] w-full transition-transform duration-500 group-hover:scale-[1.03]"
+                          className="h-auto w-full transition-transform duration-500 group-hover:scale-[1.03]"
                           sizes="(max-width: 768px) 100vw, 33vw"
                         />
                         <div className="p-5">

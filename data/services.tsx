@@ -44,7 +44,8 @@ export const serviceRoutes: Record<string, string> = {
 export const services: ServiceCard[] = [
   {
     title: "Software Development",
-    description: "Custom software solutions tailored to your business needs.",
+    description:
+      "Custom software solutions tailored to your business needs, from discovery and architecture through build, launch, and ongoing support for startups and enterprises.",
     image: "/services/Software development.png",
     Icon: ShieldCheck,
     AltIcon: Globe2,
@@ -54,8 +55,9 @@ export const services: ServiceCard[] = [
   },
   {
     title: "Web Development",
-    description: "Modern web applications with responsive design and seamless user experience.",
-    image: "/services/Web Development.png",
+    description:
+      "Modern web applications with responsive design, strong performance, and SEO-friendly architecture for a seamless experience on every device and browser.",
+    image: "/services/Web-Development.png",
     Icon: Globe2,
     AltIcon: Server,
     tag: "Web3 Ready",
@@ -63,8 +65,9 @@ export const services: ServiceCard[] = [
   },
   {
     title: "Mobile Development",
-    description: "Build secure and scalable mobile applications for iOS and Android.",
-    image: "/services/Mobile Application Development.png",
+    description:
+      "Secure, scalable mobile apps for iOS and Android with native quality and shared logic where it speeds delivery, without sacrificing performance or user feel.",
+    image: "/services/Mobile-Development.png",
     Icon: Smartphone,
     AltIcon: ShieldCheck,
     tag: "Cross-Platform",
@@ -72,7 +75,8 @@ export const services: ServiceCard[] = [
   },
   {
     title: "Artificial Intelligence",
-    description: "AI-powered monitoring systems with predictive threat intelligence.",
+    description:
+      "Production AI for automation, insights, and smarter products, including agents, NLP, and vision systems with clear guardrails, monitoring, and human oversight.",
     image: "/services/Artificial Intelligence.png",
     Icon: BrainCircuit,
     AltIcon: Database,
@@ -82,8 +86,9 @@ export const services: ServiceCard[] = [
   },
   {
     title: "UI/UX Systems",
-    description: "Elegant digital experiences focused on usability and conversion.",
-    image: "/services/UI-UX.png",
+    description:
+      "Research-led interfaces and design systems focused on usability, consistency, and conversion, from discovery and wireframes through high-fidelity UI and design QA.",
+    image: "/services/UIUX-Design.png",
     Icon: Palette,
     AltIcon: Globe2,
     tag: "Design",
@@ -91,7 +96,8 @@ export const services: ServiceCard[] = [
   },
   {
     title: "Cloud & DevOps",
-    description: "Secure cloud-native infrastructure with scalable DevOps workflows.",
+    description:
+      "Secure cloud-native infrastructure with CI/CD, monitoring, and scalable DevOps workflows so your team can ship reliably, recover quickly, and grow with confidence.",
     image: "/services/CloudOPs and Devops.png",
     Icon: Database,
     AltIcon: Server,
@@ -101,7 +107,8 @@ export const services: ServiceCard[] = [
   },
   {
     title: "Machine Learning",
-    description: "Scalable infrastructure architecture with maximum uptime and reliability.",
+    description:
+      "Custom ML models and pipelines from data prep and training to evaluation and production inference, so predictions and recommendations run reliably at scale.",
     image: "/services/Machine Learning.png",
     Icon: Server,
     AltIcon: BrainCircuit,
@@ -110,7 +117,8 @@ export const services: ServiceCard[] = [
   },
   {
     title: "Data Services",
-    description: "Data engineering, warehousing, and analytics solutions.",
+    description:
+      "Data engineering, warehousing, and analytics solutions that turn raw business information into trusted dashboards, reports, and decisions your teams can act on.",
     image: "/services/Data Services.png",
     Icon: Database,
     AltIcon: Palette,
@@ -119,7 +127,8 @@ export const services: ServiceCard[] = [
   },
   {
     title: "Testing & QA",
-    description: "Scalable infrastructure architecture with maximum uptime and reliability.",
+    description:
+      "Manual and automated testing across web, mobile, and APIs, covering functional, regression, and performance checks so issues are caught before users and releases stay confident.",
     image: "/services/Testing-and-QA.png",
     Icon: Database,
     AltIcon: Palette,

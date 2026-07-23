@@ -1,105 +1,92 @@
-'use client';
+"use client";
 
-// using native <img> for public/static images to avoid Next/Image loader issues
-import Link from 'next/link';
-import { ArrowUpRight, Sparkles } from 'lucide-react';
-import { SectionHeading } from '@/components/landing/section-heading';
-import { LandingContainer, sectionHeadingGap } from '@/components/landing/landing-container';
-import { btnPrimary } from '@/lib/landing/constants';
-import { serviceRoutes, services, type ServiceCard } from '@/data/services';
-import { cn } from '@/lib/utils';
+// import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
-function ServiceCard({ service, index }: { service: ServiceCard; index: number }) {
-  const { accent } = service;
-  const spanClass =
-    service.span === 'wide'
-      ? 'sm:col-span-2 xl:col-span-2'
-      : service.span === 'tall'
-      ? 'xl:row-span-2'
-      : '';
+import { SectionHeading } from "@/components/landing/section-heading";
+import { LandingContainer, sectionHeadingGap } from "@/components/landing/landing-container";
+import { Reveal } from "@/components/landing/reveal";
+import { btnPrimary } from "@/lib/landing/constants";
+import { serviceRoutes, services, type ServiceCard as ServiceCardData } from "@/data/services";
+import { motionStagger } from "@/lib/landing/motion";
+import { cn } from "@/lib/utils";
 
-  const route = serviceRoutes[service.title];
+// const serviceImagesWithAssets = new Set([
+//   "/services/Web-Development.png",
+//   "/services/Mobile-Development.png",
+//   "/services/UIUX-Design.png",
+// ]);
+
+function ServiceCard({ service, index }: { service: ServiceCardData; index: number }) {
+  const Icon = service.Icon;
+  const route = serviceRoutes[service.title] || "/services";
+  // const hasImage = serviceImagesWithAssets.has(service.image);
+  const hasImage = false;
 
   return (
-    <div
-      className={`service-card-tilt ${spanClass}`}
-      style={{ animationDelay: `${index * 0.1}s` }}
-      data-fade-up
-    >
-      <Link href={route || '/services'}>
-        <div
-          className={`group relative flex flex-col justify-between cursor-pointer ${service.span === 'tall' ? 'h-full min-h-[28rem] md:min-h-[32rem]' : 'min-h-[22rem] md:min-h-[26rem] xl:h-full'} rounded-[40px] border bg-white/10 backdrop-blur-2xl p-6 sm:p-8 overflow-hidden transition-all duration-500 hover:bg-white/15`}
-          style={{ borderColor: `${accent}77` }}
-        >
-          <div
-            className="absolute inset-0 rounded-[40px] border-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-            style={{ borderColor: `${accent}66` }}
-          />
-          <div
-            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
-            style={{ boxShadow: `0 30px 60px -15px ${accent}30` }}
-          />
-
-          <div
-            className="absolute -top-24 -right-24 w-64 h-64 rounded-full blur-[80px] opacity-10 group-hover:opacity-20 transition-all duration-700"
-            style={{ background: accent }}
-          />
-
-          <div className="relative z-10 flex flex-col h-full">
-            <div className="flex items-start justify-between">
-              <span
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white/90 border border-white/50 shadow-sm text-[10px] font-bold tracking-widest uppercase"
-                style={{ color: accent }}
-              >
-                <Sparkles className="w-3 h-3" />
+    <Reveal delay={index * motionStagger} className="h-full">
+      <Link
+        href={route}
+        className={cn(
+          "group flex h-full min-h-[11rem] flex-col overflow-hidden rounded-xl border border-white/10 bg-white/[0.04] transition-colors duration-300 sm:min-h-[12rem]",
+          "hover:border-white/25 hover:bg-white/[0.07]"
+        )}
+      >
+        {/* {hasImage ? (
+          <div className="relative h-44 w-full shrink-0 overflow-hidden sm:h-48 md:h-52">
+            <div className="absolute inset-x-0 top-0 z-10 flex items-start justify-between gap-2 p-4">
+              <span className="inline-flex size-9 items-center justify-center rounded-lg border border-white/15 bg-black/35 text-white backdrop-blur-sm">
+                <Icon className="size-4" strokeWidth={1.5} aria-hidden />
+              </span>
+              <span className="rounded-md bg-black/35 px-2 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-white/80 backdrop-blur-sm">
                 {service.tag}
               </span>
             </div>
 
-            <div className="flex-1 flex items-center justify-center mb-6 relative">
-              <div
-                className="absolute w-40 h-40 rounded-full blur-[60px] opacity-30 group-hover:opacity-50 transition-all duration-700"
-                style={{ background: accent }}
-              />
-              {service.image ? (
-                <div className="relative w-40 h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 overflow-hidden rounded-[32px]">
-                  <img src={service.image} alt={service.title} className="object-cover w-full h-full" />
-                </div>
-              ) : (
-                <div className="relative w-56 h-56 rounded-[32px] bg-slate-100/70" />
-              )}
-            </div>
-
-            <div className='mb-6'>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-2 tracking-tight">
-                {service.title}
-              </h3>
-              <p className="text-sm md:text-base text-white/70 leading-relaxed line-clamp-2">
-                {service.description}
-              </p>
-
-              <div className="mb-6 flex items-center justify-between">
-                <span className="text-[10px] font-bold tracking-widest uppercase opacity-40 group-hover:opacity-100 transition-opacity" style={{ color: accent }}>
-                  Learn More
-                </span>
-                <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:rotate-45"
-                  style={{ background: `linear-gradient(135deg, ${accent}, ${accent}cc)` }}
-                >
-                  <ArrowUpRight className="w-5 h-5 text-white" />
-                </div>
-              </div>
-            </div>
+            <Image
+              src={service.image}
+              alt={service.title}
+              fill
+              className="object-contain object-center p-3 pt-10 transition-transform duration-500 group-hover:scale-[1.02]"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
           </div>
+        ) : ( */}
+          <div className="flex shrink-0 items-start justify-between gap-2 px-4 pt-4">
+            <span className="inline-flex size-8 items-center justify-center rounded-md border border-white/10 bg-white/[0.04] text-white">
+              <Icon className="size-3.5" strokeWidth={1.5} aria-hidden />
+            </span>
+            <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-white/45">
+              {service.tag}
+            </span>
+          </div>
+        {/* )} */}
+
+        <div className={cn("flex flex-1 flex-col px-4 pb-4", hasImage ? "pt-2" : "pt-3")}>
+          <h3 className="font-heading text-base font-medium leading-snug text-white md:text-lg">
+            {service.title}
+          </h3>
+          <p className="mt-1.5 flex-1 text-xs leading-relaxed text-white/65 sm:text-sm">
+            {service.description}
+          </p>
+
+          <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-white transition-colors group-hover:text-primary sm:text-sm">
+            Learn more
+            <ArrowUpRight
+              className="size-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              aria-hidden
+            />
+          </span>
         </div>
       </Link>
-    </div>
+    </Reveal>
   );
 }
 
 export function ServicesSection() {
   return (
-    <section id="services" className="relative bg-black text-white overflow-hidden">
+    <section id="services" className="relative overflow-hidden bg-black text-white">
       <LandingContainer className="relative z-10">
         <SectionHeading
           overlineText="What we do"
@@ -114,11 +101,13 @@ export function ServicesSection() {
           className={sectionHeadingGap}
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 auto-rows-min xl:auto-rows-[460px] gap-8">
-          {services.map((service, i) => (
-            <ServiceCard key={service.title} service={service} index={i} />
+        <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
+          {services.map((service, index) => (
+            <li key={service.title} className="h-full">
+              <ServiceCard service={service} index={index} />
+            </li>
           ))}
-        </div>
+        </ul>
 
         <div className="mx-auto mt-12 flex justify-center">
           <Link href="/services" className={btnPrimary}>

@@ -82,15 +82,16 @@ export function LocationHero({ location }: LocationHeroProps) {
             immediate
             delay={motionStagger * 2}
             direction="right"
-            className="mx-auto w-full min-w-0 max-w-[380px] sm:max-w-[420px] lg:mx-0 lg:justify-self-end"
+            className="w-full min-w-0"
           >
             <div className="flex flex-col gap-4">
               <div className={cn(cardDark, "overflow-hidden p-0")}>
                 <CardImage
                   {...location.heroImage}
-                  className="aspect-[5/4] w-full"
+                  className="aspect-[3/2] w-full object-cover"
                   priority
-                  sizes="(max-width: 1024px) 420px, 380px"
+                  quality={90}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
               <RatingBadges variant="dark" />

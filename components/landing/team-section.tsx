@@ -14,7 +14,7 @@ export function TeamSection() {
           overlineText="Our people"
           title={
             <>
-              A small <span className="italic">crew</span>.
+              A small <span className="italic">team</span>.
             </>
           }
           description="Serious about software."

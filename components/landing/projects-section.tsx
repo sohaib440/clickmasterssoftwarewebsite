@@ -29,7 +29,6 @@ type ProjectsSectionProps = {
 };
 
 const PROJECT_FADE_MS = 700;
-const SLIDE_FADE_MS = 500;
 
 type CardSwapDimensions = {
   width: number;
@@ -43,55 +42,55 @@ type CardSwapDimensions = {
 function getCardSwapDimensions(viewportWidth: number): CardSwapDimensions {
   if (viewportWidth < 480) {
     return {
-      width: 268,
-      height: 214,
+      width: 280,
+      height: 210,
       cardDistance: 50,
       verticalDistance: 64,
-      containerHeight: 360,
-      imageSizes: "(max-width: 480px) 90vw, 268px",
+      containerHeight: 380,
+      imageSizes: "(max-width: 480px) 90vw, 280px",
     };
   }
 
   if (viewportWidth < 640) {
     return {
-      width: 300,
-      height: 240,
+      width: 312,
+      height: 234,
       cardDistance: 56,
       verticalDistance: 72,
-      containerHeight: 400,
-      imageSizes: "(max-width: 640px) 90vw, 300px",
+      containerHeight: 420,
+      imageSizes: "(max-width: 640px) 90vw, 312px",
     };
   }
 
   if (viewportWidth < 1024) {
     return {
-      width: 360,
-      height: 288,
+      width: 378,
+      height: 284,
       cardDistance: 64,
       verticalDistance: 82,
-      containerHeight: 480,
-      imageSizes: "(max-width: 1024px) 80vw, 360px",
+      containerHeight: 500,
+      imageSizes: "(max-width: 1024px) 80vw, 378px",
     };
   }
 
   if (viewportWidth < 1536) {
     return {
-      width: 400,
-      height: 320,
+      width: 450,
+      height: 338,
       cardDistance: 72,
       verticalDistance: 92,
-      containerHeight: 560,
-      imageSizes: "(max-width: 1536px) 45vw, 400px",
+      containerHeight: 580,
+      imageSizes: "(max-width: 1536px) 45vw, 450px",
     };
   }
 
   return {
-    width: 520,
-    height: 416,
+    width: 540,
+    height: 405,
     cardDistance: 90,
     verticalDistance: 112,
-    containerHeight: 700,
-    imageSizes: "(min-width: 1536px) 520px, 400px",
+    containerHeight: 720,
+    imageSizes: "(min-width: 1536px) 540px, 450px",
   };
 }
 
@@ -128,7 +127,6 @@ export function ProjectsSection({
   const [activeProject, setActiveProject] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
   const [projectVisible, setProjectVisible] = useState(true);
-  const [slideVisible, setSlideVisible] = useState(true);
 
   const project = projects[activeProject] ?? projects[0];
   const slide = project?.slides[activeSlide] ?? project?.slides[0];
@@ -138,13 +136,11 @@ export function ProjectsSection({
       if (index === activeProject || !projectVisible) return;
 
       setProjectVisible(false);
-      setSlideVisible(false);
 
       window.setTimeout(() => {
         setActiveProject(index);
         setActiveSlide(0);
         setProjectVisible(true);
-        setSlideVisible(true);
       }, PROJECT_FADE_MS);
     },
     [activeProject, projectVisible]
@@ -158,18 +154,9 @@ export function ProjectsSection({
     selectProject((activeProject - 1 + projects.length) % projects.length);
   };
 
-  const handleFrontChange = useCallback(
-    (index: number) => {
-      if (index === activeSlide) return;
-
-      setSlideVisible(false);
-      window.setTimeout(() => {
-        setActiveSlide(index);
-        setSlideVisible(true);
-      }, SLIDE_FADE_MS);
-    },
-    [activeSlide]
-  );
+  const handleFrontChange = useCallback((index: number) => {
+    setActiveSlide(index);
+  }, []);
 
   if (!project || !slide) return null;
 
@@ -229,9 +216,10 @@ export function ProjectsSection({
             </div>
 
             <div
+              key={`${project.slug}-${activeSlide}`}
               className={cn(
-                "mt-6 border-t border-white/10 pt-5 transition-all duration-500 ease-in-out sm:mt-8 sm:pt-6",
-                slideVisible ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
+                "mt-6 border-t border-white/10 pt-5 transition-opacity duration-500 ease-in-out sm:mt-8 sm:pt-6",
+                projectVisible ? "opacity-100" : "opacity-0"
               )}
             >
               <p className="text-[10px] font-medium uppercase tracking-[0.28em] text-white/45">
@@ -263,20 +251,27 @@ export function ProjectsSection({
               onFrontChange={handleFrontChange}
             >
               {project.slides.map((item, index) => (
-                <Card key={`${project.slug}-${index}`} className="relative overflow-hidden">
-                  <Image
-                    src={item.image.src}
-                    alt={item.image.alt}
-                    width={item.image.width}
-                    height={item.image.height}
-                    className="h-full w-full object-cover transition-opacity duration-700 ease-in-out"
-                    sizes={cardDimensions.imageSizes}
-                  />
-                  <div className="absolute inset-x-0 bottom-0 bg-black/80 p-4 sm:p-5">
+                <Card
+                  key={`${project.slug}-${index}`}
+                  className="relative flex flex-col overflow-hidden bg-zinc-950"
+                >
+                  <div className="relative min-h-0 flex-1 bg-[#eef0f3]">
+                    <Image
+                      src={item.image.src}
+                      alt={item.image.alt}
+                      width={item.image.width}
+                      height={item.image.height}
+                      className="h-full w-full object-contain object-top transition-opacity duration-700 ease-in-out"
+                      sizes={cardDimensions.imageSizes}
+                    />
+                  </div>
+                  <div className="shrink-0 border-t border-white/10 bg-zinc-950 px-4 py-3 sm:px-5">
                     <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-primary">
                       {item.label}
                     </p>
-                    <p className="mt-1 text-xs leading-relaxed text-white/80 sm:text-sm">{item.caption}</p>
+                    <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-white/80 sm:text-sm">
+                      {item.caption}
+                    </p>
                   </div>
                 </Card>
               ))}

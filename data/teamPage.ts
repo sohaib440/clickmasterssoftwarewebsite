@@ -6,14 +6,14 @@ export const teamPageMeta = {
     "Meet the engineers, designers, and project leads at our Islamabad-based software development company the people who design, build, and ship your product.",
   hero: {
     eyebrow: "Our people",
-    title: "A small crew. Serious about software.",
+    title: "A small team. Serious about software.",
     description: teamIntro,
   },
   culture: [
     {
       title: "Senior-led delivery",
       description:
-        "Client projects are staffed with experienced engineers and designers no bait-and-switch to junior-only teams.",
+        "Client projects are staffed with experienced engineers and designers—no bait-and-switch to junior-only teams.",
     },
     {
       title: "Direct communication",
@@ -28,7 +28,7 @@ export const teamPageMeta = {
     {
       title: "Craft & character",
       description:
-        "Every hire is chosen for technical skill, communication, and reliability the traits that keep long projects on track.",
+        "Every hire is chosen for technical skill, communication, and reliability—the traits that keep long projects on track.",
     },
   ],
   cta: {

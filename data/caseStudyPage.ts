@@ -16,65 +16,21 @@ const caseStudyDetails: Record<
   string,
   { problem: string; solution: string; outcomes: string[] }
 > = {
-  "mediconnect-pro": {
+  "prime-lead-crm": {
     problem:
-      "Clinics struggled with long patient wait times and limited reach beyond physical locations.",
+      "Call center sales teams were losing leads and context across spreadsheets, chat apps, unclear ownership, and weak visibility into attendance and conversion.",
     solution:
-      "We built a telehealth platform with video consultations, patient onboarding, and provider scheduling in one workflow.",
-    outcomes: ["60% faster wait times", "12,000+ patients served", "HIPAA-ready workflows"],
-  },
-  "finedge-erp": {
-    problem:
-      "A mid-size financial firm ran five disconnected legacy tools, creating overhead and compliance risk.",
-    solution:
-      "We delivered a unified ERP covering finance, operations, and reporting with UAE regulatory requirements built in.",
-    outcomes: ["40% lower overhead", "5 legacy tools replaced", "UAE compliance built in"],
-  },
-  "retailflow-pos": {
-    problem:
-      "A retail chain faced stock discrepancies and slow checkout across 30 branches.",
-    solution:
-      "We shipped a cloud POS with real-time inventory sync and branch-level analytics.",
-    outcomes: ["30 retail branches live", "85% fewer stock issues", "35% faster checkout"],
-  },
-  "eduspark-lms": {
-    problem:
-      "A private university needed a modern LMS to improve course completion and student engagement.",
-    solution:
-      "We built an e-learning platform with structured paths, assignments, and faculty tooling.",
-    outcomes: ["8,000+ active students", "45% higher completion", "Multi-campus rollout"],
-  },
-  "cargotrack": {
-    problem:
-      "Logistics clients flooded support with shipment status calls due to limited visibility.",
-    solution:
-      "We created a real-time tracking platform with live GPS visibility for every delivery.",
-    outcomes: ["600+ daily deliveries", "70% fewer support queries", "Live GPS tracking"],
-  },
-  "propertyhub": {
-    problem:
-      "A real estate business needed better lead capture and property discovery for agents and buyers.",
-    solution:
-      "We launched a listing and CRM platform with AI-powered search recommendations.",
-    outcomes: ["120% time-on-site increase", "2× lead generation", "Agent CRM in one place"],
-  },
-  "insightai": {
-    problem:
-      "Legal teams spent excessive time manually reviewing and classifying large contract volumes.",
-    solution:
-      "We built a document intelligence platform for extraction, classification, and summarization.",
-    outcomes: ["75% less manual review", "50,000+ documents processed", "Higher audit accuracy"],
-  },
-  "payflow-saas": {
-    problem:
-      "B2B SaaS merchants needed reliable recurring billing with fewer failed transactions.",
-    solution:
-      "We developed a subscription billing platform with automated invoicing and payment retries.",
-    outcomes: ["200+ merchants onboarded", "28% fewer failed payments", "Automated recurring billing"],
+      "We built Prime Lead CRM with a live dashboard, leads panel, staff roles, chat, training, and role-based login so the full sales floor runs in one system.",
+    outcomes: [
+      "Unified lead pipeline",
+      "Clear staff ownership",
+      "Chat, training & attendance visibility",
+      "Live conversion dashboard",
+    ],
   },
 };
 
-export const caseStudies: CaseStudy[] = projects.slice(0, 8).map((project) => {
+export const caseStudies: CaseStudy[] = projects.map((project) => {
   const detail = caseStudyDetails[project.slug];
   return {
     slug: project.slug,
@@ -90,7 +46,7 @@ export const caseStudies: CaseStudy[] = projects.slice(0, 8).map((project) => {
 export const caseStudyPageMeta = {
   title: "Case Studies",
   description:
-    "In-depth looks at how we approach discovery, architecture, and delivery for healthcare, fintech, retail, logistics, and SaaS clients worldwide.",
+    "In-depth looks at how we approach discovery, architecture, and delivery for CRM, SaaS, and custom software clients worldwide.",
   hero: {
     eyebrow: "Case Studies",
     title: "How we solve real product problems",

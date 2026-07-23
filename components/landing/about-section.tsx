@@ -55,7 +55,7 @@ export function AboutSection({ content }: AboutSectionProps = {}) {
             <div className="max-w-4xl space-y-5">
               {data.paragraphs.map((paragraph, i) => (
                 <Reveal key={i} delay={i * motionStagger}>
-                  <p className="text-base leading-relaxed text-left text-horizon-navy md:text-lg">
+                  <p className="text-base leading-relaxed text-justify text-horizon-navy md:text-lg">
                     {paragraph}
                   </p>
                 </Reveal>
@@ -86,7 +86,7 @@ export function AboutSection({ content }: AboutSectionProps = {}) {
                 <h3 className="font-heading text-xl font-medium text-horizon-navy">
                   {value.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-left text-horizon-muted">
+                <p className="mt-3 text-sm leading-relaxed text-justify text-horizon-muted">
                   {value.description}
                 </p>
               </Reveal>

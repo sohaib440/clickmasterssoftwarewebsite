@@ -270,10 +270,10 @@ export const pakistanLocation: LocationPageContent = {
       "Selected builds from our software development company for clinics, schools, and retailers across Pakistani cities, with the same delivery standard as our global software company recent projects.",
   },
   heroImage: {
-    src: "/about us/software development company.png",
+    src: "/locations/Location-Pakistan.png",
     alt: "Best software house and top rated software company in Pakistan",
-    width: 800,
-    height: 440,
+    width: 1536,
+    height: 1024,
   },
   cities: pakistanCities,
   projects: [
