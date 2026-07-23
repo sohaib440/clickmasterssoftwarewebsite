@@ -264,10 +264,10 @@ export const pakistanLocation: LocationPageContent = {
     teamCta: "Meet our Pakistan software house team",
   },
   caseWork: {
-    overlineText: "Case work",
-    title: "Software house case studies from Pakistan",
+    overlineText: "Recent projects",
+    title: "Recent projects from Pakistan",
     description:
-      "Selected builds from our software development company for clinics, schools, and retailers across Pakistani cities, with the same delivery standard as our global software company case studies.",
+      "Selected builds from our software development company for clinics, schools, and retailers across Pakistani cities, with the same delivery standard as our global software company recent projects.",
   },
   heroImage: {
     src: "/about us/software development company.png",

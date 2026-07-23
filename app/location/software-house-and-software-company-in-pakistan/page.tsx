@@ -73,14 +73,14 @@ export default function PakistanLocationPage() {
         {/* 7. Local proof metrics */}
         <LocationFactsSection facts={location.facts} />
 
-        {/* 8. Location case work ,  same design as Recent projects */}
+        {/* 8. Recent projects */}
         <ProjectsSection
           id="case-work"
           projects={location.projects}
-          overlineText={location.caseWork?.overlineText ?? "Case work"}
+          overlineText={location.caseWork?.overlineText ?? "Recent projects"}
           title={
             <>
-              Case studies from <span className="italic">Pakistan</span>
+              Recent projects from <span className="italic">Pakistan</span>
             </>
           }
         />
