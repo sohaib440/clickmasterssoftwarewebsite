@@ -32,7 +32,7 @@ export function CardImage({
       alt={alt}
       width={width}
       height={height}
-      className={cn("block h-full w-full object-cover", className)}
+      className={cn("block w-full object-cover", className)}
       sizes={sizes}
       quality={quality}
       priority={priority}

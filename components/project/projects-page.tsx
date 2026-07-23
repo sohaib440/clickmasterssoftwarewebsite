@@ -93,13 +93,13 @@ export function ProjectsPageContent() {
                         "transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 hover:border-horizon-sky hover:shadow-[0_20px_50px_-24px_rgba(13,27,42,0.18)]",
                       )}
                     >
-                      <div className="relative aspect-[16/10] overflow-hidden">
+                      <div className="relative overflow-hidden">
                         <CardImage
                           {...project.image}
-                          className="h-full w-full transition-transform duration-500 group-hover:scale-[1.03]"
+                          className="h-auto w-full transition-transform duration-500 group-hover:scale-[1.03]"
                           sizes="(max-width: 768px) 100vw, 50vw"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                         <span className="absolute left-4 top-4 rounded-full border border-white/20 bg-black/45 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-white backdrop-blur-sm">
                           {project.category}
                         </span>

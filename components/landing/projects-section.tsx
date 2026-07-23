@@ -269,7 +269,7 @@ export function ProjectsSection({
                     alt={item.image.alt}
                     width={item.image.width}
                     height={item.image.height}
-                    className="h-full w-full object-cover transition-opacity duration-700 ease-in-out"
+                    className="h-full w-full object-cover object-top transition-opacity duration-700 ease-in-out"
                     sizes={cardDimensions.imageSizes}
                   />
                   <div className="absolute inset-x-0 bottom-0 bg-black/80 p-4 sm:p-5">
