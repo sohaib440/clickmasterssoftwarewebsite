@@ -47,6 +47,8 @@ export type LocationPageContent = {
   eyebrow: string;
   title: string;
   description: string;
+  /** Optional second hero paragraph (rendered below description) */
+  descriptionSecondary?: string;
   coverageTitle?: string;
   coverageDescription?: string;
   about: LocationAboutContent;
@@ -197,72 +199,74 @@ export const pakistanLocation: LocationPageContent = {
   country: "Pakistan",
   href: "/location/software-house-and-software-company-in-pakistan",
   eyebrow: "Locations · Pakistan",
-  title: "Software house and top rated software company in Pakistan",
+  title: "Best software house and top rated software company in Pakistan",
   description:
-    "Next Software Development Company builds custom software, HMS, ERP, and digital products for clinics, schools, and growing businesses across Pakistan—from Islamabad and Lahore to Karachi and beyond.",
+    "Next Software Development Company is the best software house and top-rated software development company in Pakistan. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Islamabad, Lahore, Karachi, and beyond.",
+  descriptionSecondary:
+    "Our experienced team of developers, designers, and engineers combines technical expertise with deep local market insight to deliver scalable, secure, and affordable solutions that streamline operations and drive sustainable growth. Whether you are a startup building your first MVP or an enterprise seeking a full scale ERP system, we turn your vision into reliable, high performing software.",
   coverageTitle: "Cities we serve across Pakistan",
   coverageDescription:
-    "We partner with founders and operators nationwide—building HMS for Islamabad clinics, school platforms in Lahore, and retail systems in Karachi. Pick your city to see how a dedicated software house can support your market.",
+    "As a nationwide software house and software development company, we partner with founders and operators across Pakistan, building HMS for Islamabad clinics, school platforms in Lahore, and retail systems in Karachi. Pick your city to see how our software company can support your market.",
   about: {
     overlineText: "About us",
-    title: "A top-rated software house in Pakistan",
+    title: "A top-rated software house and software development company in Pakistan",
     paragraphs: [
-      "Next Software Development Company is headquartered in Islamabad with delivery teams across Lahore, Karachi, and major cities nationwide. We build custom software, HMS, ERP, mobile apps, and SaaS for clinics, schools, retailers, and growing enterprises in Pakistan—and for international clients who want senior Pakistani engineering at scale.",
-      "Our 60+ engineers, designers, and QA specialists have shipped 250+ projects over more than a decade. From Urdu-ready clinic workflows in Islamabad to multi-campus school platforms in Lahore and retail POS across Karachi, we combine local market understanding with the same delivery standards we apply on global engagements.",
-      "Whether you are a founder in Pakistan or an overseas company hiring a software house in Pakistan, you get English-first communication, timezone-friendly collaboration, transparent fixed pricing, and post-launch support that does not disappear after go-live.",
+      "Next Software Development Company is a leading software house and software development company headquartered in Islamabad, with delivery teams across Lahore, Karachi, and major cities nationwide. Our software company builds custom software, HMS, ERP, mobile apps, and SaaS for clinics, schools, retailers, and growing enterprises in Pakistan, and for international clients who want senior Pakistani engineering at scale.",
+      "As an experienced software house in Pakistan, our 60+ engineers, designers, and QA specialists have shipped 250+ projects over more than a decade. From Urdu-ready clinic workflows in Islamabad to multi-campus school platforms in Lahore and retail POS across Karachi, this software development company combines local market understanding with the same delivery standards we apply on global engagements.",
+      "Whether you are a founder in Pakistan or an overseas company hiring a software house and software company in Pakistan, you get English-first communication, timezone-friendly collaboration, transparent fixed pricing, and post-launch support that does not disappear after go-live.",
     ],
     values: [
       {
         title: "Pakistan-wide coverage",
         description:
-          "Active delivery from Islamabad, Lahore, and Karachi to 13+ cities across the country.",
+          "A software house serving Islamabad, Lahore, Karachi, and 13+ cities across the country.",
       },
       {
         title: "Senior-only teams",
         description:
-          "Senior developers, designers, and QA on every project—no junior-only delivery squads.",
+          "Every software development company engagement is staffed with senior developers, designers, and QA, with no junior-only delivery squads.",
       },
       {
         title: "Local + global clients",
         description:
-          "HMS, ERP, and product builds for Pakistani operators and international teams hiring in Pakistan.",
+          "HMS, ERP, and product builds from a Pakistan software company for local operators and international teams.",
       },
       {
         title: "Transparent pricing",
         description:
-          "Fixed-price contracts with clear scope—no surprise invoices mid-project.",
+          "Fixed-price contracts from a reliable software house with clear scope and no surprise invoices mid-project.",
       },
       {
         title: "Post-launch support",
         description:
-          "We stay involved after go-live with maintenance, updates, and ongoing improvements.",
+          "Our software development company stays involved after go-live with maintenance, updates, and ongoing improvements.",
       },
       {
         title: "Secure delivery",
         description:
-          "ISO-aligned processes, code reviews, and data security best practices on every engagement.",
+          "ISO-aligned processes, code reviews, and data security best practices on every software house engagement.",
       },
     ],
     image: {
       src: "/about us/software development company.png",
-      alt: "Next Software Development Company team in Pakistan",
+      alt: "Next Software Development Company, a top software house and software company in Pakistan",
       width: 1000,
       height: 700,
     },
     teamLink: teamPath,
-    teamCta: "Meet our Pakistan team",
+    teamCta: "Meet our Pakistan software house team",
   },
   caseWork: {
     overlineText: "Case work",
-    title: "Case studies from Pakistan",
+    title: "Software house case studies from Pakistan",
     description:
-      "Selected builds for clinics, schools, and retailers across Pakistani cities—same delivery standard as our global case studies.",
+      "Selected builds from our software development company for clinics, schools, and retailers across Pakistani cities, with the same delivery standard as our global software company case studies.",
   },
   heroImage: {
-    src: "/services/Software development.png",
-    alt: "Software development team in Pakistan",
+    src: "/about us/software development company.png",
+    alt: "Best software house and top rated software company in Pakistan",
     width: 800,
-    height: 800,
+    height: 440,
   },
   cities: pakistanCities,
   projects: [
@@ -271,7 +275,7 @@ export const pakistanLocation: LocationPageContent = {
       title: "Clinic ERP Islamabad",
       category: "Healthcare · Islamabad",
       description:
-        "A unified HMS/ERP for a multi-doctor Islamabad clinic—appointments, billing, pharmacy, and patient records in one Urdu-ready workflow.",
+        "A unified HMS/ERP built by our software house for a multi-doctor Islamabad clinic with appointments, billing, pharmacy, and patient records in one Urdu-ready workflow.",
       highlights: ["Single clinic system", "Faster check-ins", "Local compliance ready"],
       slides: [
         {
@@ -279,7 +283,7 @@ export const pakistanLocation: LocationPageContent = {
           caption: "Complete histories, visits, and notes in one place.",
           image: {
             src: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&h=750&q=80",
-            alt: "Clinic management dashboard for Islamabad healthcare",
+            alt: "Clinic management dashboard by a software company in Islamabad",
             width: 1200,
             height: 750,
           },
@@ -289,7 +293,7 @@ export const pakistanLocation: LocationPageContent = {
           caption: "Doctor calendars and check-in flows for busy clinics.",
           image: {
             src: "https://images.unsplash.com/photo-1584433144859-1fc3ab64a957?auto=format&fit=crop&w=1200&h=750&q=80",
-            alt: "Clinic appointment scheduling software",
+            alt: "Clinic appointment scheduling software from a Pakistan software house",
             width: 1200,
             height: 750,
           },
@@ -299,7 +303,7 @@ export const pakistanLocation: LocationPageContent = {
           caption: "Invoices and stock tied to each patient visit.",
           image: {
             src: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&h=750&q=80",
-            alt: "Healthcare billing and pharmacy module",
+            alt: "Healthcare billing module by a software development company",
             width: 1200,
             height: 750,
           },
@@ -311,7 +315,7 @@ export const pakistanLocation: LocationPageContent = {
       title: "School platform Lahore",
       category: "Education · Lahore",
       description:
-        "Admissions, fees, attendance, and parent portals for a private school network in Lahore—cutting admin load and improving parent communication.",
+        "Admissions, fees, attendance, and parent portals delivered by our software development company for a private school network in Lahore, cutting admin load and improving parent communication.",
       highlights: ["Multi-campus rollout", "Clearer fee tracking", "Parent app access"],
       slides: [
         {
@@ -319,7 +323,7 @@ export const pakistanLocation: LocationPageContent = {
           caption: "Admissions and student records across campuses.",
           image: {
             src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&h=750&q=80",
-            alt: "School management software for Lahore",
+            alt: "School management software by a software house in Lahore",
             width: 1200,
             height: 750,
           },
@@ -329,7 +333,7 @@ export const pakistanLocation: LocationPageContent = {
           caption: "Transparent fee status for parents and accounts.",
           image: {
             src: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&h=750&q=80",
-            alt: "School fee management interface",
+            alt: "School fee management software from a software company",
             width: 1200,
             height: 750,
           },
@@ -339,7 +343,7 @@ export const pakistanLocation: LocationPageContent = {
           caption: "Attendance, notices, and updates on mobile.",
           image: {
             src: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&h=750&q=80",
-            alt: "Parent portal for school communication",
+            alt: "Parent portal built by a software development company in Pakistan",
             width: 1200,
             height: 750,
           },
@@ -351,7 +355,7 @@ export const pakistanLocation: LocationPageContent = {
       title: "Retail POS Karachi",
       category: "Retail · Karachi",
       description:
-        "Cloud POS with real-time inventory sync, stock alerts, and role-based reporting for multi-branch retail across Karachi.",
+        "Cloud POS from our software company with real-time inventory sync, stock alerts, and role-based reporting for multi-branch retail across Karachi.",
       highlights: ["Live stock sync", "Branch-level reports", "Faster checkout"],
       slides: [
         {
@@ -359,7 +363,7 @@ export const pakistanLocation: LocationPageContent = {
           caption: "Faster counters across every outlet.",
           image: {
             src: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&h=750&q=80",
-            alt: "Retail POS checkout for Karachi stores",
+            alt: "Retail POS built by a software house in Karachi",
             width: 1200,
             height: 750,
           },
@@ -369,7 +373,7 @@ export const pakistanLocation: LocationPageContent = {
           caption: "Stock levels updated across branches in real time.",
           image: {
             src: "https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=1200&h=750&q=80",
-            alt: "Retail inventory sync dashboard",
+            alt: "Retail inventory sync by a software development company",
             width: 1200,
             height: 750,
           },
@@ -379,7 +383,7 @@ export const pakistanLocation: LocationPageContent = {
           caption: "Owner and manager views per location.",
           image: {
             src: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&h=750&q=80",
-            alt: "Multi-branch retail analytics",
+            alt: "Multi-branch retail analytics from a Pakistan software company",
             width: 1200,
             height: 750,
           },
@@ -388,119 +392,119 @@ export const pakistanLocation: LocationPageContent = {
     },
   ],
   facts: {
-    title: "Pakistan software house facts & figures",
+    title: "Pakistan software house and software company facts",
     subtitle:
-      "A national footprint with senior delivery from Islamabad—serving clinics, schools, startups, and enterprises across major Pakistani cities.",
+      "Next Software Development Company is a national software house with senior delivery from Islamabad, serving clinics, schools, startups, and enterprises across major Pakistani cities.",
     items: [
       {
         value: "13+",
         label: "Cities covered",
         detail:
-          "Active delivery and sales coverage from Islamabad and Lahore to Karachi, Faisalabad, Multan, and more.",
+          "Software house delivery and sales coverage from Islamabad and Lahore to Karachi, Faisalabad, Multan, and more.",
       },
       {
         value: "250+",
         label: "Projects delivered",
         detail:
-          "Custom software, HMS, ERP, mobile apps, and SaaS platforms shipped for local and global clients.",
+          "Custom software, HMS, ERP, mobile apps, and SaaS platforms shipped by our software development company for local and global clients.",
       },
       {
         value: "60+",
         label: "Engineers in Pakistan",
         detail:
-          "Senior developers, designers, and QA specialists based in Pakistan with English-first communication.",
+          "Senior developers, designers, and QA specialists in our Pakistan software company with English-first communication.",
       },
       {
         value: "20+",
         label: "Industries served",
         detail:
-          "Healthcare, education, retail, logistics, fintech, and manufacturing workflows built for Pakistani ops.",
+          "Healthcare, education, retail, logistics, fintech, and manufacturing workflows built by a trusted software house for Pakistani ops.",
       },
       {
         value: "10+",
         label: "Years building",
         detail:
-          "A decade of product engineering experience headquartered in Pakistan for worldwide delivery.",
+          "A decade as a software development company headquartered in Pakistan for worldwide delivery.",
       },
       {
         value: "100%",
         label: "Senior delivery",
         detail:
-          "Client projects staffed with experienced engineers—no junior-only teams on production work.",
+          "Every software house project is staffed with experienced engineers with no junior-only teams on production work.",
       },
     ],
   },
   industries: {
-    title: "Industries we serve in Pakistan",
+    title: "Industries our software house serves in Pakistan",
     subtitle:
-      "From healthcare HMS and school platforms to fintech, retail, and logistics—software tailored to Pakistani workflows, compliance, and growth.",
+      "As a software development company and software house in Pakistan, we deliver healthcare HMS, school platforms, fintech, retail, and logistics software tailored to Pakistani workflows, compliance, and growth.",
     items: [
       {
         slug: "healthcare",
         title: "Healthcare",
         description:
-          "HMS, clinic ERP, telehealth, and compliance-ready workflows for hospitals and private practices across Pakistan.",
+          "HMS, clinic ERP, telehealth, and compliance-ready workflows from our software company for hospitals and private practices across Pakistan.",
         href: "/industries",
       },
       {
         slug: "education",
         title: "Schools & education",
         description:
-          "School management, LMS, fee portals, and parent apps built for colleges and academies in major cities.",
+          "School management, LMS, fee portals, and parent apps built by our software house for colleges and academies in major cities.",
         href: "/industries",
       },
     ],
   },
   faqIntro:
-    "Common questions about hiring a software house in Pakistan and delivering HMS, ERP, and custom products locally.",
+    "Common questions about hiring a software house, software company, or software development company in Pakistan for HMS, ERP, and custom products.",
   faqs: [
     {
       question: "Why choose a software house in Pakistan?",
       answer:
-        "Pakistan offers strong engineering talent, competitive delivery costs, and overlapping time zones with the Middle East and Europe—ideal for long-term product partnerships.",
+        "A Pakistan software house and software development company offers strong engineering talent, competitive delivery costs, and overlapping time zones with the Middle East and Europe, making Next Software Development Company ideal for long-term product partnerships.",
       tag: "Pakistan",
       column: "left",
     },
     {
       question: "Do you build HMS for Islamabad clinics?",
       answer:
-        "Yes. We design hospital and clinic management systems covering appointments, EMR, billing, pharmacy, and reporting—scoped to your specialty and staff size.",
+        "Yes. As a software company in Pakistan, we design hospital and clinic management systems covering appointments, EMR, billing, pharmacy, and reporting, scoped to your specialty and staff size.",
       tag: "Healthcare",
       column: "right",
     },
     {
-      question: "Which Pakistani cities do you work with?",
+      question: "Which Pakistani cities does your software house serve?",
       answer:
-        "We support clients nationwide, including Islamabad, Lahore, Karachi, Rawalpindi, Faisalabad, Multan, Peshawar, and other major business centers.",
+        "Our software development company supports clients nationwide, including Islamabad, Lahore, Karachi, Rawalpindi, Faisalabad, Multan, Peshawar, and other major business centers.",
       tag: "Locations",
       column: "left",
     },
     {
-      question: "Can you deliver school management software?",
+      question: "Can your software company deliver school management software?",
       answer:
-        "We build school and college platforms for admissions, attendance, fees, exams, and parent communication—on web and mobile.",
+        "Yes. Our software house builds school and college platforms for admissions, attendance, fees, exams, and parent communication, on web and mobile.",
       tag: "Education",
       column: "right",
     },
     {
-      question: "How do projects usually start?",
+      question: "How do software house projects usually start?",
       answer:
-        "A short discovery call, then a scoped proposal with timeline and milestones. Most engagements begin with a fixed discovery or MVP phase.",
+        "With Next Software Development Company, a short discovery call leads to a scoped proposal with timeline and milestones. Most software company engagements begin with a fixed discovery or MVP phase.",
       tag: "Process",
       column: "left",
     },
     {
       question: "Do you offer ongoing support after launch?",
       answer:
-        "Yes—maintenance, feature iterations, hosting guidance, and SLA-based support so your Pakistan-based product stays reliable as you grow.",
+        "Yes. Our software development company provides maintenance, feature iterations, hosting guidance, and SLA-based support so your Pakistan-based product stays reliable as you grow.",
       tag: "Support",
       column: "right",
     },
   ],
   cta: {
-    title: "Ready to build with a software company in Pakistan?",
+    title: "Ready to hire a software house and software company in Pakistan?",
     description:
-      "Tell us about your clinic, school, or product idea—we’ll reply within one business day.",
+      "Tell Next Software Development Company about your clinic, school, or product idea. Our software house will reply within one business day.",
     buttonLabel: "Get a Free Quote",
     buttonHref: contactPath,
   },

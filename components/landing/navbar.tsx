@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { ChevronDown, Mail, Menu, Share2 } from "lucide-react";
 
-import { SiteLogo } from "@/components/landing/site-logo";
+// import { SiteLogo } from "@/components/landing/site-logo";
 import { siteBrand } from "@/lib/landing/brand";
 import {
   aboutPath,
@@ -201,7 +201,7 @@ export function Navbar() {
             scrolled ? "h-[4.25rem] lg:h-20" : "h-[4.5rem] lg:h-[5.25rem]"
           )}
         >
-          <SiteLogo
+          {/* <SiteLogo
             priority
             className="min-w-0 max-w-[58vw] justify-self-start sm:max-w-none lg:hidden"
             imageClassName="h-10 w-auto max-w-[11rem] sm:h-11 sm:max-w-[13rem]"
@@ -211,7 +211,7 @@ export function Navbar() {
             priority
             className="hidden min-w-0 justify-self-start lg:inline-flex"
             imageClassName="h-12 w-auto max-w-[17rem] md:h-14 md:max-w-[22rem] lg:h-16 lg:max-w-[24rem]"
-          />
+          /> */}
 
           <nav
             className="hidden min-w-0 items-center justify-center justify-self-center gap-1 lg:flex lg:gap-2"
@@ -298,5 +298,5 @@ export function Navbar() {
   );
 }
 
-/** @deprecated Prefer `Navbar` — kept for existing imports */
+/** @deprecated Prefer `Navbar` kept for existing imports */
 export const SiteHeader = Navbar;

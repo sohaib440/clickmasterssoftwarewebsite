@@ -79,7 +79,7 @@ export function SubLocationsSection({
 }: SubLocationsSectionProps) {
   const copy =
     description ??
-    `We partner with founders and operators nationwide—building HMS for Islamabad clinics, school platforms in Lahore, and retail systems in Karachi. Choose a city to see how a dedicated software house can support your market.`;
+    `We partner with founders and operators nationwide, building HMS for Islamabad clinics, school platforms in Lahore, and retail systems in Karachi. Choose a city to see how a dedicated software house can support your market.`;
 
   return (
     <section
