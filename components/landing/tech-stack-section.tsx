@@ -274,22 +274,13 @@ function TechBubbleCanvas({ logos }: { logos: readonly TechStackLogo[] }) {
     <div className="relative">
       <div
         ref={containerRef}
-        className="relative h-[22rem] overflow-hidden rounded-2xl border border-white/10 bg-[radial-gradient(circle_at_50%_0%,rgba(212,175,55,0.08),transparent_55%),linear-gradient(180deg,rgba(255,255,255,0.04)_0%,transparent_100%)] sm:h-[26rem] lg:h-[28rem]"
+        className="relative h-[22rem] overflow-hidden rounded-2xl border border-white/10 bg-black sm:h-[26rem] lg:h-[28rem]"
         style={{
           cursor: dragId !== null ? "grabbing" : "default",
           touchAction: "none",
           userSelect: "none",
         }}
       >
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.18]"
-          style={{
-            backgroundImage: "radial-gradient(circle, rgba(212,175,55,0.8) 1px, transparent 1px)",
-            backgroundSize: "24px 24px",
-          }}
-          aria-hidden
-        />
-
         {bubbles.length > 0 &&
           logos.map((logo, i) => {
             const b = bubbles[i];
@@ -324,9 +315,7 @@ function TechBubbleCanvas({ logos }: { logos: readonly TechStackLogo[] }) {
                   style={{
                     width: size,
                     height: size,
-                    background: active
-                      ? "linear-gradient(145deg, #ffffff 0%, #f5f0e4 100%)"
-                      : "linear-gradient(145deg, rgba(255,255,255,0.96) 0%, rgba(245,240,228,0.9) 100%)",
+                    background: active ? "#ffffff" : "rgba(255,255,255,0.96)",
                     border: active ? `2px solid ${GOLD}` : "1.5px solid rgba(212,175,55,0.25)",
                     boxShadow: isDragging
                       ? `0 16px 40px rgba(0,0,0,0.4), 0 0 0 3px ${GOLD_MUTED}`
@@ -386,15 +375,6 @@ export function TechStackSection() {
 
   return (
     <section className="relative w-full overflow-hidden border-y border-white/10 bg-black text-white">
-      <div
-        className="pointer-events-none absolute -right-32 top-0 h-96 w-96 rounded-full bg-primary/5 blur-3xl"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-primary/5 blur-3xl"
-        aria-hidden
-      />
-
       <LandingContainer className="relative z-10">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading
@@ -418,7 +398,7 @@ export function TechStackSection() {
           </div>
         </div>
 
-        <div className="mt-10 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-zinc-950/90 via-black to-zinc-950/90 p-4 shadow-[0_32px_80px_rgba(0,0,0,0.45)] sm:p-6">
+        <div className="mt-10 overflow-hidden rounded-3xl border border-white/10 bg-black p-4 shadow-[0_32px_80px_rgba(0,0,0,0.45)] sm:p-6">
           <div className="flex flex-col gap-6 lg:flex-row">
             <nav
               className="flex gap-2 overflow-x-auto pb-1 lg:w-56 lg:shrink-0 lg:flex-col lg:overflow-visible lg:pb-0"

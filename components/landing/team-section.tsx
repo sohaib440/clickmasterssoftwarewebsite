@@ -42,7 +42,7 @@ export function TeamSection() {
                   />
                   <div
                     className={cn(
-                      "pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/90 via-black/55 to-transparent p-3 pt-12 sm:p-4",
+                      "pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-black/85 p-3 pt-12 sm:p-4",
                       "opacity-100 transition-opacity duration-300",
                       "md:opacity-0 md:group-hover:opacity-100 md:group-focus-within:opacity-100"
                     )}

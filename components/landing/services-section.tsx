@@ -100,12 +100,6 @@ function ServiceCard({ service, index }: { service: ServiceCard; index: number }
 export function ServicesSection() {
   return (
     <section id="services" className="relative bg-black text-white overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-[-15%] left-[-10%] w-[40%] h-[40%] rounded-full bg-[rgba(212,175,55,0.18)] blur-[120px]" />
-        <div className="absolute top-[10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-[rgba(255,255,255,0.08)] blur-[120px]" />
-        <div className="absolute bottom-[-10%] left-[20%] w-[40%] h-[40%] rounded-full bg-[rgba(212,175,55,0.12)] blur-[120px]" />
-      </div>
-
       <LandingContainer className="relative z-10">
         <SectionHeading
           overlineText="What we do"

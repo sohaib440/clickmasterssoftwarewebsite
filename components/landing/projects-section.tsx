@@ -272,7 +272,7 @@ export function ProjectsSection({
                     className="h-full w-full object-cover transition-opacity duration-700 ease-in-out"
                     sizes={cardDimensions.imageSizes}
                   />
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/45 to-transparent p-4 sm:p-5">
+                  <div className="absolute inset-x-0 bottom-0 bg-black/80 p-4 sm:p-5">
                     <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-primary">
                       {item.label}
                     </p>

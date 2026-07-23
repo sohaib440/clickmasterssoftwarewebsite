@@ -116,14 +116,6 @@ export function FaqSection({
       id="faqs"
       className={cn("relative w-full overflow-hidden bg-white text-horizon-navy", className)}
     >
-      <div
-        className="pointer-events-none absolute inset-0 overflow-hidden"
-        aria-hidden
-      >
-        <div className="absolute -left-20 top-1/4 h-64 w-64 rounded-full bg-horizon-sky/35 blur-3xl" />
-        <div className="absolute -right-16 bottom-0 h-56 w-56 rounded-full bg-horizon-peach/50 blur-3xl" />
-      </div>
-
       <div className={cn(container, sectionPad, "relative")}>
         <SectionHeading
           overlineText={overlineText}
