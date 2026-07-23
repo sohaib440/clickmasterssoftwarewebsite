@@ -6,7 +6,7 @@ export const teamPageMeta = {
     "Meet the engineers, designers, and project leads at our Islamabad-based software development company the people who design, build, and ship your product.",
   hero: {
     eyebrow: "Our people",
-    title: "A small crew. Serious about software.",
+    title: "A small team. Serious about software.",
     description: teamIntro,
   },
   culture: [
