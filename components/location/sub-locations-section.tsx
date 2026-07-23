@@ -19,10 +19,9 @@ function CityCard({ city, index }: { city: LocationCity; index: number }) {
 
   const className = cn(
     "group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10",
-    "bg-gradient-to-br from-white/[0.07] to-white/[0.02] p-5 sm:p-6",
-    "shadow-[0_12px_40px_rgba(0,0,0,0.18)] backdrop-blur-sm",
+    "bg-white/[0.04] p-5 sm:p-6",
     "transition-[transform,border-color,background-color] duration-300",
-    !isPlaceholder && "hover:-translate-y-0.5 hover:border-primary/40 hover:from-white/[0.1]"
+    !isPlaceholder && "hover:-translate-y-0.5 hover:border-primary/40 hover:bg-white/[0.07]"
   );
 
   const body = (
@@ -86,12 +85,6 @@ export function SubLocationsSection({
       className="relative w-full overflow-hidden bg-black text-white"
       aria-labelledby="sub-locations-heading"
     >
-      <div className="pointer-events-none absolute inset-0" aria-hidden>
-        <div className="absolute top-[-15%] left-[-10%] h-[40%] w-[40%] rounded-full bg-[rgba(212,175,55,0.18)] blur-[120px]" />
-        <div className="absolute top-[10%] right-[-10%] h-[40%] w-[40%] rounded-full bg-[rgba(255,255,255,0.08)] blur-[120px]" />
-        <div className="absolute bottom-[-10%] left-[20%] h-[40%] w-[40%] rounded-full bg-[rgba(212,175,55,0.12)] blur-[120px]" />
-      </div>
-
       <div className={cn(container, sectionPad, "relative")}>
         <Reveal>
           <p className={cn(overline, "text-white/55")}>Coverage</p>

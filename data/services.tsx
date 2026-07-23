@@ -57,7 +57,7 @@ export const services: ServiceCard[] = [
     title: "Web Development",
     description:
       "Modern web applications with responsive design, strong performance, and SEO-friendly architecture for a seamless experience on every device and browser.",
-    image: "/services/Web Development.png",
+    image: "/services/Web-Development.png",
     Icon: Globe2,
     AltIcon: Server,
     tag: "Web3 Ready",
@@ -67,7 +67,7 @@ export const services: ServiceCard[] = [
     title: "Mobile Development",
     description:
       "Secure, scalable mobile apps for iOS and Android with native quality and shared logic where it speeds delivery, without sacrificing performance or user feel.",
-    image: "/services/Mobile Application Development.png",
+    image: "/services/Mobile-Development.png",
     Icon: Smartphone,
     AltIcon: ShieldCheck,
     tag: "Cross-Platform",
@@ -88,7 +88,7 @@ export const services: ServiceCard[] = [
     title: "UI/UX Systems",
     description:
       "Research-led interfaces and design systems focused on usability, consistency, and conversion, from discovery and wireframes through high-fidelity UI and design QA.",
-    image: "/services/UI-UX.png",
+    image: "/services/UIUX-Design.png",
     Icon: Palette,
     AltIcon: Globe2,
     tag: "Design",

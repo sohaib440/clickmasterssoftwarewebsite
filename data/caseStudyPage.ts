@@ -18,13 +18,14 @@ const caseStudyDetails: Record<
 > = {
   "prime-lead-crm": {
     problem:
-      "Sales teams were losing leads across spreadsheets, chat apps, and unclear staff ownership.",
+      "Call center sales teams were losing leads and context across spreadsheets, chat apps, unclear ownership, and weak visibility into attendance and conversion.",
     solution:
-      "We built Prime Lead CRM with a leads panel, staff roles, chat, training, and a live dashboard in one workflow.",
+      "We built Prime Lead CRM with a live dashboard, leads panel, staff roles, chat, training, and role-based login so the full sales floor runs in one system.",
     outcomes: [
       "Unified lead pipeline",
       "Clear staff ownership",
-      "Chat and training in one CRM",
+      "Chat, training & attendance visibility",
+      "Live conversion dashboard",
     ],
   },
 };
