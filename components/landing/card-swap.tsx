@@ -148,6 +148,9 @@ export default function CardSwap({
       const elFront = refs[front]?.current;
       if (!elFront) return;
 
+      const nextFront = rest[0] ?? 0;
+      onFrontChangeRef.current?.(nextFront);
+
       const tl = gsap.timeline();
       tlRef.current = tl;
 
@@ -200,7 +203,6 @@ export default function CardSwap({
 
       tl.call(() => {
         order.current = [...rest, front];
-        onFrontChangeRef.current?.(order.current[0] ?? 0);
       });
     };
 
