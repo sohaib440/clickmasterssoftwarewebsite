@@ -354,10 +354,10 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         />
 
         {related.length > 0 ? (
-          <section className="bg-white text-horizon-navy">
+          <section className="bg-black text-white">
             <div className={cn(container, sectionPad)}>
               <Reveal>
-                <SectionHeading overlineText="More work" title="Related projects" />
+                <SectionHeading overlineText="More work" title="Related projects" light />
               </Reveal>
               <ul className="mt-10 grid gap-6 md:grid-cols-3">
                 {related.map((item, index) => (
@@ -365,7 +365,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                     <Reveal delay={index * motionStagger}>
                       <Link
                         href={projectDetailPath(item.slug)}
-                        className="group block overflow-hidden rounded-2xl border border-horizon-border transition-colors hover:border-primary/40"
+                        className="group block overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-colors hover:border-primary/40"
                       >
                         <CardImage
                           {...item.image}
@@ -373,11 +373,11 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                           sizes="(max-width: 768px) 100vw, 33vw"
                         />
                         <div className="p-5">
-                          <p className="text-[11px] uppercase tracking-[0.16em] text-horizon-muted">
+                          <p className="text-[11px] uppercase tracking-[0.16em] text-white/55">
                             {item.category}
                           </p>
-                          <h3 className="mt-2 font-heading text-xl text-horizon-navy">{item.title}</h3>
-                          <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-horizon-navy group-hover:text-primary">
+                          <h3 className="mt-2 font-heading text-xl text-white">{item.title}</h3>
+                          <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-white group-hover:text-primary">
                             View project
                             <ArrowUpRight className="size-4" />
                           </span>
