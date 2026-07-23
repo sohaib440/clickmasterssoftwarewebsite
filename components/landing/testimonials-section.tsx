@@ -22,7 +22,19 @@ function getInitials(name: string) {
     .join("");
 }
 
-export function TestimonialsSection() {
+type TestimonialsSectionProps = {
+  overlineText?: string;
+  title?: React.ReactNode;
+};
+
+export function TestimonialsSection({
+  overlineText = "Testimonials",
+  title = (
+    <>
+      What <span className="italic">partners</span> say
+    </>
+  ),
+}: TestimonialsSectionProps = {}) {
   const pageCount = Math.max(1, Math.ceil(testimonials.length / PAGE_SIZE));
   const [page, setPage] = useState(0);
   const [visible, setVisible] = useState(true);
@@ -48,12 +60,8 @@ export function TestimonialsSection() {
     <section id="testimonials" className="w-full bg-horizon-cream">
       <LandingContainer>
         <SectionHeading
-          overlineText="Testimonials"
-          title={
-            <>
-              What <span className="italic">partners</span> say
-            </>
-          }
+          overlineText={overlineText}
+          title={title}
           className={sectionHeadingGap}
         />
 

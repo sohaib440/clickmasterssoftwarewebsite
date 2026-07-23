@@ -13,11 +13,14 @@ import {
   sectionPad,
 } from "@/lib/landing/constants";
 import { projects } from "@/data/landingPage";
-import { softwareDevelopmentProjects } from "@/data/softwareDevelopmentPage";
+import { projectDetailPath } from "@/data/projects";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
 
-const projectPageContent = {
+export const projectPageContent = {
+  metaTitle: "Our Work & Software Projects",
+  metaDescription:
+    "Explore custom software, SaaS, ERP, CRM, and mobile apps we've designed and shipped for clients in the USA, UK, UAE, Canada, Australia, and Pakistan.",
   hero: {
     eyebrow: "Our Work",
     title: "Projects built for real businesses",
@@ -32,22 +35,12 @@ const projectPageContent = {
   },
 } as const;
 
-const customProjects = softwareDevelopmentProjects.items.map((item, index) => ({
-  slug: `custom-${index + 1}`,
-  title: item.title,
-  category: item.industry,
-  description: item.description,
-  highlights: item.highlights,
-  image: projects[index % projects.length]?.image ?? projects[0].image,
-}));
-
 export function ProjectsPageContent() {
   return (
     <div className="flex min-h-full w-full flex-col overflow-x-clip bg-black text-white">
       <SiteHeader />
 
       <main className="flex-1">
-        {/* Hero */}
         <section className="relative overflow-hidden bg-black text-white">
           <div className="pointer-events-none absolute inset-0" aria-hidden>
             <div className="absolute -left-20 top-0 h-72 w-72 rounded-full bg-primary/10 blur-[100px]" />
@@ -78,7 +71,6 @@ export function ProjectsPageContent() {
           </div>
         </section>
 
-        {/* Portfolio grid */}
         <section className="bg-white text-horizon-navy">
           <div className={cn(container, sectionPad)}>
             <Reveal>
@@ -94,9 +86,10 @@ export function ProjectsPageContent() {
               {projects.map((project, i) => (
                 <li key={project.slug} id={project.slug}>
                   <Reveal delay={i * motionStagger}>
-                    <article
+                    <Link
+                      href={projectDetailPath(project.slug)}
                       className={cn(
-                        "group overflow-hidden rounded-2xl border border-horizon-border bg-white",
+                        "group block overflow-hidden rounded-2xl border border-horizon-border bg-white",
                         "transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 hover:border-horizon-sky hover:shadow-[0_20px_50px_-24px_rgba(13,27,42,0.18)]",
                       )}
                     >
@@ -119,15 +112,12 @@ export function ProjectsPageContent() {
                         <p className="mt-3 text-sm leading-relaxed text-horizon-muted md:text-[15px]">
                           {project.description}
                         </p>
-                        <Link
-                          href={contactPath}
-                          className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-horizon-navy transition-colors group-hover:text-primary"
-                        >
-                          Discuss a similar build
+                        <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-horizon-navy transition-colors group-hover:text-primary">
+                          View project
                           <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                        </Link>
+                        </span>
                       </div>
-                    </article>
+                    </Link>
                   </Reveal>
                 </li>
               ))}
@@ -135,7 +125,6 @@ export function ProjectsPageContent() {
           </div>
         </section>
 
-        {/* CTA */}
         <section className="bg-horizon-navy text-white">
           <div className={cn(container, sectionPad, "text-center")}>
             <Reveal>

@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
 
-import { ProjectsPageContent } from "@/components/project/projects-page";
+import {
+  ProjectsPageContent,
+  projectPageContent,
+} from "@/components/project/projects-page";
 
 export const metadata: Metadata = {
-  title: "Our Work & Software Projects",
-  description:
-    "Explore custom software, SaaS, ERP, CRM, and mobile apps we've designed and shipped for clients in the USA, UK, UAE, Canada, Australia, and Pakistan.",
+  title: projectPageContent.metaTitle,
+  description: projectPageContent.metaDescription,
   openGraph: {
-    title: "Our Work & Software Projects",
-    description:
-      "Explore custom software, SaaS, ERP, CRM, and mobile apps we've designed and shipped for clients in the USA, UK, UAE, Canada, Australia, and Pakistan.",
+    title: projectPageContent.metaTitle,
+    description: projectPageContent.metaDescription,
     type: "website",
   },
 };
 
-export default function ProjectPage() {
+export default function ProjectsPage() {
   return <ProjectsPageContent />;
 }

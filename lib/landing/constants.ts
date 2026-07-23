@@ -3,7 +3,7 @@
 /** Primary destination for site-wide CTAs */
 export const contactPath = "/contact";
 /** Portfolio / projects listing */
-export const projectPath = "/project";
+export const projectPath = "/projects";
 /** About us page */
 export const aboutPath = "/about";
 /** Team page */
