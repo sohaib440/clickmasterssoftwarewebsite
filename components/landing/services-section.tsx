@@ -1,105 +1,55 @@
-'use client';
+"use client";
 
-// using native <img> for public/static images to avoid Next/Image loader issues
-import Link from 'next/link';
-import { ArrowUpRight, Sparkles } from 'lucide-react';
-import { SectionHeading } from '@/components/landing/section-heading';
-import { LandingContainer, sectionHeadingGap } from '@/components/landing/landing-container';
-import { btnPrimary } from '@/lib/landing/constants';
-import { serviceRoutes, services, type ServiceCard } from '@/data/services';
-import { cn } from '@/lib/utils';
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
-function ServiceCard({ service, index }: { service: ServiceCard; index: number }) {
-  const { accent } = service;
-  const spanClass =
-    service.span === 'wide'
-      ? 'sm:col-span-2 xl:col-span-2'
-      : service.span === 'tall'
-      ? 'xl:row-span-2'
-      : '';
+import { SectionHeading } from "@/components/landing/section-heading";
+import { LandingContainer, sectionHeadingGap } from "@/components/landing/landing-container";
+import { Reveal } from "@/components/landing/reveal";
+import { btnPrimary } from "@/lib/landing/constants";
+import { serviceRoutes, services, type ServiceCard as ServiceCardData } from "@/data/services";
+import { motionStagger } from "@/lib/landing/motion";
+import { cn } from "@/lib/utils";
 
-  const route = serviceRoutes[service.title];
+function ServiceCard({ service, index }: { service: ServiceCardData; index: number }) {
+  const Icon = service.Icon;
+  const route = serviceRoutes[service.title] || "/services";
 
   return (
-    <div
-      className={`service-card-tilt ${spanClass}`}
-      style={{ animationDelay: `${index * 0.1}s` }}
-      data-fade-up
-    >
-      <Link href={route || '/services'}>
-        <div
-          className={`group relative flex flex-col justify-between cursor-pointer ${service.span === 'tall' ? 'h-full min-h-[28rem] md:min-h-[32rem]' : 'min-h-[22rem] md:min-h-[26rem] xl:h-full'} rounded-[40px] border bg-white/10 backdrop-blur-2xl p-6 sm:p-8 overflow-hidden transition-all duration-500 hover:bg-white/15`}
-          style={{ borderColor: `${accent}77` }}
-        >
-          <div
-            className="absolute inset-0 rounded-[40px] border-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-            style={{ borderColor: `${accent}66` }}
-          />
-          <div
-            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
-            style={{ boxShadow: `0 30px 60px -15px ${accent}30` }}
-          />
-
-          <div
-            className="absolute -top-24 -right-24 w-64 h-64 rounded-full blur-[80px] opacity-10 group-hover:opacity-20 transition-all duration-700"
-            style={{ background: accent }}
-          />
-
-          <div className="relative z-10 flex flex-col h-full">
-            <div className="flex items-start justify-between">
-              <span
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white/90 border border-white/50 shadow-sm text-[10px] font-bold tracking-widest uppercase"
-                style={{ color: accent }}
-              >
-                <Sparkles className="w-3 h-3" />
-                {service.tag}
-              </span>
-            </div>
-
-            <div className="flex-1 flex items-center justify-center mb-6 relative">
-              <div
-                className="absolute w-40 h-40 rounded-full blur-[60px] opacity-30 group-hover:opacity-50 transition-all duration-700"
-                style={{ background: accent }}
-              />
-              {service.image ? (
-                <div className="relative w-40 h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 overflow-hidden rounded-[32px]">
-                  <img src={service.image} alt={service.title} className="object-cover w-full h-full" />
-                </div>
-              ) : (
-                <div className="relative w-56 h-56 rounded-[32px] bg-slate-100/70" />
-              )}
-            </div>
-
-            <div className='mb-6'>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-2 tracking-tight">
-                {service.title}
-              </h3>
-              <p className="text-sm md:text-base text-white/70 leading-relaxed line-clamp-2">
-                {service.description}
-              </p>
-
-              <div className="mb-6 flex items-center justify-between">
-                <span className="text-[10px] font-bold tracking-widest uppercase opacity-40 group-hover:opacity-100 transition-opacity" style={{ color: accent }}>
-                  Learn More
-                </span>
-                <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:rotate-45"
-                  style={{ background: `linear-gradient(135deg, ${accent}, ${accent}cc)` }}
-                >
-                  <ArrowUpRight className="w-5 h-5 text-white" />
-                </div>
-              </div>
-            </div>
-          </div>
+    <Reveal delay={index * motionStagger} className="h-full">
+      <Link
+        href={route}
+        className={cn(
+          "group flex h-full flex-col rounded-2xl border border-white/10 bg-white/[0.04] p-6 transition-colors duration-300",
+          "hover:border-white/25 hover:bg-white/[0.07]"
+        )}
+      >
+        <div className="flex items-start justify-between gap-3">
+          <span className="inline-flex size-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-white">
+            <Icon className="size-5" strokeWidth={1.5} aria-hidden />
+          </span>
+          <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-white/45">
+            {service.tag}
+          </span>
         </div>
+
+        <h3 className="mt-6 font-heading text-xl font-medium leading-snug text-white md:text-[1.35rem]">
+          {service.title}
+        </h3>
+        <p className="mt-3 flex-1 text-sm leading-relaxed text-white/65">{service.description}</p>
+
+        <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-white transition-colors group-hover:text-primary">
+          Learn more
+          <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden />
+        </span>
       </Link>
-    </div>
+    </Reveal>
   );
 }
 
 export function ServicesSection() {
   return (
-    <section id="services" className="relative bg-black text-white overflow-hidden">
+    <section id="services" className="relative overflow-hidden bg-black text-white">
       <LandingContainer className="relative z-10">
         <SectionHeading
           overlineText="What we do"
@@ -114,11 +64,13 @@ export function ServicesSection() {
           className={sectionHeadingGap}
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 auto-rows-min xl:auto-rows-[460px] gap-8">
-          {services.map((service, i) => (
-            <ServiceCard key={service.title} service={service} index={i} />
+        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+          {services.map((service, index) => (
+            <li key={service.title} className="h-full">
+              <ServiceCard service={service} index={index} />
+            </li>
           ))}
-        </div>
+        </ul>
 
         <div className="mx-auto mt-12 flex justify-center">
           <Link href="/services" className={btnPrimary}>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, Check } from "lucide-react";
+import { ArrowUpRight, Check, Layers } from "lucide-react";
 
 import { AboutSection } from "@/components/landing/about-section";
 import { BlogSection } from "@/components/landing/blog-section";
@@ -133,36 +133,39 @@ export function MainServicePageLayout({ content }: MainServicePageLayoutProps) {
                 ) : null}
               </Reveal>
 
-              <ul className="mt-10 grid gap-4 sm:grid-cols-2">
+              <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {capabilities.items.map((item, index) => (
-                  <li key={`${item.href}-${index}`}>
+                  <li key={`${item.href}-${index}`} className="h-full">
                     <Reveal delay={index * motionStagger} className="h-full">
                       <Link
                         href={item.href}
                         className={cn(
-                          cardDark,
-                          "group flex h-full flex-col overflow-hidden p-0 transition-colors hover:border-white/25"
+                          "group flex h-full flex-col rounded-2xl border border-white/10 bg-white/[0.04] p-6 transition-colors duration-300",
+                          "hover:border-white/25 hover:bg-white/[0.07]"
                         )}
                       >
-                        {item.image ? (
-                          <CardImage
-                            {...item.image}
-                            className="aspect-[16/10] w-full transition-transform duration-500 group-hover:scale-[1.02]"
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                          />
-                        ) : null}
-                        <div className="flex flex-1 flex-col p-6 lg:p-7">
-                          <h3 className="font-heading text-xl font-medium text-white group-hover:underline">
-                            {item.label}
-                          </h3>
-                          <p className="mt-3 flex-1 text-sm leading-relaxed text-white/70">
-                            {item.description}
-                          </p>
-                          <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-white">
-                            Learn more
-                            <ArrowUpRight className="size-4" aria-hidden />
+                        <div className="flex items-start justify-between gap-3">
+                          <span className="inline-flex size-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-white">
+                            <Layers className="size-5" strokeWidth={1.5} aria-hidden />
+                          </span>
+                          <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-white/45">
+                            Capability
                           </span>
                         </div>
+
+                        <h3 className="mt-6 font-heading text-xl font-medium leading-snug text-white md:text-[1.35rem]">
+                          {item.label}
+                        </h3>
+                        <p className="mt-3 flex-1 text-sm leading-relaxed text-white/65">
+                          {item.description}
+                        </p>
+                        <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-white transition-colors group-hover:text-primary">
+                          Learn more
+                          <ArrowUpRight
+                            className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                            aria-hidden
+                          />
+                        </span>
                       </Link>
                     </Reveal>
                   </li>
