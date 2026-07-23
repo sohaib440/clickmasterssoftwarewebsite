@@ -25,6 +25,17 @@ export const teamMembers = [
     },
   },
   {
+    name: "Izaan Ali",
+    role: "Project Manager",
+    bio: "Certified Scrum Master keeping every project on time, on budget and well-communicated.",
+    image: {
+      src: "/team/Izaan-Ali.png",
+      alt: "Portrait of Izaan Ali",
+      width: 600,
+      height: 600,
+    },
+  },
+  {
     name: "Haider Saleem",
     role: "Mobile Developer",
     bio: "React Native specialist who has shipped 12 apps to the App Store and Play Store.",
@@ -42,17 +53,6 @@ export const teamMembers = [
     image: {
       src: "/team/Abdul-Hadi.jpeg",
       alt: "Portrait of Abdul Hadi",
-      width: 600,
-      height: 600,
-    },
-  },
-  {
-    name: "Izaan Ali",
-    role: "Project Manager",
-    bio: "Certified Scrum Master keeping every project on time, on budget and well-communicated.",
-    image: {
-      src: "/team/Izaan-Ali.png",
-      alt: "Portrait of Izaan Ali",
       width: 600,
       height: 600,
     },

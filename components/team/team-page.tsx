@@ -55,7 +55,6 @@ export function TeamPageContent() {
       <main className="flex-1">
         <section className="relative overflow-hidden bg-black text-white">
           <div className="pointer-events-none absolute inset-0" aria-hidden>
-            <div className="absolute -left-16 top-0 h-72 w-72 rounded-full bg-primary/12 blur-[100px]" />
             <div className="absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-white/[0.04] blur-[110px]" />
           </div>
 
@@ -109,28 +108,50 @@ export function TeamPageContent() {
           </div>
         </section>
 
-        <section className="border-y border-horizon-border/60 bg-horizon-cream text-horizon-navy">
-          <div className={cn(container, sectionPad)}>
+        <section className="relative overflow-hidden bg-black text-white">
+          <div className="pointer-events-none absolute inset-0" aria-hidden>
+            <div className="absolute -right-20 bottom-0 h-64 w-64 rounded-full bg-white/[0.04] blur-[90px]" />
+          </div>
+
+          <div className={cn(container, sectionPad, "relative")}>
             <Reveal>
-              <h2 className="font-heading text-2xl font-normal md:text-3xl">
+              <p className={cn(overline, "text-white/60")}>Our principles</p>
+              <h2 className="mt-3 max-w-md font-heading text-3xl font-normal leading-[1.12] tracking-tight text-white md:text-4xl lg:text-[2.75rem]">
                 How we <span className="italic">work together</span>
               </h2>
-              <p className="mt-2 max-w-2xl text-sm text-horizon-muted md:text-base">
-                Principles that shape every engagement whether you hire us for a fixed scope or a
+              <p className="mt-4 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
+                Principles that shape every engagement—whether you hire us for a fixed scope or a
                 dedicated team.
               </p>
             </Reveal>
 
-            <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:gap-6">
+            <ul className="mt-12 grid border-t border-white/10 sm:grid-cols-2 lg:mt-16">
               {teamPageMeta.culture.map((item, index) => (
-                <Reveal key={item.title} delay={index * motionStagger}>
-                  <li className="rounded-2xl border border-horizon-border bg-white p-6">
-                    <h3 className="font-heading text-lg text-horizon-navy">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-horizon-muted">
-                      {item.description}
-                    </p>
-                  </li>
-                </Reveal>
+                <li
+                  key={item.title}
+                  className={cn(
+                    "group border-white/10",
+                    index < teamPageMeta.culture.length - 1 && "border-b sm:border-b-0",
+                    index < 2 && "sm:border-b",
+                    index % 2 === 0 && "sm:border-r"
+                  )}
+                >
+                  <Reveal delay={index * motionStagger} className="h-full">
+                    <article className="flex h-full flex-col gap-5 p-6 transition-colors duration-300 sm:p-8 md:p-10 group-hover:bg-white/[0.04]">
+                      <span className="font-heading text-sm font-medium tracking-[0.18em] text-primary">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <div>
+                        <h3 className="font-heading text-xl font-medium leading-snug text-white md:text-2xl">
+                          {item.title}
+                        </h3>
+                        <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/65 md:text-[15px]">
+                          {item.description}
+                        </p>
+                      </div>
+                    </article>
+                  </Reveal>
+                </li>
               ))}
             </ul>
           </div>

@@ -13,7 +13,7 @@ export const teamPageMeta = {
     {
       title: "Senior-led delivery",
       description:
-        "Client projects are staffed with experienced engineers and designers no bait-and-switch to junior-only teams.",
+        "Client projects are staffed with experienced engineers and designers—no bait-and-switch to junior-only teams.",
     },
     {
       title: "Direct communication",
@@ -28,7 +28,7 @@ export const teamPageMeta = {
     {
       title: "Craft & character",
       description:
-        "Every hire is chosen for technical skill, communication, and reliability the traits that keep long projects on track.",
+        "Every hire is chosen for technical skill, communication, and reliability—the traits that keep long projects on track.",
     },
   ],
   cta: {
