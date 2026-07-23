@@ -23,14 +23,24 @@ function MobileNavAccordion({
   link,
   onClose,
   defaultOpen = false,
+  menuOpen = false,
 }: {
   link: NavLink;
   onClose: () => void;
   defaultOpen?: boolean;
+  menuOpen?: boolean;
 }) {
   const [expanded, setExpanded] = useState(defaultOpen);
   const children = link.children ?? [];
   const hasChildren = children.length > 0;
+
+  // Re-apply default open state each time the drawer opens (avoids stale /
+  // double-click accordion state after the panel was hidden).
+  useEffect(() => {
+    if (menuOpen) {
+      setExpanded(defaultOpen);
+    }
+  }, [menuOpen, defaultOpen]);
 
   if (!hasChildren) {
     return (
@@ -48,11 +58,13 @@ function MobileNavAccordion({
     );
   }
 
+  const showChildren = menuOpen && expanded;
+
   return (
     <div className="overflow-hidden rounded-2xl border border-white/8 bg-white/[0.03]">
       <button
         type="button"
-        aria-expanded={expanded}
+        aria-expanded={showChildren}
         onClick={() => setExpanded((value) => !value)}
         className="flex w-full items-center justify-between px-4 py-3.5 text-left text-[15px] font-medium text-white transition-colors active:bg-white/5"
       >
@@ -60,7 +72,7 @@ function MobileNavAccordion({
         <ChevronDown
           className={cn(
             "size-4 text-primary transition-transform duration-200",
-            expanded && "rotate-180"
+            showChildren && "rotate-180"
           )}
           aria-hidden
         />
@@ -69,10 +81,10 @@ function MobileNavAccordion({
       <div
         className={cn(
           "grid transition-[grid-template-rows,opacity] duration-200 ease-out",
-          expanded ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+          showChildren ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
         )}
       >
-        <div className="overflow-hidden">
+        <div className="min-h-0 overflow-hidden">
           <div className="space-y-0.5 border-t border-white/8 px-2 pb-2 pt-1">
             {children.map((child, index) => (
               <Link
@@ -163,7 +175,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
               key={`${link.href}-${linkIndex}`}
               link={link}
               onClose={onClose}
-              defaultOpen={link.label === "Services"}
+              menuOpen={open}
             />
           ))}
         </nav>
