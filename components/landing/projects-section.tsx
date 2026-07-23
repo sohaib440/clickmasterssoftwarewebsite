@@ -7,7 +7,7 @@ import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 import CardSwap, { Card } from "@/components/landing/card-swap";
 import { btnOutlineDark, container, overline, projectPath, sectionPad } from "@/lib/landing/constants";
-import { showcaseProjects, type ShowcaseProject } from "@/data/projectShowcase";
+import { showcaseProjects, type ShowcaseProject } from "@/data/projects";
 import { cn } from "@/lib/utils";
 
 type ProjectsSectionProps = {

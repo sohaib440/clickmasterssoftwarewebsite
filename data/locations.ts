@@ -1,6 +1,6 @@
 import type { FaqItem } from "@/data/landing/types";
 import type { ImageAsset } from "@/data/landingPage";
-import type { ShowcaseProject } from "@/data/projectShowcase";
+import type { ShowcaseProject } from "@/data/projects";
 import { contactPath, teamPath } from "@/lib/landing/constants";
 
 export type LocationCity = {

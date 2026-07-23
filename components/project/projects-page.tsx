@@ -12,11 +12,25 @@ import {
   overline,
   sectionPad,
 } from "@/lib/landing/constants";
-import { projectPageMeta } from "@/data/projectPage";
 import { projects } from "@/data/landingPage";
 import { softwareDevelopmentProjects } from "@/data/softwareDevelopmentPage";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
+
+const projectPageContent = {
+  hero: {
+    eyebrow: "Our Work",
+    title: "Projects built for real businesses",
+    description:
+      "A selection of platforms we've designed, engineered, and deployed from SaaS products and ERP systems to healthcare and retail software.",
+  },
+  cta: {
+    title: "Have a project in mind?",
+    description:
+      "Tell us what you're building. We'll respond within one business day with a clear path forward.",
+    button: "Start your project",
+  },
+} as const;
 
 const customProjects = softwareDevelopmentProjects.items.map((item, index) => ({
   slug: `custom-${index + 1}`,
@@ -53,12 +67,12 @@ export function ProjectsPageContent() {
             </Reveal>
 
             <Reveal immediate delay={motionStagger}>
-              <p className={cn(overline, "text-white/60")}>{projectPageMeta.hero.eyebrow}</p>
+              <p className={cn(overline, "text-white/60")}>{projectPageContent.hero.eyebrow}</p>
               <h1 className="mt-4 max-w-4xl font-heading text-4xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
-                {projectPageMeta.hero.title}
+                {projectPageContent.hero.title}
               </h1>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
-                {projectPageMeta.hero.description}
+                {projectPageContent.hero.description}
               </p>
             </Reveal>
           </div>
@@ -121,20 +135,18 @@ export function ProjectsPageContent() {
           </div>
         </section>
 
-
-
         {/* CTA */}
         <section className="bg-horizon-navy text-white">
           <div className={cn(container, sectionPad, "text-center")}>
             <Reveal>
               <h2 className="font-heading text-3xl font-normal md:text-4xl">
-                {projectPageMeta.cta.title}
+                {projectPageContent.cta.title}
               </h2>
               <p className="mx-auto mt-4 max-w-lg text-sm text-white/75 md:text-base">
-                {projectPageMeta.cta.description}
+                {projectPageContent.cta.description}
               </p>
               <Link href={contactPath} className={cn("mt-8", btnOnDark)}>
-                {projectPageMeta.cta.button} →
+                {projectPageContent.cta.button} →
               </Link>
             </Reveal>
           </div>
