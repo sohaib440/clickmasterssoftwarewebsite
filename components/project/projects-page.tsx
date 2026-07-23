@@ -121,50 +121,7 @@ export function ProjectsPageContent() {
           </div>
         </section>
 
-        {/* Custom builds from software development page */}
-        <section className="border-t border-horizon-border bg-horizon-peach/35 text-horizon-navy">
-          <div className={cn(container, sectionPad)}>
-            <Reveal>
-              <h2 className="font-heading text-2xl font-normal md:text-3xl">
-                Recent <span className="italic">custom builds</span>
-              </h2>
-              <p className="mt-2 max-w-2xl text-sm text-horizon-muted md:text-base">
-                ERP, CRM, healthcare, and retail platforms engineered for specific business
-                workflows.
-              </p>
-            </Reveal>
 
-            <ul className="mt-10 grid gap-5 sm:grid-cols-2">
-              {customProjects.map((project, i) => (
-                <li key={project.slug} id={project.slug}>
-                  <Reveal delay={i * motionStagger}>
-                    <article className="h-full rounded-2xl border border-horizon-border bg-white p-5 md:p-6">
-                      <p className="text-xs font-medium uppercase tracking-[0.16em] text-horizon-muted">
-                        {project.category}
-                      </p>
-                      <h3 className="mt-2 font-heading text-lg font-medium text-horizon-navy md:text-xl">
-                        {project.title}
-                      </h3>
-                      <p className="mt-2 text-sm leading-relaxed text-horizon-muted">
-                        {project.description}
-                      </p>
-                      <ul className="mt-4 flex flex-wrap gap-2">
-                        {project.highlights.map((highlight) => (
-                          <li
-                            key={highlight}
-                            className="rounded-full border border-horizon-border bg-horizon-cream px-3 py-1 text-xs text-horizon-navy"
-                          >
-                            {highlight}
-                          </li>
-                        ))}
-                      </ul>
-                    </article>
-                  </Reveal>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
 
         {/* CTA */}
         <section className="bg-horizon-navy text-white">
