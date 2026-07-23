@@ -36,7 +36,9 @@ function ServiceCard({ service, index }: { service: ServiceCardData; index: numb
         <h3 className="mt-6 font-heading text-xl font-medium leading-snug text-white md:text-[1.35rem]">
           {service.title}
         </h3>
-        <p className="mt-3 flex-1 text-sm leading-relaxed text-white/65">{service.description}</p>
+        <p className="mt-3 line-clamp-3 flex-1 text-sm leading-relaxed text-white/65">
+          {service.description}
+        </p>
 
         <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-white transition-colors group-hover:text-primary">
           Learn more
