@@ -43,11 +43,11 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${location.title} | Next Software Development Company`,
-    description: location.description,
+    title: location.metaTitle ?? location.title,
+    description: location.metaDescription ?? location.description,
     openGraph: {
-      title: location.title,
-      description: location.description,
+      title: location.metaTitle ?? location.title,
+      description: location.metaDescription ?? location.description,
       type: "website",
     },
   };

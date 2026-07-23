@@ -31,9 +31,9 @@ export const metadata: Metadata = {
   description:
     "Explore Next Software Development Company locations. Start with Pakistan and major cities including Islamabad, Lahore, Karachi, and more.",
   openGraph: {
-    title: "Locations | Next Software Development Company",
+    title: "Locations | Software House & Software Company Worldwide",
     description:
-      "Software house coverage across Pakistan and global markets. Pick a country or city to learn how we deliver custom software locally.",
+      "Explore Next Software Development Company locations. Start with Pakistan and major cities including Islamabad, Lahore, Karachi, and more.",
     type: "website",
   },
 };

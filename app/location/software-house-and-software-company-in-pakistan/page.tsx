@@ -23,15 +23,11 @@ import { btnOnDark, container, sectionPad } from "@/lib/landing/constants";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Best Software House and Top Rated Software Company in Pakistan",
-  description: [pakistanLocation.description, pakistanLocation.descriptionSecondary]
-    .filter(Boolean)
-    .join(" "),
+  title: pakistanLocation.metaTitle ?? pakistanLocation.title,
+  description: pakistanLocation.metaDescription ?? pakistanLocation.description,
   openGraph: {
-    title: "Best Software House and Top Rated Software Company in Pakistan",
-    description: [pakistanLocation.description, pakistanLocation.descriptionSecondary]
-      .filter(Boolean)
-      .join(" "),
+    title: pakistanLocation.metaTitle ?? pakistanLocation.title,
+    description: pakistanLocation.metaDescription ?? pakistanLocation.description,
     type: "website",
   },
 };

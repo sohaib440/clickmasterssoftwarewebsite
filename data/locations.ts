@@ -49,6 +49,10 @@ export type LocationPageContent = {
   description: string;
   /** Optional second hero paragraph (rendered below description) */
   descriptionSecondary?: string;
+  /** SEO meta title (falls back to title). Avoid brand suffix; layout template adds it. */
+  metaTitle?: string;
+  /** SEO meta description (~150–160 chars). Falls back to description. */
+  metaDescription?: string;
   coverageTitle?: string;
   coverageDescription?: string;
   about: LocationAboutContent;
@@ -204,6 +208,9 @@ export const pakistanLocation: LocationPageContent = {
     "Next Software Development Company is the best software house and top-rated software development company in Pakistan. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Islamabad, Lahore, Karachi, and beyond.",
   descriptionSecondary:
     "Our experienced team of developers, designers, and engineers combines technical expertise with deep local market insight to deliver scalable, secure, and affordable solutions that streamline operations and drive sustainable growth. Whether you are a startup building your first MVP or an enterprise seeking a full scale ERP system, we turn your vision into reliable, high performing software.",
+  metaTitle: "Best Software House and Top Rated Software Company in Pakistan",
+  metaDescription:
+    "Next Software Development Company is the best software house and top-rated software development company in Pakistan. Custom HMS, ERP, and digital products for businesses nationwide.",
   coverageTitle: "Cities we serve across Pakistan",
   coverageDescription:
     "As a nationwide software house and software development company, we partner with founders and operators across Pakistan, building HMS for Islamabad clinics, school platforms in Lahore, and retail systems in Karachi. Pick your city to see how our software company can support your market.",
