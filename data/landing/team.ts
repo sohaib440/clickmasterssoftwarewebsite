@@ -36,6 +36,17 @@ export const teamMembers = [
     },
   },
   {
+    name: "Abdul Hadi",
+    role: "Software Engineer",
+    bio: "Software engineer focused on building reliable, user-facing products.",
+    image: {
+      src: "/team/Abdul-Hadi.jpeg",
+      alt: "Portrait of Abdul Hadi",
+      width: 600,
+      height: 600,
+    },
+  },
+  {
     name: "Izaan Ali",
     role: "Project Manager",
     bio: "Certified Scrum Master keeping every project on time, on budget and well-communicated.",
