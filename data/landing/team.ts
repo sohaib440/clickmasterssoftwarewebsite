@@ -14,7 +14,7 @@ export const teamMembers = [
     },
   },
   {
-    name: "Abdullah Medhi",
+    name: "Abdullah Mehdi",
     role: "Head of Design",
     bio: "UI/UX designer with a background in product design for SaaS companies in the UK and Pakistan.",
     image: {

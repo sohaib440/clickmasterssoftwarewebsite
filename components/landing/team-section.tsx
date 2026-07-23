@@ -32,26 +32,32 @@ export function TeamSection() {
           aria-label="Team portraits"
         >
           {teamMembers.map((member, i) => (
-            <li key={member.name} className="aspect-square overflow-hidden bg-white">
+            <li
+              key={member.name}
+              className="aspect-[3/4] overflow-hidden bg-white sm:aspect-square"
+            >
               <Reveal delay={i * motionStagger} className="h-full w-full">
                 <figure className="group relative h-full w-full overflow-hidden">
                   <CardImage
                     {...member.image}
-                    className="aspect-square h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                    className="h-full w-full object-cover object-[center_12%] transition-transform duration-500 group-hover:scale-[1.03] sm:object-top"
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
                   />
                   <div
                     className={cn(
-                      "pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-black/85 p-3 pt-12 sm:p-4",
+                      "pointer-events-none absolute inset-x-0 bottom-0 z-10",
+                      "bg-gradient-to-t from-black via-black/55 to-transparent",
+                      "px-2.5 pb-2.5 pt-8 sm:px-3 sm:pb-3 sm:pt-10",
                       "opacity-100 transition-opacity duration-300",
+                      "md:from-black/90 md:via-black/75 md:to-transparent",
                       "md:opacity-0 md:group-hover:opacity-100 md:group-focus-within:opacity-100"
                     )}
                     aria-hidden
                   >
-                    <p className="font-heading text-base font-medium !text-white sm:text-lg md:translate-y-2 md:transition-transform md:duration-300 md:group-hover:translate-y-0">
+                    <p className="font-heading text-sm font-medium leading-tight !text-white sm:text-base md:text-lg md:translate-y-2 md:transition-transform md:duration-300 md:group-hover:translate-y-0">
                       {member.name}
                     </p>
-                    <p className="mt-0.5 text-xs !text-white sm:text-sm md:translate-y-2 md:transition-transform md:duration-300 md:delay-75 md:group-hover:translate-y-0">
+                    <p className="mt-0.5 text-[11px] leading-snug !text-white/90 sm:text-xs md:text-sm md:translate-y-2 md:transition-transform md:duration-300 md:delay-75 md:group-hover:translate-y-0">
                       {member.role}
                     </p>
                   </div>
