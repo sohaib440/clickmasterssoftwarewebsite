@@ -1,6 +1,6 @@
 "use client";
 
-// import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
@@ -12,69 +12,56 @@ import { serviceRoutes, services, type ServiceCard as ServiceCardData } from "@/
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
 
-// const serviceImagesWithAssets = new Set([
-//   "/services/Web-Development.png",
-//   "/services/Mobile-Development.png",
-//   "/services/UIUX-Design.png",
-// ]);
-
 function ServiceCard({ service, index }: { service: ServiceCardData; index: number }) {
-  const Icon = service.Icon;
   const route = serviceRoutes[service.title] || "/services";
-  // const hasImage = serviceImagesWithAssets.has(service.image);
-  const hasImage = false;
 
   return (
     <Reveal delay={index * motionStagger} className="h-full">
       <Link
         href={route}
         className={cn(
-          "group flex h-full min-h-[11rem] flex-col overflow-hidden rounded-xl border border-white/10 bg-white/[0.04] transition-colors duration-300 sm:min-h-[12rem]",
-          "hover:border-white/25 hover:bg-white/[0.07]"
+          "group relative flex h-full min-h-[20rem] flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-4 transition-all duration-500 sm:min-h-[21rem] md:min-h-[22rem] sm:p-5",
+          "hover:-translate-y-2 hover:border-white/25 hover:bg-white/[0.055]",
+          "hover:shadow-[0_24px_48px_-20px_color-mix(in_srgb,var(--service-accent)_55%,transparent)]"
         )}
+        style={{ ["--service-accent" as string]: service.accent }}
       >
-        {/* {hasImage ? (
-          <div className="relative h-44 w-full shrink-0 overflow-hidden sm:h-48 md:h-52">
-            <div className="absolute inset-x-0 top-0 z-10 flex items-start justify-between gap-2 p-4">
-              <span className="inline-flex size-9 items-center justify-center rounded-lg border border-white/15 bg-black/35 text-white backdrop-blur-sm">
-                <Icon className="size-4" strokeWidth={1.5} aria-hidden />
-              </span>
-              <span className="rounded-md bg-black/35 px-2 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-white/80 backdrop-blur-sm">
-                {service.tag}
-              </span>
-            </div>
+        <div className="flex justify-end">
+          <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-white/45 transition-colors duration-300 group-hover:text-white/70">
+            {service.tag}
+          </span>
+        </div>
 
-            <Image
-              src={service.image}
-              alt={service.title}
-              fill
-              className="object-contain object-center p-3 pt-10 transition-transform duration-500 group-hover:scale-[1.02]"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            />
-          </div>
-        ) : ( */}
-          <div className="flex shrink-0 items-start justify-between gap-2 px-4 pt-4">
-            <span className="inline-flex size-8 items-center justify-center rounded-md border border-white/10 bg-white/[0.04] text-white">
-              <Icon className="size-3.5" strokeWidth={1.5} aria-hidden />
-            </span>
-            <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-white/45">
-              {service.tag}
-            </span>
-          </div>
-        {/* )} */}
+        <div className="relative mx-auto -mt-1 mb-1 flex h-[17.5rem] w-full max-w-[19.5rem] shrink-0 items-center justify-center sm:h-[19rem] sm:max-w-[21rem]">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 rounded-full opacity-50 blur-2xl transition-opacity duration-500 group-hover:opacity-80"
+            style={{
+              background: `radial-gradient(circle, ${service.accent}55 0%, transparent 70%)`,
+            }}
+          />
+          <Image
+            src={service.image}
+            alt=""
+            width={320}
+            height={320}
+            className="relative z-10 size-[17.5rem] object-contain drop-shadow-[0_12px_28px_rgba(0,0,0,0.45)] transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-3 sm:size-[19rem]"
+            sizes="320px"
+          />
+        </div>
 
-        <div className={cn("flex flex-1 flex-col px-4 pb-4", hasImage ? "pt-2" : "pt-3")}>
-          <h3 className="font-heading text-base font-medium leading-snug text-white md:text-lg">
+        <div className="mt-auto flex flex-col pt-1">
+          <h3 className="font-heading text-lg font-medium leading-snug tracking-tight text-white md:text-xl">
             {service.title}
           </h3>
-          <p className="mt-1.5 flex-1 text-xs leading-relaxed text-white/65 sm:text-sm">
+          <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-white/60 sm:text-sm">
             {service.description}
           </p>
 
-          <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-white transition-colors group-hover:text-primary sm:text-sm">
+          <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-white transition-colors duration-300 group-hover:text-primary">
             Learn more
             <ArrowUpRight
-              className="size-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               aria-hidden
             />
           </span>
@@ -101,7 +88,7 @@ export function ServicesSection() {
           className={sectionHeadingGap}
         />
 
-        <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
+        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6">
           {services.map((service, index) => (
             <li key={service.title} className="h-full">
               <ServiceCard service={service} index={index} />
