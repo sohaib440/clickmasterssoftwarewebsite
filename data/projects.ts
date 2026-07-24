@@ -23,12 +23,6 @@ export type ProjectProcedureStep = {
   description: string;
 };
 
-export type ProjectClientFeedback = {
-  quote: string;
-  author: string;
-  role: string;
-};
-
 export type ProjectVideo = {
   title: string;
   youtubeId: string;
@@ -50,7 +44,7 @@ export type ProjectDetail = ShowcaseProject & {
   solutions: string[];
   whyNeedProduct: ProjectWhyNeed;
   procedure: ProjectProcedureStep[];
-  clientFeedback: ProjectClientFeedback[];
+  clientFeedback: string;
   modulePictures: ProjectSlide[];
   video: ProjectVideo;
   outcome: string[];
@@ -195,71 +189,53 @@ export const projectDetails: ProjectDetail[] = [
       ],
       reasons: [
         "Stop losing leads across spreadsheets, inboxes, and side chats",
-        "Assign clear ownership and permissions to every opportunity",
-        "See staff, attendance, revenue, and conversion on one dashboard",
-        "Train new agents without slowing experienced closers",
-        "Keep conversation history inside the sales workflow",
-        "Give leadership a single source of truth for pipeline health",
+        "Assign clear ownership and permissions on every sales opportunity",
+        "Track staff, attendance, revenue, and conversion on one dashboard",
+        "Train new agents quickly without slowing experienced closers",
+        "Keep full conversation history inside the sales workflow",
+        "Give leadership one clear source of truth for pipeline health",
       ],
     },
     procedure: [
       {
         step: 1,
-        title: "Discovery & call center workflow mapping",
+        title: "Discovery and workflow mapping",
         description:
-          "We mapped how leads enter the business, who owns follow-up, how shifts and attendance affect coverage, and where handoffs and coaching break down.",
+          "Mapped lead intake, ownership, shifts, attendance coverage, handoffs, and coaching gaps across the sales floor.",
       },
       {
         step: 2,
         title: "CRM information architecture",
         description:
-          "Designed roles, permissions, lead states, chat threads, training access, and dashboard KPIs around one shared data model.",
+          "Designed roles, permissions, lead states, chat, training access, and dashboard KPIs on one shared data model.",
       },
       {
         step: 3,
         title: "Core module build",
         description:
-          "Shipped login, dashboard, leads, and staff management first so teams could run daily operations on the new platform quickly.",
+          "Shipped login, dashboard, leads, and staff management first so teams could run daily operations quickly.",
       },
       {
         step: 4,
-        title: "Collaboration & coaching modules",
+        title: "Collaboration and coaching",
         description:
-          "Added chat and training with attachments, categories, and progress-friendly structure so agents stay aligned and ramp faster.",
+          "Added chat and training with attachments, categories, and clear structure so agents stay aligned and ramp faster.",
       },
       {
         step: 5,
-        title: "QA, permissions hardening & pilot",
+        title: "QA and pilot rollout",
         description:
-          "Tested role boundaries, lead assignment rules, and reporting accuracy with managers and agents before wider rollout.",
+          "Tested role boundaries, lead assignment rules, and reporting accuracy with managers and agents before launch.",
       },
       {
         step: 6,
-        title: "Launch & continuous tuning",
+        title: "Launch and continuous tuning",
         description:
-          "Onboarded teams, refined dashboard metrics from real usage, and adjusted workflows based on floor feedback.",
+          "Onboarded teams, refined dashboard metrics from live usage, and adjusted workflows from real floor feedback.",
       },
     ],
-    clientFeedback: [
-      {
-        quote:
-          "Our team finally works from one lead list. Assignments are clear, and managers can see conversion without chasing spreadsheets.",
-        author: "Operations Lead",
-        role: "Sales operations",
-      },
-      {
-        quote:
-          "New agents ramp faster because training materials and live leads sit in the same system as chat and attendance.",
-        author: "Team Manager",
-        role: "Call center management",
-      },
-      {
-        quote:
-          "The dashboard gave us an honest picture of staff capacity, active leads, and revenue in one view.",
-        author: "Admin",
-        role: "Business owner",
-      },
-    ],
+    clientFeedback:
+      "We needed call center CRM and custom CRM software that our sales floor would actually use every day. Next Software Development Company delivered Prime Lead CRM with the care of a software development company that understands lead management software, staff management CRM, sales dashboard reporting, agent training software, and how a real software house should support a call center. Assignments are clear, conversion is visible without spreadsheets, and our agents finally work from one system built by a software company that listened to how our floor operates.",
     modulePictures: [],
     video: {
       title: "Prime Lead CRM product walkthrough",
@@ -267,11 +243,11 @@ export const projectDetails: ProjectDetail[] = [
     },
     outcome: [
       "One CRM for leads, staff, chat, training, and attendance visibility",
-      "Clear ownership and role-based access on every lead",
+      "Clear ownership with role based access controls on every lead",
       "Faster agent onboarding through structured training modules",
-      "Managers track pipeline, conversion, and team activity from a live dashboard",
-      "Fewer dropped follow-ups caused by scattered tools and unclear assignment",
-      "A scalable foundation for call center sales operations",
+      "Live dashboard tracking for pipeline, conversion, and team activity",
+      "Fewer dropped follow ups from scattered tools and unclear ownership",
+      "A scalable foundation ready for growing call center operations",
     ],
     faqs: [
       faq(

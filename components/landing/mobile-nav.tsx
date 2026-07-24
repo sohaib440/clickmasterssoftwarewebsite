@@ -129,7 +129,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
       <div
         aria-hidden={!open}
         className={cn(
-          "fixed inset-0 z-[60] bg-black/70 backdrop-blur-sm transition-opacity duration-300 lg:hidden",
+          "fixed inset-0 z-[60] bg-black/70 backdrop-blur-sm transition-opacity duration-300 xl:hidden",
           open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
         )}
         onClick={onClose}
@@ -142,20 +142,20 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
         aria-hidden={!open}
         aria-label="Mobile navigation"
         className={cn(
-          "fixed inset-x-0 top-0 z-[70] flex max-h-[100dvh] flex-col bg-zinc-950 text-white shadow-[0_24px_80px_rgba(0,0,0,0.55)] transition-[transform,opacity] duration-300 ease-out lg:hidden",
+          "fixed inset-x-0 top-0 z-[70] flex max-h-[100dvh] flex-col bg-zinc-950 text-white shadow-[0_24px_80px_rgba(0,0,0,0.55)] transition-[transform,opacity] duration-300 ease-out xl:hidden",
           open ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-3 opacity-0"
         )}
       >
-        <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
+        <div className="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3 sm:px-5 sm:py-4">
           <SiteLogo
-            className="min-w-0"
-            imageClassName="h-10 w-auto max-w-[11rem] sm:max-w-[13rem]"
+            className="min-w-0 max-w-[min(70vw,14rem)]"
+            imageClassName="h-9 w-auto max-w-full sm:h-10"
             onNavigate={onClose}
           />
           <button
             type="button"
             onClick={onClose}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/15 bg-white/5 text-white transition-colors active:bg-white/10"
+            className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-white/15 bg-white/5 text-white transition-colors active:bg-white/10 sm:h-11 sm:w-11"
             aria-label="Close navigation menu"
           >
             <X className="size-5" aria-hidden />
@@ -163,7 +163,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
         </div>
 
         <nav
-          className="flex-1 space-y-2 overflow-y-auto overscroll-contain px-5 py-5"
+          className="flex-1 space-y-2 overflow-y-auto overscroll-contain px-4 py-4 sm:px-5 sm:py-5"
           aria-label="Main"
         >
           <p className="px-1 pb-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/40">
@@ -180,13 +180,13 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
           ))}
         </nav>
 
-        <div className="border-t border-white/10 bg-black/40 px-5 py-4 backdrop-blur-md">
+        <div className="border-t border-white/10 bg-black/40 px-4 py-4 backdrop-blur-md sm:px-5">
           <Link
             href={contactPath}
             onClick={onClose}
             className={cn(
               btnPrimary,
-              "flex h-12 w-full items-center justify-center gap-2 rounded-2xl text-sm font-semibold"
+              "flex h-11 w-full items-center justify-center gap-2 rounded-2xl text-sm font-semibold sm:h-12"
             )}
           >
             {navCtaLabel}

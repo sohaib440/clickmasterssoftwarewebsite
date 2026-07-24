@@ -22,9 +22,16 @@ function getInitials(name: string) {
     .join("");
 }
 
+type TestimonialItem = {
+  quote: string;
+  author: string;
+  role: string;
+};
+
 type TestimonialsSectionProps = {
   overlineText?: string;
   title?: React.ReactNode;
+  items?: readonly TestimonialItem[];
 };
 
 export function TestimonialsSection({
@@ -34,8 +41,10 @@ export function TestimonialsSection({
       What <span className="italic">partners</span> say
     </>
   ),
+  items,
 }: TestimonialsSectionProps = {}) {
-  const pageCount = Math.max(1, Math.ceil(testimonials.length / PAGE_SIZE));
+  const reviews = items ?? testimonials;
+  const pageCount = Math.max(1, Math.ceil(reviews.length / PAGE_SIZE));
   const [page, setPage] = useState(0);
   const [visible, setVisible] = useState(true);
 
@@ -54,7 +63,11 @@ export function TestimonialsSection({
   }, [pageCount]);
 
   const start = page * PAGE_SIZE;
-  const visibleItems = testimonials.slice(start, start + PAGE_SIZE);
+  const visibleItems = reviews.slice(start, start + PAGE_SIZE);
+
+  if (reviews.length === 0) {
+    return null;
+  }
 
   return (
     <section id="testimonials" className="w-full bg-horizon-cream">
@@ -99,7 +112,7 @@ export function TestimonialsSection({
         </ul>
 
         {pageCount > 1 ? (
-          <div className="mt-8 flex items-center justify-center gap-2" aria-label="Testimonial pages">
+          <div className="mt-8 flex items-center justify-center gap-2" aria-label="Review pages">
             {Array.from({ length: pageCount }, (_, index) => (
               <button
                 key={index}
@@ -117,7 +130,7 @@ export function TestimonialsSection({
                     ? "w-6 bg-horizon-navy"
                     : "w-2 bg-horizon-navy/25 hover:bg-horizon-navy/45"
                 )}
-                aria-label={`Show testimonials group ${index + 1}`}
+                aria-label={`Show reviews group ${index + 1}`}
                 aria-current={index === page ? "true" : undefined}
               />
             ))}

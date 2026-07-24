@@ -12,9 +12,10 @@ type FaqColumnProps = {
   column: "left" | "right";
   startIndex: number;
   items: FaqItem[];
+  justify?: boolean;
 };
 
-function FaqColumn({ column, startIndex, items }: FaqColumnProps) {
+function FaqColumn({ column, startIndex, items, justify = false }: FaqColumnProps) {
   const columnItems = items.filter((f) => f.column === column);
 
   return (
@@ -73,7 +74,12 @@ function FaqColumn({ column, startIndex, items }: FaqColumnProps) {
 
               <div className="faq-answer border-t border-horizon-border/70">
                 <div className="faq-answer-inner px-5 pb-5 pt-1 md:px-6 md:pb-6 md:pl-[4.25rem]">
-                  <p className="text-sm leading-relaxed text-left text-horizon-muted md:text-[15px]">
+                  <p
+                    className={cn(
+                      "text-sm leading-relaxed text-horizon-muted md:text-[15px]",
+                      justify ? "text-justify" : "text-left"
+                    )}
+                  >
                     {faq.answer}
                   </p>
                 </div>
@@ -94,6 +100,7 @@ type FaqSectionProps = {
   footerCta?: string;
   footerHref?: string;
   className?: string;
+  justify?: boolean;
 };
 
 export function FaqSection({
@@ -108,6 +115,7 @@ export function FaqSection({
   footerCta,
   footerHref,
   className,
+  justify = false,
 }: FaqSectionProps = {}) {
   const leftCount = items.filter((f) => f.column === "left").length;
 
@@ -121,12 +129,12 @@ export function FaqSection({
           overlineText={overlineText}
           title={title}
           description={intro}
-          className="mb-10 md:mb-12"
+          className={cn("mb-10 md:mb-12", justify && "[&_p:last-child]:text-justify")}
         />
 
         <div className="grid gap-6 md:grid-cols-2 lg:gap-10">
-          <FaqColumn column="left" startIndex={0} items={items} />
-          <FaqColumn column="right" startIndex={leftCount} items={items} />
+          <FaqColumn column="left" startIndex={0} items={items} justify={justify} />
+          <FaqColumn column="right" startIndex={leftCount} items={items} justify={justify} />
         </div>
 
         {footerCta && footerHref ? (

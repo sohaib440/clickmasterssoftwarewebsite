@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { ChevronDown, Mail, Menu, Share2 } from "lucide-react";
 
-// import { SiteLogo } from "@/components/landing/site-logo";
+import { SiteLogo } from "@/components/landing/site-logo";
 import { siteBrand } from "@/lib/landing/brand";
 import {
   aboutPath,
@@ -168,7 +168,7 @@ const ServicesNavDropdown = dynamic(
 );
 
 const navLinkClass =
-  "inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm text-white/70 transition-colors whitespace-nowrap hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary/40";
+  "inline-flex items-center gap-0.5 rounded-lg px-1.5 py-2 text-[13px] text-white/70 transition-colors whitespace-nowrap hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary/40 xl:gap-1 xl:px-2.5 xl:text-sm 2xl:px-3";
 
 function stopPlaceholderNav(event: React.MouseEvent<HTMLAnchorElement>, href: string) {
   if (href === "#") event.preventDefault();
@@ -197,24 +197,18 @@ export function Navbar() {
       <div className={container}>
         <div
           className={cn(
-            "grid min-w-0 w-full grid-cols-[auto_1fr_auto] items-center gap-3 border-b border-white/10 transition-all duration-300",
-            scrolled ? "h-[4.25rem] lg:h-20" : "h-[4.5rem] lg:h-[5.25rem]"
+            "flex min-w-0 w-full items-center justify-between gap-2 border-b border-white/10 transition-all duration-300 sm:gap-3",
+            scrolled ? "h-16 md:h-[4.25rem] xl:h-[4.5rem]" : "h-[4.25rem] md:h-[4.5rem] xl:h-20"
           )}
         >
-          {/* <SiteLogo
-            priority
-            className="min-w-0 max-w-[58vw] justify-self-start sm:max-w-none lg:hidden"
-            imageClassName="h-10 w-auto max-w-[11rem] sm:h-11 sm:max-w-[13rem]"
-          />
-
           <SiteLogo
             priority
-            className="hidden min-w-0 justify-self-start lg:inline-flex"
-            imageClassName="h-12 w-auto max-w-[17rem] md:h-14 md:max-w-[22rem] lg:h-16 lg:max-w-[24rem]"
-          /> */}
+            className="min-w-0 max-w-[min(58vw,12rem)] shrink sm:max-w-[14rem] md:max-w-[16rem] xl:max-w-[18rem]"
+            imageClassName="h-8 w-auto max-w-full sm:h-9 md:h-10 xl:h-12"
+          />
 
           <nav
-            className="hidden min-w-0 items-center justify-center justify-self-center gap-1 lg:flex lg:gap-2"
+            className="hidden min-w-0 flex-1 items-center justify-center gap-0.5 px-1 xl:flex 2xl:gap-1"
             aria-label="Main"
           >
             {navLinks.map((link, linkIndex) =>
@@ -233,14 +227,14 @@ export function Navbar() {
                     {link.label}
                     {link.children ? (
                       <ChevronDown
-                        className="size-4 transition-transform duration-300 group-hover:rotate-180 group-focus-within:rotate-180"
+                        className="size-3.5 shrink-0 transition-transform duration-300 group-hover:rotate-180 group-focus-within:rotate-180 xl:size-4"
                         aria-hidden
                       />
                     ) : null}
                   </Link>
 
                   {link.children ? (
-                    <div className="pointer-events-none absolute left-0 top-full z-50 mt-1 min-w-[12rem] max-w-[18rem] overflow-hidden rounded-2xl border border-white/10 bg-black opacity-0 shadow-xl shadow-black/40 transition-all duration-200 ease-out translate-y-1 group-hover:pointer-events-auto group-focus-within:pointer-events-auto group-hover:opacity-100 group-focus-within:opacity-100 group-hover:translate-y-0 group-focus-within:translate-y-0">
+                    <div className="pointer-events-none absolute left-0 top-full z-50 mt-1 min-w-[12rem] max-w-[min(18rem,70vw)] overflow-hidden rounded-2xl border border-white/10 bg-black opacity-0 shadow-xl shadow-black/40 transition-all duration-200 ease-out translate-y-1 group-hover:pointer-events-auto group-focus-within:pointer-events-auto group-hover:opacity-100 group-focus-within:opacity-100 group-hover:translate-y-0 group-focus-within:translate-y-0">
                       <div className="flex flex-col p-2">
                         {link.children.map((child, childIndex) => (
                           <Link
@@ -260,14 +254,14 @@ export function Navbar() {
             )}
           </nav>
 
-          <div className="flex items-center justify-self-end gap-2">
+          <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
             <button
               type="button"
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-navigation"
               onClick={() => setMobileMenuOpen((open) => !open)}
               className={cn(
-                "inline-flex h-11 w-11 items-center justify-center rounded-2xl border text-white transition-colors lg:hidden",
+                "inline-flex h-10 w-10 items-center justify-center rounded-2xl border text-white transition-colors sm:h-11 sm:w-11 xl:hidden",
                 mobileMenuOpen
                   ? "border-primary/40 bg-primary/10 text-primary"
                   : "border-white/20 bg-white/5 active:bg-white/10"
@@ -283,7 +277,7 @@ export function Navbar() {
               href={contactPath}
               className={cn(
                 btnPrimary,
-                "hidden shrink-0 sm:inline-flex",
+                "hidden shrink-0 px-3 text-xs sm:inline-flex sm:px-4 sm:text-sm md:px-5",
                 "transition-transform duration-300 hover:scale-[1.02] active:scale-[0.98]"
               )}
             >
