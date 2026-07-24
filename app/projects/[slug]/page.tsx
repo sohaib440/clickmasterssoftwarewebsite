@@ -8,7 +8,6 @@ import { FaqSection } from "@/components/landing/faq-section";
 import { Reveal } from "@/components/landing/reveal";
 import { SiteFooter } from "@/components/landing/site-footer";
 import { SiteHeader } from "@/components/landing/navbar";
-import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { ProjectHeroSlideshow } from "@/components/project/project-hero-slideshow";
 import {
   getAllProjectSlugs,
@@ -124,7 +123,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   <h1 className="mt-4 font-heading text-4xl font-normal leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.15rem]">
                     {project.title}
                   </h1>
-                  <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
+                  <p className="mt-5 max-w-2xl text-justify text-base leading-relaxed text-white/70 md:text-lg">
                     {project.description}
                   </p>
                 </Reveal>
@@ -166,7 +165,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           <div className={cn(container, sectionPad)}>
             <Reveal>
               <SectionHeading overlineText="Overview" title="Project overview" />
-              <div className="mt-6 max-w-3xl space-y-4 text-base leading-relaxed text-horizon-muted md:text-lg">
+              <div className="mt-6 max-w-3xl space-y-4 text-justify text-base leading-relaxed text-horizon-muted md:text-lg">
                 {project.overview.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
@@ -180,7 +179,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             <div className="grid gap-10 lg:grid-cols-2 lg:gap-14">
               <Reveal>
                 <SectionHeading overlineText="Problem" title="The challenge" light />
-                <p className="mt-6 text-base leading-relaxed text-white/70 md:text-lg">
+                <p className="mt-6 text-justify text-base leading-relaxed text-white/70 md:text-lg">
                   {project.problem}
                 </p>
               </Reveal>
@@ -190,7 +189,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   {project.solutions.map((item) => (
                     <li
                       key={item}
-                      className="flex gap-3 text-base leading-relaxed text-white/70 md:text-lg"
+                      className="flex gap-3 text-justify text-base leading-relaxed text-white/70 md:text-lg"
                     >
                       <CheckCircle2 className="mt-1 size-5 shrink-0 text-primary" aria-hidden />
                       <span>{item}</span>
@@ -209,21 +208,21 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 overlineText="Why this product"
                 title={project.whyNeedProduct.title || "Why do you need this product"}
               />
-              <div className="mt-6 max-w-3xl space-y-4 text-base leading-relaxed text-horizon-muted md:text-lg">
+              <div className="mt-6 max-w-3xl space-y-4 text-justify text-base leading-relaxed text-horizon-muted md:text-lg">
                 {project.whyNeedProduct.paragraphs.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
               </div>
             </Reveal>
-            <ul className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <ul className="mt-10 grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {project.whyNeedProduct.reasons.map((reason, index) => (
-                <li key={reason}>
-                  <Reveal delay={index * motionStagger}>
-                    <article className="h-full rounded-2xl border border-horizon-border bg-horizon-cream/40 p-6">
+                <li key={reason} className="h-full">
+                  <Reveal delay={index * motionStagger} className="h-full">
+                    <article className="flex h-full flex-col rounded-2xl border border-horizon-border bg-horizon-cream/40 p-6">
                       <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-primary">
                         {String(index + 1).padStart(2, "0")}
                       </p>
-                      <p className="mt-3 text-sm leading-relaxed text-horizon-navy md:text-base">
+                      <p className="mt-3 flex-1 text-sm leading-relaxed text-horizon-navy md:text-base">
                         {reason}
                       </p>
                     </article>
@@ -239,16 +238,18 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             <Reveal>
               <SectionHeading overlineText="Procedure" title="How we delivered" light />
             </Reveal>
-            <ol className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            <ol className="mt-10 grid auto-rows-fr gap-4 sm:grid-cols-2 xl:grid-cols-3">
               {project.procedure.map((item, index) => (
-                <li key={item.title}>
-                  <Reveal delay={index * motionStagger}>
-                    <article className="h-full rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                <li key={item.title} className="h-full">
+                  <Reveal delay={index * motionStagger} className="h-full">
+                    <article className="flex h-full flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-5">
                       <p className="font-heading text-3xl text-primary">
                         {String(item.step).padStart(2, "0")}
                       </p>
-                      <h3 className="mt-3 font-heading text-xl">{item.title}</h3>
-                      <p className="mt-3 text-sm leading-relaxed text-white/65">{item.description}</p>
+                      <h3 className="mt-3 font-heading text-xl leading-snug">{item.title}</h3>
+                      <p className="mt-3 flex-1 text-sm leading-relaxed text-white/65">
+                        {item.description}
+                      </p>
                     </article>
                   </Reveal>
                 </li>
@@ -257,14 +258,23 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           </div>
         </section>
 
-        <TestimonialsSection
-          overlineText="Client feedback"
-          title={
-            <>
-              What the <span className="italic">client</span> said
-            </>
-          }
-        />
+        <section className="bg-horizon-cream text-horizon-navy">
+          <div className={cn(container, sectionPad)}>
+            <Reveal>
+              <SectionHeading
+                overlineText="Client feedback"
+                title={
+                  <>
+                    What the <span className="italic">client</span> said
+                  </>
+                }
+              />
+              <blockquote className="mt-6 max-w-3xl text-justify text-base leading-relaxed text-horizon-muted md:text-lg">
+                {project.clientFeedback}
+              </blockquote>
+            </Reveal>
+          </div>
+        </section>
 
         <section className="bg-black text-white">
           <div className={cn(container, sectionPad)}>
@@ -287,7 +297,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                     </div>
                     <div className="flex flex-col p-5">
                       <h3 className="font-heading text-lg text-white">{slide.label}</h3>
-                      <p className="mt-2 text-sm leading-relaxed text-white/65">
+                      <p className="mt-2 text-justify text-sm leading-relaxed text-white/65">
                         {slide.caption}
                       </p>
                     </div>
@@ -325,15 +335,17 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             <Reveal>
               <SectionHeading overlineText="Outcome" title="Results & impact" light />
             </Reveal>
-            <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <ul className="mt-10 grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {project.outcome.map((item, index) => (
-                <li key={item}>
-                  <Reveal delay={index * motionStagger}>
-                    <article className="h-full rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                <li key={item} className="h-full">
+                  <Reveal delay={index * motionStagger} className="h-full">
+                    <article className="flex h-full flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-5">
                       <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-primary">
                         Outcome {String(index + 1).padStart(2, "0")}
                       </p>
-                      <p className="mt-3 font-heading text-xl text-white">{item}</p>
+                      <p className="mt-3 flex-1 font-heading text-xl leading-snug text-white">
+                        {item}
+                      </p>
                     </article>
                   </Reveal>
                 </li>
@@ -346,6 +358,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           items={project.faqs}
           intro={`Common questions about ${project.title} and how Next Software Development Company delivered this build.`}
           overlineText="Project FAQs"
+          justify
           title={
             <>
               Project questions, <span className="italic">answered</span>
