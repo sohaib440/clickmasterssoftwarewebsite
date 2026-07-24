@@ -52,7 +52,7 @@ export function SolutionsIndexPage() {
             </Reveal>
             <Reveal immediate delay={motionStagger * 2}>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-horizon-muted md:text-lg">
-                ERP, CRM, AI agents, and more—custom platforms designed for your workflows. Browse
+                ERP, CRM, AI agents, and more, custom platforms designed for your workflows. Browse
                 our solution catalog or tell us what you need to ship next.
               </p>
             </Reveal>

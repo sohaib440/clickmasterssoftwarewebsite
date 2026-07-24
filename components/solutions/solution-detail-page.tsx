@@ -292,7 +292,7 @@ export function SolutionDetailPage({ solution }: Props) {
                 Ready to build your <span className="italic">{solution.label}</span>?
               </h2>
               <p className="mx-auto mt-4 max-w-lg text-sm text-white/75 md:text-base">
-                Tell us about your users, integrations, and timeline—we&apos;ll reply within one
+                Tell us about your users, integrations, and timeline, we&apos;ll reply within one
                 business day.
               </p>
               <Link

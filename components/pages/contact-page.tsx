@@ -51,7 +51,7 @@ export function ContactPage({ initialValues }: ContactPageProps) {
             Let&apos;s draw your <span className="italic">horizon</span>
           </>
         }
-        description="Share a few details—we'll reply within one business day with next steps."
+        description="Share a few details, we'll reply within one business day with next steps."
       />
 
       <section className="w-full bg-gradient-to-b from-white via-horizon-cream/50 to-horizon-sky/30">
@@ -65,7 +65,7 @@ export function ContactPage({ initialValues }: ContactPageProps) {
                 </h2>
                 <p className="mt-3 text-sm leading-relaxed text-horizon-muted">
                   Whether you have a brief, a rough idea, or an existing product that needs a
-                  senior team—we&apos;ll help you find the right next step.
+                  senior team, we&apos;ll help you find the right next step.
                 </p>
               </Reveal>
 
@@ -111,7 +111,7 @@ export function ContactPage({ initialValues }: ContactPageProps) {
                   Send a message
                 </h2>
                 <p className="mt-2 text-sm text-horizon-muted">
-                  Share your project details—name, email, phone, budget, timeline, and message.
+                  Share your project details, name, email, phone, budget, timeline, and message.
                 </p>
                 <ContactForm variant="full" initialValues={initialValues} />
               </div>

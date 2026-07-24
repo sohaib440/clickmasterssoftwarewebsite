@@ -41,7 +41,7 @@ export function AboutPage() {
               Ready to work <span className="italic">together</span>?
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-sm text-white/75 md:text-base">
-              Tell us about your product—we&apos;ll share how we can help from discovery through
+              Tell us about your product, we&apos;ll share how we can help from discovery through
               launch.
             </p>
             <Link

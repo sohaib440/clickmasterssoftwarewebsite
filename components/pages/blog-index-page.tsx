@@ -14,7 +14,7 @@ export function BlogIndexPage() {
             Notes from the <span className="italic">studio</span>
           </>
         }
-        description="Ideas on product, design, and engineering—how we plan, build, and ship with clarity."
+        description="Ideas on product, design, and engineering, how we plan, build, and ship with clarity."
       />
       <BlogSection showHeading={false} />
     </MarketingShell>
