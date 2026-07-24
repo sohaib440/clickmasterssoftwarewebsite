@@ -196,6 +196,118 @@ export const pakistanCities: LocationCity[] = [
     city: "Sialkot",
     blurb: "Export-ready platforms for manufacturers and trading houses.",
   },
+  {
+    slug: cityLocationSlug("hyderabad"),
+    label: "Software house and software company in Hyderabad",
+    href: cityLocationHref("hyderabad"),
+    city: "Hyderabad",
+    blurb: "Custom web, ERP, and digital products for Sindh’s second-largest city.",
+  },
+  {
+    slug: cityLocationSlug("quetta"),
+    label: "Software house and software company in Quetta",
+    href: cityLocationHref("quetta"),
+    city: "Quetta",
+    blurb: "Reliable HMS, ERP, and ops software for Balochistan’s capital.",
+  },
+  {
+    slug: cityLocationSlug("sargodha"),
+    label: "Software house and software company in Sargodha",
+    href: cityLocationHref("sargodha"),
+    city: "Sargodha",
+    blurb: "Practical software for agribusiness, clinics, and growing SMEs.",
+  },
+  {
+    slug: cityLocationSlug("sukkur"),
+    label: "Software house and software company in Sukkur",
+    href: cityLocationHref("sukkur"),
+    city: "Sukkur",
+    blurb: "Ops, inventory, and commerce systems for upper Sindh businesses.",
+  },
+  {
+    slug: cityLocationSlug("mardan"),
+    label: "Software house and software company in Mardan",
+    href: cityLocationHref("mardan"),
+    city: "Mardan",
+    blurb: "Web apps and internal tools for organizations across KPK.",
+  },
+  {
+    slug: cityLocationSlug("gujrat"),
+    label: "Software house and software company in Gujrat",
+    href: cityLocationHref("gujrat"),
+    city: "Gujrat",
+    blurb: "Manufacturing and trade platforms for industrial operators.",
+  },
+  {
+    slug: cityLocationSlug("sahiwal"),
+    label: "Software house and software company in Sahiwal",
+    href: cityLocationHref("sahiwal"),
+    city: "Sahiwal",
+    blurb: "Affordable custom software for SMEs, clinics, and education.",
+  },
+  {
+    slug: cityLocationSlug("dera-ghazi-khan"),
+    label: "Software house and software company in Dera Ghazi Khan",
+    href: cityLocationHref("dera-ghazi-khan"),
+    city: "Dera Ghazi Khan",
+    blurb: "Regional ops and institutional software for south Punjab.",
+  },
+  {
+    slug: cityLocationSlug("sheikhupura"),
+    label: "Software house and software company in Sheikhupura",
+    href: cityLocationHref("sheikhupura"),
+    city: "Sheikhupura",
+    blurb: "Industrial and commercial workflows for Lahore’s industrial belt.",
+  },
+  {
+    slug: cityLocationSlug("jhang"),
+    label: "Software house and software company in Jhang",
+    href: cityLocationHref("jhang"),
+    city: "Jhang",
+    blurb: "Lean digital products for agribusiness and local services.",
+  },
+  {
+    slug: cityLocationSlug("kasur"),
+    label: "Software house and software company in Kasur",
+    href: cityLocationHref("kasur"),
+    city: "Kasur",
+    blurb: "Practical ERP and ops tools for trade and manufacturing teams.",
+  },
+  {
+    slug: cityLocationSlug("larkana"),
+    label: "Software house and software company in Larkana",
+    href: cityLocationHref("larkana"),
+    city: "Larkana",
+    blurb: "Custom web and admin systems for Sindh regional organizations.",
+  },
+  {
+    slug: cityLocationSlug("mingora"),
+    label: "Software house and software company in Mingora",
+    href: cityLocationHref("mingora"),
+    city: "Mingora",
+    blurb: "Lean software for clinics, schools, and tourism businesses in Swat.",
+  },
+  {
+    slug: cityLocationSlug("nawabshah"),
+    label: "Software house and software company in Nawabshah",
+    href: cityLocationHref("nawabshah"),
+    city: "Nawabshah",
+    blurb: "Ops and institutional platforms for Benazirabad / Nawabshah.",
+  },
+  {
+    slug: cityLocationSlug("mirpur"),
+    label: "Software house and software company in Mirpur",
+    href: cityLocationHref("mirpur"),
+    city: "Mirpur",
+    blurb: "Product and business software for AJK teams and diaspora-linked firms.",
+  },
+  {
+    slug: cityLocationSlug("muzaffarabad"),
+    label: "Software house and software company in Muzaffarabad",
+    href: cityLocationHref("muzaffarabad"),
+    city: "Muzaffarabad",
+    blurb: "Reliable digital systems for AJK institutions and local businesses.",
+  },
 ];
 
 export const pakistanLocation: LocationPageContent = {
@@ -226,7 +338,7 @@ export const pakistanLocation: LocationPageContent = {
       {
         title: "Pakistan-wide coverage",
         description:
-          "A software house serving Islamabad, Lahore, Karachi, and 13+ cities across the country.",
+          "A software house serving Islamabad, Lahore, Karachi, and 29+ cities across the country.",
       },
       {
         title: "Senior-only teams",
@@ -404,7 +516,7 @@ export const pakistanLocation: LocationPageContent = {
       "Next Software Development Company is a national software house with senior delivery from Islamabad, serving clinics, schools, startups, and enterprises across major Pakistani cities.",
     items: [
       {
-        value: "13+",
+        value: "29+",
         label: "Cities covered",
         detail:
           "Software house delivery and sales coverage from Islamabad and Lahore to Karachi, Faisalabad, Multan, and more.",
