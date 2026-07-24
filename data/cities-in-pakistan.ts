@@ -13,7 +13,7 @@ const cityHeroImageSrc = "/locations/Location-Pakistan.png";
 
 type CityCopy = {
   aboutTitle: string;
-  paragraphs: [string, string, string];
+  paragraphs: [string, string, string] | [string, string, string, string];
   factDetail: string;
   heroImageSrc: string;
   heroLead: string;
@@ -252,7 +252,8 @@ const cityCopy: Record<string, CityCopy> = {
     aboutTitle: "A top-rated software house and software development company in Hyderabad",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Hyderabad. As a trusted software house and software company, we deliver HMS, ERP, web apps, and digital products for clinics, schools, retailers, and growing enterprises across Sindh’s second-largest city.",
-      "As an experienced software company in Hyderabad, our senior engineers and designers build systems that match local ops: role-based access, clear reporting, and tools staff can adopt quickly.",
+      "As an experienced software company in Hyderabad, our senior engineers and designers build systems that match local ops: role-based access, clear reporting, Urdu-ready staff tools where needed, and interfaces teams can adopt quickly without long training cycles.",
+      "From multi-branch retail and logistics visibility to school portals and clinic workflows, our software development company scopes products around how Hyderabad operators actually work day to day.",
       "Whether you are launching a regional platform or hiring a software house and software company in Hyderabad for a longer product partnership, you get transparent scoping, senior-only delivery, and support after go-live from a [[software house in Pakistan]] and [[software company in Pakistan]].",
     ],
     factDetail:
@@ -268,7 +269,8 @@ const cityCopy: Record<string, CityCopy> = {
     aboutTitle: "A top-rated software house and software development company in Quetta",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Quetta. Organizations and growing businesses partner with our software house and software company for reliable HMS, ERP, and custom ops systems built for Balochistan’s capital.",
-      "As a dependable software company in Quetta, we focus on stable delivery, clear documentation, and practical workflows teams can run day to day.",
+      "As a dependable software company in Quetta, we focus on stable delivery, clear documentation, offline-friendly patterns where connectivity varies, and practical workflows teams can run day to day.",
+      "Public-sector adjacent tools, clinic management, and SME ops platforms are common engagements: we keep scope honest so Quetta teams get software they can operate and maintain.",
       "Hire a software house and software company in Quetta that stays involved after launch with clear milestones, fixed-price options, and senior engineers on every engagement, backed by the [[Best software house]] and [[Best Software company in Pakistan]] standards we deliver nationwide.",
     ],
     factDetail:
@@ -284,7 +286,8 @@ const cityCopy: Record<string, CityCopy> = {
     aboutTitle: "A top-rated software house and software development company in Sargodha",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Sargodha. Agribusiness teams, clinics, and SMEs work with our software house and software company for practical digital products that replace spreadsheets and fragmented tools.",
-      "As a hands-on software company in Sargodha, we design workflows around local trade and operations: inventory, billing, reporting, and systems staff can learn quickly.",
+      "As a hands-on software company in Sargodha, we design workflows around local trade and citrus-region operations: inventory, billing, seasonal reporting, and systems staff can learn quickly.",
+      "Whether you need a lean ops portal, a clinic HMS, or a school admin platform, our software development company keeps delivery senior and scoped to what Sargodha businesses actually need.",
       "Choose a software house and software company in Sargodha that combines local market understanding with the same delivery standards we use on global engagements as a [[software house in Pakistan]] and [[software company in Pakistan]].",
     ],
     factDetail:
@@ -300,7 +303,8 @@ const cityCopy: Record<string, CityCopy> = {
     aboutTitle: "A top-rated software house and software development company in Sukkur",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Sukkur. Businesses and institutions hire our software house for ops, inventory, and commerce systems that improve day-to-day visibility across upper Sindh.",
-      "As a practical software company in Sukkur, we keep delivery useful: stock, sales, admin workflows, and reporting owners can trust.",
+      "As a practical software company in Sukkur, we keep delivery useful: stock, sales, transport-linked admin workflows, and reporting owners can trust without enterprise bloat.",
+      "From trading houses along the Indus corridor to clinics and schools, our software development company builds tools that fit regional pace and staffing realities.",
       "Partner with a software house and software development company in Sukkur that ships senior delivery, fixed scope when you need it, and ongoing support after go-live from a [[top rated software house]] and [[top rated software company in Pakistan]].",
     ],
     factDetail:
@@ -316,7 +320,8 @@ const cityCopy: Record<string, CityCopy> = {
     aboutTitle: "A top-rated software house and software development company in Mardan",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Mardan. Organizations work with our software company for reliable web applications and internal tools that improve service delivery without unnecessary complexity.",
-      "As a dependable software house in Mardan, we focus on stable delivery, clear documentation, and systems KPK teams can operate confidently.",
+      "As a dependable software house in Mardan, we focus on stable delivery, clear documentation, and systems KPK teams can operate confidently after a short handover.",
+      "Education platforms, clinic workflows, and municipal-adjacent admin tools are frequent requests: we prioritize usability so Mardan staff adopt software in the first weeks, not months.",
       "Work with a software house and software company in Mardan that stays accountable from discovery through launch and maintenance as a [[software house in Pakistan]] and [[software company in Pakistan]].",
     ],
     factDetail:
@@ -333,6 +338,7 @@ const cityCopy: Record<string, CityCopy> = {
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Gujrat. Manufacturers and trading houses partner with our software company to digitize production, inventory, and sales workflows built for local operators.",
       "As a hands-on software house in Gujrat, we replace manual tracking with systems that fit your shop floor and office, without forcing a one-size-fits-all ERP.",
+      "Order pipelines, warehouse visibility, and dealer portals help Gujrat industrial teams move faster while leadership gets reporting they can act on.",
       "Hire a software house and software development company in Gujrat that delivers senior engineering, transparent pricing, and support after go-live as a [[Pakistan leading software house]] and [[Pakistan leading software company in Pakistan]].",
     ],
     factDetail:
@@ -348,7 +354,8 @@ const cityCopy: Record<string, CityCopy> = {
     aboutTitle: "A top-rated software house and software development company in Sahiwal",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Sahiwal. SMEs, clinics, and education teams work with our software company for affordable custom software tailored to central Punjab businesses.",
-      "As a practical software house in Sahiwal, we keep scope honest and delivery senior so you get reliable systems without enterprise bloat.",
+      "As a practical software house in Sahiwal, we keep scope honest and delivery senior so you get reliable systems without enterprise bloat or surprise change-orders mid-build.",
+      "Dairy and agri-linked ops tools, school fee portals, and clinic management are common Sahiwal engagements: we ship what operators will actually use.",
       "Choose a software house and software company in Sahiwal that combines senior delivery with competitive pricing and post-launch support from a [[software house in Pakistan]] and [[software company in Pakistan]].",
     ],
     factDetail:
@@ -364,7 +371,8 @@ const cityCopy: Record<string, CityCopy> = {
     aboutTitle: "A top-rated software house and software development company in Dera Ghazi Khan",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Dera Ghazi Khan. Regional companies and institutions hire our software house for custom web apps, mobile tools, and internal systems that help teams scale.",
-      "Our software development company focuses on practical delivery: clear requirements, usable interfaces, and systems that work for south Punjab operators.",
+      "Our software development company focuses on practical delivery: clear requirements, usable interfaces, and systems that work for south Punjab operators with lean IT teams.",
+      "From district-level admin workflows to clinic and school platforms, we keep architecture simple enough to maintain while still ready to grow with your organization.",
       "Partner with a software house and software development company in Dera Ghazi Khan for senior engineering, transparent proposals, and ongoing support from [[Pakistan's top rated software house]] and [[Pakistan's top rated software company in Pakistan]].",
     ],
     factDetail:
@@ -380,7 +388,8 @@ const cityCopy: Record<string, CityCopy> = {
     aboutTitle: "A top-rated software house and software development company in Sheikhupura",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Sheikhupura. Manufacturers and commercial teams partner with our software company for ERP, inventory, and ops software across Lahore’s industrial belt.",
-      "As a practical software house in Sheikhupura, we design workflows around production and trade realities: role-based access, reporting owners can trust, and systems staff can learn quickly.",
+      "As a practical software house in Sheikhupura, we design workflows around production and trade realities: role-based access, reporting owners can trust, and systems staff can learn quickly on the floor.",
+      "Proximity to Lahore markets means many Sheikhupura clients need integration-ready tools: we build with clean APIs and phased rollouts so plants stay running during go-live.",
       "Work with a software house and software development company in Sheikhupura that offers senior teams, clear timelines, and support after launch as a [[software house in Pakistan]] and [[software company in Pakistan]].",
     ],
     factDetail:
@@ -396,7 +405,8 @@ const cityCopy: Record<string, CityCopy> = {
     aboutTitle: "A top-rated software house and software development company in Jhang",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Jhang. Agribusiness teams and local services hire our software company for lean digital products sized for their operations.",
-      "As a practical software house in Jhang, we prioritize clarity and usability so staff adopt the system quickly and operations stay simple.",
+      "As a practical software house in Jhang, we prioritize clarity and usability so staff adopt the system quickly and operations stay simple through peak seasons.",
+      "Farm-linked inventory, fee collection for schools, and small clinic workflows are typical Jhang builds: we avoid over-engineering and ship the features that matter first.",
       "Choose a software house and software development company in Jhang that delivers senior craft with practical scope and post-launch care from the [[Best software house]] and [[Best Software company in Pakistan]].",
     ],
     factDetail:
@@ -412,7 +422,8 @@ const cityCopy: Record<string, CityCopy> = {
     aboutTitle: "A top-rated software house and software development company in Kasur",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Kasur. Trade and manufacturing teams partner with our software company for ERP and ops tools that replace manual tracking.",
-      "As a hands-on software house in Kasur, we build practical systems for stock, sales, and reporting that owners can trust.",
+      "As a hands-on software house in Kasur, we build practical systems for stock, sales, and reporting that owners can trust from day one.",
+      "Whether you run a workshop, wholesale trade desk, or multi-site store, our software development company scopes software around Kasur’s pace of business, not a generic enterprise template.",
       "Hire a software house and software development company in Kasur for senior delivery, transparent pricing, and support after go-live as a [[software house in Pakistan]] and [[software company in Pakistan]].",
     ],
     factDetail:
@@ -428,7 +439,8 @@ const cityCopy: Record<string, CityCopy> = {
     aboutTitle: "A top-rated software house and software development company in Larkana",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Larkana. Organizations and regional businesses use our software company for web applications and admin systems that improve service delivery.",
-      "As a lean software house in Larkana, we keep delivery useful: software that solves real admin and ops problems without overbuilding.",
+      "As a lean software house in Larkana, we keep delivery useful: software that solves real admin and ops problems without overbuilding or locking you into unused modules.",
+      "Education offices, clinics, and local commerce platforms are common Larkana engagements: we document clearly so your team can run the system after launch.",
       "Partner with a software house and software development company in Larkana that stays involved after launch with clear support options from a [[top rated software house]] and [[top rated software company in Pakistan]].",
     ],
     factDetail:
@@ -444,7 +456,8 @@ const cityCopy: Record<string, CityCopy> = {
     aboutTitle: "A top-rated software house and software development company in Mingora",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Mingora. Clinics, schools, and tourism businesses in Swat hire our software company for lean digital products and mobile-friendly tools sized for their teams.",
-      "As a practical software house in Mingora, we prioritize clarity and usability so staff adopt the system quickly and operations stay simple.",
+      "As a practical software house in Mingora, we prioritize clarity and usability so staff adopt the system quickly and operations stay simple through busy tourist seasons.",
+      "Booking and guest ops for hospitality, school portals, and clinic scheduling are frequent Swat requests: we ship mobile-first where field teams work on phones first.",
       "Choose a software house and software development company in Mingora that delivers senior engineering, fixed-scope options, and long-term support as a [[software house in Pakistan]] and [[software company in Pakistan]].",
     ],
     factDetail:
@@ -460,7 +473,8 @@ const cityCopy: Record<string, CityCopy> = {
     aboutTitle: "A top-rated software house and software development company in Nawabshah",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Nawabshah. Businesses and institutions in Benazirabad partner with our software company for operations and institutional platforms that improve day-to-day visibility.",
-      "As a hands-on software house in Nawabshah, we build practical tools for stock, admin, and reporting that owners can trust.",
+      "As a hands-on software house in Nawabshah, we build practical tools for stock, admin, and reporting that owners can trust without hiring a large IT department.",
+      "Agriculture-linked commerce, campus admin, and clinic management are typical Benazirabad builds: we keep roadmaps phased so value shows up early.",
       "Hire a software house and software development company in Nawabshah that delivers senior engineering, transparent pricing, and support after go-live as a [[Pakistan leading software house]] and [[Pakistan leading software company in Pakistan]].",
     ],
     factDetail:
@@ -476,7 +490,8 @@ const cityCopy: Record<string, CityCopy> = {
     aboutTitle: "A top-rated software house and software development company in Mirpur",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Mirpur. Local teams and diaspora-linked firms in AJK work with our software company for product builds, business platforms, and practical digital tools.",
-      "As an experienced software house in Mirpur, our senior engineers deliver English-first communication, clear milestones, and systems built for growth.",
+      "As an experienced software house in Mirpur, our senior engineers deliver English-first communication, clear milestones, and systems built for growth across local and overseas stakeholders.",
+      "Remittance-adjacent business tools, education platforms, and SME ops software are common Mirpur engagements: we design for timezone-friendly collaboration with UK and Gulf partners when needed.",
       "Partner with a software house and software company in Mirpur that stays accountable from discovery through launch and maintenance as a [[software house in Pakistan]] and [[software company in Pakistan]].",
     ],
     factDetail:
@@ -492,7 +507,8 @@ const cityCopy: Record<string, CityCopy> = {
     aboutTitle: "A top-rated software house and software development company in Muzaffarabad",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Muzaffarabad. Institutions and local businesses hire our software company for reliable digital systems that improve service delivery across AJK’s capital region.",
-      "As a dependable software house in Muzaffarabad, we focus on stable delivery, clear documentation, and practical workflows teams can run confidently.",
+      "As a dependable software house in Muzaffarabad, we focus on stable delivery, clear documentation, and practical workflows teams can run confidently with limited IT staff.",
+      "Government-adjacent admin tools, campus platforms, and clinic systems are frequent requests: we emphasize security basics, audit-friendly logs, and handover training for Muzaffarabad operators.",
       "Choose a software house and software development company in Muzaffarabad that delivers senior craft with practical scope and post-launch care from [[Pakistan's top rated software house]] and [[Pakistan's top rated software company in Pakistan]].",
     ],
     factDetail:

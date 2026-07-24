@@ -1,11 +1,16 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, MapPinned } from "lucide-react";
 
 import { Reveal } from "@/components/landing/reveal";
-import { container, overline, sectionPad } from "@/lib/landing/constants";
+import { btnOnDark, container, overline, sectionPad } from "@/lib/landing/constants";
 import type { LocationCity } from "@/data/locations";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
+
+const INITIAL_VISIBLE = 9;
 
 type SubLocationsSectionProps = {
   country: string;
@@ -76,6 +81,11 @@ export function SubLocationsSection({
   cities,
   description,
 }: SubLocationsSectionProps) {
+  const [expanded, setExpanded] = useState(false);
+  const hasMore = cities.length > INITIAL_VISIBLE;
+  const visibleCities = expanded || !hasMore ? cities : cities.slice(0, INITIAL_VISIBLE);
+  const hiddenCount = Math.max(cities.length - INITIAL_VISIBLE, 0);
+
   const copy =
     description ??
     `We partner with founders and operators nationwide, building HMS for Islamabad clinics, school platforms in Lahore, and retail systems in Karachi. Choose a city to see how a dedicated software house can support your market.`;
@@ -103,14 +113,27 @@ export function SubLocationsSection({
         </Reveal>
 
         <ul className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-3 xl:gap-5">
-          {cities.map((city, index) => (
+          {visibleCities.map((city, index) => (
             <li key={city.slug}>
-              <Reveal delay={Math.min(index, 9) * motionStagger * 0.35} className="h-full">
+              <Reveal delay={Math.min(index, 8) * motionStagger * 0.35} className="h-full">
                 <CityCard city={city} index={index} />
               </Reveal>
             </li>
           ))}
         </ul>
+
+        {hasMore ? (
+          <div className="mt-10 flex justify-center">
+            <button
+              type="button"
+              onClick={() => setExpanded((open) => !open)}
+              className={btnOnDark}
+              aria-expanded={expanded}
+            >
+              {expanded ? "Show fewer cities" : `Show ${hiddenCount} more cities`}
+            </button>
+          </div>
+        ) : null}
       </div>
     </section>
   );
