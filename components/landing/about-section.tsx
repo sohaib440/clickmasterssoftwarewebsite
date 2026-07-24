@@ -1,8 +1,10 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 import { CardImage } from "@/components/landing/card-image";
 import { Reveal } from "@/components/landing/reveal";
 import { SectionHeading } from "@/components/landing/section-heading";
+import { pakistanLocation } from "@/data/locations";
 import { btnOutline, card, cardSoft, container, sectionPad } from "@/lib/landing/constants";
 import { aboutSection } from "@/data/landingPage";
 import { motionStagger } from "@/lib/landing/motion";
@@ -30,6 +32,26 @@ type AboutSectionProps = {
   content?: AboutSectionContent;
 };
 
+/** Renders `[[anchor text]]` as an internal link to the Pakistan location page. */
+function renderParagraphWithCountryLinks(paragraph: string): ReactNode {
+  const parts = paragraph.split(/(\[\[[^\]]+\]\])/g);
+  if (parts.length === 1) return paragraph;
+
+  return parts.map((part, i) => {
+    const match = /^\[\[([^\]]+)\]\]$/.exec(part);
+    if (!match) return part;
+    return (
+      <Link
+        key={`${match[1]}-${i}`}
+        href={pakistanLocation.href}
+        className="font-medium text-primary underline underline-offset-4 transition-colors hover:text-[#b8941f]"
+      >
+        {match[1]}
+      </Link>
+    );
+  });
+}
+
 export function AboutSection({ content }: AboutSectionProps = {}) {
   const data = content ?? {
     overlineText: "About us",
@@ -56,7 +78,7 @@ export function AboutSection({ content }: AboutSectionProps = {}) {
               {data.paragraphs.map((paragraph, i) => (
                 <Reveal key={i} delay={i * motionStagger}>
                   <p className="text-base leading-relaxed text-justify text-horizon-navy md:text-lg">
-                    {paragraph}
+                    {renderParagraphWithCountryLinks(paragraph)}
                   </p>
                 </Reveal>
               ))}

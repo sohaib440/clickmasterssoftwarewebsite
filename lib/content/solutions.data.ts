@@ -39,7 +39,7 @@ export const solutions: SolutionContent[] = [
     icon: Workflow,
     tagline: "Unify finance, inventory, and operations on one clear platform.",
     description:
-      "Our ERP solutions connect departments, automate workflows, and give leadership real-time visibility—from procurement and production to accounting and reporting.",
+      "Our ERP solutions connect departments, automate workflows, and give leadership real-time visibility, from procurement and production to accounting and reporting.",
     metaDescription:
       "Custom ERP software for finance, inventory, and operations. Software Development Company Software builds scalable enterprise resource planning systems.",
     heroImage: img(
@@ -51,7 +51,7 @@ export const solutions: SolutionContent[] = [
       {
         title: "Unified data model",
         description:
-          "One source of truth across departments—no more reconciling spreadsheets or duplicate entries.",
+          "One source of truth across departments, no more reconciling spreadsheets or duplicate entries.",
       },
       {
         title: "Modular by design",
@@ -89,7 +89,7 @@ export const solutions: SolutionContent[] = [
     highlights: [
       {
         title: "Implementation in phases",
-        description: "We ship core modules first, validate with users, then expand—reducing rollout risk.",
+        description: "We ship core modules first, validate with users, then expand, reducing rollout risk.",
       },
       {
         title: "Your workflows, not ours",
@@ -112,7 +112,7 @@ export const solutions: SolutionContent[] = [
     label: "CRM Platform",
     category: "Customer",
     icon: Users,
-    tagline: "Relationships, pipelines, and revenue—in one calm workspace.",
+    tagline: "Relationships, pipelines, and revenue, in one calm workspace.",
     description:
       "We build CRM platforms that help sales and success teams track leads, manage accounts, and forecast revenue without fighting clunky software.",
     metaDescription:
@@ -133,7 +133,7 @@ export const solutions: SolutionContent[] = [
       },
       {
         title: "Automation that helps",
-        description: "Reminders, assignment rules, and follow-ups—without spamming your team.",
+        description: "Reminders, assignment rules, and follow-ups, without spamming your team.",
       },
     ],
     capabilities: [
@@ -186,7 +186,7 @@ export const solutions: SolutionContent[] = [
     icon: Bot,
     tagline: "Intelligent assistants that work inside your product and workflows.",
     description:
-      "We design and deploy AI agents for support, sales, and internal ops—grounded in your data, guarded by policies, and measurable in production.",
+      "We design and deploy AI agents for support, sales, and internal ops, grounded in your data, guarded by policies, and measurable in production.",
     metaDescription:
       "Custom AI agents for support, sales, and operations. RAG, tool use, and safe deployment by Software Development Company Software.",
     heroImage: img(
@@ -197,7 +197,7 @@ export const solutions: SolutionContent[] = [
     features: [
       {
         title: "Grounded answers",
-        description: "Retrieval over knowledge bases, tickets, and product docs—fewer hallucinations.",
+        description: "Retrieval over knowledge bases, tickets, and product docs, fewer hallucinations.",
       },
       {
         title: "Action-capable agents",
@@ -256,7 +256,7 @@ export const solutions: SolutionContent[] = [
     label: "HRMS",
     category: "Enterprise",
     icon: Brain,
-    tagline: "People operations from hire to retire—without the paperwork maze.",
+    tagline: "People operations from hire to retire, without the paperwork maze.",
     description:
       "Human resource management systems for employee records, leave, payroll hooks, performance cycles, and self-service portals tailored to your policies.",
     metaDescription:
@@ -328,7 +328,7 @@ export const solutions: SolutionContent[] = [
     label: "Inventory Management",
     category: "Operations",
     icon: Warehouse,
-    tagline: "Stock levels, movements, and fulfillment—accurate and real-time.",
+    tagline: "Stock levels, movements, and fulfillment, accurate and real-time.",
     description:
       "Inventory systems for warehouses and retail: receiving, picking, transfers, barcodes, and alerts when SKUs run low.",
     metaDescription:
@@ -400,7 +400,7 @@ export const solutions: SolutionContent[] = [
     label: "E-commerce Platform",
     category: "Customer",
     icon: ShoppingCart,
-    tagline: "Storefronts and admin that convert—and scale on busy days.",
+    tagline: "Storefronts and admin that convert, and scale on busy days.",
     description:
       "Custom e-commerce platforms with catalog management, checkout, payments, promotions, and admin tools built for your brand and catalog complexity.",
     metaDescription:
@@ -413,7 +413,7 @@ export const solutions: SolutionContent[] = [
     features: [
       {
         title: "Brand-led UX",
-        description: "Fast, accessible storefronts that reflect your design—not generic themes.",
+        description: "Fast, accessible storefronts that reflect your design, not generic themes.",
       },
       {
         title: "Flexible catalog",
@@ -453,7 +453,7 @@ export const solutions: SolutionContent[] = [
       },
       {
         title: "Own your stack",
-        description: "No platform lock-in—extend catalog, checkout, and integrations freely.",
+        description: "No platform lock-in, extend catalog, checkout, and integrations freely.",
       },
       {
         title: "Omnichannel ready",
@@ -474,7 +474,7 @@ export const solutions: SolutionContent[] = [
     icon: BarChart3,
     tagline: "Dashboards and insights your leadership actually uses.",
     description:
-      "Analytics platforms that pull from your databases and SaaS tools—unified KPIs, drill-downs, and scheduled reports without spreadsheet chaos.",
+      "Analytics platforms that pull from your databases and SaaS tools, unified KPIs, drill-downs, and scheduled reports without spreadsheet chaos.",
     metaDescription:
       "Custom business analytics dashboards and BI tools. Data visualization by Software Development Company Software.",
     heroImage: img(
@@ -546,7 +546,7 @@ export const solutions: SolutionContent[] = [
     icon: Boxes,
     tagline: "Replace manual handoffs with reliable, auditable workflows.",
     description:
-      "Custom workflow engines for approvals, onboarding, ticketing, and cross-system automation—visual builders optional, rock-solid execution required.",
+      "Custom workflow engines for approvals, onboarding, ticketing, and cross-system automation, visual builders optional, rock-solid execution required.",
     metaDescription:
       "Workflow automation software for approvals and business processes. Built by Software Development Company Software.",
     heroImage: img(

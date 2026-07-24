@@ -7,7 +7,7 @@ export type SubServicesMap = Record<string, SubCategoryContent[]>;
 export const defaultSubCategorySections = {
   cta: {
     description: (label: string) =>
-      `Share your goals for ${label.toLowerCase()}—we'll reply within one business day.`,
+      `Share your goals for ${label.toLowerCase()}, we'll reply within one business day.`,
     buttonLabel: "Get in touch",
     buttonHref: contactPath,
   },
@@ -23,7 +23,7 @@ export const subServicesByCategory: SubServicesMap = {
       slug: "custom-software-development",
       label: "Custom Software Development",
       description:
-        "Tailored applications aligned to your workflows, integrations, and growth roadmap—not one-size-fits-all templates.",
+        "Tailored applications aligned to your workflows, integrations, and growth roadmap, not one-size-fits-all templates.",
       image: {
         src: "/services/Software development.png",
         alt: "Custom software on a laptop",
@@ -79,7 +79,7 @@ export const subServicesByCategory: SubServicesMap = {
       slug: "prototyping",
       label: "Prototyping",
       description:
-        "Clickable prototypes to validate flows early—before engineering commits to the wrong path.",
+        "Clickable prototypes to validate flows early, before engineering commits to the wrong path.",
     },
     {
       slug: "design-audits",
@@ -125,7 +125,7 @@ export const subServicesByCategory: SubServicesMap = {
       slug: "pipelines",
       label: "Data Pipelines",
       description:
-        "Reliable ingestion, transformation, and warehousing—batch or streaming, as the domain requires.",
+        "Reliable ingestion, transformation, and warehousing, batch or streaming, as the domain requires.",
     },
     {
       slug: "security-audits",
@@ -145,7 +145,7 @@ export const subServicesByCategory: SubServicesMap = {
       slug: "ai-agents",
       label: "AI Agents & Assistants",
       description:
-        "Task-oriented agents that integrate with your tools—Slack, CRM, support desks—and automate repeatable workflows.",
+        "Task-oriented agents that integrate with your tools, Slack, CRM, support desks, and automate repeatable workflows.",
       image: {
         src: "/services/Artificial Intelligence.png",
         alt: "AI agents and assistants",
