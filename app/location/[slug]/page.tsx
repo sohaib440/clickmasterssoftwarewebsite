@@ -22,6 +22,7 @@ import {
 } from "@/data/cities-in-pakistan";
 import { btnOnDark, container, sectionPad } from "@/lib/landing/constants";
 import { cn } from "@/lib/utils";
+import { locationLocalBusinessSchema, organizationSchema } from "@/seo/schema";
 
 type CityLocationPageProps = {
   params: Promise<{ slug: string }>;
@@ -63,8 +64,23 @@ export default async function CityLocationPage({ params }: CityLocationPageProps
   const cityName =
     location.breadcrumbs?.[location.breadcrumbs.length - 1]?.label ?? location.country;
 
+  const schemas = [
+    organizationSchema,
+    locationLocalBusinessSchema({
+      areaServedName: cityName,
+      areaServedType: "City",
+      pageUrl: location.href,
+      description: location.metaDescription ?? location.description,
+      idSuffix: slug,
+    }),
+  ];
+
   return (
     <div className="flex min-h-full w-full flex-col overflow-x-clip bg-black text-foreground">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+      />
       <SiteHeader />
 
       <main className="flex w-full flex-1 flex-col overflow-x-clip">

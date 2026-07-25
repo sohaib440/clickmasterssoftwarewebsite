@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 
-import { HomeJsonLd } from "@/components/seo/home-json-ld";
 import {
   AboutSection,
   BlogSection,
@@ -18,6 +17,12 @@ import {
   TestimonialsSection,
 } from "@/components/landing";
 import { siteMetadata } from "@/lib/landing/brand";
+import {
+  homepageFaqSchema,
+  homepageServiceSchema,
+  organizationSchema,
+  webSiteSchema,
+} from "@/seo/schema";
 
 export const metadata: Metadata = {
   title: siteMetadata.title,
@@ -36,9 +41,19 @@ function DeferredSection({ children }: { children: React.ReactNode }) {
 }
 
 export default function Home() {
+  const schemas = [
+    organizationSchema,
+    webSiteSchema,
+    homepageServiceSchema,
+    homepageFaqSchema,
+  ];
+
   return (
     <div className="flex min-h-full w-full max-w-full flex-col overflow-x-clip bg-black text-white">
-      <HomeJsonLd />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+      />
       <SiteHeader />
       <HeroSection />
       <main className="flex w-full max-w-full flex-1 flex-col overflow-x-clip">
