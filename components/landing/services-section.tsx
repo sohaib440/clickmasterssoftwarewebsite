@@ -7,13 +7,12 @@ import { ArrowUpRight } from "lucide-react";
 import { SectionHeading } from "@/components/landing/section-heading";
 import { LandingContainer, sectionHeadingGap } from "@/components/landing/landing-container";
 import { Reveal } from "@/components/landing/reveal";
-import { btnPrimary } from "@/lib/landing/constants";
 import { serviceRoutes, services, type ServiceCard as ServiceCardData } from "@/data/services";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
 
 function ServiceCard({ service, index }: { service: ServiceCardData; index: number }) {
-  const route = serviceRoutes[service.title] || "/services";
+  const route = serviceRoutes[service.title] || "/software-development";
 
   return (
     <Reveal delay={index * motionStagger} className="h-full">
@@ -95,12 +94,6 @@ export function ServicesSection() {
             </li>
           ))}
         </ul>
-
-        <div className="mx-auto mt-12 flex justify-center">
-          <Link href="/services" className={btnPrimary}>
-            Explore all services
-          </Link>
-        </div>
       </LandingContainer>
     </section>
   );

@@ -3,7 +3,6 @@ import { ArrowLeft, FileText } from "lucide-react";
 
 import { CaseStudyCard } from "@/components/case-study/case-study-card";
 import { Reveal } from "@/components/landing/reveal";
-import { SiteFooter } from "@/components/landing/site-footer";
 import { SiteHeader } from "@/components/landing/navbar";
 import {
   btnOnDark,
@@ -105,8 +104,6 @@ export function CaseStudyPageContent() {
           </div>
         </section>
       </main>
-
-      <SiteFooter />
     </div>
   );
 }

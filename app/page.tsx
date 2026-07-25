@@ -12,7 +12,6 @@ import {
   ProcessSection,
   ProjectsSection,
   ServicesSection,
-  SiteFooter,
   SiteHeader,
   TeamSection,
   TechStackSection,
@@ -68,7 +67,6 @@ export default function Home() {
         </DeferredSection>
         <ContactSection />
       </main>
-      <SiteFooter />
     </div>
   );
 }

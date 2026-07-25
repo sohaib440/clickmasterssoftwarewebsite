@@ -2,7 +2,6 @@ import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, Building2 } from "lucide-react";
 
 import { Reveal } from "@/components/landing/reveal";
-import { SiteFooter } from "@/components/landing/site-footer";
 import { SiteHeader } from "@/components/landing/navbar";
 import {
   btnOnDark,
@@ -209,8 +208,6 @@ export function IndustriesPageContent() {
           </div>
         </section>
       </main>
-
-      <SiteFooter />
     </div>
   );
 }

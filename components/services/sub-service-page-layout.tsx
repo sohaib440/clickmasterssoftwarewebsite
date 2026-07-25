@@ -12,7 +12,6 @@ import { ProcessSection } from "@/components/landing/process-section";
 import { ProjectsSection } from "@/components/landing/projects-section";
 import { Reveal } from "@/components/landing/reveal";
 import { ServicesSection } from "@/components/landing/services-section";
-import { SiteFooter } from "@/components/landing/site-footer";
 import { SiteHeader } from "@/components/landing/navbar";
 import { TeamSection } from "@/components/landing/team-section";
 import { TechStackSection } from "@/components/landing/tech-stack-section";
@@ -290,8 +289,6 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
           </div>
         </section>
       </main>
-
-      <SiteFooter />
     </div>
   );
 }
