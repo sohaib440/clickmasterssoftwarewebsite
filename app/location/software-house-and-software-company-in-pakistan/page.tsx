@@ -8,7 +8,6 @@ import {
 } from "@/components/location";
 import { AboutSection } from "@/components/landing/about-section";
 import { TrustedPartnersSection } from "@/components/landing/clients-section";
-import { ContactSection } from "@/components/landing/contact-section";
 import { FaqSection } from "@/components/landing/faq-section";
 import { IndustriesSection } from "@/components/landing/industries-section";
 import { ProjectsSection } from "@/components/landing/projects-section";
@@ -20,6 +19,7 @@ import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { pakistanLocation } from "@/data/locations";
 import { btnOnDark, container, sectionPad } from "@/lib/landing/constants";
 import { cn } from "@/lib/utils";
+import { locationLocalBusinessSchema, organizationSchema } from "@/seo/schema";
 
 export const metadata: Metadata = {
   title: pakistanLocation.metaTitle ?? pakistanLocation.title,
@@ -34,8 +34,23 @@ export const metadata: Metadata = {
 export default function PakistanLocationPage() {
   const location = pakistanLocation;
 
+  const schemas = [
+    organizationSchema,
+    locationLocalBusinessSchema({
+      areaServedName: "Pakistan",
+      areaServedType: "Country",
+      pageUrl: location.href,
+      description: location.metaDescription ?? location.description,
+      idSuffix: "pakistan",
+    }),
+  ];
+
   return (
     <div className="flex min-h-full w-full flex-col overflow-x-clip bg-black text-foreground">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+      />
       <SiteHeader />
 
       <main className="flex w-full flex-1 flex-col overflow-x-clip">
@@ -118,8 +133,6 @@ export default function PakistanLocationPage() {
             </Reveal>
           </div>
         </section>
-
-        {/* <ContactSection /> */}
       </main>
     </div>
   );
