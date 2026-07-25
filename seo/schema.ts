@@ -46,6 +46,9 @@ const logoImageObject = {
   caption: siteBrand.logo.alt,
 } as const;
 
+/** Representative business / about photo (not the logo) */
+const organizationImageUrl = `${siteBrand.url}/about%20us/software%20development%20company.png`;
+
 /** HQ address — only fields confirmed on the site (Islamabad, Pakistan). No invented street. */
 const hqAddress = {
   "@type": "PostalAddress",
@@ -66,6 +69,18 @@ const countriesServed = [
   { "@type": "Country", name: "United Arab Emirates" },
   { "@type": "Country", name: "Canada" },
   { "@type": "Country", name: "Australia" },
+] as const;
+
+const siteKeywords = [
+  "Software Development Company",
+  "Custom Software",
+  "Web Development",
+  "Mobile Apps",
+  "AI Development",
+  "CRM",
+  "ERP",
+  "SaaS",
+  "Pakistan",
 ] as const;
 
 const openingHours = {
@@ -92,11 +107,11 @@ export const organizationSchema = {
   "@id": `${siteConfig.url}/#organization`,
 
   name: siteConfig.name,
-  alternateName: ["Next", "Next Software Development Company"],
+  alternateName: siteConfig.shortName,
   legalName: siteConfig.legalName,
   url: siteConfig.url,
   logo: logoImageObject,
-  image: siteConfig.logoUrl,
+  image: organizationImageUrl,
 
   description: siteConfig.description,
 
@@ -105,26 +120,15 @@ export const organizationSchema = {
   email: siteConfig.email,
   telephone: siteConfig.phoneE164,
 
-  contactPoint: [
-    {
-      "@type": "ContactPoint",
-      telephone: siteConfig.phoneE164,
-      email: siteConfig.email,
-      contactType: "sales",
-      availableLanguage: ["English", "Urdu"],
-      areaServed: ["PK", "US", "GB", "AE", "CA", "AU"],
-      url: `${siteConfig.url}/contact`,
-    },
-    {
-      "@type": "ContactPoint",
-      telephone: siteConfig.phoneE164,
-      email: siteConfig.email,
-      contactType: "customer support",
-      availableLanguage: ["English", "Urdu"],
-      areaServed: ["PK", "US", "GB", "AE", "CA", "AU"],
-      url: `${siteConfig.url}/contact`,
-    },
-  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: siteConfig.phoneE164,
+    email: siteConfig.email,
+    contactType: "customer service",
+    availableLanguage: ["English", "Urdu"],
+    areaServed: [...countriesServed],
+    url: `${siteConfig.url}/contact`,
+  },
 
   sameAs: [...socialProfiles],
 
@@ -137,13 +141,18 @@ export const organizationSchema = {
     "SaaS development",
     "CRM development",
     "ERP development",
-    "Hospital Management Systems",
+    "Healthcare Software Development",
     "Artificial Intelligence",
     "Machine Learning",
     "Cloud and DevOps",
     "UI/UX design",
     "Software testing and QA",
   ],
+
+  keywords: siteKeywords.join(", "),
+  copyrightHolder: {
+    "@id": `${siteConfig.url}/#organization`,
+  },
 };
 
 // ---------------------------------------------------------------------------
@@ -157,12 +166,26 @@ export const webSiteSchema = {
 
   name: siteConfig.name,
   alternateName: siteConfig.shortName,
-  url: siteConfig.url,
+  url: `${siteConfig.url}/`,
   description: siteConfig.description,
   publisher: {
     "@id": `${siteConfig.url}/#organization`,
   },
+  creator: {
+    "@id": `${siteConfig.url}/#organization`,
+  },
+  copyrightHolder: {
+    "@id": `${siteConfig.url}/#organization`,
+  },
+  mainEntity: {
+    "@id": `${siteConfig.url}/#organization`,
+  },
+  about: {
+    "@id": `${siteConfig.url}/#organization`,
+  },
+  keywords: siteKeywords.join(", "),
   inLanguage: "en",
+  // No SearchAction — the site does not have a /search page yet.
 };
 
 // ---------------------------------------------------------------------------
@@ -177,7 +200,7 @@ export const homepageServiceSchema = {
   name: "Custom Software Development Services",
   serviceType: "Custom Software Development",
   description:
-    "We design, build, and maintain custom software for startups, SMBs, and enterprises across the USA, UK, UAE, Canada, and Australia as well as businesses here in Pakistan.",
+    "Custom software development, web application development, mobile application development, AI solutions, CRM, ERP, SaaS, cloud, and DevOps services for businesses worldwide.",
   url: siteConfig.url,
 
   provider: {
@@ -276,7 +299,7 @@ export const localBusinessSchema = {
   name: siteConfig.name,
   url: siteConfig.url,
   logo: logoImageObject,
-  image: siteConfig.logoUrl,
+  image: organizationImageUrl,
   email: siteConfig.email,
   telephone: siteConfig.phoneE164,
   description: siteConfig.description,
@@ -694,7 +717,7 @@ export function locationServiceSchema(options: {
     url: absoluteUrl(options.path),
     telephone: siteConfig.phoneE164,
     email: siteConfig.email,
-    image: siteConfig.logoUrl,
+    image: organizationImageUrl,
     address: hqAddress,
     areaServed: {
       "@type": "City",
