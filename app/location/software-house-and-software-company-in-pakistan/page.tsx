@@ -14,7 +14,6 @@ import { IndustriesSection } from "@/components/landing/industries-section";
 import { ProjectsSection } from "@/components/landing/projects-section";
 import { Reveal } from "@/components/landing/reveal";
 import { ServicesSection } from "@/components/landing/services-section";
-import { SiteFooter } from "@/components/landing/site-footer";
 import { SiteHeader } from "@/components/landing/navbar";
 import { TeamSection } from "@/components/landing/team-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
@@ -122,8 +121,6 @@ export default function PakistanLocationPage() {
 
         {/* <ContactSection /> */}
       </main>
-
-      <SiteFooter />
     </div>
   );
 }

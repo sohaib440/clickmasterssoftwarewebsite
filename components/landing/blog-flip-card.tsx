@@ -22,7 +22,7 @@ function FlipCardShell({ index, frontTitle, front, back, className }: FlipCardSh
   return (
     <div
       className={cn(
-        "group/blog-flip h-[380px] w-full [perspective:1200px] sm:h-[420px] lg:h-[480px] xl:h-[520px]",
+        "group/blog-flip h-[360px] w-full [perspective:1200px] sm:h-[380px] lg:h-[400px] xl:h-[420px]",
         flipped && "is-flipped",
         className
       )}
@@ -50,7 +50,7 @@ function FlipCardShell({ index, frontTitle, front, back, className }: FlipCardSh
         <div className="absolute inset-0 overflow-hidden rounded-2xl border border-white/15 bg-zinc-900 shadow-[0_18px_48px_rgba(0,0,0,0.45)] [backface-visibility:hidden] 2xl:rounded-[1.25rem]">
           {front}
           <span
-            className="pointer-events-none absolute bottom-16 right-4 select-none font-heading text-[5.5rem] font-bold leading-none tracking-tight text-white/15 sm:bottom-20 sm:text-[6.5rem] lg:text-[7.5rem]"
+            className="pointer-events-none absolute bottom-16 right-4 select-none font-heading text-[5.5rem] font-bold leading-none tracking-tight text-[#d4af37]/25 sm:bottom-20 sm:text-[6.5rem] lg:text-[7.5rem]"
             aria-hidden
           >
             {number}
@@ -104,10 +104,10 @@ export function BlogFlipCard({
             alt={image.alt}
             width={image.width}
             height={image.height}
-            className="h-full w-full object-cover grayscale-[35%] brightness-[0.72] contrast-[1.08] saturate-[0.85]"
+            className="h-full w-full object-fill"
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
           />
-          <div className="absolute inset-0 bg-black/55" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
         </>
       }
       back={
@@ -162,10 +162,10 @@ export function BlogViewAllFlipCard({
             alt={image.alt}
             width={image.width}
             height={image.height}
-            className="h-full w-full object-cover grayscale-[35%] brightness-[0.72] contrast-[1.08] saturate-[0.85]"
+            className="h-full w-full object-fill"
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
           />
-          <div className="absolute inset-0 bg-black/55" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
         </>
       }
       back={

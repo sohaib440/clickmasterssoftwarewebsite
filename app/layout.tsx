@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 
 import { ClearStaleServiceWorker } from "@/components/dev/clear-stale-sw";
+import { SiteFooter } from "@/components/landing/site-footer";
 import { MotionInit } from "@/components/motion-init";
 import { siteBrand, siteMetadata } from "@/lib/landing/brand";
 import "./globals.css";
@@ -51,10 +52,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={cn("h-full antialiased", inter.variable, playfair.variable)}>
-      <body className="min-h-full w-full overflow-x-clip font-sans" suppressHydrationWarning>
+      <body className="flex min-h-full w-full flex-col overflow-x-clip font-sans" suppressHydrationWarning>
         <ClearStaleServiceWorker />
         <MotionInit />
-        {children}
+        <div className="flex w-full flex-1 flex-col">{children}</div>
+        <SiteFooter />
       </body>
     </html>
   );

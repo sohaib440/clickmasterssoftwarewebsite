@@ -142,6 +142,32 @@
   }
 }
 
+/* Site footer — forced light text so navy page theme never bleeds through */
+.site-footer {
+  color: #f4f4f5;
+}
+
+.site-footer__muted {
+  color: #d4d4d8;
+}
+
+.site-footer__heading {
+  color: #a1a1aa;
+}
+
+.site-footer__link {
+  color: #e4e4e7;
+  transition: color 0.2s ease;
+}
+
+.site-footer__link:hover {
+  color: #ffffff;
+}
+
+.site-footer__icon {
+  color: #a1a1aa;
+}
+
 /* Below-fold sections: layout hint only (content-visibility breaks scroll reveal on some mobile browsers) */
 .landing-section-deferred {
   contain-intrinsic-size: auto 32rem;

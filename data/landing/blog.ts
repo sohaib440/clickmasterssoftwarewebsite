@@ -12,8 +12,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "8 min",
     category: "Software Development",
     image: {
-      src: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&h=750&q=80",
-      alt: "Team planning software project",
+      src: "/insights/software-development.png",
+      alt: "Software development insights",
       width: 1200,
       height: 750,
     },
@@ -33,8 +33,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "6 min",
     category: "Product Strategy",
     image: {
-      src: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1200&h=750&q=80",
-      alt: "Product discovery workshop",
+      src: "/insights/product-strategy.png",
+      alt: "Product strategy and discovery",
       width: 1200,
       height: 750,
     },
@@ -54,8 +54,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min",
     category: "Engineering",
     image: {
-      src: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1200&h=750&q=80",
-      alt: "Developer reviewing software on laptop",
+      src: "/insights/Engeenring.png",
+      alt: "Engineering and software delivery",
       width: 1200,
       height: 750,
     },

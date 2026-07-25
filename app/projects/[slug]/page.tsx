@@ -6,7 +6,6 @@ import { ArrowLeft, ArrowUpRight, CheckCircle2, Play } from "lucide-react";
 import { CardImage } from "@/components/landing/card-image";
 import { FaqSection } from "@/components/landing/faq-section";
 import { Reveal } from "@/components/landing/reveal";
-import { SiteFooter } from "@/components/landing/site-footer";
 import { SiteHeader } from "@/components/landing/navbar";
 import { ProjectHeroSlideshow } from "@/components/project/project-hero-slideshow";
 import {
@@ -421,8 +420,6 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           </div>
         </section>
       </main>
-
-      <SiteFooter />
     </div>
   );
 }

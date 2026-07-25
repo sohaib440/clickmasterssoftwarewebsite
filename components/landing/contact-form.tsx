@@ -171,10 +171,10 @@ export function ContactForm({
 
   return (
     <form
-      className={cn("mt-6 grid gap-4 sm:grid-cols-2", className)}
+      className={cn("mt-6 grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2", className)}
       onSubmit={handleSubmit}
     >
-      <div className="space-y-2">
+      <div className="min-w-0 space-y-2">
         <label htmlFor="contact-name" className={formLabel}>
           Name <span className="text-horizon-muted">*</span>
         </label>
@@ -187,11 +187,11 @@ export function ContactForm({
           value={form.name}
           onChange={update("name")}
           placeholder="Your full name"
-          className={inputField}
+          className={cn(inputField, "min-w-0 text-base sm:text-sm")}
         />
       </div>
 
-      <div className="space-y-2">
+      <div className="min-w-0 space-y-2">
         <label htmlFor="contact-email" className={formLabel}>
           Email <span className="text-horizon-muted">*</span>
         </label>
@@ -204,11 +204,11 @@ export function ContactForm({
           value={form.email}
           onChange={update("email")}
           placeholder="you@company.com"
-          className={inputField}
+          className={cn(inputField, "min-w-0 text-base sm:text-sm")}
         />
       </div>
 
-      <div className="space-y-2 sm:col-span-2">
+      <div className="min-w-0 space-y-2 sm:col-span-2">
         <label htmlFor="contact-phone" className={formLabel}>
           Contact number <span className="text-horizon-muted">*</span>
         </label>
@@ -221,11 +221,11 @@ export function ContactForm({
           value={form.contact}
           onChange={update("contact")}
           placeholder="+1 (555) 000-0000"
-          className={inputField}
+          className={cn(inputField, "min-w-0 text-base sm:text-sm")}
         />
       </div>
 
-      <div className="space-y-2">
+      <div className="min-w-0 space-y-2">
         <label htmlFor="contact-project-type" className={formLabel}>
           Project type <span className="text-horizon-muted">*</span>
         </label>
@@ -235,7 +235,7 @@ export function ContactForm({
           required
           value={form.projectType}
           onChange={update("projectType")}
-          className={selectField}
+          className={cn(selectField, "min-w-0 text-base sm:text-sm")}
         >
           <option value="" disabled>
             Select project type
@@ -248,7 +248,7 @@ export function ContactForm({
         </select>
       </div>
 
-      <div className="space-y-2">
+      <div className="min-w-0 space-y-2">
         <label htmlFor="contact-budget" className={formLabel}>
           Budget <span className="text-horizon-muted">*</span>
         </label>
@@ -258,7 +258,7 @@ export function ContactForm({
           required
           value={form.budget}
           onChange={update("budget")}
-          className={selectField}
+          className={cn(selectField, "min-w-0 text-base sm:text-sm")}
         >
           <option value="" disabled>
             Select budget range
@@ -271,7 +271,7 @@ export function ContactForm({
         </select>
       </div>
 
-      <div className="space-y-2 sm:col-span-2">
+      <div className="min-w-0 space-y-2 sm:col-span-2">
         <label htmlFor="contact-timeline" className={formLabel}>
           Timeline <span className="text-horizon-muted">*</span>
         </label>
@@ -281,7 +281,7 @@ export function ContactForm({
           required
           value={form.timeline}
           onChange={update("timeline")}
-          className={selectField}
+          className={cn(selectField, "min-w-0 text-base sm:text-sm")}
         >
           <option value="" disabled>
             When do you want to start?
@@ -294,7 +294,7 @@ export function ContactForm({
         </select>
       </div>
 
-      <div className="space-y-2 sm:col-span-2">
+      <div className="min-w-0 space-y-2 sm:col-span-2">
         <label htmlFor="contact-message" className={formLabel}>
           Message <span className="text-horizon-muted">*</span>
         </label>
@@ -306,13 +306,13 @@ export function ContactForm({
           value={form.message}
           onChange={update("message")}
           placeholder="Tell us about your goals, users, and any constraints we should know."
-          className={textareaField}
+          className={cn(textareaField, "min-w-0 text-base sm:text-sm")}
         />
       </div>
 
-      <div className="sm:col-span-2">
+      <div className="min-w-0 sm:col-span-2">
         {error ? (
-          <p className="mb-3 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">
+          <p className="mb-3 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm break-words text-red-800">
             {error}
           </p>
         ) : null}
@@ -326,11 +326,11 @@ export function ContactForm({
         >
           {submitting ? "Sending…" : "Send inquiry"}
         </button>
-        <p className="mt-3 text-xs text-horizon-muted">
+        <p className="mt-3 text-xs leading-relaxed text-horizon-muted">
           Prefer email?{" "}
           <Link
             href={`mailto:${contactInfo.email}`}
-            className="font-medium text-horizon-navy hover:underline"
+            className="break-all font-medium text-horizon-navy hover:underline"
           >
             {contactInfo.email}
           </Link>
