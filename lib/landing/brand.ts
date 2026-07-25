@@ -1,7 +1,7 @@
 /** Site-wide brand & SEO (homepage + defaults) */
 export const siteBrand = {
   name: "Next Software Development Company",
-  shortName: "Next",
+  shortName: "Next Software Development Company",
   legalName: "Next Software Development Company",
   location: "Islamabad, Pakistan",
   email: "nextsoftwaredevelopmentcompany@gmail.com",
@@ -20,7 +20,7 @@ export const siteBrand = {
 export const siteMetadata = {
   title: "Next Software Development Company",
   description:
-    "Next Software Development Company is a top software development company in Islamabad, Pakistan. Custom software, web apps, CRM, ERP & mobile apps. Free quote.",
+    "Next Software Development Company is a software development company in Pakistan providing custom software development, web application development, mobile application development, AI solutions, CRM, ERP, SaaS, cloud, and DevOps services for businesses worldwide.",
   keywords: [
     "software development",
     "software development company",

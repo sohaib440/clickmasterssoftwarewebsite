@@ -57,7 +57,7 @@ export const services: ServiceCard[] = [
     title: "Web Development",
     description:
       "Modern web applications with responsive design, strong performance, and SEO-friendly architecture for a seamless experience on every device and browser.",
-    image: "/services/web-development.png",
+    image: "/services/Web-Development.png",
     Icon: Globe2,
     AltIcon: Server,
     tag: "Web3 Ready",

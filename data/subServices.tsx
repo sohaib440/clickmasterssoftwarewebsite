@@ -37,7 +37,7 @@ export const subServicesByCategory: SubServicesMap = {
       description:
         "Fast, accessible web apps with modern stacks, SEO-friendly architecture, and design systems that scale.",
       image: {
-        src: "/services/web-development.png",
+        src: "/services/Web-Development.png",
         alt: "Web application dashboard",
         width: 800,
         height: 500,
