@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { ChevronDown, Mail, Menu, Share2 } from "lucide-react";
 
 import { SiteLogo } from "@/components/landing/site-logo";
+import { TopBar } from "@/components/landing/top-bar";
 import { siteBrand } from "@/lib/landing/brand";
 import {
   aboutPath,
@@ -196,6 +197,7 @@ export function Navbar() {
         scrolled && "shadow-[0_8px_30px_rgba(0,0,0,0.35)]"
       )}
     >
+      <TopBar />
       <div className={container}>
         <div
           className={cn(
