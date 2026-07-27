@@ -5,15 +5,15 @@
  * Dynamic schemas = small helpers when the page needs data (blog, project, city).
  *
  * Usage on a page:
- *   import { organizationSchema, webSiteSchema, homepageFaqSchema } from "@/seo/schema";
- *   const schemas = [organizationSchema, webSiteSchema, homepageFaqSchema];
+ *   import { organizationSchema, localBusinessSchema, webSiteSchema, homepageFaqSchema } from "@/seo/schema";
+ *   const schemas = [organizationSchema, localBusinessSchema, webSiteSchema, homepageFaqSchema];
  *
- * NOTE: professionalServiceSchema, localBusinessSchema, and teamPageSchema are
- * meant to REPLACE organizationSchema on their respective pages (service pages,
- * homepage local-SEO block, team page) — not be combined with it. Each has its
- * own @id so they won't collide if you do combine them, but duplicating the
- * "same" entity with conflicting @type arrays under one @id is what search
- * engines flag, so avoid stacking these together on one page.
+ * NOTE: professionalServiceSchema and teamPageSchema are meant to REPLACE
+ * organizationSchema on their respective pages (service pages, team page) — not
+ * be combined with it. The homepage uses organizationSchema + localBusinessSchema
+ * together (linked via parentOrganization / @id). Each has its own @id so they
+ * won't collide; avoid duplicating the same entity with conflicting @type arrays
+ * under one @id on other pages.
  */
 
 import type { FaqItem, ImageAsset } from "@/data/landingPage";
@@ -147,9 +147,6 @@ export const organizationSchema = {
   ],
 
   keywords: siteKeywords.join(", "),
-  copyrightHolder: {
-    "@id": `${siteConfig.url}/#organization`,
-  },
 };
 
 // ---------------------------------------------------------------------------

@@ -20,6 +20,7 @@ import { siteMetadata } from "@/lib/landing/brand";
 import {
   homepageFaqSchema,
   homepageServiceSchema,
+  localBusinessSchema,
   organizationSchema,
   webSiteSchema,
 } from "@/seo/schema";
@@ -43,6 +44,7 @@ function DeferredSection({ children }: { children: React.ReactNode }) {
 export default function Home() {
   const schemas = [
     organizationSchema,
+    localBusinessSchema,
     webSiteSchema,
     homepageServiceSchema,
     homepageFaqSchema,
