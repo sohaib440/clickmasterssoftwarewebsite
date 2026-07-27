@@ -73,4 +73,41 @@
     </image:image>
   </url>
 
+  <!-- AI School ERP project images -->
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp</loc>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Showcase.jpeg</image:loc>
+      <image:title>AI School ERP Product Showcase</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Administrator-Dashboard.jpeg</image:loc>
+      <image:title>AI School ERP Administrator Dashboard</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Homepage.jpeg</image:loc>
+      <image:title>AI School ERP Public Website</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Login.jpeg</image:loc>
+      <image:title>AI School ERP Role Based Login</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Sessions-Timetable.jpeg</image:loc>
+      <image:title>AI School ERP Sessions and Timetable</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Ai-Attendance-Enrolled.jpeg</image:loc>
+      <image:title>AI School ERP Attendance Enrollment</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Live-Monitor.jpeg</image:loc>
+      <image:title>AI School ERP Live Attendance Monitor</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Ai-Cctv-Attendance.jpeg</image:loc>
+      <image:title>AI School ERP CCTV Attendance</image:title>
+    </image:image>
+  </url>
+
 </urlset>

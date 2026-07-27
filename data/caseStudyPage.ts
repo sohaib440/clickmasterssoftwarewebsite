@@ -28,6 +28,18 @@ const caseStudyDetails: Record<
       "Live conversion dashboard",
     ],
   },
+  "ai-school-erp": {
+    problem:
+      "Schools were running attendance, fees, academics, and communication across paper registers, spreadsheets, and disconnected tools with no real-time visibility or reliable attendance tracking.",
+    solution:
+      "We built AI School ERP with role-based portals, academic and finance modules, and AI face recognition attendance through webcam, mobile camera, and CCTV feeds in one secure platform.",
+    outcomes: [
+      "AI-powered attendance with live monitoring",
+      "Unified admin, teacher, parent, and student portals",
+      "Fees, exams, and timetable in one ERP",
+      "Real-time attendance reporting and recognition logs",
+    ],
+  },
 };
 
 export const caseStudies: CaseStudy[] = projects.map((project) => {

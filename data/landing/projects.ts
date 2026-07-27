@@ -16,4 +16,17 @@ export const projects = [
       height: 1024,
     },
   },
+  {
+    slug: "ai-school-erp",
+    title: "AI School ERP",
+    category: "Education · ERP · AI",
+    description:
+      "A smart school management ERP with AI-powered face recognition attendance, student and teacher management, fees, exams, timetables, and role-based portals for admins, teachers, parents, and students.",
+    image: {
+      src: "/projects/ai-school-erp/AI-School-Erp-Showcase.jpeg",
+      alt: "AI School ERP showcase overview",
+      width: 1200,
+      height: 750,
+    },
+  },
 ];

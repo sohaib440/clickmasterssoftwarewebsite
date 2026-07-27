@@ -143,6 +143,78 @@ const primeLeadSlides: ProjectSlide[] = [
   },
 ];
 
+const aiSchoolErpSlides: ProjectSlide[] = [
+  {
+    label: "Product showcase",
+    caption:
+      "Complete smart school management solution with AI-powered face recognition attendance, academics, finance, and multi-role portals.",
+    image: img(
+      "/projects/ai-school-erp/AI-School-Erp-Showcase.jpeg",
+      "AI School ERP product showcase",
+    ),
+  },
+  {
+    label: "Administrator dashboard",
+    caption:
+      "System overview with student counts, fee collection, expenses, and quick access to every school module.",
+    image: img(
+      "/projects/ai-school-erp/AI-School-Erp-Administrator-Dashboard.jpeg",
+      "AI School ERP administrator dashboard",
+    ),
+  },
+  {
+    label: "Public website",
+    caption:
+      "Marketing homepage for the educational institution with programs, admissions, and portal login access.",
+    image: img(
+      "/projects/ai-school-erp/AI-School-Erp-Homepage.jpeg",
+      "AI School ERP public website homepage",
+    ),
+  },
+  {
+    label: "Role-based login",
+    caption:
+      "Secure sign-in for administrators, teachers, students, accountants, and parents from one branded portal.",
+    image: img("/projects/ai-school-erp/AI-School-Erp-Login.jpeg", "AI School ERP login screen"),
+  },
+  {
+    label: "Sessions & timetable",
+    caption:
+      "Manage academic sessions, active terms, and timetable configuration from a centralized admin view.",
+    image: img(
+      "/projects/ai-school-erp/AI-School-Erp-Sessions-Timetable.jpeg",
+      "AI School ERP sessions and timetable",
+    ),
+  },
+  {
+    label: "AI attendance enrollment",
+    caption:
+      "Enroll student and staff faces with webcam or phone camera so recognition is ready for daily attendance.",
+    image: img(
+      "/projects/ai-school-erp/AI-School-Erp-Ai-Attendance-Enrolled.jpeg",
+      "AI School ERP attendance enrollment",
+    ),
+  },
+  {
+    label: "Live monitor",
+    caption:
+      "Real-time face recognition with present, late, and absent status plus recent recognition history.",
+    image: img(
+      "/projects/ai-school-erp/AI-School-Erp-Live-Monitor.jpeg",
+      "AI School ERP live attendance monitor",
+    ),
+  },
+  {
+    label: "AI CCTV attendance",
+    caption:
+      "Multi-camera CCTV feeds with live AI recognition, daily attendance summary, and recognition logs.",
+    image: img(
+      "/projects/ai-school-erp/AI-School-Erp-Ai-Cctv-Attendance.jpeg",
+      "AI School ERP CCTV attendance",
+    ),
+  },
+];
+
 export const projectDetails: ProjectDetail[] = [
   {
     ...(() => {
@@ -295,6 +367,162 @@ export const projectDetails: ProjectDetail[] = [
       faq(
         "Is this a generic CRM or built for call centers?",
         "It is purpose-built for call center sales operations, with staffing, training, chat, and conversion visibility designed into the core workflow.",
+        "Fit",
+        "right",
+      ),
+    ],
+  },
+  {
+    ...(() => {
+      const p = base("ai-school-erp");
+      return {
+        slug: p.slug,
+        title: p.title,
+        category: p.category,
+        description: p.description,
+        image: p.image,
+      };
+    })(),
+    metaTitle: "AI School ERP Case Study | School Management & AI Attendance",
+    metaDescription:
+      "Case study: AI School ERP, a school management system with AI face recognition attendance, fees, exams, timetables, and role-based portals for admins, teachers, parents, and students.",
+    highlights: [
+      "AI face recognition attendance",
+      "Multi-role school portals",
+      "Fees, exams & timetables",
+      "Webcam, mobile & CCTV support",
+    ],
+    slides: aiSchoolErpSlides,
+    overview: [
+      "AI School ERP is a complete school management platform built for institutions that need academics, administration, finance, and attendance in one secure system.",
+      "The product combines a public website, administrator panel, and role-based portals for teachers, students, parents, and accountants so every stakeholder works from the right view.",
+      "Its standout feature is AI-powered attendance using webcam, mobile camera, and CCTV with live monitoring, enrollment, and real-time recognition logs.",
+      "Modules cover sessions, classes, subjects, homework, study materials, lesson plans, exams, fees, reports, and communication so schools can replace scattered tools with one ERP.",
+    ],
+    problem:
+      "The school was managing attendance manually, tracking fees and academics in separate spreadsheets, and giving staff no single dashboard for sessions, classes, or student progress. Attendance was slow, error-prone, and hard to audit. Parents and teachers lacked a unified portal, and leadership had no live view of daily presence across campuses or cameras.",
+    solutions: [
+      "Built an administrator dashboard with student counts, fee collection, expenses, and module shortcuts for daily school operations.",
+      "Delivered role-based login for administrators, teachers, students, accountants, and parents with branded portal access.",
+      "Shipped academic setup for sessions, classes, sections, subjects, rooms, teachers, and timetable configuration.",
+      "Implemented AI attendance enrollment so faces are captured once and linked to student or staff records.",
+      "Added live monitor and AI CCTV views with real-time recognition, present/late/absent status, and recent logs.",
+      "Connected fees, exams, homework, study materials, reports, and communication into one school ERP workflow.",
+    ],
+    whyNeedProduct: {
+      title: "Why schools need AI School ERP",
+      paragraphs: [
+        "When attendance, fees, academics, and parent communication live in separate systems, admin teams waste hours reconciling data and errors slip through every day.",
+        "AI School ERP gives leadership one platform for operations while automating attendance with face recognition that works across webcam, mobile, and CCTV feeds.",
+      ],
+      reasons: [
+        "Replace manual registers and spreadsheet attendance with AI recognition",
+        "Give admins, teachers, parents, and students the right portal for their role",
+        "Manage sessions, classes, timetables, exams, and fees in one ERP",
+        "Monitor live attendance across cameras with instant present/late/absent status",
+        "Enroll faces once and automate daily recognition at gates and classrooms",
+        "Improve reporting with real-time dashboards and attendance history",
+      ],
+    },
+    procedure: [
+      {
+        step: 1,
+        title: "School workflow discovery",
+        description:
+          "Mapped academic structure, attendance processes, fee cycles, roles, and reporting needs across admin, teaching, and finance teams.",
+      },
+      {
+        step: 2,
+        title: "ERP architecture & roles",
+        description:
+          "Designed modules, permissions, session model, and portal flows for administrators, teachers, students, parents, and accountants.",
+      },
+      {
+        step: 3,
+        title: "Core academic modules",
+        description:
+          "Built sessions, classes, subjects, timetable tools, homework, study materials, and examination workflows first.",
+      },
+      {
+        step: 4,
+        title: "AI attendance pipeline",
+        description:
+          "Integrated face enrollment, live webcam monitoring, and multi-camera CCTV recognition with attendance status rules.",
+      },
+      {
+        step: 5,
+        title: "Finance & communication",
+        description:
+          "Connected fee collection, expenses, reports, and school communication so operations stay inside one product.",
+      },
+      {
+        step: 6,
+        title: "Pilot, training & launch",
+        description:
+          "Onboarded staff, validated recognition accuracy, tuned attendance rules, and launched with ongoing support from live usage.",
+      },
+    ],
+    clientFeedback:
+      "We needed school ERP software that could handle academics, fees, and attendance without juggling multiple systems. Next Software Development Company delivered AI School ERP with AI attendance, role-based portals, and the depth of a software development company that understands how schools actually run day to day.",
+    modulePictures: [],
+    video: {
+      title: "AI School ERP product walkthrough",
+      youtubeId: "",
+    },
+    outcome: [
+      "One ERP for academics, finance, attendance, and school communication",
+      "AI face recognition across webcam, mobile camera, and CCTV feeds",
+      "Role-based portals for admins, teachers, students, parents, and accountants",
+      "Live attendance monitoring with present, late, and absent visibility",
+      "Faster admin work through sessions, timetables, exams, and fee modules",
+      "Scalable foundation for multi-campus school operations",
+    ],
+    faqs: [
+      faq(
+        "Who is AI School ERP built for?",
+        "Schools, academies, and educational institutions that need academics, administration, finance, and AI attendance in one secure platform.",
+        "Scope",
+        "left",
+      ),
+      faq(
+        "How does AI attendance work?",
+        "Staff and students enroll faces via webcam or phone camera. The system then recognizes them in live monitor or CCTV feeds and marks present, late, or absent automatically.",
+        "Attendance",
+        "right",
+      ),
+      faq(
+        "Which roles can access the system?",
+        "Administrators, teachers, students, accountants, and parents each get a dedicated portal with permissions matched to their responsibilities.",
+        "Roles",
+        "left",
+      ),
+      faq(
+        "What modules are included?",
+        "Sessions, classes, subjects, timetables, homework, study materials, lesson plans, exams, fees, reports, communication, and AI attendance.",
+        "Modules",
+        "right",
+      ),
+      faq(
+        "Can attendance run on CCTV cameras?",
+        "Yes. The AI CCTV view supports multiple camera feeds with live recognition, daily summaries, and recent recognition logs.",
+        "CCTV",
+        "left",
+      ),
+      faq(
+        "Does the product include a public website?",
+        "Yes. A branded public site supports admissions, programs, and portal login alongside the admin ERP.",
+        "Website",
+        "right",
+      ),
+      faq(
+        "Can schools manage fees inside the ERP?",
+        "Yes. Fee collection, outstanding balances, and monthly expenses are visible from the administrator dashboard and finance modules.",
+        "Finance",
+        "left",
+      ),
+      faq(
+        "Is this only attendance software?",
+        "No. It is a full school ERP with AI attendance as a core module, not a standalone attendance tool.",
         "Fit",
         "right",
       ),
