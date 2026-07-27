@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+  <!-- Hero background video on the homepage -->
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://nextsoftwaredevelopment.com/brand/next-logo.png</video:thumbnail_loc>
+      <video:title>Next Software Development Company Hero Showreel</video:title>
+      <video:description>
+        Background showreel video on the homepage of Next Software Development Company,
+        showcasing custom software development, web and mobile applications, AI solutions,
+        ERP, CRM, and SaaS products built for businesses in Pakistan and worldwide.
+      </video:description>
+      <video:content_loc>https://nextsoftwaredevelopment.com/heroSection/software%20development%20company.mp4</video:content_loc>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+
+</urlset>
