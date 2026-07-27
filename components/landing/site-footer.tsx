@@ -5,6 +5,7 @@ import { Mail, MapPin, Phone, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
 import { SiteLogo } from "@/components/landing/site-logo";
+import { SocialIconLinks } from "@/components/landing/social-icon-links";
 import { container } from "@/lib/landing/constants";
 import { siteBrand } from "@/lib/landing/brand";
 import { footerBrand, footerColumns, footerLegal } from "@/components/landing/navbar";
@@ -55,6 +56,7 @@ export function SiteFooter() {
                   <span className="min-w-0 break-words">{siteBrand.location}</span>
                 </li>
               </ul>
+              <SocialIconLinks className="pt-1" />
             </div>
           </div>
 

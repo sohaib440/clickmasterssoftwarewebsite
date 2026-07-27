@@ -8,7 +8,7 @@ import { ChevronDown, Mail, Menu, Share2 } from "lucide-react";
 
 import { SiteLogo } from "@/components/landing/site-logo";
 import { TopBar } from "@/components/landing/top-bar";
-import { siteBrand } from "@/lib/landing/brand";
+import { siteBrand, siteSocial } from "@/lib/landing/brand";
 import {
   aboutPath,
   btnPrimary,
@@ -139,10 +139,12 @@ export const footerColumns = [
   {
     title: "Connect",
     links: [
-      { label: "LinkedIn", href: "https://www.linkedin.com/company/nextsoftwaredevelopmentcompany" },
-      { label: "GitHub", href: "https://github.com/nextsoftwaredevelopmentcompany" },
-      { label: "Twitter / X", href: "https://x.com/NextSoftwaree" },
-      { label: "Clutch", href: "https://clutch.co/profile/next-software-development-company" },
+      { label: "LinkedIn", href: siteSocial.linkedin },
+      { label: "Facebook", href: siteSocial.facebook },
+      { label: "YouTube", href: siteSocial.youtube },
+      { label: "Twitter / X", href: siteSocial.x },
+      { label: "GitHub", href: siteSocial.github },
+      { label: "Clutch", href: siteSocial.clutch },
     ],
   },
 ];
