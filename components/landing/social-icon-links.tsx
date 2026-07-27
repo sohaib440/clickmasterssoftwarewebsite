@@ -76,9 +76,9 @@ export function SocialIconLinks({ className, iconClassName }: SocialIconLinksPro
           rel="noopener noreferrer"
           aria-label={link.label}
           className={cn(
-            "inline-flex size-8 items-center justify-center rounded-full",
-            "border border-white/15 bg-white/5 text-white/80 transition-colors",
-            "hover:border-primary/40 hover:bg-primary/10 hover:text-white",
+            "inline-flex size-6 items-center justify-center rounded-full",
+            "border border-black/10 bg-black/5 text-black/70 transition-colors",
+            "hover:border-black/20 hover:bg-black/10 hover:text-black",
             iconClassName
           )}
         >
