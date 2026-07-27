@@ -40,6 +40,18 @@ const caseStudyDetails: Record<
       "Real-time attendance reporting and recognition logs",
     ],
   },
+  "travel-and-tour-website": {
+    problem:
+      "The travel agency was handling package inquiries, bookings, and customer records through phone calls, spreadsheets, and disconnected tools with no unified website or admin system.",
+    solution:
+      "We built a travel and tour website with public package search, destination pages, and an admin panel for packages, bookings, customers, and rental inquiries in one platform.",
+    outcomes: [
+      "Public website with packages and destination pages",
+      "Centralized booking and customer management",
+      "Admin tools for packages, inquiries, and rentals",
+      "Faster responses with structured booking workflows",
+    ],
+  },
 };
 
 export const caseStudies: CaseStudy[] = projects.map((project) => {

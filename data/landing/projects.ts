@@ -29,4 +29,17 @@ export const projects = [
       height: 750,
     },
   },
+  {
+    slug: "travel-and-tour-website",
+    title: "Travel & Tour Website",
+    category: "Travel · Tourism · Booking",
+    description:
+      "A full travel and tour platform with a public booking website, package listings, destination pages, customer management, bookings, rental inquiries, and an admin panel to manage packages end to end.",
+    image: {
+      src: "/projects/travel-and-tour-website/Travel-And-Tour-Website-Homepage.jpeg",
+      alt: "Travel and tour website homepage",
+      width: 1200,
+      height: 750,
+    },
+  },
 ];

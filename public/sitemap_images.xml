@@ -110,4 +110,49 @@
     </image:image>
   </url>
 
+  <!-- Travel and Tour Website project images -->
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website</loc>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Homepage.jpeg</image:loc>
+      <image:title>Travel and Tour Website Homepage</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Packages.jpeg</image:loc>
+      <image:title>Travel and Tour Website Packages Listing</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Destination-Page.jpeg</image:loc>
+      <image:title>Travel and Tour Website Destination Page</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Bookings.jpeg</image:loc>
+      <image:title>Travel and Tour Website Bookings Panel</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Booking-Details.jpeg</image:loc>
+      <image:title>Travel and Tour Website Booking Details</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Customers.jpeg</image:loc>
+      <image:title>Travel and Tour Website Customers Panel</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Add-Package.jpeg</image:loc>
+      <image:title>Travel and Tour Website Add Package Form</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Edit-Package.jpeg</image:loc>
+      <image:title>Travel and Tour Website Edit Package Form</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Rental-Inquiries.jpeg</image:loc>
+      <image:title>Travel and Tour Website Rental Inquiries</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Admin-Booking-Details.jpeg</image:loc>
+      <image:title>Travel and Tour Website Admin Booking Details</image:title>
+    </image:image>
+  </url>
+
 </urlset>
