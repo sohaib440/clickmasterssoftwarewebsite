@@ -7,13 +7,15 @@ import { useEffect, useState } from "react";
 import { ChevronDown, Mail, Menu, Share2 } from "lucide-react";
 
 import { SiteLogo } from "@/components/landing/site-logo";
-import { siteBrand } from "@/lib/landing/brand";
+import { TopBar } from "@/components/landing/top-bar";
+import { siteBrand, siteSocial } from "@/lib/landing/brand";
 import {
   aboutPath,
   btnPrimary,
   caseStudyPath,
   contactPath,
   container,
+  galleryPath,
   industriesPath,
   projectPath,
   teamPath,
@@ -84,6 +86,7 @@ export const navLinks: readonly NavLink[] = [
     href: aboutPath,
     children: [
       { label: "Our Team", href: teamPath },
+      { label: "Gallery", href: galleryPath },
       { label: "Certification & Awards", href: "#" },
     ],
   },
@@ -103,7 +106,7 @@ export const navCtaLabel = "Get a Free Quote";
 export const footerBrand = {
   description:
     "A globally trusted software development company headquartered in Pakistan. Building software that lasts for clients in the USA, UK, UAE, Canada, Australia, and beyond.",
-  copyright: "© 2026 Software Development Company. All rights reserved.",
+  copyright: "© 2026 Next Software Development Company. All rights reserved.",
 } as const;
 
 export const footerColumns = [
@@ -136,10 +139,12 @@ export const footerColumns = [
   {
     title: "Connect",
     links: [
-      { label: "LinkedIn", href: "https://www.linkedin.com/company/nextsoftwaredevelopmentcompany" },
-      { label: "GitHub", href: "https://github.com/nextsoftwaredevelopmentcompany" },
-      { label: "Twitter / X", href: "https://x.com/NextSoftwaree" },
-      { label: "Clutch", href: "https://clutch.co/profile/next-software-development-company" },
+      { label: "LinkedIn", href: siteSocial.linkedin },
+      { label: "Facebook", href: siteSocial.facebook },
+      { label: "YouTube", href: siteSocial.youtube },
+      { label: "Twitter / X", href: siteSocial.x },
+      { label: "GitHub", href: siteSocial.github },
+      { label: "Clutch", href: siteSocial.clutch },
     ],
   },
 ];
@@ -194,6 +199,7 @@ export function Navbar() {
         scrolled && "shadow-[0_8px_30px_rgba(0,0,0,0.35)]"
       )}
     >
+      <TopBar />
       <div className={container}>
         <div
           className={cn(

@@ -17,6 +17,18 @@ export const siteBrand = {
   appleIcon: "/apple-icon.png",
 } as const;
 
+export const siteSocial = {
+  linkedin: "https://www.linkedin.com/company/nextsoftwaredevelopmentcompany",
+  facebook: "https://www.facebook.com/nextsoftwaredevelopmentcompany",
+  instagram: "https://www.instagram.com/nextsoftwaredevelopmentcompany",
+  youtube: "https://www.youtube.com/@nextsoftwaredevelopmentcompany",
+  x: "https://x.com/NextSoftwaree",
+  pinterest: "https://www.pinterest.com/nextsoftwaredevelopmentcompany",
+  medium: "https://medium.com/@nextsoftwaredevelopmentcompany",
+  github: "https://github.com/nextsoftwaredevelopmentcompany",
+  clutch: "https://clutch.co/profile/next-software-development-company",
+} as const;
+
 export const siteMetadata = {
   title: "Next Software Development Company",
   description:

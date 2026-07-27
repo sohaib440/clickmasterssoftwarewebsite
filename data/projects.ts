@@ -143,6 +143,171 @@ const primeLeadSlides: ProjectSlide[] = [
   },
 ];
 
+const aiSchoolErpSlides: ProjectSlide[] = [
+  {
+    label: "Product showcase",
+    caption:
+      "Complete smart school management solution with AI-powered face recognition attendance, academics, finance, and multi-role portals.",
+    image: img(
+      "/projects/ai-school-erp/AI-School-Erp-Showcase.jpeg",
+      "AI School ERP product showcase",
+    ),
+  },
+  {
+    label: "Administrator dashboard",
+    caption:
+      "System overview with student counts, fee collection, expenses, and quick access to every school module.",
+    image: img(
+      "/projects/ai-school-erp/AI-School-Erp-Administrator-Dashboard.jpeg",
+      "AI School ERP administrator dashboard",
+    ),
+  },
+  {
+    label: "Public website",
+    caption:
+      "Marketing homepage for the educational institution with programs, admissions, and portal login access.",
+    image: img(
+      "/projects/ai-school-erp/AI-School-Erp-Homepage.jpeg",
+      "AI School ERP public website homepage",
+    ),
+  },
+  {
+    label: "Role-based login",
+    caption:
+      "Secure sign-in for administrators, teachers, students, accountants, and parents from one branded portal.",
+    image: img("/projects/ai-school-erp/AI-School-Erp-Login.jpeg", "AI School ERP login screen"),
+  },
+  {
+    label: "Sessions & timetable",
+    caption:
+      "Manage academic sessions, active terms, and timetable configuration from a centralized admin view.",
+    image: img(
+      "/projects/ai-school-erp/AI-School-Erp-Sessions-Timetable.jpeg",
+      "AI School ERP sessions and timetable",
+    ),
+  },
+  {
+    label: "AI attendance enrollment",
+    caption:
+      "Enroll student and staff faces with webcam or phone camera so recognition is ready for daily attendance.",
+    image: img(
+      "/projects/ai-school-erp/AI-School-Erp-Ai-Attendance-Enrolled.jpeg",
+      "AI School ERP attendance enrollment",
+    ),
+  },
+  {
+    label: "Live monitor",
+    caption:
+      "Real-time face recognition with present, late, and absent status plus recent recognition history.",
+    image: img(
+      "/projects/ai-school-erp/AI-School-Erp-Live-Monitor.jpeg",
+      "AI School ERP live attendance monitor",
+    ),
+  },
+  {
+    label: "AI CCTV attendance",
+    caption:
+      "Multi-camera CCTV feeds with live AI recognition, daily attendance summary, and recognition logs.",
+    image: img(
+      "/projects/ai-school-erp/AI-School-Erp-Ai-Cctv-Attendance.jpeg",
+      "AI School ERP CCTV attendance",
+    ),
+  },
+];
+
+const travelAndTourSlides: ProjectSlide[] = [
+  {
+    label: "Homepage",
+    caption:
+      "Public travel website with hero search, popular destinations, trust badges, and package discovery for travelers.",
+    image: img(
+      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Homepage.jpeg",
+      "Travel and tour website homepage",
+    ),
+  },
+  {
+    label: "Packages listing",
+    caption:
+      "Filterable package catalog with destinations, duration, budget range, and package type for easy trip planning.",
+    image: img(
+      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Packages.jpeg",
+      "Travel and tour website packages listing",
+    ),
+  },
+  {
+    label: "Destination page",
+    caption:
+      "Rich destination detail pages with overview, attractions, packages, travel tips, and booking widgets.",
+    image: img(
+      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Destination-Page.jpeg",
+      "Travel and tour website destination page",
+    ),
+  },
+  {
+    label: "Bookings",
+    caption:
+      "Admin bookings table with status, destination, travel dates, payment state, and export controls.",
+    image: img(
+      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Bookings.jpeg",
+      "Travel and tour website bookings panel",
+    ),
+  },
+  {
+    label: "Booking details",
+    caption:
+      "Full booking view with customer info, trip summary, package details, payment status, itinerary, and timeline.",
+    image: img(
+      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Booking-Details.jpeg",
+      "Travel and tour website booking details",
+    ),
+  },
+  {
+    label: "Customers",
+    caption:
+      "Customer directory with contact details, country, join date, total bookings, spend, and account status.",
+    image: img(
+      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Customers.jpeg",
+      "Travel and tour website customers panel",
+    ),
+  },
+  {
+    label: "Add package",
+    caption:
+      "Create travel packages with pricing, availability, inclusions, highlights, itinerary days, and SEO settings.",
+    image: img(
+      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Add-Package.jpeg",
+      "Travel and tour website add package form",
+    ),
+  },
+  {
+    label: "Edit package",
+    caption:
+      "Update package content, gallery images, publish settings, featured status, and display order from admin.",
+    image: img(
+      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Edit-Package.jpeg",
+      "Travel and tour website edit package form",
+    ),
+  },
+  {
+    label: "Rental inquiries",
+    caption:
+      "Manage vacation rental inquiries with destination filters, guest details, status tracking, and export tools.",
+    image: img(
+      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Rental-Inquiries.jpeg",
+      "Travel and tour website rental inquiries",
+    ),
+  },
+  {
+    label: "Admin booking view",
+    caption:
+      "Dark-themed admin booking detail screen with payment summary, itinerary, and booking timeline.",
+    image: img(
+      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Admin-Booking-Details.jpeg",
+      "Travel and tour website admin booking details",
+    ),
+  },
+];
+
 export const projectDetails: ProjectDetail[] = [
   {
     ...(() => {
@@ -295,6 +460,318 @@ export const projectDetails: ProjectDetail[] = [
       faq(
         "Is this a generic CRM or built for call centers?",
         "It is purpose-built for call center sales operations, with staffing, training, chat, and conversion visibility designed into the core workflow.",
+        "Fit",
+        "right",
+      ),
+    ],
+  },
+  {
+    ...(() => {
+      const p = base("ai-school-erp");
+      return {
+        slug: p.slug,
+        title: p.title,
+        category: p.category,
+        description: p.description,
+        image: p.image,
+      };
+    })(),
+    metaTitle: "AI School ERP Case Study | School Management & AI Attendance",
+    metaDescription:
+      "Case study: AI School ERP, a school management system with AI face recognition attendance, fees, exams, timetables, and role-based portals for admins, teachers, parents, and students.",
+    highlights: [
+      "AI face recognition attendance",
+      "Multi-role school portals",
+      "Fees, exams & timetables",
+      "Webcam, mobile & CCTV support",
+    ],
+    slides: aiSchoolErpSlides,
+    overview: [
+      "AI School ERP is a complete school management platform built for institutions that need academics, administration, finance, and attendance in one secure system.",
+      "The product combines a public website, administrator panel, and role-based portals for teachers, students, parents, and accountants so every stakeholder works from the right view.",
+      "Its standout feature is AI-powered attendance using webcam, mobile camera, and CCTV with live monitoring, enrollment, and real-time recognition logs.",
+      "Modules cover sessions, classes, subjects, homework, study materials, lesson plans, exams, fees, reports, and communication so schools can replace scattered tools with one ERP.",
+    ],
+    problem:
+      "The school was managing attendance manually, tracking fees and academics in separate spreadsheets, and giving staff no single dashboard for sessions, classes, or student progress. Attendance was slow, error-prone, and hard to audit. Parents and teachers lacked a unified portal, and leadership had no live view of daily presence across campuses or cameras.",
+    solutions: [
+      "Built an administrator dashboard with student counts, fee collection, expenses, and module shortcuts for daily school operations.",
+      "Delivered role-based login for administrators, teachers, students, accountants, and parents with branded portal access.",
+      "Shipped academic setup for sessions, classes, sections, subjects, rooms, teachers, and timetable configuration.",
+      "Implemented AI attendance enrollment so faces are captured once and linked to student or staff records.",
+      "Added live monitor and AI CCTV views with real-time recognition, present/late/absent status, and recent logs.",
+      "Connected fees, exams, homework, study materials, reports, and communication into one school ERP workflow.",
+    ],
+    whyNeedProduct: {
+      title: "Why schools need AI School ERP",
+      paragraphs: [
+        "When attendance, fees, academics, and parent communication live in separate systems, admin teams waste hours reconciling data and errors slip through every day.",
+        "AI School ERP gives leadership one platform for operations while automating attendance with face recognition that works across webcam, mobile, and CCTV feeds.",
+      ],
+      reasons: [
+        "Replace manual registers and spreadsheet attendance with AI recognition",
+        "Give admins, teachers, parents, and students the right portal for their role",
+        "Manage sessions, classes, timetables, exams, and fees in one ERP",
+        "Monitor live attendance across cameras with instant present/late/absent status",
+        "Enroll faces once and automate daily recognition at gates and classrooms",
+        "Improve reporting with real-time dashboards and attendance history",
+      ],
+    },
+    procedure: [
+      {
+        step: 1,
+        title: "School workflow discovery",
+        description:
+          "Mapped academic structure, attendance processes, fee cycles, roles, and reporting needs across admin, teaching, and finance teams.",
+      },
+      {
+        step: 2,
+        title: "ERP architecture & roles",
+        description:
+          "Designed modules, permissions, session model, and portal flows for administrators, teachers, students, parents, and accountants.",
+      },
+      {
+        step: 3,
+        title: "Core academic modules",
+        description:
+          "Built sessions, classes, subjects, timetable tools, homework, study materials, and examination workflows first.",
+      },
+      {
+        step: 4,
+        title: "AI attendance pipeline",
+        description:
+          "Integrated face enrollment, live webcam monitoring, and multi-camera CCTV recognition with attendance status rules.",
+      },
+      {
+        step: 5,
+        title: "Finance & communication",
+        description:
+          "Connected fee collection, expenses, reports, and school communication so operations stay inside one product.",
+      },
+      {
+        step: 6,
+        title: "Pilot, training & launch",
+        description:
+          "Onboarded staff, validated recognition accuracy, tuned attendance rules, and launched with ongoing support from live usage.",
+      },
+    ],
+    clientFeedback:
+      "We needed school ERP software that could handle academics, fees, and attendance without juggling multiple systems. Next Software Development Company delivered AI School ERP with AI attendance, role-based portals, and the depth of a software development company that understands how schools actually run day to day.",
+    modulePictures: [],
+    video: {
+      title: "AI School ERP product walkthrough",
+      youtubeId: "",
+    },
+    outcome: [
+      "One ERP for academics, finance, attendance, and school communication",
+      "AI face recognition across webcam, mobile camera, and CCTV feeds",
+      "Role-based portals for admins, teachers, students, parents, and accountants",
+      "Live attendance monitoring with present, late, and absent visibility",
+      "Faster admin work through sessions, timetables, exams, and fee modules",
+      "Scalable foundation for multi-campus school operations",
+    ],
+    faqs: [
+      faq(
+        "Who is AI School ERP built for?",
+        "Schools, academies, and educational institutions that need academics, administration, finance, and AI attendance in one secure platform.",
+        "Scope",
+        "left",
+      ),
+      faq(
+        "How does AI attendance work?",
+        "Staff and students enroll faces via webcam or phone camera. The system then recognizes them in live monitor or CCTV feeds and marks present, late, or absent automatically.",
+        "Attendance",
+        "right",
+      ),
+      faq(
+        "Which roles can access the system?",
+        "Administrators, teachers, students, accountants, and parents each get a dedicated portal with permissions matched to their responsibilities.",
+        "Roles",
+        "left",
+      ),
+      faq(
+        "What modules are included?",
+        "Sessions, classes, subjects, timetables, homework, study materials, lesson plans, exams, fees, reports, communication, and AI attendance.",
+        "Modules",
+        "right",
+      ),
+      faq(
+        "Can attendance run on CCTV cameras?",
+        "Yes. The AI CCTV view supports multiple camera feeds with live recognition, daily summaries, and recent recognition logs.",
+        "CCTV",
+        "left",
+      ),
+      faq(
+        "Does the product include a public website?",
+        "Yes. A branded public site supports admissions, programs, and portal login alongside the admin ERP.",
+        "Website",
+        "right",
+      ),
+      faq(
+        "Can schools manage fees inside the ERP?",
+        "Yes. Fee collection, outstanding balances, and monthly expenses are visible from the administrator dashboard and finance modules.",
+        "Finance",
+        "left",
+      ),
+      faq(
+        "Is this only attendance software?",
+        "No. It is a full school ERP with AI attendance as a core module, not a standalone attendance tool.",
+        "Fit",
+        "right",
+      ),
+    ],
+  },
+  {
+    ...(() => {
+      const p = base("travel-and-tour-website");
+      return {
+        slug: p.slug,
+        title: p.title,
+        category: p.category,
+        description: p.description,
+        image: p.image,
+      };
+    })(),
+    metaTitle: "Travel & Tour Website Case Study | Booking Platform",
+    metaDescription:
+      "Case study: Travel & Tour Website, a travel booking platform with public package search, destination pages, customer management, bookings, rental inquiries, and admin package tools.",
+    highlights: [
+      "Public travel booking website",
+      "Package & destination pages",
+      "Bookings & customer CRM",
+      "Rental inquiry management",
+    ],
+    slides: travelAndTourSlides,
+    overview: [
+      "Travel & Tour Website is a complete travel platform built for agencies that need a modern public site and a powerful admin panel in one product.",
+      "Travelers can browse destinations, filter packages, and start trip planning from a polished homepage, packages catalog, and detailed destination pages.",
+      "Behind the scenes, admins manage packages, bookings, customers, inquiries, and rental requests from a structured dashboard built for daily operations.",
+      "The system supports pricing, availability, itineraries, payment status, SEO fields, and export workflows so travel teams can run bookings without spreadsheets.",
+    ],
+    problem:
+      "The travel agency had no unified digital presence. Package details lived in documents, inquiries came through calls and messages, and booking status was hard to track. Customers could not self-serve, and staff spent too much time answering repeat questions about destinations, pricing, and availability.",
+    solutions: [
+      "Built a public travel website with homepage search, destination highlights, and a filterable packages catalog.",
+      "Delivered destination detail pages with attractions, travel tips, reviews, and booking call-to-actions.",
+      "Shipped an admin bookings module with status filters, payment tracking, and detailed booking views.",
+      "Added customer management with contact history, country, spend, bookings count, and account status.",
+      "Created package creation and editing flows with images, itinerary days, inclusions, highlights, and SEO metadata.",
+      "Implemented rental inquiry management with destination filters, guest details, response status, and exports.",
+    ],
+    whyNeedProduct: {
+      title: "Why travel agencies need this platform",
+      paragraphs: [
+        "When package content, inquiries, and bookings are scattered across chats and spreadsheets, response times slow down and revenue leaks through missed follow-ups.",
+        "A dedicated travel and tour website gives customers confidence while giving your team one system to manage packages, bookings, and inquiries professionally.",
+      ],
+      reasons: [
+        "Let travelers browse packages and destinations online 24/7",
+        "Centralize bookings, customers, and inquiries in one admin panel",
+        "Publish and update packages with pricing, media, and itineraries quickly",
+        "Track booking status, payments, and rental inquiries with clear workflows",
+        "Reduce manual work with filters, exports, and structured package data",
+        "Scale the agency brand with a polished public website and admin backend",
+      ],
+    },
+    procedure: [
+      {
+        step: 1,
+        title: "Travel workflow discovery",
+        description:
+          "Mapped how the agency sells packages, handles inquiries, confirms bookings, and manages rental requests today.",
+      },
+      {
+        step: 2,
+        title: "Website & admin architecture",
+        description:
+          "Designed the public site structure, package data model, booking states, and admin navigation for daily use.",
+      },
+      {
+        step: 3,
+        title: "Public website build",
+        description:
+          "Shipped homepage, packages listing, and destination pages with search, filters, and booking entry points.",
+      },
+      {
+        step: 4,
+        title: "Booking & customer modules",
+        description:
+          "Built bookings list, booking detail views, customer directory, and operational filters for the admin team.",
+      },
+      {
+        step: 5,
+        title: "Package management",
+        description:
+          "Added create and edit package flows with media uploads, itinerary builder, pricing, and publish controls.",
+      },
+      {
+        step: 6,
+        title: "Launch & optimization",
+        description:
+          "Onboarded staff, refined inquiry handling from live usage, and tuned package content for conversions.",
+      },
+    ],
+    clientFeedback:
+      "We needed a travel website and admin system that could handle packages, bookings, and inquiries without chaos. Next Software Development Company delivered a platform that looks premium to customers and gives our team the control of a real software development company behind the scenes.",
+    modulePictures: [],
+    video: {
+      title: "Travel & Tour Website product walkthrough",
+      youtubeId: "",
+    },
+    outcome: [
+      "One platform for public travel marketing and back-office operations",
+      "Filterable package catalog and rich destination pages for travelers",
+      "Structured booking management with payment and itinerary visibility",
+      "Customer CRM with spend, status, and booking history in one place",
+      "Faster package publishing with SEO-ready admin forms",
+      "Rental inquiry tracking with clear status and export support",
+    ],
+    faqs: [
+      faq(
+        "Who is Travel & Tour Website built for?",
+        "Travel agencies, tour operators, and vacation rental businesses that need a public booking site plus admin tools for packages, customers, and inquiries.",
+        "Scope",
+        "left",
+      ),
+      faq(
+        "Does it include a public-facing website?",
+        "Yes. The platform includes homepage search, package listings, destination pages, and booking call-to-actions for travelers.",
+        "Website",
+        "right",
+      ),
+      faq(
+        "Can admins manage packages?",
+        "Yes. Admins can create and edit packages with pricing, availability, images, itinerary days, inclusions, highlights, and SEO fields.",
+        "Packages",
+        "left",
+      ),
+      faq(
+        "How are bookings handled?",
+        "Bookings are managed in an admin panel with filters, detail views, payment status, itinerary, notes, and booking timeline.",
+        "Bookings",
+        "right",
+      ),
+      faq(
+        "Is customer management included?",
+        "Yes. The customer module tracks contact details, country, join date, total bookings, spend, and account status.",
+        "Customers",
+        "left",
+      ),
+      faq(
+        "Can the system handle rental inquiries?",
+        "Yes. Rental inquiries include destination, check-in dates, guest count, status tracking, and export support.",
+        "Rentals",
+        "right",
+      ),
+      faq(
+        "Does the packages page support filters?",
+        "Yes. Travelers can filter by destination, duration, budget, and package type from the public packages catalog.",
+        "Filters",
+        "left",
+      ),
+      faq(
+        "Is this only a website or a full platform?",
+        "It is a full travel platform with both the public website and the admin system needed to run bookings and operations.",
         "Fit",
         "right",
       ),

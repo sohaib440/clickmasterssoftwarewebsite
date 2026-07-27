@@ -28,6 +28,30 @@ const caseStudyDetails: Record<
       "Live conversion dashboard",
     ],
   },
+  "ai-school-erp": {
+    problem:
+      "Schools were running attendance, fees, academics, and communication across paper registers, spreadsheets, and disconnected tools with no real-time visibility or reliable attendance tracking.",
+    solution:
+      "We built AI School ERP with role-based portals, academic and finance modules, and AI face recognition attendance through webcam, mobile camera, and CCTV feeds in one secure platform.",
+    outcomes: [
+      "AI-powered attendance with live monitoring",
+      "Unified admin, teacher, parent, and student portals",
+      "Fees, exams, and timetable in one ERP",
+      "Real-time attendance reporting and recognition logs",
+    ],
+  },
+  "travel-and-tour-website": {
+    problem:
+      "The travel agency was handling package inquiries, bookings, and customer records through phone calls, spreadsheets, and disconnected tools with no unified website or admin system.",
+    solution:
+      "We built a travel and tour website with public package search, destination pages, and an admin panel for packages, bookings, customers, and rental inquiries in one platform.",
+    outcomes: [
+      "Public website with packages and destination pages",
+      "Centralized booking and customer management",
+      "Admin tools for packages, inquiries, and rentals",
+      "Faster responses with structured booking workflows",
+    ],
+  },
 };
 
 export const caseStudies: CaseStudy[] = projects.map((project) => {

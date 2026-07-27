@@ -1,0 +1,6 @@
+User-agent: *
+
+Disallow: /api/
+Disallow: /_next/
+
+Sitemap: https://nextsoftwaredevelopment.com/sitemap_index.xml

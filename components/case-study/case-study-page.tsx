@@ -9,7 +9,6 @@ import {
   btnPrimary,
   cardSoft,
   container,
-  overline,
   sectionPad,
 } from "@/lib/landing/constants";
 import { caseStudies, caseStudyPageMeta } from "@/data/caseStudyPage";
@@ -18,7 +17,7 @@ import { cn } from "@/lib/utils";
 
 export function CaseStudyPageContent() {
   return (
-    <div className="flex min-h-full w-full flex-col overflow-x-clip bg-white text-horizon-navy">
+    <div className="flex min-h-full w-full flex-col overflow-x-clip bg-black text-white">
       <SiteHeader />
 
       <main className="flex-1">
@@ -30,20 +29,25 @@ export function CaseStudyPageContent() {
 
           <div className={cn(container, sectionPad, "relative pb-10 md:pb-12")}>
             <Reveal immediate>
-              <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-white/60">
-                <Link href="/" className="inline-flex items-center gap-1.5 hover:text-white">
+              <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-white">
+                <Link
+                  href="/"
+                  className="inline-flex items-center gap-1.5 text-white transition-colors hover:text-white/80"
+                >
                   <ArrowLeft className="size-4" aria-hidden />
                   Home
                 </Link>
-                <span aria-hidden>/</span>
+                <span aria-hidden className="text-white">
+                  /
+                </span>
                 <span className="text-white">Case Studies</span>
               </nav>
             </Reveal>
 
             <Reveal immediate delay={motionStagger}>
               <div className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5">
-                <FileText className="size-3.5 text-primary" aria-hidden />
-                <span className={cn(overline, "text-white/90")}>
+                <FileText className="size-3.5 text-white" aria-hidden />
+                <span className="text-[11px] font-medium uppercase tracking-[0.22em] text-white">
                   {caseStudyPageMeta.hero.eyebrow}
                 </span>
               </div>
@@ -53,14 +57,14 @@ export function CaseStudyPageContent() {
               <h1 className="mt-5 max-w-4xl font-heading text-4xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
                 {caseStudyPageMeta.hero.title}
               </h1>
-              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white md:text-lg">
                 {caseStudyPageMeta.hero.description}
               </p>
             </Reveal>
           </div>
         </section>
 
-        <section className="bg-horizon-peach/30">
+        <section className="bg-horizon-peach/30 text-horizon-navy">
           <div className={cn(container, sectionPad)}>
             <ul className="grid gap-8 lg:grid-cols-2">
               {caseStudies.map((item, i) => (
@@ -72,7 +76,7 @@ export function CaseStudyPageContent() {
           </div>
         </section>
 
-        <section className="border-y border-horizon-border bg-white">
+        <section className="border-y border-horizon-border bg-white text-horizon-navy">
           <div className={cn(container, sectionPad)}>
             <Reveal className={cn(cardSoft, "mx-auto max-w-3xl p-6 text-center md:p-10")}>
               <h2 className="font-heading text-2xl font-medium text-horizon-navy md:text-3xl">

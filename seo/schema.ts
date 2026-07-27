@@ -18,7 +18,7 @@
 
 import type { FaqItem, ImageAsset } from "@/data/landingPage";
 import { faqs } from "@/data/landingPage";
-import { siteBrand, siteMetadata } from "@/lib/landing/brand";
+import { siteBrand, siteMetadata, siteSocial } from "@/lib/landing/brand";
 
 /** Short alias so schemas read like the examples — all values come from site brand/content */
 const siteConfig = {
@@ -57,10 +57,7 @@ const hqAddress = {
   addressCountry: "PK",
 } as const;
 
-const socialProfiles = [
-  "https://www.linkedin.com/company/nextsoftwaredevelopmentcompany",
-  "https://github.com/nextsoftwaredevelopmentcompany",
-] as const;
+const socialProfiles = Object.values(siteSocial);
 
 const countriesServed = [
   { "@type": "Country", name: "Pakistan" },

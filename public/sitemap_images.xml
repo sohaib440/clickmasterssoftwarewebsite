@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage images -->
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/</loc>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/brand/next-logo.png</image:loc>
+      <image:title>Next Software Development Company Logo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/about%20us/software%20development%20company.png</image:loc>
+      <image:title>Next Software Development Company — Islamabad office team</image:title>
+    </image:image>
+  </url>
+
+  <!-- Team page images -->
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/team</loc>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/team/Shahvaiz-Ahmed.png</image:loc>
+      <image:title>Shahvaiz Ahmed — Senior Full-stack Developer</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/team/Abdullah-Mehdi.png</image:loc>
+      <image:title>Abdullah Mehdi — Machine Learning Engineer</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/team/Izaan-Ali.png</image:loc>
+      <image:title>Izaan Ali — DevOps Engineer</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/team/Haider-Saleem.png</image:loc>
+      <image:title>Haider Saleem — Data Engineer</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/team/Abdul-Hadi.jpeg</image:loc>
+      <image:title>Abdul Hadi — iOS Developer</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/team/Muhammad-Zeeshan.png</image:loc>
+      <image:title>Muhammad Zeeshan — Mobile App Developer</image:title>
+    </image:image>
+  </url>
+
+  <!-- Prime Lead CRM project images -->
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/projects/prime-lead-crm</loc>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/prime-leads-project/Prime-Lead-Crm-Dashboard.jpeg</image:loc>
+      <image:title>Prime Lead CRM — Dashboard with KPIs</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/prime-leads-project/Prime-Lead-Crm-Leads-Panel.jpeg</image:loc>
+      <image:title>Prime Lead CRM — Leads Panel</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/prime-leads-project/Prime-Lead-Crm-Chat-Module.jpeg</image:loc>
+      <image:title>Prime Lead CRM — Chat Module</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/prime-leads-project/Prime-Lead-Crm-Staff-Management.jpeg</image:loc>
+      <image:title>Prime Lead CRM — Staff Management</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/prime-leads-project/Prime-Lead-Crm-Training-Pannel.jpeg</image:loc>
+      <image:title>Prime Lead CRM — Training Panel</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/prime-leads-project/Prime-Lead-Crm-Login.jpeg</image:loc>
+      <image:title>Prime Lead CRM — Secure Login</image:title>
+    </image:image>
+  </url>
+
+  <!-- AI School ERP project images -->
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp</loc>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Showcase.jpeg</image:loc>
+      <image:title>AI School ERP Product Showcase</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Administrator-Dashboard.jpeg</image:loc>
+      <image:title>AI School ERP Administrator Dashboard</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Homepage.jpeg</image:loc>
+      <image:title>AI School ERP Public Website</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Login.jpeg</image:loc>
+      <image:title>AI School ERP Role Based Login</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Sessions-Timetable.jpeg</image:loc>
+      <image:title>AI School ERP Sessions and Timetable</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Ai-Attendance-Enrolled.jpeg</image:loc>
+      <image:title>AI School ERP Attendance Enrollment</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Live-Monitor.jpeg</image:loc>
+      <image:title>AI School ERP Live Attendance Monitor</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Ai-Cctv-Attendance.jpeg</image:loc>
+      <image:title>AI School ERP CCTV Attendance</image:title>
+    </image:image>
+  </url>
+
+  <!-- Travel and Tour Website project images -->
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website</loc>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Homepage.jpeg</image:loc>
+      <image:title>Travel and Tour Website Homepage</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Packages.jpeg</image:loc>
+      <image:title>Travel and Tour Website Packages Listing</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Destination-Page.jpeg</image:loc>
+      <image:title>Travel and Tour Website Destination Page</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Bookings.jpeg</image:loc>
+      <image:title>Travel and Tour Website Bookings Panel</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Booking-Details.jpeg</image:loc>
+      <image:title>Travel and Tour Website Booking Details</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Customers.jpeg</image:loc>
+      <image:title>Travel and Tour Website Customers Panel</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Add-Package.jpeg</image:loc>
+      <image:title>Travel and Tour Website Add Package Form</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Edit-Package.jpeg</image:loc>
+      <image:title>Travel and Tour Website Edit Package Form</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Rental-Inquiries.jpeg</image:loc>
+      <image:title>Travel and Tour Website Rental Inquiries</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Admin-Booking-Details.jpeg</image:loc>
+      <image:title>Travel and Tour Website Admin Booking Details</image:title>
+    </image:image>
+  </url>
+
+</urlset>
