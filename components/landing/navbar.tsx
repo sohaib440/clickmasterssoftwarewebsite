@@ -106,7 +106,7 @@ export const navCtaLabel = "Get a Free Quote";
 export const footerBrand = {
   description:
     "A globally trusted software development company headquartered in Pakistan. Building software that lasts for clients in the USA, UK, UAE, Canada, Australia, and beyond.",
-  copyright: "© 2026 Software Development Company. All rights reserved.",
+  copyright: "© 2026 Next Software Development Company. All rights reserved.",
 } as const;
 
 export const footerColumns = [
