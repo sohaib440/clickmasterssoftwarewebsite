@@ -1,5 +1,5 @@
 import { CardImage } from "@/components/landing/card-image";
-import { LandingContainer, sectionHeadingGap } from "@/components/landing/landing-container";
+import { LandingContainer } from "@/components/landing/landing-container";
 import { Reveal } from "@/components/landing/reveal";
 import { SectionHeading } from "@/components/landing/section-heading";
 import { motionStagger } from "@/lib/landing/motion";
@@ -17,12 +17,10 @@ export function TeamSection() {
               A small <span className="italic">team</span>.
             </>
           }
-          description="Serious about software."
-          className={sectionHeadingGap}
         />
 
         <Reveal delay={motionStagger}>
-          <p className="mb-8 max-w-3xl text-base leading-relaxed text-left text-horizon-navy md:mb-10 md:text-lg">
+          <p className="mt-3 mb-8 max-w-3xl text-justify text-base leading-relaxed text-horizon-navy md:mb-10 md:text-lg">
             {teamIntro}
           </p>
         </Reveal>

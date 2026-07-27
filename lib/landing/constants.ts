@@ -8,6 +8,8 @@ export const projectPath = "/projects";
 export const aboutPath = "/about";
 /** Team page */
 export const teamPath = "/team";
+/** Company gallery */
+export const galleryPath = "/gallery";
 /** Industries listing */
 export const industriesPath = "/industries";
 /** Case studies listing */
