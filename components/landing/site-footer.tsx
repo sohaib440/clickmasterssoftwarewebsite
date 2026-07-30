@@ -30,10 +30,10 @@ export function SiteFooter() {
         <div className="grid gap-8 md:gap-10 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-4">
             <div className="space-y-5 sm:space-y-6">
-              <SiteLogo
+              {/* <SiteLogo
                 className="max-w-[min(100%,16rem)] sm:max-w-[18rem] md:max-w-[20rem]"
                 imageClassName="h-10 w-auto max-w-full sm:h-12 md:h-14"
-              />
+              /> */}
               <p className="site-footer__muted max-w-sm text-sm leading-relaxed">
                 {footerBrand.description}
               </p>
@@ -56,7 +56,7 @@ export function SiteFooter() {
                   <span className="min-w-0 break-words">{siteBrand.location}</span>
                 </li>
               </ul>
-              <SocialIconLinks className="pt-1" />
+              <SocialIconLinks className="pt-1" variant="onDark" />
             </div>
           </div>
 
