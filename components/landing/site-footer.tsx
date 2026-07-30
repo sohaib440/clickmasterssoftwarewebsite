@@ -27,8 +27,8 @@ export function SiteFooter() {
   return (
     <footer className="site-footer relative z-10 w-full bg-black">
       <div className={cn(container, "py-8 sm:py-10 md:py-12")}>
-        <div className="grid gap-8 md:gap-10 lg:grid-cols-12 lg:gap-8">
-          <div className="lg:col-span-4">
+        <div className="grid grid-cols-1 gap-8 md:gap-10 lg:grid-cols-12 lg:gap-8">
+          <div className="lg:col-span-4 order-1">
             <div className="space-y-5 sm:space-y-6">
               {/* <SiteLogo
                 className="max-w-[min(100%,16rem)] sm:max-w-[18rem] md:max-w-[20rem]"
@@ -56,11 +56,11 @@ export function SiteFooter() {
                   <span className="min-w-0 break-words">{siteBrand.location}</span>
                 </li>
               </ul>
-              <SocialIconLinks className="pt-1" variant="onDark" />
+              <SocialIconLinks className="pt-1" variant="onDark" iconClassName="sm:size-8" />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-1 sm:grid-cols-2 sm:gap-6 xl:grid-cols-3 lg:col-span-8">
+          <div className="grid grid-cols-1 gap-1 sm:grid-cols-2 sm:gap-6 xl:grid-cols-3 lg:col-span-8 order-2">
             {footerColumns.map((column) => {
               const isExpanded = expandedSections.has(column.title);
 

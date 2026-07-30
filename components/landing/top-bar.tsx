@@ -11,7 +11,7 @@ export function TopBar() {
         <div className="flex min-h-9 flex-wrap items-center justify-between gap-x-3 gap-y-2 py-2 text-[11px] text-black sm:flex-nowrap sm:gap-x-4 sm:py-0 sm:text-xs">
           <div className="flex min-w-0 flex-1 flex-wrap items-center gap-x-4 gap-y-1.5 sm:gap-x-5 lg:gap-8">
             <span className="inline-flex min-w-0 max-w-full items-center gap-1.5">
-              <MapPin className="size-4 shrink-0 text-black" aria-hidden />
+              <MapPin className="size-5 sm:size-6 shrink-0 text-black" aria-hidden />
               <span className="truncate">{siteBrand.location}</span>
             </span>
             <a
@@ -19,12 +19,12 @@ export function TopBar() {
               className="inline-flex min-w-0 max-w-full items-center gap-1.5 transition-colors hover:text-black"
               aria-label={`Email ${siteBrand.email}`}
             >
-              <Mail className="size-4 shrink-0 text-black" aria-hidden />
+              <Mail className="size-5 sm:size-6 shrink-0 text-black" aria-hidden />
               <span className="truncate sm:max-w-none">{siteBrand.email}</span>
             </a>
           </div>
 
-          <SocialIconLinks className="shrink-0" iconClassName="size-6 sm:size-7 text-black" />
+          <SocialIconLinks className="shrink-0" iconClassName="size-7 sm:size-8 md:size-9 text-black" />
         </div>
       </div>
     </div>
