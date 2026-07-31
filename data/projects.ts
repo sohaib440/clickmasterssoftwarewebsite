@@ -308,6 +308,108 @@ const travelAndTourSlides: ProjectSlide[] = [
   },
 ];
 
+const restaurantPosSlides: ProjectSlide[] = [
+  {
+    label: "System overview",
+    caption:
+      "A complete restaurant POS workspace for order management, inventory control, customers, analytics, and operational reporting.",
+    image: img(
+      "/projects/restaurant-pos/Restaurant-Pos-Overview.png",
+      "Restaurant POS system overview",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "Dashboard",
+    caption:
+      "Live sales, order, customer, payment, table, and top-selling-item metrics give managers an immediate view of restaurant performance.",
+    image: img(
+      "/projects/restaurant-pos/Restaurant-Pos-Dashboard.png",
+      "Restaurant POS dashboard",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "Order management",
+    caption:
+      "Track dine-in, takeaway, and delivery orders with customer details, item totals, kitchen handoff, and completion status.",
+    image: img(
+      "/projects/restaurant-pos/Restaurant-Pos-Orders.png",
+      "Restaurant POS order management",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "Menu management",
+    caption:
+      "Manage menu categories, pricing, availability, item details, and images from one searchable catalog.",
+    image: img(
+      "/projects/restaurant-pos/Restaurant-Pos-Menu.png",
+      "Restaurant POS menu management",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "Customer management",
+    caption:
+      "Maintain customer profiles, loyalty groups, visit history, total spend, contact details, and account status.",
+    image: img(
+      "/projects/restaurant-pos/Restaurant-Pos-Customers.png",
+      "Restaurant POS customer management",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "Inventory management",
+    caption:
+      "Monitor ingredients, stock levels, unit costs, suppliers, low-stock alerts, and total inventory value.",
+    image: img(
+      "/projects/restaurant-pos/Restaurant-Pos-Inventory.png",
+      "Restaurant POS inventory management",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "Employee management",
+    caption:
+      "Manage employee records, roles, departments, employment status, contact details, and salary information.",
+    image: img(
+      "/projects/restaurant-pos/Restaurant-Pos-Employees.png",
+      "Restaurant POS employee management",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "Reports & analytics",
+    caption:
+      "Analyze sales, orders, customers, products, payment methods, and daily performance with export-ready reports.",
+    image: img(
+      "/projects/restaurant-pos/Restaurant-Pos-Reports.png",
+      "Restaurant POS reports and analytics",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "System settings",
+    caption:
+      "Configure business information, taxes, payments, receipts, roles, notifications, backups, integrations, and security.",
+    image: img(
+      "/projects/restaurant-pos/Restaurant-Pos-Settings.png",
+      "Restaurant POS system settings",
+      1024,
+      683,
+    ),
+  },
+];
+
 export const projectDetails: ProjectDetail[] = [
   {
     ...(() => {
@@ -773,6 +875,162 @@ export const projectDetails: ProjectDetail[] = [
         "Is this only a website or a full platform?",
         "It is a full travel platform with both the public website and the admin system needed to run bookings and operations.",
         "Fit",
+        "right",
+      ),
+    ],
+  },
+  {
+    ...(() => {
+      const p = base("restaurant-pos");
+      return {
+        slug: p.slug,
+        title: p.title,
+        category: p.category,
+        description: p.description,
+        image: p.image,
+      };
+    })(),
+    metaTitle: "Restaurant POS Case Study | Restaurant Management System",
+    metaDescription:
+      "Case study: Restaurant POS, an all-in-one point-of-sale and restaurant management system for orders, menus, customers, inventory, staff, settings, and reporting.",
+    highlights: [
+      "Multi-channel order management",
+      "Menu & inventory control",
+      "Customer & employee records",
+      "Real-time sales analytics",
+    ],
+    slides: restaurantPosSlides,
+    overview: [
+      "Restaurant POS is an all-in-one point-of-sale and management platform built to keep front-of-house, kitchen, inventory, customer, and back-office operations connected.",
+      "Teams can handle dine-in, takeaway, and delivery orders while maintaining menus, customer profiles, table status, employee records, and stock from one consistent workspace.",
+      "Managers get live visibility into sales, order volume, average order value, payment methods, popular items, customer activity, and inventory health.",
+      "Flexible settings for taxes, receipts, payments, permissions, notifications, backups, and integrations allow the system to fit the restaurant instead of forcing staff into disconnected tools.",
+    ],
+    problem:
+      "Restaurant operations were fragmented across a basic billing tool, paper tickets, spreadsheets, and manual stock checks. Staff could not see order status consistently, menu updates took too long, inventory shortages appeared without warning, and managers lacked reliable sales, customer, and employee reporting.",
+    solutions: [
+      "Built a centralized dashboard for sales, orders, customers, payments, table status, and best-selling items.",
+      "Delivered an order workflow for dine-in, takeaway, and delivery with itemized bills, kitchen handoff, and status tracking.",
+      "Created menu management for categories, prices, availability, item images, and detailed product information.",
+      "Added customer and loyalty records with spend, visits, order history, contact details, and account status.",
+      "Implemented inventory tracking with stock quantities, units, costs, suppliers, valuation, and low-stock alerts.",
+      "Connected employee management, operational reports, exports, permissions, payments, taxes, backups, and security settings.",
+    ],
+    whyNeedProduct: {
+      title: "Why restaurants need an integrated POS",
+      paragraphs: [
+        "When orders, menus, stock, customers, and reporting live in separate places, service slows down and small errors turn into lost revenue, wasted ingredients, and poor guest experiences.",
+        "Restaurant POS gives every team a shared operational system while providing owners with the live information they need to control costs and make faster decisions.",
+      ],
+      reasons: [
+        "Process dine-in, takeaway, and delivery orders from one workflow",
+        "Keep menu prices, categories, and availability accurate everywhere",
+        "Prevent shortages with live stock levels and low-stock alerts",
+        "Build repeat business with customer profiles and loyalty insights",
+        "Manage employee roles, departments, and status centrally",
+        "Track sales, payments, orders, and product performance in real time",
+      ],
+    },
+    procedure: [
+      {
+        step: 1,
+        title: "Restaurant workflow discovery",
+        description:
+          "Mapped ordering, kitchen handoff, table service, menu updates, stock control, staffing, and end-of-day reporting.",
+      },
+      {
+        step: 2,
+        title: "POS architecture & roles",
+        description:
+          "Designed the order lifecycle, shared restaurant data model, navigation, permissions, and manager workflows.",
+      },
+      {
+        step: 3,
+        title: "Orders & menu build",
+        description:
+          "Built multi-channel ordering, itemized billing, kitchen actions, menu categories, pricing, and availability controls.",
+      },
+      {
+        step: 4,
+        title: "Operations modules",
+        description:
+          "Connected customers, loyalty data, inventory, employees, tables, and reservations to the core POS.",
+      },
+      {
+        step: 5,
+        title: "Reporting & configuration",
+        description:
+          "Added analytics, exports, tax and payment settings, receipts, notifications, backups, integrations, and security.",
+      },
+      {
+        step: 6,
+        title: "Testing, training & launch",
+        description:
+          "Validated peak-service workflows, trained staff by role, migrated operational data, and refined the system after launch.",
+      },
+    ],
+    clientFeedback:
+      "We needed more than a billing screen. Next Software Development Company delivered a complete restaurant POS that connects orders, menu management, customers, inventory, employees, and reporting. Our team works faster, managers can see what is happening in real time, and we finally have one system for daily restaurant operations.",
+    modulePictures: [],
+    video: {
+      title: "Restaurant POS product walkthrough",
+      youtubeId: "",
+    },
+    outcome: [
+      "One connected platform for front-of-house and back-office operations",
+      "Faster order processing across dine-in, takeaway, and delivery",
+      "Better stock control through live quantities and shortage alerts",
+      "Clear sales, payment, customer, and product performance reporting",
+      "Consistent employee, menu, customer, and business configuration",
+      "A scalable operational foundation for growing restaurant teams",
+    ],
+    faqs: [
+      faq(
+        "Who is Restaurant POS built for?",
+        "Restaurants, cafés, quick-service businesses, and hospitality teams that need ordering, menu, inventory, customer, employee, and reporting tools in one platform.",
+        "Scope",
+        "left",
+      ),
+      faq(
+        "Which order types does the system support?",
+        "The order workflow supports dine-in, takeaway, and delivery, with status tracking, customer and table details, itemized totals, and kitchen actions.",
+        "Orders",
+        "right",
+      ),
+      faq(
+        "Can staff manage menu availability?",
+        "Yes. Staff can manage categories, prices, descriptions, images, variants, and active or inactive availability for each menu item.",
+        "Menu",
+        "left",
+      ),
+      faq(
+        "Does Restaurant POS track inventory?",
+        "Yes. Inventory includes stock quantities, units, costs, suppliers, total value, and low-stock or out-of-stock alerts.",
+        "Inventory",
+        "right",
+      ),
+      faq(
+        "Is customer and loyalty management included?",
+        "Yes. Customer profiles include contact details, loyalty groups, total spend, visit counts, order history, and account status.",
+        "Customers",
+        "left",
+      ),
+      faq(
+        "What reports are available?",
+        "Managers can review sales, orders, customers, items sold, average order value, payment methods, category analysis, taxes, discounts, and refunds.",
+        "Reports",
+        "right",
+      ),
+      faq(
+        "Can access be limited by employee role?",
+        "Yes. User roles and permissions can restrict access so employees only see the modules and actions required for their responsibilities.",
+        "Access",
+        "left",
+      ),
+      faq(
+        "Can business and payment settings be customized?",
+        "Yes. The settings area covers business details, taxes, service charges, payment methods, receipts, invoices, notifications, backups, integrations, and security.",
+        "Settings",
         "right",
       ),
     ],
