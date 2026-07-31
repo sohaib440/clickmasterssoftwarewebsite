@@ -9,6 +9,7 @@ import {
   navLinks,
   type NavLink,
 } from "@/components/landing/navbar";
+import { EmailLink } from "@/components/landing/email-link";
 import { SiteLogo } from "@/components/landing/site-logo";
 import { btnPrimary, contactPath } from "@/lib/landing/constants";
 import { siteBrand } from "@/lib/landing/brand";
@@ -193,12 +194,9 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
             <ArrowRight className="size-4" aria-hidden />
           </Link>
           <p className="mt-3 text-center text-xs text-white/45">
-            <a
-              href={`mailto:${siteBrand.email}`}
-              className="text-white/65 underline-offset-2 hover:text-white hover:underline"
-            >
+            <EmailLink className="text-white/65 underline-offset-2 hover:text-white hover:underline">
               {siteBrand.email}
-            </a>
+            </EmailLink>
           </p>
         </div>
       </div>

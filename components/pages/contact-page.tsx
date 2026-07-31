@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { Clock, Globe, Mail } from "lucide-react";
 
 import { ContactForm } from "@/components/landing/contact-form";
+import { EmailLink } from "@/components/landing/email-link";
 import { Reveal } from "@/components/landing/reveal";
 import { SiteHeader } from "@/components/landing/navbar";
 import { PageBreadcrumb } from "@/components/layout/page-breadcrumb";
@@ -16,13 +16,13 @@ const contactItems: {
   icon: typeof Mail;
   label: string;
   value: string;
-  href?: string;
+  isEmail?: boolean;
 }[] = [
   {
     icon: Mail,
     label: "Email",
     value: contactInfo.email,
-    href: `mailto:${contactInfo.email}`,
+    isEmail: true,
   },
   {
     icon: Clock,
@@ -83,13 +83,10 @@ export function ContactPage({ initialValues }: ContactPageProps) {
                             <p className="text-[11px] font-medium uppercase tracking-[0.14em] text-horizon-muted">
                               {item.label}
                             </p>
-                            {item.href ? (
-                              <Link
-                                href={item.href}
-                                className="mt-1 block break-words font-medium text-horizon-navy hover:underline"
-                              >
+                            {item.isEmail ? (
+                              <EmailLink className="mt-1 block break-words font-medium text-horizon-navy hover:underline">
                                 {item.value}
-                              </Link>
+                              </EmailLink>
                             ) : (
                               <p className="mt-1 break-words font-medium text-horizon-navy">
                                 {item.value}

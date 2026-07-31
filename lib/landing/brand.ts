@@ -17,6 +17,15 @@ export const siteBrand = {
   appleIcon: "/apple-icon.png",
 } as const;
 
+/** Opens the OS mail client (may do nothing if none is installed). */
+export const siteEmailMailto = `mailto:${siteBrand.email}`;
+
+/**
+ * Opens Gmail compose in the browser — reliable on laptops/desktops
+ * that have no default mail app configured for mailto: links.
+ */
+export const siteEmailComposeHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(siteBrand.email)}`;
+
 export const siteSocial = {
   linkedin: "https://www.linkedin.com/company/nextsoftwaredevelopmentcompany",
   facebook: "https://www.facebook.com/nextsoftwaredevelopmentcompany",
