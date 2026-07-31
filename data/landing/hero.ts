@@ -25,7 +25,7 @@ export const heroFeatures = [
   { icon: BarChart3, label: "Business Growth" },
 ] as const;
 
-export const heroBackgroundVideo = "/heroSection/software development company.mp4";
+export const heroBackgroundVideo = "/heroSection/software-development-company.mp4";
 
 export const heroCtaForm = {
   title: "Get a free quote",
