@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, MapPinned } from "lucide-react";
 
@@ -10,7 +10,41 @@ import type { LocationCity } from "@/data/locations";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
 
-const INITIAL_VISIBLE = 9;
+/** Match grid columns: 1 → 9, 2 → 10 (full rows), 3 → 9 (full rows). */
+const INITIAL_BY_COLUMNS = {
+  1: 9,
+  2: 10,
+  3: 9,
+} as const;
+
+function useInitialCityCount() {
+  const [initialVisible, setInitialVisible] = useState<number>(INITIAL_BY_COLUMNS[2]);
+
+  useEffect(() => {
+    const lgQuery = window.matchMedia("(min-width: 1024px)");
+    const smQuery = window.matchMedia("(min-width: 640px)");
+
+    const sync = () => {
+      if (lgQuery.matches) {
+        setInitialVisible(INITIAL_BY_COLUMNS[3]);
+      } else if (smQuery.matches) {
+        setInitialVisible(INITIAL_BY_COLUMNS[2]);
+      } else {
+        setInitialVisible(INITIAL_BY_COLUMNS[1]);
+      }
+    };
+
+    sync();
+    lgQuery.addEventListener("change", sync);
+    smQuery.addEventListener("change", sync);
+    return () => {
+      lgQuery.removeEventListener("change", sync);
+      smQuery.removeEventListener("change", sync);
+    };
+  }, []);
+
+  return initialVisible;
+}
 
 type SubLocationsSectionProps = {
   country: string;
@@ -82,9 +116,10 @@ export function SubLocationsSection({
   description,
 }: SubLocationsSectionProps) {
   const [expanded, setExpanded] = useState(false);
-  const hasMore = cities.length > INITIAL_VISIBLE;
-  const visibleCities = expanded || !hasMore ? cities : cities.slice(0, INITIAL_VISIBLE);
-  const hiddenCount = Math.max(cities.length - INITIAL_VISIBLE, 0);
+  const initialVisible = useInitialCityCount();
+  const hasMore = cities.length > initialVisible;
+  const visibleCities = expanded || !hasMore ? cities : cities.slice(0, initialVisible);
+  const hiddenCount = Math.max(cities.length - initialVisible, 0);
 
   const copy =
     description ??
@@ -112,9 +147,9 @@ export function SubLocationsSection({
           </p>
         </Reveal>
 
-        <ul className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-3 xl:gap-5">
+        <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-5">
           {visibleCities.map((city, index) => (
-            <li key={city.slug}>
+            <li key={city.slug} className="min-w-0">
               <Reveal delay={Math.min(index, 8) * motionStagger * 0.35} className="h-full">
                 <CityCard city={city} index={index} />
               </Reveal>

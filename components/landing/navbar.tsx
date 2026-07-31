@@ -8,7 +8,7 @@ import { ChevronDown, Mail, Menu, Share2 } from "lucide-react";
 
 import { SiteLogo } from "@/components/landing/site-logo";
 import { TopBar } from "@/components/landing/top-bar";
-import { siteBrand, siteSocial } from "@/lib/landing/brand";
+import { siteBrand, siteEmailComposeHref, siteSocial } from "@/lib/landing/brand";
 import {
   aboutPath,
   btnPrimary,
@@ -157,7 +157,7 @@ export const footerLegal = [
 export const socialLinks: { label: string; href: string; icon: LucideIcon }[] = [
   { label: "LinkedIn", href: "https://www.linkedin.com/company/nextsoftwaredevelopmentcompany", icon: Share2 },
   { label: "GitHub", href: "https://github.com/nextsoftwaredevelopmentcompany", icon: Share2 },
-  { label: "Email", href: `mailto:${siteBrand.email}`, icon: Mail },
+  { label: "Email", href: siteEmailComposeHref, icon: Mail },
 ];
 
 const ServicesNavDropdown = dynamic(

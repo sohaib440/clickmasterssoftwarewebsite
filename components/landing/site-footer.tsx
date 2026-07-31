@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Mail, MapPin, Phone, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
+import { EmailLink } from "@/components/landing/email-link";
 import { SiteLogo } from "@/components/landing/site-logo";
 import { SocialIconLinks } from "@/components/landing/social-icon-links";
 import { container } from "@/lib/landing/constants";
@@ -39,13 +40,10 @@ export function SiteFooter() {
               </p>
               <ul className="space-y-3 text-sm">
                 <li>
-                  <a
-                    href={`mailto:${siteBrand.email}`}
-                    className="site-footer__link inline-flex max-w-full items-start gap-2 break-all sm:break-words"
-                  >
+                  <EmailLink className="site-footer__link inline-flex max-w-full items-start gap-2 break-all sm:break-words">
                     <Mail className="site-footer__icon mt-0.5 size-4 shrink-0" aria-hidden />
                     {siteBrand.email}
-                  </a>
+                  </EmailLink>
                 </li>
                 <li className="site-footer__link inline-flex max-w-full items-start gap-2">
                   <Phone className="site-footer__icon mt-0.5 size-4 shrink-0" aria-hidden />

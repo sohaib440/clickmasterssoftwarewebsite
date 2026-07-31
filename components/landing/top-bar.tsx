@@ -1,5 +1,8 @@
+"use client";
+
 import { Mail, MapPin } from "lucide-react";
 
+import { EmailLink } from "@/components/landing/email-link";
 import { SocialIconLinks } from "@/components/landing/social-icon-links";
 import { siteBrand } from "@/lib/landing/brand";
 import { container } from "@/lib/landing/constants";
@@ -14,14 +17,10 @@ export function TopBar() {
               <MapPin className="size-4 shrink-0 text-black" aria-hidden />
               <span className="truncate">{siteBrand.location}</span>
             </span>
-            <a
-              href={`mailto:${siteBrand.email}`}
-              className="inline-flex min-w-0 max-w-full items-center gap-1.5 transition-colors hover:text-black"
-              aria-label={`Email ${siteBrand.email}`}
-            >
+            <EmailLink className="inline-flex min-w-0 max-w-full items-center gap-1.5 underline-offset-2 transition-colors hover:underline">
               <Mail className="size-4 shrink-0 text-black" aria-hidden />
               <span className="truncate sm:max-w-none">{siteBrand.email}</span>
-            </a>
+            </EmailLink>
           </div>
 
           <SocialIconLinks className="shrink-0" iconClassName="size-6 sm:size-7 text-black" />

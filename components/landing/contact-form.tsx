@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
+import { EmailLink } from "@/components/landing/email-link";
 import {
   btnPrimary,
   contactApiPath,
@@ -328,12 +328,9 @@ export function ContactForm({
         </button>
         <p className="mt-3 text-xs leading-relaxed text-horizon-muted">
           Prefer email?{" "}
-          <Link
-            href={`mailto:${contactInfo.email}`}
-            className="break-all font-medium text-horizon-navy hover:underline"
-          >
+          <EmailLink className="break-all font-medium text-horizon-navy hover:underline">
             {contactInfo.email}
-          </Link>
+          </EmailLink>
         </p>
       </div>
     </form>
