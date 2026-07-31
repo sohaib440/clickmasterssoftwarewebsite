@@ -216,7 +216,7 @@ export function Navbar() {
           <nav
             className="hidden min-w-0 flex-1 items-center justify-center gap-0.5 px-1 xl:flex 2xl:gap-1"
             aria-label="Main"
-          >
+          > 
             {navLinks.map((link, linkIndex) =>
               link.label === "Services" ? (
                 <ServicesNavDropdown key="services-dropdown" />
