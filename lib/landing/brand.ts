@@ -13,8 +13,8 @@ export const siteBrand = {
     width: 640,
     height: 128,
   },
-  favicon: "/icon.png",
-  appleIcon: "/apple-icon.png",
+  favicon: "/brand/icon.png",
+  appleIcon: "/brand/icon.png",
 } as const;
 
 export const siteSocial = {
