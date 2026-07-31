@@ -42,4 +42,17 @@ export const projects = [
       height: 750,
     },
   },
+  {
+    slug: "restaurant-pos",
+    title: "Restaurant POS",
+    category: "Hospitality · POS · Management",
+    description:
+      "An all-in-one restaurant point-of-sale and management platform for orders, menus, tables, customers, inventory, employees, reporting, and day-to-day business settings.",
+    image: {
+      src: "/projects/restaurant-pos/Restaurant-Pos-Overview.png",
+      alt: "Restaurant POS system overview",
+      width: 1024,
+      height: 683,
+    },
+  },
 ];
