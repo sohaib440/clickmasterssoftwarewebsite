@@ -155,4 +155,98 @@
     </image:image>
   </url>
 
+  <!-- Restaurant POS project images -->
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos</loc>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Overview.png</image:loc>
+      <image:title>Restaurant POS System Overview</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Dashboard.png</image:loc>
+      <image:title>Restaurant POS Dashboard</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Orders.png</image:loc>
+      <image:title>Restaurant POS Order Management</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Menu.png</image:loc>
+      <image:title>Restaurant POS Menu Management</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Customers.png</image:loc>
+      <image:title>Restaurant POS Customer Management</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Inventory.png</image:loc>
+      <image:title>Restaurant POS Inventory Management</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Employees.png</image:loc>
+      <image:title>Restaurant POS Employee Management</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Reports.png</image:loc>
+      <image:title>Restaurant POS Reports and Analytics</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Settings.png</image:loc>
+      <image:title>Restaurant POS System Settings</image:title>
+    </image:image>
+  </url>
+
+  <!-- Travel and Tours Management project images -->
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management</loc>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Overview.png</image:loc>
+      <image:title>Travel and Tours Management System Overview</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Dashboard.png</image:loc>
+      <image:title>Travel and Tours Management Dashboard</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Bookings.png</image:loc>
+      <image:title>Travel and Tours Management Bookings</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Customers.png</image:loc>
+      <image:title>Travel and Tours Management Customers</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Tours-Packages.png</image:loc>
+      <image:title>Travel and Tours Management Packages</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Flights.png</image:loc>
+      <image:title>Travel and Tours Management Flights</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Hotels.png</image:loc>
+      <image:title>Travel and Tours Management Hotels</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Transport.png</image:loc>
+      <image:title>Travel and Tours Management Transport</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Payments.png</image:loc>
+      <image:title>Travel and Tours Management Payments</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Invoices.png</image:loc>
+      <image:title>Travel and Tours Management Invoices</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Reports.png</image:loc>
+      <image:title>Travel and Tours Management Reports</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Login.png</image:loc>
+      <image:title>Travel and Tours Management Login</image:title>
+    </image:image>
+  </url>
+
 </urlset>

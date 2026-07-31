@@ -410,6 +410,141 @@ const restaurantPosSlides: ProjectSlide[] = [
   },
 ];
 
+const travelAndToursManagementSlides: ProjectSlide[] = [
+  {
+    label: "System overview",
+    caption:
+      "An all-in-one travel platform covering bookings, customers, transport, hotels, invoices, reports, and daily agency operations.",
+    image: img(
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Overview.png",
+      "Travel and tours management system overview",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "Dashboard",
+    caption:
+      "Live bookings, customers, tours, revenue, status charts, upcoming packages, and quick actions for daily travel operations.",
+    image: img(
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Dashboard.png",
+      "Travel and tours management dashboard",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "Bookings",
+    caption:
+      "Search, filter, and manage tour bookings with traveler details, package assignment, amounts, and status tracking.",
+    image: img(
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Bookings.png",
+      "Travel and tours management bookings",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "Customers",
+    caption:
+      "Maintain customer profiles, contact details, country, loyalty type, spend history, booking counts, and account status.",
+    image: img(
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Customers.png",
+      "Travel and tours management customers",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "Tours & packages",
+    caption:
+      "Create and manage tour packages with destinations, duration, pricing, categories, availability, and booking volume.",
+    image: img(
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Tours-Packages.png",
+      "Travel and tours management packages",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "Flights",
+    caption:
+      "Track flight schedules, routes, airlines, seat availability, fares, delays, and booking performance in one module.",
+    image: img(
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Flights.png",
+      "Travel and tours management flights",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "Hotels",
+    caption:
+      "Manage hotel inventory by city, type, rating, rooms, nightly rates, booking volume, and active status.",
+    image: img(
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Hotels.png",
+      "Travel and tours management hotels",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "Transport",
+    caption:
+      "Coordinate coaches, vans, drivers, capacity, trip status, locations, and vehicle maintenance from one fleet view.",
+    image: img(
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Transport.png",
+      "Travel and tours management transport",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "Payments",
+    caption:
+      "Monitor successful, pending, failed, and refunded payments with method breakdowns and transaction history.",
+    image: img(
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Payments.png",
+      "Travel and tours management payments",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "Invoices",
+    caption:
+      "Create and track invoices for flights, hotels, packages, and transport with paid, pending, and overdue visibility.",
+    image: img(
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Invoices.png",
+      "Travel and tours management invoices",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "Reports",
+    caption:
+      "Analyze revenue, bookings, customers, destinations, and category performance with exportable operational reports.",
+    image: img(
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Reports.png",
+      "Travel and tours management reports",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "Secure login",
+    caption:
+      "Role-ready authentication with login and account creation so agency teams can access the platform securely.",
+    image: img(
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Login.png",
+      "Travel and tours management login",
+      1024,
+      683,
+    ),
+  },
+];
+
 export const projectDetails: ProjectDetail[] = [
   {
     ...(() => {
@@ -1031,6 +1166,162 @@ export const projectDetails: ProjectDetail[] = [
         "Can business and payment settings be customized?",
         "Yes. The settings area covers business details, taxes, service charges, payment methods, receipts, invoices, notifications, backups, integrations, and security.",
         "Settings",
+        "right",
+      ),
+    ],
+  },
+  {
+    ...(() => {
+      const p = base("travel-and-tours-management");
+      return {
+        slug: p.slug,
+        title: p.title,
+        category: p.category,
+        description: p.description,
+        image: p.image,
+      };
+    })(),
+    metaTitle: "Travel & Tours Management Case Study | Travel Agency Software",
+    metaDescription:
+      "Case study: Travel & Tours Management, an all-in-one travel agency system for bookings, packages, flights, hotels, transport, payments, invoices, and reporting.",
+    highlights: [
+      "Bookings & package management",
+      "Flights, hotels & transport",
+      "Payments & invoicing",
+      "Revenue & destination reports",
+    ],
+    slides: travelAndToursManagementSlides,
+    overview: [
+      "Travel & Tours Management is an all-in-one operations platform built for travel agencies that need bookings, customers, packages, flights, hotels, transport, billing, and reporting in one system.",
+      "Teams can create packages, confirm reservations, manage traveler records, and coordinate flights, hotels, and ground transport without switching between disconnected tools.",
+      "Finance and operations stay connected through payments, invoices, overdue tracking, refunds, and live dashboards for revenue, booking status, and destination performance.",
+      "Secure login and role-ready access give agency staff a shared workspace designed for daily travel operations and growth.",
+    ],
+    problem:
+      "The travel agency was running bookings, hotel lists, transport schedules, invoices, and customer records across spreadsheets, chat messages, and separate tools. Package updates were slow, payment status was hard to track, and managers lacked a clear view of revenue, destination demand, and operational bottlenecks.",
+    solutions: [
+      "Built a live dashboard for bookings, customers, tours, revenue, status charts, upcoming packages, and quick actions.",
+      "Delivered booking management with filters, traveler details, package assignment, amounts, and confirmed, pending, cancelled, or refunded status.",
+      "Added customer CRM with contact details, country, loyalty type, spend, booking history, and active or inactive status.",
+      "Created tours and packages management for destinations, duration, pricing, categories, availability, and booking volume.",
+      "Connected flights, hotels, and transport modules for schedules, inventory, drivers, capacity, rates, and trip status.",
+      "Implemented payments, invoices, refunds, overdue tracking, analytics, exports, and secure login for agency teams.",
+    ],
+    whyNeedProduct: {
+      title: "Why travel agencies need this management system",
+      paragraphs: [
+        "When bookings, transport, hotels, invoices, and customer data live in different places, follow-ups get missed and revenue leaks through slow confirmations and unclear payment status.",
+        "Travel & Tours Management gives agencies one operational system so sales, operations, and finance teams can work from the same live source of truth.",
+      ],
+      reasons: [
+        "Centralize tour bookings, packages, and customer records",
+        "Coordinate flights, hotels, and ground transport in one workflow",
+        "Track payments, invoices, refunds, and overdue balances clearly",
+        "See revenue, booking status, and destination demand in real time",
+        "Reduce manual spreadsheet work across sales and operations teams",
+        "Scale the agency with a secure, multi-module travel platform",
+      ],
+    },
+    procedure: [
+      {
+        step: 1,
+        title: "Travel operations discovery",
+        description:
+          "Mapped how the agency sold packages, confirmed bookings, coordinated transport, billed customers, and reported performance.",
+      },
+      {
+        step: 2,
+        title: "Platform architecture",
+        description:
+          "Designed modules, booking states, package data, payment flows, and role-ready navigation for daily agency use.",
+      },
+      {
+        step: 3,
+        title: "Bookings & packages build",
+        description:
+          "Shipped dashboard, bookings, customers, and tours and packages first so sales teams could run core operations quickly.",
+      },
+      {
+        step: 4,
+        title: "Travel inventory modules",
+        description:
+          "Connected flights, hotels, and transport with inventory, schedules, drivers, rates, and status tracking.",
+      },
+      {
+        step: 5,
+        title: "Finance & reporting",
+        description:
+          "Added payments, invoices, refunds, overdue alerts, analytics charts, and exportable operational reports.",
+      },
+      {
+        step: 6,
+        title: "Launch & optimization",
+        description:
+          "Onboarded staff, validated booking and billing workflows, and tuned dashboards from live agency usage.",
+      },
+    ],
+    clientFeedback:
+      "We needed one system for bookings, packages, hotels, transport, invoices, and reporting instead of scattered tools. Next Software Development Company delivered Travel & Tours Management with the depth of a software development company that understands how travel agencies actually operate day to day.",
+    modulePictures: [],
+    video: {
+      title: "Travel & Tours Management product walkthrough",
+      youtubeId: "",
+    },
+    outcome: [
+      "One platform for bookings, packages, customers, and travel inventory",
+      "Faster reservation handling with clear booking and payment status",
+      "Connected flights, hotels, and transport operations in one workspace",
+      "Cleaner invoicing with paid, pending, overdue, and refund visibility",
+      "Live reporting for revenue, destinations, and booking performance",
+      "A scalable foundation for growing travel agency operations",
+    ],
+    faqs: [
+      faq(
+        "Who is Travel & Tours Management built for?",
+        "Travel agencies, tour operators, and hospitality businesses that need bookings, packages, flights, hotels, transport, invoicing, and reporting in one platform.",
+        "Scope",
+        "left",
+      ),
+      faq(
+        "What modules are included?",
+        "Dashboard, bookings, customers, tours and packages, flights, hotels, transport, payments, invoices, reports, and secure login.",
+        "Modules",
+        "right",
+      ),
+      faq(
+        "Can the system manage tour packages?",
+        "Yes. Packages include destinations, duration, pricing, categories, availability, booking counts, and package status.",
+        "Packages",
+        "left",
+      ),
+      faq(
+        "Does it support flights and hotels?",
+        "Yes. Dedicated modules track flight schedules, routes, airlines, hotel inventory, ratings, rates, rooms, and booking volume.",
+        "Inventory",
+        "right",
+      ),
+      faq(
+        "Can transport fleets be managed?",
+        "Yes. Transport covers vehicles, drivers, capacity, locations, trip assignments, availability, and maintenance alerts.",
+        "Transport",
+        "left",
+      ),
+      faq(
+        "How are payments and invoices handled?",
+        "Payments track success, pending, failed, and refunded transactions. Invoices cover flights, hotels, packages, and transport with paid, pending, and overdue status.",
+        "Finance",
+        "right",
+      ),
+      faq(
+        "What reporting is available?",
+        "Managers can review revenue trends, booking status, revenue by category, top destinations, and generated operational reports.",
+        "Reports",
+        "left",
+      ),
+      faq(
+        "Is this only a public travel website?",
+        "No. It is a full travel agency management system focused on operations, inventory, billing, and reporting.",
+        "Fit",
         "right",
       ),
     ],

@@ -55,4 +55,17 @@ export const projects = [
       height: 683,
     },
   },
+  {
+    slug: "travel-and-tours-management",
+    title: "Travel & Tours Management",
+    category: "Travel · Tourism · Management",
+    description:
+      "An all-in-one travel and tour management system for bookings, customers, packages, flights, hotels, transport, payments, invoices, agents, and business reporting.",
+    image: {
+      src: "/projects/travel-and-tours-management/Travel-And-Tours-Management-Overview.png",
+      alt: "Travel and tours management system overview",
+      width: 1024,
+      height: 683,
+    },
+  },
 ];
