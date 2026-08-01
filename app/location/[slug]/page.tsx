@@ -21,6 +21,7 @@ import {
   getPakistanCityBySlug,
 } from "@/data/cities-in-pakistan";
 import { btnOnDark, container, sectionPad } from "@/lib/landing/constants";
+import { selfCanonical } from "@/seo/canonical";
 import { cn } from "@/lib/utils";
 import { locationLocalBusinessSchema, organizationSchema } from "@/seo/schema";
 
@@ -45,6 +46,7 @@ export async function generateMetadata({
   return {
     title: location.metaTitle ?? location.title,
     description: location.metaDescription ?? location.description,
+    ...selfCanonical(`/location/${slug}`),
     openGraph: {
       title: location.metaTitle ?? location.title,
       description: location.metaDescription ?? location.description,

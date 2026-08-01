@@ -7,6 +7,7 @@ import {
   getMainCategoryBySlug,
   isMainCategorySlug,
 } from "@/lib/content";
+import { selfCanonical } from "@/seo/canonical";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -24,6 +25,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${category.label} |  `,
     description: category.metaDescription,
+    ...selfCanonical(`/${slug}`),
   };
 }
 

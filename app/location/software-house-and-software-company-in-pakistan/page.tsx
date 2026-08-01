@@ -18,12 +18,14 @@ import { TeamSection } from "@/components/landing/team-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { pakistanLocation } from "@/data/locations";
 import { btnOnDark, container, sectionPad } from "@/lib/landing/constants";
+import { selfCanonical } from "@/seo/canonical";
 import { cn } from "@/lib/utils";
 import { locationLocalBusinessSchema, organizationSchema } from "@/seo/schema";
 
 export const metadata: Metadata = {
   title: pakistanLocation.metaTitle ?? pakistanLocation.title,
   description: pakistanLocation.metaDescription ?? pakistanLocation.description,
+  ...selfCanonical("/location/software-house-and-software-company-in-pakistan"),
   openGraph: {
     title: pakistanLocation.metaTitle ?? pakistanLocation.title,
     description: pakistanLocation.metaDescription ?? pakistanLocation.description,

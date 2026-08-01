@@ -25,6 +25,7 @@ import {
   sectionPad,
 } from "@/lib/landing/constants";
 import { motionStagger } from "@/lib/landing/motion";
+import { selfCanonical } from "@/seo/canonical";
 import { cn } from "@/lib/utils";
 
 type PageProps = {
@@ -46,6 +47,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: project.metaTitle,
     description: project.metaDescription,
+    ...selfCanonical(`/projects/${slug}`),
     openGraph: {
       title: project.metaTitle,
       description: project.metaDescription,

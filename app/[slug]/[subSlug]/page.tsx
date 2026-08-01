@@ -7,6 +7,7 @@ import {
   getSubCategoryPageData,
   isSubCategoryPath,
 } from "@/lib/content";
+import { selfCanonical } from "@/seo/canonical";
 
 type PageProps = {
   params: Promise<{ slug: string; subSlug: string }>;
@@ -28,6 +29,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${data.sub.label} | ${data.main.label} | Software Development Company Software`,
     description,
+    ...selfCanonical(`/${slug}/${subSlug}`),
   };
 }
 

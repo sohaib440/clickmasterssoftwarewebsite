@@ -7,6 +7,7 @@ import {
   getSolutionBySlug,
   isSolutionSlug,
 } from "@/lib/content/solutions";
+import { selfCanonical } from "@/seo/canonical";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -24,6 +25,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${solution.label} | Software Development Company Software Solutions`,
     description: solution.metaDescription,
+    ...selfCanonical(`/solutions/${slug}`),
   };
 }
 
