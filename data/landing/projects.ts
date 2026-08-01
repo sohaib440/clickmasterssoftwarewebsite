@@ -55,4 +55,56 @@ export const projects = [
       height: 683,
     },
   },
+  {
+    slug: "travel-and-tours-management",
+    title: "Travel & Tours Management",
+    category: "Travel · Tourism · Management",
+    description:
+      "An all-in-one travel and tour management system for bookings, customers, packages, flights, hotels, transport, payments, invoices, agents, and business reporting.",
+    image: {
+      src: "/projects/travel-and-tours-management/Travel-And-Tours-Management-Overview.png",
+      alt: "Travel and tours management system overview",
+      width: 1024,
+      height: 683,
+    },
+  },
+  {
+    slug: "hotel-management-system",
+    title: "Hotel Management System",
+    category: "Hospitality · Hotel · HMS",
+    description:
+      "A complete hotel management platform for reservations, front desk, rooms, housekeeping, guests, finance, reports, employees, AI attendance, and AI camera monitoring.",
+    image: {
+      src: "/projects/hotel-management-system/Hotel-Management-System-Overview.jpeg",
+      alt: "Hotel management system overview",
+      width: 1200,
+      height: 750,
+    },
+  },
+  {
+    slug: "royal-pos",
+    title: "Royal POS",
+    category: "Retail · POS · AI",
+    description:
+      "An AI-powered retail POS and business platform for checkout, inventory, products, customers, sales, reports, multi-branch operations, and live AI camera monitoring.",
+    image: {
+      src: "/projects/royal-pos/Royal-Pos-Overview.jpeg",
+      alt: "Royal POS AI-powered retail system overview",
+      width: 1200,
+      height: 750,
+    },
+  },
+  {
+    slug: "hospital-management-system",
+    title: "Hospital Management System",
+    category: "Healthcare · HMS · Clinic",
+    description:
+      "A complete hospital management platform for appointments, patients, doctors, departments, beds, billing, pharmacy, reports, users, and a dedicated doctor portal.",
+    image: {
+      src: "/projects/hospital-management-system/Hospital-Management-System-Sign-In.png",
+      alt: "Hospital management system login and sign-up",
+      width: 1200,
+      height: 750,
+    },
+  },
 ];

@@ -155,4 +155,261 @@
     </image:image>
   </url>
 
+  <!-- Restaurant POS project images -->
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos</loc>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Overview.png</image:loc>
+      <image:title>Restaurant POS System Overview</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Dashboard.png</image:loc>
+      <image:title>Restaurant POS Dashboard</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Orders.png</image:loc>
+      <image:title>Restaurant POS Order Management</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Menu.png</image:loc>
+      <image:title>Restaurant POS Menu Management</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Customers.png</image:loc>
+      <image:title>Restaurant POS Customer Management</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Inventory.png</image:loc>
+      <image:title>Restaurant POS Inventory Management</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Employees.png</image:loc>
+      <image:title>Restaurant POS Employee Management</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Reports.png</image:loc>
+      <image:title>Restaurant POS Reports and Analytics</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Settings.png</image:loc>
+      <image:title>Restaurant POS System Settings</image:title>
+    </image:image>
+  </url>
+
+  <!-- Travel and Tours Management project images -->
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management</loc>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Overview.png</image:loc>
+      <image:title>Travel and Tours Management System Overview</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Dashboard.png</image:loc>
+      <image:title>Travel and Tours Management Dashboard</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Bookings.png</image:loc>
+      <image:title>Travel and Tours Management Bookings</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Customers.png</image:loc>
+      <image:title>Travel and Tours Management Customers</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Tours-Packages.png</image:loc>
+      <image:title>Travel and Tours Management Packages</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Flights.png</image:loc>
+      <image:title>Travel and Tours Management Flights</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Hotels.png</image:loc>
+      <image:title>Travel and Tours Management Hotels</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Transport.png</image:loc>
+      <image:title>Travel and Tours Management Transport</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Payments.png</image:loc>
+      <image:title>Travel and Tours Management Payments</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Invoices.png</image:loc>
+      <image:title>Travel and Tours Management Invoices</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Reports.png</image:loc>
+      <image:title>Travel and Tours Management Reports</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Login.png</image:loc>
+      <image:title>Travel and Tours Management Login</image:title>
+    </image:image>
+  </url>
+
+  <!-- Hotel Management System project images -->
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system</loc>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Overview.jpeg</image:loc>
+      <image:title>Hotel Management System Overview</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Dashboard.jpeg</image:loc>
+      <image:title>Hotel Management System Dashboard</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Reservations.jpeg</image:loc>
+      <image:title>Hotel Management System Reservations</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Reservations-List.jpeg</image:loc>
+      <image:title>Hotel Management System Reservation List</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Check-In.jpeg</image:loc>
+      <image:title>Hotel Management System Check-In</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Rooms.jpeg</image:loc>
+      <image:title>Hotel Management System Rooms</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Housekeeping.jpeg</image:loc>
+      <image:title>Hotel Management System Housekeeping</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Housekeeping-Status.jpeg</image:loc>
+      <image:title>Hotel Management System Housekeeping Status</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Finance.jpeg</image:loc>
+      <image:title>Hotel Management System Finance</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Reports.jpeg</image:loc>
+      <image:title>Hotel Management System Reports</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Employees.jpeg</image:loc>
+      <image:title>Hotel Management System Employees</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Ai-Attendance.jpeg</image:loc>
+      <image:title>Hotel Management System AI Attendance</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Ai-Camera.jpeg</image:loc>
+      <image:title>Hotel Management System AI Camera</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Sign-In.jpeg</image:loc>
+      <image:title>Hotel Management System Sign-In</image:title>
+    </image:image>
+  </url>
+
+  <!-- Royal POS project images -->
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/projects/royal-pos</loc>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/royal-pos/Royal-Pos-Overview.jpeg</image:loc>
+      <image:title>Royal POS System Overview</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/royal-pos/Royal-Pos-Checkout.jpeg</image:loc>
+      <image:title>Royal POS Checkout</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/royal-pos/Royal-Pos-Sale-Details.jpeg</image:loc>
+      <image:title>Royal POS Sale Details</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/royal-pos/Royal-Pos-Inventory.jpeg</image:loc>
+      <image:title>Royal POS Inventory</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/royal-pos/Royal-Pos-Ai-Monitoring.jpeg</image:loc>
+      <image:title>Royal POS AI Monitoring</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/royal-pos/Royal-Pos-Reports.jpeg</image:loc>
+      <image:title>Royal POS Reports</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/royal-pos/Royal-Pos-Settings.jpeg</image:loc>
+      <image:title>Royal POS Settings</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/royal-pos/Royal-Pos-Sign-In.jpeg</image:loc>
+      <image:title>Royal POS Sign-In</image:title>
+    </image:image>
+  </url>
+
+  <!-- Hospital Management System project images -->
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system</loc>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Sign-In.png</image:loc>
+      <image:title>Hospital Management System Sign-In</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Overview.png</image:loc>
+      <image:title>Hospital Management System Overview</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Dashboard.png</image:loc>
+      <image:title>Hospital Management System Dashboard</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Appointments.png</image:loc>
+      <image:title>Hospital Management System Appointments</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Patients.png</image:loc>
+      <image:title>Hospital Management System Patients</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Doctors.png</image:loc>
+      <image:title>Hospital Management System Doctors</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Departments.png</image:loc>
+      <image:title>Hospital Management System Departments</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Bed-Management.png</image:loc>
+      <image:title>Hospital Management System Bed Management</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Billing.png</image:loc>
+      <image:title>Hospital Management System Billing</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Payments.png</image:loc>
+      <image:title>Hospital Management System Payments</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Pharmacy.png</image:loc>
+      <image:title>Hospital Management System Pharmacy</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Reports.png</image:loc>
+      <image:title>Hospital Management System Reports</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Doctor-Portal.png</image:loc>
+      <image:title>Hospital Management System Doctor Portal</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Users-Roles.png</image:loc>
+      <image:title>Hospital Management System Users and Roles</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Settings.png</image:loc>
+      <image:title>Hospital Management System Settings</image:title>
+    </image:image>
+  </url>
+
 </urlset>

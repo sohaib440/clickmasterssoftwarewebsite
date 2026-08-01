@@ -410,6 +410,483 @@ const restaurantPosSlides: ProjectSlide[] = [
   },
 ];
 
+const travelAndToursManagementSlides: ProjectSlide[] = [
+  {
+    label: "System overview",
+    caption:
+      "An all-in-one travel platform covering bookings, customers, transport, hotels, invoices, reports, and daily agency operations.",
+    image: img(
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Overview.png",
+      "Travel and tours management system overview",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "Dashboard",
+    caption:
+      "Live bookings, customers, tours, revenue, status charts, upcoming packages, and quick actions for daily travel operations.",
+    image: img(
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Dashboard.png",
+      "Travel and tours management dashboard",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "Bookings",
+    caption:
+      "Search, filter, and manage tour bookings with traveler details, package assignment, amounts, and status tracking.",
+    image: img(
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Bookings.png",
+      "Travel and tours management bookings",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "Customers",
+    caption:
+      "Maintain customer profiles, contact details, country, loyalty type, spend history, booking counts, and account status.",
+    image: img(
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Customers.png",
+      "Travel and tours management customers",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "Tours & packages",
+    caption:
+      "Create and manage tour packages with destinations, duration, pricing, categories, availability, and booking volume.",
+    image: img(
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Tours-Packages.png",
+      "Travel and tours management packages",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "Flights",
+    caption:
+      "Track flight schedules, routes, airlines, seat availability, fares, delays, and booking performance in one module.",
+    image: img(
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Flights.png",
+      "Travel and tours management flights",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "Hotels",
+    caption:
+      "Manage hotel inventory by city, type, rating, rooms, nightly rates, booking volume, and active status.",
+    image: img(
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Hotels.png",
+      "Travel and tours management hotels",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "Transport",
+    caption:
+      "Coordinate coaches, vans, drivers, capacity, trip status, locations, and vehicle maintenance from one fleet view.",
+    image: img(
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Transport.png",
+      "Travel and tours management transport",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "Payments",
+    caption:
+      "Monitor successful, pending, failed, and refunded payments with method breakdowns and transaction history.",
+    image: img(
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Payments.png",
+      "Travel and tours management payments",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "Invoices",
+    caption:
+      "Create and track invoices for flights, hotels, packages, and transport with paid, pending, and overdue visibility.",
+    image: img(
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Invoices.png",
+      "Travel and tours management invoices",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "Reports",
+    caption:
+      "Analyze revenue, bookings, customers, destinations, and category performance with exportable operational reports.",
+    image: img(
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Reports.png",
+      "Travel and tours management reports",
+      1024,
+      683,
+    ),
+  },
+  {
+    label: "Secure login",
+    caption:
+      "Role-ready authentication with login and account creation so agency teams can access the platform securely.",
+    image: img(
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Login.png",
+      "Travel and tours management login",
+      1024,
+      683,
+    ),
+  },
+];
+
+const hotelManagementSystemSlides: ProjectSlide[] = [
+  {
+    label: "System overview",
+    caption:
+      "A complete hotel platform covering reservations, rooms, housekeeping, guests, finance, reports, staff, and AI-powered operations.",
+    image: img(
+      "/projects/hotel-management-system/Hotel-Management-System-Overview.jpeg",
+      "Hotel management system overview",
+    ),
+  },
+  {
+    label: "Hotel dashboard",
+    caption:
+      "Live bookings, guests, revenue, occupancy, ADR, RevPAR, room status, and today's front-desk summary in one overview.",
+    image: img(
+      "/projects/hotel-management-system/Hotel-Management-System-Dashboard.jpeg",
+      "Hotel management system dashboard",
+    ),
+  },
+  {
+    label: "Reservations",
+    caption:
+      "Search, filter, and manage reservations with guest details, room assignment, payment status, and reservation actions.",
+    image: img(
+      "/projects/hotel-management-system/Hotel-Management-System-Reservations.jpeg",
+      "Hotel management system reservations",
+    ),
+  },
+  {
+    label: "Reservation list",
+    caption:
+      "Track confirmed, pending, checked-in, and cancelled bookings with sources, amounts, and guest counts.",
+    image: img(
+      "/projects/hotel-management-system/Hotel-Management-System-Reservations-List.jpeg",
+      "Hotel management system reservation list",
+    ),
+  },
+  {
+    label: "Front desk check-in",
+    caption:
+      "Guided check-in workflow for guest details, stay information, room assignment, amenities, and payment summary.",
+    image: img(
+      "/projects/hotel-management-system/Hotel-Management-System-Check-In.jpeg",
+      "Hotel management system check-in",
+    ),
+  },
+  {
+    label: "Rooms",
+    caption:
+      "Manage room inventory, types, floors, rates, occupancy status, amenities, and current guest assignments.",
+    image: img(
+      "/projects/hotel-management-system/Hotel-Management-System-Rooms.jpeg",
+      "Hotel management system rooms",
+    ),
+  },
+  {
+    label: "Housekeeping",
+    caption:
+      "Assign cleaning tasks, monitor staff workload, track room readiness, and manage linen and inspection workflows.",
+    image: img(
+      "/projects/hotel-management-system/Hotel-Management-System-Housekeeping.jpeg",
+      "Hotel management system housekeeping",
+    ),
+  },
+  {
+    label: "Housekeeping status",
+    caption:
+      "Room-by-room clean, dirty, cleaning, inspection, and out-of-service status with staff assignments and priorities.",
+    image: img(
+      "/projects/hotel-management-system/Hotel-Management-System-Housekeeping-Status.jpeg",
+      "Hotel management system housekeeping status",
+    ),
+  },
+  {
+    label: "Finance",
+    caption:
+      "Track revenue, expenses, net profit, invoices, cash flow, and category-level hotel financial performance.",
+    image: img(
+      "/projects/hotel-management-system/Hotel-Management-System-Finance.jpeg",
+      "Hotel management system finance",
+    ),
+  },
+  {
+    label: "Reports",
+    caption:
+      "Occupancy, revenue, ADR, RevPAR, guest volume, and department performance with exportable operational reports.",
+    image: img(
+      "/projects/hotel-management-system/Hotel-Management-System-Reports.jpeg",
+      "Hotel management system reports",
+    ),
+  },
+  {
+    label: "Employees",
+    caption:
+      "Maintain employee profiles, departments, designations, payroll context, leave status, and role details.",
+    image: img(
+      "/projects/hotel-management-system/Hotel-Management-System-Employees.jpeg",
+      "Hotel management system employees",
+    ),
+  },
+  {
+    label: "AI attendance",
+    caption:
+      "Face-recognition attendance with present, late, and absent tracking, live camera recognition, and department summaries.",
+    image: img(
+      "/projects/hotel-management-system/Hotel-Management-System-Ai-Attendance.jpeg",
+      "Hotel management system AI attendance",
+    ),
+  },
+  {
+    label: "AI camera",
+    caption:
+      "Live camera feeds, event detection, alerts, storage overview, and AI analytics for hotel security operations.",
+    image: img(
+      "/projects/hotel-management-system/Hotel-Management-System-Ai-Camera.jpeg",
+      "Hotel management system AI camera dashboard",
+    ),
+  },
+  {
+    label: "Secure sign-in",
+    caption:
+      "Role-based hotel login for owners, managers, front desk, housekeeping, finance, restaurant, and security teams.",
+    image: img(
+      "/projects/hotel-management-system/Hotel-Management-System-Sign-In.jpeg",
+      "Hotel management system sign-in",
+    ),
+  },
+];
+
+const royalPosSlides: ProjectSlide[] = [
+  {
+    label: "System overview",
+    caption:
+      "An AI-powered retail POS suite covering checkout, inventory, products, customers, analytics, and live camera monitoring.",
+    image: img(
+      "/projects/royal-pos/Royal-Pos-Overview.jpeg",
+      "Royal POS system overview",
+    ),
+  },
+  {
+    label: "POS checkout",
+    caption:
+      "Fast product search, category filters, cart management, taxes, discounts, and multi-method payment checkout.",
+    image: img(
+      "/projects/royal-pos/Royal-Pos-Checkout.jpeg",
+      "Royal POS checkout screen",
+    ),
+  },
+  {
+    label: "Sale details",
+    caption:
+      "Completed sale invoices with itemized products, payment summary, change calculation, and print or share actions.",
+    image: img(
+      "/projects/royal-pos/Royal-Pos-Sale-Details.jpeg",
+      "Royal POS sale details and invoice",
+    ),
+  },
+  {
+    label: "Inventory",
+    caption:
+      "Track stock levels, warehouses, low-stock alerts, stock value, and product movement across branches.",
+    image: img(
+      "/projects/royal-pos/Royal-Pos-Inventory.jpeg",
+      "Royal POS inventory management",
+    ),
+  },
+  {
+    label: "AI monitoring",
+    caption:
+      "Live store camera feeds with people counting, dwell time, conversion insights, alerts, and heat maps.",
+    image: img(
+      "/projects/royal-pos/Royal-Pos-Ai-Monitoring.jpeg",
+      "Royal POS AI camera monitoring",
+    ),
+  },
+  {
+    label: "Reports",
+    caption:
+      "Sales, orders, profit, payment methods, top products, and branch performance with export-ready analytics.",
+    image: img(
+      "/projects/royal-pos/Royal-Pos-Reports.jpeg",
+      "Royal POS reports and analytics",
+    ),
+  },
+  {
+    label: "Settings",
+    caption:
+      "Configure business details, branches, users, payments, receipts, taxes, backups, integrations, and security.",
+    image: img(
+      "/projects/royal-pos/Royal-Pos-Settings.jpeg",
+      "Royal POS system settings",
+    ),
+  },
+  {
+    label: "Secure sign-in",
+    caption:
+      "Branded retail login with secure authentication so store teams can access POS and operations modules.",
+    image: img(
+      "/projects/royal-pos/Royal-Pos-Sign-In.jpeg",
+      "Royal POS sign-in",
+    ),
+  },
+];
+
+const hospitalManagementSystemSlides: ProjectSlide[] = [
+  {
+    label: "Secure sign-in",
+    caption:
+      "Login and registration flows with role and department selection for secure hospital access.",
+    image: img(
+      "/projects/hospital-management-system/Hospital-Management-System-Sign-In.png",
+      "Hospital management system sign-in",
+    ),
+  },
+  {
+    label: "System overview",
+    caption:
+      "A complete hospital platform covering appointments, patients, doctors, beds, billing, pharmacy, reports, and staff operations.",
+    image: img(
+      "/projects/hospital-management-system/Hospital-Management-System-Overview.png",
+      "Hospital management system overview",
+    ),
+  },
+  {
+    label: "Hospital dashboard",
+    caption:
+      "Live patients, appointments, doctors, bed availability, revenue, department mix, and hospital alerts in one overview.",
+    image: img(
+      "/projects/hospital-management-system/Hospital-Management-System-Dashboard.png",
+      "Hospital management system dashboard",
+    ),
+  },
+  {
+    label: "Appointments",
+    caption:
+      "Schedule and track upcoming, completed, and cancelled appointments by doctor, department, and visit purpose.",
+    image: img(
+      "/projects/hospital-management-system/Hospital-Management-System-Appointments.png",
+      "Hospital management system appointments",
+    ),
+  },
+  {
+    label: "Patients",
+    caption:
+      "Maintain patient profiles, demographics, departments, last visits, and active status across the hospital.",
+    image: img(
+      "/projects/hospital-management-system/Hospital-Management-System-Patients.png",
+      "Hospital management system patients",
+    ),
+  },
+  {
+    label: "Doctors",
+    caption:
+      "Manage doctor records, specialties, departments, contact details, experience, and on-duty status.",
+    image: img(
+      "/projects/hospital-management-system/Hospital-Management-System-Doctors.png",
+      "Hospital management system doctors",
+    ),
+  },
+  {
+    label: "Departments",
+    caption:
+      "Organize hospital departments with heads, floors, assigned doctors, staff counts, and active status.",
+    image: img(
+      "/projects/hospital-management-system/Hospital-Management-System-Departments.png",
+      "Hospital management system departments",
+    ),
+  },
+  {
+    label: "Bed management",
+    caption:
+      "Track occupied, available, cleaning, and out-of-service beds by ward, floor, and bed type.",
+    image: img(
+      "/projects/hospital-management-system/Hospital-Management-System-Bed-Management.png",
+      "Hospital management system bed management",
+    ),
+  },
+  {
+    label: "Billing & invoices",
+    caption:
+      "Create and manage invoices with paid, pending, and overdue status plus payment method summaries.",
+    image: img(
+      "/projects/hospital-management-system/Hospital-Management-System-Billing.png",
+      "Hospital management system billing and invoices",
+    ),
+  },
+  {
+    label: "Payments",
+    caption:
+      "Record collections across cash, card, transfer, wallet, and insurance with refunds and daily totals.",
+    image: img(
+      "/projects/hospital-management-system/Hospital-Management-System-Payments.png",
+      "Hospital management system payments",
+    ),
+  },
+  {
+    label: "Pharmacy",
+    caption:
+      "Monitor medicine inventory, low-stock and expiry alerts, top-selling drugs, and pharmacy sales.",
+    image: img(
+      "/projects/hospital-management-system/Hospital-Management-System-Pharmacy.png",
+      "Hospital management system pharmacy",
+    ),
+  },
+  {
+    label: "Reports & analytics",
+    caption:
+      "Review patients, appointments, revenue, occupancy, department performance, and monthly hospital KPIs.",
+    image: img(
+      "/projects/hospital-management-system/Hospital-Management-System-Reports.png",
+      "Hospital management system reports and analytics",
+    ),
+  },
+  {
+    label: "Doctor portal",
+    caption:
+      "Doctor workspace for schedules, consultations, prescriptions, lab orders, patients, and messages.",
+    image: img(
+      "/projects/hospital-management-system/Hospital-Management-System-Doctor-Portal.png",
+      "Hospital management system doctor portal",
+    ),
+  },
+  {
+    label: "Users & roles",
+    caption:
+      "Control hospital users, roles, permissions, departments, and active access across clinical and admin teams.",
+    image: img(
+      "/projects/hospital-management-system/Hospital-Management-System-Users-Roles.png",
+      "Hospital management system users and roles",
+    ),
+  },
+  {
+    label: "Settings",
+    caption:
+      "Configure hospital profile, preferences, security, backups, system information, and theme options.",
+    image: img(
+      "/projects/hospital-management-system/Hospital-Management-System-Settings.png",
+      "Hospital management system settings",
+    ),
+  },
+];
+
 export const projectDetails: ProjectDetail[] = [
   {
     ...(() => {
@@ -1031,6 +1508,630 @@ export const projectDetails: ProjectDetail[] = [
         "Can business and payment settings be customized?",
         "Yes. The settings area covers business details, taxes, service charges, payment methods, receipts, invoices, notifications, backups, integrations, and security.",
         "Settings",
+        "right",
+      ),
+    ],
+  },
+  {
+    ...(() => {
+      const p = base("travel-and-tours-management");
+      return {
+        slug: p.slug,
+        title: p.title,
+        category: p.category,
+        description: p.description,
+        image: p.image,
+      };
+    })(),
+    metaTitle: "Travel & Tours Management Case Study | Travel Agency Software",
+    metaDescription:
+      "Case study: Travel & Tours Management, an all-in-one travel agency system for bookings, packages, flights, hotels, transport, payments, invoices, and reporting.",
+    highlights: [
+      "Bookings & package management",
+      "Flights, hotels & transport",
+      "Payments & invoicing",
+      "Revenue & destination reports",
+    ],
+    slides: travelAndToursManagementSlides,
+    overview: [
+      "Travel & Tours Management is an all-in-one operations platform built for travel agencies that need bookings, customers, packages, flights, hotels, transport, billing, and reporting in one system.",
+      "Teams can create packages, confirm reservations, manage traveler records, and coordinate flights, hotels, and ground transport without switching between disconnected tools.",
+      "Finance and operations stay connected through payments, invoices, overdue tracking, refunds, and live dashboards for revenue, booking status, and destination performance.",
+      "Secure login and role-ready access give agency staff a shared workspace designed for daily travel operations and growth.",
+    ],
+    problem:
+      "The travel agency was running bookings, hotel lists, transport schedules, invoices, and customer records across spreadsheets, chat messages, and separate tools. Package updates were slow, payment status was hard to track, and managers lacked a clear view of revenue, destination demand, and operational bottlenecks.",
+    solutions: [
+      "Built a live dashboard for bookings, customers, tours, revenue, status charts, upcoming packages, and quick actions.",
+      "Delivered booking management with filters, traveler details, package assignment, amounts, and confirmed, pending, cancelled, or refunded status.",
+      "Added customer CRM with contact details, country, loyalty type, spend, booking history, and active or inactive status.",
+      "Created tours and packages management for destinations, duration, pricing, categories, availability, and booking volume.",
+      "Connected flights, hotels, and transport modules for schedules, inventory, drivers, capacity, rates, and trip status.",
+      "Implemented payments, invoices, refunds, overdue tracking, analytics, exports, and secure login for agency teams.",
+    ],
+    whyNeedProduct: {
+      title: "Why travel agencies need this management system",
+      paragraphs: [
+        "When bookings, transport, hotels, invoices, and customer data live in different places, follow-ups get missed and revenue leaks through slow confirmations and unclear payment status.",
+        "Travel & Tours Management gives agencies one operational system so sales, operations, and finance teams can work from the same live source of truth.",
+      ],
+      reasons: [
+        "Centralize tour bookings, packages, and customer records",
+        "Coordinate flights, hotels, and ground transport in one workflow",
+        "Track payments, invoices, refunds, and overdue balances clearly",
+        "See revenue, booking status, and destination demand in real time",
+        "Reduce manual spreadsheet work across sales and operations teams",
+        "Scale the agency with a secure, multi-module travel platform",
+      ],
+    },
+    procedure: [
+      {
+        step: 1,
+        title: "Travel operations discovery",
+        description:
+          "Mapped how the agency sold packages, confirmed bookings, coordinated transport, billed customers, and reported performance.",
+      },
+      {
+        step: 2,
+        title: "Platform architecture",
+        description:
+          "Designed modules, booking states, package data, payment flows, and role-ready navigation for daily agency use.",
+      },
+      {
+        step: 3,
+        title: "Bookings & packages build",
+        description:
+          "Shipped dashboard, bookings, customers, and tours and packages first so sales teams could run core operations quickly.",
+      },
+      {
+        step: 4,
+        title: "Travel inventory modules",
+        description:
+          "Connected flights, hotels, and transport with inventory, schedules, drivers, rates, and status tracking.",
+      },
+      {
+        step: 5,
+        title: "Finance & reporting",
+        description:
+          "Added payments, invoices, refunds, overdue alerts, analytics charts, and exportable operational reports.",
+      },
+      {
+        step: 6,
+        title: "Launch & optimization",
+        description:
+          "Onboarded staff, validated booking and billing workflows, and tuned dashboards from live agency usage.",
+      },
+    ],
+    clientFeedback:
+      "We needed one system for bookings, packages, hotels, transport, invoices, and reporting instead of scattered tools. Next Software Development Company delivered Travel & Tours Management with the depth of a software development company that understands how travel agencies actually operate day to day.",
+    modulePictures: [],
+    video: {
+      title: "Travel & Tours Management product walkthrough",
+      youtubeId: "",
+    },
+    outcome: [
+      "One platform for bookings, packages, customers, and travel inventory",
+      "Faster reservation handling with clear booking and payment status",
+      "Connected flights, hotels, and transport operations in one workspace",
+      "Cleaner invoicing with paid, pending, overdue, and refund visibility",
+      "Live reporting for revenue, destinations, and booking performance",
+      "A scalable foundation for growing travel agency operations",
+    ],
+    faqs: [
+      faq(
+        "Who is Travel & Tours Management built for?",
+        "Travel agencies, tour operators, and hospitality businesses that need bookings, packages, flights, hotels, transport, invoicing, and reporting in one platform.",
+        "Scope",
+        "left",
+      ),
+      faq(
+        "What modules are included?",
+        "Dashboard, bookings, customers, tours and packages, flights, hotels, transport, payments, invoices, reports, and secure login.",
+        "Modules",
+        "right",
+      ),
+      faq(
+        "Can the system manage tour packages?",
+        "Yes. Packages include destinations, duration, pricing, categories, availability, booking counts, and package status.",
+        "Packages",
+        "left",
+      ),
+      faq(
+        "Does it support flights and hotels?",
+        "Yes. Dedicated modules track flight schedules, routes, airlines, hotel inventory, ratings, rates, rooms, and booking volume.",
+        "Inventory",
+        "right",
+      ),
+      faq(
+        "Can transport fleets be managed?",
+        "Yes. Transport covers vehicles, drivers, capacity, locations, trip assignments, availability, and maintenance alerts.",
+        "Transport",
+        "left",
+      ),
+      faq(
+        "How are payments and invoices handled?",
+        "Payments track success, pending, failed, and refunded transactions. Invoices cover flights, hotels, packages, and transport with paid, pending, and overdue status.",
+        "Finance",
+        "right",
+      ),
+      faq(
+        "What reporting is available?",
+        "Managers can review revenue trends, booking status, revenue by category, top destinations, and generated operational reports.",
+        "Reports",
+        "left",
+      ),
+      faq(
+        "Is this only a public travel website?",
+        "No. It is a full travel agency management system focused on operations, inventory, billing, and reporting.",
+        "Fit",
+        "right",
+      ),
+    ],
+  },
+  {
+    ...(() => {
+      const p = base("hotel-management-system");
+      return {
+        slug: p.slug,
+        title: p.title,
+        category: p.category,
+        description: p.description,
+        image: p.image,
+      };
+    })(),
+    metaTitle: "Hotel Management System Case Study | Hotel HMS Software",
+    metaDescription:
+      "Case study: Hotel Management System for reservations, front desk, rooms, housekeeping, finance, reports, employees, AI attendance, and AI camera monitoring.",
+    highlights: [
+      "Reservations & front desk",
+      "Rooms & housekeeping",
+      "Finance & reporting",
+      "AI attendance & cameras",
+    ],
+    slides: hotelManagementSystemSlides,
+    overview: [
+      "Hotel Management System is an all-in-one hospitality platform built to run reservations, front desk, rooms, housekeeping, guests, finance, reporting, and staff operations from one workspace.",
+      "Teams can check guests in, assign rooms, monitor housekeeping status, and manage occupancy while managers track revenue, ADR, RevPAR, and department performance live.",
+      "AI attendance and AI camera modules add face recognition, live monitoring, alerts, and operational visibility for modern hotel security and workforce control.",
+      "Role-based sign-in keeps owners, managers, front desk, housekeeping, finance, restaurant, and security teams on the modules they need.",
+    ],
+    problem:
+      "Hotel operations were split across spreadsheets, paper front-desk logs, separate billing tools, and disconnected housekeeping updates. Reservation status was hard to trust, room readiness lagged, finance lacked clear category reporting, and managers had no single view of occupancy, staff attendance, or on-property security events.",
+    solutions: [
+      "Built a live hotel dashboard for bookings, guests, revenue, occupancy, ADR, RevPAR, room status, and today's operational summary.",
+      "Delivered reservation and front-desk workflows for booking lists, guest details, check-in, room assignment, and payment summaries.",
+      "Created rooms and housekeeping modules for inventory, rates, clean/dirty status, staff assignments, inspections, and linen visibility.",
+      "Connected finance and reporting for revenue, expenses, invoices, cash flow, occupancy trends, and department performance.",
+      "Implemented employee management with departments, designations, profiles, and operational status tracking.",
+      "Added AI attendance and AI camera monitoring for face recognition, live feeds, alerts, storage overview, and security analytics.",
+    ],
+    whyNeedProduct: {
+      title: "Why hotels need an integrated management system",
+      paragraphs: [
+        "When reservations, rooms, housekeeping, billing, and staff tools live apart, guest experience suffers and managers lose control of occupancy, readiness, and revenue.",
+        "Hotel Management System gives every department a shared operational source of truth while giving leadership live hospitality KPIs and AI-assisted oversight.",
+      ],
+      reasons: [
+        "Centralize reservations, check-in, and guest records",
+        "Keep room inventory and housekeeping status accurate in real time",
+        "Track revenue, expenses, invoices, and cash flow clearly",
+        "Monitor occupancy, ADR, RevPAR, and department performance",
+        "Manage employees, attendance, and hotel workforce operations",
+        "Use AI cameras and attendance to strengthen security and staffing control",
+      ],
+    },
+    procedure: [
+      {
+        step: 1,
+        title: "Hotel operations discovery",
+        description:
+          "Mapped reservation intake, front-desk check-in, room turnover, housekeeping, billing, reporting, and staff workflows.",
+      },
+      {
+        step: 2,
+        title: "HMS architecture & roles",
+        description:
+          "Designed modules, booking states, room status model, permissions, and role-ready navigation for hotel teams.",
+      },
+      {
+        step: 3,
+        title: "Front desk & rooms build",
+        description:
+          "Shipped dashboard, reservations, check-in, rooms, and guest workflows so operations could run core stays quickly.",
+      },
+      {
+        step: 4,
+        title: "Housekeeping & workforce",
+        description:
+          "Connected housekeeping status, assignments, employees, and attendance-ready staff records to daily room operations.",
+      },
+      {
+        step: 5,
+        title: "Finance, reports & AI",
+        description:
+          "Added finance overview, operational reports, AI attendance, and AI camera monitoring for management visibility.",
+      },
+      {
+        step: 6,
+        title: "Launch & optimization",
+        description:
+          "Onboarded hotel roles, validated peak check-in and turnover flows, and tuned dashboards from live usage.",
+      },
+    ],
+    clientFeedback:
+      "We needed one hotel system for reservations, rooms, housekeeping, finance, and reporting instead of scattered tools. Next Software Development Company delivered a Hotel Management System with AI attendance and camera monitoring that finally gives our team one operational workspace.",
+    modulePictures: [],
+    video: {
+      title: "Hotel Management System product walkthrough",
+      youtubeId: "",
+    },
+    outcome: [
+      "One platform for reservations, front desk, rooms, and housekeeping",
+      "Faster check-in with clear guest, stay, and payment workflows",
+      "Live room readiness and housekeeping assignment visibility",
+      "Connected finance and hospitality KPI reporting",
+      "Employee and AI attendance control for hotel workforce operations",
+      "AI camera monitoring for on-property security and alerts",
+    ],
+    faqs: [
+      faq(
+        "Who is Hotel Management System built for?",
+        "Hotels, resorts, and hospitality groups that need reservations, front desk, rooms, housekeeping, finance, reporting, and staff operations in one platform.",
+        "Scope",
+        "left",
+      ),
+      faq(
+        "What modules are included?",
+        "Dashboard, reservations, check-in, rooms, housekeeping, finance, reports, employees, AI attendance, AI camera, and secure role-based sign-in.",
+        "Modules",
+        "right",
+      ),
+      faq(
+        "Can the system manage room inventory?",
+        "Yes. Rooms cover types, floors, rates, amenities, occupancy status, current guests, and out-of-service control.",
+        "Rooms",
+        "left",
+      ),
+      faq(
+        "Does it support housekeeping workflows?",
+        "Yes. Housekeeping tracks clean, dirty, cleaning, inspection, and out-of-service status with staff assignments and task visibility.",
+        "Housekeeping",
+        "right",
+      ),
+      faq(
+        "Is finance and reporting included?",
+        "Yes. Finance covers revenue, expenses, profit, invoices, and cash flow. Reports cover occupancy, ADR, RevPAR, guests, bookings, and department performance.",
+        "Finance",
+        "left",
+      ),
+      faq(
+        "What AI features are included?",
+        "AI attendance uses face recognition for present, late, and absent tracking. AI camera monitoring covers live feeds, events, alerts, and storage overview.",
+        "AI",
+        "right",
+      ),
+      faq(
+        "Can access be limited by hotel role?",
+        "Yes. Sign-in supports role-based access for owners, managers, front desk, housekeeping, finance, restaurant, and security teams.",
+        "Access",
+        "left",
+      ),
+      faq(
+        "Is restaurant POS included?",
+        "The hotel platform includes a Restaurant (POS) module path for integrated F&B operations alongside core hotel management.",
+        "POS",
+        "right",
+      ),
+    ],
+  },
+  {
+    ...(() => {
+      const p = base("royal-pos");
+      return {
+        slug: p.slug,
+        title: p.title,
+        category: p.category,
+        description: p.description,
+        image: p.image,
+      };
+    })(),
+    metaTitle: "Royal POS Case Study | AI-Powered Retail POS Software",
+    metaDescription:
+      "Case study: Royal POS, an AI-powered retail point-of-sale platform for checkout, inventory, products, customers, sales, reports, and live camera monitoring.",
+    highlights: [
+      "Fast POS checkout",
+      "Inventory & warehouses",
+      "Sales & reporting",
+      "AI camera monitoring",
+    ],
+    slides: royalPosSlides,
+    overview: [
+      "Royal POS is an AI-powered retail point-of-sale and operations platform built for checkout, inventory, products, customers, sales, reporting, and multi-branch retail control.",
+      "Cashiers can search or scan products, build carts, apply tax, and take cash, card, UPI, or wallet payments while inventory updates automatically.",
+      "Managers get live sales, stock health, low-stock alerts, top products, and branch performance, plus AI camera monitoring for people flow, dwell time, and store alerts.",
+      "Business settings cover branches, users, payments, receipts, taxes, backups, integrations, and security so the system fits growing retail teams.",
+    ],
+    problem:
+      "The retailer was running billing, stock counts, customer records, and sales reporting across disconnected tools. Checkout was slow, inventory shortages appeared without warning, multi-branch visibility was weak, and managers lacked reliable sales conversion and in-store traffic insights.",
+    solutions: [
+      "Built a fast POS checkout with product search, categories, cart controls, taxes, discounts, and multi-method payments.",
+      "Delivered sale details and invoice workflows with print, PDF, email, and SMS sharing after payment.",
+      "Created inventory management for stock levels, warehouses, low-stock alerts, stock value, and movement analytics.",
+      "Added AI camera monitoring for live feeds, people counting, dwell time, conversion insights, alerts, and heat maps.",
+      "Connected reports for sales, orders, profit, payment methods, top products, and branch performance.",
+      "Implemented settings for business details, branches, users, payments, receipts, taxes, backups, integrations, and security.",
+    ],
+    whyNeedProduct: {
+      title: "Why retailers need an AI-powered POS",
+      paragraphs: [
+        "When checkout, inventory, customers, and reporting live in separate systems, sales slow down and stock losses hide until it is too late.",
+        "Royal POS gives store teams one retail operating system while giving owners AI-assisted visibility into sales, stock, and in-store customer activity.",
+      ],
+      reasons: [
+        "Process checkout faster with search, scan, cart, and multi-payment support",
+        "Prevent stockouts with warehouse-level inventory and low-stock alerts",
+        "Track sales, profit, payment mix, and top products in real time",
+        "Understand store traffic with AI camera people counting and heat maps",
+        "Run multi-branch retail from one shared platform",
+        "Configure taxes, receipts, users, backups, and security centrally",
+      ],
+    },
+    procedure: [
+      {
+        step: 1,
+        title: "Retail workflow discovery",
+        description:
+          "Mapped checkout, stock control, purchasing, customer records, reporting, and branch operations.",
+      },
+      {
+        step: 2,
+        title: "POS architecture & roles",
+        description:
+          "Designed product catalog, cart lifecycle, inventory model, permissions, and manager analytics.",
+      },
+      {
+        step: 3,
+        title: "Checkout & sales build",
+        description:
+          "Shipped POS checkout, sale details, invoices, and payment flows for daily counter operations.",
+      },
+      {
+        step: 4,
+        title: "Inventory & catalog",
+        description:
+          "Connected products, warehouses, stock movement, low-stock alerts, and inventory valuation.",
+      },
+      {
+        step: 5,
+        title: "AI monitoring & reports",
+        description:
+          "Added AI camera monitoring, sales analytics, branch performance, and export-ready reports.",
+      },
+      {
+        step: 6,
+        title: "Configuration & launch",
+        description:
+          "Configured settings, trained staff by role, validated peak checkout flows, and refined the system after go-live.",
+      },
+    ],
+    clientFeedback:
+      "We needed a retail POS that handled checkout, inventory, reporting, and store monitoring together. Next Software Development Company delivered Royal POS with AI camera insights and the operational depth our multi-branch team needed.",
+    modulePictures: [],
+    video: {
+      title: "Royal POS product walkthrough",
+      youtubeId: "",
+    },
+    outcome: [
+      "One AI-powered platform for checkout, inventory, and retail analytics",
+      "Faster counter sales with clear cart, tax, and payment workflows",
+      "Better stock control through warehouses and low-stock alerts",
+      "Live sales, profit, and branch performance reporting",
+      "AI camera monitoring for traffic, dwell time, and store alerts",
+      "Configurable settings for growing multi-branch retail teams",
+    ],
+    faqs: [
+      faq(
+        "Who is Royal POS built for?",
+        "Retail stores, multi-branch shops, and modern commerce teams that need checkout, inventory, customers, sales reporting, and AI store monitoring in one platform.",
+        "Scope",
+        "left",
+      ),
+      faq(
+        "Which payment methods are supported?",
+        "Checkout supports cash, card, UPI, wallet, and additional payment options with tax, discount, and change calculation.",
+        "Payments",
+        "right",
+      ),
+      faq(
+        "Does Royal POS track inventory?",
+        "Yes. Inventory covers stock quantities, warehouses, stock value, stock-in and stock-out movement, and low-stock or out-of-stock alerts.",
+        "Inventory",
+        "left",
+      ),
+      faq(
+        "What AI features are included?",
+        "AI camera monitoring includes live feeds, people counting, dwell time, conversion insights, alerts, demographics, and heat maps.",
+        "AI",
+        "right",
+      ),
+      faq(
+        "Can managers review sales reports?",
+        "Yes. Reports cover sales, orders, average order value, profit, payment methods, top products, and branch performance.",
+        "Reports",
+        "left",
+      ),
+      faq(
+        "Is multi-branch retail supported?",
+        "Yes. Branch selection and branch performance reporting help teams operate Main Branch and additional locations from one system.",
+        "Branches",
+        "right",
+      ),
+      faq(
+        "Can business settings be customized?",
+        "Yes. Settings cover business details, users and roles, payment methods, receipts, taxes, notifications, backups, integrations, and security.",
+        "Settings",
+        "left",
+      ),
+      faq(
+        "Does the system generate invoices after sale?",
+        "Yes. Completed sales create invoices with itemized products, totals, payment details, and options to print, download, email, or SMS.",
+        "Invoices",
+        "right",
+      ),
+    ],
+  },
+  {
+    ...(() => {
+      const p = base("hospital-management-system");
+      return {
+        slug: p.slug,
+        title: p.title,
+        category: p.category,
+        description: p.description,
+        image: p.image,
+      };
+    })(),
+    metaTitle: "Hospital Management System Case Study | MediCare HMS Software",
+    metaDescription:
+      "Case study: Hospital Management System for appointments, patients, doctors, beds, billing, pharmacy, reports, users, and a dedicated doctor portal.",
+    highlights: [
+      "Appointments & patient records",
+      "Doctors, departments & beds",
+      "Billing, payments & pharmacy",
+      "Reports & doctor portal",
+    ],
+    slides: hospitalManagementSystemSlides,
+    overview: [
+      "Hospital Management System is an all-in-one healthcare platform built to run appointments, patients, doctors, departments, beds, billing, pharmacy, reporting, and user access from one workspace.",
+      "Front-desk and admin teams can schedule visits, manage OPD and IPD records, allot beds, and process invoices while managers track revenue, occupancy, and department performance live.",
+      "A dedicated doctor portal gives clinicians schedules, consultations, prescriptions, lab orders, medical records, and messaging without leaving the same hospital ecosystem.",
+      "Role-based access keeps administrators, doctors, nurses, pharmacists, billing staff, and other hospital roles on the modules they need.",
+    ],
+    problem:
+      "The hospital was running appointments, patient files, bed allotment, billing, pharmacy stock, and doctor schedules across paper logs and disconnected tools. Status was hard to trust, invoices lagged, stock shortages appeared late, and clinicians lacked a shared view of today’s patients and orders.",
+    solutions: [
+      "Built a live hospital dashboard for patients, appointments, doctors, beds, revenue, department mix, and operational alerts.",
+      "Delivered appointment and patient modules with filters, visit purpose, department assignment, and status tracking.",
+      "Created doctors, departments, and bed management for staffing, wards, occupancy, and allotment workflows.",
+      "Connected billing, payments, and pharmacy for invoices, collections, refunds, medicine stock, and expiry alerts.",
+      "Added reports and analytics for patients, appointments, revenue, occupancy, and department performance.",
+      "Implemented a doctor portal plus users, roles, settings, and secure sign-in for clinical and admin teams.",
+    ],
+    whyNeedProduct: {
+      title: "Why hospitals need an integrated management system",
+      paragraphs: [
+        "When appointments, beds, billing, pharmacy, and clinical work live in separate places, patient flow slows and revenue leaks through delayed invoices and unclear occupancy.",
+        "Hospital Management System gives every department a shared operational source of truth while giving doctors a focused portal for daily clinical work.",
+      ],
+      reasons: [
+        "Centralize appointments, patients, and doctor schedules",
+        "Keep bed occupancy and ward allotment accurate in real time",
+        "Track invoices, payments, refunds, and outstanding receivables",
+        "Prevent pharmacy shortages with stock and expiry alerts",
+        "Give doctors a portal for consultations, prescriptions, and lab orders",
+        "Control access with users, roles, and hospital-wide settings",
+      ],
+    },
+    procedure: [
+      {
+        step: 1,
+        title: "Hospital workflow discovery",
+        description:
+          "Mapped appointments, admissions, bed allotment, billing, pharmacy, reporting, and doctor daily workflows.",
+      },
+      {
+        step: 2,
+        title: "HMS architecture & roles",
+        description:
+          "Designed modules, patient states, bed statuses, permissions, and role-ready navigation for hospital teams.",
+      },
+      {
+        step: 3,
+        title: "Clinical operations build",
+        description:
+          "Shipped dashboard, appointments, patients, doctors, departments, and bed management for core care flow.",
+      },
+      {
+        step: 4,
+        title: "Billing & inventory",
+        description:
+          "Connected invoices, payments, pharmacy stock, and collection summaries to hospital financial operations.",
+      },
+      {
+        step: 5,
+        title: "Doctor portal & analytics",
+        description:
+          "Added doctor workspace, reports, users and roles, settings, and secure authentication.",
+      },
+      {
+        step: 6,
+        title: "Launch & optimization",
+        description:
+          "Onboarded hospital roles, validated peak appointment and discharge flows, and tuned dashboards from live usage.",
+      },
+    ],
+    clientFeedback:
+      "We needed one hospital system for appointments, patients, beds, billing, and pharmacy instead of scattered tools. Next Software Development Company delivered a Hospital Management System with a doctor portal that finally keeps clinical and admin teams aligned.",
+    modulePictures: [],
+    video: {
+      title: "Hospital Management System product walkthrough",
+      youtubeId: "",
+    },
+    outcome: [
+      "One platform for appointments, patients, doctors, and departments",
+      "Clearer bed occupancy and allotment across wards and floors",
+      "Connected billing, payments, and pharmacy inventory control",
+      "Live hospital reporting for patients, revenue, and occupancy",
+      "A dedicated doctor portal for schedules, prescriptions, and labs",
+      "Role-based access for clinical, billing, and admin teams",
+    ],
+    faqs: [
+      faq(
+        "Who is Hospital Management System built for?",
+        "Hospitals, clinics, and multi-specialty facilities that need appointments, patients, doctors, beds, billing, pharmacy, reports, and role-based access in one platform.",
+        "Scope",
+        "left",
+      ),
+      faq(
+        "What modules are included?",
+        "Dashboard, appointments, patients, doctors, departments, bed management, billing, payments, pharmacy, reports, doctor portal, users and roles, settings, and secure sign-in.",
+        "Modules",
+        "right",
+      ),
+      faq(
+        "Can the system manage appointments?",
+        "Yes. Appointments can be filtered by department, doctor, and status, with support for upcoming, completed, and cancelled visits.",
+        "Appointments",
+        "left",
+      ),
+      faq(
+        "Does it support bed management?",
+        "Yes. Beds are tracked by ward, floor, type, and status including occupied, available, cleaning, and out of service.",
+        "Beds",
+        "right",
+      ),
+      faq(
+        "Is billing and pharmacy included?",
+        "Yes. Billing covers invoices and receivables. Payments track collections and refunds. Pharmacy monitors stock, low stock, and expiry alerts.",
+        "Billing",
+        "left",
+      ),
+      faq(
+        "What is the doctor portal for?",
+        "Doctors get schedules, consultations, prescriptions, lab orders, patient overview, messages, and quick clinical actions in a dedicated workspace.",
+        "Doctors",
+        "right",
+      ),
+      faq(
+        "Can access be limited by role?",
+        "Yes. Users and roles control permissions for administrators, doctors, nurses, pharmacists, billing staff, and other hospital teams.",
+        "Access",
+        "left",
+      ),
+      faq(
+        "What reports are available?",
+        "Managers can review patients, appointments, consultations, revenue, invoices, payments, bed occupancy, and department performance.",
+        "Reports",
         "right",
       ),
     ],
