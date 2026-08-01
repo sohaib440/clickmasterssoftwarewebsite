@@ -26,12 +26,17 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteBrand.url),
   title: {
     default: siteMetadata.title,
     template: `%s | ${siteBrand.name}`,
   },
   description: siteMetadata.description,
   keywords: [...siteMetadata.keywords],
+  robots: {
+    index: true,
+    follow: true,
+  },
   icons: {
     icon: [{ url: siteBrand.favicon, type: "image/png" }],
     apple: [{ url: siteBrand.appleIcon, type: "image/png" }],

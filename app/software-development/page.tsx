@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { MainCategoryPage } from "@/components/services/main-category-page";
 import { getMainCategoryBySlug } from "@/lib/content";
 import { softwareDevelopmentFaqs, softwareDevelopmentMeta } from "@/data/softwareDevelopmentPage";
+import { selfCanonical } from "@/seo/canonical";
 import {
   breadcrumbSchema,
   faqPageSchema,
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     absolute: softwareDevelopmentMeta.title,
   },
   description: softwareDevelopmentMeta.description,
+  ...selfCanonical("/software-development"),
   openGraph: {
     title: softwareDevelopmentMeta.title,
     description: softwareDevelopmentMeta.description,

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import { BlogPostPage } from "@/components/pages/blog-post-page";
 import { getAllBlogSlugs, getBlogBySlug, isBlogSlug } from "@/lib/landing/blog";
+import { selfCanonical } from "@/seo/canonical";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -20,6 +21,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${post.title} | Software Development Company Software Blog`,
     description: post.excerpt,
+    ...selfCanonical(`/blog/${slug}`),
   };
 }
 

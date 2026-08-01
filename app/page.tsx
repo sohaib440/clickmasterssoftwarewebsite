@@ -17,6 +17,7 @@ import {
   TestimonialsSection,
 } from "@/components/landing";
 import { siteMetadata } from "@/lib/landing/brand";
+import { selfCanonical } from "@/seo/canonical";
 import {
   homepageFaqSchema,
   homepageServiceSchema,
@@ -29,6 +30,7 @@ export const metadata: Metadata = {
   title: siteMetadata.title,
   description: siteMetadata.description,
   keywords: [...siteMetadata.keywords],
+  ...selfCanonical("/"),
   openGraph: {
     title: siteMetadata.title,
     description: siteMetadata.description,

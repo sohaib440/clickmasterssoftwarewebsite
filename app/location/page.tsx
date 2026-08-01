@@ -23,12 +23,14 @@ import {
   sectionPad,
 } from "@/lib/landing/constants";
 import { motionStagger } from "@/lib/landing/motion";
+import { selfCanonical } from "@/seo/canonical";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Locations | Software House & Software Company Worldwide",
   description:
     "Explore Next Software Development Company locations. Start with Pakistan and major cities including Islamabad, Lahore, Karachi, and more.",
+  ...selfCanonical("/location"),
   openGraph: {
     title: "Locations | Software House & Software Company Worldwide",
     description:
