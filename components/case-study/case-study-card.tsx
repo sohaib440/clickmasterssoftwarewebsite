@@ -34,7 +34,7 @@ export function CaseStudyCard({ item, index }: CaseStudyCardProps) {
             sizes="(max-width: 768px) 100vw, 50vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
-          <span className="absolute left-4 top-4 rounded-full border border-white/20 bg-black/45 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-white backdrop-blur-sm">
+          <span className="absolute left-4 top-4 z-20 max-w-[calc(100%-2rem)] truncate rounded-full bg-white px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-horizon-navy shadow-[0_8px_24px_rgba(0,0,0,0.35)] ring-1 ring-black/10">
             {item.category}
           </span>
         </div>

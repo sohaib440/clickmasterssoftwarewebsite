@@ -81,34 +81,34 @@ export function ProjectsPageContent() {
               </p>
             </Reveal>
 
-            <ul className="mt-10 grid gap-6 md:grid-cols-2 lg:gap-8">
+            <ul className="mt-10 grid auto-rows-fr gap-6 md:grid-cols-2 lg:gap-8">
               {projects.map((project, i) => (
-                <li key={project.slug} id={project.slug}>
-                  <Reveal delay={i * motionStagger}>
+                <li key={project.slug} id={project.slug} className="min-h-0">
+                  <Reveal delay={i * motionStagger} className="h-full">
                     <Link
                       href={projectDetailPath(project.slug)}
                       className={cn(
-                        "group block overflow-hidden rounded-2xl border border-horizon-border bg-white",
+                        "group flex h-full flex-col overflow-hidden rounded-2xl border border-horizon-border bg-white",
                         "transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 hover:border-horizon-sky hover:shadow-[0_20px_50px_-24px_rgba(13,27,42,0.18)]",
                       )}
                     >
-                      <div className="relative overflow-hidden">
+                      <div className="relative aspect-[16/10] shrink-0 overflow-hidden bg-horizon-cream">
                         <CardImage
                           {...project.image}
-                          className="h-auto w-full transition-transform duration-500 group-hover:scale-[1.03]"
+                          className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                           sizes="(max-width: 768px) 100vw, 50vw"
                         />
                         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                        <span className="absolute left-4 top-4 rounded-full border border-white/20 bg-black/45 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-white backdrop-blur-sm">
+                        <span className="absolute left-4 top-4 z-20 max-w-[calc(100%-2rem)] truncate rounded-full bg-white px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-horizon-navy shadow-[0_8px_24px_rgba(0,0,0,0.35)] ring-1 ring-black/10">
                           {project.category}
                         </span>
                       </div>
 
-                      <div className="p-5 md:p-6">
+                      <div className="flex flex-1 flex-col p-5 md:p-6">
                         <h3 className="font-heading text-xl font-medium text-horizon-navy md:text-2xl">
                           {project.title}
                         </h3>
-                        <p className="mt-3 text-sm leading-relaxed text-horizon-muted md:text-[15px]">
+                        <p className="mt-3 line-clamp-3 flex-1 text-sm leading-relaxed text-horizon-muted md:text-[15px]">
                           {project.description}
                         </p>
                         <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-horizon-navy transition-colors group-hover:text-primary">
