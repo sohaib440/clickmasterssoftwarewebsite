@@ -1,6 +1,6 @@
 import type { FaqItem } from "@/data/landing/types";
 import type { ImageAsset } from "@/data/landingPage";
-import type { ShowcaseProject } from "@/data/projects";
+import { showcaseProjects, type ShowcaseProject } from "@/data/projects";
 import { contactPath, teamPath } from "@/lib/landing/constants";
 
 export type LocationCity = {
@@ -591,7 +591,7 @@ export const pakistanLocation: LocationPageContent = {
     height: 1024,
   },
   cities: pakistanCities,
-  projects: [],
+  projects: showcaseProjects,
   facts: {
     title: "Pakistan software house and software company facts",
     subtitle:
