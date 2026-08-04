@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { CaseStudyPageContent } from "@/components/case-study/case-study-page";
-import { caseStudyPageMeta } from "@/data/caseStudyPage";
+import { caseStudyPageMeta } from "@/data/caseStudy";
 import { selfCanonical } from "@/seo/canonical";
 
 export const metadata: Metadata = {

@@ -1,6 +1,13 @@
 import type { FaqItem, ImageAsset } from "@/data/landingPage";
 import { projects } from "@/data/landingPage";
+import {
+  projectCaseStudyMeta,
+  type ProjectCaseStudyMeta,
+  type ProjectTechnologyStack,
+} from "@/data/caseStudy";
 import { projectPath } from "@/lib/landing/constants";
+
+export type { ProjectCaseStudyMeta, ProjectTechnologyStack };
 
 export type ProjectSlide = {
   label: string;
@@ -35,21 +42,22 @@ export type ProjectWhyNeed = {
   reasons: string[];
 };
 
-export type ProjectDetail = ShowcaseProject & {
-  metaTitle: string;
-  metaDescription: string;
-  image: ImageAsset;
-  overview: string[];
-  problem: string;
-  solutions: string[];
-  whyNeedProduct: ProjectWhyNeed;
-  procedure: ProjectProcedureStep[];
-  clientFeedback: string;
-  modulePictures: ProjectSlide[];
-  video: ProjectVideo;
-  outcome: string[];
-  faqs: FaqItem[];
-};
+export type ProjectDetail = ShowcaseProject &
+  ProjectCaseStudyMeta & {
+    metaTitle: string;
+    metaDescription: string;
+    image: ImageAsset;
+    overview: string[];
+    problem: string;
+    solutions: string[];
+    whyNeedProduct: ProjectWhyNeed;
+    procedure: ProjectProcedureStep[];
+    clientFeedback: string;
+    modulePictures: ProjectSlide[];
+    video: ProjectVideo;
+    outcome: string[];
+    faqs: FaqItem[];
+  };
 
 function img(src: string, alt: string, width = 1200, height = 750): ImageAsset {
   return { src, alt, width, height };
@@ -883,6 +891,522 @@ const hospitalManagementSystemSlides: ProjectSlide[] = [
     image: img(
       "/projects/hospital-management-system/Hospital-Management-System-Settings.png",
       "Hospital management system settings",
+    ),
+  },
+];
+
+const cashManagementSystemSlides: ProjectSlide[] = [
+  {
+    label: "Secure sign-in",
+    caption:
+      "Login access for finance teams to manage cash accounts, transactions, budgets, and reports securely.",
+    image: img(
+      "/projects/cash-management-system/Cash-Management-System-Sign-In.png",
+      "Cash management system sign-in",
+    ),
+  },
+  {
+    label: "Cash dashboard",
+    caption:
+      "Live overview of balances, income, expenses, transfers, and cash-flow trends across accounts.",
+    image: img(
+      "/projects/cash-management-system/Cash-Management-System-Dashboard.png",
+      "Cash management system dashboard",
+    ),
+  },
+  {
+    label: "Accounts",
+    caption:
+      "Maintain cash, bank, and wallet accounts with balances, statuses, and account-level visibility.",
+    image: img(
+      "/projects/cash-management-system/Cash-Management-System-Accounts.png",
+      "Cash management system accounts",
+    ),
+  },
+  {
+    label: "Transactions",
+    caption:
+      "Track every cash movement with filters by account, type, date, payee, and category.",
+    image: img(
+      "/projects/cash-management-system/Cash-Management-System-Transactions.png",
+      "Cash management system transactions",
+    ),
+  },
+  {
+    label: "Income",
+    caption:
+      "Record and categorize incoming cash with sources, accounts, and recurring income patterns.",
+    image: img(
+      "/projects/cash-management-system/Cash-Management-System-Income.png",
+      "Cash management system income",
+    ),
+  },
+  {
+    label: "Expenses",
+    caption:
+      "Capture outgoing spend by category, payee, account, and approval-ready expense history.",
+    image: img(
+      "/projects/cash-management-system/Cash-Management-System-Expenses.png",
+      "Cash management system expenses",
+    ),
+  },
+  {
+    label: "Transfers",
+    caption:
+      "Move funds between accounts with clear from/to records and transfer history.",
+    image: img(
+      "/projects/cash-management-system/Cash-Management-System-Transfers.png",
+      "Cash management system transfers",
+    ),
+  },
+  {
+    label: "Categories",
+    caption:
+      "Organize income and expense categories so reporting stays consistent across the business.",
+    image: img(
+      "/projects/cash-management-system/Cash-Management-System-Categories.png",
+      "Cash management system categories",
+    ),
+  },
+  {
+    label: "Payees",
+    caption:
+      "Manage vendors, recipients, and payee profiles linked to expenses and transfers.",
+    image: img(
+      "/projects/cash-management-system/Cash-Management-System-Payees.png",
+      "Cash management system payees",
+    ),
+  },
+  {
+    label: "Budgets",
+    caption:
+      "Set budgets by category or period and monitor spend against planned limits.",
+    image: img(
+      "/projects/cash-management-system/Cash-Management-System-Budgets.png",
+      "Cash management system budgets",
+    ),
+  },
+  {
+    label: "Reports",
+    caption:
+      "Review cash-flow, income vs expense, account summaries, and period performance reports.",
+    image: img(
+      "/projects/cash-management-system/Cash-Management-System-Reports.png",
+      "Cash management system reports",
+    ),
+  },
+  {
+    label: "Audit log",
+    caption:
+      "Trace user actions, edits, and financial changes with a clear audit trail.",
+    image: img(
+      "/projects/cash-management-system/Cash-Management-System-Audit-Log.png",
+      "Cash management system audit log",
+    ),
+  },
+];
+
+const hrManagementSoftwareSlides: ProjectSlide[] = [
+  {
+    label: "System overview",
+    caption:
+      "An AI-powered HRMS covering employees, attendance, leave, payroll, recruitment, performance, and more.",
+    image: img(
+      "/projects/hr-management-software/Hr-Management-Software-Overview.jpeg",
+      "HR management software overview",
+    ),
+  },
+  {
+    label: "Secure sign-in",
+    caption:
+      "Role-based login for HR admins, managers, and employees across the HRMS workspace.",
+    image: img(
+      "/projects/hr-management-software/Hr-Management-Software-Sign-In.jpeg",
+      "HR management software sign-in",
+    ),
+  },
+  {
+    label: "HR dashboard",
+    caption:
+      "Live headcount, attendance, leave, payroll, recruitment, and workforce KPIs in one overview.",
+    image: img(
+      "/projects/hr-management-software/Hr-Management-Software-Dashboard.jpeg",
+      "HR management software dashboard",
+    ),
+  },
+  {
+    label: "Employee management",
+    caption:
+      "Maintain employee profiles, departments, roles, status, and employment details in one directory.",
+    image: img(
+      "/projects/hr-management-software/Hr-Management-Software-Employee-Management.jpeg",
+      "HR management software employee management",
+    ),
+  },
+  {
+    label: "Organizational structure",
+    caption:
+      "Map departments, reporting lines, and team hierarchy for clear org visibility.",
+    image: img(
+      "/projects/hr-management-software/Hr-Management-Software-Organizational-Structure.jpeg",
+      "HR management software organizational structure",
+    ),
+  },
+  {
+    label: "Recruitment ATS",
+    caption:
+      "Run job openings, candidate pipelines, interviews, and hiring stages from an ATS workspace.",
+    image: img(
+      "/projects/hr-management-software/Hr-Management-Software-Recruitment-Ats.jpeg",
+      "HR management software recruitment ATS",
+    ),
+  },
+  {
+    label: "Employee onboarding",
+    caption:
+      "Guide new hires through checklists, documents, and onboarding tasks from day one.",
+    image: img(
+      "/projects/hr-management-software/Hr-Management-Software-Employee-Onboarding.jpeg",
+      "HR management software employee onboarding",
+    ),
+  },
+  {
+    label: "Attendance management",
+    caption:
+      "Track daily attendance, late marks, absences, and workforce presence across teams.",
+    image: img(
+      "/projects/hr-management-software/Hr-Management-Software-Attendance-Management.jpeg",
+      "HR management software attendance management",
+    ),
+  },
+  {
+    label: "Leave management",
+    caption:
+      "Handle leave requests, balances, approvals, and policy-based leave types.",
+    image: img(
+      "/projects/hr-management-software/Hr-Management-Software-Leave-Management.jpeg",
+      "HR management software leave management",
+    ),
+  },
+  {
+    label: "Payroll management",
+    caption:
+      "Process salaries, deductions, allowances, and payroll runs with clear employee pay records.",
+    image: img(
+      "/projects/hr-management-software/Hr-Management-Software-Payroll-Management.jpeg",
+      "HR management software payroll management",
+    ),
+  },
+  {
+    label: "Performance management",
+    caption:
+      "Set goals, run reviews, and track employee performance cycles over time.",
+    image: img(
+      "/projects/hr-management-software/Hr-Management-Software-Performance-Management.jpeg",
+      "HR management software performance management",
+    ),
+  },
+  {
+    label: "Training & learning",
+    caption:
+      "Assign training programs, track completion, and build learning paths for staff.",
+    image: img(
+      "/projects/hr-management-software/Hr-Management-Software-Training-Learning.jpeg",
+      "HR management software training and learning",
+    ),
+  },
+  {
+    label: "Asset management",
+    caption:
+      "Assign and track company assets issued to employees with return and status history.",
+    image: img(
+      "/projects/hr-management-software/Hr-Management-Software-Asset-Management.jpeg",
+      "HR management software asset management",
+    ),
+  },
+  {
+    label: "Expense reimbursement",
+    caption:
+      "Submit, approve, and reimburse employee expenses with clear claim status tracking.",
+    image: img(
+      "/projects/hr-management-software/Hr-Management-Software-Expense-Reimbursement.jpeg",
+      "HR management software expense reimbursement",
+    ),
+  },
+  {
+    label: "Disciplinary management",
+    caption:
+      "Record warnings, incidents, and disciplinary actions with audit-ready history.",
+    image: img(
+      "/projects/hr-management-software/Hr-Management-Software-Disciplinary-Management.jpeg",
+      "HR management software disciplinary management",
+    ),
+  },
+  {
+    label: "Exit management",
+    caption:
+      "Manage resignations, clearances, final settlements, and offboarding checklists.",
+    image: img(
+      "/projects/hr-management-software/Hr-Management-Software-Exit-Management.jpeg",
+      "HR management software exit management",
+    ),
+  },
+  {
+    label: "Employee documents",
+    caption:
+      "Store contracts, IDs, certificates, and HR documents with employee-linked access.",
+    image: img(
+      "/projects/hr-management-software/Hr-Management-Software-Employee-Documents.jpeg",
+      "HR management software employee documents",
+    ),
+  },
+  {
+    label: "Shift roster",
+    caption:
+      "Plan shifts, rosters, and staffing coverage across teams and working periods.",
+    image: img(
+      "/projects/hr-management-software/Hr-Management-Software-Shift-Roster.jpeg",
+      "HR management software shift roster",
+    ),
+  },
+  {
+    label: "Settings",
+    caption:
+      "Configure company profile, HR policies, roles, preferences, and system options.",
+    image: img(
+      "/projects/hr-management-software/Hr-Management-Software-Settings.jpeg",
+      "HR management software settings",
+    ),
+  },
+];
+
+const medicineInventorySystemSlides: ProjectSlide[] = [
+  {
+    label: "System overview",
+    caption:
+      "A pharmacy inventory platform for medicines, suppliers, purchases, stock movement, batches, and expiry control.",
+    image: img(
+      "/projects/medicine-inventory-system/Medicine-Inventory-System-Overview.png",
+      "Medicine inventory system overview",
+    ),
+  },
+  {
+    label: "Secure sign-in",
+    caption:
+      "Secure login for pharmacy and inventory staff managing medicine stock and purchases.",
+    image: img(
+      "/projects/medicine-inventory-system/Medicine-Inventory-System-Sign-In.png",
+      "Medicine inventory system sign-in",
+    ),
+  },
+  {
+    label: "Inventory dashboard",
+    caption:
+      "Live stock levels, low-stock alerts, expiry warnings, purchases, and inventory KPIs in one view.",
+    image: img(
+      "/projects/medicine-inventory-system/Medicine-Inventory-System-Dashboard.png",
+      "Medicine inventory system dashboard",
+    ),
+  },
+  {
+    label: "Medicines",
+    caption:
+      "Maintain medicine catalogs with SKUs, strengths, pack sizes, categories, and stock status.",
+    image: img(
+      "/projects/medicine-inventory-system/Medicine-Inventory-System-Medicines.png",
+      "Medicine inventory system medicines",
+    ),
+  },
+  {
+    label: "Suppliers",
+    caption:
+      "Manage supplier contacts, lead times, and purchase relationships for pharmacy replenishment.",
+    image: img(
+      "/projects/medicine-inventory-system/Medicine-Inventory-System-Suppliers.png",
+      "Medicine inventory system suppliers",
+    ),
+  },
+  {
+    label: "Purchase orders",
+    caption:
+      "Create and track purchase orders from request through receiving against supplier catalogs.",
+    image: img(
+      "/projects/medicine-inventory-system/Medicine-Inventory-System-Purchase-Orders.png",
+      "Medicine inventory system purchase orders",
+    ),
+  },
+  {
+    label: "Stock in",
+    caption:
+      "Receive medicines into inventory with quantities, batches, and receiving references.",
+    image: img(
+      "/projects/medicine-inventory-system/Medicine-Inventory-System-Stock-In.png",
+      "Medicine inventory system stock in",
+    ),
+  },
+  {
+    label: "Stock out",
+    caption:
+      "Issue stock for sales, transfers, or consumption with clear outbound movement records.",
+    image: img(
+      "/projects/medicine-inventory-system/Medicine-Inventory-System-Stock-Out.png",
+      "Medicine inventory system stock out",
+    ),
+  },
+  {
+    label: "Adjustments",
+    caption:
+      "Correct inventory with controlled adjustments for damage, recount, or variance fixes.",
+    image: img(
+      "/projects/medicine-inventory-system/Medicine-Inventory-System-Adjustments.png",
+      "Medicine inventory system adjustments",
+    ),
+  },
+  {
+    label: "Batch tracking",
+    caption:
+      "Track medicine batches by lot number, quantity, and location for full traceability.",
+    image: img(
+      "/projects/medicine-inventory-system/Medicine-Inventory-System-Batch-Tracking.png",
+      "Medicine inventory system batch tracking",
+    ),
+  },
+  {
+    label: "Expiry management",
+    caption:
+      "Monitor near-expiry and expired stock so pharmacy teams can act before losses grow.",
+    image: img(
+      "/projects/medicine-inventory-system/Medicine-Inventory-System-Expiry-Management.png",
+      "Medicine inventory system expiry management",
+    ),
+  },
+  {
+    label: "Stock reports",
+    caption:
+      "Review stock on hand, movement history, low stock, and inventory valuation reports.",
+    image: img(
+      "/projects/medicine-inventory-system/Medicine-Inventory-System-Stock-Reports.png",
+      "Medicine inventory system stock reports",
+    ),
+  },
+  {
+    label: "Purchase reports",
+    caption:
+      "Analyze purchase orders, supplier spend, and receiving performance over time.",
+    image: img(
+      "/projects/medicine-inventory-system/Medicine-Inventory-System-Purchase-Reports.png",
+      "Medicine inventory system purchase reports",
+    ),
+  },
+];
+
+const eLearningPortalSlides: ProjectSlide[] = [
+  {
+    label: "Secure sign-in / login",
+    caption:
+      "Secure sign-in for admins, instructors, and learners accessing the EduLearn portal.",
+    image: img(
+      "/projects/e-learning-portal/E-Learning-Portal-Sign-In.png",
+      "E-Learning Portal secure sign-in login",
+    ),
+  },
+  {
+    label: "Admin dashboard",
+    caption:
+      "Admin overview of courses, enrollments, users, and learning activity across EduLearn.",
+    image: img(
+      "/projects/e-learning-portal/E-Learning-Portal-Dashboard.png",
+      "E-Learning Portal admin dashboard",
+    ),
+  },
+  {
+    label: "Instructor dashboard",
+    caption:
+      "Instructor workspace for teaching load, course progress, and learner engagement.",
+    image: img(
+      "/projects/e-learning-portal/E-Learning-Portal-Instructor-Dashboard.png",
+      "E-Learning Portal instructor dashboard",
+    ),
+  },
+  {
+    label: "User management",
+    caption:
+      "Manage learners, instructors, and admin roles with clear access controls.",
+    image: img(
+      "/projects/e-learning-portal/E-Learning-Portal-Users.png",
+      "E-Learning Portal user management",
+    ),
+  },
+  {
+    label: "Course management",
+    caption:
+      "Create and organize courses with structure, status, and enrollment readiness.",
+    image: img(
+      "/projects/e-learning-portal/E-Learning-Portal-Courses.png",
+      "E-Learning Portal course management",
+    ),
+  },
+  {
+    label: "Category management",
+    caption:
+      "Group courses into categories so learners can browse and discover content faster.",
+    image: img(
+      "/projects/e-learning-portal/E-Learning-Portal-Categories.png",
+      "E-Learning Portal category management",
+    ),
+  },
+  {
+    label: "Enrollment management",
+    caption:
+      "Track learner enrollments, status, and course access from one enrollment workspace.",
+    image: img(
+      "/projects/e-learning-portal/E-Learning-Portal-Enrollments.png",
+      "E-Learning Portal enrollment management",
+    ),
+  },
+  {
+    label: "Lesson management",
+    caption:
+      "Build lessons and learning paths that instructors can publish inside each course.",
+    image: img(
+      "/projects/e-learning-portal/E-Learning-Portal-Lessons.png",
+      "E-Learning Portal lesson management",
+    ),
+  },
+  {
+    label: "Assignment management",
+    caption:
+      "Assign coursework, collect submissions, and keep assignment progress visible.",
+    image: img(
+      "/projects/e-learning-portal/E-Learning-Portal-Assignments.png",
+      "E-Learning Portal assignment management",
+    ),
+  },
+  {
+    label: "Quiz management",
+    caption:
+      "Create quizzes and assessments to measure learning outcomes across courses.",
+    image: img(
+      "/projects/e-learning-portal/E-Learning-Portal-Quizzes.png",
+      "E-Learning Portal quiz management",
+    ),
+  },
+  {
+    label: "Attendance management",
+    caption:
+      "Record and review learner attendance for classes, sessions, and course activity.",
+    image: img(
+      "/projects/e-learning-portal/E-Learning-Portal-Attendance.png",
+      "E-Learning Portal attendance management",
+    ),
+  },
+  {
+    label: "System settings",
+    caption:
+      "Configure EduLearn portal preferences, roles, and platform settings in one place.",
+    image: img(
+      "/projects/e-learning-portal/E-Learning-Portal-Settings.png",
+      "E-Learning Portal system settings",
     ),
   },
 ];
@@ -2136,10 +2660,647 @@ export const projectDetails: ProjectDetail[] = [
       ),
     ],
   },
-].map((project) => ({
-  ...project,
-  modulePictures: project.slides,
-}));
+  {
+    ...(() => {
+      const p = base("cash-management-system");
+      return {
+        slug: p.slug,
+        title: p.title,
+        category: p.category,
+        description: p.description,
+        image: p.image,
+      };
+    })(),
+    metaTitle: "Cash Management System Case Study | Finance Cash Software",
+    metaDescription:
+      "Case study: Cash Management System for accounts, income, expenses, transfers, payees, budgets, reports, and audit logs.",
+    highlights: [
+      "Accounts & cash dashboard",
+      "Income, expenses & transfers",
+      "Budgets, categories & payees",
+      "Reports & audit trail",
+    ],
+    slides: cashManagementSystemSlides,
+    overview: [
+      "Cash Management System is a finance platform built to run accounts, income, expenses, transfers, categories, payees, budgets, reporting, and audit logging from one workspace.",
+      "Finance teams can track balances across cash and bank accounts, record every movement, and keep income and spend categorized for clearer month-end reviews.",
+      "Budgets and payee records help control planned spend while reports surface cash-flow trends, account summaries, and period performance.",
+      "An audit log gives managers a reliable trail of edits and financial actions so cash operations stay accountable.",
+    ],
+    problem:
+      "The business was tracking cash across spreadsheets, bank statements, and informal chat updates. Balances never matched, expense categories drifted, transfers were hard to reconcile, and managers lacked a trustworthy view of budgets versus actual spend.",
+    solutions: [
+      "Built a live cash dashboard for balances, income, expenses, transfers, and cash-flow trends.",
+      "Delivered account and transaction modules with filters by type, date, payee, and category.",
+      "Created income, expense, and transfer workflows so every cash movement is recorded consistently.",
+      "Added categories, payees, and budgets for organized spend control and planned limits.",
+      "Connected reports for cash-flow, income vs expense, and account performance summaries.",
+      "Implemented secure sign-in plus an audit log for accountable financial operations.",
+    ],
+    whyNeedProduct: {
+      title: "Why businesses need a cash management system",
+      paragraphs: [
+        "When accounts, expenses, and transfers live in separate spreadsheets, cash visibility collapses and budget overruns surface too late.",
+        "Cash Management System gives finance teams one source of truth for balances, movements, budgets, and auditability.",
+      ],
+      reasons: [
+        "Centralize cash and bank account balances",
+        "Record income, expenses, and transfers in one ledger",
+        "Keep categories and payees consistent for reporting",
+        "Monitor budgets against actual spend",
+        "Generate cash-flow and period performance reports",
+        "Trace every change with an audit log",
+      ],
+    },
+    procedure: [
+      {
+        step: 1,
+        title: "Cash workflow discovery",
+        description:
+          "Mapped accounts, income sources, expense paths, transfers, budgets, and reporting needs with finance stakeholders.",
+      },
+      {
+        step: 2,
+        title: "Finance architecture",
+        description:
+          "Designed account structures, transaction types, categories, payee records, and permission-ready navigation.",
+      },
+      {
+        step: 3,
+        title: "Core cash modules",
+        description:
+          "Shipped dashboard, accounts, transactions, income, expenses, and transfers for daily cash operations.",
+      },
+      {
+        step: 4,
+        title: "Control & planning",
+        description:
+          "Added categories, payees, and budgets so spend stays organized against planned limits.",
+      },
+      {
+        step: 5,
+        title: "Reports & audit",
+        description:
+          "Connected cash-flow reports, account summaries, secure sign-in, and a full audit trail.",
+      },
+      {
+        step: 6,
+        title: "Launch & optimization",
+        description:
+          "Onboarded finance users, validated reconciliation flows, and tuned dashboards from live cash usage.",
+      },
+    ],
+    clientFeedback:
+      "We needed one place for accounts, expenses, transfers, and budgets instead of scattered sheets. Next Software Development Company delivered a Cash Management System that finally gives us clear cash flow and an audit trail we can trust.",
+    modulePictures: [],
+    video: {
+      title: "Cash Management System product walkthrough",
+      youtubeId: "",
+    },
+    outcome: [
+      "One platform for accounts, income, expenses, and transfers",
+      "Clearer cash balances across cash, bank, and wallet accounts",
+      "Organized categories, payees, and budget tracking",
+      "Live cash-flow and period performance reporting",
+      "Accountable financial operations with an audit log",
+      "Secure access for finance and admin teams",
+    ],
+    faqs: [
+      faq(
+        "Who is Cash Management System built for?",
+        "Finance teams, SMEs, and multi-account businesses that need accounts, income, expenses, transfers, budgets, reports, and audit trails in one platform.",
+        "Scope",
+        "left",
+      ),
+      faq(
+        "What modules are included?",
+        "Dashboard, accounts, transactions, income, expenses, transfers, categories, payees, budgets, reports, audit log, and secure sign-in.",
+        "Modules",
+        "right",
+      ),
+      faq(
+        "Can the system manage multiple accounts?",
+        "Yes. Cash, bank, and wallet accounts can be maintained with balances, statuses, and account-level visibility.",
+        "Accounts",
+        "left",
+      ),
+      faq(
+        "Does it track income and expenses?",
+        "Yes. Income and expenses are recorded with categories, payees, accounts, and history for clear cash movement tracking.",
+        "Cash flow",
+        "right",
+      ),
+      faq(
+        "Are transfers supported?",
+        "Yes. Funds can be moved between accounts with clear from/to records and transfer history.",
+        "Transfers",
+        "left",
+      ),
+      faq(
+        "Can we set budgets?",
+        "Yes. Budgets can be set by category or period so teams monitor spend against planned limits.",
+        "Budgets",
+        "right",
+      ),
+      faq(
+        "Is there an audit trail?",
+        "Yes. The audit log traces user actions, edits, and financial changes for accountability.",
+        "Audit",
+        "left",
+      ),
+      faq(
+        "What reports are available?",
+        "Managers can review cash-flow, income vs expense, account summaries, and period performance reports.",
+        "Reports",
+        "right",
+      ),
+    ],
+  },
+  {
+    ...(() => {
+      const p = base("hr-management-software");
+      return {
+        slug: p.slug,
+        title: p.title,
+        category: p.category,
+        description: p.description,
+        image: p.image,
+      };
+    })(),
+    metaTitle: "HR Management Software Case Study | AI HRMS Payroll ATS",
+    metaDescription:
+      "Case study: HR Management Software for employees, attendance, leave, payroll, recruitment ATS, performance, training, assets, and exit management.",
+    highlights: [
+      "Employees, org & onboarding",
+      "Attendance, leave & payroll",
+      "Recruitment ATS & performance",
+      "Training, assets & exit",
+    ],
+    slides: hrManagementSoftwareSlides,
+    overview: [
+      "HR Management Software is an AI-powered HRMS built to run employees, organizational structure, recruitment, onboarding, attendance, leave, payroll, performance, training, assets, expenses, discipline, documents, shifts, and exit workflows from one platform.",
+      "HR and managers get a live dashboard for headcount, attendance, leave, payroll readiness, and hiring pipeline health while employees stay connected to the modules they need.",
+      "Recruitment ATS, onboarding, and document storage help teams hire and ramp people faster without losing compliance paperwork.",
+      "Payroll, performance, training, assets, and exit management keep the full employee lifecycle connected from join to offboarding.",
+    ],
+    problem:
+      "The company was running HR across spreadsheets, email approvals, and disconnected tools for attendance, leave, payroll, hiring, and documents. Managers lacked a shared view of workforce status, onboarding lagged, and exit clearances were easy to miss.",
+    solutions: [
+      "Built a live HR dashboard for headcount, attendance, leave, payroll, and recruitment KPIs.",
+      "Delivered employee, org structure, and document modules for a single workforce directory.",
+      "Created recruitment ATS and onboarding flows for hiring and day-one readiness.",
+      "Connected attendance, leave, shift roster, and payroll for accurate workforce operations.",
+      "Added performance, training, assets, expenses, and disciplinary management.",
+      "Implemented exit management, settings, and secure sign-in for complete lifecycle control.",
+    ],
+    whyNeedProduct: {
+      title: "Why organizations need an integrated HRMS",
+      paragraphs: [
+        "When hiring, attendance, payroll, and documents live in separate tools, HR work slows and people data becomes unreliable.",
+        "HR Management Software gives HR, managers, and employees one connected system for the full employee lifecycle.",
+      ],
+      reasons: [
+        "Centralize employee records and organizational structure",
+        "Run recruitment ATS and structured onboarding",
+        "Track attendance, leave, and shift coverage accurately",
+        "Process payroll with connected workforce data",
+        "Manage performance, training, assets, and expenses",
+        "Complete exit clearances with document and audit readiness",
+      ],
+    },
+    procedure: [
+      {
+        step: 1,
+        title: "HR workflow discovery",
+        description:
+          "Mapped hiring, onboarding, attendance, leave, payroll, performance, assets, and exit processes with HR stakeholders.",
+      },
+      {
+        step: 2,
+        title: "HRMS architecture & roles",
+        description:
+          "Designed modules, employee states, permissions, and role-ready navigation for HR, managers, and staff.",
+      },
+      {
+        step: 3,
+        title: "Core people modules",
+        description:
+          "Shipped dashboard, employees, org structure, recruitment ATS, onboarding, and documents.",
+      },
+      {
+        step: 4,
+        title: "Time & payroll",
+        description:
+          "Connected attendance, leave, shift roster, and payroll for reliable workforce operations.",
+      },
+      {
+        step: 5,
+        title: "Lifecycle & controls",
+        description:
+          "Added performance, training, assets, expenses, discipline, exit management, settings, and secure sign-in.",
+      },
+      {
+        step: 6,
+        title: "Launch & optimization",
+        description:
+          "Onboarded HR roles, validated payroll and leave cycles, and tuned dashboards from live usage.",
+      },
+    ],
+    clientFeedback:
+      "We needed one HRMS for employees, attendance, leave, payroll, and hiring instead of scattered tools. Next Software Development Company delivered HR Management Software that finally keeps HR and managers aligned across the full employee lifecycle.",
+    modulePictures: [],
+    video: {
+      title: "HR Management Software product walkthrough",
+      youtubeId: "",
+    },
+    outcome: [
+      "One platform for employees, org structure, and documents",
+      "Connected recruitment ATS and employee onboarding",
+      "Clearer attendance, leave, shifts, and payroll operations",
+      "Performance, training, assets, and expense workflows in one place",
+      "Structured disciplinary and exit management",
+      "Role-based access for HR, managers, and employees",
+    ],
+    faqs: [
+      faq(
+        "Who is HR Management Software built for?",
+        "Growing companies and HR teams that need employees, attendance, leave, payroll, recruitment, performance, training, assets, and exit management in one HRMS.",
+        "Scope",
+        "left",
+      ),
+      faq(
+        "What modules are included?",
+        "Overview, sign-in, dashboard, employees, org structure, recruitment ATS, onboarding, attendance, leave, payroll, performance, training, assets, expenses, discipline, exit, documents, shift roster, and settings.",
+        "Modules",
+        "right",
+      ),
+      faq(
+        "Does it include a recruitment ATS?",
+        "Yes. Job openings, candidate pipelines, interviews, and hiring stages are managed in a dedicated recruitment ATS workspace.",
+        "Recruitment",
+        "left",
+      ),
+      faq(
+        "Can it manage attendance and leave?",
+        "Yes. Attendance tracks presence and absences, while leave covers requests, balances, approvals, and policy-based leave types.",
+        "Time",
+        "right",
+      ),
+      faq(
+        "Is payroll included?",
+        "Yes. Payroll management covers salaries, deductions, allowances, and payroll runs with employee pay records.",
+        "Payroll",
+        "left",
+      ),
+      faq(
+        "Does it support performance and training?",
+        "Yes. Teams can set goals, run reviews, assign training programs, and track learning completion.",
+        "Growth",
+        "right",
+      ),
+      faq(
+        "Can assets and expenses be tracked?",
+        "Yes. Asset management tracks company equipment issued to staff, and expense reimbursement handles claims and approvals.",
+        "Ops",
+        "left",
+      ),
+      faq(
+        "Is exit management supported?",
+        "Yes. Resignations, clearances, final settlements, and offboarding checklists are managed in the exit module.",
+        "Exit",
+        "right",
+      ),
+    ],
+  },
+  {
+    ...(() => {
+      const p = base("medicine-inventory-system");
+      return {
+        slug: p.slug,
+        title: p.title,
+        category: p.category,
+        description: p.description,
+        image: p.image,
+      };
+    })(),
+    metaTitle: "Medicine Inventory System Case Study | Pharmacy Stock Software",
+    metaDescription:
+      "Case study: Medicine Inventory System for medicines, suppliers, purchase orders, stock in/out, batch tracking, expiry management, and reports.",
+    highlights: [
+      "Medicines & suppliers",
+      "Purchase orders & stock movement",
+      "Batch & expiry tracking",
+      "Stock & purchase reports",
+    ],
+    slides: medicineInventorySystemSlides,
+    overview: [
+      "Medicine Inventory System is a pharmacy inventory platform built to run medicines, suppliers, purchase orders, stock in, stock out, adjustments, batch tracking, expiry management, and reporting from one workspace.",
+      "Pharmacy teams can maintain catalogs, receive purchases, issue stock, and keep batch-level traceability without relying on paper registers.",
+      "Expiry and low-stock visibility help staff act before shortages or wastage disrupt dispensing.",
+      "Stock and purchase reports give managers a clear view of inventory health, supplier spend, and receiving performance.",
+    ],
+    problem:
+      "The pharmacy was tracking medicine stock across notebooks, supplier chats, and disconnected sheets. Batches were hard to trace, expiry surprises caused write-offs, purchase orders lagged, and managers lacked reliable stock and purchase reports.",
+    solutions: [
+      "Built a live inventory dashboard for stock levels, low-stock alerts, expiry warnings, and purchase KPIs.",
+      "Delivered medicine and supplier modules for catalog and replenishment control.",
+      "Created purchase order workflows from request through receiving.",
+      "Connected stock in, stock out, and adjustments for controlled inventory movement.",
+      "Added batch tracking and expiry management for pharmacy traceability.",
+      "Implemented stock and purchase reports plus secure sign-in for inventory teams.",
+    ],
+    whyNeedProduct: {
+      title: "Why pharmacies need a medicine inventory system",
+      paragraphs: [
+        "When stock, batches, and purchases live in separate places, expiry losses rise and replenishment decisions become guesswork.",
+        "Medicine Inventory System gives pharmacy teams one operational source of truth for stock movement, batches, expiry, and purchasing.",
+      ],
+      reasons: [
+        "Centralize medicine catalogs and supplier records",
+        "Run purchase orders with clear receiving status",
+        "Track stock in, stock out, and adjustments accurately",
+        "Maintain batch-level traceability across inventory",
+        "Prevent wastage with expiry and low-stock alerts",
+        "Generate stock and purchase performance reports",
+      ],
+    },
+    procedure: [
+      {
+        step: 1,
+        title: "Pharmacy workflow discovery",
+        description:
+          "Mapped medicine catalogs, suppliers, purchasing, receiving, dispensing stock out, and expiry handling.",
+      },
+      {
+        step: 2,
+        title: "Inventory architecture",
+        description:
+          "Designed stock states, batch records, purchase statuses, and permission-ready pharmacy navigation.",
+      },
+      {
+        step: 3,
+        title: "Catalog & purchasing",
+        description:
+          "Shipped dashboard, medicines, suppliers, and purchase orders for core replenishment flow.",
+      },
+      {
+        step: 4,
+        title: "Stock movement",
+        description:
+          "Connected stock in, stock out, and adjustments for controlled inventory changes.",
+      },
+      {
+        step: 5,
+        title: "Traceability & reporting",
+        description:
+          "Added batch tracking, expiry management, stock reports, purchase reports, and secure sign-in.",
+      },
+      {
+        step: 6,
+        title: "Launch & optimization",
+        description:
+          "Onboarded pharmacy roles, validated receiving and expiry alerts, and tuned reports from live inventory usage.",
+      },
+    ],
+    clientFeedback:
+      "We needed one system for medicines, purchases, batches, and expiry instead of scattered sheets. Next Software Development Company delivered a Medicine Inventory System that finally keeps our pharmacy stock accurate and report-ready.",
+    modulePictures: [],
+    video: {
+      title: "Medicine Inventory System product walkthrough",
+      youtubeId: "",
+    },
+    outcome: [
+      "One platform for medicines, suppliers, and purchase orders",
+      "Controlled stock in, stock out, and inventory adjustments",
+      "Batch-level traceability across pharmacy inventory",
+      "Earlier visibility into low stock and near-expiry medicines",
+      "Clear stock and purchase reporting for managers",
+      "Secure access for pharmacy and inventory teams",
+    ],
+    faqs: [
+      faq(
+        "Who is Medicine Inventory System built for?",
+        "Pharmacies, clinics, and healthcare inventory teams that need medicines, suppliers, purchase orders, stock movement, batch tracking, expiry control, and reports in one platform.",
+        "Scope",
+        "left",
+      ),
+      faq(
+        "What modules are included?",
+        "Overview, sign-in, dashboard, medicines, suppliers, purchase orders, stock in, stock out, adjustments, batch tracking, expiry management, stock reports, and purchase reports.",
+        "Modules",
+        "right",
+      ),
+      faq(
+        "Can purchase orders be managed?",
+        "Yes. Purchase orders can be created and tracked from request through receiving against supplier catalogs.",
+        "Purchasing",
+        "left",
+      ),
+      faq(
+        "Does it support stock in and stock out?",
+        "Yes. Stock in records receiving quantities and batches, while stock out tracks outbound issues for sales, transfers, or consumption.",
+        "Stock",
+        "right",
+      ),
+      faq(
+        "Is batch tracking included?",
+        "Yes. Medicines can be tracked by lot number, quantity, and location for full batch traceability.",
+        "Batches",
+        "left",
+      ),
+      faq(
+        "How does expiry management work?",
+        "Near-expiry and expired stock are monitored so pharmacy teams can act before losses grow.",
+        "Expiry",
+        "right",
+      ),
+      faq(
+        "Can inventory be adjusted?",
+        "Yes. Controlled adjustments support damage, recount, and variance corrections with clear records.",
+        "Adjustments",
+        "left",
+      ),
+      faq(
+        "What reports are available?",
+        "Managers can review stock on hand, movement history, low stock, inventory valuation, purchase orders, supplier spend, and receiving performance.",
+        "Reports",
+        "right",
+      ),
+    ],
+  },
+  {
+    ...(() => {
+      const p = base("e-learning-portal");
+      return {
+        slug: p.slug,
+        title: p.title,
+        category: p.category,
+        description: p.description,
+        image: p.image,
+      };
+    })(),
+    metaTitle: "E-Learning Portal Case Study | EduLearn LMS Software",
+    metaDescription:
+      "Case study: EduLearn E-Learning Portal for courses, enrollments, lessons, assignments, quizzes, attendance, instructor dashboards, and admin management.",
+    highlights: [
+      "Courses, lessons & categories",
+      "Enrollments & attendance",
+      "Assignments & quizzes",
+      "Admin & instructor dashboards",
+    ],
+    slides: eLearningPortalSlides,
+    overview: [
+      "EduLearn E-Learning Portal is a complete learning management platform built to run courses, enrollments, lessons, assignments, quizzes, attendance, certificates, instructor dashboards, and admin management from one workspace.",
+      "Admins can manage users, categories, and system settings while instructors deliver courses, lessons, and assessments with clear learner visibility.",
+      "Enrollment and attendance tools keep learner progress organized without scattered spreadsheets or disconnected tools.",
+      "Assignments and quizzes give teams a practical way to measure outcomes and keep learning accountable end to end.",
+    ],
+    problem:
+      "The training team was running courses, enrollments, lessons, and assessments across emails, folders, and disconnected tools. Instructors lacked a clear dashboard, attendance was inconsistent, quizzes and assignments were hard to track, and admins could not manage users, categories, and settings from one reliable portal.",
+    solutions: [
+      "Built secure sign-in with admin and instructor dashboards for day-to-day learning operations.",
+      "Delivered user, course, and category modules for structured catalog and role management.",
+      "Created enrollment workflows so learner access stays clear and trackable.",
+      "Connected lessons, assignments, and quizzes for complete course delivery and assessment.",
+      "Added attendance management for session and course participation records.",
+      "Implemented system settings plus certificate-ready learning operations in EduLearn.",
+    ],
+    whyNeedProduct: {
+      title: "Why institutions need an e-learning portal",
+      paragraphs: [
+        "When courses, enrollments, and assessments live in separate places, instructors lose visibility and learners fall through the cracks.",
+        "EduLearn E-Learning Portal gives education teams one operational source of truth for courses, enrollments, lessons, assignments, quizzes, and attendance.",
+      ],
+      reasons: [
+        "Centralize courses, categories, and learner enrollments",
+        "Give instructors a dedicated teaching dashboard",
+        "Deliver lessons with assignments and quizzes in one flow",
+        "Track attendance and learner participation accurately",
+        "Manage users and roles with clear admin controls",
+        "Configure portal settings without custom workarounds",
+      ],
+    },
+    procedure: [
+      {
+        step: 1,
+        title: "Learning workflow discovery",
+        description:
+          "Mapped admin, instructor, and learner journeys across courses, enrollments, lessons, assessments, and attendance.",
+      },
+      {
+        step: 2,
+        title: "LMS architecture",
+        description:
+          "Designed role-based navigation, course structures, enrollment states, and assessment-ready module boundaries.",
+      },
+      {
+        step: 3,
+        title: "Catalog & users",
+        description:
+          "Shipped dashboards, users, courses, and categories for core EduLearn catalog control.",
+      },
+      {
+        step: 4,
+        title: "Delivery & assessment",
+        description:
+          "Connected enrollments, lessons, assignments, and quizzes for end-to-end course delivery.",
+      },
+      {
+        step: 5,
+        title: "Attendance & settings",
+        description:
+          "Added attendance management, system settings, and secure sign-in for portal operations.",
+      },
+      {
+        step: 6,
+        title: "Launch & optimization",
+        description:
+          "Onboarded admin and instructor roles, validated enrollment and assessment flows, and tuned dashboards from live usage.",
+      },
+    ],
+    clientFeedback:
+      "We needed one EduLearn portal for courses, enrollments, lessons, assignments, and attendance instead of scattered tools. Next Software Development Company delivered an E-Learning Portal that finally keeps our instructors and admins aligned.",
+    modulePictures: [],
+    video: {
+      title: "E-Learning Portal product walkthrough",
+      youtubeId: "",
+    },
+    outcome: [
+      "One EduLearn platform for courses, enrollments, and lessons",
+      "Admin and instructor dashboards for daily learning operations",
+      "Assignments and quizzes connected to course delivery",
+      "Attendance tracking for sessions and learner participation",
+      "User, category, and settings control for portal admins",
+      "Secure sign-in for learners, instructors, and administrators",
+    ],
+    faqs: [
+      faq(
+        "Who is E-Learning Portal built for?",
+        "Schools, training institutes, and education teams that need courses, enrollments, lessons, assignments, quizzes, attendance, instructor dashboards, and admin management in one EduLearn platform.",
+        "Scope",
+        "left",
+      ),
+      faq(
+        "What modules are included?",
+        "Secure sign-in, admin dashboard, instructor dashboard, users, courses, categories, enrollments, lessons, assignments, quizzes, attendance, and system settings.",
+        "Modules",
+        "right",
+      ),
+      faq(
+        "Can instructors manage their own courses?",
+        "Yes. Instructors get a dedicated dashboard for teaching load, course progress, and learner engagement inside EduLearn.",
+        "Instructors",
+        "left",
+      ),
+      faq(
+        "Does it support enrollments?",
+        "Yes. Enrollment management tracks learner status and course access from one workspace.",
+        "Enrollments",
+        "right",
+      ),
+      faq(
+        "Are assignments and quizzes included?",
+        "Yes. Teams can create assignments and quizzes to collect submissions and measure learning outcomes.",
+        "Assessments",
+        "left",
+      ),
+      faq(
+        "How does attendance work?",
+        "Attendance management records and reviews learner participation for classes, sessions, and course activity.",
+        "Attendance",
+        "right",
+      ),
+      faq(
+        "Can admins manage users and categories?",
+        "Yes. Admins can manage learners, instructors, roles, course categories, and portal settings from the admin modules.",
+        "Admin",
+        "left",
+      ),
+      faq(
+        "Is the portal ready for certificates?",
+        "Yes. EduLearn is designed for certificate-ready learning operations alongside courses, enrollments, and assessments.",
+        "Certificates",
+        "right",
+      ),
+    ],
+  },
+].map((project) => {
+  const caseStudy = projectCaseStudyMeta[project.slug];
+  if (!caseStudy) {
+    throw new Error(`Missing case study meta for slug: ${project.slug}`);
+  }
+
+  return {
+    ...project,
+    ...caseStudy,
+    modulePictures:
+      project.slug === "hr-management-software"
+        ? project.slides.filter(
+            (slide) => !slide.image.src.includes("Hr-Management-Software-Overview"),
+          )
+        : project.slides,
+  };
+});
 
 export const showcaseProjects: ShowcaseProject[] = projectDetails
   .filter((project) => project.slides.length > 0)

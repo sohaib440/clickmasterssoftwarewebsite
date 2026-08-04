@@ -207,7 +207,7 @@ export function Navbar() {
             scrolled ? "h-16 md:h-[4.25rem] xl:h-[4.5rem]" : "h-[4.25rem] md:h-[4.5rem] xl:h-20"
           )}
         >
-           <SiteLogo
+          <SiteLogo
             priority
             className="min-w-0 max-w-[min(58vw,12rem)] shrink sm:max-w-[14rem] md:max-w-[16rem] xl:max-w-[18rem]"
             imageClassName="h-8 w-auto max-w-full sm:h-9 md:h-10 xl:h-12"

@@ -107,4 +107,56 @@ export const projects = [
       height: 750,
     },
   },
+  {
+    slug: "cash-management-system",
+    title: "Cash Management System",
+    category: "Finance · Cash · Accounting",
+    description:
+      "A complete cash management platform for accounts, income, expenses, transfers, categories, payees, budgets, reports, and audit trails so teams control cash flow with full visibility.",
+    image: {
+      src: "/projects/cash-management-system/Cash-Management-System-Sign-In.png",
+      alt: "Cash management system sign-in",
+      width: 1200,
+      height: 750,
+    },
+  },
+  {
+    slug: "hr-management-software",
+    title: "HR Management Software",
+    category: "HR · Payroll · ATS",
+    description:
+      "An AI-powered HRMS for employees, attendance, leave, payroll, recruitment, onboarding, performance, training, assets, expenses, and exit management in one platform.",
+    image: {
+      src: "/projects/hr-management-software/Hr-Management-Software-Overview.jpeg",
+      alt: "HR management software overview",
+      width: 1200,
+      height: 750,
+    },
+  },
+  {
+    slug: "medicine-inventory-system",
+    title: "Medicine Inventory System",
+    category: "Healthcare · Pharmacy · Inventory",
+    description:
+      "A pharmacy inventory platform for medicines, suppliers, purchase orders, stock in and out, adjustments, batch and expiry tracking, and stock and purchase reports.",
+    image: {
+      src: "/projects/medicine-inventory-system/Medicine-Inventory-System-Overview.png",
+      alt: "Medicine inventory system overview",
+      width: 1200,
+      height: 750,
+    },
+  },
+  {
+    slug: "e-learning-portal",
+    title: "E-Learning Portal",
+    category: "Education · LMS · E-Learning",
+    description:
+      "A complete EduLearn e-learning platform for courses, enrollments, lessons, assignments, quizzes, attendance, certificates, instructor dashboards, and admin management.",
+    image: {
+      src: "/projects/e-learning-portal/E-Learning-Portal-Sign-In.png",
+      alt: "E-Learning Portal secure sign-in login",
+      width: 1200,
+      height: 750,
+    },
+  },
 ];
