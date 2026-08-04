@@ -30,8 +30,8 @@ export const softwareDevelopmentHero = {
 } as const;
 
 export const softwareDevelopmentStats = [
-  { value: "50+", label: "Software Projects Delivered", icon: "users" as const },
-  { value: "4+", label: "Years Building Custom Software", icon: "briefcase" as const },
+  { value: "250+", label: "Software Projects Delivered", icon: "users" as const },
+  { value: "6+", label: "Years Building Custom Software", icon: "briefcase" as const },
   { value: "10+", label: "Countries Served", icon: "layers" as const },
   { value: "98%", label: "Client Satisfaction Rate", icon: "shield-check" as const },
 ];

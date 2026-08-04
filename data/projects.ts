@@ -1,6 +1,13 @@
 import type { FaqItem, ImageAsset } from "@/data/landingPage";
 import { projects } from "@/data/landingPage";
+import {
+  projectCaseStudyMeta,
+  type ProjectCaseStudyMeta,
+  type ProjectTechnologyStack,
+} from "@/data/caseStudy";
 import { projectPath } from "@/lib/landing/constants";
+
+export type { ProjectCaseStudyMeta, ProjectTechnologyStack };
 
 export type ProjectSlide = {
   label: string;
@@ -35,21 +42,22 @@ export type ProjectWhyNeed = {
   reasons: string[];
 };
 
-export type ProjectDetail = ShowcaseProject & {
-  metaTitle: string;
-  metaDescription: string;
-  image: ImageAsset;
-  overview: string[];
-  problem: string;
-  solutions: string[];
-  whyNeedProduct: ProjectWhyNeed;
-  procedure: ProjectProcedureStep[];
-  clientFeedback: string;
-  modulePictures: ProjectSlide[];
-  video: ProjectVideo;
-  outcome: string[];
-  faqs: FaqItem[];
-};
+export type ProjectDetail = ShowcaseProject &
+  ProjectCaseStudyMeta & {
+    metaTitle: string;
+    metaDescription: string;
+    image: ImageAsset;
+    overview: string[];
+    problem: string;
+    solutions: string[];
+    whyNeedProduct: ProjectWhyNeed;
+    procedure: ProjectProcedureStep[];
+    clientFeedback: string;
+    modulePictures: ProjectSlide[];
+    video: ProjectVideo;
+    outcome: string[];
+    faqs: FaqItem[];
+  };
 
 function img(src: string, alt: string, width = 1200, height = 750): ImageAsset {
   return { src, alt, width, height };
@@ -3276,15 +3284,23 @@ export const projectDetails: ProjectDetail[] = [
       ),
     ],
   },
-].map((project) => ({
-  ...project,
-  modulePictures:
-    project.slug === "hr-management-software"
-      ? project.slides.filter(
-          (slide) => !slide.image.src.includes("Hr-Management-Software-Overview")
-        )
-      : project.slides,
-}));
+].map((project) => {
+  const caseStudy = projectCaseStudyMeta[project.slug];
+  if (!caseStudy) {
+    throw new Error(`Missing case study meta for slug: ${project.slug}`);
+  }
+
+  return {
+    ...project,
+    ...caseStudy,
+    modulePictures:
+      project.slug === "hr-management-software"
+        ? project.slides.filter(
+            (slide) => !slide.image.src.includes("Hr-Management-Software-Overview"),
+          )
+        : project.slides,
+  };
+});
 
 export const showcaseProjects: ShowcaseProject[] = projectDetails
   .filter((project) => project.slides.length > 0)

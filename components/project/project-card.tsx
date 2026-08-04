@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 import { Reveal } from "@/components/landing/reveal";
-import { projectCaseStudyMeta } from "@/data/projectCaseStudyMeta";
+import { projectCaseStudyMeta } from "@/data/caseStudy";
 import { projectDetailPath } from "@/data/projects";
 import { undashList, undashText } from "@/lib/case-study-text";
 import { motionStagger } from "@/lib/landing/motion";
