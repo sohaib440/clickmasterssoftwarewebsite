@@ -6,12 +6,10 @@ import { Reveal } from "@/components/landing/reveal";
 import { SiteHeader } from "@/components/landing/navbar";
 import {
   btnOnDark,
-  btnPrimary,
-  cardSoft,
   container,
   sectionPad,
 } from "@/lib/landing/constants";
-import { caseStudies, caseStudyPageMeta } from "@/data/caseStudyPage";
+import { caseStudies, caseStudyPageMeta } from "@/data/caseStudy";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
 
@@ -64,31 +62,15 @@ export function CaseStudyPageContent() {
           </div>
         </section>
 
-        <section className="bg-horizon-peach/30 text-horizon-navy">
+        <section className="bg-white text-horizon-navy">
           <div className={cn(container, sectionPad)}>
-            <ul className="grid gap-8 lg:grid-cols-2">
+            <ul className="grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
               {caseStudies.map((item, i) => (
-                <li key={item.slug}>
+                <li key={item.slug} className="h-full">
                   <CaseStudyCard item={item} index={i} />
                 </li>
               ))}
             </ul>
-          </div>
-        </section>
-
-        <section className="border-y border-horizon-border bg-white text-horizon-navy">
-          <div className={cn(container, sectionPad)}>
-            <Reveal className={cn(cardSoft, "mx-auto max-w-3xl p-6 text-center md:p-10")}>
-              <h2 className="font-heading text-2xl font-medium text-horizon-navy md:text-3xl">
-                {caseStudyPageMeta.bookCall.title}
-              </h2>
-              <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-horizon-muted md:text-base">
-                {caseStudyPageMeta.bookCall.description}
-              </p>
-              <Link href={caseStudyPageMeta.bookCall.href} className={cn(btnPrimary, "mt-6")}>
-                {caseStudyPageMeta.bookCall.cta} →
-              </Link>
-            </Reveal>
           </div>
         </section>
 

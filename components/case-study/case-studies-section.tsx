@@ -1,7 +1,7 @@
 import { CaseStudyCard } from "@/components/case-study/case-study-card";
 import { SectionHeading } from "@/components/landing/section-heading";
 import { container, sectionPad } from "@/lib/landing/constants";
-import type { CaseStudy } from "@/data/caseStudyPage";
+import type { CaseStudy } from "@/data/caseStudy";
 import { cn } from "@/lib/utils";
 
 type CaseStudiesSectionProps = {
@@ -21,7 +21,7 @@ export function CaseStudiesSection({
 }: CaseStudiesSectionProps) {
   return (
     <section
-      className={cn("w-full bg-horizon-peach/30 text-horizon-navy", className)}
+      className={cn("w-full bg-white text-horizon-navy", className)}
       aria-labelledby="case-studies-heading"
     >
       <div className={cn(container, sectionPad)}>
@@ -32,9 +32,9 @@ export function CaseStudiesSection({
           className="mb-8 md:mb-10"
         />
 
-        <ul className="grid gap-8 lg:grid-cols-2">
+        <ul className="grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {items.map((item, index) => (
-            <li key={item.slug}>
+            <li key={item.slug} className="h-full">
               <CaseStudyCard item={item} index={index} />
             </li>
           ))}
