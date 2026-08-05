@@ -97,12 +97,69 @@ function withParentMainLinks(text: string, mainSlug: string, mainLabel: string):
   return next;
 }
 
-/** Bake sub-service overview copy with links to the parent main service page */
+/** Extra overview paragraphs (plain text; natural linking applied separately). */
+function extraOverviewParagraphs(
+  mainSlug: string,
+  label: string,
+  description: string,
+  mainLabel: string
+): string[] {
+  const service = label.trim();
+  const focus = description.replace(/\.$/, "").trim();
+  const parent = mainLabel.trim();
+  const focusLower = focus.charAt(0).toLowerCase() + focus.slice(1);
+
+  const discoveryByCategory: Record<string, string> = {
+    "software-development":
+      "We map workflows, data ownership, and integration points before writing production code, so architecture choices support growth instead of blocking it later.",
+    "mobile-development":
+      "We clarify platforms, offline needs, store policies, and analytics early so the app ships with a path to updates, not a one-off build.",
+    "web-development":
+      "We align on performance, SEO, accessibility, and CMS or app boundaries so the site or web product stays fast and editable after launch.",
+    "ecommerce-development":
+      "We review catalog complexity, checkout, payments, and fulfillment rules so the storefront converts without fragile customizations.",
+    "ui-ux-design":
+      "We validate journeys with research and prototypes so engineering builds interfaces users can complete without friction or guesswork.",
+    "artificial-intelligence":
+      "We define data sources, evaluation criteria, and human oversight so AI features stay useful, measurable, and safe in production.",
+    "machine-learning":
+      "We assess data quality, labeling, and serving constraints so models move from experiments into reliable inference pipelines.",
+    "automation-services":
+      "We inventory repetitive tasks, systems of record, and exception paths so automation reduces work without hiding failures.",
+    "cloud-devops":
+      "We review environments, release cadence, and observability so cloud and pipelines support secure, repeatable delivery.",
+    "data-business-intelligence":
+      "We align metrics definitions, sources, and consumers so dashboards and pipelines reflect decisions, not conflicting spreadsheets.",
+    cybersecurity:
+      "We prioritize assets, threat models, and compliance needs so security work reduces real risk instead of checkbox theater.",
+    "enterprise-solutions":
+      "We map roles, approvals, and system-of-record boundaries so ERP, CRM, and internal platforms reinforce each other.",
+    "blockchain-development":
+      "We clarify on-chain vs off-chain responsibilities, custody, and audit needs so Web3 features serve a real business workflow.",
+    "healthcare-software-development":
+      "We account for clinical workflows, privacy expectations, and reliable access so care teams can trust the software day to day.",
+    "ar-vr-development":
+      "We define devices, environments, and training or retail goals so immersive experiences stay practical to deploy and maintain.",
+    "testing-and-qa":
+      "We cover critical paths, regression risk, and environments so releases stay confident across web, mobile, and APIs.",
+  };
+
+  const discovery =
+    discoveryByCategory[mainSlug] ??
+    "We clarify goals, users, and constraints before build work begins so delivery stays aligned with what success looks like.";
+
+  return [
+    `How we approach ${service.toLowerCase()} starts with discovery: stakeholders, priorities, and success metrics. ${discovery}`,
+    `During delivery you work with senior owners and visible checkpoints. Designs and increments are shared early, QA runs alongside development, and we prepare handoff notes so your team can operate and extend what we ship.`,
+    `A typical ${service.toLowerCase()} engagement includes architecture, implementation, integrations where needed, launch support, and a clear backlog for what comes next. That keeps ${focusLower} connected to outcomes inside our ${parent} practice.`,
+  ];
+}
+
+/** Bake sub-service overview copy with one natural link to the parent main service */
 function withInternalLinks(map: SubServicesMap): SubServicesMap {
   return Object.fromEntries(
     Object.entries(map).map(([mainSlug, items]) => {
       const mainLabel = mainServiceLabels[mainSlug] ?? mainSlug;
-      const mainHref = `/${mainSlug}`;
 
       return [
         mainSlug,
@@ -118,12 +175,29 @@ function withInternalLinks(map: SubServicesMap): SubServicesMap {
                 .replace(/^This page is part of our \[[^\]]+\]\([^)]+\) services\.[^.]*\.\s*/i, "")
                 .trim(),
             )
-            .filter(Boolean)
-            .map((paragraph) => withParentMainLinks(paragraph, mainSlug, mainLabel));
+            .filter(Boolean);
 
-          const overview = `${item.label} sits inside our [${mainLabel}](${mainHref}) practice. As a leading software development company and software house, we deliver ${item.label.toLowerCase()} for startups, SMBs, and enterprises with clear scope, senior engineering, and a path from discovery to launch.`;
+          const expanded =
+            body.length >= 5
+              ? body
+              : [
+                  ...body,
+                  ...extraOverviewParagraphs(
+                    mainSlug,
+                    item.label,
+                    item.description,
+                    mainLabel
+                  ).slice(0, Math.max(0, 5 - body.length)),
+                ];
 
-          const content = [overview, ...body];
+          // Exactly one natural parent link across the whole overview body
+          let linked = false;
+          const content = expanded.map((paragraph) => {
+            if (linked) return paragraph;
+            const next = withParentMainLinks(paragraph, mainSlug, mainLabel);
+            if (next !== paragraph) linked = true;
+            return next;
+          });
 
           return { ...item, tagline, content };
         }),

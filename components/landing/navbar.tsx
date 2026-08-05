@@ -54,7 +54,7 @@ export const navLinks: readonly NavLink[] = [
     href: "/location",
     children: [
       { label: "Pakistan", href: "/location/software-house-and-software-company-in-pakistan" },
-      { label: "All locations", href: "/location" },
+      // { label: "All locations", href: "/location" },
     ],
   },
   { label: "Industries", href: industriesPath },

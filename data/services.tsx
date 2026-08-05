@@ -237,7 +237,7 @@ export const defaultCategorySections = {
   offerings: {
     title: "What we deliver",
     subtitle: (label: string) =>
-      `Focused capabilities within ${label.toLowerCase()}, each scoped to your timeline and team. Built by a leading [software development company](/) and [software house](/). Open any capability below.`,
+      `Focused capabilities within ${label.toLowerCase()}, each scoped to your timeline and team. Built by a leading software development company. Open any capability below.`,
   },
   highlights: { title: "Why teams choose us" },
   approach: { title: "Our approach" },

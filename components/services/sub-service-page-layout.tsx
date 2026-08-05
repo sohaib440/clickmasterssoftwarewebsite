@@ -70,7 +70,6 @@ type SubServicePageLayoutProps = {
 export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
   const {
     breadcrumbs,
-    parent,
     hero,
     contentParagraphs,
     overviewTitle,
@@ -101,11 +100,7 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
             <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.65fr)] lg:gap-10">
               <div className="min-w-0">
                 <Reveal immediate delay={motionStagger}>
-                  <p className={cn(overline, "text-white/60")}>
-                    <Link href={parent.href} className="transition-colors hover:text-white">
-                      {hero.eyebrow}
-                    </Link>
-                  </p>
+                  <p className={cn(overline, "text-white/60")}>{hero.eyebrow}</p>
                 </Reveal>
                 <Reveal immediate delay={motionStagger * 2}>
                   <h1 className="mt-4 font-heading text-4xl font-normal leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
