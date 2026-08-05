@@ -100,15 +100,20 @@ export function MainServicePageLayout({ content }: MainServicePageLayoutProps) {
               </div>
 
               <Reveal immediate delay={motionStagger * 2} direction="right">
-                <div className={cn(cardDark, "overflow-hidden p-0")}>
-                  <CardImage
-                    {...hero.image}
-                    className="aspect-[4/3] w-full lg:aspect-[5/4]"
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                </div>
-                <RatingBadges variant="dark" className="mt-6" />
+                {hero.image ? (
+                  <div className={cn(cardDark, "overflow-hidden p-0")}>
+                    <CardImage
+                      {...hero.image}
+                      className="aspect-[4/3] w-full lg:aspect-[5/4]"
+                      priority
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                  </div>
+                ) : null}
+                <RatingBadges
+                  variant="dark"
+                  className={hero.image ? "mt-6" : undefined}
+                />
               </Reveal>
             </div>
           </div>

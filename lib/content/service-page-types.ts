@@ -26,7 +26,8 @@ export type ServiceHeroContent = {
   eyebrow: string;
   title: string;
   description: string;
-  image: ContentImage;
+  /** Omit when no dedicated service image exists */
+  image?: ContentImage;
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
 };

@@ -31,23 +31,25 @@ function ServiceCard({ service, index }: { service: ServiceCardData; index: numb
           </span>
         </div>
 
-        <div className="relative mx-auto -mt-1 mb-1 flex h-[17.5rem] w-full max-w-[19.5rem] shrink-0 items-center justify-center sm:h-[19rem] sm:max-w-[21rem]">
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-0 rounded-full opacity-50 blur-2xl transition-opacity duration-500 group-hover:opacity-80"
-            style={{
-              background: `radial-gradient(circle, ${service.accent}55 0%, transparent 70%)`,
-            }}
-          />
-          <Image
-            src={service.image}
-            alt={service.imageAlt ?? `${service.title} service image`}
-            width={320}
-            height={320}
-            className="relative z-10 size-[17.5rem] object-contain drop-shadow-[0_12px_28px_rgba(0,0,0,0.45)] transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-3 sm:size-[19rem]"
-            sizes="320px"
-          />
-        </div>
+        {service.image ? (
+          <div className="relative mx-auto -mt-1 mb-1 flex h-[17.5rem] w-full max-w-[19.5rem] shrink-0 items-center justify-center sm:h-[19rem] sm:max-w-[21rem]">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 rounded-full opacity-50 blur-2xl transition-opacity duration-500 group-hover:opacity-80"
+              style={{
+                background: `radial-gradient(circle, ${service.accent}55 0%, transparent 70%)`,
+              }}
+            />
+            <Image
+              src={service.image}
+              alt={service.imageAlt ?? `${service.title} service image`}
+              width={320}
+              height={320}
+              className="relative z-10 size-[17.5rem] object-contain drop-shadow-[0_12px_28px_rgba(0,0,0,0.45)] transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-3 sm:size-[19rem]"
+              sizes="320px"
+            />
+          </div>
+        ) : null}
 
         <div className="mt-auto flex flex-col pt-1">
           <h3 className="font-heading text-lg font-medium leading-snug tracking-tight text-white md:text-xl">

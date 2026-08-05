@@ -116,14 +116,16 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
               </div>
 
               <Reveal immediate delay={motionStagger * 2} direction="right">
-                <div className="overflow-hidden rounded-2xl border border-white/10 shadow-[0_24px_60px_rgba(0,0,0,0.35)]">
-                  <CardImage
-                    {...hero.image}
-                    className="aspect-[5/4] w-full object-cover"
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 45vw"
-                  />
-                </div>
+                {hero.image ? (
+                  <div className="overflow-hidden rounded-2xl border border-white/10 shadow-[0_24px_60px_rgba(0,0,0,0.35)]">
+                    <CardImage
+                      {...hero.image}
+                      className="aspect-[5/4] w-full object-cover"
+                      priority
+                      sizes="(max-width: 1024px) 100vw, 45vw"
+                    />
+                  </div>
+                ) : null}
               </Reveal>
             </div>
           </div>

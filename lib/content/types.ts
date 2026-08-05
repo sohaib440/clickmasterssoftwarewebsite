@@ -64,7 +64,8 @@ export type MainCategoryContent = {
   description: string;
   metaDescription: string;
   icon: LucideIcon;
-  heroImage: ContentImage;
+  /** Omit when no dedicated asset exists under /public/services */
+  heroImage?: ContentImage;
   subCategories: SubCategoryContent[];
   highlights: ContentBlock[];
   approach: ApproachStep[];

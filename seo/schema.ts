@@ -232,10 +232,64 @@ export const homepageServiceSchema = {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Design & UI/UX",
+          name: "Mobile Development",
+          description: "iOS and Android apps with native quality and scalable delivery.",
+          url: `${siteConfig.url}/mobile-development`,
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Web Development",
+          description: "Modern web applications built for performance, SEO, and scale.",
+          url: `${siteConfig.url}/web-development`,
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Ecommerce Development",
+          description: "Storefronts, marketplaces, and checkout systems engineered for conversion.",
+          url: `${siteConfig.url}/ecommerce-development`,
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "UI/UX Design",
           description:
             "UX research, UI systems, prototyping, and design that ships with engineering.",
-          url: `${siteConfig.url}/design-ux`,
+          url: `${siteConfig.url}/ui-ux-design`,
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Artificial Intelligence",
+          description: "AI-powered product features and intelligent automation systems.",
+          url: `${siteConfig.url}/artificial-intelligence`,
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Machine Learning",
+          description: "Practical ML models trained and deployed for real product use.",
+          url: `${siteConfig.url}/machine-learning`,
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Automation Services",
+          description: "Workflow, RPA, and document automation across business systems.",
+          url: `${siteConfig.url}/automation-services`,
         },
       },
       {
@@ -252,28 +306,55 @@ export const homepageServiceSchema = {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Data & Analytics",
+          name: "Data & Business Intelligence",
           description:
             "Data pipelines, analytics dashboards, and reporting platforms businesses trust.",
-          url: `${siteConfig.url}/data-security`,
+          url: `${siteConfig.url}/data-business-intelligence`,
         },
       },
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Artificial Intelligence",
-          description: "AI-powered product features and intelligent automation systems.",
-          url: `${siteConfig.url}/artificial-intelligence-ai`,
+          name: "Cybersecurity",
+          description: "Application security, audits, and compliance readiness.",
+          url: `${siteConfig.url}/cybersecurity`,
         },
       },
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Machine Learning",
-          description: "Practical ML models trained and deployed for real product use.",
-          url: `${siteConfig.url}/machine-learning-ml`,
+          name: "Enterprise Solutions",
+          description: "ERP, CRM, and internal platforms for complex business workflows.",
+          url: `${siteConfig.url}/enterprise-solutions`,
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Blockchain Development",
+          description: "Smart contracts, dApps, and Web3 integrations for product teams.",
+          url: `${siteConfig.url}/blockchain-development`,
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Healthcare Software Development",
+          description: "Hospital, clinic, and telemedicine platforms for care teams.",
+          url: `${siteConfig.url}/healthcare-software-development`,
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "AR/VR Development",
+          description: "Augmented and virtual reality experiences for training and retail.",
+          url: `${siteConfig.url}/ar-vr-development`,
         },
       },
       {

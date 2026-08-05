@@ -93,18 +93,18 @@ export const softwareDevelopmentServices = {
       label: "Web Application Development",
       description:
         "Modern, responsive web apps built on React, Next.js, and Node.js, engineered for performance and SEO from day one.",
-      href: "/software-development/web-development",
+      href: "/web-development",
     },
     {
       label: "Mobile App Development",
       description: "Native and cross-platform iOS/Android apps for startups and enterprises.",
-      href: "/software-development/mobile-app-development",
+      href: "/mobile-development",
     },
     {
       label: "Enterprise Software Development (ERP & CRM)",
       description:
         "Custom ERP, CRM, and internal operations platforms that replace spreadsheets and disconnected tools with one system of record.",
-      href: "#enterprise-software",
+      href: "/enterprise-solutions",
     },
     {
       label: "SaaS Product Development",
@@ -133,7 +133,7 @@ export const softwareDevelopmentServices = {
     {
       label: "UI/UX Design",
       description: "Research-led interface design and design systems for products that convert.",
-      href: "/design-ux",
+      href: "/ui-ux-design",
     },
     {
       label: "Cloud & DevOps",
@@ -148,7 +148,7 @@ export const softwareDevelopmentServices = {
     {
       label: "AI & Automation",
       description: "Intelligent automation, agents, and ML integrations for modern products.",
-      href: "/artificial-intelligence-ai",
+      href: "/artificial-intelligence",
     },
   ] satisfies SoftwareDevServiceItem[],
 } as const;
