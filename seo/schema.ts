@@ -232,7 +232,7 @@ export const homepageServiceSchema = {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Mobile Development",
+          name: "Mobile App Development",
           description: "iOS and Android apps with native quality and scalable delivery.",
           url: `${siteConfig.url}/mobile-development`,
         },

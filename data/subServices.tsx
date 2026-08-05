@@ -13,367 +13,584 @@ export const defaultSubCategorySections = {
   },
 } as const;
 
+function sub(
+  slug: string,
+  label: string,
+  description: string,
+  image?: SubCategoryContent["image"],
+): SubCategoryContent {
+  return image ? { slug, label, description, image } : { slug, label, description };
+}
+
 /**
  * Sub-service pages grouped by main category slug.
  * Routes: /{mainSlug}/{subSlug}
  */
 export const subServicesByCategory: SubServicesMap = {
   "software-development": [
-    {
-      slug: "custom-software-development",
-      label: "Custom Software Development",
-      description:
-        "Tailored applications aligned to your workflows, integrations, and growth roadmap, not one-size-fits-all templates.",
-      image: {
+    sub(
+      "custom-software-development",
+      "Custom Software Development",
+      "Tailored applications aligned to your workflows, integrations, and growth roadmap.",
+      {
         src: "/services/software-development.webp",
-        alt: "Custom software on a laptop",
+        alt: "Custom software development",
         width: 800,
         height: 500,
       },
-    },
-    {
-      slug: "api-development",
-      label: "API Development",
-      description:
-        "Well-documented APIs and event-driven services that connect products, partners, and internal tools reliably.",
-    },
-    {
-      slug: "saas-development",
-      label: "SaaS Product Development",
-      description:
-        "Multi-tenant architecture, billing, and scalable infrastructure from MVP to growth stage.",
-    },
-    {
-      slug: "legacy-modernization",
-      label: "Legacy System Modernization",
-      description:
-        "Migrate aging platforms to maintainable architecture without disrupting live operations.",
-    },
+    ),
+    sub(
+      "enterprise-software-development",
+      "Enterprise Software Development",
+      "Large-scale systems for complex operations, governance, and multi-team delivery.",
+    ),
+    sub(
+      "saas-application-development",
+      "SaaS Application Development",
+      "Multi-tenant products with billing, onboarding, and infrastructure built to scale.",
+    ),
+    sub(
+      "software-product-development",
+      "Software Product Development",
+      "End-to-end product engineering from discovery through launch and iteration.",
+    ),
+    sub(
+      "mvp-development",
+      "MVP Development",
+      "Focused first releases that validate demand quickly without overbuilding.",
+    ),
+    sub(
+      "api-development-integration",
+      "API Development & Integration",
+      "APIs and third-party integrations that connect products, partners, and internal tools.",
+    ),
   ],
   "mobile-development": [
-    {
-      slug: "ios-app-development",
-      label: "iOS App Development",
-      description: "Native Swift apps with App Store–ready quality, performance, and polish.",
-    },
-    {
-      slug: "android-app-development",
-      label: "Android App Development",
-      description: "Kotlin and modern Android apps engineered for reliability and Play Store delivery.",
-    },
-    {
-      slug: "cross-platform-apps",
-      label: "Cross-Platform Apps",
-      description:
-        "React Native and Flutter builds that share logic while keeping native feel where it matters.",
-    },
+    sub(
+      "android-app-development",
+      "Android App Development",
+      "Native Android apps engineered for performance, reliability, and Play Store delivery.",
+      {
+        src: "/services/mobile-development.webp",
+        alt: "Android app development",
+        width: 800,
+        height: 500,
+      },
+    ),
+    sub(
+      "ios-app-development",
+      "iOS App Development",
+      "Native iOS apps with App Store–ready quality, polish, and security.",
+    ),
+    sub(
+      "flutter-development",
+      "Flutter Development",
+      "Cross-platform Flutter apps with shared UI and near-native performance.",
+    ),
+    sub(
+      "react-native-development",
+      "React Native Development",
+      "React Native apps that share logic across iOS and Android without sacrificing feel.",
+    ),
+    sub(
+      "cross-platform-app-development",
+      "Cross-Platform App Development",
+      "One codebase strategies that balance speed, quality, and platform reach.",
+    ),
+    sub(
+      "progressive-web-app-development",
+      "Progressive Web App (PWA) Development",
+      "Installable, offline-capable web apps that behave like native mobile experiences.",
+    ),
   ],
   "web-development": [
-    {
-      slug: "web-applications",
-      label: "Web Applications",
-      description:
-        "Fast, accessible web apps with modern stacks and SEO-friendly architecture.",
-      image: {
+    sub(
+      "custom-website-development",
+      "Custom Website Development",
+      "Marketing and brand sites built for performance, SEO, and conversion.",
+      {
         src: "/services/web-development.webp",
-        alt: "Web application dashboard",
+        alt: "Custom website development",
         width: 800,
         height: 500,
       },
-    },
-    {
-      slug: "progressive-web-apps",
-      label: "Progressive Web Apps",
-      description: "Installable, offline-capable experiences that feel native in the browser.",
-    },
-    {
-      slug: "frontend-engineering",
-      label: "Frontend Engineering",
-      description: "Component systems, performance budgets, and accessible UI implementation.",
-    },
+    ),
+    sub(
+      "web-application-development",
+      "Web Application Development",
+      "Complex browser apps with secure auth, workflows, and scalable architecture.",
+    ),
+    sub(
+      "frontend-development",
+      "Frontend Development",
+      "Accessible, responsive interfaces with modern component systems and performance budgets.",
+    ),
+    sub(
+      "backend-development",
+      "Backend Development",
+      "APIs, services, and data layers that keep products reliable under real traffic.",
+    ),
+    sub(
+      "full-stack-development",
+      "Full Stack Development",
+      "Unified frontend and backend delivery from one senior engineering team.",
+    ),
+    sub(
+      "cms-development",
+      "CMS Development",
+      "Content platforms and headless CMS setups your marketing and product teams can own.",
+    ),
   ],
   "ecommerce-development": [
-    {
-      slug: "custom-ecommerce",
-      label: "Custom Ecommerce Platforms",
-      description: "Storefronts and admin systems built around your catalog, pricing, and fulfillment.",
-    },
-    {
-      slug: "marketplace-development",
-      label: "Marketplace Development",
-      description: "Multi-vendor marketplaces with payments, commissions, and seller tooling.",
-    },
-    {
-      slug: "checkout-integrations",
-      label: "Payments & Checkout",
-      description: "Secure payment gateways, carts, and conversion-focused checkout flows.",
-    },
+    sub(
+      "shopify-development",
+      "Shopify Development",
+      "Custom Shopify storefronts, themes, and apps tuned for conversion and ops.",
+    ),
+    sub(
+      "woocommerce-development",
+      "WooCommerce Development",
+      "WordPress ecommerce builds with catalogs, checkout, and payment flexibility.",
+    ),
+    sub(
+      "magento-development",
+      "Magento Development",
+      "Enterprise Magento storefronts for complex catalogs and B2B workflows.",
+    ),
+    sub(
+      "custom-ecommerce-development",
+      "Custom Ecommerce Development",
+      "Bespoke ecommerce platforms built around your catalog, pricing, and fulfillment.",
+    ),
+    sub(
+      "multi-vendor-marketplace-development",
+      "Multi-Vendor Marketplace Development",
+      "Marketplaces with seller tooling, commissions, and multi-party payments.",
+    ),
+    sub(
+      "payment-gateway-integration",
+      "Payment Gateway Integration",
+      "Secure payment flows and gateway integrations that protect conversion and trust.",
+    ),
   ],
   "ui-ux-design": [
-    {
-      slug: "ux-research",
-      label: "UX Research",
-      description:
-        "Interviews, usability studies, and journey mapping to ground decisions in real user behavior.",
-    },
-    {
-      slug: "ui-systems",
-      label: "UI Design Systems",
-      description:
-        "Tokens, components, and documentation that keep product and marketing visually aligned.",
-    },
-    {
-      slug: "prototyping",
-      label: "Prototyping",
-      description:
-        "Clickable prototypes to validate flows early, before engineering commits to the wrong path.",
-    },
-    {
-      slug: "design-audits",
-      label: "Design Audits",
-      description:
-        "Heuristic reviews and accessibility checks with a prioritized roadmap for improvement.",
-    },
+    sub(
+      "ui-design",
+      "UI Design",
+      "High-fidelity interfaces that stay consistent across product and marketing surfaces.",
+      {
+        src: "/services/ui-ux-design.webp",
+        alt: "UI design",
+        width: 800,
+        height: 500,
+      },
+    ),
+    sub(
+      "ux-design",
+      "UX Design",
+      "User journeys and interaction design grounded in research and real task flows.",
+    ),
+    sub(
+      "wireframing",
+      "Wireframing",
+      "Low-fidelity structures that clarify information architecture before visual design.",
+    ),
+    sub(
+      "prototyping",
+      "Prototyping",
+      "Clickable prototypes that validate flows before engineering commits.",
+    ),
+    sub(
+      "design-systems",
+      "Design Systems",
+      "Tokens, components, and documentation that keep teams shipping consistently.",
+    ),
+    sub(
+      "usability-testing",
+      "Usability Testing",
+      "Evidence-based tests that find friction early and prioritize UX improvements.",
+    ),
   ],
   "artificial-intelligence": [
-    {
-      slug: "ai-agents",
-      label: "AI Agents & Assistants",
-      description:
-        "Task-oriented agents that integrate with your tools and automate repeatable workflows.",
-      image: {
+    sub(
+      "ai-software-development",
+      "AI Software Development",
+      "Production AI features integrated into products with guardrails and monitoring.",
+      {
         src: "/services/artificial-intelligence.webp",
-        alt: "AI agents and assistants",
+        alt: "AI software development",
         width: 800,
         height: 500,
       },
-    },
-    {
-      slug: "nlp-solutions",
-      label: "NLP & Chatbots",
-      description:
-        "Search, summarization, classification, and conversational interfaces grounded in your content.",
-    },
-    {
-      slug: "computer-vision",
-      label: "Computer Vision",
-      description:
-        "Image and video analysis for inspection, moderation, identity checks, and visual search.",
-    },
+    ),
+    sub(
+      "generative-ai-solutions",
+      "Generative AI Solutions",
+      "LLM-powered generation for content, support, and internal knowledge workflows.",
+    ),
+    sub(
+      "ai-chatbot-development",
+      "AI Chatbot Development",
+      "Conversational assistants grounded in your data, policies, and brand voice.",
+    ),
+    sub(
+      "ai-agent-development",
+      "AI Agent Development",
+      "Task-oriented agents that automate multi-step work across your tools.",
+    ),
+    sub(
+      "computer-vision-solutions",
+      "Computer Vision Solutions",
+      "Image and video analysis for inspection, moderation, identity, and search.",
+    ),
+    sub(
+      "natural-language-processing",
+      "Natural Language Processing (NLP)",
+      "Search, summarization, classification, and language understanding for your domain.",
+    ),
   ],
   "machine-learning": [
-    {
-      slug: "predictive-models",
-      label: "Predictive Models",
-      description:
-        "Forecasting, churn prediction, demand planning, and risk scoring built on your data.",
-      image: {
+    sub(
+      "predictive-analytics",
+      "Predictive Analytics",
+      "Forecasting and risk models that turn historical data into forward-looking decisions.",
+      {
         src: "/services/machine-learning.webp",
-        alt: "Predictive machine learning models",
+        alt: "Predictive analytics",
         width: 800,
         height: 500,
       },
-    },
-    {
-      slug: "recommendation-systems",
-      label: "Recommendation Systems",
-      description:
-        "Personalized content, product, and offer ranking tuned for engagement and business KPIs.",
-    },
-    {
-      slug: "mlops",
-      label: "MLOps & Pipelines",
-      description:
-        "Training pipelines, feature stores, model registry, and deployment automation.",
-    },
-    {
-      slug: "model-monitoring",
-      label: "Model Monitoring",
-      description:
-        "Drift detection, performance dashboards, and alerting so models stay accurate after launch.",
-    },
+    ),
+    sub(
+      "deep-learning-solutions",
+      "Deep Learning Solutions",
+      "Neural models for complex pattern recognition across text, images, and signals.",
+    ),
+    sub(
+      "mlops",
+      "MLOps",
+      "Training pipelines, registries, and deployment automation for repeatable ML delivery.",
+    ),
+    sub(
+      "image-recognition",
+      "Image Recognition",
+      "Classification and detection systems built for production accuracy and latency.",
+    ),
+    sub(
+      "recommendation-systems",
+      "Recommendation Systems",
+      "Personalized ranking for products, content, and offers tied to business KPIs.",
+    ),
+    sub(
+      "model-deployment",
+      "Model Deployment",
+      "Batch and real-time inference serving sized for your traffic and cost targets.",
+    ),
   ],
   "automation-services": [
-    {
-      slug: "workflow-automation",
-      label: "Workflow Automation",
-      description: "End-to-end process automation across ops, support, finance, and sales tools.",
-    },
-    {
-      slug: "rpa-integrations",
-      label: "RPA & Integrations",
-      description: "Bots and connectors that move data between legacy and modern systems reliably.",
-    },
-    {
-      slug: "document-automation",
-      label: "Document Automation",
-      description: "Extraction, classification, and routing for invoices, forms, and contracts.",
-    },
+    sub(
+      "business-process-automation",
+      "Business Process Automation",
+      "End-to-end automation that removes manual handoffs across operations teams.",
+    ),
+    sub(
+      "robotic-process-automation",
+      "Robotic Process Automation (RPA)",
+      "Bots that execute repetitive desktop and system tasks with auditability.",
+    ),
+    sub(
+      "workflow-automation",
+      "Workflow Automation",
+      "Triggered workflows that connect tools, approvals, and notifications reliably.",
+    ),
+    sub(
+      "crm-automation",
+      "CRM Automation",
+      "Lead routing, nurturing, and CRM sync that keep sales pipelines clean.",
+    ),
+    sub(
+      "erp-automation",
+      "ERP Automation",
+      "Automated ERP processes for finance, inventory, and order operations.",
+    ),
+    sub(
+      "ai-workflow-automation",
+      "AI Workflow Automation",
+      "AI-assisted workflows for classification, extraction, and decision support.",
+    ),
   ],
   "cloud-devops": [
-    {
-      slug: "cloud-architecture",
-      label: "Cloud Architecture",
-      description:
-        "Right-sized AWS, Azure, or GCP designs with security, cost, and resilience built in.",
-    },
-    {
-      slug: "cicd",
-      label: "CI/CD Pipelines",
-      description:
-        "Automated build, test, and deploy workflows that shorten feedback loops.",
-    },
-    {
-      slug: "kubernetes",
-      label: "Kubernetes & Containers",
-      description:
-        "Container orchestration, Helm charts, and cluster operations tuned for your team.",
-    },
-    {
-      slug: "observability",
-      label: "Observability",
-      description:
-        "Logging, metrics, and tracing so incidents are detected early and resolved clearly.",
-    },
-  ],
-  "data-business-intelligence": [
-    {
-      slug: "dashboards",
-      label: "Analytics Dashboards",
-      description:
-        "Clear visualizations and self-serve reporting that executives and operators actually use.",
-    },
-    {
-      slug: "pipelines",
-      label: "Data Pipelines",
-      description:
-        "Reliable ingestion, transformation, and warehousing, batch or streaming.",
-    },
-    {
-      slug: "business-intelligence",
-      label: "Business Intelligence",
-      description:
-        "KPI models, semantic layers, and reporting that align teams on one source of truth.",
-    },
-  ],
-  cybersecurity: [
-    {
-      slug: "security-audits",
-      label: "Security Audits",
-      description:
-        "Threat modeling, penetration testing coordination, and remediation planning.",
-    },
-    {
-      slug: "compliance",
-      label: "Compliance Readiness",
-      description:
-        "SOC 2, HIPAA, or GDPR-aligned controls integrated into how you build and operate.",
-    },
-    {
-      slug: "application-security",
-      label: "Application Security",
-      description:
-        "Secure coding reviews, dependency scanning, and hardening for web and APIs.",
-    },
-  ],
-  "enterprise-solutions": [
-    {
-      slug: "erp-systems",
-      label: "ERP Systems",
-      description: "Custom and tailored ERP platforms that unify finance, ops, and inventory.",
-    },
-    {
-      slug: "crm-platforms",
-      label: "CRM Platforms",
-      description: "Sales and customer platforms that fit your pipeline, not the other way around.",
-    },
-    {
-      slug: "internal-tools",
-      label: "Internal Tools",
-      description: "Ops dashboards and admin systems that replace spreadsheets and manual work.",
-    },
-  ],
-  "blockchain-development": [
-    {
-      slug: "smart-contracts",
-      label: "Smart Contracts",
-      description: "Auditable contract development and integration for business workflows.",
-    },
-    {
-      slug: "dapp-development",
-      label: "dApp Development",
-      description: "User-facing decentralized applications with wallets and on-chain state.",
-    },
-    {
-      slug: "web3-integrations",
-      label: "Web3 Integrations",
-      description: "Connect existing products to blockchain networks, tokens, and oracles.",
-    },
-  ],
-  "healthcare-software-development": [
-    {
-      slug: "hospital-systems",
-      label: "Hospital & Clinic Systems",
-      description: "Patient, appointment, billing, and clinical workflow platforms.",
-    },
-    {
-      slug: "telemedicine",
-      label: "Telemedicine Platforms",
-      description: "Secure video, messaging, and care coordination for remote health services.",
-    },
-    {
-      slug: "health-data-platforms",
-      label: "Health Data Platforms",
-      description: "Interoperable records, analytics, and compliance-aware data layers.",
-    },
-  ],
-  "ar-vr-development": [
-    {
-      slug: "ar-experiences",
-      label: "AR Experiences",
-      description: "Augmented reality apps for product visualization, training, and retail.",
-    },
-    {
-      slug: "vr-applications",
-      label: "VR Applications",
-      description: "Immersive VR for simulation, education, and enterprise training.",
-    },
-    {
-      slug: "spatial-interfaces",
-      label: "Spatial Interfaces",
-      description: "3D interaction design and engineering for headset and mixed-reality devices.",
-    },
-  ],
-  "testing-and-qa": [
-    {
-      slug: "manual-qa",
-      label: "Manual QA & Exploratory Testing",
-      description:
-        "Structured test passes and exploratory sessions that find edge cases automation misses.",
-      image: {
-        src: "/services/testing-and-qa.webp",
-        alt: "Manual software QA testing",
+    sub(
+      "aws-cloud-services",
+      "AWS Cloud Services",
+      "AWS architecture, migration, and managed services tuned for cost and reliability.",
+      {
+        src: "/services/cloud-devops.webp",
+        alt: "AWS cloud services",
         width: 800,
         height: 500,
       },
-    },
-    {
-      slug: "test-automation",
-      label: "Test Automation",
-      description:
-        "Selenium, Cypress, Playwright, and API automation suites integrated into CI/CD.",
-    },
-    {
-      slug: "performance-testing",
-      label: "Performance & Load Testing",
-      description:
-        "Stress, soak, and spike tests with bottlenecks identified before high-traffic events.",
-    },
-    {
-      slug: "security-qa",
-      label: "Security & Regression QA",
-      description:
-        "Security-focused checks and regression suites that protect release quality.",
-    },
+    ),
+    sub(
+      "microsoft-azure-services",
+      "Microsoft Azure Services",
+      "Azure landing zones, apps, and identity patterns for enterprise workloads.",
+    ),
+    sub(
+      "google-cloud-platform",
+      "Google Cloud Platform (GCP)",
+      "GCP infrastructure and data platforms with secure, scalable defaults.",
+    ),
+    sub(
+      "docker-containerization",
+      "Docker Containerization",
+      "Containerized apps with reproducible builds and portable environments.",
+    ),
+    sub(
+      "kubernetes-deployment",
+      "Kubernetes Deployment",
+      "Cluster setup, Helm delivery, and operations for production Kubernetes.",
+    ),
+    sub(
+      "ci-cd-pipeline-setup",
+      "CI/CD Pipeline Setup",
+      "Automated build, test, and deploy pipelines that shorten release cycles.",
+    ),
+  ],
+  "data-business-intelligence": [
+    sub(
+      "power-bi-development",
+      "Power BI Development",
+      "Power BI models and dashboards executives and operators can trust.",
+      {
+        src: "/services/data-business-intelligence.webp",
+        alt: "Power BI development",
+        width: 800,
+        height: 500,
+      },
+    ),
+    sub(
+      "tableau-development",
+      "Tableau Development",
+      "Tableau visualizations and workbooks aligned to your KPI definitions.",
+    ),
+    sub(
+      "data-analytics",
+      "Data Analytics",
+      "Analysis and reporting that turn raw data into clear business decisions.",
+    ),
+    sub(
+      "data-engineering",
+      "Data Engineering",
+      "Pipelines, warehouses, and quality checks for reliable analytics foundations.",
+    ),
+    sub(
+      "data-visualization",
+      "Data Visualization",
+      "Clear charts and interactive views that make complex metrics easy to act on.",
+    ),
+    sub(
+      "business-intelligence-solutions",
+      "Business Intelligence Solutions",
+      "End-to-end BI platforms with semantic models and self-serve reporting.",
+    ),
+  ],
+  cybersecurity: [
+    sub(
+      "penetration-testing",
+      "Penetration Testing",
+      "Authorized attack simulations that surface real exploitable risks before attackers do.",
+    ),
+    sub(
+      "vulnerability-assessment",
+      "Vulnerability Assessment",
+      "Systematic scanning and prioritization of weaknesses across apps and infrastructure.",
+    ),
+    sub(
+      "application-security",
+      "Application Security",
+      "Secure coding reviews, dependency checks, and hardening for web and APIs.",
+    ),
+    sub(
+      "cloud-security",
+      "Cloud Security",
+      "Identity, network, and configuration controls that protect cloud workloads.",
+    ),
+    sub(
+      "security-compliance",
+      "Security Compliance",
+      "SOC 2, HIPAA, and GDPR-aligned controls integrated into how you build and operate.",
+    ),
+    sub(
+      "security-monitoring",
+      "Security Monitoring",
+      "Detection, alerting, and response workflows that keep production environments watched.",
+    ),
+  ],
+  "enterprise-solutions": [
+    sub(
+      "erp-development",
+      "ERP Development",
+      "Custom ERP platforms that unify finance, inventory, and operations.",
+    ),
+    sub(
+      "crm-development",
+      "CRM Development",
+      "Sales and customer platforms shaped around your pipeline and service model.",
+    ),
+    sub(
+      "hrm-software-development",
+      "HRM Software Development",
+      "HR systems for hiring, attendance, payroll workflows, and employee lifecycle.",
+    ),
+    sub(
+      "supply-chain-management",
+      "Supply Chain Management (SCM)",
+      "Procurement, inventory, and logistics systems that improve visibility and control.",
+    ),
+    sub(
+      "enterprise-integration",
+      "Enterprise Integration",
+      "Reliable integrations across ERP, CRM, and legacy systems of record.",
+    ),
+    sub(
+      "document-management-systems",
+      "Document Management Systems",
+      "Secure document storage, versioning, and workflow for enterprise teams.",
+    ),
+  ],
+  "blockchain-development": [
+    sub(
+      "smart-contract-development",
+      "Smart Contract Development",
+      "Auditable smart contracts for business workflows and on-chain logic.",
+    ),
+    sub(
+      "dapp-development",
+      "dApp Development",
+      "Decentralized apps with wallets, on-chain state, and usable product UX.",
+    ),
+    sub(
+      "web3-development",
+      "Web3 Development",
+      "Web3 product features and integrations for modern blockchain networks.",
+    ),
+    sub(
+      "defi-development",
+      "DeFi Development",
+      "Decentralized finance protocols and interfaces built for security and clarity.",
+    ),
+    sub(
+      "cryptocurrency-wallet-development",
+      "Cryptocurrency Wallet Development",
+      "Secure wallet experiences for sending, receiving, and managing digital assets.",
+    ),
+    sub(
+      "nft-marketplace-development",
+      "NFT Marketplace Development",
+      "Marketplaces for minting, listing, and trading NFTs with reliable payments.",
+    ),
+  ],
+  "healthcare-software-development": [
+    sub(
+      "electronic-health-records",
+      "Electronic Health Records (EHR)",
+      "EHR platforms that support clinical documentation and care coordination.",
+    ),
+    sub(
+      "electronic-medical-records",
+      "Electronic Medical Records (EMR)",
+      "EMR systems tailored to clinic workflows, charting, and medical history.",
+    ),
+    sub(
+      "telemedicine-development",
+      "Telemedicine Development",
+      "Secure video, messaging, and remote care platforms for patients and clinicians.",
+    ),
+    sub(
+      "hospital-management-systems",
+      "Hospital Management Systems",
+      "Hospital ops platforms for appointments, billing, wards, and administration.",
+    ),
+    sub(
+      "patient-portal-development",
+      "Patient Portal Development",
+      "Patient portals for records access, scheduling, and care communication.",
+    ),
+    sub(
+      "healthcare-mobile-app-development",
+      "Healthcare Mobile App Development",
+      "Mobile health apps for patients, providers, and care teams.",
+    ),
+  ],
+  "ar-vr-development": [
+    sub(
+      "augmented-reality-apps",
+      "Augmented Reality (AR) Apps",
+      "AR experiences for product visualization, retail, and on-site guidance.",
+    ),
+    sub(
+      "virtual-reality-apps",
+      "Virtual Reality (VR) Apps",
+      "Immersive VR applications for simulation, education, and entertainment.",
+    ),
+    sub(
+      "mixed-reality-solutions",
+      "Mixed Reality (MR) Solutions",
+      "Mixed reality products that blend digital overlays with physical environments.",
+    ),
+    sub(
+      "metaverse-development",
+      "Metaverse Development",
+      "Shared virtual spaces and experiences for brand, training, and community use.",
+    ),
+    sub(
+      "3d-visualization",
+      "3D Visualization",
+      "Interactive 3D visuals for products, spaces, and technical demonstrations.",
+    ),
+    sub(
+      "vr-training-simulations",
+      "VR Training Simulations",
+      "VR training environments that teach skills safely before real-world practice.",
+    ),
+  ],
+  "testing-and-qa": [
+    sub(
+      "manual-testing",
+      "Manual Testing",
+      "Structured and exploratory testing that catches edge cases automation misses.",
+      {
+        src: "/services/testing-and-qa.webp",
+        alt: "Manual testing",
+        width: 800,
+        height: 500,
+      },
+    ),
+    sub(
+      "automation-testing",
+      "Automation Testing",
+      "Automated UI and regression suites integrated into your CI/CD pipeline.",
+    ),
+    sub(
+      "performance-testing",
+      "Performance Testing",
+      "Load and stress tests that surface bottlenecks before high-traffic events.",
+    ),
+    sub(
+      "security-testing",
+      "Security Testing",
+      "Security-focused QA that validates auth, input handling, and common exploit paths.",
+    ),
+    sub(
+      "api-testing",
+      "API Testing",
+      "Contract, functional, and negative tests that keep APIs reliable across releases.",
+    ),
+    sub(
+      "mobile-app-testing",
+      "Mobile App Testing",
+      "Device and OS coverage for iOS and Android apps before store or production release.",
+    ),
   ],
 };

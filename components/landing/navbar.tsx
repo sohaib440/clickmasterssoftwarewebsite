@@ -39,7 +39,7 @@ export type NavLink = {
 
 export const serviceNavItems: readonly NavChild[] = [
   { label: "Software Development", href: "/software-development" },
-  { label: "Mobile Development", href: "/mobile-development" },
+  { label: "Mobile App Development", href: "/mobile-development" },
   { label: "Web Development", href: "/web-development" },
   { label: "Ecommerce Development", href: "/ecommerce-development" },
   { label: "UI/UX Design", href: "/ui-ux-design" },
@@ -117,7 +117,7 @@ export const footerColumns = [
     title: "Services",
     links: [
       { label: "Software Development", href: "/software-development" },
-      { label: "Mobile Development", href: "/mobile-development" },
+      { label: "Mobile App Development", href: "/mobile-development" },
       { label: "Web Development", href: "/web-development" },
       { label: "Ecommerce Development", href: "/ecommerce-development" },
       { label: "UI/UX Design", href: "/ui-ux-design" },

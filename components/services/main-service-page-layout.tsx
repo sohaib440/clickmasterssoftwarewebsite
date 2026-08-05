@@ -72,7 +72,7 @@ export function MainServicePageLayout({ content }: MainServicePageLayoutProps) {
               <ServiceBreadcrumbs items={breadcrumbs} />
             </Reveal>
 
-            <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10">
+            <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.65fr)] lg:gap-10">
               <div className="min-w-0">
                 <Reveal immediate delay={motionStagger}>
                   <p className={cn(overline, "text-white/60")}>{hero.eyebrow}</p>
@@ -83,7 +83,7 @@ export function MainServicePageLayout({ content }: MainServicePageLayoutProps) {
                   </h1>
                 </Reveal>
                 <Reveal immediate delay={motionStagger * 3}>
-                  <p className="mt-5 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
+                  <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
                     {hero.description}
                   </p>
                 </Reveal>
@@ -101,18 +101,20 @@ export function MainServicePageLayout({ content }: MainServicePageLayoutProps) {
 
               <Reveal immediate delay={motionStagger * 2} direction="right">
                 {hero.image ? (
-                  <div className={cn(cardDark, "overflow-hidden p-0")}>
-                    <CardImage
-                      {...hero.image}
-                      className="aspect-[4/3] w-full lg:aspect-[5/4]"
-                      priority
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                    />
+                  <div className="mx-auto w-full max-w-[16rem] sm:max-w-[18rem] lg:ml-auto lg:mr-0 lg:max-w-[17.5rem]">
+                    <div className={cn(cardDark, "overflow-hidden p-0")}>
+                      <CardImage
+                        {...hero.image}
+                        className="aspect-square w-full"
+                        priority
+                        sizes="(max-width: 1024px) 288px, 280px"
+                      />
+                    </div>
                   </div>
                 ) : null}
                 <RatingBadges
                   variant="dark"
-                  className={hero.image ? "mt-6" : undefined}
+                  className={hero.image ? "mt-5" : undefined}
                 />
               </Reveal>
             </div>

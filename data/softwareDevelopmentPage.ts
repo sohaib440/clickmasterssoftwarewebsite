@@ -4,14 +4,15 @@ import { contactPath, projectPath, teamPath } from "@/lib/landing/constants";
 export const softwareDevelopmentMeta = {
   title: "Software Development Company | Next Software Dev",
   description:
-    "Custom software development for startups & enterprises in the USA, UK, UAE, Canada & Australia. Fixed-price, senior-only delivery from Pakistan. Get a free quote.",
+    "Leading software development company and software house for custom apps, SaaS, MVPs, and API integrations. Senior-led delivery. Get a free quote.",
 } as const;
 
 export const softwareDevelopmentHero = {
   eyebrow: "Software Development Company",
-  headline: "Software Development That Solves Real Business Problems",
+  headline:
+    "Leading Software Development Company Building Products Businesses Depend On",
   subheading:
-    "We design, build, and maintain custom software for startups, SMBs, and enterprises across the USA, UK, UAE, Canada, and Australia as well as businesses here in Pakistan. From your first line of code to post-launch support, one senior team owns the outcome.",
+    "As a leading software development company and software house, we design, build, and maintain software for startups, SMBs, and enterprises. Our software development services cover custom applications, enterprise systems, SaaS products, MVPs, and API integrations from discovery and architecture through build, launch, and ongoing support so your team ships with clarity and confidence.",
   bullets: [
     "Fixed-price & dedicated-team engagements",
     "Senior engineers only no junior hand-offs",
@@ -110,19 +111,19 @@ export const softwareDevelopmentServices = {
       label: "SaaS Product Development",
       description:
         "End-to-end SaaS builds multi-tenant architecture, subscription billing, and scalable infrastructure from MVP to growth stage.",
-      href: "#saas-development",
+      href: "/software-development/saas-application-development",
     },
     {
       label: "API Development & Third-Party Integrations",
       description:
         "REST and GraphQL APIs, plus integrations with payment gateways, CRMs, and internal tools.",
-      href: "/software-development/api-development",
+      href: "/software-development/api-development-integration",
     },
     {
       label: "Legacy System Modernization",
       description:
         "Migrating aging platforms to modern, maintainable architecture without disrupting live operations.",
-      href: "#legacy-modernization",
+      href: "/software-development",
     },
     {
       label: "Dedicated Development Teams",

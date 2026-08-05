@@ -9,31 +9,37 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/software-development/api-development</loc>
+    <loc>https://nextsoftwaredevelopment.com/software-development/enterprise-software-development</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/software-development/saas-development</loc>
+    <loc>https://nextsoftwaredevelopment.com/software-development/saas-application-development</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/software-development/legacy-modernization</loc>
+    <loc>https://nextsoftwaredevelopment.com/software-development/software-product-development</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/software-development/mvp-development</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/software-development/api-development-integration</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Mobile Development sub-services -->
-  <url>
-    <loc>https://nextsoftwaredevelopment.com/mobile-development/ios-app-development</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- Mobile App Development sub-services -->
   <url>
     <loc>https://nextsoftwaredevelopment.com/mobile-development/android-app-development</loc>
     <lastmod>2026-08-05</lastmod>
@@ -41,7 +47,31 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/mobile-development/cross-platform-apps</loc>
+    <loc>https://nextsoftwaredevelopment.com/mobile-development/ios-app-development</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/mobile-development/flutter-development</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/mobile-development/react-native-development</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/mobile-development/cross-platform-app-development</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/mobile-development/progressive-web-app-development</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -49,19 +79,37 @@
 
   <!-- Web Development sub-services -->
   <url>
-    <loc>https://nextsoftwaredevelopment.com/web-development/web-applications</loc>
+    <loc>https://nextsoftwaredevelopment.com/web-development/custom-website-development</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/web-development/progressive-web-apps</loc>
+    <loc>https://nextsoftwaredevelopment.com/web-development/web-application-development</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/web-development/frontend-engineering</loc>
+    <loc>https://nextsoftwaredevelopment.com/web-development/frontend-development</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/web-development/backend-development</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/web-development/full-stack-development</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/web-development/cms-development</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -69,19 +117,37 @@
 
   <!-- Ecommerce Development sub-services -->
   <url>
-    <loc>https://nextsoftwaredevelopment.com/ecommerce-development/custom-ecommerce</loc>
+    <loc>https://nextsoftwaredevelopment.com/ecommerce-development/shopify-development</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/ecommerce-development/marketplace-development</loc>
+    <loc>https://nextsoftwaredevelopment.com/ecommerce-development/woocommerce-development</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/ecommerce-development/checkout-integrations</loc>
+    <loc>https://nextsoftwaredevelopment.com/ecommerce-development/magento-development</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/ecommerce-development/custom-ecommerce-development</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/ecommerce-development/multi-vendor-marketplace-development</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/ecommerce-development/payment-gateway-integration</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -89,13 +155,19 @@
 
   <!-- UI/UX Design sub-services -->
   <url>
-    <loc>https://nextsoftwaredevelopment.com/ui-ux-design/ux-research</loc>
+    <loc>https://nextsoftwaredevelopment.com/ui-ux-design/ui-design</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/ui-ux-design/ui-systems</loc>
+    <loc>https://nextsoftwaredevelopment.com/ui-ux-design/ux-design</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/ui-ux-design/wireframing</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -107,7 +179,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/ui-ux-design/design-audits</loc>
+    <loc>https://nextsoftwaredevelopment.com/ui-ux-design/design-systems</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/ui-ux-design/usability-testing</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -115,19 +193,37 @@
 
   <!-- Artificial Intelligence sub-services -->
   <url>
-    <loc>https://nextsoftwaredevelopment.com/artificial-intelligence/ai-agents</loc>
+    <loc>https://nextsoftwaredevelopment.com/artificial-intelligence/ai-software-development</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/artificial-intelligence/nlp-solutions</loc>
+    <loc>https://nextsoftwaredevelopment.com/artificial-intelligence/generative-ai-solutions</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/artificial-intelligence/computer-vision</loc>
+    <loc>https://nextsoftwaredevelopment.com/artificial-intelligence/ai-chatbot-development</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/artificial-intelligence/ai-agent-development</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/artificial-intelligence/computer-vision-solutions</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/artificial-intelligence/natural-language-processing</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -135,13 +231,13 @@
 
   <!-- Machine Learning sub-services -->
   <url>
-    <loc>https://nextsoftwaredevelopment.com/machine-learning/predictive-models</loc>
+    <loc>https://nextsoftwaredevelopment.com/machine-learning/predictive-analytics</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/machine-learning/recommendation-systems</loc>
+    <loc>https://nextsoftwaredevelopment.com/machine-learning/deep-learning-solutions</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -153,7 +249,19 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/machine-learning/model-monitoring</loc>
+    <loc>https://nextsoftwaredevelopment.com/machine-learning/image-recognition</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/machine-learning/recommendation-systems</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/machine-learning/model-deployment</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -161,19 +269,37 @@
 
   <!-- Automation Services sub-services -->
   <url>
+    <loc>https://nextsoftwaredevelopment.com/automation-services/business-process-automation</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/automation-services/robotic-process-automation</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://nextsoftwaredevelopment.com/automation-services/workflow-automation</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/automation-services/rpa-integrations</loc>
+    <loc>https://nextsoftwaredevelopment.com/automation-services/crm-automation</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/automation-services/document-automation</loc>
+    <loc>https://nextsoftwaredevelopment.com/automation-services/erp-automation</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/automation-services/ai-workflow-automation</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -181,25 +307,37 @@
 
   <!-- Cloud & DevOps sub-services -->
   <url>
-    <loc>https://nextsoftwaredevelopment.com/cloud-devops/cloud-architecture</loc>
+    <loc>https://nextsoftwaredevelopment.com/cloud-devops/aws-cloud-services</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/cloud-devops/cicd</loc>
+    <loc>https://nextsoftwaredevelopment.com/cloud-devops/microsoft-azure-services</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/cloud-devops/kubernetes</loc>
+    <loc>https://nextsoftwaredevelopment.com/cloud-devops/google-cloud-platform</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/cloud-devops/observability</loc>
+    <loc>https://nextsoftwaredevelopment.com/cloud-devops/docker-containerization</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/cloud-devops/kubernetes-deployment</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/cloud-devops/ci-cd-pipeline-setup</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -207,19 +345,37 @@
 
   <!-- Data & Business Intelligence sub-services -->
   <url>
-    <loc>https://nextsoftwaredevelopment.com/data-business-intelligence/dashboards</loc>
+    <loc>https://nextsoftwaredevelopment.com/data-business-intelligence/power-bi-development</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/data-business-intelligence/pipelines</loc>
+    <loc>https://nextsoftwaredevelopment.com/data-business-intelligence/tableau-development</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/data-business-intelligence/business-intelligence</loc>
+    <loc>https://nextsoftwaredevelopment.com/data-business-intelligence/data-analytics</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/data-business-intelligence/data-engineering</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/data-business-intelligence/data-visualization</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/data-business-intelligence/business-intelligence-solutions</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -227,13 +383,13 @@
 
   <!-- Cybersecurity sub-services -->
   <url>
-    <loc>https://nextsoftwaredevelopment.com/cybersecurity/security-audits</loc>
+    <loc>https://nextsoftwaredevelopment.com/cybersecurity/penetration-testing</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/cybersecurity/compliance</loc>
+    <loc>https://nextsoftwaredevelopment.com/cybersecurity/vulnerability-assessment</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -244,22 +400,58 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/cybersecurity/cloud-security</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/cybersecurity/security-compliance</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/cybersecurity/security-monitoring</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Enterprise Solutions sub-services -->
   <url>
-    <loc>https://nextsoftwaredevelopment.com/enterprise-solutions/erp-systems</loc>
+    <loc>https://nextsoftwaredevelopment.com/enterprise-solutions/erp-development</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/enterprise-solutions/crm-platforms</loc>
+    <loc>https://nextsoftwaredevelopment.com/enterprise-solutions/crm-development</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/enterprise-solutions/internal-tools</loc>
+    <loc>https://nextsoftwaredevelopment.com/enterprise-solutions/hrm-software-development</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/enterprise-solutions/supply-chain-management</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/enterprise-solutions/enterprise-integration</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/enterprise-solutions/document-management-systems</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -267,7 +459,7 @@
 
   <!-- Blockchain Development sub-services -->
   <url>
-    <loc>https://nextsoftwaredevelopment.com/blockchain-development/smart-contracts</loc>
+    <loc>https://nextsoftwaredevelopment.com/blockchain-development/smart-contract-development</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -279,7 +471,25 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/blockchain-development/web3-integrations</loc>
+    <loc>https://nextsoftwaredevelopment.com/blockchain-development/web3-development</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/blockchain-development/defi-development</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/blockchain-development/cryptocurrency-wallet-development</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/blockchain-development/nft-marketplace-development</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -287,19 +497,37 @@
 
   <!-- Healthcare Software Development sub-services -->
   <url>
-    <loc>https://nextsoftwaredevelopment.com/healthcare-software-development/hospital-systems</loc>
+    <loc>https://nextsoftwaredevelopment.com/healthcare-software-development/electronic-health-records</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/healthcare-software-development/telemedicine</loc>
+    <loc>https://nextsoftwaredevelopment.com/healthcare-software-development/electronic-medical-records</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/healthcare-software-development/health-data-platforms</loc>
+    <loc>https://nextsoftwaredevelopment.com/healthcare-software-development/telemedicine-development</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/healthcare-software-development/hospital-management-systems</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/healthcare-software-development/patient-portal-development</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/healthcare-software-development/healthcare-mobile-app-development</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -307,19 +535,37 @@
 
   <!-- AR/VR Development sub-services -->
   <url>
-    <loc>https://nextsoftwaredevelopment.com/ar-vr-development/ar-experiences</loc>
+    <loc>https://nextsoftwaredevelopment.com/ar-vr-development/augmented-reality-apps</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/ar-vr-development/vr-applications</loc>
+    <loc>https://nextsoftwaredevelopment.com/ar-vr-development/virtual-reality-apps</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/ar-vr-development/spatial-interfaces</loc>
+    <loc>https://nextsoftwaredevelopment.com/ar-vr-development/mixed-reality-solutions</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/ar-vr-development/metaverse-development</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/ar-vr-development/3d-visualization</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/ar-vr-development/vr-training-simulations</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -327,13 +573,13 @@
 
   <!-- Testing & QA sub-services -->
   <url>
-    <loc>https://nextsoftwaredevelopment.com/testing-and-qa/manual-qa</loc>
+    <loc>https://nextsoftwaredevelopment.com/testing-and-qa/manual-testing</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/testing-and-qa/test-automation</loc>
+    <loc>https://nextsoftwaredevelopment.com/testing-and-qa/automation-testing</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -345,7 +591,19 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nextsoftwaredevelopment.com/testing-and-qa/security-qa</loc>
+    <loc>https://nextsoftwaredevelopment.com/testing-and-qa/security-testing</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/testing-and-qa/api-testing</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/testing-and-qa/mobile-app-testing</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
