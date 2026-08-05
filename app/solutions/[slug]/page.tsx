@@ -6,8 +6,10 @@ import {
   getAllSolutionSlugs,
   getSolutionBySlug,
   isSolutionSlug,
+  solutionPath,
 } from "@/lib/content/solutions";
 import { selfCanonical } from "@/seo/canonical";
+import { breadcrumbSchema, softwareApplicationSchema } from "@/seo/schema";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -41,5 +43,28 @@ export default async function SolutionRoute({ params }: PageProps) {
     notFound();
   }
 
-  return <SolutionDetailPage solution={solution} />;
+  const path = solutionPath(slug);
+  const schemas = [
+    softwareApplicationSchema({
+      name: solution.label,
+      description: solution.metaDescription,
+      path,
+      image: solution.heroImage,
+    }),
+    breadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Solutions", path: "/solutions" },
+      { name: solution.label, path },
+    ]),
+  ];
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+      />
+      <SolutionDetailPage solution={solution} />
+    </>
+  );
 }

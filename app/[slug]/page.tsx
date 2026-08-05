@@ -14,6 +14,7 @@ import {
   breadcrumbSchema,
   faqPageSchema,
   professionalServiceSchema,
+  serviceSchema,
 } from "@/seo/schema";
 
 type PageProps = {
@@ -68,9 +69,14 @@ export default async function MainCategoryRoute({ params }: PageProps) {
   const path = mainCategoryPath(slug);
   const schemas = [
     ...(slug === "software-development" ? [professionalServiceSchema] : []),
+    serviceSchema({
+      name: category.label,
+      description: category.metaDescription,
+      path,
+      serviceType: category.label,
+    }),
     breadcrumbSchema([
       { name: "Home", path: "/" },
-      { name: "Services", path },
       { name: category.label, path },
     ]),
     ...(category.faqs?.length

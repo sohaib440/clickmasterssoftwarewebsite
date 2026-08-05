@@ -23,7 +23,13 @@ import {
 import { btnOnDark, container, sectionPad } from "@/lib/landing/constants";
 import { selfCanonical } from "@/seo/canonical";
 import { cn } from "@/lib/utils";
-import { locationLocalBusinessSchema, organizationSchema } from "@/seo/schema";
+import { siteBrand } from "@/lib/landing/brand";
+import {
+  breadcrumbSchema,
+  faqPageSchema,
+  locationLocalBusinessSchema,
+  organizationSchema,
+} from "@/seo/schema";
 
 type CityLocationPageProps = {
   params: Promise<{ slug: string }>;
@@ -66,6 +72,16 @@ export default async function CityLocationPage({ params }: CityLocationPageProps
   const cityName =
     location.breadcrumbs?.[location.breadcrumbs.length - 1]?.label ?? location.country;
 
+  const breadcrumbItems =
+    location.breadcrumbs?.map((crumb) => ({
+      name: crumb.label,
+      path: crumb.href ?? location.href,
+    })) ?? [
+      { name: "Home", path: "/" },
+      { name: "Locations", path: "/location" },
+      { name: cityName, path: location.href },
+    ];
+
   const schemas = [
     organizationSchema,
     locationLocalBusinessSchema({
@@ -75,6 +91,15 @@ export default async function CityLocationPage({ params }: CityLocationPageProps
       description: location.metaDescription ?? location.description,
       idSuffix: slug,
     }),
+    breadcrumbSchema(breadcrumbItems),
+    ...(location.faqs.length
+      ? [
+          faqPageSchema(location.faqs, {
+            id: `${siteBrand.url}${location.href}#faq`,
+            pageUrl: `${siteBrand.url}${location.href}`,
+          }),
+        ]
+      : []),
   ];
 
   return (

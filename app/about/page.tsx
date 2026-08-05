@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { AboutPage } from "@/components/pages/about-page";
 import { siteBrand } from "@/lib/landing/brand";
 import { selfCanonical } from "@/seo/canonical";
+import { aboutPageSchema, breadcrumbSchema } from "@/seo/schema";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -12,5 +13,21 @@ export const metadata: Metadata = {
 };
 
 export default function AboutRoute() {
-  return <AboutPage />;
+  const schemas = [
+    aboutPageSchema,
+    breadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "About", path: "/about" },
+    ]),
+  ];
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+      />
+      <AboutPage />
+    </>
+  );
 }

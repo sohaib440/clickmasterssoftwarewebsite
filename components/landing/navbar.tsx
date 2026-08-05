@@ -115,7 +115,7 @@ export const footerBrand = {
 export const footerColumns = [
   {
     title: "Services",
-    links: [...serviceNavItems],
+    links: serviceNavItems.slice(0, 6),
   },
   {
     title: "Company",

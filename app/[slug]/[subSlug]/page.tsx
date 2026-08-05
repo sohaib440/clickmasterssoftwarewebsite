@@ -6,8 +6,11 @@ import {
   getAllSubCategoryParams,
   getSubCategoryPageData,
   isSubCategoryPath,
+  mainCategoryPath,
+  subCategoryPath,
 } from "@/lib/content";
 import { selfCanonical } from "@/seo/canonical";
+import { breadcrumbSchema, serviceSchema } from "@/seo/schema";
 
 type PageProps = {
   params: Promise<{ slug: string; subSlug: string }>;
@@ -53,5 +56,33 @@ export default async function SubCategoryRoute({ params }: PageProps) {
     notFound();
   }
 
-  return <SubCategoryPage data={data} />;
+  const mainPath = mainCategoryPath(slug);
+  const path = subCategoryPath(slug, subSlug);
+  const description =
+    data.sub.metaDescription ??
+    `${data.sub.label} from a leading software development company. ${data.sub.description}`;
+
+  const schemas = [
+    serviceSchema({
+      name: data.sub.label,
+      description,
+      path,
+      serviceType: data.sub.label,
+    }),
+    breadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: data.main.label, path: mainPath },
+      { name: data.sub.label, path },
+    ]),
+  ];
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+      />
+      <SubCategoryPage data={data} />
+    </>
+  );
 }

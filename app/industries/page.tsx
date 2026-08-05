@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 
 import { IndustriesPageContent } from "@/components/industries/industries-page";
-import { industriesPageMeta } from "@/data/industriesPage";
+import { industries, industriesPageMeta } from "@/data/industriesPage";
 import { selfCanonical } from "@/seo/canonical";
+import { breadcrumbSchema, itemListSchema } from "@/seo/schema";
 
 export const metadata: Metadata = {
   title: industriesPageMeta.title,
@@ -16,5 +17,29 @@ export const metadata: Metadata = {
 };
 
 export default function IndustriesRoute() {
-  return <IndustriesPageContent />;
+  const schemas = [
+    itemListSchema({
+      name: industriesPageMeta.title,
+      description: industriesPageMeta.description,
+      path: "/industries",
+      items: industries.map((industry) => ({
+        name: industry.industry,
+        path: `/industries#${industry.slug}`,
+      })),
+    }),
+    breadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Industries", path: "/industries" },
+    ]),
+  ];
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+      />
+      <IndustriesPageContent />
+    </>
+  );
 }

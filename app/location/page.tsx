@@ -24,6 +24,7 @@ import {
 } from "@/lib/landing/constants";
 import { motionStagger } from "@/lib/landing/motion";
 import { selfCanonical } from "@/seo/canonical";
+import { breadcrumbSchema, itemListSchema } from "@/seo/schema";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -66,8 +67,32 @@ const featuredStats = [
 export default function LocationsPage() {
   const spotlightCities = pakistanCities.slice(0, 6);
 
+  const schemas = [
+    itemListSchema({
+      name: "Locations",
+      description:
+        "Explore Next Software Development Company locations. Start with Pakistan and major cities including Islamabad, Lahore, Karachi, and more.",
+      path: "/location",
+      items: [
+        { name: "Pakistan", path: pakistanLocation.href },
+        ...pakistanCities.map((city) => ({
+          name: city.city,
+          path: city.href,
+        })),
+      ],
+    }),
+    breadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Locations", path: "/location" },
+    ]),
+  ];
+
   return (
     <div className="flex min-h-full w-full flex-col overflow-x-clip bg-black text-foreground">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+      />
       <SiteHeader />
 
       <main className="flex w-full flex-1 flex-col overflow-x-clip">

@@ -7,6 +7,7 @@ import {
   getProjectBySlug,
 } from "@/data/projects";
 import { selfCanonical } from "@/seo/canonical";
+import { breadcrumbSchema, projectSchema } from "@/seo/schema";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -44,5 +45,29 @@ export default async function CaseStudyDetailRoute({ params }: PageProps) {
     notFound();
   }
 
-  return <CaseStudyDetailPage project={project} breadcrumbRoot="case-study" />;
+  const path = `/case-study/${slug}`;
+  const schemas = [
+    projectSchema({
+      name: project.title,
+      description: project.metaDescription,
+      path,
+      category: project.category,
+      image: project.image,
+    }),
+    breadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Case Studies", path: "/case-study" },
+      { name: project.title, path },
+    ]),
+  ];
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+      />
+      <CaseStudyDetailPage project={project} breadcrumbRoot="case-study" />
+    </>
+  );
 }
