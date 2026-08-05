@@ -47,7 +47,7 @@ export const services: ServiceCard[] = [
     title: "Software Development",
     description:
       "Custom software solutions tailored to your business needs, from discovery and architecture through build, launch, and ongoing support for startups and enterprises.",
-    image: "/services/software-development.png",
+    image: "/services/software-development.webp",
     imageAlt: "Software development services illustration",
     Icon: ShieldCheck,
     AltIcon: Globe2,
@@ -59,7 +59,7 @@ export const services: ServiceCard[] = [
     title: "Web Development",
     description:
       "Modern web applications with responsive design, strong performance, and SEO-friendly architecture for a seamless experience on every device and browser.",
-    image: "/services/Web-Development.png",
+    image: "/services/Web-Development.webp",
     imageAlt: "Web development services illustration",
     Icon: Globe2,
     AltIcon: Server,
@@ -70,7 +70,7 @@ export const services: ServiceCard[] = [
     title: "Mobile Development",
     description:
       "Secure, scalable mobile apps for iOS and Android with native quality and shared logic where it speeds delivery, without sacrificing performance or user feel.",
-    image: "/services/Mobile-app-development.png",
+    image: "/services/Mobile-app-development.webp",
     imageAlt: "Mobile application development services illustration",
     Icon: Smartphone,
     AltIcon: ShieldCheck,
@@ -81,7 +81,7 @@ export const services: ServiceCard[] = [
     title: "Artificial Intelligence",
     description:
       "Production AI for automation, insights, and smarter products, including agents, NLP, and vision systems with clear guardrails, monitoring, and human oversight.",
-    image: "/services/Artificial-Intelligence.png",
+    image: "/services/Artificial-Intelligence.webp",
     imageAlt: "Artificial intelligence services illustration",
     Icon: BrainCircuit,
     AltIcon: Database,
@@ -93,7 +93,7 @@ export const services: ServiceCard[] = [
     title: "UI/UX Systems",
     description:
       "Research-led interfaces and design systems focused on usability, consistency, and conversion, from discovery and wireframes through high-fidelity UI and design QA.",
-    image: "/services/UI-UX.png",
+    image: "/services/UI-UX.webp",
     imageAlt: "UI/UX design and systems services illustration",
     Icon: Palette,
     AltIcon: Globe2,
@@ -104,7 +104,7 @@ export const services: ServiceCard[] = [
     title: "Cloud & DevOps",
     description:
       "Secure cloud-native infrastructure with CI/CD, monitoring, and scalable DevOps workflows so your team can ship reliably, recover quickly, and grow with confidence.",
-    image: "/services/cloud-and-devops.png",
+    image: "/services/cloud-and-devops.webp",
     imageAlt: "Cloud and DevOps services illustration",
     Icon: Database,
     AltIcon: Server,
@@ -116,7 +116,7 @@ export const services: ServiceCard[] = [
     title: "Machine Learning",
     description:
       "Custom ML models and pipelines from data prep and training to evaluation and production inference, so predictions and recommendations run reliably at scale.",
-    image: "/services/Mechine-learning.png",
+    image: "/services/Mechine-learning.webp",
     imageAlt: "Machine learning services illustration",
     Icon: Server,
     AltIcon: BrainCircuit,
@@ -127,7 +127,7 @@ export const services: ServiceCard[] = [
     title: "Data Services",
     description:
       "Data engineering, warehousing, and analytics solutions that turn raw business information into trusted dashboards, reports, and decisions your teams can act on.",
-    image: "/services/Data-Service.png",
+    image: "/services/Data-Service.webp",
     imageAlt: "Data services illustration",
     Icon: Database,
     AltIcon: Palette,
@@ -138,7 +138,7 @@ export const services: ServiceCard[] = [
     title: "Testing & QA",
     description:
       "Manual and automated testing across web, mobile, and APIs, covering functional, regression, and performance checks so issues are caught before users and releases stay confident.",
-    image: "/services/Testing-and-QA.png",
+    image: "/services/Testing-and-QA.webp",
     imageAlt: "Software testing and QA services illustration",
     Icon: Database,
     AltIcon: Palette,
@@ -182,7 +182,7 @@ export const mainCategories: MainCategoryContent[] = [
     metaDescription:
       "Custom software development for startups & enterprises in the USA, UK, UAE, Canada & Australia. Fixed-price, senior-only delivery from Pakistan. Get a free quote.",
     heroImage: {
-      src: "/services/software-development.png",
+      src: "/services/software-development.webp",
       alt: "Software development services",
       width: 800,
       height: 800,
@@ -241,7 +241,7 @@ export const mainCategories: MainCategoryContent[] = [
     metaDescription:
       "UX research, UI systems, prototyping, and design audits. Software Development Company Software creates calm, confident product experiences.",
     heroImage: {
-      src: "/services/UI-UX.png",
+      src: "/services/UI-UX.webp",
       alt: "Design and UI/UX services",
       width: 800,
       height: 800,
@@ -296,7 +296,7 @@ export const mainCategories: MainCategoryContent[] = [
     metaDescription:
       "Cloud architecture, CI/CD, Kubernetes, and observability. Software Development Company Software helps teams ship reliably on modern infrastructure.",
     heroImage: {
-      src: "/services/cloud-and-devops.png",
+      src: "/services/cloud-and-devops.webp",
       alt: "Cloud and DevOps services",
       width: 800,
       height: 800,
@@ -351,7 +351,7 @@ export const mainCategories: MainCategoryContent[] = [
     metaDescription:
       "Analytics dashboards, data pipelines, security audits, and compliance. Software Development Company Software for data-driven, secure products.",
     heroImage: {
-      src: "/services/Data-Service.png",
+      src: "/services/Data-Service.webp",
       alt: "Data and analytics services",
       width: 800,
       height: 800,
@@ -405,7 +405,7 @@ export const mainCategories: MainCategoryContent[] = [
     metaDescription:
       "Custom AI development: agents, automation, NLP, and computer vision for startups and enterprises. Production-ready delivery from Pakistan with US, UK, and UAE timezone overlap.",
     heroImage: {
-      src: "/services/Artificial-Intelligence.png",
+      src: "/services/Artificial-Intelligence.webp",
       alt: "Artificial intelligence services",
       width: 800,
       height: 800,
@@ -462,7 +462,7 @@ export const mainCategories: MainCategoryContent[] = [
     metaDescription:
       "Custom machine learning development: predictive models, MLOps, and analytics pipelines. Senior ML engineers for international clients.",
     heroImage: {
-      src: "/services/Mechine-learning.png",
+      src: "/services/Mechine-learning.webp",
       alt: "Machine learning services",
       width: 800,
       height: 800,
@@ -519,7 +519,7 @@ export const mainCategories: MainCategoryContent[] = [
     metaDescription:
       "Software QA and test automation for web, mobile, and APIs. Manual testing, Selenium/Cypress automation, and performance testing from a senior-led team.",
     heroImage: {
-      src: "/services/Testing-and-QA.png",
+      src: "/services/Testing-and-QA.webp",
       alt: "Software testing and QA services",
       width: 800,
       height: 800,

@@ -41,7 +41,7 @@ export const aboutSection = {
     },
   ],
   image: {
-    src: "/about us/software development company.png",
+    src: "/about us/software-development-company.webp",
     alt: "Next Software Development Company team collaborating on product delivery",
     width: 1000,
     height: 700,

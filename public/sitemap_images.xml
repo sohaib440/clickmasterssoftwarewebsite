@@ -6,11 +6,11 @@
   <url>
     <loc>https://nextsoftwaredevelopment.com/</loc>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/brand/next-logo.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/brand/next-logo.webp</image:loc>
       <image:title>Next Software Development Company Logo</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/about%20us/software%20development%20company.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/about%20us/software-development-company.webp</image:loc>
       <image:title>Next Software Development Company — Islamabad office team</image:title>
     </image:image>
   </url>
@@ -19,27 +19,27 @@
   <url>
     <loc>https://nextsoftwaredevelopment.com/team</loc>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/team/Shahvaiz-Ahmed.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/team/Shahvaiz-Ahmed.webp</image:loc>
       <image:title>Shahvaiz Ahmed — Senior Full-stack Developer</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/team/Abdullah-Mehdi.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/team/Abdullah-Mehdi.webp</image:loc>
       <image:title>Abdullah Mehdi — Machine Learning Engineer</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/team/Izaan-Ali.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/team/Izaan-Ali.webp</image:loc>
       <image:title>Izaan Ali — DevOps Engineer</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/team/Haider-Saleem.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/team/Haider-Saleem.webp</image:loc>
       <image:title>Haider Saleem — Data Engineer</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/team/Abdul-Hadi.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/team/Abdul-Hadi.webp</image:loc>
       <image:title>Abdul Hadi — iOS Developer</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/team/Muhammad-Zeeshan.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/team/Muhammad-Zeeshan.webp</image:loc>
       <image:title>Muhammad Zeeshan — Mobile App Developer</image:title>
     </image:image>
   </url>
@@ -48,27 +48,27 @@
   <url>
     <loc>https://nextsoftwaredevelopment.com/projects/prime-lead-crm</loc>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/prime-leads-project/Prime-Lead-Crm-Dashboard.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/prime-leads-project/Prime-Lead-Crm-Dashboard.webp</image:loc>
       <image:title>Prime Lead CRM — Dashboard with KPIs</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/prime-leads-project/Prime-Lead-Crm-Leads-Panel.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/prime-leads-project/Prime-Lead-Crm-Leads-Panel.webp</image:loc>
       <image:title>Prime Lead CRM — Leads Panel</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/prime-leads-project/Prime-Lead-Crm-Chat-Module.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/prime-leads-project/Prime-Lead-Crm-Chat-Module.webp</image:loc>
       <image:title>Prime Lead CRM — Chat Module</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/prime-leads-project/Prime-Lead-Crm-Staff-Management.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/prime-leads-project/Prime-Lead-Crm-Staff-Management.webp</image:loc>
       <image:title>Prime Lead CRM — Staff Management</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/prime-leads-project/Prime-Lead-Crm-Training-Pannel.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/prime-leads-project/Prime-Lead-Crm-Training-Pannel.webp</image:loc>
       <image:title>Prime Lead CRM — Training Panel</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/prime-leads-project/Prime-Lead-Crm-Login.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/prime-leads-project/Prime-Lead-Crm-Login.webp</image:loc>
       <image:title>Prime Lead CRM — Secure Login</image:title>
     </image:image>
   </url>
@@ -77,35 +77,35 @@
   <url>
     <loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp</loc>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Showcase.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Showcase.webp</image:loc>
       <image:title>AI School ERP Product Showcase</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Administrator-Dashboard.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Administrator-Dashboard.webp</image:loc>
       <image:title>AI School ERP Administrator Dashboard</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Homepage.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Homepage.webp</image:loc>
       <image:title>AI School ERP Public Website</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Login.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Login.webp</image:loc>
       <image:title>AI School ERP Role Based Login</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Sessions-Timetable.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Sessions-Timetable.webp</image:loc>
       <image:title>AI School ERP Sessions and Timetable</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Ai-Attendance-Enrolled.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Ai-Attendance-Enrolled.webp</image:loc>
       <image:title>AI School ERP Attendance Enrollment</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Live-Monitor.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Live-Monitor.webp</image:loc>
       <image:title>AI School ERP Live Attendance Monitor</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Ai-Cctv-Attendance.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/ai-school-erp/AI-School-Erp-Ai-Cctv-Attendance.webp</image:loc>
       <image:title>AI School ERP CCTV Attendance</image:title>
     </image:image>
   </url>
@@ -114,43 +114,43 @@
   <url>
     <loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website</loc>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Homepage.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Homepage.webp</image:loc>
       <image:title>Travel and Tour Website Homepage</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Packages.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Packages.webp</image:loc>
       <image:title>Travel and Tour Website Packages Listing</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Destination-Page.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Destination-Page.webp</image:loc>
       <image:title>Travel and Tour Website Destination Page</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Bookings.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Bookings.webp</image:loc>
       <image:title>Travel and Tour Website Bookings Panel</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Booking-Details.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Booking-Details.webp</image:loc>
       <image:title>Travel and Tour Website Booking Details</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Customers.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Customers.webp</image:loc>
       <image:title>Travel and Tour Website Customers Panel</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Add-Package.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Add-Package.webp</image:loc>
       <image:title>Travel and Tour Website Add Package Form</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Edit-Package.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Edit-Package.webp</image:loc>
       <image:title>Travel and Tour Website Edit Package Form</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Rental-Inquiries.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Rental-Inquiries.webp</image:loc>
       <image:title>Travel and Tour Website Rental Inquiries</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Admin-Booking-Details.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tour-website/Travel-And-Tour-Website-Admin-Booking-Details.webp</image:loc>
       <image:title>Travel and Tour Website Admin Booking Details</image:title>
     </image:image>
   </url>
@@ -159,39 +159,39 @@
   <url>
     <loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos</loc>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Overview.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Overview.webp</image:loc>
       <image:title>Restaurant POS System Overview</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Dashboard.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Dashboard.webp</image:loc>
       <image:title>Restaurant POS Dashboard</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Orders.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Orders.webp</image:loc>
       <image:title>Restaurant POS Order Management</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Menu.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Menu.webp</image:loc>
       <image:title>Restaurant POS Menu Management</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Customers.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Customers.webp</image:loc>
       <image:title>Restaurant POS Customer Management</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Inventory.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Inventory.webp</image:loc>
       <image:title>Restaurant POS Inventory Management</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Employees.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Employees.webp</image:loc>
       <image:title>Restaurant POS Employee Management</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Reports.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Reports.webp</image:loc>
       <image:title>Restaurant POS Reports and Analytics</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Settings.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/restaurant-pos/Restaurant-Pos-Settings.webp</image:loc>
       <image:title>Restaurant POS System Settings</image:title>
     </image:image>
   </url>
@@ -200,51 +200,51 @@
   <url>
     <loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management</loc>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Overview.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Overview.webp</image:loc>
       <image:title>Travel and Tours Management System Overview</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Dashboard.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Dashboard.webp</image:loc>
       <image:title>Travel and Tours Management Dashboard</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Bookings.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Bookings.webp</image:loc>
       <image:title>Travel and Tours Management Bookings</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Customers.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Customers.webp</image:loc>
       <image:title>Travel and Tours Management Customers</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Tours-Packages.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Tours-Packages.webp</image:loc>
       <image:title>Travel and Tours Management Packages</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Flights.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Flights.webp</image:loc>
       <image:title>Travel and Tours Management Flights</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Hotels.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Hotels.webp</image:loc>
       <image:title>Travel and Tours Management Hotels</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Transport.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Transport.webp</image:loc>
       <image:title>Travel and Tours Management Transport</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Payments.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Payments.webp</image:loc>
       <image:title>Travel and Tours Management Payments</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Invoices.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Invoices.webp</image:loc>
       <image:title>Travel and Tours Management Invoices</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Reports.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Reports.webp</image:loc>
       <image:title>Travel and Tours Management Reports</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Login.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/travel-and-tours-management/Travel-And-Tours-Management-Login.webp</image:loc>
       <image:title>Travel and Tours Management Login</image:title>
     </image:image>
   </url>
@@ -253,59 +253,59 @@
   <url>
     <loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system</loc>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Overview.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Overview.webp</image:loc>
       <image:title>Hotel Management System Overview</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Dashboard.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Dashboard.webp</image:loc>
       <image:title>Hotel Management System Dashboard</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Reservations.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Reservations.webp</image:loc>
       <image:title>Hotel Management System Reservations</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Reservations-List.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Reservations-List.webp</image:loc>
       <image:title>Hotel Management System Reservation List</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Check-In.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Check-In.webp</image:loc>
       <image:title>Hotel Management System Check-In</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Rooms.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Rooms.webp</image:loc>
       <image:title>Hotel Management System Rooms</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Housekeeping.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Housekeeping.webp</image:loc>
       <image:title>Hotel Management System Housekeeping</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Housekeeping-Status.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Housekeeping-Status.webp</image:loc>
       <image:title>Hotel Management System Housekeeping Status</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Finance.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Finance.webp</image:loc>
       <image:title>Hotel Management System Finance</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Reports.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Reports.webp</image:loc>
       <image:title>Hotel Management System Reports</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Employees.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Employees.webp</image:loc>
       <image:title>Hotel Management System Employees</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Ai-Attendance.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Ai-Attendance.webp</image:loc>
       <image:title>Hotel Management System AI Attendance</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Ai-Camera.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Ai-Camera.webp</image:loc>
       <image:title>Hotel Management System AI Camera</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Sign-In.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hotel-management-system/Hotel-Management-System-Sign-In.webp</image:loc>
       <image:title>Hotel Management System Sign-In</image:title>
     </image:image>
   </url>
@@ -314,35 +314,35 @@
   <url>
     <loc>https://nextsoftwaredevelopment.com/projects/royal-pos</loc>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/royal-pos/Royal-Pos-Overview.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/royal-pos/Royal-Pos-Overview.webp</image:loc>
       <image:title>Royal POS System Overview</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/royal-pos/Royal-Pos-Checkout.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/royal-pos/Royal-Pos-Checkout.webp</image:loc>
       <image:title>Royal POS Checkout</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/royal-pos/Royal-Pos-Sale-Details.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/royal-pos/Royal-Pos-Sale-Details.webp</image:loc>
       <image:title>Royal POS Sale Details</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/royal-pos/Royal-Pos-Inventory.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/royal-pos/Royal-Pos-Inventory.webp</image:loc>
       <image:title>Royal POS Inventory</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/royal-pos/Royal-Pos-Ai-Monitoring.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/royal-pos/Royal-Pos-Ai-Monitoring.webp</image:loc>
       <image:title>Royal POS AI Monitoring</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/royal-pos/Royal-Pos-Reports.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/royal-pos/Royal-Pos-Reports.webp</image:loc>
       <image:title>Royal POS Reports</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/royal-pos/Royal-Pos-Settings.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/royal-pos/Royal-Pos-Settings.webp</image:loc>
       <image:title>Royal POS Settings</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/royal-pos/Royal-Pos-Sign-In.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/royal-pos/Royal-Pos-Sign-In.webp</image:loc>
       <image:title>Royal POS Sign-In</image:title>
     </image:image>
   </url>
@@ -351,63 +351,63 @@
   <url>
     <loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system</loc>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Sign-In.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Sign-In.webp</image:loc>
       <image:title>Hospital Management System Sign-In</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Overview.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Overview.webp</image:loc>
       <image:title>Hospital Management System Overview</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Dashboard.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Dashboard.webp</image:loc>
       <image:title>Hospital Management System Dashboard</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Appointments.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Appointments.webp</image:loc>
       <image:title>Hospital Management System Appointments</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Patients.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Patients.webp</image:loc>
       <image:title>Hospital Management System Patients</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Doctors.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Doctors.webp</image:loc>
       <image:title>Hospital Management System Doctors</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Departments.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Departments.webp</image:loc>
       <image:title>Hospital Management System Departments</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Bed-Management.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Bed-Management.webp</image:loc>
       <image:title>Hospital Management System Bed Management</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Billing.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Billing.webp</image:loc>
       <image:title>Hospital Management System Billing</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Payments.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Payments.webp</image:loc>
       <image:title>Hospital Management System Payments</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Pharmacy.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Pharmacy.webp</image:loc>
       <image:title>Hospital Management System Pharmacy</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Reports.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Reports.webp</image:loc>
       <image:title>Hospital Management System Reports</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Doctor-Portal.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Doctor-Portal.webp</image:loc>
       <image:title>Hospital Management System Doctor Portal</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Users-Roles.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Users-Roles.webp</image:loc>
       <image:title>Hospital Management System Users and Roles</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Settings.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hospital-management-system/Hospital-Management-System-Settings.webp</image:loc>
       <image:title>Hospital Management System Settings</image:title>
     </image:image>
   </url>
@@ -416,51 +416,51 @@
   <url>
     <loc>https://nextsoftwaredevelopment.com/projects/cash-management-system</loc>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/cash-management-system/Cash-Management-System-Sign-In.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/cash-management-system/Cash-Management-System-Sign-In.webp</image:loc>
       <image:title>Cash Management System Sign-In</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/cash-management-system/Cash-Management-System-Dashboard.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/cash-management-system/Cash-Management-System-Dashboard.webp</image:loc>
       <image:title>Cash Management System Dashboard</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/cash-management-system/Cash-Management-System-Accounts.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/cash-management-system/Cash-Management-System-Accounts.webp</image:loc>
       <image:title>Cash Management System Accounts</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/cash-management-system/Cash-Management-System-Transactions.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/cash-management-system/Cash-Management-System-Transactions.webp</image:loc>
       <image:title>Cash Management System Transactions</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/cash-management-system/Cash-Management-System-Income.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/cash-management-system/Cash-Management-System-Income.webp</image:loc>
       <image:title>Cash Management System Income</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/cash-management-system/Cash-Management-System-Expenses.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/cash-management-system/Cash-Management-System-Expenses.webp</image:loc>
       <image:title>Cash Management System Expenses</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/cash-management-system/Cash-Management-System-Transfers.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/cash-management-system/Cash-Management-System-Transfers.webp</image:loc>
       <image:title>Cash Management System Transfers</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/cash-management-system/Cash-Management-System-Categories.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/cash-management-system/Cash-Management-System-Categories.webp</image:loc>
       <image:title>Cash Management System Categories</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/cash-management-system/Cash-Management-System-Payees.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/cash-management-system/Cash-Management-System-Payees.webp</image:loc>
       <image:title>Cash Management System Payees</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/cash-management-system/Cash-Management-System-Budgets.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/cash-management-system/Cash-Management-System-Budgets.webp</image:loc>
       <image:title>Cash Management System Budgets</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/cash-management-system/Cash-Management-System-Reports.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/cash-management-system/Cash-Management-System-Reports.webp</image:loc>
       <image:title>Cash Management System Reports</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/cash-management-system/Cash-Management-System-Audit-Log.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/cash-management-system/Cash-Management-System-Audit-Log.webp</image:loc>
       <image:title>Cash Management System Audit Log</image:title>
     </image:image>
   </url>
@@ -469,79 +469,79 @@
   <url>
     <loc>https://nextsoftwaredevelopment.com/projects/hr-management-software</loc>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Overview.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Overview.webp</image:loc>
       <image:title>HR Management Software Overview</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Sign-In.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Sign-In.webp</image:loc>
       <image:title>HR Management Software Sign-In</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Dashboard.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Dashboard.webp</image:loc>
       <image:title>HR Management Software Dashboard</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Employee-Management.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Employee-Management.webp</image:loc>
       <image:title>HR Management Software Employee Management</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Organizational-Structure.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Organizational-Structure.webp</image:loc>
       <image:title>HR Management Software Organizational Structure</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Recruitment-Ats.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Recruitment-Ats.webp</image:loc>
       <image:title>HR Management Software Recruitment ATS</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Employee-Onboarding.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Employee-Onboarding.webp</image:loc>
       <image:title>HR Management Software Employee Onboarding</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Attendance-Management.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Attendance-Management.webp</image:loc>
       <image:title>HR Management Software Attendance Management</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Leave-Management.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Leave-Management.webp</image:loc>
       <image:title>HR Management Software Leave Management</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Payroll-Management.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Payroll-Management.webp</image:loc>
       <image:title>HR Management Software Payroll Management</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Performance-Management.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Performance-Management.webp</image:loc>
       <image:title>HR Management Software Performance Management</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Training-Learning.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Training-Learning.webp</image:loc>
       <image:title>HR Management Software Training and Learning</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Asset-Management.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Asset-Management.webp</image:loc>
       <image:title>HR Management Software Asset Management</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Expense-Reimbursement.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Expense-Reimbursement.webp</image:loc>
       <image:title>HR Management Software Expense Reimbursement</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Disciplinary-Management.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Disciplinary-Management.webp</image:loc>
       <image:title>HR Management Software Disciplinary Management</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Exit-Management.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Exit-Management.webp</image:loc>
       <image:title>HR Management Software Exit Management</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Employee-Documents.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Employee-Documents.webp</image:loc>
       <image:title>HR Management Software Employee Documents</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Shift-Roster.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Shift-Roster.webp</image:loc>
       <image:title>HR Management Software Shift Roster</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Settings.jpeg</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/hr-management-software/Hr-Management-Software-Settings.webp</image:loc>
       <image:title>HR Management Software Settings</image:title>
     </image:image>
   </url>
@@ -550,55 +550,55 @@
   <url>
     <loc>https://nextsoftwaredevelopment.com/projects/medicine-inventory-system</loc>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/medicine-inventory-system/Medicine-Inventory-System-Overview.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/medicine-inventory-system/Medicine-Inventory-System-Overview.webp</image:loc>
       <image:title>Medicine Inventory System Overview</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/medicine-inventory-system/Medicine-Inventory-System-Sign-In.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/medicine-inventory-system/Medicine-Inventory-System-Sign-In.webp</image:loc>
       <image:title>Medicine Inventory System Sign-In</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/medicine-inventory-system/Medicine-Inventory-System-Dashboard.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/medicine-inventory-system/Medicine-Inventory-System-Dashboard.webp</image:loc>
       <image:title>Medicine Inventory System Dashboard</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/medicine-inventory-system/Medicine-Inventory-System-Medicines.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/medicine-inventory-system/Medicine-Inventory-System-Medicines.webp</image:loc>
       <image:title>Medicine Inventory System Medicines</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/medicine-inventory-system/Medicine-Inventory-System-Suppliers.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/medicine-inventory-system/Medicine-Inventory-System-Suppliers.webp</image:loc>
       <image:title>Medicine Inventory System Suppliers</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/medicine-inventory-system/Medicine-Inventory-System-Purchase-Orders.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/medicine-inventory-system/Medicine-Inventory-System-Purchase-Orders.webp</image:loc>
       <image:title>Medicine Inventory System Purchase Orders</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/medicine-inventory-system/Medicine-Inventory-System-Stock-In.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/medicine-inventory-system/Medicine-Inventory-System-Stock-In.webp</image:loc>
       <image:title>Medicine Inventory System Stock In</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/medicine-inventory-system/Medicine-Inventory-System-Stock-Out.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/medicine-inventory-system/Medicine-Inventory-System-Stock-Out.webp</image:loc>
       <image:title>Medicine Inventory System Stock Out</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/medicine-inventory-system/Medicine-Inventory-System-Adjustments.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/medicine-inventory-system/Medicine-Inventory-System-Adjustments.webp</image:loc>
       <image:title>Medicine Inventory System Adjustments</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/medicine-inventory-system/Medicine-Inventory-System-Batch-Tracking.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/medicine-inventory-system/Medicine-Inventory-System-Batch-Tracking.webp</image:loc>
       <image:title>Medicine Inventory System Batch Tracking</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/medicine-inventory-system/Medicine-Inventory-System-Expiry-Management.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/medicine-inventory-system/Medicine-Inventory-System-Expiry-Management.webp</image:loc>
       <image:title>Medicine Inventory System Expiry Management</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/medicine-inventory-system/Medicine-Inventory-System-Stock-Reports.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/medicine-inventory-system/Medicine-Inventory-System-Stock-Reports.webp</image:loc>
       <image:title>Medicine Inventory System Stock Reports</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/medicine-inventory-system/Medicine-Inventory-System-Purchase-Reports.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/medicine-inventory-system/Medicine-Inventory-System-Purchase-Reports.webp</image:loc>
       <image:title>Medicine Inventory System Purchase Reports</image:title>
     </image:image>
   </url>
@@ -607,51 +607,51 @@
   <url>
     <loc>https://nextsoftwaredevelopment.com/projects/e-learning-portal</loc>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/e-learning-portal/E-Learning-Portal-Sign-In.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/e-learning-portal/E-Learning-Portal-Sign-In.webp</image:loc>
       <image:title>E-Learning Portal Sign-In</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/e-learning-portal/E-Learning-Portal-Dashboard.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/e-learning-portal/E-Learning-Portal-Dashboard.webp</image:loc>
       <image:title>E-Learning Portal Dashboard</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/e-learning-portal/E-Learning-Portal-Instructor-Dashboard.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/e-learning-portal/E-Learning-Portal-Instructor-Dashboard.webp</image:loc>
       <image:title>E-Learning Portal Instructor Dashboard</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/e-learning-portal/E-Learning-Portal-Users.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/e-learning-portal/E-Learning-Portal-Users.webp</image:loc>
       <image:title>E-Learning Portal Users</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/e-learning-portal/E-Learning-Portal-Courses.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/e-learning-portal/E-Learning-Portal-Courses.webp</image:loc>
       <image:title>E-Learning Portal Courses</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/e-learning-portal/E-Learning-Portal-Categories.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/e-learning-portal/E-Learning-Portal-Categories.webp</image:loc>
       <image:title>E-Learning Portal Categories</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/e-learning-portal/E-Learning-Portal-Enrollments.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/e-learning-portal/E-Learning-Portal-Enrollments.webp</image:loc>
       <image:title>E-Learning Portal Enrollments</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/e-learning-portal/E-Learning-Portal-Lessons.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/e-learning-portal/E-Learning-Portal-Lessons.webp</image:loc>
       <image:title>E-Learning Portal Lessons</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/e-learning-portal/E-Learning-Portal-Assignments.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/e-learning-portal/E-Learning-Portal-Assignments.webp</image:loc>
       <image:title>E-Learning Portal Assignments</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/e-learning-portal/E-Learning-Portal-Quizzes.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/e-learning-portal/E-Learning-Portal-Quizzes.webp</image:loc>
       <image:title>E-Learning Portal Quizzes</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/e-learning-portal/E-Learning-Portal-Attendance.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/e-learning-portal/E-Learning-Portal-Attendance.webp</image:loc>
       <image:title>E-Learning Portal Attendance</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://nextsoftwaredevelopment.com/projects/e-learning-portal/E-Learning-Portal-Settings.png</image:loc>
+      <image:loc>https://nextsoftwaredevelopment.com/projects/e-learning-portal/E-Learning-Portal-Settings.webp</image:loc>
       <image:title>E-Learning Portal Settings</image:title>
     </image:image>
   </url>

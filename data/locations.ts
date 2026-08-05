@@ -570,7 +570,7 @@ export const pakistanLocation: LocationPageContent = {
       },
     ],
     image: {
-      src: "/about us/software development company.png",
+      src: "/about us/software-development-company.webp",
       alt: "Next Software Development Company, a top software house and software company in Pakistan",
       width: 1000,
       height: 700,
@@ -585,7 +585,7 @@ export const pakistanLocation: LocationPageContent = {
       "Selected builds from our software development company for clinics, schools, and retailers across Pakistani cities, with the same delivery standard as our global software company recent projects.",
   },
   heroImage: {
-    src: "/locations/Location-Pakistan.png",
+    src: "/locations/Location-Pakistan.webp",
     alt: "Best software house and top rated software company in Pakistan",
     width: 1536,
     height: 1024,

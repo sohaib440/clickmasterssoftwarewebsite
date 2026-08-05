@@ -47,7 +47,7 @@ const logoImageObject = {
 } as const;
 
 /** Representative business / about photo (not the logo) */
-const organizationImageUrl = `${siteBrand.url}/about%20us/software%20development%20company.png`;
+const organizationImageUrl = `${siteBrand.url}/about%20us/software-development-company.webp`;
 
 /** HQ address — only fields confirmed on the site (Islamabad, Pakistan). No invented street. */
 const hqAddress = {

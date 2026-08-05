@@ -10,7 +10,7 @@ export const projects = [
     description:
       "A call center CRM built to capture leads, assign staff, track attendance, run training, and keep sales conversations in one system so teams convert faster with full visibility.",
     image: {
-      src: "/projects/prime-leads-project/Prime-Lead-Crm-Dashboard.jpeg",
+      src: "/projects/prime-leads-project/Prime-Lead-Crm-Dashboard.webp",
       alt: "Prime Lead CRM dashboard overview",
       width: 1536,
       height: 1024,
@@ -23,7 +23,7 @@ export const projects = [
     description:
       "A smart school management ERP with AI-powered face recognition attendance, student and teacher management, fees, exams, timetables, and role-based portals for admins, teachers, parents, and students.",
     image: {
-      src: "/projects/ai-school-erp/AI-School-Erp-Showcase.jpeg",
+      src: "/projects/ai-school-erp/AI-School-Erp-Showcase.webp",
       alt: "AI School ERP showcase overview",
       width: 1200,
       height: 750,
@@ -36,7 +36,7 @@ export const projects = [
     description:
       "A full travel and tour platform with a public booking website, package listings, destination pages, customer management, bookings, rental inquiries, and an admin panel to manage packages end to end.",
     image: {
-      src: "/projects/travel-and-tour-website/Travel-And-Tour-Website-Homepage.jpeg",
+      src: "/projects/travel-and-tour-website/Travel-And-Tour-Website-Homepage.webp",
       alt: "Travel and tour website homepage",
       width: 1200,
       height: 750,
@@ -49,7 +49,7 @@ export const projects = [
     description:
       "An all-in-one restaurant point-of-sale and management platform for orders, menus, tables, customers, inventory, employees, reporting, and day-to-day business settings.",
     image: {
-      src: "/projects/restaurant-pos/Restaurant-Pos-Overview.png",
+      src: "/projects/restaurant-pos/Restaurant-Pos-Overview.webp",
       alt: "Restaurant POS system overview",
       width: 1024,
       height: 683,
@@ -62,7 +62,7 @@ export const projects = [
     description:
       "An all-in-one travel and tour management system for bookings, customers, packages, flights, hotels, transport, payments, invoices, agents, and business reporting.",
     image: {
-      src: "/projects/travel-and-tours-management/Travel-And-Tours-Management-Overview.png",
+      src: "/projects/travel-and-tours-management/Travel-And-Tours-Management-Overview.webp",
       alt: "Travel and tours management system overview",
       width: 1024,
       height: 683,
@@ -75,7 +75,7 @@ export const projects = [
     description:
       "A complete hotel management platform for reservations, front desk, rooms, housekeeping, guests, finance, reports, employees, AI attendance, and AI camera monitoring.",
     image: {
-      src: "/projects/hotel-management-system/Hotel-Management-System-Overview.jpeg",
+      src: "/projects/hotel-management-system/Hotel-Management-System-Overview.webp",
       alt: "Hotel management system overview",
       width: 1200,
       height: 750,
@@ -88,7 +88,7 @@ export const projects = [
     description:
       "An AI-powered retail POS and business platform for checkout, inventory, products, customers, sales, reports, multi-branch operations, and live AI camera monitoring.",
     image: {
-      src: "/projects/royal-pos/Royal-Pos-Overview.jpeg",
+      src: "/projects/royal-pos/Royal-Pos-Overview.webp",
       alt: "Royal POS AI-powered retail system overview",
       width: 1200,
       height: 750,
@@ -101,7 +101,7 @@ export const projects = [
     description:
       "A complete hospital management platform for appointments, patients, doctors, departments, beds, billing, pharmacy, reports, users, and a dedicated doctor portal.",
     image: {
-      src: "/projects/hospital-management-system/Hospital-Management-System-Sign-In.png",
+      src: "/projects/hospital-management-system/Hospital-Management-System-Sign-In.webp",
       alt: "Hospital management system login and sign-up",
       width: 1200,
       height: 750,
@@ -114,7 +114,7 @@ export const projects = [
     description:
       "A complete cash management platform for accounts, income, expenses, transfers, categories, payees, budgets, reports, and audit trails so teams control cash flow with full visibility.",
     image: {
-      src: "/projects/cash-management-system/Cash-Management-System-Sign-In.png",
+      src: "/projects/cash-management-system/Cash-Management-System-Sign-In.webp",
       alt: "Cash management system sign-in",
       width: 1200,
       height: 750,
@@ -127,7 +127,7 @@ export const projects = [
     description:
       "An AI-powered HRMS for employees, attendance, leave, payroll, recruitment, onboarding, performance, training, assets, expenses, and exit management in one platform.",
     image: {
-      src: "/projects/hr-management-software/Hr-Management-Software-Overview.jpeg",
+      src: "/projects/hr-management-software/Hr-Management-Software-Overview.webp",
       alt: "HR management software overview",
       width: 1200,
       height: 750,
@@ -140,7 +140,7 @@ export const projects = [
     description:
       "A pharmacy inventory platform for medicines, suppliers, purchase orders, stock in and out, adjustments, batch and expiry tracking, and stock and purchase reports.",
     image: {
-      src: "/projects/medicine-inventory-system/Medicine-Inventory-System-Overview.png",
+      src: "/projects/medicine-inventory-system/Medicine-Inventory-System-Overview.webp",
       alt: "Medicine inventory system overview",
       width: 1200,
       height: 750,
@@ -153,7 +153,7 @@ export const projects = [
     description:
       "A complete EduLearn e-learning platform for courses, enrollments, lessons, assignments, quizzes, attendance, certificates, instructor dashboards, and admin management.",
     image: {
-      src: "/projects/e-learning-portal/E-Learning-Portal-Sign-In.png",
+      src: "/projects/e-learning-portal/E-Learning-Portal-Sign-In.webp",
       alt: "E-Learning Portal secure sign-in login",
       width: 1200,
       height: 750,

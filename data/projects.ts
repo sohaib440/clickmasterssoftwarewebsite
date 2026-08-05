@@ -88,7 +88,7 @@ const primeLeadSlides: ProjectSlide[] = [
     caption:
       "Live KPIs for staff, license agents, active leads, revenue, conversion rate, and attendance.",
     image: img(
-      "/projects/prime-leads-project/Prime-Lead-Crm-Dashboard.jpeg",
+      "/projects/prime-leads-project/Prime-Lead-Crm-Dashboard.webp",
       "Prime Lead CRM dashboard",
       1536,
       1024,
@@ -99,7 +99,7 @@ const primeLeadSlides: ProjectSlide[] = [
     caption:
       "Search, qualify, assign, and track every lead with status, earnings, and ownership in one table.",
     image: img(
-      "/projects/prime-leads-project/Prime-Lead-Crm-Leads-Panel.jpeg",
+      "/projects/prime-leads-project/Prime-Lead-Crm-Leads-Panel.webp",
       "Prime Lead CRM leads panel",
       1600,
       889,
@@ -110,7 +110,7 @@ const primeLeadSlides: ProjectSlide[] = [
     caption:
       "Team and agent messaging with conversation history kept beside the sales workflow.",
     image: img(
-      "/projects/prime-leads-project/Prime-Lead-Crm-Chat-Module.jpeg",
+      "/projects/prime-leads-project/Prime-Lead-Crm-Chat-Module.webp",
       "Prime Lead CRM chat module",
       1536,
       1024,
@@ -121,7 +121,7 @@ const primeLeadSlides: ProjectSlide[] = [
     caption:
       "Manage roles, agents, permissions, and performance so follow-ups never fall through.",
     image: img(
-      "/projects/prime-leads-project/Prime-Lead-Crm-Staff-Management.jpeg",
+      "/projects/prime-leads-project/Prime-Lead-Crm-Staff-Management.webp",
       "Prime Lead CRM staff management",
       1528,
       1029,
@@ -132,7 +132,7 @@ const primeLeadSlides: ProjectSlide[] = [
     caption:
       "Internal and external training modules with status, categories, and file attachments for agent onboarding.",
     image: img(
-      "/projects/prime-leads-project/Prime-Lead-Crm-Training-Pannel.jpeg",
+      "/projects/prime-leads-project/Prime-Lead-Crm-Training-Pannel.webp",
       "Prime Lead CRM training panel",
       1600,
       874,
@@ -143,7 +143,7 @@ const primeLeadSlides: ProjectSlide[] = [
     caption:
       "Role-based sign-in so admins, managers, and agents only access what they need.",
     image: img(
-      "/projects/prime-leads-project/Prime-Lead-Crm-Login.jpeg",
+      "/projects/prime-leads-project/Prime-Lead-Crm-Login.webp",
       "Prime Lead CRM login screen",
       1536,
       1024,
@@ -157,7 +157,7 @@ const aiSchoolErpSlides: ProjectSlide[] = [
     caption:
       "Complete smart school management solution with AI-powered face recognition attendance, academics, finance, and multi-role portals.",
     image: img(
-      "/projects/ai-school-erp/AI-School-Erp-Showcase.jpeg",
+      "/projects/ai-school-erp/AI-School-Erp-Showcase.webp",
       "AI School ERP product showcase",
     ),
   },
@@ -166,7 +166,7 @@ const aiSchoolErpSlides: ProjectSlide[] = [
     caption:
       "System overview with student counts, fee collection, expenses, and quick access to every school module.",
     image: img(
-      "/projects/ai-school-erp/AI-School-Erp-Administrator-Dashboard.jpeg",
+      "/projects/ai-school-erp/AI-School-Erp-Administrator-Dashboard.webp",
       "AI School ERP administrator dashboard",
     ),
   },
@@ -175,7 +175,7 @@ const aiSchoolErpSlides: ProjectSlide[] = [
     caption:
       "Marketing homepage for the educational institution with programs, admissions, and portal login access.",
     image: img(
-      "/projects/ai-school-erp/AI-School-Erp-Homepage.jpeg",
+      "/projects/ai-school-erp/AI-School-Erp-Homepage.webp",
       "AI School ERP public website homepage",
     ),
   },
@@ -183,14 +183,14 @@ const aiSchoolErpSlides: ProjectSlide[] = [
     label: "Role-based login",
     caption:
       "Secure sign-in for administrators, teachers, students, accountants, and parents from one branded portal.",
-    image: img("/projects/ai-school-erp/AI-School-Erp-Login.jpeg", "AI School ERP login screen"),
+    image: img("/projects/ai-school-erp/AI-School-Erp-Login.webp", "AI School ERP login screen"),
   },
   {
     label: "Sessions & timetable",
     caption:
       "Manage academic sessions, active terms, and timetable configuration from a centralized admin view.",
     image: img(
-      "/projects/ai-school-erp/AI-School-Erp-Sessions-Timetable.jpeg",
+      "/projects/ai-school-erp/AI-School-Erp-Sessions-Timetable.webp",
       "AI School ERP sessions and timetable",
     ),
   },
@@ -199,7 +199,7 @@ const aiSchoolErpSlides: ProjectSlide[] = [
     caption:
       "Enroll student and staff faces with webcam or phone camera so recognition is ready for daily attendance.",
     image: img(
-      "/projects/ai-school-erp/AI-School-Erp-Ai-Attendance-Enrolled.jpeg",
+      "/projects/ai-school-erp/AI-School-Erp-Ai-Attendance-Enrolled.webp",
       "AI School ERP attendance enrollment",
     ),
   },
@@ -208,7 +208,7 @@ const aiSchoolErpSlides: ProjectSlide[] = [
     caption:
       "Real-time face recognition with present, late, and absent status plus recent recognition history.",
     image: img(
-      "/projects/ai-school-erp/AI-School-Erp-Live-Monitor.jpeg",
+      "/projects/ai-school-erp/AI-School-Erp-Live-Monitor.webp",
       "AI School ERP live attendance monitor",
     ),
   },
@@ -217,7 +217,7 @@ const aiSchoolErpSlides: ProjectSlide[] = [
     caption:
       "Multi-camera CCTV feeds with live AI recognition, daily attendance summary, and recognition logs.",
     image: img(
-      "/projects/ai-school-erp/AI-School-Erp-Ai-Cctv-Attendance.jpeg",
+      "/projects/ai-school-erp/AI-School-Erp-Ai-Cctv-Attendance.webp",
       "AI School ERP CCTV attendance",
     ),
   },
@@ -229,7 +229,7 @@ const travelAndTourSlides: ProjectSlide[] = [
     caption:
       "Public travel website with hero search, popular destinations, trust badges, and package discovery for travelers.",
     image: img(
-      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Homepage.jpeg",
+      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Homepage.webp",
       "Travel and tour website homepage",
     ),
   },
@@ -238,7 +238,7 @@ const travelAndTourSlides: ProjectSlide[] = [
     caption:
       "Filterable package catalog with destinations, duration, budget range, and package type for easy trip planning.",
     image: img(
-      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Packages.jpeg",
+      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Packages.webp",
       "Travel and tour website packages listing",
     ),
   },
@@ -247,7 +247,7 @@ const travelAndTourSlides: ProjectSlide[] = [
     caption:
       "Rich destination detail pages with overview, attractions, packages, travel tips, and booking widgets.",
     image: img(
-      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Destination-Page.jpeg",
+      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Destination-Page.webp",
       "Travel and tour website destination page",
     ),
   },
@@ -256,7 +256,7 @@ const travelAndTourSlides: ProjectSlide[] = [
     caption:
       "Admin bookings table with status, destination, travel dates, payment state, and export controls.",
     image: img(
-      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Bookings.jpeg",
+      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Bookings.webp",
       "Travel and tour website bookings panel",
     ),
   },
@@ -265,7 +265,7 @@ const travelAndTourSlides: ProjectSlide[] = [
     caption:
       "Full booking view with customer info, trip summary, package details, payment status, itinerary, and timeline.",
     image: img(
-      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Booking-Details.jpeg",
+      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Booking-Details.webp",
       "Travel and tour website booking details",
     ),
   },
@@ -274,7 +274,7 @@ const travelAndTourSlides: ProjectSlide[] = [
     caption:
       "Customer directory with contact details, country, join date, total bookings, spend, and account status.",
     image: img(
-      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Customers.jpeg",
+      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Customers.webp",
       "Travel and tour website customers panel",
     ),
   },
@@ -283,7 +283,7 @@ const travelAndTourSlides: ProjectSlide[] = [
     caption:
       "Create travel packages with pricing, availability, inclusions, highlights, itinerary days, and SEO settings.",
     image: img(
-      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Add-Package.jpeg",
+      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Add-Package.webp",
       "Travel and tour website add package form",
     ),
   },
@@ -292,7 +292,7 @@ const travelAndTourSlides: ProjectSlide[] = [
     caption:
       "Update package content, gallery images, publish settings, featured status, and display order from admin.",
     image: img(
-      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Edit-Package.jpeg",
+      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Edit-Package.webp",
       "Travel and tour website edit package form",
     ),
   },
@@ -301,7 +301,7 @@ const travelAndTourSlides: ProjectSlide[] = [
     caption:
       "Manage vacation rental inquiries with destination filters, guest details, status tracking, and export tools.",
     image: img(
-      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Rental-Inquiries.jpeg",
+      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Rental-Inquiries.webp",
       "Travel and tour website rental inquiries",
     ),
   },
@@ -310,7 +310,7 @@ const travelAndTourSlides: ProjectSlide[] = [
     caption:
       "Dark-themed admin booking detail screen with payment summary, itinerary, and booking timeline.",
     image: img(
-      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Admin-Booking-Details.jpeg",
+      "/projects/travel-and-tour-website/Travel-And-Tour-Website-Admin-Booking-Details.webp",
       "Travel and tour website admin booking details",
     ),
   },
@@ -322,7 +322,7 @@ const restaurantPosSlides: ProjectSlide[] = [
     caption:
       "A complete restaurant POS workspace for order management, inventory control, customers, analytics, and operational reporting.",
     image: img(
-      "/projects/restaurant-pos/Restaurant-Pos-Overview.png",
+      "/projects/restaurant-pos/Restaurant-Pos-Overview.webp",
       "Restaurant POS system overview",
       1024,
       683,
@@ -333,7 +333,7 @@ const restaurantPosSlides: ProjectSlide[] = [
     caption:
       "Live sales, order, customer, payment, table, and top-selling-item metrics give managers an immediate view of restaurant performance.",
     image: img(
-      "/projects/restaurant-pos/Restaurant-Pos-Dashboard.png",
+      "/projects/restaurant-pos/Restaurant-Pos-Dashboard.webp",
       "Restaurant POS dashboard",
       1024,
       683,
@@ -344,7 +344,7 @@ const restaurantPosSlides: ProjectSlide[] = [
     caption:
       "Track dine-in, takeaway, and delivery orders with customer details, item totals, kitchen handoff, and completion status.",
     image: img(
-      "/projects/restaurant-pos/Restaurant-Pos-Orders.png",
+      "/projects/restaurant-pos/Restaurant-Pos-Orders.webp",
       "Restaurant POS order management",
       1024,
       683,
@@ -355,7 +355,7 @@ const restaurantPosSlides: ProjectSlide[] = [
     caption:
       "Manage menu categories, pricing, availability, item details, and images from one searchable catalog.",
     image: img(
-      "/projects/restaurant-pos/Restaurant-Pos-Menu.png",
+      "/projects/restaurant-pos/Restaurant-Pos-Menu.webp",
       "Restaurant POS menu management",
       1024,
       683,
@@ -366,7 +366,7 @@ const restaurantPosSlides: ProjectSlide[] = [
     caption:
       "Maintain customer profiles, loyalty groups, visit history, total spend, contact details, and account status.",
     image: img(
-      "/projects/restaurant-pos/Restaurant-Pos-Customers.png",
+      "/projects/restaurant-pos/Restaurant-Pos-Customers.webp",
       "Restaurant POS customer management",
       1024,
       683,
@@ -377,7 +377,7 @@ const restaurantPosSlides: ProjectSlide[] = [
     caption:
       "Monitor ingredients, stock levels, unit costs, suppliers, low-stock alerts, and total inventory value.",
     image: img(
-      "/projects/restaurant-pos/Restaurant-Pos-Inventory.png",
+      "/projects/restaurant-pos/Restaurant-Pos-Inventory.webp",
       "Restaurant POS inventory management",
       1024,
       683,
@@ -388,7 +388,7 @@ const restaurantPosSlides: ProjectSlide[] = [
     caption:
       "Manage employee records, roles, departments, employment status, contact details, and salary information.",
     image: img(
-      "/projects/restaurant-pos/Restaurant-Pos-Employees.png",
+      "/projects/restaurant-pos/Restaurant-Pos-Employees.webp",
       "Restaurant POS employee management",
       1024,
       683,
@@ -399,7 +399,7 @@ const restaurantPosSlides: ProjectSlide[] = [
     caption:
       "Analyze sales, orders, customers, products, payment methods, and daily performance with export-ready reports.",
     image: img(
-      "/projects/restaurant-pos/Restaurant-Pos-Reports.png",
+      "/projects/restaurant-pos/Restaurant-Pos-Reports.webp",
       "Restaurant POS reports and analytics",
       1024,
       683,
@@ -410,7 +410,7 @@ const restaurantPosSlides: ProjectSlide[] = [
     caption:
       "Configure business information, taxes, payments, receipts, roles, notifications, backups, integrations, and security.",
     image: img(
-      "/projects/restaurant-pos/Restaurant-Pos-Settings.png",
+      "/projects/restaurant-pos/Restaurant-Pos-Settings.webp",
       "Restaurant POS system settings",
       1024,
       683,
@@ -424,7 +424,7 @@ const travelAndToursManagementSlides: ProjectSlide[] = [
     caption:
       "An all-in-one travel platform covering bookings, customers, transport, hotels, invoices, reports, and daily agency operations.",
     image: img(
-      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Overview.png",
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Overview.webp",
       "Travel and tours management system overview",
       1024,
       683,
@@ -435,7 +435,7 @@ const travelAndToursManagementSlides: ProjectSlide[] = [
     caption:
       "Live bookings, customers, tours, revenue, status charts, upcoming packages, and quick actions for daily travel operations.",
     image: img(
-      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Dashboard.png",
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Dashboard.webp",
       "Travel and tours management dashboard",
       1024,
       683,
@@ -446,7 +446,7 @@ const travelAndToursManagementSlides: ProjectSlide[] = [
     caption:
       "Search, filter, and manage tour bookings with traveler details, package assignment, amounts, and status tracking.",
     image: img(
-      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Bookings.png",
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Bookings.webp",
       "Travel and tours management bookings",
       1024,
       683,
@@ -457,7 +457,7 @@ const travelAndToursManagementSlides: ProjectSlide[] = [
     caption:
       "Maintain customer profiles, contact details, country, loyalty type, spend history, booking counts, and account status.",
     image: img(
-      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Customers.png",
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Customers.webp",
       "Travel and tours management customers",
       1024,
       683,
@@ -468,7 +468,7 @@ const travelAndToursManagementSlides: ProjectSlide[] = [
     caption:
       "Create and manage tour packages with destinations, duration, pricing, categories, availability, and booking volume.",
     image: img(
-      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Tours-Packages.png",
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Tours-Packages.webp",
       "Travel and tours management packages",
       1024,
       683,
@@ -479,7 +479,7 @@ const travelAndToursManagementSlides: ProjectSlide[] = [
     caption:
       "Track flight schedules, routes, airlines, seat availability, fares, delays, and booking performance in one module.",
     image: img(
-      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Flights.png",
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Flights.webp",
       "Travel and tours management flights",
       1024,
       683,
@@ -490,7 +490,7 @@ const travelAndToursManagementSlides: ProjectSlide[] = [
     caption:
       "Manage hotel inventory by city, type, rating, rooms, nightly rates, booking volume, and active status.",
     image: img(
-      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Hotels.png",
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Hotels.webp",
       "Travel and tours management hotels",
       1024,
       683,
@@ -501,7 +501,7 @@ const travelAndToursManagementSlides: ProjectSlide[] = [
     caption:
       "Coordinate coaches, vans, drivers, capacity, trip status, locations, and vehicle maintenance from one fleet view.",
     image: img(
-      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Transport.png",
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Transport.webp",
       "Travel and tours management transport",
       1024,
       683,
@@ -512,7 +512,7 @@ const travelAndToursManagementSlides: ProjectSlide[] = [
     caption:
       "Monitor successful, pending, failed, and refunded payments with method breakdowns and transaction history.",
     image: img(
-      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Payments.png",
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Payments.webp",
       "Travel and tours management payments",
       1024,
       683,
@@ -523,7 +523,7 @@ const travelAndToursManagementSlides: ProjectSlide[] = [
     caption:
       "Create and track invoices for flights, hotels, packages, and transport with paid, pending, and overdue visibility.",
     image: img(
-      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Invoices.png",
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Invoices.webp",
       "Travel and tours management invoices",
       1024,
       683,
@@ -534,7 +534,7 @@ const travelAndToursManagementSlides: ProjectSlide[] = [
     caption:
       "Analyze revenue, bookings, customers, destinations, and category performance with exportable operational reports.",
     image: img(
-      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Reports.png",
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Reports.webp",
       "Travel and tours management reports",
       1024,
       683,
@@ -545,7 +545,7 @@ const travelAndToursManagementSlides: ProjectSlide[] = [
     caption:
       "Role-ready authentication with login and account creation so agency teams can access the platform securely.",
     image: img(
-      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Login.png",
+      "/projects/travel-and-tours-management/Travel-And-Tours-Management-Login.webp",
       "Travel and tours management login",
       1024,
       683,
@@ -559,7 +559,7 @@ const hotelManagementSystemSlides: ProjectSlide[] = [
     caption:
       "A complete hotel platform covering reservations, rooms, housekeeping, guests, finance, reports, staff, and AI-powered operations.",
     image: img(
-      "/projects/hotel-management-system/Hotel-Management-System-Overview.jpeg",
+      "/projects/hotel-management-system/Hotel-Management-System-Overview.webp",
       "Hotel management system overview",
     ),
   },
@@ -568,7 +568,7 @@ const hotelManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Live bookings, guests, revenue, occupancy, ADR, RevPAR, room status, and today's front-desk summary in one overview.",
     image: img(
-      "/projects/hotel-management-system/Hotel-Management-System-Dashboard.jpeg",
+      "/projects/hotel-management-system/Hotel-Management-System-Dashboard.webp",
       "Hotel management system dashboard",
     ),
   },
@@ -577,7 +577,7 @@ const hotelManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Search, filter, and manage reservations with guest details, room assignment, payment status, and reservation actions.",
     image: img(
-      "/projects/hotel-management-system/Hotel-Management-System-Reservations.jpeg",
+      "/projects/hotel-management-system/Hotel-Management-System-Reservations.webp",
       "Hotel management system reservations",
     ),
   },
@@ -586,7 +586,7 @@ const hotelManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Track confirmed, pending, checked-in, and cancelled bookings with sources, amounts, and guest counts.",
     image: img(
-      "/projects/hotel-management-system/Hotel-Management-System-Reservations-List.jpeg",
+      "/projects/hotel-management-system/Hotel-Management-System-Reservations-List.webp",
       "Hotel management system reservation list",
     ),
   },
@@ -595,7 +595,7 @@ const hotelManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Guided check-in workflow for guest details, stay information, room assignment, amenities, and payment summary.",
     image: img(
-      "/projects/hotel-management-system/Hotel-Management-System-Check-In.jpeg",
+      "/projects/hotel-management-system/Hotel-Management-System-Check-In.webp",
       "Hotel management system check-in",
     ),
   },
@@ -604,7 +604,7 @@ const hotelManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Manage room inventory, types, floors, rates, occupancy status, amenities, and current guest assignments.",
     image: img(
-      "/projects/hotel-management-system/Hotel-Management-System-Rooms.jpeg",
+      "/projects/hotel-management-system/Hotel-Management-System-Rooms.webp",
       "Hotel management system rooms",
     ),
   },
@@ -613,7 +613,7 @@ const hotelManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Assign cleaning tasks, monitor staff workload, track room readiness, and manage linen and inspection workflows.",
     image: img(
-      "/projects/hotel-management-system/Hotel-Management-System-Housekeeping.jpeg",
+      "/projects/hotel-management-system/Hotel-Management-System-Housekeeping.webp",
       "Hotel management system housekeeping",
     ),
   },
@@ -622,7 +622,7 @@ const hotelManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Room-by-room clean, dirty, cleaning, inspection, and out-of-service status with staff assignments and priorities.",
     image: img(
-      "/projects/hotel-management-system/Hotel-Management-System-Housekeeping-Status.jpeg",
+      "/projects/hotel-management-system/Hotel-Management-System-Housekeeping-Status.webp",
       "Hotel management system housekeeping status",
     ),
   },
@@ -631,7 +631,7 @@ const hotelManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Track revenue, expenses, net profit, invoices, cash flow, and category-level hotel financial performance.",
     image: img(
-      "/projects/hotel-management-system/Hotel-Management-System-Finance.jpeg",
+      "/projects/hotel-management-system/Hotel-Management-System-Finance.webp",
       "Hotel management system finance",
     ),
   },
@@ -640,7 +640,7 @@ const hotelManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Occupancy, revenue, ADR, RevPAR, guest volume, and department performance with exportable operational reports.",
     image: img(
-      "/projects/hotel-management-system/Hotel-Management-System-Reports.jpeg",
+      "/projects/hotel-management-system/Hotel-Management-System-Reports.webp",
       "Hotel management system reports",
     ),
   },
@@ -649,7 +649,7 @@ const hotelManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Maintain employee profiles, departments, designations, payroll context, leave status, and role details.",
     image: img(
-      "/projects/hotel-management-system/Hotel-Management-System-Employees.jpeg",
+      "/projects/hotel-management-system/Hotel-Management-System-Employees.webp",
       "Hotel management system employees",
     ),
   },
@@ -658,7 +658,7 @@ const hotelManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Face-recognition attendance with present, late, and absent tracking, live camera recognition, and department summaries.",
     image: img(
-      "/projects/hotel-management-system/Hotel-Management-System-Ai-Attendance.jpeg",
+      "/projects/hotel-management-system/Hotel-Management-System-Ai-Attendance.webp",
       "Hotel management system AI attendance",
     ),
   },
@@ -667,7 +667,7 @@ const hotelManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Live camera feeds, event detection, alerts, storage overview, and AI analytics for hotel security operations.",
     image: img(
-      "/projects/hotel-management-system/Hotel-Management-System-Ai-Camera.jpeg",
+      "/projects/hotel-management-system/Hotel-Management-System-Ai-Camera.webp",
       "Hotel management system AI camera dashboard",
     ),
   },
@@ -676,7 +676,7 @@ const hotelManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Role-based hotel login for owners, managers, front desk, housekeeping, finance, restaurant, and security teams.",
     image: img(
-      "/projects/hotel-management-system/Hotel-Management-System-Sign-In.jpeg",
+      "/projects/hotel-management-system/Hotel-Management-System-Sign-In.webp",
       "Hotel management system sign-in",
     ),
   },
@@ -688,7 +688,7 @@ const royalPosSlides: ProjectSlide[] = [
     caption:
       "An AI-powered retail POS suite covering checkout, inventory, products, customers, analytics, and live camera monitoring.",
     image: img(
-      "/projects/royal-pos/Royal-Pos-Overview.jpeg",
+      "/projects/royal-pos/Royal-Pos-Overview.webp",
       "Royal POS system overview",
     ),
   },
@@ -697,7 +697,7 @@ const royalPosSlides: ProjectSlide[] = [
     caption:
       "Fast product search, category filters, cart management, taxes, discounts, and multi-method payment checkout.",
     image: img(
-      "/projects/royal-pos/Royal-Pos-Checkout.jpeg",
+      "/projects/royal-pos/Royal-Pos-Checkout.webp",
       "Royal POS checkout screen",
     ),
   },
@@ -706,7 +706,7 @@ const royalPosSlides: ProjectSlide[] = [
     caption:
       "Completed sale invoices with itemized products, payment summary, change calculation, and print or share actions.",
     image: img(
-      "/projects/royal-pos/Royal-Pos-Sale-Details.jpeg",
+      "/projects/royal-pos/Royal-Pos-Sale-Details.webp",
       "Royal POS sale details and invoice",
     ),
   },
@@ -715,7 +715,7 @@ const royalPosSlides: ProjectSlide[] = [
     caption:
       "Track stock levels, warehouses, low-stock alerts, stock value, and product movement across branches.",
     image: img(
-      "/projects/royal-pos/Royal-Pos-Inventory.jpeg",
+      "/projects/royal-pos/Royal-Pos-Inventory.webp",
       "Royal POS inventory management",
     ),
   },
@@ -724,7 +724,7 @@ const royalPosSlides: ProjectSlide[] = [
     caption:
       "Live store camera feeds with people counting, dwell time, conversion insights, alerts, and heat maps.",
     image: img(
-      "/projects/royal-pos/Royal-Pos-Ai-Monitoring.jpeg",
+      "/projects/royal-pos/Royal-Pos-Ai-Monitoring.webp",
       "Royal POS AI camera monitoring",
     ),
   },
@@ -733,7 +733,7 @@ const royalPosSlides: ProjectSlide[] = [
     caption:
       "Sales, orders, profit, payment methods, top products, and branch performance with export-ready analytics.",
     image: img(
-      "/projects/royal-pos/Royal-Pos-Reports.jpeg",
+      "/projects/royal-pos/Royal-Pos-Reports.webp",
       "Royal POS reports and analytics",
     ),
   },
@@ -742,7 +742,7 @@ const royalPosSlides: ProjectSlide[] = [
     caption:
       "Configure business details, branches, users, payments, receipts, taxes, backups, integrations, and security.",
     image: img(
-      "/projects/royal-pos/Royal-Pos-Settings.jpeg",
+      "/projects/royal-pos/Royal-Pos-Settings.webp",
       "Royal POS system settings",
     ),
   },
@@ -751,7 +751,7 @@ const royalPosSlides: ProjectSlide[] = [
     caption:
       "Branded retail login with secure authentication so store teams can access POS and operations modules.",
     image: img(
-      "/projects/royal-pos/Royal-Pos-Sign-In.jpeg",
+      "/projects/royal-pos/Royal-Pos-Sign-In.webp",
       "Royal POS sign-in",
     ),
   },
@@ -763,7 +763,7 @@ const hospitalManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Login and registration flows with role and department selection for secure hospital access.",
     image: img(
-      "/projects/hospital-management-system/Hospital-Management-System-Sign-In.png",
+      "/projects/hospital-management-system/Hospital-Management-System-Sign-In.webp",
       "Hospital management system sign-in",
     ),
   },
@@ -772,7 +772,7 @@ const hospitalManagementSystemSlides: ProjectSlide[] = [
     caption:
       "A complete hospital platform covering appointments, patients, doctors, beds, billing, pharmacy, reports, and staff operations.",
     image: img(
-      "/projects/hospital-management-system/Hospital-Management-System-Overview.png",
+      "/projects/hospital-management-system/Hospital-Management-System-Overview.webp",
       "Hospital management system overview",
     ),
   },
@@ -781,7 +781,7 @@ const hospitalManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Live patients, appointments, doctors, bed availability, revenue, department mix, and hospital alerts in one overview.",
     image: img(
-      "/projects/hospital-management-system/Hospital-Management-System-Dashboard.png",
+      "/projects/hospital-management-system/Hospital-Management-System-Dashboard.webp",
       "Hospital management system dashboard",
     ),
   },
@@ -790,7 +790,7 @@ const hospitalManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Schedule and track upcoming, completed, and cancelled appointments by doctor, department, and visit purpose.",
     image: img(
-      "/projects/hospital-management-system/Hospital-Management-System-Appointments.png",
+      "/projects/hospital-management-system/Hospital-Management-System-Appointments.webp",
       "Hospital management system appointments",
     ),
   },
@@ -799,7 +799,7 @@ const hospitalManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Maintain patient profiles, demographics, departments, last visits, and active status across the hospital.",
     image: img(
-      "/projects/hospital-management-system/Hospital-Management-System-Patients.png",
+      "/projects/hospital-management-system/Hospital-Management-System-Patients.webp",
       "Hospital management system patients",
     ),
   },
@@ -808,7 +808,7 @@ const hospitalManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Manage doctor records, specialties, departments, contact details, experience, and on-duty status.",
     image: img(
-      "/projects/hospital-management-system/Hospital-Management-System-Doctors.png",
+      "/projects/hospital-management-system/Hospital-Management-System-Doctors.webp",
       "Hospital management system doctors",
     ),
   },
@@ -817,7 +817,7 @@ const hospitalManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Organize hospital departments with heads, floors, assigned doctors, staff counts, and active status.",
     image: img(
-      "/projects/hospital-management-system/Hospital-Management-System-Departments.png",
+      "/projects/hospital-management-system/Hospital-Management-System-Departments.webp",
       "Hospital management system departments",
     ),
   },
@@ -826,7 +826,7 @@ const hospitalManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Track occupied, available, cleaning, and out-of-service beds by ward, floor, and bed type.",
     image: img(
-      "/projects/hospital-management-system/Hospital-Management-System-Bed-Management.png",
+      "/projects/hospital-management-system/Hospital-Management-System-Bed-Management.webp",
       "Hospital management system bed management",
     ),
   },
@@ -835,7 +835,7 @@ const hospitalManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Create and manage invoices with paid, pending, and overdue status plus payment method summaries.",
     image: img(
-      "/projects/hospital-management-system/Hospital-Management-System-Billing.png",
+      "/projects/hospital-management-system/Hospital-Management-System-Billing.webp",
       "Hospital management system billing and invoices",
     ),
   },
@@ -844,7 +844,7 @@ const hospitalManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Record collections across cash, card, transfer, wallet, and insurance with refunds and daily totals.",
     image: img(
-      "/projects/hospital-management-system/Hospital-Management-System-Payments.png",
+      "/projects/hospital-management-system/Hospital-Management-System-Payments.webp",
       "Hospital management system payments",
     ),
   },
@@ -853,7 +853,7 @@ const hospitalManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Monitor medicine inventory, low-stock and expiry alerts, top-selling drugs, and pharmacy sales.",
     image: img(
-      "/projects/hospital-management-system/Hospital-Management-System-Pharmacy.png",
+      "/projects/hospital-management-system/Hospital-Management-System-Pharmacy.webp",
       "Hospital management system pharmacy",
     ),
   },
@@ -862,7 +862,7 @@ const hospitalManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Review patients, appointments, revenue, occupancy, department performance, and monthly hospital KPIs.",
     image: img(
-      "/projects/hospital-management-system/Hospital-Management-System-Reports.png",
+      "/projects/hospital-management-system/Hospital-Management-System-Reports.webp",
       "Hospital management system reports and analytics",
     ),
   },
@@ -871,7 +871,7 @@ const hospitalManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Doctor workspace for schedules, consultations, prescriptions, lab orders, patients, and messages.",
     image: img(
-      "/projects/hospital-management-system/Hospital-Management-System-Doctor-Portal.png",
+      "/projects/hospital-management-system/Hospital-Management-System-Doctor-Portal.webp",
       "Hospital management system doctor portal",
     ),
   },
@@ -880,7 +880,7 @@ const hospitalManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Control hospital users, roles, permissions, departments, and active access across clinical and admin teams.",
     image: img(
-      "/projects/hospital-management-system/Hospital-Management-System-Users-Roles.png",
+      "/projects/hospital-management-system/Hospital-Management-System-Users-Roles.webp",
       "Hospital management system users and roles",
     ),
   },
@@ -889,7 +889,7 @@ const hospitalManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Configure hospital profile, preferences, security, backups, system information, and theme options.",
     image: img(
-      "/projects/hospital-management-system/Hospital-Management-System-Settings.png",
+      "/projects/hospital-management-system/Hospital-Management-System-Settings.webp",
       "Hospital management system settings",
     ),
   },
@@ -901,7 +901,7 @@ const cashManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Login access for finance teams to manage cash accounts, transactions, budgets, and reports securely.",
     image: img(
-      "/projects/cash-management-system/Cash-Management-System-Sign-In.png",
+      "/projects/cash-management-system/Cash-Management-System-Sign-In.webp",
       "Cash management system sign-in",
     ),
   },
@@ -910,7 +910,7 @@ const cashManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Live overview of balances, income, expenses, transfers, and cash-flow trends across accounts.",
     image: img(
-      "/projects/cash-management-system/Cash-Management-System-Dashboard.png",
+      "/projects/cash-management-system/Cash-Management-System-Dashboard.webp",
       "Cash management system dashboard",
     ),
   },
@@ -919,7 +919,7 @@ const cashManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Maintain cash, bank, and wallet accounts with balances, statuses, and account-level visibility.",
     image: img(
-      "/projects/cash-management-system/Cash-Management-System-Accounts.png",
+      "/projects/cash-management-system/Cash-Management-System-Accounts.webp",
       "Cash management system accounts",
     ),
   },
@@ -928,7 +928,7 @@ const cashManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Track every cash movement with filters by account, type, date, payee, and category.",
     image: img(
-      "/projects/cash-management-system/Cash-Management-System-Transactions.png",
+      "/projects/cash-management-system/Cash-Management-System-Transactions.webp",
       "Cash management system transactions",
     ),
   },
@@ -937,7 +937,7 @@ const cashManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Record and categorize incoming cash with sources, accounts, and recurring income patterns.",
     image: img(
-      "/projects/cash-management-system/Cash-Management-System-Income.png",
+      "/projects/cash-management-system/Cash-Management-System-Income.webp",
       "Cash management system income",
     ),
   },
@@ -946,7 +946,7 @@ const cashManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Capture outgoing spend by category, payee, account, and approval-ready expense history.",
     image: img(
-      "/projects/cash-management-system/Cash-Management-System-Expenses.png",
+      "/projects/cash-management-system/Cash-Management-System-Expenses.webp",
       "Cash management system expenses",
     ),
   },
@@ -955,7 +955,7 @@ const cashManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Move funds between accounts with clear from/to records and transfer history.",
     image: img(
-      "/projects/cash-management-system/Cash-Management-System-Transfers.png",
+      "/projects/cash-management-system/Cash-Management-System-Transfers.webp",
       "Cash management system transfers",
     ),
   },
@@ -964,7 +964,7 @@ const cashManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Organize income and expense categories so reporting stays consistent across the business.",
     image: img(
-      "/projects/cash-management-system/Cash-Management-System-Categories.png",
+      "/projects/cash-management-system/Cash-Management-System-Categories.webp",
       "Cash management system categories",
     ),
   },
@@ -973,7 +973,7 @@ const cashManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Manage vendors, recipients, and payee profiles linked to expenses and transfers.",
     image: img(
-      "/projects/cash-management-system/Cash-Management-System-Payees.png",
+      "/projects/cash-management-system/Cash-Management-System-Payees.webp",
       "Cash management system payees",
     ),
   },
@@ -982,7 +982,7 @@ const cashManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Set budgets by category or period and monitor spend against planned limits.",
     image: img(
-      "/projects/cash-management-system/Cash-Management-System-Budgets.png",
+      "/projects/cash-management-system/Cash-Management-System-Budgets.webp",
       "Cash management system budgets",
     ),
   },
@@ -991,7 +991,7 @@ const cashManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Review cash-flow, income vs expense, account summaries, and period performance reports.",
     image: img(
-      "/projects/cash-management-system/Cash-Management-System-Reports.png",
+      "/projects/cash-management-system/Cash-Management-System-Reports.webp",
       "Cash management system reports",
     ),
   },
@@ -1000,7 +1000,7 @@ const cashManagementSystemSlides: ProjectSlide[] = [
     caption:
       "Trace user actions, edits, and financial changes with a clear audit trail.",
     image: img(
-      "/projects/cash-management-system/Cash-Management-System-Audit-Log.png",
+      "/projects/cash-management-system/Cash-Management-System-Audit-Log.webp",
       "Cash management system audit log",
     ),
   },
@@ -1012,7 +1012,7 @@ const hrManagementSoftwareSlides: ProjectSlide[] = [
     caption:
       "An AI-powered HRMS covering employees, attendance, leave, payroll, recruitment, performance, and more.",
     image: img(
-      "/projects/hr-management-software/Hr-Management-Software-Overview.jpeg",
+      "/projects/hr-management-software/Hr-Management-Software-Overview.webp",
       "HR management software overview",
     ),
   },
@@ -1021,7 +1021,7 @@ const hrManagementSoftwareSlides: ProjectSlide[] = [
     caption:
       "Role-based login for HR admins, managers, and employees across the HRMS workspace.",
     image: img(
-      "/projects/hr-management-software/Hr-Management-Software-Sign-In.jpeg",
+      "/projects/hr-management-software/Hr-Management-Software-Sign-In.webp",
       "HR management software sign-in",
     ),
   },
@@ -1030,7 +1030,7 @@ const hrManagementSoftwareSlides: ProjectSlide[] = [
     caption:
       "Live headcount, attendance, leave, payroll, recruitment, and workforce KPIs in one overview.",
     image: img(
-      "/projects/hr-management-software/Hr-Management-Software-Dashboard.jpeg",
+      "/projects/hr-management-software/Hr-Management-Software-Dashboard.webp",
       "HR management software dashboard",
     ),
   },
@@ -1039,7 +1039,7 @@ const hrManagementSoftwareSlides: ProjectSlide[] = [
     caption:
       "Maintain employee profiles, departments, roles, status, and employment details in one directory.",
     image: img(
-      "/projects/hr-management-software/Hr-Management-Software-Employee-Management.jpeg",
+      "/projects/hr-management-software/Hr-Management-Software-Employee-Management.webp",
       "HR management software employee management",
     ),
   },
@@ -1048,7 +1048,7 @@ const hrManagementSoftwareSlides: ProjectSlide[] = [
     caption:
       "Map departments, reporting lines, and team hierarchy for clear org visibility.",
     image: img(
-      "/projects/hr-management-software/Hr-Management-Software-Organizational-Structure.jpeg",
+      "/projects/hr-management-software/Hr-Management-Software-Organizational-Structure.webp",
       "HR management software organizational structure",
     ),
   },
@@ -1057,7 +1057,7 @@ const hrManagementSoftwareSlides: ProjectSlide[] = [
     caption:
       "Run job openings, candidate pipelines, interviews, and hiring stages from an ATS workspace.",
     image: img(
-      "/projects/hr-management-software/Hr-Management-Software-Recruitment-Ats.jpeg",
+      "/projects/hr-management-software/Hr-Management-Software-Recruitment-Ats.webp",
       "HR management software recruitment ATS",
     ),
   },
@@ -1066,7 +1066,7 @@ const hrManagementSoftwareSlides: ProjectSlide[] = [
     caption:
       "Guide new hires through checklists, documents, and onboarding tasks from day one.",
     image: img(
-      "/projects/hr-management-software/Hr-Management-Software-Employee-Onboarding.jpeg",
+      "/projects/hr-management-software/Hr-Management-Software-Employee-Onboarding.webp",
       "HR management software employee onboarding",
     ),
   },
@@ -1075,7 +1075,7 @@ const hrManagementSoftwareSlides: ProjectSlide[] = [
     caption:
       "Track daily attendance, late marks, absences, and workforce presence across teams.",
     image: img(
-      "/projects/hr-management-software/Hr-Management-Software-Attendance-Management.jpeg",
+      "/projects/hr-management-software/Hr-Management-Software-Attendance-Management.webp",
       "HR management software attendance management",
     ),
   },
@@ -1084,7 +1084,7 @@ const hrManagementSoftwareSlides: ProjectSlide[] = [
     caption:
       "Handle leave requests, balances, approvals, and policy-based leave types.",
     image: img(
-      "/projects/hr-management-software/Hr-Management-Software-Leave-Management.jpeg",
+      "/projects/hr-management-software/Hr-Management-Software-Leave-Management.webp",
       "HR management software leave management",
     ),
   },
@@ -1093,7 +1093,7 @@ const hrManagementSoftwareSlides: ProjectSlide[] = [
     caption:
       "Process salaries, deductions, allowances, and payroll runs with clear employee pay records.",
     image: img(
-      "/projects/hr-management-software/Hr-Management-Software-Payroll-Management.jpeg",
+      "/projects/hr-management-software/Hr-Management-Software-Payroll-Management.webp",
       "HR management software payroll management",
     ),
   },
@@ -1102,7 +1102,7 @@ const hrManagementSoftwareSlides: ProjectSlide[] = [
     caption:
       "Set goals, run reviews, and track employee performance cycles over time.",
     image: img(
-      "/projects/hr-management-software/Hr-Management-Software-Performance-Management.jpeg",
+      "/projects/hr-management-software/Hr-Management-Software-Performance-Management.webp",
       "HR management software performance management",
     ),
   },
@@ -1111,7 +1111,7 @@ const hrManagementSoftwareSlides: ProjectSlide[] = [
     caption:
       "Assign training programs, track completion, and build learning paths for staff.",
     image: img(
-      "/projects/hr-management-software/Hr-Management-Software-Training-Learning.jpeg",
+      "/projects/hr-management-software/Hr-Management-Software-Training-Learning.webp",
       "HR management software training and learning",
     ),
   },
@@ -1120,7 +1120,7 @@ const hrManagementSoftwareSlides: ProjectSlide[] = [
     caption:
       "Assign and track company assets issued to employees with return and status history.",
     image: img(
-      "/projects/hr-management-software/Hr-Management-Software-Asset-Management.jpeg",
+      "/projects/hr-management-software/Hr-Management-Software-Asset-Management.webp",
       "HR management software asset management",
     ),
   },
@@ -1129,7 +1129,7 @@ const hrManagementSoftwareSlides: ProjectSlide[] = [
     caption:
       "Submit, approve, and reimburse employee expenses with clear claim status tracking.",
     image: img(
-      "/projects/hr-management-software/Hr-Management-Software-Expense-Reimbursement.jpeg",
+      "/projects/hr-management-software/Hr-Management-Software-Expense-Reimbursement.webp",
       "HR management software expense reimbursement",
     ),
   },
@@ -1138,7 +1138,7 @@ const hrManagementSoftwareSlides: ProjectSlide[] = [
     caption:
       "Record warnings, incidents, and disciplinary actions with audit-ready history.",
     image: img(
-      "/projects/hr-management-software/Hr-Management-Software-Disciplinary-Management.jpeg",
+      "/projects/hr-management-software/Hr-Management-Software-Disciplinary-Management.webp",
       "HR management software disciplinary management",
     ),
   },
@@ -1147,7 +1147,7 @@ const hrManagementSoftwareSlides: ProjectSlide[] = [
     caption:
       "Manage resignations, clearances, final settlements, and offboarding checklists.",
     image: img(
-      "/projects/hr-management-software/Hr-Management-Software-Exit-Management.jpeg",
+      "/projects/hr-management-software/Hr-Management-Software-Exit-Management.webp",
       "HR management software exit management",
     ),
   },
@@ -1156,7 +1156,7 @@ const hrManagementSoftwareSlides: ProjectSlide[] = [
     caption:
       "Store contracts, IDs, certificates, and HR documents with employee-linked access.",
     image: img(
-      "/projects/hr-management-software/Hr-Management-Software-Employee-Documents.jpeg",
+      "/projects/hr-management-software/Hr-Management-Software-Employee-Documents.webp",
       "HR management software employee documents",
     ),
   },
@@ -1165,7 +1165,7 @@ const hrManagementSoftwareSlides: ProjectSlide[] = [
     caption:
       "Plan shifts, rosters, and staffing coverage across teams and working periods.",
     image: img(
-      "/projects/hr-management-software/Hr-Management-Software-Shift-Roster.jpeg",
+      "/projects/hr-management-software/Hr-Management-Software-Shift-Roster.webp",
       "HR management software shift roster",
     ),
   },
@@ -1174,7 +1174,7 @@ const hrManagementSoftwareSlides: ProjectSlide[] = [
     caption:
       "Configure company profile, HR policies, roles, preferences, and system options.",
     image: img(
-      "/projects/hr-management-software/Hr-Management-Software-Settings.jpeg",
+      "/projects/hr-management-software/Hr-Management-Software-Settings.webp",
       "HR management software settings",
     ),
   },
@@ -1186,7 +1186,7 @@ const medicineInventorySystemSlides: ProjectSlide[] = [
     caption:
       "A pharmacy inventory platform for medicines, suppliers, purchases, stock movement, batches, and expiry control.",
     image: img(
-      "/projects/medicine-inventory-system/Medicine-Inventory-System-Overview.png",
+      "/projects/medicine-inventory-system/Medicine-Inventory-System-Overview.webp",
       "Medicine inventory system overview",
     ),
   },
@@ -1195,7 +1195,7 @@ const medicineInventorySystemSlides: ProjectSlide[] = [
     caption:
       "Secure login for pharmacy and inventory staff managing medicine stock and purchases.",
     image: img(
-      "/projects/medicine-inventory-system/Medicine-Inventory-System-Sign-In.png",
+      "/projects/medicine-inventory-system/Medicine-Inventory-System-Sign-In.webp",
       "Medicine inventory system sign-in",
     ),
   },
@@ -1204,7 +1204,7 @@ const medicineInventorySystemSlides: ProjectSlide[] = [
     caption:
       "Live stock levels, low-stock alerts, expiry warnings, purchases, and inventory KPIs in one view.",
     image: img(
-      "/projects/medicine-inventory-system/Medicine-Inventory-System-Dashboard.png",
+      "/projects/medicine-inventory-system/Medicine-Inventory-System-Dashboard.webp",
       "Medicine inventory system dashboard",
     ),
   },
@@ -1213,7 +1213,7 @@ const medicineInventorySystemSlides: ProjectSlide[] = [
     caption:
       "Maintain medicine catalogs with SKUs, strengths, pack sizes, categories, and stock status.",
     image: img(
-      "/projects/medicine-inventory-system/Medicine-Inventory-System-Medicines.png",
+      "/projects/medicine-inventory-system/Medicine-Inventory-System-Medicines.webp",
       "Medicine inventory system medicines",
     ),
   },
@@ -1222,7 +1222,7 @@ const medicineInventorySystemSlides: ProjectSlide[] = [
     caption:
       "Manage supplier contacts, lead times, and purchase relationships for pharmacy replenishment.",
     image: img(
-      "/projects/medicine-inventory-system/Medicine-Inventory-System-Suppliers.png",
+      "/projects/medicine-inventory-system/Medicine-Inventory-System-Suppliers.webp",
       "Medicine inventory system suppliers",
     ),
   },
@@ -1231,7 +1231,7 @@ const medicineInventorySystemSlides: ProjectSlide[] = [
     caption:
       "Create and track purchase orders from request through receiving against supplier catalogs.",
     image: img(
-      "/projects/medicine-inventory-system/Medicine-Inventory-System-Purchase-Orders.png",
+      "/projects/medicine-inventory-system/Medicine-Inventory-System-Purchase-Orders.webp",
       "Medicine inventory system purchase orders",
     ),
   },
@@ -1240,7 +1240,7 @@ const medicineInventorySystemSlides: ProjectSlide[] = [
     caption:
       "Receive medicines into inventory with quantities, batches, and receiving references.",
     image: img(
-      "/projects/medicine-inventory-system/Medicine-Inventory-System-Stock-In.png",
+      "/projects/medicine-inventory-system/Medicine-Inventory-System-Stock-In.webp",
       "Medicine inventory system stock in",
     ),
   },
@@ -1249,7 +1249,7 @@ const medicineInventorySystemSlides: ProjectSlide[] = [
     caption:
       "Issue stock for sales, transfers, or consumption with clear outbound movement records.",
     image: img(
-      "/projects/medicine-inventory-system/Medicine-Inventory-System-Stock-Out.png",
+      "/projects/medicine-inventory-system/Medicine-Inventory-System-Stock-Out.webp",
       "Medicine inventory system stock out",
     ),
   },
@@ -1258,7 +1258,7 @@ const medicineInventorySystemSlides: ProjectSlide[] = [
     caption:
       "Correct inventory with controlled adjustments for damage, recount, or variance fixes.",
     image: img(
-      "/projects/medicine-inventory-system/Medicine-Inventory-System-Adjustments.png",
+      "/projects/medicine-inventory-system/Medicine-Inventory-System-Adjustments.webp",
       "Medicine inventory system adjustments",
     ),
   },
@@ -1267,7 +1267,7 @@ const medicineInventorySystemSlides: ProjectSlide[] = [
     caption:
       "Track medicine batches by lot number, quantity, and location for full traceability.",
     image: img(
-      "/projects/medicine-inventory-system/Medicine-Inventory-System-Batch-Tracking.png",
+      "/projects/medicine-inventory-system/Medicine-Inventory-System-Batch-Tracking.webp",
       "Medicine inventory system batch tracking",
     ),
   },
@@ -1276,7 +1276,7 @@ const medicineInventorySystemSlides: ProjectSlide[] = [
     caption:
       "Monitor near-expiry and expired stock so pharmacy teams can act before losses grow.",
     image: img(
-      "/projects/medicine-inventory-system/Medicine-Inventory-System-Expiry-Management.png",
+      "/projects/medicine-inventory-system/Medicine-Inventory-System-Expiry-Management.webp",
       "Medicine inventory system expiry management",
     ),
   },
@@ -1285,7 +1285,7 @@ const medicineInventorySystemSlides: ProjectSlide[] = [
     caption:
       "Review stock on hand, movement history, low stock, and inventory valuation reports.",
     image: img(
-      "/projects/medicine-inventory-system/Medicine-Inventory-System-Stock-Reports.png",
+      "/projects/medicine-inventory-system/Medicine-Inventory-System-Stock-Reports.webp",
       "Medicine inventory system stock reports",
     ),
   },
@@ -1294,7 +1294,7 @@ const medicineInventorySystemSlides: ProjectSlide[] = [
     caption:
       "Analyze purchase orders, supplier spend, and receiving performance over time.",
     image: img(
-      "/projects/medicine-inventory-system/Medicine-Inventory-System-Purchase-Reports.png",
+      "/projects/medicine-inventory-system/Medicine-Inventory-System-Purchase-Reports.webp",
       "Medicine inventory system purchase reports",
     ),
   },
@@ -1306,7 +1306,7 @@ const eLearningPortalSlides: ProjectSlide[] = [
     caption:
       "Secure sign-in for admins, instructors, and learners accessing the EduLearn portal.",
     image: img(
-      "/projects/e-learning-portal/E-Learning-Portal-Sign-In.png",
+      "/projects/e-learning-portal/E-Learning-Portal-Sign-In.webp",
       "E-Learning Portal secure sign-in login",
     ),
   },
@@ -1315,7 +1315,7 @@ const eLearningPortalSlides: ProjectSlide[] = [
     caption:
       "Admin overview of courses, enrollments, users, and learning activity across EduLearn.",
     image: img(
-      "/projects/e-learning-portal/E-Learning-Portal-Dashboard.png",
+      "/projects/e-learning-portal/E-Learning-Portal-Dashboard.webp",
       "E-Learning Portal admin dashboard",
     ),
   },
@@ -1324,7 +1324,7 @@ const eLearningPortalSlides: ProjectSlide[] = [
     caption:
       "Instructor workspace for teaching load, course progress, and learner engagement.",
     image: img(
-      "/projects/e-learning-portal/E-Learning-Portal-Instructor-Dashboard.png",
+      "/projects/e-learning-portal/E-Learning-Portal-Instructor-Dashboard.webp",
       "E-Learning Portal instructor dashboard",
     ),
   },
@@ -1333,7 +1333,7 @@ const eLearningPortalSlides: ProjectSlide[] = [
     caption:
       "Manage learners, instructors, and admin roles with clear access controls.",
     image: img(
-      "/projects/e-learning-portal/E-Learning-Portal-Users.png",
+      "/projects/e-learning-portal/E-Learning-Portal-Users.webp",
       "E-Learning Portal user management",
     ),
   },
@@ -1342,7 +1342,7 @@ const eLearningPortalSlides: ProjectSlide[] = [
     caption:
       "Create and organize courses with structure, status, and enrollment readiness.",
     image: img(
-      "/projects/e-learning-portal/E-Learning-Portal-Courses.png",
+      "/projects/e-learning-portal/E-Learning-Portal-Courses.webp",
       "E-Learning Portal course management",
     ),
   },
@@ -1351,7 +1351,7 @@ const eLearningPortalSlides: ProjectSlide[] = [
     caption:
       "Group courses into categories so learners can browse and discover content faster.",
     image: img(
-      "/projects/e-learning-portal/E-Learning-Portal-Categories.png",
+      "/projects/e-learning-portal/E-Learning-Portal-Categories.webp",
       "E-Learning Portal category management",
     ),
   },
@@ -1360,7 +1360,7 @@ const eLearningPortalSlides: ProjectSlide[] = [
     caption:
       "Track learner enrollments, status, and course access from one enrollment workspace.",
     image: img(
-      "/projects/e-learning-portal/E-Learning-Portal-Enrollments.png",
+      "/projects/e-learning-portal/E-Learning-Portal-Enrollments.webp",
       "E-Learning Portal enrollment management",
     ),
   },
@@ -1369,7 +1369,7 @@ const eLearningPortalSlides: ProjectSlide[] = [
     caption:
       "Build lessons and learning paths that instructors can publish inside each course.",
     image: img(
-      "/projects/e-learning-portal/E-Learning-Portal-Lessons.png",
+      "/projects/e-learning-portal/E-Learning-Portal-Lessons.webp",
       "E-Learning Portal lesson management",
     ),
   },
@@ -1378,7 +1378,7 @@ const eLearningPortalSlides: ProjectSlide[] = [
     caption:
       "Assign coursework, collect submissions, and keep assignment progress visible.",
     image: img(
-      "/projects/e-learning-portal/E-Learning-Portal-Assignments.png",
+      "/projects/e-learning-portal/E-Learning-Portal-Assignments.webp",
       "E-Learning Portal assignment management",
     ),
   },
@@ -1387,7 +1387,7 @@ const eLearningPortalSlides: ProjectSlide[] = [
     caption:
       "Create quizzes and assessments to measure learning outcomes across courses.",
     image: img(
-      "/projects/e-learning-portal/E-Learning-Portal-Quizzes.png",
+      "/projects/e-learning-portal/E-Learning-Portal-Quizzes.webp",
       "E-Learning Portal quiz management",
     ),
   },
@@ -1396,7 +1396,7 @@ const eLearningPortalSlides: ProjectSlide[] = [
     caption:
       "Record and review learner attendance for classes, sessions, and course activity.",
     image: img(
-      "/projects/e-learning-portal/E-Learning-Portal-Attendance.png",
+      "/projects/e-learning-portal/E-Learning-Portal-Attendance.webp",
       "E-Learning Portal attendance management",
     ),
   },
@@ -1405,7 +1405,7 @@ const eLearningPortalSlides: ProjectSlide[] = [
     caption:
       "Configure EduLearn portal preferences, roles, and platform settings in one place.",
     image: img(
-      "/projects/e-learning-portal/E-Learning-Portal-Settings.png",
+      "/projects/e-learning-portal/E-Learning-Portal-Settings.webp",
       "E-Learning Portal system settings",
     ),
   },

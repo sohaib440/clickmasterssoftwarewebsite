@@ -25,7 +25,7 @@ export const subServicesByCategory: SubServicesMap = {
       description:
         "Tailored applications aligned to your workflows, integrations, and growth roadmap, not one-size-fits-all templates.",
       image: {
-        src: "/services/software-development.png",
+        src: "/services/software-development.webp",
         alt: "Custom software on a laptop",
         width: 800,
         height: 500,
@@ -37,7 +37,7 @@ export const subServicesByCategory: SubServicesMap = {
       description:
         "Fast, accessible web apps with modern stacks, SEO-friendly architecture, and design systems that scale.",
       image: {
-        src: "/services/Web-Development.png",
+        src: "/services/Web-Development.webp",
         alt: "Web application dashboard",
         width: 800,
         height: 500,
@@ -49,7 +49,7 @@ export const subServicesByCategory: SubServicesMap = {
       description:
         "Native-quality experiences on iOS and Android with shared logic where it makes sense, native where it matters.",
       image: {
-        src: "/services/Mobile-app-development.png",
+        src: "/services/Mobile-app-development.webp",
         alt: "Mobile application development",
         width: 800,
         height: 500,
@@ -147,7 +147,7 @@ export const subServicesByCategory: SubServicesMap = {
       description:
         "Task-oriented agents that integrate with your tools, Slack, CRM, support desks, and automate repeatable workflows.",
       image: {
-        src: "/services/Artificial-Intelligence.png",
+        src: "/services/Artificial-Intelligence.webp",
         alt: "AI agents and assistants",
         width: 800,
         height: 500,
@@ -179,7 +179,7 @@ export const subServicesByCategory: SubServicesMap = {
       description:
         "Forecasting, churn prediction, demand planning, and risk scoring built on your historical data.",
       image: {
-        src: "/services/Mechine-learning.png",
+        src: "/services/Mechine-learning.webp",
         alt: "Predictive machine learning models",
         width: 800,
         height: 500,
@@ -211,7 +211,7 @@ export const subServicesByCategory: SubServicesMap = {
       description:
         "Structured test passes and exploratory sessions that find edge cases automation misses.",
       image: {
-        src: "/services/Testing-and-QA.png",
+        src: "/services/Testing-and-QA.webp",
         alt: "Manual software QA testing",
         width: 800,
         height: 500,

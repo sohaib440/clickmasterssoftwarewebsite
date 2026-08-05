@@ -8,13 +8,13 @@ export const siteBrand = {
   phone: "+92 371 0510083",
   url: "https://nextsoftwaredevelopment.com",
   logo: {
-    src: "/brand/next-logo.png",
+    src: "/brand/next-logo.webp",
     alt: "Next Software Development Company",
     width: 640,
     height: 128,
   },
-  favicon: "/brand/icon.png",
-  appleIcon: "/brand/icon.png",
+  favicon: "/brand/icon.webp",
+  appleIcon: "/brand/icon.webp",
 } as const;
 
 /** Opens the OS mail client (may do nothing if none is installed). */
