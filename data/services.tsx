@@ -92,7 +92,7 @@ export const services: ServiceCard[] = [
     title: "Web Development",
     description:
       "Modern web applications from a trusted software company with responsive design, strong performance, and SEO-friendly architecture for every device and browser.",
-    image: "/services/web-development.webp",
+    image: "/services/Web-Development.webp",
     imageAlt: "Web development services illustration",
     Icon: Globe2,
     AltIcon: Server,
@@ -125,7 +125,7 @@ export const services: ServiceCard[] = [
     title: "Artificial Intelligence",
     description:
       "Production AI from a top rated software company covering automation, insights, agents, NLP, and vision systems with clear guardrails, monitoring, and human oversight.",
-    image: "/services/artificial-intelligence.webp",
+    image: "/services/Artificial-Intelligence.webp",
     imageAlt: "Artificial intelligence services illustration",
     Icon: BrainCircuit,
     AltIcon: Database,
@@ -237,7 +237,7 @@ export const services: ServiceCard[] = [
     title: "Testing & QA",
     description:
       "Manual and automated testing from our software development company across web, mobile, and APIs covering functional, regression, and performance checks before release.",
-    image: "/services/testing-and-qa.webp",
+    image: "/services/Testing-and-QA.webp",
     imageAlt: "Software testing and QA services illustration",
     Icon: ClipboardCheck,
     AltIcon: ShieldCheck,
@@ -471,7 +471,7 @@ export const mainCategories: MainCategoryContent[] = [
     metaDescription:
       "Best software company for web development: custom websites, web apps, frontend, backend, full stack, and CMS. SEO-friendly senior delivery.",
     heroImage: {
-      src: "/services/web-development.webp",
+      src: "/services/Web-Development.webp",
       alt: "Web development services",
       width: 800,
       height: 800,
@@ -550,7 +550,7 @@ export const mainCategories: MainCategoryContent[] = [
     metaDescription:
       "Top rated software company for artificial intelligence: generative AI, chatbots, agents, computer vision, and NLP.",
     heroImage: {
-      src: "/services/artificial-intelligence.webp",
+      src: "/services/Artificial-Intelligence.webp",
       alt: "Artificial intelligence services",
       width: 800,
       height: 800,
@@ -694,7 +694,7 @@ export const mainCategories: MainCategoryContent[] = [
     metaDescription:
       "Software development company for testing and QA: manual, automation, performance, security, API, and mobile app testing.",
     heroImage: {
-      src: "/services/testing-and-qa.webp",
+      src: "/services/Testing-and-QA.webp",
       alt: "Software testing and QA services",
       width: 800,
       height: 800,

@@ -190,7 +190,7 @@ export const solutions: SolutionContent[] = [
     metaDescription:
       "Custom AI agents for support, sales, and operations. RAG, tool use, and safe deployment by Next Software Development Company.",
     heroImage: img(
-      "/services/artificial-intelligence.webp",
+      "/services/Artificial-Intelligence.webp",
       "Abstract AI and neural network visualization"
     ),
     summary: ["RAG over your docs", "Tool & API actions", "Human handoff"],
