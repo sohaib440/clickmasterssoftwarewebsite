@@ -378,7 +378,7 @@ export function TechStackSection() {
       <LandingContainer className="relative z-10">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading
-            overlineText="Best software company stack"
+            overlineText="Technology stack"
             title={
               <>
                 Built with{" "}

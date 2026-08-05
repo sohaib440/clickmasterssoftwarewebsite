@@ -54,7 +54,7 @@ function renderParagraphWithCountryLinks(paragraph: string): ReactNode {
 
 export function AboutSection({ content }: AboutSectionProps = {}) {
   const data = content ?? {
-    overlineText: "About our software house",
+    overlineText: "About us",
     title: "Who Is Next Software Development Company?",
     paragraphs: aboutSection.paragraphs,
     values: aboutSection.values,
@@ -69,7 +69,7 @@ export function AboutSection({ content }: AboutSectionProps = {}) {
         <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,30rem)] lg:gap-10 xl:grid-cols-[minmax(0,1.3fr)_minmax(0,36rem)] xl:gap-12">
           <div className="min-w-0">
             <SectionHeading
-              as="h1"
+              as="h2"
               overlineText={data.overlineText ?? "About us"}
               title={data.title}
               className="mb-4 md:mb-5"

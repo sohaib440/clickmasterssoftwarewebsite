@@ -9,57 +9,71 @@ export const faqs: FaqItem[] = [
   {
     column: "left",
     tag: "Overview",
-    question: "What does a software development company do?",
+    question: "What kinds of products do you build?",
     answer:
-      "A software development company designs, builds, tests, and maintains custom software products tailored to your specific business needs. This includes web applications, mobile apps, enterprise systems, SaaS platforms, APIs, and more. Unlike buying off-the-shelf software, we build exactly what your business requires from the ground up.",
+      "We design, build, test, and maintain products tailored to your business: web applications, mobile apps, enterprise systems, SaaS platforms, APIs, and integrations. Instead of forcing off-the-shelf tools, we shape solutions around how your teams actually work.",
   },
   {
     column: "left",
     tag: "Pricing",
-    question: "How much does it cost to hire a software development company?",
+    question: "How much does a typical engagement cost?",
     answer:
-      "Software development costs vary widely based on project scope, complexity, and the team you hire. As a leading software development company with competitive global rates, we typically deliver 40–60% lower cost than many US or UK firms for the same quality of work. We provide a detailed, transparent quote after a free discovery call. Projects range from starter MVPs to full enterprise platforms.",
+      "Cost depends on scope, complexity, and team composition. We provide competitive global rates and a detailed, transparent quote after a free discovery call. Engagements range from focused MVPs to full enterprise platforms.",
   },
   {
     column: "left",
     tag: "Timeline",
-    question: "How long does it take to build custom software?",
+    question: "How long does it take to build a product?",
     answer:
-      "Timelines depend on scope. A simple web app or MVP can be built in 6-10 weeks. A mid-complexity mobile application takes 3-5 months. A full enterprise software platform can take 6-12 months. We always provide a detailed timeline during the planning phase and stick to it our on-time delivery rate is 94%.",
+      "Timelines depend on scope. A simple web app or MVP can ship in 6-10 weeks. A mid-complexity mobile application often takes 3-5 months. A full enterprise platform can take 6-12 months. We share a detailed timeline during planning and aim to protect it—our on-time delivery rate is 94%.",
   },
   {
     column: "left",
     tag: "Global",
     question: "Do you work with clients outside Pakistan?",
     answer:
-      "Yes the majority of our clients are based internationally, including the USA, UK, UAE, Canada, and Australia. We are a remote-first software development company with communication processes and timezone flexibility designed for international collaboration. We use Slack, Zoom, Jira, and Confluence to keep every client fully in the loop regardless of location.",
+      "Yes. Most of our clients are international, including the USA, UK, UAE, Canada, and Australia. We run remote-first collaboration with clear communication rhythms and timezone overlap, using Slack, Zoom, Jira, and Confluence so stakeholders stay informed.",
   },
   {
     column: "right",
     tag: "Process",
-    question: "What is the difference between a software house and a software development company?",
+    question: "How do you run delivery day to day?",
     answer:
-      "The terms are often used interchangeably. A software house typically refers to a company that builds software products as a service for other businesses. A software development company may also build its own products. We focus entirely on building custom software for our clients. We are both a software house and a software development company in the truest sense.",
+      "We work in short iterations with visible demos, shared backlog priorities, and clear ownership. You see progress early, give feedback while changes are still cheap, and stay aligned on scope, quality, and launch readiness.",
   },
   {
     column: "right",
     tag: "Getting started",
-    question: "Can I hire dedicated developers from your company?",
+    question: "Can I hire dedicated developers from your team?",
     answer:
-      "Absolutely. You can hire one developer or an entire team on a dedicated basis, working exclusively on your project during business hours. Dedicated developers integrate with your existing team, follow your processes, and report directly to you. It is the most cost-effective way to scale your development capacity quickly.",
+      "Absolutely. You can hire one developer or an entire squad on a dedicated basis, working exclusively on your project during business hours. Dedicated engineers integrate with your existing team, follow your processes, and report directly to you—an efficient way to scale capacity quickly.",
+  },
+  {
+    column: "right",
+    tag: "Support",
+    question: "What happens after launch?",
+    answer:
+      "Post-launch support is part of how we work. We help with monitoring, fixes, improvements, and knowledge transfer so your team is not left maintaining unfamiliar code alone.",
+  },
+  {
+    column: "right",
+    tag: "Security",
+    question: "How do you handle security and data protection?",
+    answer:
+      "We follow secure development practices, least-privilege access, and environment separation. For sensitive domains we discuss compliance needs up front and design controls into architecture, delivery, and operations—not as an afterthought.",
   },
   {
     column: "right",
     tag: "Quality",
-    question: "How do you ensure the quality of your software?",
+    question: "How do you ensure product quality?",
     answer:
-      "Quality is built into every stage of our process not added at the end. We conduct code reviews, write unit and integration tests, perform manual QA testing, run automated regression testing, and carry out security audits before every release. Our QA team works in parallel with development to catch issues early, which keeps costs low and launch timelines on schedule.",
+      "Quality is built into every stage, not added at the end. We run code reviews, unit and integration tests, manual QA, automated regression checks, and security reviews before release. QA works in parallel with development so issues are caught early.",
   },
   {
     column: "right",
     tag: "Legal",
     question: "Is my project idea safe with you? Do you sign NDAs?",
     answer:
-      "Yes absolutely. We sign a mutual Non-Disclosure Agreement (NDA) before any project discussion begins. Your idea, your business data, and all project details are fully confidential. Our team follows strict internal data security policies and we are happy to involve your legal team in reviewing our standard NDA.",
+      "Yes. We sign a mutual Non-Disclosure Agreement before detailed project discussions begin. Your idea, business data, and project details stay confidential. We follow internal data security policies and can involve your legal team in reviewing our standard NDA.",
   },
 ];

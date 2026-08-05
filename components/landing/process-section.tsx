@@ -10,14 +10,14 @@ export function ProcessSection() {
     <section id="process" className="w-full bg-white text-horizon-navy">
       <LandingContainer>
         <SectionHeading
-          overlineText="How our software company works"
+          overlineText="How we work"
           title={
             <>
-              Our software development process{" "}
+              Our delivery process{" "}
               <span className="italic">transparent, agile, and built around you</span>
             </>
           }
-          description="Every top rated software house claims to follow best practices. At Next Software Development Company, we show you exactly what that means at every stage of your project."
+          description="Many teams talk about best practices. As a top rated software house, we show you exactly what delivery looks like at every stage of your project."
           className={sectionHeadingGap}
         />
 

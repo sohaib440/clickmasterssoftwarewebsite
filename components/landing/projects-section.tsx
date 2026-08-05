@@ -331,7 +331,7 @@ export function ProjectsSection({
           {showViewAll ? (
             <div className="mt-8 flex justify-center sm:mt-10">
               <Link href={projectPath} className={btnOutlineDark}>
-                View all projects
+                View all case studies and projects
                 <ArrowUpRight className="ml-2 size-4" aria-hidden />
               </Link>
             </div>

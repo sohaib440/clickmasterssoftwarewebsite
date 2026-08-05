@@ -181,7 +181,7 @@ export function BlogViewAllFlipCard({
             href="/blog"
             className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-white transition-colors hover:text-primary"
           >
-            View all posts
+            Browse all engineering insights
             <ArrowUpRight className="size-4" />
           </Link>
         </>

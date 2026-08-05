@@ -51,7 +51,7 @@ type IndustriesSectionProps = {
 export function IndustriesSection({
   overlineText = "Industries we serve",
   title = "Software solutions for every sector",
-  description = "As a trusted software house, we tailor software to the workflows, compliance needs, and growth goals of every sector we work with.",
+  description = "As a best software house for complex industry work, we tailor products to the workflows, compliance needs, and growth goals of every sector we support.",
 }: IndustriesSectionProps = {}) {
   return (
     <section id="industries" className="relative w-full overflow-hidden bg-white text-horizon-navy">

@@ -10,7 +10,7 @@ type BlogSectionProps = {
 };
 
 const blogSectionDescription =
-  "Practical notes on software delivery, discovery, and building products that scale written by our software house team.";
+  "Practical notes on product delivery, discovery, and building systems that scale, written by the people behind the work.";
 
 function getFrontTitle(category: string) {
   const short = category.split(" ").slice(0, 2).join(" ");

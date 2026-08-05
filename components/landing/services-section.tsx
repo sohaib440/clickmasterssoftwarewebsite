@@ -58,7 +58,7 @@ function ServiceCard({ service, index }: { service: ServiceCardData; index: numb
           </p>
 
           <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-white transition-colors duration-300 group-hover:text-primary">
-            Learn more
+            Explore {service.title}
             <ArrowUpRight
               className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               aria-hidden
@@ -75,13 +75,13 @@ export function ServicesSection() {
     <section id="services" className="relative overflow-hidden bg-black text-white">
       <LandingContainer className="relative z-10">
         <SectionHeading
-          overlineText="Software company services"
+          overlineText="What we deliver"
           title={
             <>
               Innovating your <span className="italic">digital future</span>
             </>
           }
-          description="As a leading software development company, we blend cutting-edge technology with world-class design to build products that define industries."
+          description="As a leading software company, we blend modern engineering with thoughtful product design to ship platforms teams can rely on every day."
           align="left"
           dark
           className={sectionHeadingGap}
