@@ -22,7 +22,7 @@ export function SectionHeading({
   className,
 }: SectionHeadingProps) {
   const centered = align === "center";
-  const Tag = as as keyof JSX.IntrinsicElements;
+  const Tag = as;
 
   return (
     <Reveal className={cn(centered && "mx-auto max-w-3xl text-center", className)}>
