@@ -111,7 +111,7 @@ export function MainServicePageLayout({ content }: MainServicePageLayoutProps) {
                 </Reveal>
                 <Reveal immediate delay={motionStagger * 3}>
                   <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
-                    {textWithLinks(hero.description, "text-white decoration-primary/50 hover:text-primary")}
+                    {hero.description}
                   </p>
                 </Reveal>
                 <Reveal immediate delay={motionStagger * 4}>
@@ -166,7 +166,7 @@ export function MainServicePageLayout({ content }: MainServicePageLayoutProps) {
                   <p className="mt-3 max-w-2xl text-white/70">
                     {textWithLinks(
                       capabilities.subtitle,
-                      "text-white decoration-primary/50 hover:text-primary"
+                      "font-semibold text-primary decoration-primary/70 hover:text-primary/80"
                     )}
                   </p>
                 ) : null}

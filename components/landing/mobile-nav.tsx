@@ -164,7 +164,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
         </div>
 
         <nav
-          className="flex-1 space-y-2 overflow-y-auto overscroll-contain px-4 py-4 sm:px-5 sm:py-5"
+          className="scrollbar-dark flex-1 space-y-2 overflow-y-auto overscroll-contain px-4 py-4 sm:px-5 sm:py-5"
           aria-label="Main"
         >
           <p className="px-1 pb-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/40">

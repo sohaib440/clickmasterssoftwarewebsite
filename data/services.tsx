@@ -237,7 +237,7 @@ export const defaultCategorySections = {
   offerings: {
     title: "What we deliver",
     subtitle: (label: string) =>
-      `Focused capabilities within ${label.toLowerCase()}, each scoped to your timeline and team. Start from our [homepage](/) or open any capability below.`,
+      `Focused capabilities within ${label.toLowerCase()}, each scoped to your timeline and team. Built by a leading [software development company](/) and [software house](/). Open any capability below.`,
   },
   highlights: { title: "Why teams choose us" },
   approach: { title: "Our approach" },
@@ -323,32 +323,9 @@ type CategoryInput = {
   faqs?: MainCategoryContent["faqs"];
 };
 
-const homeLinkPhrases = [
-  "software development company",
-  "software house",
-  "software company",
-] as const;
-
-/** First bare phrase → `[phrase](href)` for homepage internal links in this file */
-function linkPhrase(text: string, phrase: string, href: string): string {
-  if (!phrase) return text;
-  const escaped = phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const match = new RegExp(escaped, "i").exec(text);
-  if (!match || match.index === undefined) return text;
-  if (match.index > 0 && text[match.index - 1] === "[") return text;
-  const after = match.index + match[0].length;
-  if (text.slice(after, after + 2) === "](") return text;
-  return `${text.slice(0, match.index)}[${match[0]}](${href})${text.slice(after)}`;
-}
-
-function withHomeLinks(text: string): string {
-  return homeLinkPhrases.reduce((next, phrase) => linkPhrase(next, phrase, "/"), text);
-}
-
 function defineCategory(input: CategoryInput): MainCategoryContent {
   return {
     ...input,
-    description: withHomeLinks(input.description),
     subCategories: subServicesByCategory[input.slug] ?? [],
     highlights: input.highlights ?? defaultHighlights,
     approach: input.approach ?? defaultApproach,

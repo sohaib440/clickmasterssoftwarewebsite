@@ -22,9 +22,9 @@ export function ServicesNavDropdown() {
         />
       </button>
 
-      <div className="pointer-events-none absolute left-0 top-full z-50 mt-1 max-h-[min(28rem,70vh)] min-w-[16rem] max-w-[min(22rem,80vw)] overflow-y-auto overflow-x-hidden rounded-2xl border border-white/10 bg-black opacity-0 shadow-xl shadow-black/40 transition-all duration-200 ease-out translate-y-1 group-hover:pointer-events-auto group-focus-within:pointer-events-auto group-hover:opacity-100 group-focus-within:opacity-100 group-hover:translate-y-0 group-focus-within:translate-y-0">
-        <div className="p-3">
-          <div className="space-y-1">
+      <div className="pointer-events-none absolute left-0 top-full z-50 mt-1 min-w-[16rem] max-w-[min(22rem,80vw)] overflow-hidden rounded-2xl border border-white/10 bg-black opacity-0 shadow-xl shadow-black/40 transition-all duration-200 ease-out translate-y-1 group-hover:pointer-events-auto group-focus-within:pointer-events-auto group-hover:opacity-100 group-focus-within:opacity-100 group-hover:translate-y-0 group-focus-within:translate-y-0">
+        <div className="scrollbar-dark max-h-[min(28rem,70vh)] overflow-y-auto overflow-x-hidden overscroll-contain py-3 pl-3 pr-1.5">
+          <div className="space-y-1 pr-1.5">
             {serviceNavItems.map((item, index) => (
               <Link
                 key={`${item.href}-${index}`}
