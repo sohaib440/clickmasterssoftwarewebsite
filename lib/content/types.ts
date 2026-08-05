@@ -1,6 +1,6 @@
-/** Shared content types all category pages read from data using these shapes */
-
 import type { LucideIcon } from "lucide-react";
+
+import type { FaqItem } from "@/data/landing/types";
 
 export type ContentImage = {
   src: string;
@@ -63,6 +63,8 @@ export type MainCategoryContent = {
   exploreCta?: string;
   description: string;
   metaDescription: string;
+  /** Absolute document title when it should not use the site title template */
+  pageTitle?: string;
   icon: LucideIcon;
   /** Omit when no dedicated asset exists under /public/services */
   heroImage?: ContentImage;
@@ -70,4 +72,6 @@ export type MainCategoryContent = {
   highlights: ContentBlock[];
   approach: ApproachStep[];
   sections?: MainCategorySections;
+  /** Optional FAQ items for JSON-LD / page FAQ blocks */
+  faqs?: FaqItem[];
 };

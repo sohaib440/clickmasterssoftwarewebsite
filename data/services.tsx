@@ -301,9 +301,11 @@ type CategoryInput = {
   tagline: string;
   description: string;
   metaDescription: string;
+  pageTitle?: string;
   heroImage?: ContentImage;
   highlights?: ContentBlock[];
   approach?: ApproachStep[];
+  faqs?: MainCategoryContent["faqs"];
 };
 
 function defineCategory(input: CategoryInput): MainCategoryContent {
@@ -324,6 +326,7 @@ export const mainCategories: MainCategoryContent[] = [
     icon: Code2,
     label: "Software Development",
     exploreCta: "Explore software development",
+    pageTitle: "Software Development Company | Next Software Dev",
     tagline:
       "Leading Software Development Company Building Products Businesses Depend On",
     description:
@@ -336,6 +339,78 @@ export const mainCategories: MainCategoryContent[] = [
       width: 800,
       height: 800,
     },
+    faqs: [
+      {
+        column: "left",
+        tag: "Overview",
+        question: "What does a custom software development company actually build?",
+        answer:
+          "A custom software development company designs, builds, and maintains software built specifically around your business processes web applications, mobile apps, ERP and CRM systems, SaaS platforms, and internal tools. Unlike off-the-shelf software, everything is built to match how your business actually works, not the other way around.",
+      },
+      {
+        column: "left",
+        tag: "Global",
+        question: "Do you work with clients in the UK, USA, Canada, Australia, and UAE?",
+        answer:
+          "Yes. The majority of our engagements are with international clients across the UK, USA, Canada, Australia, and UAE, alongside clients based in Pakistan. We structure communication and delivery around timezone overlap with each region, and manage projects using Slack, Zoom, and project trackers so you always know exactly where your project stands.",
+      },
+      {
+        column: "left",
+        tag: "Pricing",
+        question: "How much does custom software development cost?",
+        answer:
+          "Cost depends on scope and complexity. A simple MVP or internal tool typically starts in the low thousands (USD), while a full enterprise platform ERP, SaaS product, or multi-module system is a larger investment spread across development phases. We provide a clear, itemized quote after an initial discovery call, so you know the full cost before any contract is signed.",
+      },
+      {
+        column: "left",
+        tag: "Timeline",
+        question: "How long does a custom software project take?",
+        answer:
+          "A focused MVP can typically be delivered in 6 to 10 weeks. A mid-complexity web or mobile application usually takes 3 to 5 months. Larger enterprise systems with multiple modules and integrations can take 6+ months. You'll receive a realistic, milestone-based timeline during the planning phase not an optimistic one that slips.",
+      },
+      {
+        column: "left",
+        tag: "Offshore",
+        question: "Why hire a software development company in Pakistan instead of locally?",
+        answer:
+          "Pakistan-based software development companies typically offer significantly lower rates than US, UK, or UAE-based firms for comparable engineering quality largely due to cost-of-living differences, not a difference in skill. With English-speaking, timezone-flexible teams and modern collaboration tools, the distance is rarely felt day-to-day once a project is underway.",
+      },
+      {
+        column: "right",
+        tag: "Engagement",
+        question: "Can I hire a dedicated developer or team instead of a fixed-scope project?",
+        answer:
+          "Yes. You can hire a single dedicated developer or a full team that works exclusively on your product during agreed hours, integrates with your existing tools and processes, and reports directly to you. This model works well for ongoing product development rather than a one-off build.",
+      },
+      {
+        column: "right",
+        tag: "Stack",
+        question: "What technologies do you build with?",
+        answer:
+          "Our core stack is the MERN stack React, Next.js, Node.js, and Express along with Django and Python for backend and ML-driven work, and PostgreSQL or MongoDB for data layers. We select the stack based on your project's actual requirements rather than defaulting to one technology for everything.",
+      },
+      {
+        column: "right",
+        tag: "Legal",
+        question: "Do you sign an NDA before discussing our project idea?",
+        answer:
+          "Yes. We sign a mutual Non-Disclosure Agreement before any detailed project discussion, and your idea, data, and business details remain fully confidential throughout and after the engagement.",
+      },
+      {
+        column: "right",
+        tag: "Support",
+        question: "What happens after the software launches?",
+        answer:
+          "Launch isn't the finish line. We provide post-launch support and flexible maintenance plans so your software keeps working as your business grows, your user base scales, and requirements evolve.",
+      },
+      {
+        column: "right",
+        tag: "Getting started",
+        question: "How do we get started?",
+        answer:
+          "Book a free discovery call. We'll discuss your goals, rough scope, and timeline, and follow up with a clear proposal no obligation, no pressure.",
+      },
+    ],
   }),
   defineCategory({
     slug: "mobile-development",
