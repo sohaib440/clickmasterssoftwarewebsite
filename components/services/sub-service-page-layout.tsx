@@ -34,6 +34,33 @@ import {
 import type { SubServicePageContent } from "@/lib/content/service-page-types";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
+import type { ReactNode } from "react";
+
+/** Renders `[label](/path)` markers from data/subServices.tsx copy */
+function textWithLinks(text: string, linkClassName?: string): ReactNode[] {
+  const nodes: ReactNode[] = [];
+  const pattern = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  while ((match = pattern.exec(text)) !== null) {
+    if (match.index > lastIndex) nodes.push(text.slice(lastIndex, match.index));
+    nodes.push(
+      <Link
+        key={`${match.index}-${match[2]}`}
+        href={match[2]}
+        className={cn(
+          "font-semibold text-primary underline decoration-primary/70 underline-offset-[3px] transition-colors hover:text-primary/80",
+          linkClassName
+        )}
+      >
+        {match[1]}
+      </Link>
+    );
+    lastIndex = match.index + match[0].length;
+  }
+  if (lastIndex < text.length) nodes.push(text.slice(lastIndex));
+  return nodes;
+}
 
 type SubServicePageLayoutProps = {
   content: SubServicePageContent;
@@ -44,7 +71,6 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
     breadcrumbs,
     parent,
     hero,
-    contentParagraphs,
     highlights,
     relatedSubs,
     serviceFamily,
@@ -93,7 +119,11 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
             <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:gap-12">
               <div className="min-w-0">
                 <Reveal immediate delay={motionStagger}>
-                  <p className={cn(overline, "text-primary/90")}>{hero.eyebrow}</p>
+                  <p className={cn(overline, "text-primary/90")}>
+                    <Link href={parent.href} className="hover:text-primary">
+                      {hero.eyebrow}
+                    </Link>
+                  </p>
                 </Reveal>
                 <Reveal immediate delay={motionStagger * 2}>
                   <h1 className="mt-3 font-heading text-3xl font-normal leading-[1.12] tracking-tight text-white sm:text-4xl lg:text-[2.75rem]">
@@ -102,17 +132,24 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
                 </Reveal>
                 <Reveal immediate delay={motionStagger * 3}>
                   <p className="mt-4 max-w-xl text-base leading-relaxed text-white/70">
-                    {hero.description}
+                    {textWithLinks(hero.description, "text-white decoration-primary/50 hover:text-primary")}
                   </p>
                 </Reveal>
                 <Reveal immediate delay={motionStagger * 4}>
-                  <div className="mt-7 flex flex-col gap-2 sm:flex-row sm:items-center">
+                  <div className="mt-7 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
                     <Link href={primaryCta.href} className={btnPrimary}>
                       {primaryCta.label}
                     </Link>
                     <Link href={secondaryCta.href} className={btnOutlineDark}>
                       {secondaryCta.label}
                     </Link>
+                    {/* <Link
+                      href={parent.href}
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary underline decoration-primary/70 underline-offset-4 hover:text-primary/80"
+                    >
+                      View all {parent.label} services
+                      <ArrowUpRight className="size-4" aria-hidden />
+                    </Link> */}
                   </div>
                 </Reveal>
                 <Reveal immediate delay={motionStagger * 5}>
@@ -138,42 +175,9 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
           </div>
         </section>
 
-        <TrustedPartnersSection className="border-horizon-border/60 bg-white" />
         <TrustNumbersSection />
+        <TrustedPartnersSection className="border-horizon-border/60 bg-white" />
         <AboutSection />
-
-        <section className="w-full bg-white">
-          <div className={cn(container, sectionPad)}>
-            <div className="grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,0.6fr)] lg:items-start">
-              <div className="space-y-5">
-                {contentParagraphs.map((paragraph, index) => (
-                  <Reveal key={index} delay={index * motionStagger}>
-                    <p className="text-base leading-relaxed text-horizon-muted md:text-lg">
-                      {paragraph}
-                    </p>
-                  </Reveal>
-                ))}
-              </div>
-
-              <Reveal delay={motionStagger} className={cn(cardSoft, "p-6 lg:sticky lg:top-24")}>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-horizon-muted">
-                  Part of
-                </p>
-                <Link
-                  href={parent.href}
-                  className="mt-2 inline-flex items-center gap-1 font-heading text-xl text-horizon-navy hover:text-primary"
-                >
-                  {parent.label}
-                  <ArrowUpRight className="size-4" aria-hidden />
-                </Link>
-                <p className="mt-3 text-sm leading-relaxed text-horizon-muted">
-                  Explore the full range of {parent.label.toLowerCase()} services, process, and
-                  related capabilities.
-                </p>
-              </Reveal>
-            </div>
-          </div>
-        </section>
 
         {serviceFamily.items.length > 0 ? (
           <section className="w-full bg-black text-white" aria-labelledby="service-family-heading">

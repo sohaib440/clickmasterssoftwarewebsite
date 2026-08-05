@@ -36,6 +36,33 @@ import {
 import type { MainServicePageContent } from "@/lib/content/service-page-types";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
+import type { ReactNode } from "react";
+
+/** Renders `[label](/path)` markers from data/services.tsx copy */
+function textWithLinks(text: string, linkClassName?: string): ReactNode[] {
+  const nodes: ReactNode[] = [];
+  const pattern = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  while ((match = pattern.exec(text)) !== null) {
+    if (match.index > lastIndex) nodes.push(text.slice(lastIndex, match.index));
+    nodes.push(
+      <Link
+        key={`${match.index}-${match[2]}`}
+        href={match[2]}
+        className={cn(
+          "underline decoration-primary/45 underline-offset-[3px] transition-colors hover:text-primary hover:decoration-primary",
+          linkClassName
+        )}
+      >
+        {match[1]}
+      </Link>
+    );
+    lastIndex = match.index + match[0].length;
+  }
+  if (lastIndex < text.length) nodes.push(text.slice(lastIndex));
+  return nodes;
+}
 
 type MainServicePageLayoutProps = {
   content: MainServicePageContent;
@@ -84,7 +111,7 @@ export function MainServicePageLayout({ content }: MainServicePageLayoutProps) {
                 </Reveal>
                 <Reveal immediate delay={motionStagger * 3}>
                   <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
-                    {hero.description}
+                    {textWithLinks(hero.description, "text-white decoration-primary/50 hover:text-primary")}
                   </p>
                 </Reveal>
                 <Reveal immediate delay={motionStagger * 4}>
@@ -136,7 +163,12 @@ export function MainServicePageLayout({ content }: MainServicePageLayoutProps) {
                   {capabilities.title}
                 </h2>
                 {capabilities.subtitle ? (
-                  <p className="mt-3 max-w-2xl text-white/70">{capabilities.subtitle}</p>
+                  <p className="mt-3 max-w-2xl text-white/70">
+                    {textWithLinks(
+                      capabilities.subtitle,
+                      "text-white decoration-primary/50 hover:text-primary"
+                    )}
+                  </p>
                 ) : null}
               </Reveal>
 

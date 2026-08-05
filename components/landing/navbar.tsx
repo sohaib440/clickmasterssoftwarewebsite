@@ -115,17 +115,7 @@ export const footerBrand = {
 export const footerColumns = [
   {
     title: "Services",
-    links: [
-      { label: "Software Development", href: "/software-development" },
-      { label: "Mobile App Development", href: "/mobile-development" },
-      { label: "Web Development", href: "/web-development" },
-      { label: "Ecommerce Development", href: "/ecommerce-development" },
-      { label: "UI/UX Design", href: "/ui-ux-design" },
-      { label: "Artificial Intelligence", href: "/artificial-intelligence" },
-      { label: "Machine Learning", href: "/machine-learning" },
-      { label: "Cloud & DevOps", href: "/cloud-devops" },
-      { label: "Testing & QA", href: "/testing-and-qa" },
-    ],
+    links: [...serviceNavItems],
   },
   {
     title: "Company",

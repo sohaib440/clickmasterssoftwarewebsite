@@ -29,11 +29,113 @@ function sub(input: SubInput): SubCategoryContent {
   return image ? { ...rest, image } : rest;
 }
 
+const mainServiceLabels: Record<string, string> = {
+  "software-development": "Software Development",
+  "mobile-development": "Mobile App Development",
+  "web-development": "Web Development",
+  "ecommerce-development": "Ecommerce Development",
+  "ui-ux-design": "UI/UX Design",
+  "artificial-intelligence": "Artificial Intelligence",
+  "machine-learning": "Machine Learning",
+  "automation-services": "Automation Services",
+  "cloud-devops": "Cloud & DevOps",
+  "data-business-intelligence": "Data & Business Intelligence",
+  cybersecurity: "Cybersecurity",
+  "enterprise-solutions": "Enterprise Solutions",
+  "blockchain-development": "Blockchain Development",
+  "healthcare-software-development": "Healthcare Software Development",
+  "ar-vr-development": "AR/VR Development",
+  "testing-and-qa": "Testing & QA",
+};
+
+/** Alternate phrases that should also point at the parent main service (longest first). */
+const mainLinkAliases: Record<string, string[]> = {
+  "software-development": ["software development services"],
+  "mobile-development": ["mobile app development services", "mobile development services"],
+  "web-development": ["web development services"],
+  "ecommerce-development": ["ecommerce development services", "e-commerce development"],
+  "ui-ux-design": ["UI/UX design services"],
+  "artificial-intelligence": ["artificial intelligence services"],
+  "machine-learning": ["machine learning services"],
+  "automation-services": ["automation services"],
+  "cloud-devops": ["cloud & devops", "cloud and devops"],
+  "data-business-intelligence": ["data & business intelligence", "business intelligence services"],
+  cybersecurity: ["cybersecurity services"],
+  "enterprise-solutions": ["enterprise solutions"],
+  "blockchain-development": ["blockchain development services"],
+  "healthcare-software-development": ["healthcare software development"],
+  "ar-vr-development": ["AR/VR development", "ar/vr development"],
+  "testing-and-qa": ["testing & QA", "testing and QA"],
+};
+
+/** First bare phrase → `[phrase](href)` markdown used in page copy */
+function linkPhrase(text: string, phrase: string, href: string): string {
+  if (!phrase) return text;
+  const escaped = phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  // Avoid splitting brand phrases like "software development company"
+  const pattern = new RegExp(`${escaped}(?!\\s+(?:company|house)\\b)`, "i");
+  const match = pattern.exec(text);
+  if (!match || match.index === undefined) return text;
+  if (match.index > 0 && text[match.index - 1] === "[") return text;
+  const after = match.index + match[0].length;
+  if (text.slice(after, after + 2) === "](") return text;
+  return `${text.slice(0, match.index)}[${match[0]}](${href})${text.slice(after)}`;
+}
+
+function withParentMainLinks(text: string, mainSlug: string, mainLabel: string): string {
+  const mainHref = `/${mainSlug}`;
+  if (text.includes(`](${mainHref})`)) return text;
+
+  let next = linkPhrase(text, mainLabel, mainHref);
+  if (next.includes(`](${mainHref})`)) return next;
+
+  const aliases = [...(mainLinkAliases[mainSlug] ?? [])].sort((a, b) => b.length - a.length);
+  for (const alias of aliases) {
+    next = linkPhrase(next, alias, mainHref);
+    if (next.includes(`](${mainHref})`)) return next;
+  }
+  return next;
+}
+
+/** Bake sub → parent main service internal links into each sub-service's copy */
+function withInternalLinks(map: SubServicesMap): SubServicesMap {
+  return Object.fromEntries(
+    Object.entries(map).map(([mainSlug, items]) => {
+      const mainLabel = mainServiceLabels[mainSlug] ?? mainSlug;
+      const mainHref = `/${mainSlug}`;
+
+      return [
+        mainSlug,
+        items.map((item) => {
+          let tagline = withParentMainLinks(item.tagline ?? item.description, mainSlug, mainLabel);
+          const content = (item.content ?? [item.description]).map((paragraph) =>
+            withParentMainLinks(paragraph, mainSlug, mainLabel),
+          );
+
+          // Hero always includes an explicit parent-main internal link
+          if (!tagline.includes(`](${mainHref})`)) {
+            tagline = `${tagline} Explore our [${mainLabel}](${mainHref}) services.`;
+          }
+
+          if (!content.some((paragraph) => paragraph.includes(`](${mainHref})`))) {
+            content.push(
+              `This page is part of our [${mainLabel}](${mainHref}) services. Open the main service page for the full scope, process, and related capabilities.`,
+            );
+          }
+
+          return { ...item, tagline, content };
+        }),
+      ];
+    }),
+  ) as SubServicesMap;
+}
+
 /**
  * Sub-service pages grouped by main category slug.
  * Routes: /{mainSlug}/{subSlug}
+ * Internal links (homepage + parent main) are applied in this file.
  */
-export const subServicesByCategory: SubServicesMap = {
+const subServicesByCategoryRaw: SubServicesMap = {
   "software-development": [
     sub({
       slug: "custom-software-development",
@@ -1561,3 +1663,5 @@ export const subServicesByCategory: SubServicesMap = {
     }),
   ],
 };
+
+export const subServicesByCategory: SubServicesMap = withInternalLinks(subServicesByCategoryRaw);
