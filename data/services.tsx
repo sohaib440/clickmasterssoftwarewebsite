@@ -103,6 +103,8 @@ export const services: ServiceCard[] = [
     title: "Ecommerce Development",
     description:
       "Storefronts, marketplaces, and checkout systems from a leading software company built for conversion, catalog complexity, and reliable order operations.",
+    image: "/services/ecommerce-development.png",
+    imageAlt: "Ecommerce development services illustration",
     Icon: ShoppingCart,
     AltIcon: Globe2,
     tag: "Commerce",
@@ -146,6 +148,8 @@ export const services: ServiceCard[] = [
     title: "Automation Services",
     description:
       "Workflow, RPA, and document automation from a best software company so teams eliminate repetitive work and move data between systems reliably.",
+    image: "/services/automation-services.png",
+    imageAlt: "Automation services illustration",
     Icon: Workflow,
     AltIcon: Server,
     tag: "Ops",
@@ -178,6 +182,8 @@ export const services: ServiceCard[] = [
     title: "Cybersecurity",
     description:
       "Application security, audits, and compliance readiness from a trusted software house so products stay resilient as they scale.",
+    image: "/services/cybersecurity.png",
+    imageAlt: "Cybersecurity services illustration",
     Icon: Shield,
     AltIcon: ShieldCheck,
     tag: "Security",
@@ -187,6 +193,8 @@ export const services: ServiceCard[] = [
     title: "Enterprise Solutions",
     description:
       "ERP, CRM, and internal platforms from a leading software development company that replace disconnected tools with one system of record.",
+    image: "/services/enterprise-solutions.png",
+    imageAlt: "Enterprise solutions services illustration",
     Icon: Building2,
     AltIcon: Code2,
     tag: "Enterprise",
@@ -196,6 +204,8 @@ export const services: ServiceCard[] = [
     title: "Blockchain Development",
     description:
       "Smart contracts, dApps, and Web3 integrations from a software company built for secure on-chain workflows and real product use cases.",
+    image: "/services/blockchain-development.png",
+    imageAlt: "Blockchain development services illustration",
     Icon: Blocks,
     AltIcon: Shield,
     tag: "Web3",
@@ -205,6 +215,8 @@ export const services: ServiceCard[] = [
     title: "Healthcare Software Development",
     description:
       "Hospital, clinic, and telemedicine platforms from a software house designed for clinical workflows, patient data, and compliance needs.",
+    image: "/services/healthcare-software-development.png",
+    imageAlt: "Healthcare software development services illustration",
     Icon: HeartPulse,
     AltIcon: Database,
     tag: "Health",
@@ -214,6 +226,8 @@ export const services: ServiceCard[] = [
     title: "AR/VR Development",
     description:
       "Augmented and virtual reality experiences from a top rated software company for training, retail, and immersive product visualization.",
+    image: "/services/ar-vr-development.png",
+    imageAlt: "AR/VR development services illustration",
     Icon: Glasses,
     AltIcon: Smartphone,
     tag: "Immersive",
