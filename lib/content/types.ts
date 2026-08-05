@@ -1,6 +1,6 @@
-/** Shared content types all category pages read from data using these shapes */
-
 import type { LucideIcon } from "lucide-react";
+
+import type { FaqItem } from "@/data/landing/types";
 
 export type ContentImage = {
   src: string;
@@ -27,10 +27,12 @@ export type SubCategoryContent = {
   description: string;
   /** Optional card/hero image for sub-category page */
   image?: ContentImage;
-  /** Optional; defaults to description */
+  /** Hero supporting copy; defaults to description */
   tagline?: string;
+  /** Absolute document title when set */
+  pageTitle?: string;
   metaDescription?: string;
-  /** Optional extra copy blocks on sub-category page */
+  /** Body paragraphs on the sub-category page */
   content?: string[];
   /** Optional; falls back to parent main category highlights */
   highlights?: ContentBlock[];
@@ -63,10 +65,15 @@ export type MainCategoryContent = {
   exploreCta?: string;
   description: string;
   metaDescription: string;
+  /** Absolute document title when it should not use the site title template */
+  pageTitle?: string;
   icon: LucideIcon;
-  heroImage: ContentImage;
+  /** Omit when no dedicated asset exists under /public/services */
+  heroImage?: ContentImage;
   subCategories: SubCategoryContent[];
   highlights: ContentBlock[];
   approach: ApproachStep[];
   sections?: MainCategorySections;
+  /** Optional FAQ items for JSON-LD / page FAQ blocks */
+  faqs?: FaqItem[];
 };

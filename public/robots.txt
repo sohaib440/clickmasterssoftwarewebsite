@@ -2,5 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Host: nextsoftwaredevelopment.com
 Sitemap: https://nextsoftwaredevelopment.com/sitemap_index.xml

@@ -9,18 +9,15 @@ import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
 
 type FaqColumnProps = {
-  column: "left" | "right";
   startIndex: number;
   items: FaqItem[];
   justify?: boolean;
 };
 
-function FaqColumn({ column, startIndex, items, justify = false }: FaqColumnProps) {
-  const columnItems = items.filter((f) => f.column === column);
-
+function FaqColumn({ startIndex, items, justify = false }: FaqColumnProps) {
   return (
     <div className="flex flex-col gap-3">
-      {columnItems.map((faq, i) => {
+      {items.map((faq, i) => {
         const index = startIndex + i;
         return (
           <Reveal key={faq.question} delay={i * motionStagger}>
@@ -117,7 +114,9 @@ export function FaqSection({
   className,
   justify = false,
 }: FaqSectionProps = {}) {
-  const leftCount = items.filter((f) => f.column === "left").length;
+  const mid = Math.ceil(items.length / 2);
+  const leftItems = items.slice(0, mid);
+  const rightItems = items.slice(mid);
 
   return (
     <section
@@ -133,8 +132,8 @@ export function FaqSection({
         />
 
         <div className="grid gap-6 md:grid-cols-2 lg:gap-10">
-          <FaqColumn column="left" startIndex={0} items={items} justify={justify} />
-          <FaqColumn column="right" startIndex={leftCount} items={items} justify={justify} />
+          <FaqColumn startIndex={0} items={leftItems} justify={justify} />
+          <FaqColumn startIndex={mid} items={rightItems} justify={justify} />
         </div>
 
         {footerCta && footerHref ? (

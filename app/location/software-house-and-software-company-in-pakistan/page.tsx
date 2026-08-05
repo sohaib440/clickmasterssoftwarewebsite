@@ -20,7 +20,8 @@ import { pakistanLocation } from "@/data/locations";
 import { btnOnDark, container, sectionPad } from "@/lib/landing/constants";
 import { selfCanonical } from "@/seo/canonical";
 import { cn } from "@/lib/utils";
-import { locationLocalBusinessSchema, organizationSchema } from "@/seo/schema";
+import { locationLocalBusinessSchema, organizationSchema, breadcrumbSchema, faqPageSchema } from "@/seo/schema";
+import { siteBrand } from "@/lib/landing/brand";
 
 export const metadata: Metadata = {
   title: pakistanLocation.metaTitle ?? pakistanLocation.title,
@@ -45,6 +46,19 @@ export default function PakistanLocationPage() {
       description: location.metaDescription ?? location.description,
       idSuffix: "pakistan",
     }),
+    breadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Locations", path: "/location" },
+      { name: "Pakistan", path: location.href },
+    ]),
+    ...(location.faqs.length
+      ? [
+          faqPageSchema(location.faqs, {
+            id: `${siteBrand.url}${location.href}#faq`,
+            pageUrl: `${siteBrand.url}${location.href}`,
+          }),
+        ]
+      : []),
   ];
 
   return (

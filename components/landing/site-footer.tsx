@@ -61,6 +61,8 @@ export function SiteFooter() {
           <div className="grid grid-cols-1 gap-1 sm:grid-cols-2 sm:gap-6 xl:grid-cols-3 lg:col-span-8">
             {footerColumns.map((column) => {
               const isExpanded = expandedSections.has(column.title);
+              const columnLinks =
+                column.title === "Services" ? column.links.slice(0, 6) : column.links;
 
               return (
                 <div key={column.title} className="border-b border-white/20 pb-3 sm:border-none sm:pb-0">
@@ -90,7 +92,7 @@ export function SiteFooter() {
                         opacity: isExpanded ? 1 : 0,
                       }}
                     >
-                      {column.links.map((link, linkIndex) => (
+                      {columnLinks.map((link, linkIndex) => (
                         <li key={`${column.title}-${link.href}-${linkIndex}`}>
                           <Link
                             href={link.href}
@@ -111,7 +113,7 @@ export function SiteFooter() {
                       {column.title}
                     </h3>
                     <ul className="mt-4 space-y-2.5 md:mt-5 md:space-y-3">
-                      {column.links.map((link, linkIndex) => (
+                      {columnLinks.map((link, linkIndex) => (
                         <li key={`${column.title}-${link.href}-${linkIndex}`}>
                           <Link
                             href={link.href}
@@ -140,9 +142,6 @@ export function SiteFooter() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  onClick={(event) => {
-                    if (link.href === "#") event.preventDefault();
-                  }}
                   className="site-footer__link"
                 >
                   {link.label}

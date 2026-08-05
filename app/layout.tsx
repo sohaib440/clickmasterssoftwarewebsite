@@ -38,8 +38,25 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: [{ url: siteBrand.favicon, type: "image/png" }],
-    apple: [{ url: siteBrand.appleIcon, type: "image/png" }],
+    icon: [{ url: siteBrand.favicon, type: "image/webp" }],
+    apple: [{ url: siteBrand.appleIcon, type: "image/webp" }],
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_PK",
+    siteName: siteBrand.name,
+    images: [
+      {
+        url: siteBrand.logo.src,
+        width: siteBrand.logo.width,
+        height: siteBrand.logo.height,
+        alt: siteBrand.logo.alt,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [siteBrand.logo.src],
   },
   verification: {
     google: "Nfu_VzU_CiwEP8RUZP8rojwAijeduR9oYaHc7T40xQY",

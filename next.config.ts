@@ -31,30 +31,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  async redirects() {
-    return [
-      {
-        source: "/solutions/ecommerce",
-        destination: "/solutions/ecommerce-platform",
-        permanent: true,
-      },
-      {
-        source: "/projects/clinic-erp-islamabad",
-        destination: "/projects",
-        permanent: true,
-      },
-      {
-        source: "/projects/school-lms-lahore",
-        destination: "/projects",
-        permanent: true,
-      },
-      {
-        source: "/projects/retail-pos-karachi",
-        destination: "/projects",
-        permanent: true,
-      },
-    ];
-  },
   experimental: {
     optimizePackageImports: ["lucide-react"],
   },

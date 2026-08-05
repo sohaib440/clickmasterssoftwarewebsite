@@ -12,18 +12,19 @@ import { ProjectsSection } from "@/components/landing/projects-section";
 import { TeamSection } from "@/components/landing/team-section";
 import { TechStackSection } from "@/components/landing/tech-stack-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
+import { TrustNumbersSection } from "@/components/landing/trust-numbers-section";
 import { CardImage } from "@/components/landing/card-image";
 import { RatingBadges } from "@/components/landing/rating-badges";
 import { Reveal } from "@/components/landing/reveal";
 import { SiteHeader } from "@/components/landing/navbar";
 import { ServiceBreadcrumbs } from "@/components/services/shared/service-breadcrumbs";
-import { ServiceApproachSection } from "@/components/services/service-approach-section";
 import { CleanCategoryUrl } from "@/components/services/clean-category-url";
+import { CaseStudiesSection } from "@/components/case-study/case-studies-section";
+import { caseStudies } from "@/data/caseStudy";
 import {
   btnOnDark,
   btnOutlineDark,
   btnPrimary,
-  card,
   cardDark,
   cardSoft,
   contactPath,
@@ -35,6 +36,33 @@ import {
 import type { MainServicePageContent } from "@/lib/content/service-page-types";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
+import type { ReactNode } from "react";
+
+/** Renders `[label](/path)` markers from data/services.tsx copy */
+function textWithLinks(text: string, linkClassName?: string): ReactNode[] {
+  const nodes: ReactNode[] = [];
+  const pattern = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  while ((match = pattern.exec(text)) !== null) {
+    if (match.index > lastIndex) nodes.push(text.slice(lastIndex, match.index));
+    nodes.push(
+      <Link
+        key={`${match.index}-${match[2]}`}
+        href={match[2]}
+        className={cn(
+          "underline decoration-primary/45 underline-offset-[3px] transition-colors hover:text-primary hover:decoration-primary",
+          linkClassName
+        )}
+      >
+        {match[1]}
+      </Link>
+    );
+    lastIndex = match.index + match[0].length;
+  }
+  if (lastIndex < text.length) nodes.push(text.slice(lastIndex));
+  return nodes;
+}
 
 type MainServicePageLayoutProps = {
   content: MainServicePageContent;
@@ -47,7 +75,6 @@ export function MainServicePageLayout({ content }: MainServicePageLayoutProps) {
     hero,
     capabilities,
     highlights,
-    approach,
     related,
     cta,
   } = content;
@@ -72,7 +99,7 @@ export function MainServicePageLayout({ content }: MainServicePageLayoutProps) {
               <ServiceBreadcrumbs items={breadcrumbs} />
             </Reveal>
 
-            <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10">
+            <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.65fr)] lg:gap-10">
               <div className="min-w-0">
                 <Reveal immediate delay={motionStagger}>
                   <p className={cn(overline, "text-white/60")}>{hero.eyebrow}</p>
@@ -83,7 +110,7 @@ export function MainServicePageLayout({ content }: MainServicePageLayoutProps) {
                   </h1>
                 </Reveal>
                 <Reveal immediate delay={motionStagger * 3}>
-                  <p className="mt-5 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
+                  <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
                     {hero.description}
                   </p>
                 </Reveal>
@@ -100,20 +127,28 @@ export function MainServicePageLayout({ content }: MainServicePageLayoutProps) {
               </div>
 
               <Reveal immediate delay={motionStagger * 2} direction="right">
-                <div className={cn(cardDark, "overflow-hidden p-0")}>
-                  <CardImage
-                    {...hero.image}
-                    className="aspect-[4/3] w-full lg:aspect-[5/4]"
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                </div>
-                <RatingBadges variant="dark" className="mt-6" />
+                {hero.image ? (
+                  <div className="mx-auto w-full max-w-[18rem] sm:max-w-[20rem] lg:ml-auto lg:mr-0 lg:max-w-[20rem]">
+                    <div className={cn(cardDark, "overflow-hidden p-0")}>
+                      <CardImage
+                        {...hero.image}
+                        className="aspect-square w-full"
+                        priority
+                        sizes="(max-width: 1024px) 288px, 280px"
+                      />
+                    </div>
+                  </div>
+                ) : null}
+                <RatingBadges
+                  variant="dark"
+                  className={hero.image ? "mt-5" : undefined}
+                />
               </Reveal>
             </div>
           </div>
         </section>
 
+        <TrustNumbersSection />
         <TrustedPartnersSection className="border-horizon-border/60 bg-white" />
         <AboutSection />
 
@@ -128,7 +163,12 @@ export function MainServicePageLayout({ content }: MainServicePageLayoutProps) {
                   {capabilities.title}
                 </h2>
                 {capabilities.subtitle ? (
-                  <p className="mt-3 max-w-2xl text-white/70">{capabilities.subtitle}</p>
+                  <p className="mt-3 max-w-2xl text-white/70">
+                    {textWithLinks(
+                      capabilities.subtitle,
+                      "font-semibold text-primary decoration-primary/70 hover:text-primary/80"
+                    )}
+                  </p>
                 ) : null}
               </Reveal>
 
@@ -177,7 +217,23 @@ export function MainServicePageLayout({ content }: MainServicePageLayoutProps) {
         <IndustriesSection />
         <TechStackSection />
 
-        <section className="w-full bg-horizon-peach/50 text-horizon-navy">
+        <ProcessSection />
+
+        <ProjectsSection />
+        {caseStudies.length > 0 ? (
+          <CaseStudiesSection
+            items={caseStudies.slice(0, 6)}
+            overlineText="Case studies"
+            title={
+              <>
+                Results from <span className="italic">real engagements</span>
+              </>
+            }
+            description="Selected case studies showing how we deliver outcomes across products and industries."
+          />
+        ) : null}
+
+        <section className="w-full bg-black text-white">
           <div className={cn(container, sectionPad)}>
             <Reveal>
               <h2 className="font-heading text-3xl font-normal md:text-4xl">
@@ -187,14 +243,14 @@ export function MainServicePageLayout({ content }: MainServicePageLayoutProps) {
             <ul className="mt-10 grid gap-4 md:grid-cols-3">
               {highlights.items.map((item, index) => (
                 <li key={item.title}>
-                  <Reveal delay={index * motionStagger} className={cn(card, "h-full p-6")}>
-                    <span className="flex size-9 items-center justify-center rounded-full bg-horizon-sky/60 text-horizon-navy">
+                  <Reveal delay={index * motionStagger} className={cn(cardDark, "h-full p-6")}>
+                    <span className="flex size-9 items-center justify-center rounded-full bg-white/10 text-primary">
                       <Check className="size-4" strokeWidth={2} aria-hidden />
                     </span>
-                    <h3 className="mt-4 font-heading text-lg font-medium text-horizon-navy">
+                    <h3 className="mt-4 font-heading text-lg font-medium text-white">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-horizon-muted">
+                    <p className="mt-2 text-sm leading-relaxed text-white/70">
                       {item.description}
                     </p>
                   </Reveal>
@@ -204,10 +260,6 @@ export function MainServicePageLayout({ content }: MainServicePageLayoutProps) {
           </div>
         </section>
 
-        <ProcessSection />
-        <ServiceApproachSection title={approach.title} steps={approach.steps} />
-
-        <ProjectsSection />
         <TeamSection />
 
         {related && related.items.length > 0 ? (

@@ -2,8 +2,14 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { BlogPostPage } from "@/components/pages/blog-post-page";
-import { getAllBlogSlugs, getBlogBySlug, isBlogSlug } from "@/lib/landing/blog";
+import {
+  blogPostPath,
+  getAllBlogSlugs,
+  getBlogBySlug,
+  isBlogSlug,
+} from "@/lib/landing/blog";
 import { selfCanonical } from "@/seo/canonical";
+import { blogPostingSchema, breadcrumbSchema } from "@/seo/schema";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -19,10 +25,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!post) return { title: "Not found" };
 
   return {
-    title: `${post.title} | Software Development Company Software Blog`,
+    title: post.title,
     description: post.excerpt,
     ...selfCanonical(`/blog/${slug}`),
   };
+}
+
+function toIsoDate(date: string) {
+  const parsed = new Date(date);
+  return Number.isNaN(parsed.getTime()) ? date : parsed.toISOString().slice(0, 10);
 }
 
 export default async function BlogPostRoute({ params }: PageProps) {
@@ -37,5 +48,30 @@ export default async function BlogPostRoute({ params }: PageProps) {
     notFound();
   }
 
-  return <BlogPostPage post={post} />;
+  const path = blogPostPath(slug);
+  const schemas = [
+    blogPostingSchema({
+      title: post.title,
+      description: post.excerpt,
+      path,
+      datePublished: toIsoDate(post.date),
+      image: post.image,
+      category: post.category,
+    }),
+    breadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Blog", path: "/blog" },
+      { name: post.title, path },
+    ]),
+  ];
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+      />
+      <BlogPostPage post={post} />
+    </>
+  );
 }

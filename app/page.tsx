@@ -30,7 +30,7 @@ import {
 } from "@/seo/schema";
 
 export const metadata: Metadata = {
-  title: siteMetadata.title,
+  title: { absolute: siteMetadata.title },
   description: siteMetadata.description,
   keywords: [...siteMetadata.keywords],
   ...selfCanonical("/"),
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: siteMetadata.title,
     description: siteMetadata.description,
     type: "website",
-    locale: "en_US",
+    locale: "en_PK",
     url: siteBrand.url,
     siteName: siteBrand.name,
     images: [

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 
 import { CaseStudyPageContent } from "@/components/case-study/case-study-page";
-import { caseStudyPageMeta } from "@/data/caseStudy";
+import { caseStudies, caseStudyPageMeta } from "@/data/caseStudy";
 import { selfCanonical } from "@/seo/canonical";
+import { breadcrumbSchema, itemListSchema } from "@/seo/schema";
 
 export const metadata: Metadata = {
   title: caseStudyPageMeta.title,
@@ -16,5 +17,29 @@ export const metadata: Metadata = {
 };
 
 export default function CaseStudyRoute() {
-  return <CaseStudyPageContent />;
+  const schemas = [
+    itemListSchema({
+      name: caseStudyPageMeta.title,
+      description: caseStudyPageMeta.description,
+      path: "/case-study",
+      items: caseStudies.map((study) => ({
+        name: study.title,
+        path: `/case-study/${study.slug}`,
+      })),
+    }),
+    breadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Case Studies", path: "/case-study" },
+    ]),
+  ];
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+      />
+      <CaseStudyPageContent />
+    </>
+  );
 }

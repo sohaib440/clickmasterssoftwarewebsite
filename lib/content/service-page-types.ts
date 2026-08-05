@@ -26,7 +26,8 @@ export type ServiceHeroContent = {
   eyebrow: string;
   title: string;
   description: string;
-  image: ContentImage;
+  /** Omit when no dedicated service image exists */
+  image?: ContentImage;
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
 };
@@ -70,7 +71,9 @@ export type SubServicePageContent = {
   parent: { label: string; href: string };
   breadcrumbs: ServiceBreadcrumb[];
   hero: ServiceHeroContent;
+  /** About / overview paragraphs for the sub-service (may include [label](/path) links) */
   contentParagraphs: string[];
+  overviewTitle: string;
   highlights: {
     title: string;
     items: ContentBlock[];
@@ -82,6 +85,13 @@ export type SubServicePageContent = {
   relatedSubs: {
     title: string;
     items: ServiceOfferingItem[];
+  };
+  /** Full parent → child service tree for this main category */
+  serviceFamily: {
+    title: string;
+    parent: { label: string; href: string };
+    items: ServiceOfferingItem[];
+    currentHref: string;
   };
   cta: ServiceCtaContent;
 };

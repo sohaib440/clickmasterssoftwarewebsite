@@ -103,6 +103,9 @@ export function mapSubCategoryToServicePage(
   const highlights = sub.highlights ?? main.highlights;
   const contentParagraphs =
     sub.content && sub.content.length > 0 ? sub.content : [sub.description];
+  const heroTitle = /\b(services?|solutions?)\b/i.test(sub.label)
+    ? sub.label
+    : `${sub.label} Services`;
 
   return {
     mainSlug: main.slug,
@@ -114,13 +117,14 @@ export function mapSubCategoryToServicePage(
     ],
     hero: {
       eyebrow: main.label,
-      title: sub.label,
+      title: heroTitle,
       description: tagline,
       image: sub.image ?? main.heroImage,
       primaryCta: defaultPrimaryCta,
       secondaryCta: defaultSecondaryCta,
     },
     contentParagraphs,
+    overviewTitle: `About ${sub.label}`,
     highlights: {
       title: `Why ${sub.label} with us`,
       items: highlights,
@@ -132,6 +136,17 @@ export function mapSubCategoryToServicePage(
     relatedSubs: {
       title: `More in ${main.label}`,
       items: siblings.map((item) => ({
+        label: item.label,
+        description: item.description,
+        href: subCategoryPath(main.slug, item.slug),
+        image: item.image,
+      })),
+    },
+    serviceFamily: {
+      title: `${main.label} services`,
+      parent: { label: main.label, href: mainCategoryPath(main.slug) },
+      currentHref: subCategoryPath(main.slug, sub.slug),
+      items: main.subCategories.map((item) => ({
         label: item.label,
         description: item.description,
         href: subCategoryPath(main.slug, item.slug),

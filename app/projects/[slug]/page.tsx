@@ -26,7 +26,14 @@ import {
 } from "@/lib/landing/constants";
 import { motionStagger } from "@/lib/landing/motion";
 import { selfCanonical } from "@/seo/canonical";
+import {
+  breadcrumbSchema,
+  faqPageSchema,
+  projectSchema,
+  videoObjectSchema,
+} from "@/seo/schema";
 import { cn } from "@/lib/utils";
+import { siteBrand } from "@/lib/landing/brand";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -52,6 +59,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: project.metaTitle,
       description: project.metaDescription,
       type: "article",
+      locale: "en_PK",
+      images: project.image
+        ? [
+            {
+              url: project.image.src,
+              width: project.image.width,
+              height: project.image.height,
+              alt: project.image.alt,
+            },
+          ]
+        : undefined,
     },
   };
 }
@@ -89,9 +107,46 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   }
 
   const related = projectDetails.filter((item) => item.slug !== project.slug).slice(0, 3);
+  const path = projectDetailPath(project.slug);
+
+  const schemas = [
+    projectSchema({
+      name: project.title,
+      description: project.metaDescription,
+      path,
+      category: project.category,
+      image: project.image,
+    }),
+    breadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Projects", path: projectPath },
+      { name: project.title, path },
+    ]),
+    ...(project.faqs?.length
+      ? [
+          faqPageSchema(project.faqs, {
+            id: `${siteBrand.url}${path}#faq`,
+            pageUrl: `${siteBrand.url}${path}`,
+          }),
+        ]
+      : []),
+    ...(project.video.youtubeId
+      ? [
+          videoObjectSchema({
+            name: project.video.title,
+            youtubeId: project.video.youtubeId,
+            description: project.metaDescription,
+          }),
+        ]
+      : []),
+  ];
 
   return (
     <div className="flex min-h-full w-full flex-col overflow-x-clip bg-black text-foreground">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+      />
       <SiteHeader />
 
       <main className="flex w-full flex-1 flex-col overflow-x-clip">

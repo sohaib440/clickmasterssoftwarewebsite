@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 import { AboutSection } from "@/components/landing/about-section";
 import { BlogSection } from "@/components/landing/blog-section";
@@ -10,12 +10,16 @@ import { FaqSection } from "@/components/landing/faq-section";
 import { IndustriesSection } from "@/components/landing/industries-section";
 import { ProcessSection } from "@/components/landing/process-section";
 import { ProjectsSection } from "@/components/landing/projects-section";
+import { RatingBadges } from "@/components/landing/rating-badges";
 import { Reveal } from "@/components/landing/reveal";
-import { ServicesSection } from "@/components/landing/services-section";
 import { SiteHeader } from "@/components/landing/navbar";
 import { TeamSection } from "@/components/landing/team-section";
 import { TechStackSection } from "@/components/landing/tech-stack-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
+import { TrustNumbersSection } from "@/components/landing/trust-numbers-section";
+import { CaseStudiesSection } from "@/components/case-study/case-studies-section";
+import { caseStudies } from "@/data/caseStudy";
+import { ServiceBreadcrumbs } from "@/components/services/shared/service-breadcrumbs";
 import {
   btnOnDark,
   btnOutlineDark,
@@ -31,6 +35,33 @@ import {
 import type { SubServicePageContent } from "@/lib/content/service-page-types";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
+import type { ReactNode } from "react";
+
+/** Renders `[label](/path)` markers from data/subServices.tsx copy */
+function textWithLinks(text: string, linkClassName?: string): ReactNode[] {
+  const nodes: ReactNode[] = [];
+  const pattern = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  while ((match = pattern.exec(text)) !== null) {
+    if (match.index > lastIndex) nodes.push(text.slice(lastIndex, match.index));
+    nodes.push(
+      <Link
+        key={`${match.index}-${match[2]}`}
+        href={match[2]}
+        className={cn(
+          "font-semibold text-primary underline decoration-primary/70 underline-offset-[3px] transition-colors hover:text-primary/80",
+          linkClassName
+        )}
+      >
+        {match[1]}
+      </Link>
+    );
+    lastIndex = match.index + match[0].length;
+  }
+  if (lastIndex < text.length) nodes.push(text.slice(lastIndex));
+  return nodes;
+}
 
 type SubServicePageLayoutProps = {
   content: SubServicePageContent;
@@ -39,11 +70,10 @@ type SubServicePageLayoutProps = {
 export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
   const {
     breadcrumbs,
-    parent,
     hero,
     contentParagraphs,
+    overviewTitle,
     highlights,
-    approach,
     relatedSubs,
     cta,
   } = content;
@@ -56,55 +86,34 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
       <SiteHeader />
 
       <main className="flex-1">
-        {/* Compact hero */}
-        <section className="relative overflow-hidden bg-black text-white">
+        <section className="relative w-full overflow-hidden bg-black text-white">
           <div className="pointer-events-none absolute inset-0" aria-hidden>
-            <div className="absolute -left-16 top-0 h-64 w-64 rounded-full bg-primary/12 blur-[90px]" />
-            <div className="absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-white/[0.04] blur-[100px]" />
+            <div className="absolute -left-20 top-0 h-72 w-72 rounded-full bg-primary/10 blur-[100px]" />
+            <div className="absolute -right-16 bottom-0 h-64 w-64 rounded-full bg-white/[0.04] blur-[100px]" />
           </div>
 
-          <div className={cn(container, sectionPad, "relative pb-10 md:pb-12")}>
+          <div className={cn(container, sectionPad, "relative")}>
             <Reveal immediate>
-              <nav
-                className="mb-6 flex flex-wrap items-center gap-2 text-sm text-white/60"
-                aria-label="Breadcrumb"
-              >
-                <Link href="/" className="inline-flex items-center gap-1.5 hover:text-white">
-                  <ArrowLeft className="size-4" aria-hidden />
-                  Home
-                </Link>
-                {breadcrumbs.slice(1).map((crumb, index) => (
-                  <span key={`${crumb.label}-${index}`} className="inline-flex items-center gap-2">
-                    <span aria-hidden>/</span>
-                    {crumb.href ? (
-                      <Link href={crumb.href} className="hover:text-white">
-                        {crumb.label}
-                      </Link>
-                    ) : (
-                      <span className="text-white">{crumb.label}</span>
-                    )}
-                  </span>
-                ))}
-              </nav>
+              <ServiceBreadcrumbs items={breadcrumbs} />
             </Reveal>
 
-            <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:gap-12">
+            <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.65fr)] lg:gap-10">
               <div className="min-w-0">
                 <Reveal immediate delay={motionStagger}>
-                  <p className={cn(overline, "text-primary/90")}>{hero.eyebrow}</p>
+                  <p className={cn(overline, "text-white/60")}>{hero.eyebrow}</p>
                 </Reveal>
                 <Reveal immediate delay={motionStagger * 2}>
-                  <h1 className="mt-3 font-heading text-3xl font-normal leading-[1.12] tracking-tight text-white sm:text-4xl lg:text-[2.75rem]">
+                  <h1 className="mt-4 font-heading text-4xl font-normal leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
                     {hero.title}
                   </h1>
                 </Reveal>
                 <Reveal immediate delay={motionStagger * 3}>
-                  <p className="mt-4 max-w-xl text-base leading-relaxed text-white/70">
+                  <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
                     {hero.description}
                   </p>
                 </Reveal>
                 <Reveal immediate delay={motionStagger * 4}>
-                  <div className="mt-7 flex flex-col gap-2 sm:flex-row sm:items-center">
+                  <div className="mt-8 flex flex-col gap-2 sm:flex-row sm:items-center">
                     <Link href={primaryCta.href} className={btnPrimary}>
                       {primaryCta.label}
                     </Link>
@@ -116,61 +125,77 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
               </div>
 
               <Reveal immediate delay={motionStagger * 2} direction="right">
-                <div className="overflow-hidden rounded-2xl border border-white/10 shadow-[0_24px_60px_rgba(0,0,0,0.35)]">
-                  <CardImage
-                    {...hero.image}
-                    className="aspect-[5/4] w-full object-cover"
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 45vw"
-                  />
-                </div>
+                {hero.image ? (
+                  <div className="mx-auto w-full max-w-[18rem] sm:max-w-[20rem] lg:ml-auto lg:mr-0 lg:max-w-[20rem]">
+                    <div className={cn(cardDark, "overflow-hidden p-0")}>
+                      <CardImage
+                        {...hero.image}
+                        className="aspect-square w-full"
+                        priority
+                        sizes="(max-width: 1024px) 288px, 280px"
+                      />
+                    </div>
+                  </div>
+                ) : null}
+                <RatingBadges
+                  variant="dark"
+                  className={hero.image ? "mt-5" : undefined}
+                />
               </Reveal>
             </div>
           </div>
         </section>
 
+        <TrustNumbersSection />
         <TrustedPartnersSection className="border-horizon-border/60 bg-white" />
         <AboutSection />
 
-        {/* Detail copy */}
-        <section className="w-full bg-white">
+        <section className="w-full bg-black text-white" aria-labelledby="sub-service-overview-heading">
           <div className={cn(container, sectionPad)}>
-            <div className="grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,0.6fr)] lg:items-start">
-              <div className="space-y-5">
-                {contentParagraphs.map((paragraph, index) => (
-                  <Reveal key={index} delay={index * motionStagger}>
-                    <p className="text-base leading-relaxed text-horizon-muted md:text-lg">
-                      {paragraph}
-                    </p>
-                  </Reveal>
-                ))}
-              </div>
+            <Reveal>
+              <p className={cn(overline, "text-white/55")}>Service overview</p>
+              <h2
+                id="sub-service-overview-heading"
+                className="mt-3 font-heading text-3xl font-normal text-white md:text-4xl"
+              >
+                {overviewTitle}
+              </h2>
+            </Reveal>
 
-              <Reveal delay={motionStagger} className={cn(cardSoft, "p-6 lg:sticky lg:top-24")}>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-horizon-muted">
-                  Part of
-                </p>
-                <Link
-                  href={parent.href}
-                  className="mt-2 inline-flex items-center gap-1 font-heading text-xl text-horizon-navy hover:text-primary"
-                >
-                  {parent.label}
-                  <ArrowUpRight className="size-4" aria-hidden />
-                </Link>
-                <p className="mt-3 text-sm leading-relaxed text-horizon-muted">
-                  Explore the full range of {parent.label.toLowerCase()} services, process, and
-                  related capabilities.
-                </p>
-              </Reveal>
+            <div className="mt-8 space-y-5">
+              {contentParagraphs.map((paragraph, index) => (
+                <Reveal key={index} delay={index * motionStagger}>
+                  <p className="text-justify text-base leading-relaxed text-white/70 md:text-lg">
+                    {textWithLinks(
+                      paragraph,
+                      "font-semibold text-primary decoration-primary/70 hover:text-primary/80"
+                    )}
+                  </p>
+                </Reveal>
+              ))}
             </div>
           </div>
         </section>
 
-        <ServicesSection />
         <IndustriesSection />
         <TechStackSection />
 
-        {/* Benefits dark cards */}
+        <ProcessSection />
+
+        <ProjectsSection />
+        {caseStudies.length > 0 ? (
+          <CaseStudiesSection
+            items={caseStudies.slice(0, 6)}
+            overlineText="Case studies"
+            title={
+              <>
+                Results from <span className="italic">real engagements</span>
+              </>
+            }
+            description="Selected case studies showing how we deliver outcomes across products and industries."
+          />
+        ) : null}
+
         <section className="w-full bg-black text-white">
           <div className={cn(container, sectionPad)}>
             <Reveal>
@@ -189,46 +214,8 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
           </div>
         </section>
 
-        <ProcessSection />
-
-        {/* Process timeline */}
-        <section className="w-full border-y border-horizon-border/60 bg-horizon-cream">
-          <div className={cn(container, sectionPad)}>
-            <Reveal>
-              <h2 className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
-                {approach.title}
-              </h2>
-            </Reveal>
-            <ol className="mt-10 space-y-0">
-              {approach.steps.map((step, index) => (
-                <li
-                  key={step.step}
-                  className={cn(
-                    "grid gap-4 border-horizon-border/70 py-6 sm:grid-cols-[4rem_minmax(0,1fr)] sm:gap-6",
-                    index > 0 && "border-t"
-                  )}
-                >
-                  <Reveal delay={index * motionStagger}>
-                    <span className="font-heading text-3xl text-primary/80">{step.step}</span>
-                  </Reveal>
-                  <Reveal delay={index * motionStagger}>
-                    <h3 className="font-heading text-xl font-medium text-horizon-navy">
-                      {step.title}
-                    </h3>
-                    <p className="mt-2 max-w-2xl text-sm leading-relaxed text-horizon-muted md:text-base">
-                      {step.description}
-                    </p>
-                  </Reveal>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </section>
-
-        <ProjectsSection />
         <TeamSection />
 
-        {/* Related sub-services */}
         {relatedSubs.items.length > 0 ? (
           <section className="w-full bg-white">
             <div className={cn(container, sectionPad)}>
@@ -274,15 +261,12 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
         <FaqSection />
         <ContactSection />
 
-        {/* CTA */}
         <section className="w-full bg-horizon-navy text-white">
-          <div className={cn(container, sectionPad, "text-center")}>
-            <Reveal>
+          <div className={cn(container, sectionPad)}>
+            <Reveal className="mx-auto max-w-2xl text-center">
               <h2 className="font-heading text-3xl font-normal md:text-4xl">{cta.title}</h2>
-              <p className="mx-auto mt-4 max-w-lg text-sm text-white/75 md:text-base">
-                {cta.description}
-              </p>
-              <Link href={cta.buttonHref} className={cn("mt-8", btnOnDark)}>
+              <p className="mt-4 text-white/70">{cta.description}</p>
+              <Link href={cta.buttonHref} className={cn(btnOnDark, "mt-8")}>
                 {cta.buttonLabel}
               </Link>
             </Reveal>
