@@ -23,6 +23,7 @@ export type ServiceCard = {
   title: string;
   description: string;
   image: string;
+  imageAlt?: string;
   Icon: LucideIcon;
   AltIcon: LucideIcon;
   tag: string;
@@ -47,6 +48,7 @@ export const services: ServiceCard[] = [
     description:
       "Custom software solutions tailored to your business needs, from discovery and architecture through build, launch, and ongoing support for startups and enterprises.",
     image: "/services/software-development.png",
+    imageAlt: "Software development services illustration",
     Icon: ShieldCheck,
     AltIcon: Globe2,
     tag: "Enterprise",
@@ -58,6 +60,7 @@ export const services: ServiceCard[] = [
     description:
       "Modern web applications with responsive design, strong performance, and SEO-friendly architecture for a seamless experience on every device and browser.",
     image: "/services/Web-Development.png",
+    imageAlt: "Web development services illustration",
     Icon: Globe2,
     AltIcon: Server,
     tag: "Web3 Ready",
@@ -68,6 +71,7 @@ export const services: ServiceCard[] = [
     description:
       "Secure, scalable mobile apps for iOS and Android with native quality and shared logic where it speeds delivery, without sacrificing performance or user feel.",
     image: "/services/Mobile-app-development.png",
+    imageAlt: "Mobile application development services illustration",
     Icon: Smartphone,
     AltIcon: ShieldCheck,
     tag: "Cross-Platform",
@@ -78,6 +82,7 @@ export const services: ServiceCard[] = [
     description:
       "Production AI for automation, insights, and smarter products, including agents, NLP, and vision systems with clear guardrails, monitoring, and human oversight.",
     image: "/services/Artificial-Intelligence.png",
+    imageAlt: "Artificial intelligence services illustration",
     Icon: BrainCircuit,
     AltIcon: Database,
     tag: "Intelligence",
@@ -89,6 +94,7 @@ export const services: ServiceCard[] = [
     description:
       "Research-led interfaces and design systems focused on usability, consistency, and conversion, from discovery and wireframes through high-fidelity UI and design QA.",
     image: "/services/UI-UX.png",
+    imageAlt: "UI/UX design and systems services illustration",
     Icon: Palette,
     AltIcon: Globe2,
     tag: "Design",
@@ -99,6 +105,7 @@ export const services: ServiceCard[] = [
     description:
       "Secure cloud-native infrastructure with CI/CD, monitoring, and scalable DevOps workflows so your team can ship reliably, recover quickly, and grow with confidence.",
     image: "/services/cloud-and-devops.png",
+    imageAlt: "Cloud and DevOps services illustration",
     Icon: Database,
     AltIcon: Server,
     tag: "DevSecOps",
@@ -110,6 +117,7 @@ export const services: ServiceCard[] = [
     description:
       "Custom ML models and pipelines from data prep and training to evaluation and production inference, so predictions and recommendations run reliably at scale.",
     image: "/services/Mechine-learning.png",
+    imageAlt: "Machine learning services illustration",
     Icon: Server,
     AltIcon: BrainCircuit,
     tag: "Reliability",
@@ -120,6 +128,7 @@ export const services: ServiceCard[] = [
     description:
       "Data engineering, warehousing, and analytics solutions that turn raw business information into trusted dashboards, reports, and decisions your teams can act on.",
     image: "/services/Data-Service.png",
+    imageAlt: "Data services illustration",
     Icon: Database,
     AltIcon: Palette,
     tag: "Platform",
@@ -130,6 +139,7 @@ export const services: ServiceCard[] = [
     description:
       "Manual and automated testing across web, mobile, and APIs, covering functional, regression, and performance checks so issues are caught before users and releases stay confident.",
     image: "/services/Testing-and-QA.png",
+    imageAlt: "Software testing and QA services illustration",
     Icon: Database,
     AltIcon: Palette,
     tag: "Platform",

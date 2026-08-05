@@ -41,7 +41,7 @@ function ServiceCard({ service, index }: { service: ServiceCardData; index: numb
           />
           <Image
             src={service.image}
-            alt=""
+            alt={service.imageAlt ?? `${service.title} service image`}
             width={320}
             height={320}
             className="relative z-10 size-[17.5rem] object-contain drop-shadow-[0_12px_28px_rgba(0,0,0,0.45)] transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-3 sm:size-[19rem]"
