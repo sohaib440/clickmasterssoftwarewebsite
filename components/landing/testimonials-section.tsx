@@ -26,6 +26,7 @@ type TestimonialItem = {
   quote: string;
   author: string;
   role: string;
+  source?: string;
 };
 
 type TestimonialsSectionProps = {
@@ -35,7 +36,7 @@ type TestimonialsSectionProps = {
 };
 
 export function TestimonialsSection({
-  overlineText = "Top rated software company reviews",
+  overlineText = "Reviews from Google, Clutch & Trustpilot",
   title = (
     <>
       What <span className="italic">partners</span> say
@@ -91,6 +92,11 @@ export function TestimonialsSection({
                 delay={i * motionStagger}
                 className={cn(card, "flex h-full flex-col p-4 lg:p-5")}
               >
+                {item.source ? (
+                  <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.16em] text-horizon-muted">
+                    Via {item.source}
+                  </p>
+                ) : null}
                 <blockquote className="flex-1 text-sm leading-relaxed text-left text-horizon-muted md:text-[15px]">
                   &ldquo;{item.quote}&rdquo;
                 </blockquote>

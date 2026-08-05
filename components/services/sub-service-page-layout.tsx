@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Layers } from "lucide-react";
 
 import { AboutSection } from "@/components/landing/about-section";
 import { BlogSection } from "@/components/landing/blog-section";
@@ -10,12 +10,15 @@ import { FaqSection } from "@/components/landing/faq-section";
 import { IndustriesSection } from "@/components/landing/industries-section";
 import { ProcessSection } from "@/components/landing/process-section";
 import { ProjectsSection } from "@/components/landing/projects-section";
+import { RatingBadges } from "@/components/landing/rating-badges";
 import { Reveal } from "@/components/landing/reveal";
-import { ServicesSection } from "@/components/landing/services-section";
 import { SiteHeader } from "@/components/landing/navbar";
 import { TeamSection } from "@/components/landing/team-section";
 import { TechStackSection } from "@/components/landing/tech-stack-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
+import { TrustNumbersSection } from "@/components/landing/trust-numbers-section";
+import { CaseStudiesSection } from "@/components/case-study/case-studies-section";
+import { caseStudies } from "@/data/caseStudy";
 import {
   btnOnDark,
   btnOutlineDark,
@@ -43,8 +46,8 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
     hero,
     contentParagraphs,
     highlights,
-    approach,
     relatedSubs,
+    serviceFamily,
     cta,
   } = content;
 
@@ -56,7 +59,6 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
       <SiteHeader />
 
       <main className="flex-1">
-        {/* Compact hero */}
         <section className="relative overflow-hidden bg-black text-white">
           <div className="pointer-events-none absolute inset-0" aria-hidden>
             <div className="absolute -left-16 top-0 h-64 w-64 rounded-full bg-primary/12 blur-[90px]" />
@@ -113,17 +115,22 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
                     </Link>
                   </div>
                 </Reveal>
+                <Reveal immediate delay={motionStagger * 5}>
+                  <RatingBadges variant="dark" className="mt-8" />
+                </Reveal>
               </div>
 
               <Reveal immediate delay={motionStagger * 2} direction="right">
                 {hero.image ? (
-                  <div className="overflow-hidden rounded-2xl border border-white/10 shadow-[0_24px_60px_rgba(0,0,0,0.35)]">
-                    <CardImage
-                      {...hero.image}
-                      className="aspect-[5/4] w-full object-cover"
-                      priority
-                      sizes="(max-width: 1024px) 100vw, 45vw"
-                    />
+                  <div className="mx-auto w-full max-w-[18rem] sm:max-w-[20rem] lg:ml-auto lg:mr-0 lg:max-w-[20rem]">
+                    <div className="overflow-hidden rounded-2xl border border-white/10 shadow-[0_24px_60px_rgba(0,0,0,0.35)]">
+                      <CardImage
+                        {...hero.image}
+                        className="aspect-square w-full object-cover"
+                        priority
+                        sizes="(max-width: 1024px) 288px, 280px"
+                      />
+                    </div>
                   </div>
                 ) : null}
               </Reveal>
@@ -132,9 +139,9 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
         </section>
 
         <TrustedPartnersSection className="border-horizon-border/60 bg-white" />
+        <TrustNumbersSection />
         <AboutSection />
 
-        {/* Detail copy */}
         <section className="w-full bg-white">
           <div className={cn(container, sectionPad)}>
             <div className="grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,0.6fr)] lg:items-start">
@@ -168,11 +175,92 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
           </div>
         </section>
 
-        <ServicesSection />
+        {serviceFamily.items.length > 0 ? (
+          <section className="w-full bg-black text-white" aria-labelledby="service-family-heading">
+            <div className={cn(container, sectionPad)}>
+              <Reveal>
+                <p className={cn(overline, "text-white/55")}>Our services</p>
+                <h2
+                  id="service-family-heading"
+                  className="mt-3 font-heading text-3xl font-normal text-white md:text-4xl"
+                >
+                  {serviceFamily.title}
+                </h2>
+                <Link
+                  href={serviceFamily.parent.href}
+                  className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-white/75 transition-colors hover:text-primary"
+                >
+                  Parent: {serviceFamily.parent.label}
+                  <ArrowUpRight className="size-4" aria-hidden />
+                </Link>
+              </Reveal>
+
+              <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {serviceFamily.items.map((item, index) => {
+                  const isCurrent = item.href === serviceFamily.currentHref;
+                  return (
+                    <li key={item.href} className="h-full">
+                      <Reveal delay={index * motionStagger} className="h-full">
+                        <Link
+                          href={item.href}
+                          aria-current={isCurrent ? "page" : undefined}
+                          className={cn(
+                            "group flex h-full flex-col rounded-2xl border p-6 transition-colors duration-300",
+                            isCurrent
+                              ? "border-primary/50 bg-primary/10"
+                              : "border-white/10 bg-white/[0.04] hover:border-white/25 hover:bg-white/[0.07]"
+                          )}
+                        >
+                          <div className="flex items-start justify-between gap-3">
+                            <span className="inline-flex size-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-white">
+                              <Layers className="size-5" strokeWidth={1.5} aria-hidden />
+                            </span>
+                            <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-white/45">
+                              {isCurrent ? "Current" : "Child service"}
+                            </span>
+                          </div>
+                          <h3 className="mt-6 font-heading text-xl font-medium leading-snug text-white md:text-[1.35rem]">
+                            {item.label}
+                          </h3>
+                          <p className="mt-3 flex-1 text-sm leading-relaxed text-white/65">
+                            {item.description}
+                          </p>
+                          <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-white transition-colors group-hover:text-primary">
+                            {isCurrent ? "You are here" : "Learn more"}
+                            <ArrowUpRight
+                              className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                              aria-hidden
+                            />
+                          </span>
+                        </Link>
+                      </Reveal>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </section>
+        ) : null}
+
         <IndustriesSection />
         <TechStackSection />
 
-        {/* Benefits dark cards */}
+        <ProcessSection />
+
+        <ProjectsSection />
+        {caseStudies.length > 0 ? (
+          <CaseStudiesSection
+            items={caseStudies.slice(0, 6)}
+            overlineText="Case studies"
+            title={
+              <>
+                Results from <span className="italic">real engagements</span>
+              </>
+            }
+            description="Selected case studies showing how we deliver outcomes across products and industries."
+          />
+        ) : null}
+
         <section className="w-full bg-black text-white">
           <div className={cn(container, sectionPad)}>
             <Reveal>
@@ -191,46 +279,8 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
           </div>
         </section>
 
-        <ProcessSection />
-
-        {/* Process timeline */}
-        <section className="w-full border-y border-horizon-border/60 bg-horizon-cream">
-          <div className={cn(container, sectionPad)}>
-            <Reveal>
-              <h2 className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
-                {approach.title}
-              </h2>
-            </Reveal>
-            <ol className="mt-10 space-y-0">
-              {approach.steps.map((step, index) => (
-                <li
-                  key={step.step}
-                  className={cn(
-                    "grid gap-4 border-horizon-border/70 py-6 sm:grid-cols-[4rem_minmax(0,1fr)] sm:gap-6",
-                    index > 0 && "border-t"
-                  )}
-                >
-                  <Reveal delay={index * motionStagger}>
-                    <span className="font-heading text-3xl text-primary/80">{step.step}</span>
-                  </Reveal>
-                  <Reveal delay={index * motionStagger}>
-                    <h3 className="font-heading text-xl font-medium text-horizon-navy">
-                      {step.title}
-                    </h3>
-                    <p className="mt-2 max-w-2xl text-sm leading-relaxed text-horizon-muted md:text-base">
-                      {step.description}
-                    </p>
-                  </Reveal>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </section>
-
-        <ProjectsSection />
         <TeamSection />
 
-        {/* Related sub-services */}
         {relatedSubs.items.length > 0 ? (
           <section className="w-full bg-white">
             <div className={cn(container, sectionPad)}>
@@ -276,15 +326,12 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
         <FaqSection />
         <ContactSection />
 
-        {/* CTA */}
         <section className="w-full bg-horizon-navy text-white">
-          <div className={cn(container, sectionPad, "text-center")}>
-            <Reveal>
+          <div className={cn(container, sectionPad)}>
+            <Reveal className="mx-auto max-w-2xl text-center">
               <h2 className="font-heading text-3xl font-normal md:text-4xl">{cta.title}</h2>
-              <p className="mx-auto mt-4 max-w-lg text-sm text-white/75 md:text-base">
-                {cta.description}
-              </p>
-              <Link href={cta.buttonHref} className={cn("mt-8", btnOnDark)}>
+              <p className="mt-4 text-white/70">{cta.description}</p>
+              <Link href={cta.buttonHref} className={cn(btnOnDark, "mt-8")}>
                 {cta.buttonLabel}
               </Link>
             </Reveal>

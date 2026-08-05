@@ -84,6 +84,13 @@ export type SubServicePageContent = {
     title: string;
     items: ServiceOfferingItem[];
   };
+  /** Full parent → child service tree for this main category */
+  serviceFamily: {
+    title: string;
+    parent: { label: string; href: string };
+    items: ServiceOfferingItem[];
+    currentHref: string;
+  };
   cta: ServiceCtaContent;
 };
 

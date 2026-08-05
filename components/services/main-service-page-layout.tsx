@@ -12,18 +12,19 @@ import { ProjectsSection } from "@/components/landing/projects-section";
 import { TeamSection } from "@/components/landing/team-section";
 import { TechStackSection } from "@/components/landing/tech-stack-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
+import { TrustNumbersSection } from "@/components/landing/trust-numbers-section";
 import { CardImage } from "@/components/landing/card-image";
 import { RatingBadges } from "@/components/landing/rating-badges";
 import { Reveal } from "@/components/landing/reveal";
 import { SiteHeader } from "@/components/landing/navbar";
 import { ServiceBreadcrumbs } from "@/components/services/shared/service-breadcrumbs";
-import { ServiceApproachSection } from "@/components/services/service-approach-section";
 import { CleanCategoryUrl } from "@/components/services/clean-category-url";
+import { CaseStudiesSection } from "@/components/case-study/case-studies-section";
+import { caseStudies } from "@/data/caseStudy";
 import {
   btnOnDark,
   btnOutlineDark,
   btnPrimary,
-  card,
   cardDark,
   cardSoft,
   contactPath,
@@ -47,7 +48,6 @@ export function MainServicePageLayout({ content }: MainServicePageLayoutProps) {
     hero,
     capabilities,
     highlights,
-    approach,
     related,
     cta,
   } = content;
@@ -101,7 +101,7 @@ export function MainServicePageLayout({ content }: MainServicePageLayoutProps) {
 
               <Reveal immediate delay={motionStagger * 2} direction="right">
                 {hero.image ? (
-                  <div className="mx-auto w-full max-w-[16rem] sm:max-w-[18rem] lg:ml-auto lg:mr-0 lg:max-w-[17.5rem]">
+                  <div className="mx-auto w-full max-w-[18rem] sm:max-w-[20rem] lg:ml-auto lg:mr-0 lg:max-w-[20rem]">
                     <div className={cn(cardDark, "overflow-hidden p-0")}>
                       <CardImage
                         {...hero.image}
@@ -121,6 +121,7 @@ export function MainServicePageLayout({ content }: MainServicePageLayoutProps) {
           </div>
         </section>
 
+        <TrustNumbersSection />
         <TrustedPartnersSection className="border-horizon-border/60 bg-white" />
         <AboutSection />
 
@@ -184,7 +185,23 @@ export function MainServicePageLayout({ content }: MainServicePageLayoutProps) {
         <IndustriesSection />
         <TechStackSection />
 
-        <section className="w-full bg-horizon-peach/50 text-horizon-navy">
+        <ProcessSection />
+
+        <ProjectsSection />
+        {caseStudies.length > 0 ? (
+          <CaseStudiesSection
+            items={caseStudies.slice(0, 6)}
+            overlineText="Case studies"
+            title={
+              <>
+                Results from <span className="italic">real engagements</span>
+              </>
+            }
+            description="Selected case studies showing how we deliver outcomes across products and industries."
+          />
+        ) : null}
+
+        <section className="w-full bg-black text-white">
           <div className={cn(container, sectionPad)}>
             <Reveal>
               <h2 className="font-heading text-3xl font-normal md:text-4xl">
@@ -194,14 +211,14 @@ export function MainServicePageLayout({ content }: MainServicePageLayoutProps) {
             <ul className="mt-10 grid gap-4 md:grid-cols-3">
               {highlights.items.map((item, index) => (
                 <li key={item.title}>
-                  <Reveal delay={index * motionStagger} className={cn(card, "h-full p-6")}>
-                    <span className="flex size-9 items-center justify-center rounded-full bg-horizon-sky/60 text-horizon-navy">
+                  <Reveal delay={index * motionStagger} className={cn(cardDark, "h-full p-6")}>
+                    <span className="flex size-9 items-center justify-center rounded-full bg-white/10 text-primary">
                       <Check className="size-4" strokeWidth={2} aria-hidden />
                     </span>
-                    <h3 className="mt-4 font-heading text-lg font-medium text-horizon-navy">
+                    <h3 className="mt-4 font-heading text-lg font-medium text-white">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-horizon-muted">
+                    <p className="mt-2 text-sm leading-relaxed text-white/70">
                       {item.description}
                     </p>
                   </Reveal>
@@ -211,10 +228,6 @@ export function MainServicePageLayout({ content }: MainServicePageLayoutProps) {
           </div>
         </section>
 
-        <ProcessSection />
-        <ServiceApproachSection title={approach.title} steps={approach.steps} />
-
-        <ProjectsSection />
         <TeamSection />
 
         {related && related.items.length > 0 ? (

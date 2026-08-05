@@ -27,10 +27,12 @@ export type SubCategoryContent = {
   description: string;
   /** Optional card/hero image for sub-category page */
   image?: ContentImage;
-  /** Optional; defaults to description */
+  /** Hero supporting copy; defaults to description */
   tagline?: string;
+  /** Absolute document title when set */
+  pageTitle?: string;
   metaDescription?: string;
-  /** Optional extra copy blocks on sub-category page */
+  /** Body paragraphs on the sub-category page */
   content?: string[];
   /** Optional; falls back to parent main category highlights */
   highlights?: ContentBlock[];

@@ -267,6 +267,21 @@ const defaultHighlights: ContentBlock[] = [
     description:
       "Weekly demos and honest timelines so you always know what shipped and what is next.",
   },
+  {
+    title: "Outcome-focused scoping",
+    description:
+      "We prioritize the work that moves metrics, not a padded backlog of nice-to-haves that burn budget.",
+  },
+  {
+    title: "Security and quality built in",
+    description:
+      "Code review, testing, and secure defaults are part of delivery, not an afterthought before go-live.",
+  },
+  {
+    title: "Global collaboration, clear ownership",
+    description:
+      "Timezone-friendly communication with a single accountable team across the UK, USA, Canada, Australia, UAE, and Pakistan.",
+  },
 ];
 
 const defaultApproach: ApproachStep[] = [
@@ -491,6 +506,21 @@ export const mainCategories: MainCategoryContent[] = [
         title: "Engineering-aware",
         description:
           "Designs that respect technical constraints and ship without endless revision cycles.",
+      },
+      {
+        title: "Conversion-minded UI",
+        description:
+          "Layouts and flows shaped to support clarity, trust, and the actions that grow your product.",
+      },
+      {
+        title: "Accessible by default",
+        description:
+          "Contrast, focus states, and inclusive patterns baked into the system so more users can succeed.",
+      },
+      {
+        title: "Design-to-dev handoff",
+        description:
+          "Specs, tokens, and component notes that engineers can implement without guessing intent.",
       },
     ],
   }),

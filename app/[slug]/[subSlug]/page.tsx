@@ -24,10 +24,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const description =
     data.sub.metaDescription ??
-    `${data.sub.label} ${data.main.label}. ${data.sub.description}`;
+    `${data.sub.label} from a leading software development company. ${data.sub.description}`;
+
+  if (data.sub.pageTitle) {
+    return {
+      title: { absolute: data.sub.pageTitle },
+      description,
+      ...selfCanonical(`/${slug}/${subSlug}`),
+    };
+  }
 
   return {
-    title: `${data.sub.label} | ${data.main.label} | Software Development Company Software`,
+    title: `${data.sub.label} | ${data.main.label} | Next Software Development Company`,
     description,
     ...selfCanonical(`/${slug}/${subSlug}`),
   };
