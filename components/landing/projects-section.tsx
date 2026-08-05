@@ -114,7 +114,7 @@ function useCardSwapDimensions() {
 
 export function ProjectsSection({
   projects = showcaseProjects,
-  overlineText = "Our work",
+  overlineText = "Software house portfolio",
   title = (
     <>
       Recent <span className="italic">projects</span>

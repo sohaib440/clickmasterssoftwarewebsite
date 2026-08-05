@@ -7,13 +7,16 @@ import type { HeroImageAsset } from "./types";
 export type { HeroImageAsset };
 
 export const homeHero = {
-  eyebrow: "Leading Software Development Company in Pakistan",
+  eyebrow: "Leading Software Development Company",
   headlineBefore: "We build",
   headlineEmphasis: "powerful software",
-  headlineAfter: "that businesses depend on",
-  subtextBefore: "Empowering startups, SMBs, and enterprises worldwide with ",
+  headlineAfter:
+    "as a leading software development company businesses depend on",
+  subtextBefore:
+    "A top rated software house and leading software development company empowering startups, SMBs, and enterprises worldwide with ",
   subtextHighlight: "scalable, secure, and innovative",
-  subtextAfter: " digital solutions that drive growth and create real impact.",
+  subtextAfter:
+    " custom software development, web apps, mobile apps, AI, CRM, ERP, SaaS, cloud, and DevOps solutions that drive growth and create real impact.",
   primaryCta: "Get a Free Quote",
   secondaryCta: "View Our Work",
   secondaryHref: projectPath,

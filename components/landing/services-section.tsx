@@ -75,13 +75,13 @@ export function ServicesSection() {
     <section id="services" className="relative overflow-hidden bg-black text-white">
       <LandingContainer className="relative z-10">
         <SectionHeading
-          overlineText="What we do"
+          overlineText="Software company services"
           title={
             <>
               Innovating your <span className="italic">digital future</span>
             </>
           }
-          description="We blend cutting-edge technology with world-class design to build products that define industries."
+          description="As a leading software development company, we blend cutting-edge technology with world-class design to build products that define industries."
           align="left"
           dark
           className={sectionHeadingGap}

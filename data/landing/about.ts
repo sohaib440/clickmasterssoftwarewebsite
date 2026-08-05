@@ -4,9 +4,9 @@ export const aboutSection = {
   teamLink: teamPath,
   teamCta: "Meet our team",
   paragraphs: [
-    "Software Development Company is a globally trusted software development company headquartered in Pakistan, with clients and delivery experience spanning the United States, United Kingdom, United Arab Emirates, Canada, and Australia. We were founded with one belief: that great software should be accessible to every business not just the Fortune 500.",
+    "Next Software Development Company is a top rated software house and globally trusted software company, with clients and delivery experience spanning the United States, United Kingdom, United Arab Emirates, Canada, and Australia. We were founded with one belief: that great software should be accessible to every business not just the Fortune 500.",
     "Our team of 60+ software engineers, user interface and user experience designers, quality assurance specialists, and project managers has spent over a decade turning complex business challenges into clean, efficient, and scalable digital solutions. Whether you need a mobile application for your startup, a custom enterprise resource planning system for your manufacturing business, or an enterprise software-as-a-service platform, we have built it before and we can build it for you.",
-    "As a software development company that operates at the intersection of global quality and competitive pricing, Software Development Company gives international clients the best of both worlds English-speaking, timezone-flexible developers with world-class technical skills at a fraction of the cost of Western development firms.",
+    "As a leading software development company that operates at the intersection of global quality and competitive pricing, Next Software Development Company gives international clients the best of both worlds English-speaking, timezone-flexible developers with world-class technical skills at a fraction of the cost of Western development firms.",
   ],
   values: [
     {

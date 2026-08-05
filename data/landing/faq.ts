@@ -3,7 +3,7 @@ import type { FaqItem } from "./types";
 export type { FaqItem };
 
 export const faqIntro =
-  "Everything you need to know before starting a project with us. Still have questions? We're happy to walk you through everything on a free call.";
+  "Everything you need to know before starting a project with our software development company. Still have questions? We're happy to walk you through everything on a free call.";
 
 export const faqs: FaqItem[] = [
   {
@@ -18,7 +18,7 @@ export const faqs: FaqItem[] = [
     tag: "Pricing",
     question: "How much does it cost to hire a software development company?",
     answer:
-      "Software development costs vary widely based on project scope, complexity, and the team you hire. As a Pakistan-based software development company, we offer highly competitive rates compared to US or UK firms typically 40–60% lower for the same quality of work. We provide a detailed, transparent quote after a free discovery call. Projects range from PKR 150,000 for a simple MVP to PKR 3,500,000+ for enterprise platforms.",
+      "Software development costs vary widely based on project scope, complexity, and the team you hire. As a leading software development company with competitive global rates, we typically deliver 40–60% lower cost than many US or UK firms for the same quality of work. We provide a detailed, transparent quote after a free discovery call. Projects range from starter MVPs to full enterprise platforms.",
   },
   {
     column: "left",

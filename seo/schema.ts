@@ -69,7 +69,12 @@ const countriesServed = [
 ] as const;
 
 const siteKeywords = [
+  "Leading Software Development Company",
+  "Top Rated Software House",
   "Software Development Company",
+  "Software House",
+  "Software Company",
+  "Best Software Company",
   "Custom Software",
   "Web Development",
   "Mobile Apps",
@@ -77,7 +82,8 @@ const siteKeywords = [
   "CRM",
   "ERP",
   "SaaS",
-  "Pakistan",
+  "Cloud",
+  "DevOps",
 ] as const;
 
 const openingHours = {

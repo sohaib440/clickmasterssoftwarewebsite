@@ -42,12 +42,12 @@ export const contactTimelineOptions: ContactSelectOption[] = [
 
 
 export const homeContact = {
-  overline: "Start here",
+  overline: "Work with a software house",
   titleBefore: "Let's build your",
   titleEmphasis: "next big thing",
   subtext:
-    "Tell us about your project. We will get back to you within 24 hours with a clear path forward: no obligation, no sales pressure.",
+    "Tell our leading software development company about your project. We will get back to you within 24 hours with a clear path forward: no obligation, no sales pressure.",
   emailPlaceholder: "Your email address",
   cta: "Get Started",
-  reassurance: "Free consultation · No commitment · Based in Islamabad, Pakistan",
+  reassurance: "Free consultation · No commitment · Global delivery",
 } as const;

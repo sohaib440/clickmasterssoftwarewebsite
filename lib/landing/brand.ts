@@ -39,14 +39,27 @@ export const siteSocial = {
 } as const;
 
 export const siteMetadata = {
-  title: "Next Software Development Company",
+  title:
+    "Leading Software Development Company & Top Rated Software House | Next Software Development Company",
   description:
-    "Next Software Development Company is a software development company in Pakistan providing custom software development, web application development, mobile application development, AI solutions, CRM, ERP, SaaS, cloud, and DevOps services for businesses worldwide.",
+    "Next Software Development Company is a leading software development company and top rated software house delivering custom software, web apps, mobile apps, AI, CRM, ERP, SaaS, cloud, and DevOps for startups, SMBs, and enterprises worldwide.",
   keywords: [
-    "software development",
+    "leading software development company",
     "software development company",
+    "top rated software house",
+    "top rated software company",
+    "best software house",
+    "best software company",
+    "leading software company",
+    "software house",
     "software company",
-    "software development company in Pakistan",
-    "software company in Islamabad",
+    "custom software development",
+    "web application development",
+    "mobile application development",
+    "AI solutions",
+    "CRM software",
+    "ERP software",
+    "SaaS development",
+    "cloud and DevOps",
   ],
 } as const;

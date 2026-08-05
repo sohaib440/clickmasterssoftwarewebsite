@@ -35,10 +35,11 @@ type TestimonialsSectionProps = {
 };
 
 export function TestimonialsSection({
-  overlineText = "Testimonials",
+  overlineText = "Client reviews",
   title = (
     <>
-      What <span className="italic">partners</span> say
+      What partners say about our{" "}
+      <span className="italic">software company</span>
     </>
   ),
   items,
