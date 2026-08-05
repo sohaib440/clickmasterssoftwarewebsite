@@ -97,7 +97,7 @@ function withParentMainLinks(text: string, mainSlug: string, mainLabel: string):
   return next;
 }
 
-/** Bake sub → parent main service internal links into each sub-service's copy */
+/** Bake sub-service overview copy with links to the parent main service page */
 function withInternalLinks(map: SubServicesMap): SubServicesMap {
   return Object.fromEntries(
     Object.entries(map).map(([mainSlug, items]) => {
@@ -107,21 +107,23 @@ function withInternalLinks(map: SubServicesMap): SubServicesMap {
       return [
         mainSlug,
         items.map((item) => {
-          let tagline = withParentMainLinks(item.tagline ?? item.description, mainSlug, mainLabel);
-          const content = (item.content ?? [item.description]).map((paragraph) =>
-            withParentMainLinks(paragraph, mainSlug, mainLabel),
-          );
+          // Hero tagline stays plain text (keywords only, no links)
+          const tagline = (item.tagline ?? item.description)
+            .replace(/\s*Explore our \[[^\]]+\]\([^)]+\) services\.?/gi, "")
+            .trim();
 
-          // Hero always includes an explicit parent-main internal link
-          if (!tagline.includes(`](${mainHref})`)) {
-            tagline = `${tagline} Explore our [${mainLabel}](${mainHref}) services.`;
-          }
+          const body = (item.content ?? [item.description])
+            .map((paragraph) =>
+              paragraph
+                .replace(/^This page is part of our \[[^\]]+\]\([^)]+\) services\.[^.]*\.\s*/i, "")
+                .trim(),
+            )
+            .filter(Boolean)
+            .map((paragraph) => withParentMainLinks(paragraph, mainSlug, mainLabel));
 
-          if (!content.some((paragraph) => paragraph.includes(`](${mainHref})`))) {
-            content.push(
-              `This page is part of our [${mainLabel}](${mainHref}) services. Open the main service page for the full scope, process, and related capabilities.`,
-            );
-          }
+          const overview = `${item.label} sits inside our [${mainLabel}](${mainHref}) practice. As a leading software development company and software house, we deliver ${item.label.toLowerCase()} for startups, SMBs, and enterprises with clear scope, senior engineering, and a path from discovery to launch.`;
+
+          const content = [overview, ...body];
 
           return { ...item, tagline, content };
         }),

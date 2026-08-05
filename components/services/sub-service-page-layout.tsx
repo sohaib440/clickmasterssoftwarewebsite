@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight, Layers } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 import { AboutSection } from "@/components/landing/about-section";
 import { BlogSection } from "@/components/landing/blog-section";
@@ -19,6 +19,7 @@ import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { TrustNumbersSection } from "@/components/landing/trust-numbers-section";
 import { CaseStudiesSection } from "@/components/case-study/case-studies-section";
 import { caseStudies } from "@/data/caseStudy";
+import { ServiceBreadcrumbs } from "@/components/services/shared/service-breadcrumbs";
 import {
   btnOnDark,
   btnOutlineDark,
@@ -71,9 +72,10 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
     breadcrumbs,
     parent,
     hero,
+    contentParagraphs,
+    overviewTitle,
     highlights,
     relatedSubs,
-    serviceFamily,
     cta,
   } = content;
 
@@ -85,91 +87,65 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
       <SiteHeader />
 
       <main className="flex-1">
-        <section className="relative overflow-hidden bg-black text-white">
+        <section className="relative w-full overflow-hidden bg-black text-white">
           <div className="pointer-events-none absolute inset-0" aria-hidden>
-            <div className="absolute -left-16 top-0 h-64 w-64 rounded-full bg-primary/12 blur-[90px]" />
-            <div className="absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-white/[0.04] blur-[100px]" />
+            <div className="absolute -left-20 top-0 h-72 w-72 rounded-full bg-primary/10 blur-[100px]" />
+            <div className="absolute -right-16 bottom-0 h-64 w-64 rounded-full bg-white/[0.04] blur-[100px]" />
           </div>
 
-          <div className={cn(container, sectionPad, "relative pb-10 md:pb-12")}>
+          <div className={cn(container, sectionPad, "relative")}>
             <Reveal immediate>
-              <nav
-                className="mb-6 flex flex-wrap items-center gap-2 text-sm text-white/60"
-                aria-label="Breadcrumb"
-              >
-                <Link href="/" className="inline-flex items-center gap-1.5 hover:text-white">
-                  <ArrowLeft className="size-4" aria-hidden />
-                  Home
-                </Link>
-                {breadcrumbs.slice(1).map((crumb, index) => (
-                  <span key={`${crumb.label}-${index}`} className="inline-flex items-center gap-2">
-                    <span aria-hidden>/</span>
-                    {crumb.href ? (
-                      <Link href={crumb.href} className="hover:text-white">
-                        {crumb.label}
-                      </Link>
-                    ) : (
-                      <span className="text-white">{crumb.label}</span>
-                    )}
-                  </span>
-                ))}
-              </nav>
+              <ServiceBreadcrumbs items={breadcrumbs} />
             </Reveal>
 
-            <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:gap-12">
+            <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.65fr)] lg:gap-10">
               <div className="min-w-0">
                 <Reveal immediate delay={motionStagger}>
-                  <p className={cn(overline, "text-primary/90")}>
-                    <Link href={parent.href} className="hover:text-primary">
+                  <p className={cn(overline, "text-white/60")}>
+                    <Link href={parent.href} className="transition-colors hover:text-white">
                       {hero.eyebrow}
                     </Link>
                   </p>
                 </Reveal>
                 <Reveal immediate delay={motionStagger * 2}>
-                  <h1 className="mt-3 font-heading text-3xl font-normal leading-[1.12] tracking-tight text-white sm:text-4xl lg:text-[2.75rem]">
+                  <h1 className="mt-4 font-heading text-4xl font-normal leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
                     {hero.title}
                   </h1>
                 </Reveal>
                 <Reveal immediate delay={motionStagger * 3}>
-                  <p className="mt-4 max-w-xl text-base leading-relaxed text-white/70">
-                    {textWithLinks(hero.description, "text-white decoration-primary/50 hover:text-primary")}
+                  <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
+                    {hero.description}
                   </p>
                 </Reveal>
                 <Reveal immediate delay={motionStagger * 4}>
-                  <div className="mt-7 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
+                  <div className="mt-8 flex flex-col gap-2 sm:flex-row sm:items-center">
                     <Link href={primaryCta.href} className={btnPrimary}>
                       {primaryCta.label}
                     </Link>
                     <Link href={secondaryCta.href} className={btnOutlineDark}>
                       {secondaryCta.label}
                     </Link>
-                    {/* <Link
-                      href={parent.href}
-                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary underline decoration-primary/70 underline-offset-4 hover:text-primary/80"
-                    >
-                      View all {parent.label} services
-                      <ArrowUpRight className="size-4" aria-hidden />
-                    </Link> */}
                   </div>
-                </Reveal>
-                <Reveal immediate delay={motionStagger * 5}>
-                  <RatingBadges variant="dark" className="mt-8" />
                 </Reveal>
               </div>
 
               <Reveal immediate delay={motionStagger * 2} direction="right">
                 {hero.image ? (
                   <div className="mx-auto w-full max-w-[18rem] sm:max-w-[20rem] lg:ml-auto lg:mr-0 lg:max-w-[20rem]">
-                    <div className="overflow-hidden rounded-2xl border border-white/10 shadow-[0_24px_60px_rgba(0,0,0,0.35)]">
+                    <div className={cn(cardDark, "overflow-hidden p-0")}>
                       <CardImage
                         {...hero.image}
-                        className="aspect-square w-full object-cover"
+                        className="aspect-square w-full"
                         priority
                         sizes="(max-width: 1024px) 288px, 280px"
                       />
                     </div>
                   </div>
                 ) : null}
+                <RatingBadges
+                  variant="dark"
+                  className={hero.image ? "mt-5" : undefined}
+                />
               </Reveal>
             </div>
           </div>
@@ -179,72 +155,32 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
         <TrustedPartnersSection className="border-horizon-border/60 bg-white" />
         <AboutSection />
 
-        {serviceFamily.items.length > 0 ? (
-          <section className="w-full bg-black text-white" aria-labelledby="service-family-heading">
-            <div className={cn(container, sectionPad)}>
-              <Reveal>
-                <p className={cn(overline, "text-white/55")}>Our services</p>
-                <h2
-                  id="service-family-heading"
-                  className="mt-3 font-heading text-3xl font-normal text-white md:text-4xl"
-                >
-                  {serviceFamily.title}
-                </h2>
-                <Link
-                  href={serviceFamily.parent.href}
-                  className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-white/75 transition-colors hover:text-primary"
-                >
-                  Parent: {serviceFamily.parent.label}
-                  <ArrowUpRight className="size-4" aria-hidden />
-                </Link>
-              </Reveal>
+        <section className="w-full bg-black text-white" aria-labelledby="sub-service-overview-heading">
+          <div className={cn(container, sectionPad)}>
+            <Reveal>
+              <p className={cn(overline, "text-white/55")}>Service overview</p>
+              <h2
+                id="sub-service-overview-heading"
+                className="mt-3 font-heading text-3xl font-normal text-white md:text-4xl"
+              >
+                {overviewTitle}
+              </h2>
+            </Reveal>
 
-              <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {serviceFamily.items.map((item, index) => {
-                  const isCurrent = item.href === serviceFamily.currentHref;
-                  return (
-                    <li key={item.href} className="h-full">
-                      <Reveal delay={index * motionStagger} className="h-full">
-                        <Link
-                          href={item.href}
-                          aria-current={isCurrent ? "page" : undefined}
-                          className={cn(
-                            "group flex h-full flex-col rounded-2xl border p-6 transition-colors duration-300",
-                            isCurrent
-                              ? "border-primary/50 bg-primary/10"
-                              : "border-white/10 bg-white/[0.04] hover:border-white/25 hover:bg-white/[0.07]"
-                          )}
-                        >
-                          <div className="flex items-start justify-between gap-3">
-                            <span className="inline-flex size-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-white">
-                              <Layers className="size-5" strokeWidth={1.5} aria-hidden />
-                            </span>
-                            <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-white/45">
-                              {isCurrent ? "Current" : "Child service"}
-                            </span>
-                          </div>
-                          <h3 className="mt-6 font-heading text-xl font-medium leading-snug text-white md:text-[1.35rem]">
-                            {item.label}
-                          </h3>
-                          <p className="mt-3 flex-1 text-sm leading-relaxed text-white/65">
-                            {item.description}
-                          </p>
-                          <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-white transition-colors group-hover:text-primary">
-                            {isCurrent ? "You are here" : "Learn more"}
-                            <ArrowUpRight
-                              className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                              aria-hidden
-                            />
-                          </span>
-                        </Link>
-                      </Reveal>
-                    </li>
-                  );
-                })}
-              </ul>
+            <div className="mt-8 space-y-5">
+              {contentParagraphs.map((paragraph, index) => (
+                <Reveal key={index} delay={index * motionStagger}>
+                  <p className="text-justify text-base leading-relaxed text-white/70 md:text-lg">
+                    {textWithLinks(
+                      paragraph,
+                      "font-semibold text-primary decoration-primary/70 hover:text-primary/80"
+                    )}
+                  </p>
+                </Reveal>
+              ))}
             </div>
-          </section>
-        ) : null}
+          </div>
+        </section>
 
         <IndustriesSection />
         <TechStackSection />

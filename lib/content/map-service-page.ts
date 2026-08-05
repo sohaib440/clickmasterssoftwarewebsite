@@ -124,6 +124,7 @@ export function mapSubCategoryToServicePage(
       secondaryCta: defaultSecondaryCta,
     },
     contentParagraphs,
+    overviewTitle: `About ${sub.label}`,
     highlights: {
       title: `Why ${sub.label} with us`,
       items: highlights,

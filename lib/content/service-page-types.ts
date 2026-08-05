@@ -71,7 +71,9 @@ export type SubServicePageContent = {
   parent: { label: string; href: string };
   breadcrumbs: ServiceBreadcrumb[];
   hero: ServiceHeroContent;
+  /** About / overview paragraphs for the sub-service (may include [label](/path) links) */
   contentParagraphs: string[];
+  overviewTitle: string;
   highlights: {
     title: string;
     items: ContentBlock[];
