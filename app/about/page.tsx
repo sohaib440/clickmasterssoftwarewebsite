@@ -8,7 +8,7 @@ import { aboutPageSchema, breadcrumbSchema } from "@/seo/schema";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    `${siteBrand.name} is a custom software development company in Islamabad, Pakistan senior-led delivery for clients in the USA, UK, UAE, Canada, Australia, and Pakistan.`,
+    `${siteBrand.name} is a custom software development company in Islamabad, Pakistan — senior-led delivery for clients in the USA, UK, UAE, Canada, Australia, and Pakistan.`,
   ...selfCanonical("/about"),
 };
 

@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!post) return { title: "Not found" };
 
   return {
-    title: `${post.title} | Software Development Company Software Blog`,
+    title: post.title,
     description: post.excerpt,
     ...selfCanonical(`/blog/${slug}`),
   };

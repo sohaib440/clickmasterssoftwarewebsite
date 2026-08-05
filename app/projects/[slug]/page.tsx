@@ -59,6 +59,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: project.metaTitle,
       description: project.metaDescription,
       type: "article",
+      locale: "en_PK",
+      images: project.image
+        ? [
+            {
+              url: project.image.src,
+              width: project.image.width,
+              height: project.image.height,
+              alt: project.image.alt,
+            },
+          ]
+        : undefined,
     },
   };
 }

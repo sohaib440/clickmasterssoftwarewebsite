@@ -6,7 +6,7 @@ import { selfCanonical } from "@/seo/canonical";
 import { breadcrumbSchema, itemListSchema } from "@/seo/schema";
 
 export const metadata: Metadata = {
-  title: "Solutions | Software Development Company Software",
+  title: "Solutions",
   description:
     "Explore product solutions we've built: ERP, CRM, AI agents, HRMS, inventory, e-commerce, analytics, and workflow automation.",
   ...selfCanonical("/solutions"),

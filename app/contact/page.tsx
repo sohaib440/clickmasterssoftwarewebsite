@@ -7,7 +7,7 @@ import { selfCanonical } from "@/seo/canonical";
 import { breadcrumbSchema, contactPageSchema } from "@/seo/schema";
 
 export const metadata: Metadata = {
-  title: `Contact | ${siteBrand.name}`,
+  title: "Contact",
   description: `Contact ${siteBrand.name} in ${siteBrand.location}. ${siteMetadata.description}`,
   ...selfCanonical("/contact"),
 };

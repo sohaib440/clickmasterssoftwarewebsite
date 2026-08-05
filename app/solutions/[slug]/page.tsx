@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!solution) return { title: "Not found" };
 
   return {
-    title: `${solution.label} | Software Development Company Software Solutions`,
+    title: solution.label,
     description: solution.metaDescription,
     ...selfCanonical(`/solutions/${slug}`),
   };

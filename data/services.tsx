@@ -341,7 +341,7 @@ export const mainCategories: MainCategoryContent[] = [
     icon: Code2,
     label: "Software Development",
     exploreCta: "Explore software development",
-    pageTitle: "Software Development Company | Next Software Dev",
+    pageTitle: "Software Development Company | Next Software Development Company",
     tagline:
       "Leading Software Development Company Building Products Businesses Depend On",
     description:

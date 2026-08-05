@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: `${data.sub.label} | ${data.main.label} | Next Software Development Company`,
+    title: `${data.sub.label} | ${data.main.label}`,
     description,
     ...selfCanonical(`/${slug}/${subSlug}`),
   };

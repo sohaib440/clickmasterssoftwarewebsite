@@ -5,7 +5,7 @@ import { selfCanonical } from "@/seo/canonical";
 import { blogSchema, breadcrumbSchema } from "@/seo/schema";
 
 export const metadata: Metadata = {
-  title: "Blog | Software Development Company Software",
+  title: "Blog",
   description:
     "Notes from the studio on product planning, calm interfaces, and shipping software weekly.",
   ...selfCanonical("/blog"),
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function BlogRoute() {
   const schemas = [
     blogSchema({
-      name: "Software Development Company Blog",
+      name: "Next Software Development Company Blog",
       description:
         "Notes from the studio on product planning, calm interfaces, and shipping software weekly.",
       path: "/blog",

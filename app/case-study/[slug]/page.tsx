@@ -25,14 +25,28 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: "Case study not found" };
   }
 
+  const title = `${project.title} Case Study`;
+  const description = `Case study: challenge, approach, and outcomes for ${project.title}. ${project.metaDescription}`;
+
   return {
-    title: project.metaTitle,
-    description: project.metaDescription,
+    title,
+    description,
     ...selfCanonical(`/case-study/${slug}`),
     openGraph: {
-      title: project.metaTitle,
-      description: project.metaDescription,
+      title,
+      description,
       type: "article",
+      locale: "en_PK",
+      images: project.image
+        ? [
+            {
+              url: project.image.src,
+              width: project.image.width,
+              height: project.image.height,
+              alt: project.image.alt,
+            },
+          ]
+        : undefined,
     },
   };
 }
@@ -46,10 +60,11 @@ export default async function CaseStudyDetailRoute({ params }: PageProps) {
   }
 
   const path = `/case-study/${slug}`;
+  const caseDescription = `Case study: challenge, approach, and outcomes for ${project.title}. ${project.metaDescription}`;
   const schemas = [
     projectSchema({
-      name: project.title,
-      description: project.metaDescription,
+      name: `${project.title} Case Study`,
+      description: caseDescription,
       path,
       category: project.category,
       image: project.image,
@@ -57,7 +72,7 @@ export default async function CaseStudyDetailRoute({ params }: PageProps) {
     breadcrumbSchema([
       { name: "Home", path: "/" },
       { name: "Case Studies", path: "/case-study" },
-      { name: project.title, path },
+      { name: `${project.title} Case Study`, path },
     ]),
   ];
 

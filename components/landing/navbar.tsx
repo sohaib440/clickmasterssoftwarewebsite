@@ -20,6 +20,7 @@ import {
   projectPath,
   teamPath,
 } from "@/lib/landing/constants";
+import { serviceCategories } from "@/data/landing/services-nav";
 import { cn } from "@/lib/utils";
 
 const MobileNav = dynamic(
@@ -37,29 +38,15 @@ export type NavLink = {
   children?: NavChild[];
 };
 
-export const serviceNavItems: readonly NavChild[] = [
-  { label: "Software Development", href: "/software-development" },
-  { label: "Mobile App Development", href: "/mobile-development" },
-  { label: "Web Development", href: "/web-development" },
-  { label: "Ecommerce Development", href: "/ecommerce-development" },
-  { label: "UI/UX Design", href: "/ui-ux-design" },
-  { label: "Artificial Intelligence", href: "/artificial-intelligence" },
-  { label: "Machine Learning", href: "/machine-learning" },
-  { label: "Automation Services", href: "/automation-services" },
-  { label: "Cloud & DevOps", href: "/cloud-devops" },
-  { label: "Data & Business Intelligence", href: "/data-business-intelligence" },
-  { label: "Cybersecurity", href: "/cybersecurity" },
-  { label: "Enterprise Solutions", href: "/enterprise-solutions" },
-  { label: "Blockchain Development", href: "/blockchain-development" },
-  { label: "Healthcare Software Development", href: "/healthcare-software-development" },
-  { label: "AR/VR Development", href: "/ar-vr-development" },
-  { label: "Testing & QA", href: "/testing-and-qa" },
-];
+export const serviceNavItems: readonly NavChild[] = serviceCategories.map((category) => ({
+  label: category.label,
+  href: category.href,
+}));
 
 export const navLinks: readonly NavLink[] = [
   {
     label: "Services",
-    href: "#",
+    href: "/software-development",
     children: [...serviceNavItems],
   },
   {
@@ -67,30 +54,25 @@ export const navLinks: readonly NavLink[] = [
     href: "/location",
     children: [
       { label: "Pakistan", href: "/location/software-house-and-software-company-in-pakistan" },
-      { label: "United States", href: "#" },
-      { label: "Europe", href: "#" },
-      { label: "Middle East", href: "#" },
+      { label: "All locations", href: "/location" },
     ],
   },
   { label: "Industries", href: industriesPath },
+  { label: "Solutions", href: "/solutions" },
   {
     label: "Portfolio",
     href: projectPath,
     children: [
       { label: "Case Studies", href: caseStudyPath },
       { label: "Recent Projects", href: projectPath },
-      { label: "Demos", href: "#" },
-      { label: "Templates", href: "#" },
     ],
   },
-  { label: "Hire Developers", href: "#" },
   {
     label: "About",
     href: aboutPath,
     children: [
       { label: "Our Team", href: teamPath },
       { label: "Gallery", href: galleryPath },
-      { label: "Certification & Awards", href: "#" },
     ],
   },
   {
@@ -98,7 +80,7 @@ export const navLinks: readonly NavLink[] = [
     href: "/blog",
     children: [
       { label: "Blog", href: "/blog" },
-      { label: "Jobs", href: "#" },
+      { label: "FAQ", href: "/faqs" },
     ],
   },
   { label: "Contact", href: contactPath },
@@ -115,15 +97,16 @@ export const footerBrand = {
 export const footerColumns = [
   {
     title: "Services",
-    links: serviceNavItems.slice(0, 6),
+    links: [...serviceNavItems],
   },
   {
     title: "Company",
     links: [
       { label: "About Us", href: aboutPath },
       { label: "Our Work", href: projectPath },
+      { label: "Solutions", href: "/solutions" },
       { label: "Blog", href: "/blog" },
-      { label: "Careers", href: "#" },
+      { label: "FAQ", href: "/faqs" },
       { label: "Contact", href: contactPath },
     ],
   },
@@ -141,8 +124,8 @@ export const footerColumns = [
 ];
 
 export const footerLegal = [
-  { label: "Privacy Policy", href: "#" },
-  { label: "Terms of Service", href: "#" },
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms of Service", href: "/terms" },
 ] as const;
 
 export const socialLinks: { label: string; href: string; icon: LucideIcon }[] = [
@@ -198,16 +181,16 @@ export function Navbar() {
             scrolled ? "h-16 md:h-[4.25rem] xl:h-[4.5rem]" : "h-[4.25rem] md:h-[4.5rem] xl:h-20"
           )}
         >
-          {/* <SiteLogo
+          <SiteLogo
             priority
             className="min-w-0 max-w-[min(58vw,12rem)] shrink sm:max-w-[14rem] md:max-w-[16rem] xl:max-w-[18rem]"
             imageClassName="h-8 w-auto max-w-full sm:h-9 md:h-10 xl:h-12"
-          />  */}
+          />
 
           <nav
             className="hidden min-w-0 flex-1 items-center justify-center gap-0.5 px-1 xl:flex 2xl:gap-1"
             aria-label="Main"
-          > 
+          >
             {navLinks.map((link, linkIndex) =>
               link.label === "Services" ? (
                 <ServicesNavDropdown key="services-dropdown" />

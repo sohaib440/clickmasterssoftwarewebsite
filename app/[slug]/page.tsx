@@ -51,6 +51,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: category.label,
     description,
     ...selfCanonical(path),
+    openGraph: {
+      title: category.label,
+      description,
+      type: "website",
+      locale: "en_PK",
+    },
   };
 }
 
