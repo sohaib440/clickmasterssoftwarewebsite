@@ -106,7 +106,7 @@ type FaqSectionProps = {
 export function FaqSection({
   items = faqs,
   intro = faqIntro,
-  overlineText = "Frequently asked questions",
+  overlineText = "Software development company FAQs",
   title = (
     <>
       Questions, <span className="italic">answered</span>

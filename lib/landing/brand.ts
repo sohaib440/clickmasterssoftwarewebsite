@@ -8,13 +8,13 @@ export const siteBrand = {
   phone: "+92 371 0510083",
   url: "https://nextsoftwaredevelopment.com",
   logo: {
-    src: "/brand/next-logo.png",
+    src: "/brand/next-logo.webp",
     alt: "Next Software Development Company",
     width: 640,
     height: 128,
   },
-  favicon: "/brand/icon.png",
-  appleIcon: "/brand/icon.png",
+  favicon: "/brand/icon.webp",
+  appleIcon: "/brand/icon.webp",
 } as const;
 
 /** Opens the OS mail client (may do nothing if none is installed). */
@@ -39,14 +39,27 @@ export const siteSocial = {
 } as const;
 
 export const siteMetadata = {
-  title: "Next Software Development Company",
+  title:
+    "Best Software House & Leading Software Company | Next Software Development Company",
   description:
-    "Next Software Development Company is a software development company in Pakistan providing custom software development, web application development, mobile application development, AI solutions, CRM, ERP, SaaS, cloud, and DevOps services for businesses worldwide.",
+    "Next Software Development Company is a top rated software house and leading software development company helping startups, SMBs, and enterprises build web apps, mobile apps, AI features, CRM, ERP, SaaS platforms, and cloud systems worldwide.",
   keywords: [
-    "software development",
-    "software development company",
+    "software house",
     "software company",
-    "software development company in Pakistan",
-    "software company in Islamabad",
+    "software development company",
+    "best software house",
+    "best software company",
+    "top rated software house",
+    "top rated software company",
+    "leading software house",
+    "leading software company",
+    "leading software development company",
+    "web application development",
+    "mobile app development",
+    "AI development services",
+    "CRM development",
+    "ERP development",
+    "SaaS product development",
+    "cloud and DevOps",
   ],
 } as const;

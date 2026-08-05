@@ -7,13 +7,16 @@ import type { HeroImageAsset } from "./types";
 export type { HeroImageAsset };
 
 export const homeHero = {
-  eyebrow: "Leading Software Development Company in Pakistan",
+  eyebrow: "Software house & software company",
   headlineBefore: "We build",
   headlineEmphasis: "powerful software",
-  headlineAfter: "that businesses depend on",
-  subtextBefore: "Empowering startups, SMBs, and enterprises worldwide with ",
+  headlineAfter:
+    "as a leading software development company businesses depend on",
+  subtextBefore:
+    "A top rated software house and leading software company empowering startups, SMBs, and enterprises worldwide with ",
   subtextHighlight: "scalable, secure, and innovative",
-  subtextAfter: " digital solutions that drive growth and create real impact.",
+  subtextAfter:
+    " web apps, mobile apps, AI features, CRM, ERP, SaaS platforms, cloud systems, and DevOps workflows that drive measurable growth.",
   primaryCta: "Get a Free Quote",
   secondaryCta: "View Our Work",
   secondaryHref: projectPath,
@@ -32,7 +35,6 @@ export const heroCtaForm = {
   subtitle: "Share your details and we'll respond within one business day.",
   submitLabel: "Send message",
 } as const;
-
 
 export const heroImages: HeroImageAsset[] = [
   {

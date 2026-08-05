@@ -11,7 +11,7 @@ export function TeamSection() {
     <section id="team" className="w-full bg-white text-horizon-navy">
       <LandingContainer>
         <SectionHeading
-          overlineText="Our people"
+          overlineText="Leading software company team"
           title={
             <>
               A small <span className="italic">team</span>.

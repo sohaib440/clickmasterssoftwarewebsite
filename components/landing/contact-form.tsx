@@ -25,6 +25,7 @@ import {
   contactInfo,
   contactProjectTypes,
   contactTimelineOptions,
+  homeContact,
 } from "@/data/landingPage";
 import { cn } from "@/lib/utils";
 
@@ -134,7 +135,7 @@ export function ContactForm({
           className={cn(inputField, "w-full sm:flex-1 text-sm")}
         />
         <button type="submit" className={cn(btnPrimary, "w-full sm:w-auto shrink-0 px-8 text-sm sm:text-base")}>
-          Get Started
+          {homeContact.cta}
         </button>
       </form>
     );

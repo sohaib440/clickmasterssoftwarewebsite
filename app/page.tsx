@@ -16,13 +16,16 @@ import {
   TechStackSection,
   TestimonialsSection,
 } from "@/components/landing";
-import { siteMetadata } from "@/lib/landing/brand";
+import { testimonials } from "@/data/landingPage";
+import { siteBrand, siteMetadata } from "@/lib/landing/brand";
 import { selfCanonical } from "@/seo/canonical";
 import {
+  breadcrumbSchema,
   homepageFaqSchema,
   homepageServiceSchema,
   localBusinessSchema,
   organizationSchema,
+  reviewSchema,
   webSiteSchema,
 } from "@/seo/schema";
 
@@ -35,7 +38,23 @@ export const metadata: Metadata = {
     title: siteMetadata.title,
     description: siteMetadata.description,
     type: "website",
-    locale: "en_PK",
+    locale: "en_US",
+    url: siteBrand.url,
+    siteName: siteBrand.name,
+    images: [
+      {
+        url: siteBrand.logo.src,
+        width: siteBrand.logo.width,
+        height: siteBrand.logo.height,
+        alt: siteBrand.logo.alt,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteMetadata.title,
+    description: siteMetadata.description,
+    images: [siteBrand.logo.src],
   },
 };
 
@@ -44,12 +63,22 @@ function DeferredSection({ children }: { children: React.ReactNode }) {
 }
 
 export default function Home() {
+  const homepageReviews = testimonials.slice(0, 3).map((item) =>
+    reviewSchema({
+      authorName: item.author,
+      reviewBody: item.quote,
+      jobTitle: item.role,
+    }),
+  );
+
   const schemas = [
     organizationSchema,
     localBusinessSchema,
     webSiteSchema,
     homepageServiceSchema,
     homepageFaqSchema,
+    breadcrumbSchema([{ name: "Home", path: "/" }]),
+    ...homepageReviews,
   ];
 
   return (

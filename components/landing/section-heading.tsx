@@ -8,6 +8,7 @@ type SectionHeadingProps = {
   description?: string;
   align?: "left" | "center";
   dark?: boolean;
+  as?: "h1" | "h2";
   className?: string;
 };
 
@@ -17,9 +18,11 @@ export function SectionHeading({
   description,
   align = "left",
   dark = false,
+  as = "h2",
   className,
 }: SectionHeadingProps) {
   const centered = align === "center";
+  const Tag = as as keyof JSX.IntrinsicElements;
 
   return (
     <Reveal className={cn(centered && "mx-auto max-w-3xl text-center", className)}>
@@ -33,7 +36,7 @@ export function SectionHeading({
         />
         <p className={cn(overline, dark ? "text-white/70" : "")}>{overlineText}</p>
       </div>
-      <h2
+      <Tag
         className={cn(
           "mt-3 font-heading text-3xl font-normal leading-[1.15] tracking-tight md:text-4xl lg:text-[2.75rem]",
           dark ? "text-white" : "text-horizon-navy",
@@ -41,7 +44,7 @@ export function SectionHeading({
         )}
       >
         {title}
-      </h2>
+      </Tag>
       {description ? (
         <p
           className={cn(

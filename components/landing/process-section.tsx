@@ -13,11 +13,11 @@ export function ProcessSection() {
           overlineText="How we work"
           title={
             <>
-              Our software development process{" "}
+              Our delivery process{" "}
               <span className="italic">transparent, agile, and built around you</span>
             </>
           }
-          description="Every software development company claims to follow best practices. At Software Development Company, we show you exactly what that means at every stage of your project."
+          description="Many teams talk about best practices. As a top rated software house, we show you exactly what delivery looks like at every stage of your project."
           className={sectionHeadingGap}
         />
 

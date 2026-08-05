@@ -15,7 +15,7 @@ export type {
 };
 
 export const techStackIntro =
-  "We engineer across the full software delivery spectrum from pixel-perfect interfaces and resilient APIs to data platforms, cloud infrastructure, and production AI. Every technology below reflects real project experience: selected for performance, security, team velocity, and long-term maintainability at scale.";
+  "As a leading software house, we engineer across the full delivery spectrum from polished interfaces and resilient APIs to data platforms, cloud infrastructure, and production AI. Every technology below reflects real project experience, selected for performance, security, team velocity, and long-term maintainability.";
 
 
 export const techStackLogoGroupMeta: TechStackLogoGroup[] = [

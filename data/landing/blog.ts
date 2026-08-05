@@ -12,7 +12,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "8 min",
     category: "Software Development",
     image: {
-      src: "/insights/software-development.png",
+      src: "/insights/software-development.webp",
       alt: "Software development insights",
       width: 1200,
       height: 750,
@@ -33,7 +33,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "6 min",
     category: "Product Strategy",
     image: {
-      src: "/insights/product-strategy.png",
+      src: "/insights/product-strategy.webp",
       alt: "Product strategy and discovery",
       width: 1200,
       height: 750,
@@ -54,7 +54,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min",
     category: "Engineering",
     image: {
-      src: "/insights/Engeenring.png",
+      src: "/insights/Engeenring.webp",
       alt: "Engineering and software delivery",
       width: 1200,
       height: 750,

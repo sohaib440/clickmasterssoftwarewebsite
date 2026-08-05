@@ -2,18 +2,24 @@ import { type Client, clients, trustedPartnersSection } from "@/data/landingPage
 import { overline, container } from "@/lib/landing/constants";
 import { cn } from "@/lib/utils";
 
-function PartnerLogo({ client }: { client: Client }) {
+function PartnerLogo({
+  client,
+  decorative = false,
+}: {
+  client: Client;
+  decorative?: boolean;
+}) {
   return (
     <div className="flex h-16 shrink-0 items-center justify-center px-8 md:h-20 md:px-10">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={client.logo}
-        alt={client.name}
+        alt={decorative ? "" : client.name}
         width={240}
         height={64}
         loading="lazy"
         decoding="async"
-        className="h-10 w-auto max-w-[14rem] object-contain  duration-300 hover:opacity-100 hover:grayscale-0 md:h-12 md:max-w-[16rem]"
+        className="h-10 w-auto max-w-[14rem] object-contain duration-300 hover:opacity-100 hover:grayscale-0 md:h-12 md:max-w-[16rem]"
       />
     </div>
   );
@@ -42,13 +48,14 @@ export function TrustedPartnersSection({
       </div>
 
       <div className="partners-marquee overflow-hidden">
-        <ul className="partners-marquee__track list-none" aria-hidden>
+        <ul className="partners-marquee__track list-none" aria-hidden="true">
           {track.map((client, index) => (
             <li
               key={`${client.slug}-${index}`}
               className={cn(index >= clients.length && "partners-marquee__duplicate")}
+              aria-hidden={index >= clients.length ? true : undefined}
             >
-              <PartnerLogo client={client} />
+              <PartnerLogo client={client} decorative />
             </li>
           ))}
         </ul>

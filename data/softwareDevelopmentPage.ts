@@ -22,7 +22,7 @@ export const softwareDevelopmentHero = {
   secondaryCta: "See Our Work",
   secondaryHref: projectPath,
   heroImage: {
-    src: "/about us/software development company.png",
+    src: "/about us/software-development-company.webp",
     alt: "Software development team at work",
     width: 1000,
     height: 700,

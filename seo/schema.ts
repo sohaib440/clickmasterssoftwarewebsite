@@ -47,7 +47,7 @@ const logoImageObject = {
 } as const;
 
 /** Representative business / about photo (not the logo) */
-const organizationImageUrl = `${siteBrand.url}/about%20us/software%20development%20company.png`;
+const organizationImageUrl = `${siteBrand.url}/about%20us/software-development-company.webp`;
 
 /** HQ address — only fields confirmed on the site (Islamabad, Pakistan). No invented street. */
 const hqAddress = {
@@ -69,15 +69,24 @@ const countriesServed = [
 ] as const;
 
 const siteKeywords = [
+  "Software House",
+  "Software Company",
   "Software Development Company",
-  "Custom Software",
+  "Best Software House",
+  "Best Software Company",
+  "Top Rated Software House",
+  "Top Rated Software Company",
+  "Leading Software House",
+  "Leading Software Company",
+  "Leading Software Development Company",
   "Web Development",
   "Mobile Apps",
   "AI Development",
   "CRM",
   "ERP",
   "SaaS",
-  "Pakistan",
+  "Cloud",
+  "DevOps",
 ] as const;
 
 const openingHours = {
@@ -132,13 +141,12 @@ export const organizationSchema = {
   areaServed: [...countriesServed],
 
   knowsAbout: [
-    "Custom software development",
     "Web application development",
     "Mobile app development",
     "SaaS development",
     "CRM development",
     "ERP development",
-    "Healthcare Software Development",
+    "Healthcare software",
     "Artificial Intelligence",
     "Machine Learning",
     "Cloud and DevOps",
@@ -191,10 +199,10 @@ export const homepageServiceSchema = {
   "@type": "Service",
   "@id": `${siteConfig.url}/#primary-service`,
 
-  name: "Custom Software Development Services",
-  serviceType: "Custom Software Development",
+  name: "Software Engineering & Product Development",
+  serviceType: "Software Engineering",
   description:
-    "Custom software development, web application development, mobile application development, AI solutions, CRM, ERP, SaaS, cloud, and DevOps services for businesses worldwide.",
+    "Web application development, mobile app development, AI solutions, CRM, ERP, SaaS platforms, cloud, and DevOps services for businesses worldwide.",
   url: siteConfig.url,
 
   provider: {
@@ -208,7 +216,7 @@ export const homepageServiceSchema = {
 
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Software Development Services",
+    name: "Product Engineering Services",
     itemListElement: [
       {
         "@type": "Offer",
@@ -216,7 +224,7 @@ export const homepageServiceSchema = {
           "@type": "Service",
           name: "Software Development",
           description:
-            "Custom software development for startups and enterprises with senior-led delivery.",
+            "Senior-led application development for startups and enterprises.",
           url: `${siteConfig.url}/software-development`,
         },
       },

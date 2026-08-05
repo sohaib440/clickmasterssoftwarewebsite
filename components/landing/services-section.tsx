@@ -41,7 +41,7 @@ function ServiceCard({ service, index }: { service: ServiceCardData; index: numb
           />
           <Image
             src={service.image}
-            alt=""
+            alt={service.imageAlt ?? `${service.title} service image`}
             width={320}
             height={320}
             className="relative z-10 size-[17.5rem] object-contain drop-shadow-[0_12px_28px_rgba(0,0,0,0.45)] transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-3 sm:size-[19rem]"
@@ -58,7 +58,7 @@ function ServiceCard({ service, index }: { service: ServiceCardData; index: numb
           </p>
 
           <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-white transition-colors duration-300 group-hover:text-primary">
-            Learn more
+            Explore {service.title}
             <ArrowUpRight
               className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               aria-hidden
@@ -75,13 +75,13 @@ export function ServicesSection() {
     <section id="services" className="relative overflow-hidden bg-black text-white">
       <LandingContainer className="relative z-10">
         <SectionHeading
-          overlineText="What we do"
+          overlineText="What we deliver"
           title={
             <>
               Innovating your <span className="italic">digital future</span>
             </>
           }
-          description="We blend cutting-edge technology with world-class design to build products that define industries."
+          description="As a leading software company, we blend modern engineering with thoughtful product design to ship platforms teams can rely on every day."
           align="left"
           dark
           className={sectionHeadingGap}
