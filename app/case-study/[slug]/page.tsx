@@ -27,8 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: project.metaTitle,
     description: project.metaDescription,
-    // Same content as project detail; keep projects URL canonical for SEO.
-    ...selfCanonical(`/projects/${slug}`),
+    ...selfCanonical(`/case-study/${slug}`),
     openGraph: {
       title: project.metaTitle,
       description: project.metaDescription,

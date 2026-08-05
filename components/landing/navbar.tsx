@@ -120,7 +120,6 @@ export const footerColumns = [
         href: "/software-development/mobile-app-development",
       },
       { label: "UI/UX Design", href: "/design-ux" },
-      { label: "E-Commerce Development", href: "/solutions/ecommerce" },
       { label: "AI & Automation", href: "/solutions/ai-agent" },
       { label: "Cloud & DevOps", href: "/cloud-devops" },
       { label: "QA & Testing", href: "/testing-and-qa" },

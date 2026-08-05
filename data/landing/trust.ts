@@ -18,10 +18,10 @@ export const ratingBadges: RatingBadge[] = [
 
 
 export const stats = [
-  { value: "50+", label: "Happy Clients", icon: "users" as const },
-  { value: "4+", label: "Years of Experience", icon: "briefcase" as const },
+  { value: "500+", label: "Happy Clients", icon: "users" as const },
+  { value: "7+", label: "Years of Experience", icon: "briefcase" as const },
   { value: "10+", label: "Countries Served", icon: "layers" as const },
-  { value: "98%", label: "Client Satisfaction", icon: "shield-check" as const },
+  { value: "99%", label: "Client Satisfaction", icon: "shield-check" as const },
 ];
 
 export const clients: Client[] = [

@@ -406,7 +406,7 @@ export const solutions: SolutionContent[] = [
     metaDescription:
       "Custom e-commerce platform development. Storefronts, checkout, and admin by Software Development Company Software.",
     heroImage: img(
-      "https://images.unsplash.com/photo-1472851291508-62bd40d0d974?auto=format&fit=crop&w=800&q=75",
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=75",
       "Online shopping on laptop and phone"
     ),
     summary: ["Custom checkout", "Catalog & variants", "Admin & promotions"],

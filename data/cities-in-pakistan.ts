@@ -4,6 +4,7 @@ import {
   type LocationCity,
   type LocationPageContent,
 } from "@/data/locations";
+import { showcaseProjects } from "@/data/projects";
 import { contactPath, teamPath } from "@/lib/landing/constants";
 
 const pakistanHref = pakistanLocation.href;
@@ -968,10 +969,10 @@ const cityCopy: Record<string, CityCopy> = {
 };
 
 function projectsForCity(city: string): LocationPageContent["projects"] {
-  const matched = pakistanLocation.projects.filter((project) =>
+  const matched = showcaseProjects.filter((project) =>
     project.category.toLowerCase().includes(city.toLowerCase())
   );
-  return matched.length > 0 ? matched : pakistanLocation.projects;
+  return matched.length > 0 ? matched : showcaseProjects;
 }
 
 function buildCityPage(cityMeta: LocationCity): LocationPageContent {

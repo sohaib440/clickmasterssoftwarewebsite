@@ -5,7 +5,7 @@ export const siteBrand = {
   legalName: "Next Software Development Company",
   location: "Islamabad, Pakistan",
   email: "nextsoftwaredevelopmentcompany@gmail.com",
-  phone: "+92 3710510083",
+  phone: "+92 371 0510083",
   url: "https://nextsoftwaredevelopment.com",
   logo: {
     src: "/brand/next-logo.png",
