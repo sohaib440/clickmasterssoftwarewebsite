@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
@@ -9,6 +10,7 @@ import { LandingContainer, sectionHeadingGap } from "@/components/landing/landin
 import { Reveal } from "@/components/landing/reveal";
 import { serviceRoutes, services, type ServiceCard as ServiceCardData } from "@/data/services";
 import { motionStagger } from "@/lib/landing/motion";
+import { btnPrimary } from "@/lib/landing/constants";
 import { cn } from "@/lib/utils";
 
 function ServiceCard({ service, index }: { service: ServiceCardData; index: number }) {
@@ -73,6 +75,11 @@ function ServiceCard({ service, index }: { service: ServiceCardData; index: numb
 }
 
 export function ServicesSection() {
+  const [showAll, setShowAll] = useState(false);
+  const initialVisibleCount = 9;
+  const visibleServices = showAll ? services : services.slice(0, initialVisibleCount);
+  const hiddenCount = Math.max(services.length - initialVisibleCount, 0);
+
   return (
     <section id="services" className="relative overflow-hidden bg-black text-white">
       <LandingContainer className="relative z-10">
@@ -90,12 +97,24 @@ export function ServicesSection() {
         />
 
         <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6">
-          {services.map((service, index) => (
+          {visibleServices.map((service, index) => (
             <li key={service.title} className="h-full">
               <ServiceCard service={service} index={index} />
             </li>
           ))}
         </ul>
+
+        {hiddenCount > 0 ? (
+          <div className="mt-8 flex justify-center">
+            <button
+              type="button"
+              className={cn(btnPrimary, "px-5 py-3 text-sm")}
+              onClick={() => setShowAll((value) => !value)}
+            >
+              {showAll ? "Show fewer services" : `See ${hiddenCount} more services`}
+            </button>
+          </div>
+        ) : null}
       </LandingContainer>
     </section>
   );
