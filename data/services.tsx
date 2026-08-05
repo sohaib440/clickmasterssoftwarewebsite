@@ -46,7 +46,7 @@ export const services: ServiceCard[] = [
   {
     title: "Software Development",
     description:
-      "Custom software solutions tailored to your business needs, from discovery and architecture through build, launch, and ongoing support for startups and enterprises.",
+      "As a leading software development company and software house, we deliver software development from discovery and architecture through build, launch, and ongoing support for startups and enterprises.",
     image: "/services/software-development.webp",
     imageAlt: "Software development services illustration",
     Icon: ShieldCheck,
@@ -58,7 +58,7 @@ export const services: ServiceCard[] = [
   {
     title: "Web Development",
     description:
-      "Modern web applications with responsive design, strong performance, and SEO-friendly architecture for a seamless experience on every device and browser.",
+      "Modern web applications from a trusted software company with responsive design, strong performance, and SEO-friendly architecture for every device and browser.",
     image: "/services/Web-Development.webp",
     imageAlt: "Web development services illustration",
     Icon: Globe2,
@@ -69,7 +69,7 @@ export const services: ServiceCard[] = [
   {
     title: "Mobile Development",
     description:
-      "Secure, scalable mobile apps for iOS and Android with native quality and shared logic where it speeds delivery, without sacrificing performance or user feel.",
+      "Secure, scalable iOS and Android apps built by our software house with native quality and shared logic where it speeds delivery without sacrificing performance.",
     image: "/services/Mobile-app-development.webp",
     imageAlt: "Mobile application development services illustration",
     Icon: Smartphone,
@@ -80,7 +80,7 @@ export const services: ServiceCard[] = [
   {
     title: "Artificial Intelligence",
     description:
-      "Production AI for automation, insights, and smarter products, including agents, NLP, and vision systems with clear guardrails, monitoring, and human oversight.",
+      "Production AI from a top rated software company covering automation, insights, agents, NLP, and vision systems with clear guardrails, monitoring, and human oversight.",
     image: "/services/Artificial-Intelligence.webp",
     imageAlt: "Artificial intelligence services illustration",
     Icon: BrainCircuit,
@@ -92,7 +92,7 @@ export const services: ServiceCard[] = [
   {
     title: "UI/UX Systems",
     description:
-      "Research-led interfaces and design systems focused on usability, consistency, and conversion, from discovery and wireframes through high-fidelity UI and design QA.",
+      "Research-led interfaces and design systems from a leading software house, focused on usability, consistency, and conversion from wireframes to design QA.",
     image: "/services/UI-UX.webp",
     imageAlt: "UI/UX design and systems services illustration",
     Icon: Palette,
@@ -103,7 +103,7 @@ export const services: ServiceCard[] = [
   {
     title: "Cloud & DevOps",
     description:
-      "Secure cloud-native infrastructure with CI/CD, monitoring, and scalable DevOps workflows so your team can ship reliably, recover quickly, and grow with confidence.",
+      "Secure cloud-native infrastructure and CI/CD from a best software company with monitoring and scalable DevOps workflows so teams ship reliably and grow with confidence.",
     image: "/services/cloud-and-devops.webp",
     imageAlt: "Cloud and DevOps services illustration",
     Icon: Database,
@@ -115,7 +115,7 @@ export const services: ServiceCard[] = [
   {
     title: "Machine Learning",
     description:
-      "Custom ML models and pipelines from data prep and training to evaluation and production inference, so predictions and recommendations run reliably at scale.",
+      "ML models and pipelines from a top rated software house covering data prep, training, evaluation, and production inference so predictions run reliably at scale.",
     image: "/services/Mechine-learning.webp",
     imageAlt: "Machine learning services illustration",
     Icon: Server,
@@ -126,7 +126,7 @@ export const services: ServiceCard[] = [
   {
     title: "Data Services",
     description:
-      "Data engineering, warehousing, and analytics solutions that turn raw business information into trusted dashboards, reports, and decisions your teams can act on.",
+      "Data engineering, warehousing, and analytics from a leading software company delivering trusted dashboards, reports, and decisions your teams can act on.",
     image: "/services/Data-Service.webp",
     imageAlt: "Data services illustration",
     Icon: Database,
@@ -137,7 +137,7 @@ export const services: ServiceCard[] = [
   {
     title: "Testing & QA",
     description:
-      "Manual and automated testing across web, mobile, and APIs, covering functional, regression, and performance checks so issues are caught before users and releases stay confident.",
+      "Manual and automated testing from our software development company across web, mobile, and APIs covering functional, regression, and performance checks before release.",
     image: "/services/Testing-and-QA.webp",
     imageAlt: "Software testing and QA services illustration",
     Icon: Database,
