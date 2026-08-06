@@ -30,7 +30,7 @@ Workflow: [`.github/workflows/ci-cd.yml`](.github/workflows/ci-cd.yml)
 
 1. Lint → production build  
 2. Fast-forward GitHub `main` to match `master`  
-3. SSH into the VPS, pull `main` in `/var/www/NEXT`, build, `pm2 reload`
+3. SSH into the VPS, pull `main` in `/var/www/NEXT`, build, `pm2 reload NEXT`
 
 Pushing directly to `main` runs the same quality checks and deploy (without the sync step).
 
@@ -46,27 +46,9 @@ Pushing directly to `main` runs the same quality checks and deploy (without the 
 
 Generate a deploy key on your machine, add the **public** key to the VPS `~/.ssh/authorized_keys`, and paste the **private** key into `VPS_SSH_KEY`.
 
-### One-time VPS setup
+### VPS notes
 
-```bash
-# Node 20+, git, and PM2
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-sudo apt-get install -y nodejs git
-sudo npm install -g pm2
-
-sudo mkdir -p /var/www/NEXT
-sudo chown -R "$USER":"$USER" /var/www/NEXT
-cd /var/www/NEXT
-git clone git@github.com:YOUR_ORG/YOUR_REPO.git .
-git checkout main
-
-nano .env   # set SMTP_* / CONTACT_TO_EMAIL
-
-npm ci
-npm run build
-pm2 start npm --name next-software -- start
-pm2 save
-pm2 startup   # follow the printed command
-```
+App is already running under PM2 as **`NEXT`** in `/var/www/NEXT`.  
+Each deploy pulls `main`, runs `npm ci` + `npm run build`, then `pm2 reload NEXT`.
 
 Point Nginx (or Caddy) at `http://127.0.0.1:3000`. Keep the app bound to localhost; do not expose port 3000 publicly.

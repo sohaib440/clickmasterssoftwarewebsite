@@ -86,10 +86,6 @@ jobs:
             git reset --hard origin/main
             npm ci
             npm run build
-            if pm2 describe next-software > /dev/null 2>&1; then
-              pm2 reload next-software --update-env
-            else
-              pm2 start npm --name next-software -- start
-            fi
+            pm2 reload NEXT --update-env
             pm2 save
             pm2 status
