@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next Software Development Company
+
+Next.js marketing site with contact API and GitHub Actions CI/CD deploying to a VPS with PM2.
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://127.0.0.1:3000](http://127.0.0.1:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create a `.env` on the server (or locally) with `SMTP_*` / `CONTACT_TO_EMAIL` for the contact form.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Scripts
 
-## Learn More
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Local development |
+| `npm run lint` | ESLint |
+| `npm run build` | Production build |
+| `npm start` | Production server (binds `127.0.0.1:3000`) |
 
-To learn more about Next.js, take a look at the following resources:
+## CI/CD (GitHub → VPS + PM2)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Workflow: [`.github/workflows/ci-cd.yml`](.github/workflows/ci-cd.yml)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Flow when you push to `master`:**
 
-## Deploy on Vercel
+1. Lint → production build  
+2. Fast-forward GitHub `main` to match `master`  
+3. SSH into the VPS, pull `main` in `/var/www/NEXT`, build, `pm2 reload NEXT`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Pushing directly to `main` runs the same quality checks and deploy (without the sync step).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### GitHub repository secrets
+
+| Secret | Example | Required |
+| --- | --- | --- |
+| `VPS_HOST` | `203.0.113.10` | Yes |
+| `VPS_USER` | `deploy` | Yes |
+| `VPS_SSH_KEY` | Private key PEM | Yes |
+| `VPS_PORT` | `22` | No (default 22) |
+| `DEPLOY_PATH` | `/var/www/NEXT` | No (default `/var/www/NEXT`) |
+
+Generate a deploy key on your machine, add the **public** key to the VPS `~/.ssh/authorized_keys`, and paste the **private** key into `VPS_SSH_KEY`.
+
+### VPS notes
+
+App is already running under PM2 as **`NEXT`** in `/var/www/NEXT`.  
+Each deploy pulls `main`, runs `npm ci` + `npm run build`, then `pm2 reload NEXT`.
+
+Point Nginx (or Caddy) at `http://127.0.0.1:3000`. Keep the app bound to localhost; do not expose port 3000 publicly.
