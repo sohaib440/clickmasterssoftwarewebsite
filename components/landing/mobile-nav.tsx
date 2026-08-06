@@ -39,6 +39,7 @@ function MobileNavAccordion({
   // double-click accordion state after the panel was hidden).
   useEffect(() => {
     if (menuOpen) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- reset accordion when drawer opens
       setExpanded(defaultOpen);
     }
   }, [menuOpen, defaultOpen]);
