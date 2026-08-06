@@ -73,7 +73,7 @@ jobs:
           script_stop: true
           script: |
             set -e
-
+           
             echo "🚀 DEPLOYMENT STARTED"
 
             export NVM_DIR="$HOME/.nvm"
