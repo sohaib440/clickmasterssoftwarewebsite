@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 export function AboutPage() {
   return (
     <MarketingShell>
+      <h1 className="sr-only">About Us</h1>
       <PageBreadcrumb items={[{ label: "About" }]} />
       <AboutSection />
       <section className="w-full border-y border-horizon-border/60 bg-white">
