@@ -1,6 +1,6 @@
 # Next Software Development Company
 
-Next.js marketing site with contact API and GitHub Actions CI/CD deploying to a VPS with PM2.
+Next.js marketing site with GitHub Actions CI/CD → VPS (PM2 `NEXT`).
 
 ## Getting Started
 
@@ -11,8 +11,6 @@ npm run dev
 
 Open [http://127.0.0.1:3000](http://127.0.0.1:3000).
 
-Create a `.env` on the server (or locally) with `SMTP_*` / `CONTACT_TO_EMAIL` for the contact form.
-
 ## Scripts
 
 | Command | Purpose |
@@ -20,35 +18,28 @@ Create a `.env` on the server (or locally) with `SMTP_*` / `CONTACT_TO_EMAIL` fo
 | `npm run dev` | Local development |
 | `npm run lint` | ESLint |
 | `npm run build` | Production build |
-| `npm start` | Production server (binds `127.0.0.1:3000`) |
+| `npm start` | Production server (`127.0.0.1:3000`) |
 
-## CI/CD (GitHub → VPS + PM2)
+## CI/CD
 
 Workflow: [`.github/workflows/ci-cd.yml`](.github/workflows/ci-cd.yml)
 
-**Flow when you push to `master`:**
+Push to **`master`** runs:
 
-1. Lint → production build  
-2. Fast-forward GitHub `main` to match `master`  
-3. SSH into the VPS, pull `main` in `/var/www/NEXT`, build, `pm2 reload NEXT`
+1. **Code Quality** — lint  
+2. **Build** — `npm run build` on GitHub  
+3. **Deploy** — SSH to VPS → pull `master` in `/var/www/NEXT` → `npm ci` → build → `pm2 reload NEXT` (auto-rollback on failure)  
+4. **Verify** — HTTP check on the live site  
+5. **Summary**
 
-Pushing directly to `main` runs the same quality checks and deploy (without the sync step).
+### GitHub secrets (already configured)
 
-### GitHub repository secrets
+| Secret | Description |
+| --- | --- |
+| `VPS_HOST` | VPS IP / hostname |
+| `VPS_USER` | SSH username |
+| `VPS_SSH_KEY` | Private SSH key |
+| `VPS_PORT` | Optional SSH port (default 22) |
+| `DEPLOY_PATH` | Optional; defaults to `/var/www/NEXT` |
 
-| Secret | Example | Required |
-| --- | --- | --- |
-| `VPS_HOST` | `203.0.113.10` | Yes |
-| `VPS_USER` | `deploy` | Yes |
-| `VPS_SSH_KEY` | Private key PEM | Yes |
-| `VPS_PORT` | `22` | No (default 22) |
-| `DEPLOY_PATH` | `/var/www/NEXT` | No (default `/var/www/NEXT`) |
-
-Generate a deploy key on your machine, add the **public** key to the VPS `~/.ssh/authorized_keys`, and paste the **private** key into `VPS_SSH_KEY`.
-
-### VPS notes
-
-App is already running under PM2 as **`NEXT`** in `/var/www/NEXT`.  
-Each deploy pulls `main`, runs `npm ci` + `npm run build`, then `pm2 reload NEXT`.
-
-Point Nginx (or Caddy) at `http://127.0.0.1:3000`. Keep the app bound to localhost; do not expose port 3000 publicly.
+App is already running as PM2 process **`NEXT`**.
