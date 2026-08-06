@@ -4,10 +4,11 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 concurrency:
-  group: production-deploy
-  cancel-in-progress: false
+  group: production-deploy-${{ github.ref }}
+  cancel-in-progress: true
 
 env:
   NODE_VERSION: 20

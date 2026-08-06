@@ -24,7 +24,7 @@ Open [http://127.0.0.1:3000](http://127.0.0.1:3000).
 
 Workflow: [`.github/workflows/ci-cd.yml`](.github/workflows/ci-cd.yml)
 
-Push to **`main`** runs:
+Push to **`main`** runs the pipeline (or use **Actions → Run workflow**).
 
 1. **Code Quality** — lint  
 2. **Build** — `npm run build` on GitHub  
