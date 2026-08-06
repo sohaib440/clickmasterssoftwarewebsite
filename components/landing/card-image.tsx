@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import { cn } from "@/lib/utils";
 
 export type CardImageData = {
@@ -27,17 +25,14 @@ export function CardImage({
   quality = 75,
 }: CardImageProps) {
   return (
-    <Image
+    <img
       src={src}
       alt={alt}
       width={width}
       height={height}
       className={cn("block w-full object-cover", className)}
-      sizes={sizes}
-      quality={quality}
-      priority={priority}
       loading={priority ? undefined : "lazy"}
-      fetchPriority={priority ? "high" : "low"}
+      decoding="async"
     />
   );
 }
