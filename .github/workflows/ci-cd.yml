@@ -3,7 +3,7 @@ name: Production CI/CD Pipeline
 on:
   push:
     branches:
-      - master
+      - main
 
 concurrency:
   group: production-deploy
@@ -98,9 +98,9 @@ jobs:
             PREVIOUS_COMMIT=$(git rev-parse HEAD)
             echo "📦 Current commit: $(echo "$PREVIOUS_COMMIT" | cut -c1-7)"
 
-            echo "📥 Pulling origin/master..."
+            echo "📥 Pulling origin/main..."
             git fetch origin
-            if ! git reset --hard origin/master; then
+            if ! git reset --hard origin/main; then
               echo "❌ Failed to update code"
               exit 1
             fi
