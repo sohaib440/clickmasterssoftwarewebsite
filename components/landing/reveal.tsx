@@ -60,6 +60,7 @@ export function Reveal({
   const [visible, setVisible] = useState(true);
 
   useLayoutEffect(() => {
+    /* eslint-disable react-hooks/set-state-in-effect -- reveal/observe mount sync */
     if (prefersReducedMotion()) {
       setVisible(true);
       return;
@@ -79,6 +80,7 @@ export function Reveal({
     }
 
     setVisible(false);
+    /* eslint-enable react-hooks/set-state-in-effect */
     initRevealObserver();
     revealCallbacks.set(el, () => setVisible(true));
     sharedObserver?.observe(el);

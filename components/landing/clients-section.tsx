@@ -14,7 +14,7 @@ function PartnerLogo({
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={client.logo}
-        alt={decorative ? "" : client.name}
+        alt={decorative ? `${client.name} logo` : client.name}
         width={240}
         height={64}
         loading="lazy"

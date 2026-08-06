@@ -52,6 +52,8 @@ export function ContactForm({
   useEffect(() => {
     const draft = readContactDraft();
     if (draft) {
+      // sessionStorage draft hydrate — one-shot after mount
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional draft restore
       setForm((prev) => mergeContactForm(prev, draft));
     }
 
