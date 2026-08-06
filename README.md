@@ -24,11 +24,11 @@ Open [http://127.0.0.1:3000](http://127.0.0.1:3000).
 
 Workflow: [`.github/workflows/ci-cd.yml`](.github/workflows/ci-cd.yml)
 
-Push to **`master`** runs:
+Push to **`main`** runs:
 
 1. **Code Quality** — lint  
 2. **Build** — `npm run build` on GitHub  
-3. **Deploy** — SSH to VPS → pull `master` in `/var/www/NEXT` → `npm ci` → build → `pm2 reload NEXT` (auto-rollback on failure)  
+3. **Deploy** — SSH to VPS → pull `main` in `/var/www/NEXT` → `npm ci` → build → `pm2 reload NEXT` (auto-rollback on failure)  
 4. **Verify** — HTTP check on the live site  
 5. **Summary**
 
