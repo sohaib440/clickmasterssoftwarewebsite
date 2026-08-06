@@ -92,7 +92,7 @@ export const services: ServiceCard[] = [
     title: "Web Development",
     description:
       "Modern web applications from a trusted software company with responsive design, strong performance, and SEO-friendly architecture for every device and browser.",
-    image: "/services/web-development.webp",
+    image: "/services/Web-Development.webp",
     imageAlt: "Web development services illustration",
     Icon: Globe2,
     AltIcon: Server,
@@ -125,7 +125,7 @@ export const services: ServiceCard[] = [
     title: "Artificial Intelligence",
     description:
       "Production AI from a top rated software company covering automation, insights, agents, NLP, and vision systems with clear guardrails, monitoring, and human oversight.",
-    image: "/services/artificial-intelligence.webp",
+    image: "/services/Artificial-Intelligence.webp",
     imageAlt: "Artificial intelligence services illustration",
     Icon: BrainCircuit,
     AltIcon: Database,
@@ -237,7 +237,7 @@ export const services: ServiceCard[] = [
     title: "Testing & QA",
     description:
       "Manual and automated testing from our software development company across web, mobile, and APIs covering functional, regression, and performance checks before release.",
-    image: "/services/testing-and-qa.webp",
+    image: "/services/Testing-and-QA.webp",
     imageAlt: "Software testing and QA services illustration",
     Icon: ClipboardCheck,
     AltIcon: ShieldCheck,
@@ -270,15 +270,15 @@ const defaultHighlights: ContentBlock[] = [
     title: "Senior-led delivery",
     description:
       "Every engagement is staffed with experienced engineers, with no bait-and-switch to junior-only teams.",
-  },
-  {
-    title: "Maintainable by design",
-    description:
+      },
+      {
+        title: "Maintainable by design",
+        description:
       "Clear architecture, documentation, and handoff so your team can extend the product after launch.",
-  },
-  {
-    title: "Transparent progress",
-    description:
+      },
+      {
+        title: "Transparent progress",
+        description:
       "Weekly demos and honest timelines so you always know what shipped and what is next.",
   },
   {
@@ -299,25 +299,25 @@ const defaultHighlights: ContentBlock[] = [
 ];
 
 const defaultApproach: ApproachStep[] = [
-  {
-    step: "01",
-    title: "Discover & scope",
-    description: "We map users, constraints, and success metrics before writing production code.",
-  },
-  {
-    step: "02",
-    title: "Architect & design",
-    description: "Technical design and UX align on the lightest path to a durable solution.",
-  },
-  {
-    step: "03",
-    title: "Build & iterate",
-    description:
-      "Trunk-based development with continuous integration and regular stakeholder demos.",
-  },
-  {
-    step: "04",
-    title: "Launch & support",
+      {
+        step: "01",
+        title: "Discover & scope",
+        description: "We map users, constraints, and success metrics before writing production code.",
+      },
+      {
+        step: "02",
+        title: "Architect & design",
+        description: "Technical design and UX align on the lightest path to a durable solution.",
+      },
+      {
+        step: "03",
+        title: "Build & iterate",
+        description:
+          "Trunk-based development with continuous integration and regular stakeholder demos.",
+      },
+      {
+        step: "04",
+        title: "Launch & support",
     description: "Production rollout, observability, and a clean handoff or ongoing partnership.",
   },
 ];
@@ -471,7 +471,7 @@ export const mainCategories: MainCategoryContent[] = [
     metaDescription:
       "Best software company for web development: custom websites, web apps, frontend, backend, full stack, and CMS. SEO-friendly senior delivery.",
     heroImage: {
-      src: "/services/web-development.webp",
+      src: "/services/Web-Development.webp",
       alt: "Web development services",
       width: 800,
       height: 800,
@@ -488,6 +488,12 @@ export const mainCategories: MainCategoryContent[] = [
       "As a leading software company, we engineer ecommerce platforms that balance conversion, catalog complexity, and reliable operations. Our ecommerce development services include Shopify, WooCommerce, Magento, custom storefronts, multi-vendor marketplaces, and payment gateway integrations so checkout, inventory, and fulfillment stay dependable as you grow.",
     metaDescription:
       "Leading software company for ecommerce development: Shopify, WooCommerce, Magento, custom stores, marketplaces, and payments.",
+    heroImage: {
+      src: "/services/ecommerce-development.png",
+      alt: "Ecommerce development services",
+      width: 800,
+      height: 800,
+    },
   }),
   defineCategory({
     slug: "ui-ux-design",
@@ -550,7 +556,7 @@ export const mainCategories: MainCategoryContent[] = [
     metaDescription:
       "Top rated software company for artificial intelligence: generative AI, chatbots, agents, computer vision, and NLP.",
     heroImage: {
-      src: "/services/artificial-intelligence.webp",
+      src: "/services/Artificial-Intelligence.webp",
       alt: "Artificial intelligence services",
       width: 800,
       height: 800,
@@ -585,6 +591,12 @@ export const mainCategories: MainCategoryContent[] = [
       "As a best software company for operations tooling, we remove repetitive work with automation that your teams can trust. Our automation services cover business process automation, RPA, workflow automation, CRM automation, ERP automation, and AI workflow automation so data moves cleanly between systems and people focus on higher-value work.",
     metaDescription:
       "Best software company for automation services: BPA, RPA, workflow, CRM, ERP, and AI workflow automation.",
+    heroImage: {
+      src: "/services/automation-services.png",
+      alt: "Automation services",
+      width: 800,
+      height: 800,
+    },
   }),
   defineCategory({
     slug: "cloud-devops",
@@ -593,7 +605,7 @@ export const mainCategories: MainCategoryContent[] = [
     exploreCta: "Explore cloud services",
     tagline:
       "Leading Software Development Company for Cloud & DevOps",
-    description:
+        description:
       "As a leading software development company, we make infrastructure as dependable as the product it runs. Our Cloud and DevOps services span AWS, Azure, GCP, Docker, Kubernetes, and CI/CD pipeline setup so deployments stay secure, observable, and ready to scale from first release to multi-region growth.",
     metaDescription:
       "Leading software development company for Cloud and DevOps: AWS, Azure, GCP, Docker, Kubernetes, and CI/CD.",
@@ -611,7 +623,7 @@ export const mainCategories: MainCategoryContent[] = [
     exploreCta: "Explore data & BI",
     tagline:
       "Leading Software Company for Data & Business Intelligence",
-    description:
+        description:
       "As a leading software company, we turn raw business data into decisions teams can act on. Our data and business intelligence services include Power BI, Tableau, data analytics, data engineering, data visualization, and BI platforms so executives and operators share trusted metrics instead of conflicting spreadsheets.",
     metaDescription:
       "Leading software company for data and BI: Power BI, Tableau, analytics, data engineering, visualization, and BI solutions.",
@@ -633,6 +645,12 @@ export const mainCategories: MainCategoryContent[] = [
       "As a trusted software house, we build security into how products are designed, shipped, and operated. Our cybersecurity services cover penetration testing, vulnerability assessment, application security, cloud security, security compliance, and security monitoring so risks are found early and controls scale with your product.",
     metaDescription:
       "Trusted software house for cybersecurity: penetration testing, vulnerability assessment, app and cloud security, compliance, and monitoring.",
+    heroImage: {
+      src: "/services/cybersecurity.png",
+      alt: "Cybersecurity services",
+      width: 800,
+      height: 800,
+    },
   }),
   defineCategory({
     slug: "enterprise-solutions",
@@ -645,6 +663,12 @@ export const mainCategories: MainCategoryContent[] = [
       "As a leading software development company, we replace disconnected tools with systems of record your organization can run on. Our enterprise solutions cover ERP, CRM, HRM, supply chain management, enterprise integration, and document management so finance, operations, and leadership share one reliable platform.",
     metaDescription:
       "Leading software development company for enterprise solutions: ERP, CRM, HRM, supply chain, integration, and document management.",
+    heroImage: {
+      src: "/services/enterprise-solutions.png",
+      alt: "Enterprise solutions",
+      width: 800,
+      height: 800,
+    },
   }),
   defineCategory({
     slug: "blockchain-development",
@@ -657,6 +681,12 @@ export const mainCategories: MainCategoryContent[] = [
       "As a software company focused on usable Web3 outcomes, we build blockchain products for real business workflows. Our blockchain development services include smart contracts, dApps, Web3 development, DeFi, cryptocurrency wallets, and NFT marketplaces with security and clarity prioritized over hype demos.",
     metaDescription:
       "Software company for blockchain development: smart contracts, dApps, Web3, DeFi, wallets, and NFT marketplaces.",
+    heroImage: {
+      src: "/services/blockchain-development.png",
+      alt: "Blockchain development services",
+      width: 800,
+      height: 800,
+    },
   }),
   defineCategory({
     slug: "healthcare-software-development",
@@ -669,6 +699,12 @@ export const mainCategories: MainCategoryContent[] = [
       "As a software house experienced in clinical workflows, we build healthcare software that respects privacy, reliability, and day-to-day care delivery. Our healthcare software development services include EHR, EMR, telemedicine, hospital management systems, patient portals, and healthcare mobile apps designed for patients and providers.",
     metaDescription:
       "Software house for healthcare software development: EHR, EMR, telemedicine, hospital systems, patient portals, and healthcare apps.",
+    heroImage: {
+      src: "/services/healthcare-software-development.png",
+      alt: "Healthcare software development services",
+      width: 800,
+      height: 800,
+    },
   }),
   defineCategory({
     slug: "ar-vr-development",
@@ -677,10 +713,16 @@ export const mainCategories: MainCategoryContent[] = [
     exploreCta: "Explore AR/VR development",
     tagline:
       "Top Rated Software Company for AR/VR Development Experiences",
-    description:
+        description:
       "As a top rated software company for immersive products, we design and engineer AR and VR applications that feel practical in training, retail, and enterprise settings. Our AR/VR development services cover augmented reality, virtual reality, mixed reality, metaverse experiences, 3D visualization, and VR training simulations.",
     metaDescription:
       "Top rated software company for AR/VR development: AR, VR, mixed reality, metaverse, 3D visualization, and VR training.",
+    heroImage: {
+      src: "/services/ar-vr-development.png",
+      alt: "AR/VR development services",
+      width: 800,
+      height: 800,
+    },
   }),
   defineCategory({
     slug: "testing-and-qa",
@@ -694,7 +736,7 @@ export const mainCategories: MainCategoryContent[] = [
     metaDescription:
       "Software development company for testing and QA: manual, automation, performance, security, API, and mobile app testing.",
     heroImage: {
-      src: "/services/testing-and-qa.webp",
+      src: "/services/Testing-and-QA.webp",
       alt: "Software testing and QA services",
       width: 800,
       height: 800,

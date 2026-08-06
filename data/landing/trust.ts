@@ -10,10 +10,10 @@ export const trustedPartnersSection: { label: string; fallbackText: string } = {
 
 
 export const ratingBadges: RatingBadge[] = [
-  { slug: "facebook", name: "Facebook", logo: "/ratings/facebook-rating.webp" },
-  { slug: "clutch", name: "Clutch", logo: "/ratings/clutch-rating.webp" },
-  { slug: "trustpilot", name: "Trustpilot", logo: "/ratings/trustpilot.webp" },
-  { slug: "google", name: "Google", logo: "/ratings/google-rating.webp" },
+  { slug: "facebook", name: "Facebook" },
+  { slug: "clutch", name: "Clutch" },
+  { slug: "trustpilot", name: "Trustpilot" },
+  { slug: "google", name: "Google" },
 ];
 
 

@@ -1425,7 +1425,7 @@ export const projectDetails: ProjectDetail[] = [
     })(),
     metaTitle: "Prime Lead CRM Project | Call Center CRM Software",
     metaDescription:
-      "Case study: Prime Lead CRM, a call center CRM with lead management, staff roles, attendance, chat, training, and live dashboards for sales teams.",
+      "Project: Prime Lead CRM, a call center CRM with lead management, staff roles, attendance, chat, training, and live dashboards for sales teams.",
     highlights: [
       "Unified lead pipeline",
       "Staff roles & permissions",
@@ -1581,7 +1581,7 @@ export const projectDetails: ProjectDetail[] = [
     })(),
     metaTitle: "AI School ERP Project | School Management & AI Attendance",
     metaDescription:
-      "Case study: AI School ERP, a school management system with AI face recognition attendance, fees, exams, timetables, and role-based portals for admins, teachers, parents, and students.",
+      "Project: AI School ERP, a school management system with AI face recognition attendance, fees, exams, timetables, and role-based portals for admins, teachers, parents, and students.",
     highlights: [
       "AI face recognition attendance",
       "Multi-role school portals",
@@ -1737,7 +1737,7 @@ export const projectDetails: ProjectDetail[] = [
     })(),
     metaTitle: "Travel & Tour Website Project | Booking Platform",
     metaDescription:
-      "Case study: Travel & Tour Website, a travel booking platform with public package search, destination pages, customer management, bookings, rental inquiries, and admin package tools.",
+      "Project: Travel & Tour Website, a travel booking platform with public package search, destination pages, customer management, bookings, rental inquiries, and admin package tools.",
     highlights: [
       "Public travel booking website",
       "Package & destination pages",
@@ -1893,7 +1893,7 @@ export const projectDetails: ProjectDetail[] = [
     })(),
     metaTitle: "Restaurant POS Project | Restaurant Management System",
     metaDescription:
-      "Case study: Restaurant POS, an all-in-one point-of-sale and restaurant management system for orders, menus, customers, inventory, staff, settings, and reporting.",
+      "Project: Restaurant POS, an all-in-one point-of-sale and restaurant management system for orders, menus, customers, inventory, staff, settings, and reporting.",
     highlights: [
       "Multi-channel order management",
       "Menu & inventory control",
@@ -2049,7 +2049,7 @@ export const projectDetails: ProjectDetail[] = [
     })(),
     metaTitle: "Travel & Tours Management Project | Travel Agency Software",
     metaDescription:
-      "Case study: Travel & Tours Management, an all-in-one travel agency system for bookings, packages, flights, hotels, transport, payments, invoices, and reporting.",
+      "Project: Travel & Tours Management, an all-in-one travel agency system for bookings, packages, flights, hotels, transport, payments, invoices, and reporting.",
     highlights: [
       "Bookings & package management",
       "Flights, hotels & transport",
@@ -2205,7 +2205,7 @@ export const projectDetails: ProjectDetail[] = [
     })(),
     metaTitle: "Hotel Management System Project | Hotel HMS Software",
     metaDescription:
-      "Case study: Hotel Management System for reservations, front desk, rooms, housekeeping, finance, reports, employees, AI attendance, and AI camera monitoring.",
+      "Project: Hotel Management System for reservations, front desk, rooms, housekeeping, finance, reports, employees, AI attendance, and AI camera monitoring.",
     highlights: [
       "Reservations & front desk",
       "Rooms & housekeeping",
@@ -2361,7 +2361,7 @@ export const projectDetails: ProjectDetail[] = [
     })(),
     metaTitle: "Royal POS Project | AI-Powered Retail POS Software",
     metaDescription:
-      "Case study: Royal POS, an AI-powered retail point-of-sale platform for checkout, inventory, products, customers, sales, reports, and live camera monitoring.",
+      "Project: Royal POS, an AI-powered retail point-of-sale platform for checkout, inventory, products, customers, sales, reports, and live camera monitoring.",
     highlights: [
       "Fast POS checkout",
       "Inventory & warehouses",
@@ -2517,7 +2517,7 @@ export const projectDetails: ProjectDetail[] = [
     })(),
     metaTitle: "Hospital Management System Project | MediCare HMS Software",
     metaDescription:
-      "Case study: Hospital Management System for appointments, patients, doctors, beds, billing, pharmacy, reports, users, and a dedicated doctor portal.",
+      "Project: Hospital Management System for appointments, patients, doctors, beds, billing, pharmacy, reports, users, and a dedicated doctor portal.",
     highlights: [
       "Appointments & patient records",
       "Doctors, departments & beds",
@@ -2673,7 +2673,7 @@ export const projectDetails: ProjectDetail[] = [
     })(),
     metaTitle: "Cash Management System Project | Finance Cash Software",
     metaDescription:
-      "Case study: Cash Management System for accounts, income, expenses, transfers, payees, budgets, reports, and audit logs.",
+      "Project: Cash Management System for accounts, income, expenses, transfers, payees, budgets, reports, and audit logs.",
     highlights: [
       "Accounts & cash dashboard",
       "Income, expenses & transfers",
@@ -2829,7 +2829,7 @@ export const projectDetails: ProjectDetail[] = [
     })(),
     metaTitle: "HR Management Software Project | AI HRMS Payroll ATS",
     metaDescription:
-      "Case study: HR Management Software for employees, attendance, leave, payroll, recruitment ATS, performance, training, assets, and exit management.",
+      "Project: HR Management Software for employees, attendance, leave, payroll, recruitment ATS, performance, training, assets, and exit management.",
     highlights: [
       "Employees, org & onboarding",
       "Attendance, leave & payroll",
@@ -2985,7 +2985,7 @@ export const projectDetails: ProjectDetail[] = [
     })(),
     metaTitle: "Medicine Inventory System Project | Pharmacy Stock Software",
     metaDescription:
-      "Case study: Medicine Inventory System for medicines, suppliers, purchase orders, stock in/out, batch tracking, expiry management, and reports.",
+      "Project: Medicine Inventory System for medicines, suppliers, purchase orders, stock in/out, batch tracking, expiry management, and reports.",
     highlights: [
       "Medicines & suppliers",
       "Purchase orders & stock movement",
@@ -3141,7 +3141,7 @@ export const projectDetails: ProjectDetail[] = [
     })(),
     metaTitle: "E-Learning Portal Project | EduLearn LMS Software",
     metaDescription:
-      "Case study: EduLearn E-Learning Portal for courses, enrollments, lessons, assignments, quizzes, attendance, instructor dashboards, and admin management.",
+      "Project: EduLearn E-Learning Portal for courses, enrollments, lessons, assignments, quizzes, attendance, instructor dashboards, and admin management.",
     highlights: [
       "Courses, lessons & categories",
       "Enrollments & attendance",

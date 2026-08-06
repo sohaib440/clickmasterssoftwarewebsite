@@ -16,7 +16,8 @@ export type NavLink = {
 export type RatingBadge = {
   slug: string;
   name: string;
-  logo: string;
+  /** @deprecated Prefer ReviewPlatform href + rating; kept for older imports */
+  logo?: string;
 };
 
 export type ContactSelectOption = {

@@ -1,77 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Case studies index -->
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/case-study</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
   <url>
     <loc>https://nextsoftwaredevelopment.com/case-study/prime-lead-crm</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://nextsoftwaredevelopment.com/case-study/ai-school-erp</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://nextsoftwaredevelopment.com/case-study/travel-and-tour-website</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://nextsoftwaredevelopment.com/case-study/restaurant-pos</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://nextsoftwaredevelopment.com/case-study/travel-and-tours-management</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://nextsoftwaredevelopment.com/case-study/hotel-management-system</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://nextsoftwaredevelopment.com/case-study/royal-pos</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://nextsoftwaredevelopment.com/case-study/hospital-management-system</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://nextsoftwaredevelopment.com/case-study/cash-management-system</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://nextsoftwaredevelopment.com/case-study/hr-management-software</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://nextsoftwaredevelopment.com/case-study/medicine-inventory-system</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://nextsoftwaredevelopment.com/case-study/e-learning-portal</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.8</priority>
   </url>
 
 </urlset>

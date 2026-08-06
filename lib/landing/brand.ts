@@ -36,6 +36,9 @@ export const siteSocial = {
   medium: "https://medium.com/@nextsoftwaredevelopmentcompany",
   github: "https://github.com/nextsoftwaredevelopmentcompany",
   clutch: "https://clutch.co/profile/next-software-development-company",
+  trustpilot: "https://www.trustpilot.com/review/nextsoftwaredevelopment.com",
+  googleReviews:
+    "https://www.google.com/search?q=Next+Software+Development+Company+reviews",
 } as const;
 
 export const siteMetadata = {
