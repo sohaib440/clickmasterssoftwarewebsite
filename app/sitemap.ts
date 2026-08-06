@@ -10,6 +10,10 @@ import {
 import { getAllSolutionSlugs, solutionPath } from "@/lib/content/solutions";
 import { getAllPakistanCitySlugs } from "@/data/cities-in-pakistan";
 import { pakistanLocation } from "@/data/locations";
+import {
+  caseStudyDetailPath,
+  getAllCaseStudySlugs,
+} from "@/data/caseStudy";
 import { getAllProjectSlugs, projectDetailPath } from "@/data/projects";
 import { siteBrand } from "@/lib/landing/brand";
 
@@ -52,7 +56,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   );
   const solutions = getAllSolutionSlugs().map((slug) => url(solutionPath(slug), 0.8));
   const projects = getAllProjectSlugs().map((slug) => url(projectDetailPath(slug), 0.8));
-  const caseStudies = getAllProjectSlugs().map((slug) => url(`/case-study/${slug}`, 0.75));
+  const caseStudies = getAllCaseStudySlugs().map((slug) =>
+    url(caseStudyDetailPath(slug), 0.75),
+  );
   const blog = getAllBlogSlugs().map((slug) => url(`/blog/${slug}`, 0.6));
   const cities = getAllPakistanCitySlugs().map((slug) => url(`/location/${slug}`, 0.7));
 

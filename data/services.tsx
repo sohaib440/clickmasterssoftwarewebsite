@@ -270,15 +270,15 @@ const defaultHighlights: ContentBlock[] = [
     title: "Senior-led delivery",
     description:
       "Every engagement is staffed with experienced engineers, with no bait-and-switch to junior-only teams.",
-  },
-  {
-    title: "Maintainable by design",
-    description:
+      },
+      {
+        title: "Maintainable by design",
+        description:
       "Clear architecture, documentation, and handoff so your team can extend the product after launch.",
-  },
-  {
-    title: "Transparent progress",
-    description:
+      },
+      {
+        title: "Transparent progress",
+        description:
       "Weekly demos and honest timelines so you always know what shipped and what is next.",
   },
   {
@@ -299,25 +299,25 @@ const defaultHighlights: ContentBlock[] = [
 ];
 
 const defaultApproach: ApproachStep[] = [
-  {
-    step: "01",
-    title: "Discover & scope",
-    description: "We map users, constraints, and success metrics before writing production code.",
-  },
-  {
-    step: "02",
-    title: "Architect & design",
-    description: "Technical design and UX align on the lightest path to a durable solution.",
-  },
-  {
-    step: "03",
-    title: "Build & iterate",
-    description:
-      "Trunk-based development with continuous integration and regular stakeholder demos.",
-  },
-  {
-    step: "04",
-    title: "Launch & support",
+      {
+        step: "01",
+        title: "Discover & scope",
+        description: "We map users, constraints, and success metrics before writing production code.",
+      },
+      {
+        step: "02",
+        title: "Architect & design",
+        description: "Technical design and UX align on the lightest path to a durable solution.",
+      },
+      {
+        step: "03",
+        title: "Build & iterate",
+        description:
+          "Trunk-based development with continuous integration and regular stakeholder demos.",
+      },
+      {
+        step: "04",
+        title: "Launch & support",
     description: "Production rollout, observability, and a clean handoff or ongoing partnership.",
   },
 ];
@@ -593,7 +593,7 @@ export const mainCategories: MainCategoryContent[] = [
     exploreCta: "Explore cloud services",
     tagline:
       "Leading Software Development Company for Cloud & DevOps",
-    description:
+        description:
       "As a leading software development company, we make infrastructure as dependable as the product it runs. Our Cloud and DevOps services span AWS, Azure, GCP, Docker, Kubernetes, and CI/CD pipeline setup so deployments stay secure, observable, and ready to scale from first release to multi-region growth.",
     metaDescription:
       "Leading software development company for Cloud and DevOps: AWS, Azure, GCP, Docker, Kubernetes, and CI/CD.",
@@ -611,7 +611,7 @@ export const mainCategories: MainCategoryContent[] = [
     exploreCta: "Explore data & BI",
     tagline:
       "Leading Software Company for Data & Business Intelligence",
-    description:
+        description:
       "As a leading software company, we turn raw business data into decisions teams can act on. Our data and business intelligence services include Power BI, Tableau, data analytics, data engineering, data visualization, and BI platforms so executives and operators share trusted metrics instead of conflicting spreadsheets.",
     metaDescription:
       "Leading software company for data and BI: Power BI, Tableau, analytics, data engineering, visualization, and BI solutions.",
@@ -677,7 +677,7 @@ export const mainCategories: MainCategoryContent[] = [
     exploreCta: "Explore AR/VR development",
     tagline:
       "Top Rated Software Company for AR/VR Development Experiences",
-    description:
+        description:
       "As a top rated software company for immersive products, we design and engineer AR and VR applications that feel practical in training, retail, and enterprise settings. Our AR/VR development services cover augmented reality, virtual reality, mixed reality, metaverse experiences, 3D visualization, and VR training simulations.",
     metaDescription:
       "Top rated software company for AR/VR development: AR, VR, mixed reality, metaverse, 3D visualization, and VR training.",

@@ -23,7 +23,7 @@ export default function CaseStudyRoute() {
       description: caseStudyPageMeta.description,
       path: "/case-study",
       items: caseStudies.map((study) => ({
-        name: study.title,
+        name: study.cardTitle,
         path: `/case-study/${study.slug}`,
       })),
     }),

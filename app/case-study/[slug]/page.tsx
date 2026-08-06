@@ -3,9 +3,10 @@ import { notFound } from "next/navigation";
 
 import { CaseStudyDetailPage } from "@/components/case-study/case-study-detail-page";
 import {
-  getAllProjectSlugs,
-  getProjectBySlug,
-} from "@/data/projects";
+  getAllCaseStudySlugs,
+  getCaseStudyDetailBySlug,
+} from "@/data/caseStudy";
+import { getProjectBySlug } from "@/data/projects";
 import { selfCanonical } from "@/seo/canonical";
 import { breadcrumbSchema, projectSchema } from "@/seo/schema";
 
@@ -14,36 +15,34 @@ type PageProps = {
 };
 
 export function generateStaticParams() {
-  return getAllProjectSlugs().map((slug) => ({ slug }));
+  return getAllCaseStudySlugs().map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
+  const study = project ? getCaseStudyDetailBySlug(slug, project) : undefined;
 
-  if (!project) {
+  if (!study) {
     return { title: "Case study not found" };
   }
 
-  const title = `${project.title} Case Study`;
-  const description = `Case study: challenge, approach, and outcomes for ${project.title}. ${project.metaDescription}`;
-
   return {
-    title,
-    description,
+    title: study.metaTitle,
+    description: study.metaDescription,
     ...selfCanonical(`/case-study/${slug}`),
     openGraph: {
-      title,
-      description,
+      title: study.metaTitle,
+      description: study.metaDescription,
       type: "article",
       locale: "en_PK",
-      images: project.image
+      images: study.image
         ? [
             {
-              url: project.image.src,
-              width: project.image.width,
-              height: project.image.height,
-              alt: project.image.alt,
+              url: study.image.src,
+              width: study.image.width,
+              height: study.image.height,
+              alt: study.image.alt,
             },
           ]
         : undefined,
@@ -54,25 +53,25 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function CaseStudyDetailRoute({ params }: PageProps) {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
+  const study = project ? getCaseStudyDetailBySlug(slug, project) : undefined;
 
-  if (!project) {
+  if (!study) {
     notFound();
   }
 
   const path = `/case-study/${slug}`;
-  const caseDescription = `Case study: challenge, approach, and outcomes for ${project.title}. ${project.metaDescription}`;
   const schemas = [
     projectSchema({
-      name: `${project.title} Case Study`,
-      description: caseDescription,
+      name: study.metaTitle,
+      description: study.metaDescription,
       path,
-      category: project.category,
-      image: project.image,
+      category: study.industry,
+      image: study.image,
     }),
     breadcrumbSchema([
       { name: "Home", path: "/" },
       { name: "Case Studies", path: "/case-study" },
-      { name: `${project.title} Case Study`, path },
+      { name: study.headline, path },
     ]),
   ];
 
@@ -82,7 +81,7 @@ export default async function CaseStudyDetailRoute({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
       />
-      <CaseStudyDetailPage project={project} breadcrumbRoot="case-study" />
+      <CaseStudyDetailPage study={study} />
     </>
   );
 }
