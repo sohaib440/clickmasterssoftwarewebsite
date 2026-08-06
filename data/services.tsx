@@ -488,6 +488,12 @@ export const mainCategories: MainCategoryContent[] = [
       "As a leading software company, we engineer ecommerce platforms that balance conversion, catalog complexity, and reliable operations. Our ecommerce development services include Shopify, WooCommerce, Magento, custom storefronts, multi-vendor marketplaces, and payment gateway integrations so checkout, inventory, and fulfillment stay dependable as you grow.",
     metaDescription:
       "Leading software company for ecommerce development: Shopify, WooCommerce, Magento, custom stores, marketplaces, and payments.",
+    heroImage: {
+      src: "/services/ecommerce-development.png",
+      alt: "Ecommerce development services",
+      width: 800,
+      height: 800,
+    },
   }),
   defineCategory({
     slug: "ui-ux-design",
@@ -585,6 +591,12 @@ export const mainCategories: MainCategoryContent[] = [
       "As a best software company for operations tooling, we remove repetitive work with automation that your teams can trust. Our automation services cover business process automation, RPA, workflow automation, CRM automation, ERP automation, and AI workflow automation so data moves cleanly between systems and people focus on higher-value work.",
     metaDescription:
       "Best software company for automation services: BPA, RPA, workflow, CRM, ERP, and AI workflow automation.",
+    heroImage: {
+      src: "/services/automation-services.png",
+      alt: "Automation services",
+      width: 800,
+      height: 800,
+    },
   }),
   defineCategory({
     slug: "cloud-devops",
@@ -633,6 +645,12 @@ export const mainCategories: MainCategoryContent[] = [
       "As a trusted software house, we build security into how products are designed, shipped, and operated. Our cybersecurity services cover penetration testing, vulnerability assessment, application security, cloud security, security compliance, and security monitoring so risks are found early and controls scale with your product.",
     metaDescription:
       "Trusted software house for cybersecurity: penetration testing, vulnerability assessment, app and cloud security, compliance, and monitoring.",
+    heroImage: {
+      src: "/services/cybersecurity.png",
+      alt: "Cybersecurity services",
+      width: 800,
+      height: 800,
+    },
   }),
   defineCategory({
     slug: "enterprise-solutions",
@@ -645,6 +663,12 @@ export const mainCategories: MainCategoryContent[] = [
       "As a leading software development company, we replace disconnected tools with systems of record your organization can run on. Our enterprise solutions cover ERP, CRM, HRM, supply chain management, enterprise integration, and document management so finance, operations, and leadership share one reliable platform.",
     metaDescription:
       "Leading software development company for enterprise solutions: ERP, CRM, HRM, supply chain, integration, and document management.",
+    heroImage: {
+      src: "/services/enterprise-solutions.png",
+      alt: "Enterprise solutions",
+      width: 800,
+      height: 800,
+    },
   }),
   defineCategory({
     slug: "blockchain-development",
@@ -657,6 +681,12 @@ export const mainCategories: MainCategoryContent[] = [
       "As a software company focused on usable Web3 outcomes, we build blockchain products for real business workflows. Our blockchain development services include smart contracts, dApps, Web3 development, DeFi, cryptocurrency wallets, and NFT marketplaces with security and clarity prioritized over hype demos.",
     metaDescription:
       "Software company for blockchain development: smart contracts, dApps, Web3, DeFi, wallets, and NFT marketplaces.",
+    heroImage: {
+      src: "/services/blockchain-development.png",
+      alt: "Blockchain development services",
+      width: 800,
+      height: 800,
+    },
   }),
   defineCategory({
     slug: "healthcare-software-development",
@@ -669,6 +699,12 @@ export const mainCategories: MainCategoryContent[] = [
       "As a software house experienced in clinical workflows, we build healthcare software that respects privacy, reliability, and day-to-day care delivery. Our healthcare software development services include EHR, EMR, telemedicine, hospital management systems, patient portals, and healthcare mobile apps designed for patients and providers.",
     metaDescription:
       "Software house for healthcare software development: EHR, EMR, telemedicine, hospital systems, patient portals, and healthcare apps.",
+    heroImage: {
+      src: "/services/healthcare-software-development.png",
+      alt: "Healthcare software development services",
+      width: 800,
+      height: 800,
+    },
   }),
   defineCategory({
     slug: "ar-vr-development",
@@ -681,6 +717,12 @@ export const mainCategories: MainCategoryContent[] = [
       "As a top rated software company for immersive products, we design and engineer AR and VR applications that feel practical in training, retail, and enterprise settings. Our AR/VR development services cover augmented reality, virtual reality, mixed reality, metaverse experiences, 3D visualization, and VR training simulations.",
     metaDescription:
       "Top rated software company for AR/VR development: AR, VR, mixed reality, metaverse, 3D visualization, and VR training.",
+    heroImage: {
+      src: "/services/ar-vr-development.png",
+      alt: "AR/VR development services",
+      width: 800,
+      height: 800,
+    },
   }),
   defineCategory({
     slug: "testing-and-qa",
