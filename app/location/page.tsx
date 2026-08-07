@@ -29,13 +29,11 @@ import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: pageTitle("Software House Locations Worldwide"),
-  description:
-    "Explore Next Software Development Company locations. Start with Pakistan and major cities including Islamabad, Lahore, Karachi, and more.",
+  description: `Explore Next Software Development Company locations. Start with Pakistan and ${pakistanCities.length} city pages including Islamabad, Lahore, Karachi, and more.`,
   ...selfCanonical("/location"),
   openGraph: {
     title: pageTitleString("Software House Locations Worldwide"),
-    description:
-      "Explore Next Software Development Company locations. Start with Pakistan and major cities including Islamabad, Lahore, Karachi, and more.",
+    description: `Explore Next Software Development Company locations. Start with Pakistan and ${pakistanCities.length} city pages including Islamabad, Lahore, Karachi, and more.`,
     type: "website",
   },
 };
@@ -65,13 +63,14 @@ const featuredStats = [
 ];
 
 export default function LocationsPage() {
+  const cityCount = pakistanCities.length;
   const spotlightCities = pakistanCities.slice(0, 6);
+  const moreCitiesCount = Math.max(cityCount - spotlightCities.length, 0);
 
   const schemas = [
     itemListSchema({
       name: "Locations",
-      description:
-        "Explore Next Software Development Company locations. Start with Pakistan and major cities including Islamabad, Lahore, Karachi, and more.",
+      description: `Explore Next Software Development Company locations. Start with Pakistan and ${cityCount} city pages including Islamabad, Lahore, Karachi, and more.`,
       path: "/location",
       items: [
         { name: "Pakistan", path: pakistanLocation.href },
@@ -120,8 +119,8 @@ export default function LocationsPage() {
             </Reveal>
             <Reveal immediate delay={motionStagger * 3}>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
-                Start with Pakistan, our headquarters and delivery base, or explore city pages for
-                Islamabad, Lahore, Karachi, and more. Global markets are next.
+                Start with Pakistan, our headquarters and delivery base, or explore {cityCount} city
+                pages including Islamabad, Lahore, Karachi, and more. Global markets are next.
               </p>
             </Reveal>
             <Reveal immediate delay={motionStagger * 4}>
@@ -192,8 +191,9 @@ export default function LocationsPage() {
                   </div>
 
                   <p className="relative mt-6 max-w-xl text-base leading-relaxed text-horizon-muted md:text-lg">
-                    Headquarters and primary delivery base for HMS, ERP, mobile apps, and SaaS across
-                    Islamabad, Lahore, Karachi, and 10+ more cities.
+                    Headquarters and primary delivery base for HMS, ERP, mobile apps, and SaaS across{" "}
+                    {cityCount} cities — including Islamabad, Lahore, Karachi, and every market we
+                    cover nationwide.
                   </p>
 
                   <dl className="relative mt-8 grid grid-cols-3 gap-3 border-y border-horizon-border py-5">
@@ -223,7 +223,7 @@ export default function LocationsPage() {
                         </li>
                       ))}
                       <li className="rounded-full border border-dashed border-horizon-border px-3 py-1.5 text-xs text-horizon-muted">
-                        +{Math.max(pakistanCities.length - spotlightCities.length, 0)} more
+                        +{moreCitiesCount} more
                       </li>
                     </ul>
                   </div>
