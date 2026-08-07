@@ -8,7 +8,7 @@ import {
   isSolutionSlug,
   solutionPath,
 } from "@/lib/content/solutions";
-import { selfCanonical } from "@/seo/canonical";
+import { selfCanonical, pageTitle, pageTitleString } from "@/seo/canonical";
 import { breadcrumbSchema, softwareApplicationSchema } from "@/seo/schema";
 
 type PageProps = {
@@ -25,9 +25,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!solution) return { title: "Not found" };
 
   return {
-    title: solution.label,
+    title: pageTitle(solution.label),
     description: solution.metaDescription,
     ...selfCanonical(`/solutions/${slug}`),
+    openGraph: {
+      title: pageTitleString(solution.label),
+      description: solution.metaDescription,
+      type: "website",
+    },
   };
 }
 

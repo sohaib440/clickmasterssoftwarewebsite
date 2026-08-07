@@ -18,7 +18,7 @@ import {
 } from "@/components/landing";
 import { testimonials } from "@/data/landingPage";
 import { siteBrand, siteMetadata } from "@/lib/landing/brand";
-import { selfCanonical } from "@/seo/canonical";
+import { selfCanonical, pageTitle, pageTitleString } from "@/seo/canonical";
 import {
   breadcrumbSchema,
   homepageFaqSchema,
@@ -30,12 +30,12 @@ import {
 } from "@/seo/schema";
 
 export const metadata: Metadata = {
-  title: { absolute: siteMetadata.title },
+  title: pageTitle(siteMetadata.title),
   description: siteMetadata.description,
   keywords: [...siteMetadata.keywords],
   ...selfCanonical("/"),
   openGraph: {
-    title: siteMetadata.title,
+    title: pageTitleString(siteMetadata.title),
     description: siteMetadata.description,
     type: "website",
     locale: "en_PK",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: siteMetadata.title,
+    title: pageTitleString(siteMetadata.title),
     description: siteMetadata.description,
     images: [siteBrand.logo.src],
   },

@@ -9,7 +9,7 @@ import {
   mainCategoryPath,
   subCategoryPath,
 } from "@/lib/content";
-import { selfCanonical } from "@/seo/canonical";
+import { selfCanonical, pageTitle, pageTitleString } from "@/seo/canonical";
 import { breadcrumbSchema, serviceSchema } from "@/seo/schema";
 
 type PageProps = {
@@ -29,18 +29,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     data.sub.metaDescription ??
     `${data.sub.label} from a leading software development company. ${data.sub.description}`;
 
-  if (data.sub.pageTitle) {
-    return {
-      title: { absolute: data.sub.pageTitle },
-      description,
-      ...selfCanonical(`/${slug}/${subSlug}`),
-    };
-  }
+  const titleSegment = data.sub.pageTitle || `${data.sub.label} | ${data.main.label}`;
 
   return {
-    title: `${data.sub.label} | ${data.main.label}`,
+    title: pageTitle(titleSegment),
     description,
     ...selfCanonical(`/${slug}/${subSlug}`),
+    openGraph: {
+      title: pageTitleString(titleSegment),
+      description,
+      type: "website",
+    },
   };
 }
 

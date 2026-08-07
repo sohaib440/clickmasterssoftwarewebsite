@@ -3,15 +3,15 @@ import type { Metadata } from "next";
 import { TeamPageContent } from "@/components/team/team-page";
 import { teamMembers } from "@/data/landing/team";
 import { teamPageMeta } from "@/data/teamPage";
-import { selfCanonical } from "@/seo/canonical";
+import { selfCanonical, pageTitle, pageTitleString } from "@/seo/canonical";
 import { breadcrumbSchema, teamPageSchema } from "@/seo/schema";
 
 export const metadata: Metadata = {
-  title: teamPageMeta.title,
+  title: pageTitle(teamPageMeta.title),
   description: teamPageMeta.description,
   ...selfCanonical("/team"),
   openGraph: {
-    title: teamPageMeta.title,
+    title: pageTitleString(teamPageMeta.title),
     description: teamPageMeta.description,
     type: "website",
   },

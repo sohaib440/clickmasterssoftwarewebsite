@@ -4,7 +4,7 @@ export const siteBrand = {
   shortName: "Next Software Development Company",
   legalName: "Next Software Development Company",
   location: "Islamabad, Pakistan",
-  email: "nextsoftwaredevelopmentcompany@gmail.com",
+  email: "info@nextsoftwaredevelopment.com",
   phone: "+92 371 0510083",
   url: "https://nextsoftwaredevelopment.com",
   logo: {
@@ -42,8 +42,7 @@ export const siteSocial = {
 } as const;
 
 export const siteMetadata = {
-  title:
-    "Best Software House & Leading Software Company | Next Software Development Company",
+  title: "Software House & Software Development Company",
   description:
     "Next Software Development Company is a top rated software house and leading software development company helping startups, SMBs, and enterprises build web apps, mobile apps, AI features, CRM, ERP, SaaS platforms, and cloud systems worldwide.",
   keywords: [

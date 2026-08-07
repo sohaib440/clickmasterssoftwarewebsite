@@ -17,12 +17,47 @@ export const ratingBadges: RatingBadge[] = [
 ];
 
 
-export const stats = [
-  { value: "500+", label: "Happy Clients", icon: "users" as const },
-  { value: "7+", label: "Years of Experience", icon: "briefcase" as const },
-  { value: "10+", label: "Countries Served", icon: "layers" as const },
-  { value: "99%", label: "Client Satisfaction", icon: "shield-check" as const },
-];
+/**
+ * Single source of truth for company numbers sitewide (homepage, locations, about).
+ * Keep these identical everywhere — do not invent alternate project/engineer counts.
+ */
+export const companyStats = [
+  {
+    value: "500+",
+    label: "Happy Clients",
+    detail:
+      "Founders and operators who hired us for custom software, HMS, ERP, and digital products across Pakistan and internationally.",
+    icon: "users" as const,
+  },
+  {
+    value: "7+",
+    label: "Years of Experience",
+    detail:
+      "Seven-plus years building production software with senior engineers, designers, and QA.",
+    icon: "briefcase" as const,
+  },
+  {
+    value: "10+",
+    label: "Countries Served",
+    detail:
+      "Delivery for clients in Pakistan and overseas markets including the USA, UK, UAE, Canada, and Australia.",
+    icon: "layers" as const,
+  },
+  {
+    value: "99%",
+    label: "Client Satisfaction",
+    detail:
+      "Measured from completed engagements with clear milestones, transparent pricing, and post-launch support.",
+    icon: "shield-check" as const,
+  },
+] as const;
+
+/** Homepage / about badge strip — same numbers as companyStats */
+export const stats = companyStats.map(({ value, label, icon }) => ({
+  value,
+  label,
+  icon,
+}));
 
 export const clients: Client[] = [
   { slug: "google", name: "Google", logo: "/trustedPartners/google.svg" },

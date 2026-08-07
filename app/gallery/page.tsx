@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 
 import { GalleryPageContent } from "@/components/gallery/gallery-page";
 import { galleryPageMeta } from "@/data/galleryPage";
-import { selfCanonical } from "@/seo/canonical";
+import { selfCanonical, pageTitle, pageTitleString } from "@/seo/canonical";
 import { breadcrumbSchema } from "@/seo/schema";
 
 export const metadata: Metadata = {
-  title: galleryPageMeta.title,
+  title: pageTitle(galleryPageMeta.title),
   description: galleryPageMeta.description,
   ...selfCanonical("/gallery"),
   openGraph: {
-    title: galleryPageMeta.title,
+    title: pageTitleString(galleryPageMeta.title),
     description: galleryPageMeta.description,
     type: "website",
   },

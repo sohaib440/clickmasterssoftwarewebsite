@@ -25,7 +25,7 @@ import {
   sectionPad,
 } from "@/lib/landing/constants";
 import { motionStagger } from "@/lib/landing/motion";
-import { selfCanonical } from "@/seo/canonical";
+import { selfCanonical, pageTitle, pageTitleString } from "@/seo/canonical";
 import {
   breadcrumbSchema,
   faqPageSchema,
@@ -52,11 +52,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: project.metaTitle,
+    title: pageTitle(project.metaTitle),
     description: project.metaDescription,
     ...selfCanonical(`/projects/${slug}`),
     openGraph: {
-      title: project.metaTitle,
+      title: pageTitleString(project.metaTitle),
       description: project.metaDescription,
       type: "article",
       locale: "en_PK",
