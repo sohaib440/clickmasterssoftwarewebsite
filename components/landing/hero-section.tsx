@@ -1,4 +1,4 @@
-import { Briefcase, Globe, Layers, ShieldCheck, Users } from "lucide-react";
+import { Briefcase, Code2, Globe, Users } from "lucide-react";
 import Link from "next/link";
 
 import { HeroCtaForm } from "@/components/landing/hero-cta-form";
@@ -17,8 +17,8 @@ import { cn } from "@/lib/utils";
 const statIcons = {
   users: Users,
   briefcase: Briefcase,
-  layers: Layers,
-  "shield-check": ShieldCheck,
+  code: Code2,
+  globe: Globe,
 } as const;
 
 export function HeroSection() {
@@ -135,15 +135,12 @@ export function HeroSection() {
         <Reveal immediate delay={motionStagger * 4}>
           <div className="mt-6 rounded-2xl border border-white/10 bg-zinc-950/90 px-4 py-6 sm:px-8">
             <dl className="grid grid-cols-2 gap-6 sm:grid-cols-4 sm:gap-0">
-              {stats.map((stat, i) => {
+              {stats.map((stat) => {
                 const Icon = statIcons[stat.icon];
                 return (
                   <div
                     key={stat.label}
-                    className={cn(
-                      "flex flex-col items-center text-center sm:px-4",
-                      i > 0 && "sm:border-l sm:border-white/10"
-                    )}
+                    className="flex flex-col items-center text-center sm:px-4"
                   >
                     <Icon className="mb-2 h-5 w-5 text-primary" aria-hidden />
                     <dt className="font-heading text-2xl font-normal text-white md:text-3xl">

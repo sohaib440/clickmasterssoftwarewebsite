@@ -120,6 +120,11 @@ export const organizationSchema = {
   image: organizationImageUrl,
 
   description: siteConfig.description,
+  foundingDate: "2019",
+  numberOfEmployees: {
+    "@type": "QuantitativeValue",
+    minValue: 20,
+  },
 
   address: hqAddress,
 

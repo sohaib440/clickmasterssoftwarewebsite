@@ -25,7 +25,7 @@ export const faqs: FaqItem[] = [
     tag: "Timeline",
     question: "How long does it take to build a product?",
     answer:
-      "Timelines depend on scope. A simple web app or MVP can ship in 6-10 weeks. A mid-complexity mobile application often takes 3-5 months. A full enterprise platform can take 6-12 months. We share a detailed timeline during planning and aim to protect it—our on-time delivery rate is 94%.",
+      "Timelines depend on scope. A simple web app or MVP can ship in 6-10 weeks. A mid-complexity mobile application often takes 3-5 months. A full enterprise platform can take 6-12 months. We share a detailed timeline during planning and protect milestones with clear ownership.",
   },
   {
     column: "left",

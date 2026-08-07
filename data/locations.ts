@@ -535,7 +535,7 @@ export const pakistanLocation: LocationPageContent = {
     title: "A top-rated software house and software development company in Pakistan",
     paragraphs: [
       "Next Software Development Company is a leading software house and software development company headquartered in Islamabad, with delivery teams across Lahore, Karachi, and major cities nationwide. Our software company builds custom software, HMS, ERP, mobile apps, and SaaS for clinics, schools, retailers, and growing enterprises in Pakistan, and for international clients who want senior Pakistani engineering at scale.",
-      "As an experienced software house in Pakistan, we bring 7+ years of delivery, 500+ happy clients, and 99% client satisfaction across 10+ countries. From Urdu-ready clinic workflows in Islamabad to multi-campus school platforms in Lahore and retail POS across Karachi, this software development company combines local market understanding with the same delivery standards we apply on global engagements.",
+      "As an experienced software house in Pakistan, we bring 7+ years of experience since our founding in 2019, 500+ happy clients, and a team of 20+ software engineers across 10+ countries. From Urdu-ready clinic workflows in Islamabad to multi-campus school platforms in Lahore and retail POS across Karachi, this software development company combines local market understanding with the same delivery standards we apply on global engagements.",
       "Whether you are a founder in Pakistan or an overseas company hiring a software house and software company in Pakistan, you get English-first communication, timezone-friendly collaboration, transparent fixed pricing, and post-launch support that does not disappear after go-live.",
     ],
     values: [
@@ -547,7 +547,7 @@ export const pakistanLocation: LocationPageContent = {
       {
         title: "Senior-only teams",
         description:
-          "Every software development company engagement is staffed with senior developers, designers, and QA, with no junior-only delivery squads.",
+          "Client work staffed by our 20+ software engineers and specialists, not junior-only bait-and-switch.",
       },
       {
         title: "Local + global clients",
@@ -596,7 +596,7 @@ export const pakistanLocation: LocationPageContent = {
   facts: {
     title: "Pakistan software house and software company facts",
     subtitle:
-      "Next Software Development Company is a national software house with senior delivery from Islamabad — the same company stats we publish on the homepage.",
+      "Next Software Development Company is a national software house with senior delivery from Islamabad. The same company stats we publish on the homepage.",
     items: companyStats.map(({ value, label, detail }) => ({
       value,
       label,

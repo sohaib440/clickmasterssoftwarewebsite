@@ -1,10 +1,5 @@
 import Link from "next/link";
-import {
-  ArrowLeft,
-  ArrowUpRight,
-  CheckCircle2,
-  Quote,
-} from "lucide-react";
+import { ArrowLeft, ArrowUpRight, CheckCircle2, Quote } from "lucide-react";
 
 import { CardImage } from "@/components/landing/card-image";
 import { FaqSection } from "@/components/landing/faq-section";
@@ -41,7 +36,9 @@ function SectionHeading({
 }) {
   return (
     <div className="max-w-3xl">
-      <p className={cn(overline, light ? "text-white/55" : "text-horizon-muted")}>
+      <p
+        className={cn(overline, light ? "text-white/55" : "text-horizon-muted")}
+      >
         {overlineText}
       </p>
       <h2
@@ -69,7 +66,12 @@ export function CaseStudyDetailPage({ study }: CaseStudyDetailPageProps) {
     { label: "Backend", items: study.technologyStack.backend },
     { label: "Database", items: study.technologyStack.database },
     ...(study.technologyStack.cloud?.length
-      ? [{ label: "Cloud / Infrastructure", items: study.technologyStack.cloud }]
+      ? [
+          {
+            label: "Cloud / Infrastructure",
+            items: study.technologyStack.cloud,
+          },
+        ]
       : []),
   ];
 
@@ -87,7 +89,10 @@ export function CaseStudyDetailPage({ study }: CaseStudyDetailPageProps) {
           <div className={cn(container, sectionPad, "relative")}>
             <Reveal immediate>
               <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-white/60">
-                <Link href="/" className="inline-flex items-center gap-1.5 hover:text-white">
+                <Link
+                  href="/"
+                  className="inline-flex items-center gap-1.5 hover:text-white"
+                >
                   <ArrowLeft className="size-4" aria-hidden />
                   Home
                 </Link>
@@ -104,7 +109,9 @@ export function CaseStudyDetailPage({ study }: CaseStudyDetailPageProps) {
               <div>
                 <Reveal immediate delay={motionStagger}>
                   <p className={cn(overline, "text-white/60")}>Case Study</p>
-                  <p className="mt-3 text-sm font-medium text-primary">{study.clientName}</p>
+                  <p className="mt-3 text-sm font-medium text-primary">
+                    {study.clientName}
+                  </p>
                   <h1 className="mt-3 font-heading text-4xl font-normal leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.15rem]">
                     {study.headline}
                   </h1>
@@ -137,7 +144,10 @@ export function CaseStudyDetailPage({ study }: CaseStudyDetailPageProps) {
               </div>
 
               <Reveal immediate delay={motionStagger * 2} direction="right">
-                <ProjectHeroSlideshow slides={study.slides} fallbackImage={study.image} />
+                <ProjectHeroSlideshow
+                  slides={study.slides}
+                  fallbackImage={study.image}
+                />
               </Reveal>
             </div>
           </div>
@@ -146,7 +156,10 @@ export function CaseStudyDetailPage({ study }: CaseStudyDetailPageProps) {
         <section className="bg-white text-horizon-navy">
           <div className={cn(container, sectionPad)}>
             <Reveal>
-              <SectionHeading overlineText="Engagement" title="Engagement snapshot" />
+              <SectionHeading
+                overlineText="Engagement"
+                title="Engagement snapshot"
+              />
             </Reveal>
             <dl className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {[
@@ -183,10 +196,16 @@ export function CaseStudyDetailPage({ study }: CaseStudyDetailPageProps) {
         <section className="bg-black text-white">
           <div className={cn(container, sectionPad)}>
             <Reveal>
-              <SectionHeading overlineText="Challenge" title="The business challenge" light />
-              <p className="mt-6 max-w-3xl text-justify text-base leading-relaxed text-white/70 md:text-lg">
-                {study.challenge}
-              </p>
+              <SectionHeading
+                overlineText="Challenge"
+                title="The business challenge"
+                light
+              />
+              <div className="mt-6 max-w-3xl space-y-4 text-justify text-base leading-relaxed text-white/70 md:text-lg">
+                {study.challenge.map((paragraph) => (
+                  <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+                ))}
+              </div>
             </Reveal>
           </div>
         </section>
@@ -194,7 +213,10 @@ export function CaseStudyDetailPage({ study }: CaseStudyDetailPageProps) {
         <section className="bg-white text-horizon-navy">
           <div className={cn(container, sectionPad)}>
             <Reveal>
-              <SectionHeading overlineText="Approach" title="How we approached it" />
+              <SectionHeading
+                overlineText="Approach"
+                title="How we approached it"
+              />
               <p className="mt-6 max-w-3xl text-justify text-base leading-relaxed text-horizon-muted md:text-lg">
                 {study.approach}
               </p>
@@ -204,7 +226,10 @@ export function CaseStudyDetailPage({ study }: CaseStudyDetailPageProps) {
                 <li key={item}>
                   <Reveal delay={index * motionStagger}>
                     <div className="flex gap-3 text-justify text-base leading-relaxed text-horizon-muted md:text-lg">
-                      <CheckCircle2 className="mt-1 size-5 shrink-0 text-primary" aria-hidden />
+                      <CheckCircle2
+                        className="mt-1 size-5 shrink-0 text-primary"
+                        aria-hidden
+                      />
                       <span>{item}</span>
                     </div>
                   </Reveal>
@@ -217,7 +242,10 @@ export function CaseStudyDetailPage({ study }: CaseStudyDetailPageProps) {
         <section className="bg-horizon-cream text-horizon-navy">
           <div className={cn(container, sectionPad)}>
             <Reveal>
-              <SectionHeading overlineText="Capabilities" title="What the solution included" />
+              <SectionHeading
+                overlineText="Capabilities"
+                title="What the solution included"
+              />
             </Reveal>
             <ul className="mt-10 grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {study.keyFeatures.map((feature, index) => (
@@ -241,7 +269,11 @@ export function CaseStudyDetailPage({ study }: CaseStudyDetailPageProps) {
         <section className="bg-black text-white">
           <div className={cn(container, sectionPad)}>
             <Reveal>
-              <SectionHeading overlineText="Stack" title="Technology stack" light />
+              <SectionHeading
+                overlineText="Stack"
+                title="Technology stack"
+                light
+              />
             </Reveal>
             <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {stackSections.map((section, index) => (
@@ -253,7 +285,10 @@ export function CaseStudyDetailPage({ study }: CaseStudyDetailPageProps) {
                       </h3>
                       <ul className="mt-4 space-y-2">
                         {section.items.map((item) => (
-                          <li key={item} className="text-sm leading-relaxed text-white/75">
+                          <li
+                            key={item}
+                            className="text-sm leading-relaxed text-white/75"
+                          >
                             {item}
                           </li>
                         ))}
@@ -269,7 +304,10 @@ export function CaseStudyDetailPage({ study }: CaseStudyDetailPageProps) {
         <section className="bg-white text-horizon-navy">
           <div className={cn(container, sectionPad)}>
             <Reveal>
-              <SectionHeading overlineText="Results" title="Business outcomes" />
+              <SectionHeading
+                overlineText="Results"
+                title="Business outcomes"
+              />
             </Reveal>
             <ul className="mt-10 grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {study.outcomes.map((item, index) => (
@@ -293,14 +331,20 @@ export function CaseStudyDetailPage({ study }: CaseStudyDetailPageProps) {
         <section className="bg-horizon-cream text-horizon-navy">
           <div className={cn(container, sectionPad)}>
             <Reveal>
-              <SectionHeading overlineText="Insights" title="What we learned delivering it" />
+              <SectionHeading
+                overlineText="Insights"
+                title="What we learned delivering it"
+              />
             </Reveal>
             <ul className="mt-10 space-y-3">
               {study.insights.map((item, index) => (
                 <li key={item}>
                   <Reveal delay={index * motionStagger}>
                     <div className="flex gap-3 text-justify text-base leading-relaxed text-horizon-muted md:text-lg">
-                      <CheckCircle2 className="mt-1 size-5 shrink-0 text-primary" aria-hidden />
+                      <CheckCircle2
+                        className="mt-1 size-5 shrink-0 text-primary"
+                        aria-hidden
+                      />
                       <span>{item}</span>
                     </div>
                   </Reveal>
@@ -319,7 +363,8 @@ export function CaseStudyDetailPage({ study }: CaseStudyDetailPageProps) {
                 light
               />
               <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/65">
-                Interface snapshots from the live build. For full module documentation, see the{" "}
+                Interface snapshots from the live build. For full module
+                documentation, see the{" "}
                 <Link
                   href={projectDetailPath(study.slug)}
                   className="text-primary underline-offset-4 hover:underline"
@@ -344,7 +389,9 @@ export function CaseStudyDetailPage({ study }: CaseStudyDetailPageProps) {
                       />
                     </div>
                     <div className="flex flex-col p-5">
-                      <h3 className="font-heading text-lg text-white">{slide.label}</h3>
+                      <h3 className="font-heading text-lg text-white">
+                        {slide.label}
+                      </h3>
                       <p className="mt-2 text-justify text-sm leading-relaxed text-white/65">
                         {slide.caption}
                       </p>
@@ -377,7 +424,7 @@ export function CaseStudyDetailPage({ study }: CaseStudyDetailPageProps) {
                     {study.clientQuote}
                   </p>
                   <footer className="mt-4 text-sm font-medium text-horizon-navy">
-                    — {study.clientName}
+                    {study.clientName}
                   </footer>
                 </blockquote>
               </Reveal>
@@ -387,7 +434,7 @@ export function CaseStudyDetailPage({ study }: CaseStudyDetailPageProps) {
 
         <FaqSection
           items={study.faqs}
-          intro={`Questions about this engagement — how we scoped, sequenced, and measured outcomes for ${study.clientName}.`}
+          intro={`Questions about this engagement: how we scoped, sequenced, and measured outcomes for ${study.clientName}.`}
           overlineText="Case study FAQs"
           justify
           title={
@@ -401,7 +448,11 @@ export function CaseStudyDetailPage({ study }: CaseStudyDetailPageProps) {
           <section className="bg-black text-white">
             <div className={cn(container, sectionPad)}>
               <Reveal>
-                <SectionHeading overlineText="More work" title="Related case studies" light />
+                <SectionHeading
+                  overlineText="More work"
+                  title="Related case studies"
+                  light
+                />
               </Reveal>
               <ul className="mt-10 grid auto-rows-fr gap-6 md:grid-cols-3">
                 {related.map((item, index) => (
@@ -447,10 +498,13 @@ export function CaseStudyDetailPage({ study }: CaseStudyDetailPageProps) {
                 Facing a similar operational challenge?
               </h2>
               <p className="mx-auto mt-4 max-w-lg text-sm text-white/75 md:text-base">
-                Tell Next Software Development Company about your goals. We will reply within one
-                business day.
+                Tell Next Software Development Company about your goals. We will
+                reply within one business day.
               </p>
-              <Link href={contactPath} className={cn("mt-8 inline-flex", btnOnDark)}>
+              <Link
+                href={contactPath}
+                className={cn("mt-8 inline-flex", btnOnDark)}
+              >
                 Get a Free Quote
               </Link>
             </Reveal>

@@ -13,6 +13,7 @@ import { TeamSection } from "@/components/landing/team-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { ServiceBreadcrumbs } from "@/components/services/shared/service-breadcrumbs";
 import { pakistanCities, pakistanLocation } from "@/data/locations";
+import { companyStats } from "@/data/landing/trust";
 import {
   btnOnDark,
   btnOutlineDark,
@@ -56,11 +57,7 @@ const upcomingMarkets = [
   },
 ];
 
-const featuredStats = [
-  { value: "500+", label: "Happy Clients" },
-  { value: "7+", label: "Years of Experience" },
-  { value: "99%", label: "Client Satisfaction" },
-];
+const featuredStats = companyStats.map(({ value, label }) => ({ value, label }));
 
 export default function LocationsPage() {
   const cityCount = pakistanCities.length;
@@ -192,11 +189,11 @@ export default function LocationsPage() {
 
                   <p className="relative mt-6 max-w-xl text-base leading-relaxed text-horizon-muted md:text-lg">
                     Headquarters and primary delivery base for HMS, ERP, mobile apps, and SaaS across{" "}
-                    {cityCount} cities — including Islamabad, Lahore, Karachi, and every market we
+                    {cityCount} cities, including Islamabad, Lahore, Karachi, and every market we
                     cover nationwide.
                   </p>
 
-                  <dl className="relative mt-8 grid grid-cols-3 gap-3 border-y border-horizon-border py-5">
+                  <dl className="relative mt-8 grid grid-cols-2 gap-4 border-y border-horizon-border py-5 sm:grid-cols-4">
                     {featuredStats.map((stat) => (
                       <div key={stat.label}>
                         <dt className="font-heading text-2xl text-horizon-navy sm:text-3xl">
