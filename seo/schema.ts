@@ -410,9 +410,11 @@ export const localBusinessSchema = {
 };
 
 /**
- * LocalBusiness for Pakistan hub or a city page.
- * HQ stays Islamabad; areaServed is the country or city this page targets.
- * Does not invent branch street addresses.
+ * Location structured data.
+ *
+ * - Country (Pakistan hub): full LocalBusiness with real Islamabad HQ address/geo.
+ * - City pages: Service + areaServed only — never LocalBusiness with Islamabad
+ *   coordinates, which looks like fake local presence when scaled across cities.
  */
 export function locationLocalBusinessSchema(options: {
   /** e.g. "Pakistan" or "Lahore" */
@@ -426,22 +428,41 @@ export function locationLocalBusinessSchema(options: {
 }) {
   const pageUrl = absoluteUrl(options.pageUrl);
 
+  const areaServed =
+    options.areaServedType === "Country"
+      ? { "@type": "Country" as const, name: options.areaServedName }
+      : {
+          "@type": "City" as const,
+          name: options.areaServedName,
+          containedInPlace: {
+            "@type": "Country" as const,
+            name: "Pakistan",
+          },
+        };
+
+  // City service-area pages: no LocalBusiness geo/address (HQ remains Islamabad only).
+  if (options.areaServedType === "City") {
+    return {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": `${siteConfig.url}/#service-area-${options.idSuffix}`,
+      name: `${siteConfig.name} — software development for ${options.areaServedName}`,
+      serviceType: "Software development",
+      provider: {
+        "@id": `${siteConfig.url}/#organization`,
+      },
+      url: pageUrl,
+      description: options.description,
+      areaServed,
+    };
+  }
+
   return {
     ...localBusinessSchema,
     "@id": `${siteConfig.url}/#localbusiness-${options.idSuffix}`,
     url: pageUrl,
     description: options.description,
-    areaServed:
-      options.areaServedType === "Country"
-        ? { "@type": "Country", name: options.areaServedName }
-        : {
-            "@type": "City",
-            name: options.areaServedName,
-            containedInPlace: {
-              "@type": "Country",
-              name: "Pakistan",
-            },
-          },
+    areaServed,
   };
 }
 
