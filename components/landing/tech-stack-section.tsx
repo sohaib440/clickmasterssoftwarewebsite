@@ -371,7 +371,6 @@ function TechBubbleCanvas({ logos }: { logos: readonly TechStackLogo[] }) {
 export function TechStackSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeGroup = techStackLogoGroups[activeIndex];
-  const totalTools = techStackLogoGroups.reduce((sum, g) => sum + g.logos.length, 0);
 
   return (
     <section className="relative w-full overflow-hidden border-y border-white/10 bg-black text-white">
@@ -391,9 +390,8 @@ export function TechStackSection() {
             className="max-w-3xl"
           />
           <div className="shrink-0 rounded-2xl border border-primary/25 bg-primary/5 px-5 py-4 text-center lg:text-right">
-            <p className="font-heading text-3xl text-primary">{totalTools}+</p>
             <p className="mt-1 text-[11px] uppercase tracking-[0.16em] text-white/50">
-              Technologies mastered
+              Technology built around your Business
             </p>
           </div>
         </div>
