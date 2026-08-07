@@ -291,9 +291,9 @@ export default function PrivacyPage() {
                 </p>
                 <p>
                   To exercise a privacy request, email{" "}
-                  <a className="text-primary underline" href={`mailto:${siteBrand.email}`}>
-                    {siteBrand.email}
-                  </a>{" "}
+                <a className="text-primary underline" href={`mailto:${siteBrand.email}`}>
+                  {siteBrand.email}
+                </a>{" "}
                   with the subject line &quot;Privacy request&quot; and enough detail for us to verify
                   and respond. We may need to confirm your identity before completing certain
                   requests.
@@ -324,9 +324,9 @@ export default function PrivacyPage() {
                     {siteBrand.email}
                   </a>
                   , phone {siteBrand.phone}, or our{" "}
-                  <Link href={contactPath} className="text-primary underline">
-                    contact page
-                  </Link>
+                <Link href={contactPath} className="text-primary underline">
+                  contact page
+                </Link>
                   . Postal / office location: {siteBrand.location}.
                 </p>
                 <p>
@@ -334,8 +334,8 @@ export default function PrivacyPage() {
                   <Link href="/terms" className="text-primary underline">
                     Terms of Service
                   </Link>
-                  .
-                </p>
+                .
+              </p>
               </Section>
             </div>
           </div>
