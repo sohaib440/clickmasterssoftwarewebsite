@@ -23,7 +23,6 @@ export function AboutPage() {
               <Reveal
                 key={stat.label}
                 delay={i * motionStagger}
-                className={cn(i > 0 && "sm:border-l sm:border-horizon-navy/10 sm:pl-6")}
               >
                 <dt className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
                   {stat.value}

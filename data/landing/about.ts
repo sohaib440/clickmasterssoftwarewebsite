@@ -4,20 +4,20 @@ export const aboutSection = {
   teamLink: teamPath,
   teamCta: "Meet our engineering team",
   paragraphs: [
-    "Next Software Development Company is a trusted software house and software company partnering with founders and operators across the United States, United Kingdom, United Arab Emirates, Canada, and Australia. We were founded with one belief: that great software should be accessible to every business, not just the Fortune 500.",
-    "Over 7+ years we have supported 500+ happy clients across 10+ countries, with 99% client satisfaction. Our engineers, designers, QA specialists, and project managers turn complex business challenges into clean, efficient, and scalable digital products — whether you need a mobile app for your startup, an ERP for manufacturing, or a SaaS platform for recurring revenue.",
+    "Next Software Development Company is a trusted software house and software company partnering with founders and operators across the United States, United Kingdom, United Arab Emirates, Canada, and Australia. We were founded in 2019 with one belief: that great software should be accessible to every business, not just the Fortune 500.",
+    "Since 2019 we have built 7+ years of experience supporting 500+ happy clients across 10+ countries with a team of 20+ software engineers, designers, QA specialists, and project managers. We turn complex business challenges into clean, efficient, and scalable digital products, whether you need a mobile app for your startup, an ERP for manufacturing, or a SaaS platform for recurring revenue.",
     "Clients choose us as a top rated software company for senior delivery quality and practical pricing. You get English-speaking, timezone-flexible teams with strong technical craft, clear communication, and ownership that continues after launch.",
   ],
   values: [
     {
       title: "Proven delivery record",
       description:
-        "7+ years of delivery with 500+ happy clients and 99% satisfaction across 10+ countries.",
+        "Founded in 2019, with 7+ years of experience, 500+ happy clients, and delivery across 10+ countries.",
     },
     {
-      title: "Senior-only teams",
+      title: "20+ software engineers",
       description:
-        "Senior-only development teams no junior developers on client projects.",
+        "A focused team of 20+ software engineers and specialists on client delivery.",
     },
     {
       title: "Timezone overlap",
@@ -35,9 +35,9 @@ export const aboutSection = {
         "Post-launch support included in every engagement we do not disappear after go-live.",
     },
     {
-      title: "ISO-compliant processes",
+      title: "ISO-aligned processes",
       description:
-        "ISO-compliant development processes and data security best practices.",
+        "Development processes and data security practices aligned with industry standards.",
     },
   ],
   image: {

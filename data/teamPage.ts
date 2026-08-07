@@ -13,7 +13,7 @@ export const teamPageMeta = {
     {
       title: "Senior-led delivery",
       description:
-        "Client projects are staffed with experienced engineers and designers—no bait-and-switch to junior-only teams.",
+        "Client projects are staffed with our 20+ software engineers and designers, with no bait-and-switch to junior-only teams.",
     },
     {
       title: "Direct communication",

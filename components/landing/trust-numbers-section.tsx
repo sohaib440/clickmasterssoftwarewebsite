@@ -1,4 +1,4 @@
-import { Briefcase, Layers, ShieldCheck, Users } from "lucide-react";
+import { Briefcase, Code2, Globe, Users } from "lucide-react";
 
 import { Reveal } from "@/components/landing/reveal";
 import { container, sectionPad } from "@/lib/landing/constants";
@@ -8,8 +8,8 @@ import { cn } from "@/lib/utils";
 const statIcons = {
   users: Users,
   briefcase: Briefcase,
-  layers: Layers,
-  "shield-check": ShieldCheck,
+  code: Code2,
+  globe: Globe,
 } as const;
 
 type TrustNumbersSectionProps = {
@@ -43,18 +43,12 @@ export function TrustNumbersSection({
             )}
           >
             <dl className="grid grid-cols-2 gap-6 sm:grid-cols-4 sm:gap-0">
-              {stats.map((stat, i) => {
+              {stats.map((stat) => {
                 const Icon = statIcons[stat.icon];
                 return (
                   <div
                     key={stat.label}
-                    className={cn(
-                      "flex flex-col items-center text-center sm:px-4",
-                      i > 0 &&
-                        (dark
-                          ? "sm:border-l sm:border-white/10"
-                          : "sm:border-l sm:border-horizon-border")
-                    )}
+                    className="flex flex-col items-center text-center sm:px-4"
                   >
                     <Icon
                       className={cn("mb-2 h-5 w-5", dark ? "text-primary" : "text-primary")}

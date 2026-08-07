@@ -1,5 +1,5 @@
 export const teamIntro =
-  "We are a focused team of engineers, designers, and delivery specialists. Small enough to stay close to every project, experienced enough to deliver from startup MVPs to enterprise platforms. Each member is selected for technical craft, clear communication, and professional ownership.";
+  "We are a focused team of 20+ software engineers, designers, and delivery specialists. Founded in 2019, we are small enough to stay close to every project and experienced enough to deliver from startup MVPs to enterprise platforms. Each member is selected for technical craft, clear communication, and professional ownership.";
 
 export const teamMembers = [
   {

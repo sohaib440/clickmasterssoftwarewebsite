@@ -4,10 +4,8 @@ export type { Client, RatingBadge };
 
 export const trustedPartnersSection: { label: string; fallbackText: string } = {
   label: "",
-  fallbackText:
-    "",
+  fallbackText: "",
 };
-
 
 export const ratingBadges: RatingBadge[] = [
   { slug: "facebook", name: "Facebook" },
@@ -15,7 +13,6 @@ export const ratingBadges: RatingBadge[] = [
   { slug: "trustpilot", name: "Trustpilot" },
   { slug: "google", name: "Google" },
 ];
-
 
 /**
  * Single source of truth for company numbers sitewide (homepage, locations, about).
@@ -33,22 +30,22 @@ export const companyStats = [
     value: "7+",
     label: "Years of Experience",
     detail:
-      "Seven-plus years building production software with senior engineers, designers, and QA.",
+      "Seven-plus years building production software with senior engineers, designers, and QA since our founding in 2019.",
     icon: "briefcase" as const,
+  },
+  {
+    value: "20+",
+    label: "Software Engineers",
+    detail:
+      "A delivery team of 20+ software engineers, designers, and specialists shipping client products.",
+    icon: "code" as const,
   },
   {
     value: "10+",
     label: "Countries Served",
     detail:
       "Delivery for clients in Pakistan and overseas markets including the USA, UK, UAE, Canada, and Australia.",
-    icon: "layers" as const,
-  },
-  {
-    value: "99%",
-    label: "Client Satisfaction",
-    detail:
-      "Measured from completed engagements with clear milestones, transparent pricing, and post-launch support.",
-    icon: "shield-check" as const,
+    icon: "globe" as const,
   },
 ] as const;
 
