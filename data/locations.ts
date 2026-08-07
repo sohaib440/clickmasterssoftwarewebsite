@@ -519,7 +519,7 @@ export const pakistanLocation: LocationPageContent = {
   country: "Pakistan",
   href: "/location/software-house-and-software-company-in-pakistan",
   eyebrow: "Locations · Pakistan",
-  title: "Best software house and top rated software company in Pakistan",
+  title: "Software House in Pakistan",
   description:
     "Next Software Development Company is the best software house and top-rated software development company in Pakistan. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Islamabad, Lahore, Karachi, and beyond.",
   descriptionSecondary:
