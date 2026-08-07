@@ -33,7 +33,6 @@ export const metadata: Metadata = {
     template: `%s | ${siteBrand.name}`,
   },
   description: siteMetadata.description,
-  keywords: [...siteMetadata.keywords],
   robots: {
     index: true,
     follow: true,

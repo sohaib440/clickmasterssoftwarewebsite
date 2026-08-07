@@ -20,7 +20,7 @@ import { pakistanLocation } from "@/data/locations";
 import { btnOnDark, container, sectionPad } from "@/lib/landing/constants";
 import { selfCanonical, pageTitle, pageTitleString } from "@/seo/canonical";
 import { cn } from "@/lib/utils";
-import { locationLocalBusinessSchema, organizationSchema, breadcrumbSchema, faqPageSchema } from "@/seo/schema";
+import { locationLocalBusinessSchema, organizationSchema, breadcrumbSchema, faqPageSchema, jsonLdGraph } from "@/seo/schema";
 import { siteBrand } from "@/lib/landing/brand";
 
 export const metadata: Metadata = {
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 export default function PakistanLocationPage() {
   const location = pakistanLocation;
 
-  const schemas = [
+  const schemas = jsonLdGraph([
     organizationSchema,
     locationLocalBusinessSchema({
       areaServedName: "Pakistan",
@@ -59,7 +59,7 @@ export default function PakistanLocationPage() {
           }),
         ]
       : []),
-  ];
+  ]);
 
   return (
     <div className="flex min-h-full w-full flex-col overflow-x-clip bg-black text-foreground">

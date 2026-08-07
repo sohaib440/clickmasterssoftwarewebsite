@@ -5,8 +5,8 @@
  * Dynamic schemas = small helpers when the page needs data (blog, project, city).
  *
  * Usage on a page:
- *   import { organizationSchema, localBusinessSchema, webSiteSchema, homepageFaqSchema } from "@/seo/schema";
- *   const schemas = [organizationSchema, localBusinessSchema, webSiteSchema, homepageFaqSchema];
+ *   import { organizationSchema, localBusinessSchema, webSiteSchema, homepageFaqSchema, jsonLdGraph } from "@/seo/schema";
+ *   const schemas = jsonLdGraph([organizationSchema, localBusinessSchema, webSiteSchema, homepageFaqSchema]);
  *
  * NOTE: professionalServiceSchema and teamPageSchema are meant to REPLACE
  * organizationSchema on their respective pages (service pages, team page) — not
@@ -68,27 +68,6 @@ const countriesServed = [
   { "@type": "Country", name: "Australia" },
 ] as const;
 
-const siteKeywords = [
-  "Software House",
-  "Software Company",
-  "Software Development Company",
-  "Best Software House",
-  "Best Software Company",
-  "Top Rated Software House",
-  "Top Rated Software Company",
-  "Leading Software House",
-  "Leading Software Company",
-  "Leading Software Development Company",
-  "Web Development",
-  "Mobile Apps",
-  "AI Development",
-  "CRM",
-  "ERP",
-  "SaaS",
-  "Cloud",
-  "DevOps",
-] as const;
-
 const openingHours = {
   "@type": "OpeningHoursSpecification",
   dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -101,6 +80,22 @@ function absoluteUrl(pathOrUrl: string) {
     return pathOrUrl;
   }
   return `${siteConfig.url}${pathOrUrl.startsWith("/") ? pathOrUrl : `/${pathOrUrl}`}`;
+}
+
+/**
+ * Pack page entities into one JSON-LD document Google/validators can confirm.
+ * Strips per-node `@context` so the graph has a single context.
+ */
+export function jsonLdGraph(
+  nodes: Array<Record<string, unknown>>,
+): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@graph": nodes.map((node) => {
+      const { ["@context"]: _context, ...rest } = node;
+      return rest;
+    }),
+  };
 }
 
 // ---------------------------------------------------------------------------
@@ -121,6 +116,11 @@ export const organizationSchema = {
 
   description: siteConfig.description,
   foundingDate: "2019",
+  foundingLocation: {
+    "@type": "Place",
+    name: "Islamabad, Pakistan",
+    address: hqAddress,
+  },
   numberOfEmployees: {
     "@type": "QuantitativeValue",
     minValue: 20,
@@ -158,8 +158,6 @@ export const organizationSchema = {
     "UI/UX design",
     "Software testing and QA",
   ],
-
-  keywords: siteKeywords.join(", "),
 };
 
 // ---------------------------------------------------------------------------
@@ -190,7 +188,6 @@ export const webSiteSchema = {
   about: {
     "@id": `${siteConfig.url}/#organization`,
   },
-  keywords: siteKeywords.join(", "),
   inLanguage: "en",
   // No SearchAction — the site does not have a /search page yet.
 };
@@ -401,7 +398,7 @@ export const localBusinessSchema = {
     longitude: 73.0479,
   },
 
-  openingHoursSpecification: openingHours,
+  openingHoursSpecification: [openingHours],
 
   areaServed: [...countriesServed],
 
@@ -842,21 +839,25 @@ export function locationServiceSchema(options: {
   };
 }
 
-/** Review – only with real testimonials (no fake star ratings) */
+/** Review – only with real testimonials visible on the page (no fake star ratings). */
 export function reviewSchema(options: {
   authorName: string;
   reviewBody: string;
   jobTitle?: string;
+  /** Stable suffix for @id, e.g. "1" or author slug */
+  idSuffix: string;
 }) {
   return {
     "@context": "https://schema.org",
     "@type": "Review",
+    "@id": `${siteConfig.url}/#review-${options.idSuffix}`,
     author: {
       "@type": "Person",
       name: options.authorName,
-      jobTitle: options.jobTitle,
+      ...(options.jobTitle ? { jobTitle: options.jobTitle } : {}),
     },
     reviewBody: options.reviewBody,
+    inLanguage: "en",
     itemReviewed: {
       "@type": "Organization",
       "@id": `${siteConfig.url}/#organization`,
