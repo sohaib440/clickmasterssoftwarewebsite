@@ -6,15 +6,15 @@ import {
 } from "@/components/project/projects-page";
 import { projects } from "@/data/landingPage";
 import { projectDetailPath } from "@/data/projects";
-import { selfCanonical } from "@/seo/canonical";
+import { selfCanonical, pageTitle, pageTitleString } from "@/seo/canonical";
 import { breadcrumbSchema, itemListSchema } from "@/seo/schema";
 
 export const metadata: Metadata = {
-  title: projectPageContent.metaTitle,
+  title: pageTitle(projectPageContent.metaTitle),
   description: projectPageContent.metaDescription,
   ...selfCanonical("/projects"),
   openGraph: {
-    title: projectPageContent.metaTitle,
+    title: pageTitleString(projectPageContent.metaTitle),
     description: projectPageContent.metaDescription,
     type: "website",
   },

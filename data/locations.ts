@@ -524,7 +524,7 @@ export const pakistanLocation: LocationPageContent = {
     "Next Software Development Company is the best software house and top-rated software development company in Pakistan. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Islamabad, Lahore, Karachi, and beyond.",
   descriptionSecondary:
     "Our experienced team of developers, designers, and engineers combines technical expertise with deep local market insight to deliver scalable, secure, and affordable solutions that streamline operations and drive sustainable growth. Whether you are a startup building your first MVP or an enterprise seeking a full scale ERP system, we turn your vision into reliable, high performing software.",
-  metaTitle: "Best Software House and Top Rated Software Company in Pakistan",
+  metaTitle: "Software House in Pakistan",
   metaDescription:
     "Next Software Development Company is the best software house and top-rated software development company in Pakistan. Custom HMS, ERP, and digital products for businesses nationwide.",
   coverageTitle: "Cities we serve across Pakistan",

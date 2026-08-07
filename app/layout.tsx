@@ -6,6 +6,7 @@ import { ClearStaleServiceWorker } from "@/components/dev/clear-stale-sw";
 import { SiteFooter } from "@/components/landing/site-footer";
 import { MotionInit } from "@/components/motion-init";
 import { siteBrand, siteMetadata } from "@/lib/landing/brand";
+import { pageTitleString } from "@/seo/canonical";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
@@ -28,7 +29,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL(siteBrand.url),
   title: {
-    default: siteMetadata.title,
+    default: pageTitleString(siteMetadata.title),
     template: `%s | ${siteBrand.name}`,
   },
   description: siteMetadata.description,

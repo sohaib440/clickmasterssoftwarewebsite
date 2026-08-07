@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import { CardImage } from "@/components/landing/card-image";
 import { Reveal } from "@/components/landing/reveal";
 import { SectionHeading } from "@/components/landing/section-heading";
-import { pakistanLocation } from "@/data/locations";
+import { pakistanCities, pakistanLocation } from "@/data/locations";
 import { btnOutline, card, cardSoft, container, sectionPad } from "@/lib/landing/constants";
 import { aboutSection } from "@/data/landingPage";
 import { motionStagger } from "@/lib/landing/motion";
@@ -32,7 +32,24 @@ type AboutSectionProps = {
   content?: AboutSectionContent;
 };
 
-/** Renders `[[anchor text]]` as an internal link to the Pakistan location page. */
+/**
+ * Resolve `[[anchor text]]` to a real internal URL.
+ * City names → that city page; Pakistan / generic software-house anchors → Pakistan hub.
+ */
+function resolveInternalWikiHref(label: string): string {
+  const lower = label.toLowerCase().trim();
+  const cities = [...pakistanCities].sort((a, b) => b.city.length - a.city.length);
+
+  for (const city of cities) {
+    if (lower.includes(city.city.toLowerCase())) {
+      return city.href;
+    }
+  }
+
+  return pakistanLocation.href;
+}
+
+/** Renders `[[anchor text]]` as contextual internal links (city or Pakistan hub). */
 function renderParagraphWithCountryLinks(paragraph: string): ReactNode {
   const parts = paragraph.split(/(\[\[[^\]]+\]\])/g);
   if (parts.length === 1) return paragraph;
@@ -40,13 +57,14 @@ function renderParagraphWithCountryLinks(paragraph: string): ReactNode {
   return parts.map((part, i) => {
     const match = /^\[\[([^\]]+)\]\]$/.exec(part);
     if (!match) return part;
+    const label = match[1];
     return (
       <Link
-        key={`${match[1]}-${i}`}
-        href={pakistanLocation.href}
+        key={`${label}-${i}`}
+        href={resolveInternalWikiHref(label)}
         className="font-medium text-primary underline underline-offset-4 transition-colors hover:text-[#b8941f]"
       >
-        {match[1]}
+        {label}
       </Link>
     );
   });

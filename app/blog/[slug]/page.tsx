@@ -8,7 +8,7 @@ import {
   getBlogBySlug,
   isBlogSlug,
 } from "@/lib/landing/blog";
-import { selfCanonical } from "@/seo/canonical";
+import { selfCanonical, pageTitle, pageTitleString } from "@/seo/canonical";
 import { blogPostingSchema, breadcrumbSchema } from "@/seo/schema";
 
 type PageProps = {
@@ -25,9 +25,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!post) return { title: "Not found" };
 
   return {
-    title: post.title,
+    title: pageTitle(post.title),
     description: post.excerpt,
     ...selfCanonical(`/blog/${slug}`),
+    openGraph: {
+      title: pageTitleString(post.title),
+      description: post.excerpt,
+      type: "article",
+    },
   };
 }
 

@@ -9,7 +9,7 @@ import {
   mainCategoryPath,
 } from "@/lib/content";
 import { siteBrand } from "@/lib/landing/brand";
-import { selfCanonical } from "@/seo/canonical";
+import { selfCanonical, pageTitle, pageTitleString } from "@/seo/canonical";
 import {
   breadcrumbSchema,
   faqPageSchema,
@@ -32,27 +32,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const path = mainCategoryPath(slug);
   const description = category.metaDescription;
-
-  if (category.pageTitle) {
-    return {
-      title: { absolute: category.pageTitle },
-      description,
-      ...selfCanonical(path),
-      openGraph: {
-        title: category.pageTitle,
-        description,
-        type: "website",
-        locale: "en_PK",
-      },
-    };
-  }
+  const titleSegment = category.pageTitle || category.label;
 
   return {
-    title: category.label,
+    title: pageTitle(titleSegment),
     description,
     ...selfCanonical(path),
     openGraph: {
-      title: category.label,
+      title: pageTitleString(titleSegment),
       description,
       type: "website",
       locale: "en_PK",

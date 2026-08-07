@@ -21,7 +21,7 @@ import {
   getPakistanCityBySlug,
 } from "@/data/cities-in-pakistan";
 import { btnOnDark, container, sectionPad } from "@/lib/landing/constants";
-import { selfCanonical } from "@/seo/canonical";
+import { selfCanonical, pageTitle, pageTitleString } from "@/seo/canonical";
 import { cn } from "@/lib/utils";
 import { siteBrand } from "@/lib/landing/brand";
 import {
@@ -49,12 +49,14 @@ export async function generateMetadata({
     return { title: "Location not found" };
   }
 
+  const titleSegment = location.metaTitle ?? location.title;
+
   return {
-    title: location.metaTitle ?? location.title,
+    title: pageTitle(titleSegment),
     description: location.metaDescription ?? location.description,
     ...selfCanonical(`/location/${slug}`),
     openGraph: {
-      title: location.metaTitle ?? location.title,
+      title: pageTitleString(titleSegment),
       description: location.metaDescription ?? location.description,
       type: "website",
     },

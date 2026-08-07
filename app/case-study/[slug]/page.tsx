@@ -7,7 +7,7 @@ import {
   getCaseStudyDetailBySlug,
 } from "@/data/caseStudy";
 import { getProjectBySlug } from "@/data/projects";
-import { selfCanonical } from "@/seo/canonical";
+import { selfCanonical, pageTitle, pageTitleString } from "@/seo/canonical";
 import { breadcrumbSchema, projectSchema } from "@/seo/schema";
 
 type PageProps = {
@@ -28,11 +28,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: study.metaTitle,
+    title: pageTitle(study.metaTitle),
     description: study.metaDescription,
     ...selfCanonical(`/case-study/${slug}`),
     openGraph: {
-      title: study.metaTitle,
+      title: pageTitleString(study.metaTitle),
       description: study.metaDescription,
       type: "article",
       locale: "en_PK",

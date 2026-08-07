@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 
 import { IndustriesPageContent } from "@/components/industries/industries-page";
 import { industries, industriesPageMeta } from "@/data/industriesPage";
-import { selfCanonical } from "@/seo/canonical";
+import { selfCanonical, pageTitle, pageTitleString } from "@/seo/canonical";
 import { breadcrumbSchema, itemListSchema } from "@/seo/schema";
 
 export const metadata: Metadata = {
-  title: industriesPageMeta.title,
+  title: pageTitle(industriesPageMeta.title),
   description: industriesPageMeta.description,
   ...selfCanonical("/industries"),
   openGraph: {
-    title: industriesPageMeta.title,
+    title: pageTitleString(industriesPageMeta.title),
     description: industriesPageMeta.description,
     type: "website",
   },

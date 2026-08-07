@@ -28,48 +28,48 @@ type CityCopy = {
 const cityCopy: Record<string, CityCopy> = {
   Islamabad: {
     // --- SEO: edit these two fields for this city page ---
-    metaTitle: "Software House in Islamabad | Custom Software & ERP",
+    metaTitle: "Software House in Islamabad",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Islamabad. Custom HMS, ERP, and digital products for the capital.",
     aboutTitle: "A top-rated software house and software development company in Islamabad",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Islamabad. As a trusted software house and software company, we deliver HMS, clinic ERP, government workflows, and digital products for capital-region clinics, schools, and enterprises.",
       "As an experienced software company in Islamabad, our senior engineers and designers work closely with operators who need Urdu-ready staff tools, compliance-aware systems, and reliable English-first communication from a proven software development company.",
-      "Whether you are launching a clinic platform in the twin cities or hiring a software house and software company in Islamabad for a longer product partnership, you get transparent scoping, senior-only delivery, and support after go-live from a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Whether you are launching a clinic platform with [[Rawalpindi]] twin-city teams or hiring a software house and software company in Islamabad for a longer product partnership, you get transparent scoping, senior-only delivery, and support after go-live from a [[software company in Pakistan]].",
     ],
     factDetail:
       "Software house delivery for clinics, schools, and enterprises across Islamabad and the twin cities.",
     heroImageSrc: cityHeroImageSrc,
     heroLead:
-      "Next Software Development Company is the best software house and top-rated software development company in Islamabad. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Islamabad and the twin cities.",
+      "Next Software Development Company is the best software house and top-rated software development company in Islamabad. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Islamabad and twin-city Rawalpindi.",
   },
   Rawalpindi: {
     // --- SEO: edit these two fields for this city page ---
-    metaTitle: "Rawalpindi Software Company | HMS, ERP & Digital Products",
+    metaTitle: "Rawalpindi Software Company",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Rawalpindi. Custom software for clinics, schools, and twin-city teams.",
     aboutTitle: "A top-rated software house and software development company in Rawalpindi",
     paragraphs: [
-      "Next Software Development Company is the best software house and top-rated software development company in Rawalpindi. As a local software house and software company, we build custom software for clinics, schools, and service businesses, paired with Islamabad delivery capacity for twin-city teams.",
+      "Next Software Development Company is the best software house and top-rated software development company in Rawalpindi. As a local software house and software company, we build custom software for clinics, schools, and service businesses, paired with [[Islamabad]] delivery capacity for twin-city teams.",
       "From appointments and billing to school portals and ops tools, our software development company ships systems that match how Rawalpindi teams actually work day to day.",
-      "Hire a software house and software company in Rawalpindi that stays involved after launch with clear milestones, fixed-price options, and senior engineers on every engagement, backed by the [[Best software house]] and [[Best Software company in Pakistan]] standards we deliver nationwide.",
+      "Hire a software house and software company in Rawalpindi that stays involved after launch with clear milestones, fixed-price options, and senior engineers on every engagement, with the same standards as our [[software company in Pakistan]].",
     ],
     factDetail:
       "Twin-city software company coverage for Rawalpindi operators who want Islamabad-grade engineering nearby.",
     heroImageSrc: cityHeroImageSrc,
     heroLead:
-      "Next Software Development Company is the best software house and top-rated software development company in Rawalpindi. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Rawalpindi and the twin cities.",
+      "Next Software Development Company is the best software house and top-rated software development company in Rawalpindi. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Rawalpindi and nearby Islamabad.",
   },
   Lahore: {
     // --- SEO: edit these two fields for this city page ---
-    metaTitle: "Software Development Company in Lahore | Senior Delivery",
+    metaTitle: "Software Development Company in Lahore",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Lahore. Custom HMS, ERP, MVPs, and digital products for Punjab businesses.",
     aboutTitle: "A top-rated software house and software development company in Lahore",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Lahore. Founders and operators work with our software house and software company for product MVPs, school platforms, ERP, and growth-stage SaaS delivered by senior Pakistani engineers.",
       "We understand Punjab’s tech hub: fast iteration for startups, multi-campus education systems, and enterprise workflows that need clean architecture and strong QA from a proven software development company.",
-      "Choose a software house and software company in Lahore that combines local market understanding with the same delivery standards we use on global engagements as a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Choose a software house and software company in Lahore that combines local market understanding with the same delivery standards we use on global engagements as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Product, education, and enterprise software from a Lahore software house for startups and growing companies.",
@@ -79,14 +79,14 @@ const cityCopy: Record<string, CityCopy> = {
   },
   Faisalabad: {
     // --- SEO: edit these two fields for this city page ---
-    metaTitle: "Best Software House in Faisalabad | Local Product Teams",
+    metaTitle: "Best Software House in Faisalabad",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Faisalabad. Custom ERP, ops software, and digital products for industry.",
     aboutTitle: "A top-rated software house and software development company in Faisalabad",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Faisalabad. Manufacturers and growing businesses use our software company for ERP, inventory, and custom ops software that replaces spreadsheets and fragmented tools.",
       "As a practical software house in Faisalabad, we design workflows around local production and trade realities: role-based access, reporting owners can trust, and systems staff can learn quickly.",
-      "Partner with a software house and software development company in Faisalabad that ships senior delivery, fixed scope when you need it, and ongoing support after go-live from a [[top rated software house]] and [[top rated software company in Pakistan]].",
+      "Partner with a software house and software development company in Faisalabad that ships senior delivery, fixed scope when you need it, and ongoing support after go-live from a [[software company in Pakistan]].",
     ],
     factDetail:
       "ERP and operations platforms from a Faisalabad software house for industrial and commercial teams.",
@@ -96,14 +96,14 @@ const cityCopy: Record<string, CityCopy> = {
   },
   Multan: {
     // --- SEO: edit these two fields for this city page ---
-    metaTitle: "Multan Software Development | Web, Mobile & Ops Platforms",
+    metaTitle: "Multan Software Development",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Multan. Custom web, mobile, HMS, and ERP for south Punjab businesses.",
     aboutTitle: "A top-rated software house and software development company in Multan",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Multan. Regional companies hire our software house for custom web apps, mobile tools, and internal systems that help teams scale without bloated enterprise software.",
       "Our software development company focuses on practical delivery, clear requirements, usable interfaces, and systems that work for south Punjab operators.",
-      "Work with a software house and software company in Multan that stays accountable from discovery through launch and maintenance as a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Work with a software house and software company in Multan that stays accountable from discovery through launch and maintenance as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Custom web and mobile systems from a Multan software company for regional companies and institutions.",
@@ -113,14 +113,14 @@ const cityCopy: Record<string, CityCopy> = {
   },
   Gujranwala: {
     // --- SEO: edit these two fields for this city page ---
-    metaTitle: "Software House in Gujranwala | Custom Software & ERP",
+    metaTitle: "Software House in Gujranwala",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Gujranwala. Custom ERP and trade software for manufacturers.",
     aboutTitle: "A top-rated software house and software development company in Gujranwala",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Gujranwala. Manufacturers and trading houses partner with our software company to digitize production, inventory, and sales workflows built for local operators.",
       "As a hands-on software house in Gujranwala, we replace manual tracking with systems that fit your shop floor and office, without forcing a one-size-fits-all ERP.",
-      "Hire a software house and software development company in Gujranwala that delivers senior engineering, transparent pricing, and support after go-live as a [[Pakistan leading software house]] and [[Pakistan leading software company in Pakistan]].",
+      "Hire a software house and software development company in Gujranwala that delivers senior engineering, transparent pricing, and support after go-live as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Manufacturing and trade digitization from a Gujranwala software house for industrial operators.",
@@ -130,14 +130,14 @@ const cityCopy: Record<string, CityCopy> = {
   },
   Karachi: {
     // --- SEO: edit these two fields for this city page ---
-    metaTitle: "Karachi Software Company | HMS, ERP & Digital Products",
+    metaTitle: "Karachi Software Company",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Karachi. Custom retail, logistics, fintech, HMS, and ERP solutions.",
     aboutTitle: "A top-rated software house and software development company in Karachi",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Karachi. Businesses need a software house and software company that keeps up with volume: retail POS, logistics visibility, fintech workflows, and multi-branch operations.",
       "Our software development company builds cloud systems with real-time reporting, role-based access, and architecture ready for Pakistan’s largest market.",
-      "Choose a software house and software company in Karachi that combines senior delivery with competitive pricing and post-launch support from a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Choose a software house and software company in Karachi that combines senior delivery with competitive pricing and post-launch support from a [[software company in Pakistan]].",
     ],
     factDetail:
       "High-scale retail, logistics, and fintech builds from a Karachi software development company.",
@@ -147,14 +147,14 @@ const cityCopy: Record<string, CityCopy> = {
   },
   Peshawar: {
     // --- SEO: edit these two fields for this city page ---
-    metaTitle: "Software Development Company in Peshawar | Senior Delivery",
+    metaTitle: "Software Development Company in Peshawar",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Peshawar. Custom web apps, HMS, and ERP for KPK organizations.",
     aboutTitle: "A top-rated software house and software development company in Peshawar",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Peshawar. Organizations work with our software company for reliable web applications and internal tools that improve service delivery without unnecessary complexity.",
       "As a dependable software house in Peshawar, we focus on stable delivery, clear documentation, and systems KPK teams can operate confidently day to day.",
-      "Partner with a software house and software development company in Peshawar for senior engineering, transparent proposals, and ongoing support from [[Pakistan's top rated software house]] and [[Pakistan's top rated software company in Pakistan]].",
+      "Partner with a software house and software development company in Peshawar for senior engineering, transparent proposals, and ongoing support from [[software company in Pakistan]].",
     ],
     factDetail:
       "Web apps and internal tools from a Peshawar software house for organizations across KPK.",
@@ -164,14 +164,14 @@ const cityCopy: Record<string, CityCopy> = {
   },
   Bahawalpur: {
     // --- SEO: edit these two fields for this city page ---
-    metaTitle: "Best Software House in Bahawalpur | Local Product Teams",
+    metaTitle: "Best Software House in Bahawalpur",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Bahawalpur. Custom education, commerce, HMS, and ERP software.",
     aboutTitle: "A top-rated software house and software development company in Bahawalpur",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Bahawalpur. Schools and regional businesses use our software company platforms for fees, attendance, parent communication, and practical commerce workflows.",
       "As a lean software house in Bahawalpur, we keep delivery useful: software that solves real admin and ops problems without overbuilding.",
-      "Work with a software house and software development company in Bahawalpur that offers senior teams, clear timelines, and support after launch as a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Work with a software house and software development company in Bahawalpur that offers senior teams, clear timelines, and support after launch as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Education and regional commerce systems from a Bahawalpur software house for institutions and SMEs.",
@@ -181,14 +181,14 @@ const cityCopy: Record<string, CityCopy> = {
   },
   Abbottabad: {
     // --- SEO: edit these two fields for this city page ---
-    metaTitle: "Abbottabad Software Development | Web, Mobile & Ops Platforms",
+    metaTitle: "Abbottabad Software Development",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Abbottabad. Lean HMS, school platforms, and digital products.",
     aboutTitle: "A top-rated software house and software development company in Abbottabad",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Abbottabad. Clinics, schools, and local services hire our software company for lean digital products: management systems and mobile-friendly tools sized for their teams.",
       "As a practical software house in Abbottabad, we prioritize clarity and usability so staff adopt the system quickly and operations stay simple.",
-      "Choose a software house and software development company in Abbottabad that delivers senior craft with practical scope and post-launch care from the [[Best software house]] and [[Best Software company in Pakistan]].",
+      "Choose a software house and software development company in Abbottabad that delivers senior craft with practical scope and post-launch care from our [[software company in Pakistan]].",
     ],
     factDetail:
       "Lean clinic, school, and local-service products from an Abbottabad software development company.",
@@ -198,14 +198,14 @@ const cityCopy: Record<string, CityCopy> = {
   },
   "Rahim Yar Khan": {
     // --- SEO: edit these two fields for this city page ---
-    metaTitle: "Software House in Rahim Yar Khan | Custom Software & ERP",
+    metaTitle: "Software House in Rahim Yar Khan",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Rahim Yar Khan. Custom ops, inventory, HMS, and ERP software.",
     aboutTitle: "A top-rated software house and software development company in Rahim Yar Khan",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Rahim Yar Khan. Businesses partner with our software company for operations and inventory systems that replace manual tracking and improve day-to-day visibility.",
       "As a hands-on software house in Rahim Yar Khan, we build practical tools for south Punjab teams: stock, sales, and reporting that owners can trust.",
-      "Hire a software house and software development company in Rahim Yar Khan for senior delivery, transparent pricing, and support after go-live as a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Hire a software house and software development company in Rahim Yar Khan for senior delivery, transparent pricing, and support after go-live as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Operations and inventory platforms from a Rahim Yar Khan software house for SMEs and traders.",
@@ -215,14 +215,14 @@ const cityCopy: Record<string, CityCopy> = {
   },
   Okara: {
     // --- SEO: edit these two fields for this city page ---
-    metaTitle: "Okara Software Company | HMS, ERP & Digital Products",
+    metaTitle: "Okara Software Company",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Okara. Affordable custom software for SMEs and agribusiness.",
     aboutTitle: "A top-rated software house and software development company in Okara",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Okara. SMEs and agribusiness teams work with our software company for affordable custom software: ops tools, portals, and workflows tailored to local businesses.",
       "As a practical software house in Okara, we keep scope honest and delivery senior so you get reliable systems without enterprise bloat.",
-      "Partner with a software house and software development company in Okara that stays involved after launch with clear support options from a [[top rated software house]] and [[top rated software company in Pakistan]].",
+      "Partner with a software house and software development company in Okara that stays involved after launch with clear support options from a [[software company in Pakistan]].",
     ],
     factDetail:
       "SME and agribusiness software from an Okara software house for operators who need practical digital tools.",
@@ -232,14 +232,14 @@ const cityCopy: Record<string, CityCopy> = {
   },
   Sialkot: {
     // --- SEO: edit these two fields for this city page ---
-    metaTitle: "Software Development Company in Sialkot | Senior Delivery",
+    metaTitle: "Software Development Company in Sialkot",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Sialkot. Export-ready platforms, HMS, ERP, and custom software.",
     aboutTitle: "A top-rated software house and software development company in Sialkot",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Sialkot. Manufacturers and trading houses hire our software company for export-ready platforms: order workflows, inventory, and client portals built for global commerce.",
       "As an industrial-focused software house in Sialkot, we design systems that match manufacturing and export ops, with reporting that leadership can use immediately.",
-      "Choose a software house and software development company in Sialkot that delivers senior engineering, fixed-scope options, and long-term support as a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Choose a software house and software development company in Sialkot that delivers senior engineering, fixed-scope options, and long-term support as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Export and manufacturing platforms from a Sialkot software development company for industrial and trading houses.",
@@ -248,7 +248,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Sialkot. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for manufacturers, traders, clinics, and growing businesses in Sialkot.",
   },
   Hyderabad: {
-    metaTitle: "Best Software House in Hyderabad | Local Product Teams",
+    metaTitle: "Best Software House in Hyderabad",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Hyderabad. Custom HMS, ERP, and digital products for Sindh businesses.",
     aboutTitle: "A top-rated software house and software development company in Hyderabad",
@@ -256,7 +256,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Hyderabad. As a trusted software house and software company, we deliver HMS, ERP, web apps, and digital products for clinics, schools, retailers, and growing enterprises across Sindh’s second-largest city.",
       "As an experienced software company in Hyderabad, our senior engineers and designers build systems that match local ops: role-based access, clear reporting, Urdu-ready staff tools where needed, and interfaces teams can adopt quickly without long training cycles.",
       "From multi-branch retail and logistics visibility to school portals and clinic workflows, our software development company scopes products around how Hyderabad operators actually work day to day.",
-      "Whether you are launching a regional platform or hiring a software house and software company in Hyderabad for a longer product partnership, you get transparent scoping, senior-only delivery, and support after go-live from a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Whether you are launching a regional platform or hiring a software house and software company in Hyderabad for a longer product partnership, you get transparent scoping, senior-only delivery, and support after go-live from a [[software company in Pakistan]].",
     ],
     factDetail:
       "Software house delivery for clinics, schools, retailers, and enterprises across Hyderabad and surrounding Sindh.",
@@ -265,7 +265,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Hyderabad. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Hyderabad and across Sindh.",
   },
   Quetta: {
-    metaTitle: "Quetta Software Development | Web, Mobile & Ops Platforms",
+    metaTitle: "Quetta Software Development",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Quetta. Custom HMS, ERP, and digital products for Balochistan.",
     aboutTitle: "A top-rated software house and software development company in Quetta",
@@ -273,7 +273,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Quetta. Organizations and growing businesses partner with our software house and software company for reliable HMS, ERP, and custom ops systems built for Balochistan’s capital.",
       "As a dependable software company in Quetta, we focus on stable delivery, clear documentation, offline-friendly patterns where connectivity varies, and practical workflows teams can run day to day.",
       "Public-sector adjacent tools, clinic management, and SME ops platforms are common engagements: we keep scope honest so Quetta teams get software they can operate and maintain.",
-      "Hire a software house and software company in Quetta that stays involved after launch with clear milestones, fixed-price options, and senior engineers on every engagement, backed by the [[Best software house]] and [[Best Software company in Pakistan]] standards we deliver nationwide.",
+      "Hire a software house and software company in Quetta that stays involved after launch with clear milestones, fixed-price options, and senior engineers on every engagement, with the same standards as our [[software company in Pakistan]].",
     ],
     factDetail:
       "HMS, ERP, and ops platforms from a Quetta software house for institutions and businesses across Balochistan.",
@@ -282,7 +282,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Quetta. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Quetta and across Balochistan.",
   },
   Sargodha: {
-    metaTitle: "Software House in Sargodha | Custom Software & ERP",
+    metaTitle: "Software House in Sargodha",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Sargodha. Custom software for agribusiness, clinics, and SMEs.",
     aboutTitle: "A top-rated software house and software development company in Sargodha",
@@ -290,7 +290,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Sargodha. Agribusiness teams, clinics, and SMEs work with our software house and software company for practical digital products that replace spreadsheets and fragmented tools.",
       "As a hands-on software company in Sargodha, we design workflows around local trade and citrus-region operations: inventory, billing, seasonal reporting, and systems staff can learn quickly.",
       "Whether you need a lean ops portal, a clinic HMS, or a school admin platform, our software development company keeps delivery senior and scoped to what Sargodha businesses actually need.",
-      "Choose a software house and software company in Sargodha that combines local market understanding with the same delivery standards we use on global engagements as a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Choose a software house and software company in Sargodha that combines local market understanding with the same delivery standards we use on global engagements as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Agribusiness, clinic, and SME software from a Sargodha software house for central Punjab operators.",
@@ -299,7 +299,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Sargodha. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for agribusiness teams, clinics, schools, and growing businesses in Sargodha.",
   },
   Sukkur: {
-    metaTitle: "Sukkur Software Company | HMS, ERP & Digital Products",
+    metaTitle: "Sukkur Software Company",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Sukkur. Custom ops, inventory, HMS, and ERP for upper Sindh.",
     aboutTitle: "A top-rated software house and software development company in Sukkur",
@@ -307,7 +307,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Sukkur. Businesses and institutions hire our software house for ops, inventory, and commerce systems that improve day-to-day visibility across upper Sindh.",
       "As a practical software company in Sukkur, we keep delivery useful: stock, sales, transport-linked admin workflows, and reporting owners can trust without enterprise bloat.",
       "From trading houses along the Indus corridor to clinics and schools, our software development company builds tools that fit regional pace and staffing realities.",
-      "Partner with a software house and software development company in Sukkur that ships senior delivery, fixed scope when you need it, and ongoing support after go-live from a [[top rated software house]] and [[top rated software company in Pakistan]].",
+      "Partner with a software house and software development company in Sukkur that ships senior delivery, fixed scope when you need it, and ongoing support after go-live from a [[software company in Pakistan]].",
     ],
     factDetail:
       "Ops and commerce platforms from a Sukkur software company for traders, SMEs, and institutions in upper Sindh.",
@@ -316,7 +316,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Sukkur. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Sukkur and upper Sindh.",
   },
   Mardan: {
-    metaTitle: "Software Development Company in Mardan | Senior Delivery",
+    metaTitle: "Software Development Company in Mardan",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Mardan. Custom web apps, HMS, and ERP for KPK organizations.",
     aboutTitle: "A top-rated software house and software development company in Mardan",
@@ -324,7 +324,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Mardan. Organizations work with our software company for reliable web applications and internal tools that improve service delivery without unnecessary complexity.",
       "As a dependable software house in Mardan, we focus on stable delivery, clear documentation, and systems KPK teams can operate confidently after a short handover.",
       "Education platforms, clinic workflows, and municipal-adjacent admin tools are frequent requests: we prioritize usability so Mardan staff adopt software in the first weeks, not months.",
-      "Work with a software house and software company in Mardan that stays accountable from discovery through launch and maintenance as a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Work with a software house and software company in Mardan that stays accountable from discovery through launch and maintenance as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Web apps and internal tools from a Mardan software house for organizations across KPK.",
@@ -333,7 +333,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Mardan. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Mardan and across KPK.",
   },
   Gujrat: {
-    metaTitle: "Best Software House in Gujrat | Local Product Teams",
+    metaTitle: "Best Software House in Gujrat",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Gujrat. Custom ERP and manufacturing software for industrial teams.",
     aboutTitle: "A top-rated software house and software development company in Gujrat",
@@ -341,7 +341,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Gujrat. Manufacturers and trading houses partner with our software company to digitize production, inventory, and sales workflows built for local operators.",
       "As a hands-on software house in Gujrat, we replace manual tracking with systems that fit your shop floor and office, without forcing a one-size-fits-all ERP.",
       "Order pipelines, warehouse visibility, and dealer portals help Gujrat industrial teams move faster while leadership gets reporting they can act on.",
-      "Hire a software house and software development company in Gujrat that delivers senior engineering, transparent pricing, and support after go-live as a [[Pakistan leading software house]] and [[Pakistan leading software company in Pakistan]].",
+      "Hire a software house and software development company in Gujrat that delivers senior engineering, transparent pricing, and support after go-live as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Manufacturing and trade digitization from a Gujrat software house for industrial operators.",
@@ -350,7 +350,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Gujrat. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for manufacturers, traders, clinics, and growing businesses in Gujrat.",
   },
   Sahiwal: {
-    metaTitle: "Sahiwal Software Development | Web, Mobile & Ops Platforms",
+    metaTitle: "Sahiwal Software Development",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Sahiwal. Affordable custom software for SMEs, clinics, and schools.",
     aboutTitle: "A top-rated software house and software development company in Sahiwal",
@@ -358,7 +358,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Sahiwal. SMEs, clinics, and education teams work with our software company for affordable custom software tailored to central Punjab businesses.",
       "As a practical software house in Sahiwal, we keep scope honest and delivery senior so you get reliable systems without enterprise bloat or surprise change-orders mid-build.",
       "Dairy and agri-linked ops tools, school fee portals, and clinic management are common Sahiwal engagements: we ship what operators will actually use.",
-      "Choose a software house and software company in Sahiwal that combines senior delivery with competitive pricing and post-launch support from a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Choose a software house and software company in Sahiwal that combines senior delivery with competitive pricing and post-launch support from a [[software company in Pakistan]].",
     ],
     factDetail:
       "SME, clinic, and education software from a Sahiwal software house for operators who need practical digital tools.",
@@ -367,7 +367,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Sahiwal. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for SMEs, clinics, schools, and growing businesses in Sahiwal.",
   },
   "Dera Ghazi Khan": {
-    metaTitle: "Software House in Dera Ghazi Khan | Custom Software & ERP",
+    metaTitle: "Software House in Dera Ghazi Khan",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Dera Ghazi Khan. Custom ops, HMS, and ERP for south Punjab.",
     aboutTitle: "A top-rated software house and software development company in Dera Ghazi Khan",
@@ -375,7 +375,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Dera Ghazi Khan. Regional companies and institutions hire our software house for custom web apps, mobile tools, and internal systems that help teams scale.",
       "Our software development company focuses on practical delivery: clear requirements, usable interfaces, and systems that work for south Punjab operators with lean IT teams.",
       "From district-level admin workflows to clinic and school platforms, we keep architecture simple enough to maintain while still ready to grow with your organization.",
-      "Partner with a software house and software development company in Dera Ghazi Khan for senior engineering, transparent proposals, and ongoing support from [[Pakistan's top rated software house]] and [[Pakistan's top rated software company in Pakistan]].",
+      "Partner with a software house and software development company in Dera Ghazi Khan for senior engineering, transparent proposals, and ongoing support from [[software company in Pakistan]].",
     ],
     factDetail:
       "Custom web and ops systems from a Dera Ghazi Khan software company for regional companies and institutions.",
@@ -384,7 +384,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Dera Ghazi Khan. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Dera Ghazi Khan and south Punjab.",
   },
   Sheikhupura: {
-    metaTitle: "Sheikhupura Software Company | HMS, ERP & Digital Products",
+    metaTitle: "Sheikhupura Software Company",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Sheikhupura. Custom ERP and industrial software near Lahore.",
     aboutTitle: "A top-rated software house and software development company in Sheikhupura",
@@ -392,7 +392,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Sheikhupura. Manufacturers and commercial teams partner with our software company for ERP, inventory, and ops software across Lahore’s industrial belt.",
       "As a practical software house in Sheikhupura, we design workflows around production and trade realities: role-based access, reporting owners can trust, and systems staff can learn quickly on the floor.",
       "Proximity to Lahore markets means many Sheikhupura clients need integration-ready tools: we build with clean APIs and phased rollouts so plants stay running during go-live.",
-      "Work with a software house and software development company in Sheikhupura that offers senior teams, clear timelines, and support after launch as a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Work with a software house and software development company in Sheikhupura that offers senior teams, clear timelines, and support after launch as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Industrial and commercial platforms from a Sheikhupura software house for manufacturers and growing SMEs.",
@@ -401,7 +401,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Sheikhupura. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for manufacturers, traders, clinics, and growing businesses in Sheikhupura.",
   },
   Jhang: {
-    metaTitle: "Software Development Company in Jhang | Senior Delivery",
+    metaTitle: "Software Development Company in Jhang",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Jhang. Lean software for agribusiness and local services.",
     aboutTitle: "A top-rated software house and software development company in Jhang",
@@ -409,7 +409,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Jhang. Agribusiness teams and local services hire our software company for lean digital products sized for their operations.",
       "As a practical software house in Jhang, we prioritize clarity and usability so staff adopt the system quickly and operations stay simple through peak seasons.",
       "Farm-linked inventory, fee collection for schools, and small clinic workflows are typical Jhang builds: we avoid over-engineering and ship the features that matter first.",
-      "Choose a software house and software development company in Jhang that delivers senior craft with practical scope and post-launch care from the [[Best software house]] and [[Best Software company in Pakistan]].",
+      "Choose a software house and software development company in Jhang that delivers senior craft with practical scope and post-launch care from our [[software company in Pakistan]].",
     ],
     factDetail:
       "Lean agribusiness and local-service products from a Jhang software development company.",
@@ -418,7 +418,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Jhang. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for agribusiness teams, clinics, schools, and local services in Jhang.",
   },
   Kasur: {
-    metaTitle: "Best Software House in Kasur | Local Product Teams",
+    metaTitle: "Best Software House in Kasur",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Kasur. Custom ERP and ops software for trade and manufacturing.",
     aboutTitle: "A top-rated software house and software development company in Kasur",
@@ -426,7 +426,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Kasur. Trade and manufacturing teams partner with our software company for ERP and ops tools that replace manual tracking.",
       "As a hands-on software house in Kasur, we build practical systems for stock, sales, and reporting that owners can trust from day one.",
       "Whether you run a workshop, wholesale trade desk, or multi-site store, our software development company scopes software around Kasur’s pace of business, not a generic enterprise template.",
-      "Hire a software house and software development company in Kasur for senior delivery, transparent pricing, and support after go-live as a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Hire a software house and software development company in Kasur for senior delivery, transparent pricing, and support after go-live as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Trade and manufacturing platforms from a Kasur software house for SMEs and industrial operators.",
@@ -435,7 +435,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Kasur. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for traders, manufacturers, clinics, and growing businesses in Kasur.",
   },
   Larkana: {
-    metaTitle: "Larkana Software Development | Web, Mobile & Ops Platforms",
+    metaTitle: "Larkana Software Development",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Larkana. Custom web apps, HMS, and ERP for Sindh organizations.",
     aboutTitle: "A top-rated software house and software development company in Larkana",
@@ -443,7 +443,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Larkana. Organizations and regional businesses use our software company for web applications and admin systems that improve service delivery.",
       "As a lean software house in Larkana, we keep delivery useful: software that solves real admin and ops problems without overbuilding or locking you into unused modules.",
       "Education offices, clinics, and local commerce platforms are common Larkana engagements: we document clearly so your team can run the system after launch.",
-      "Partner with a software house and software development company in Larkana that stays involved after launch with clear support options from a [[top rated software house]] and [[top rated software company in Pakistan]].",
+      "Partner with a software house and software development company in Larkana that stays involved after launch with clear support options from a [[software company in Pakistan]].",
     ],
     factDetail:
       "Web and admin systems from a Larkana software house for institutions and SMEs across Sindh.",
@@ -452,7 +452,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Larkana. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Larkana.",
   },
   Mingora: {
-    metaTitle: "Software House in Mingora | Custom Software & ERP",
+    metaTitle: "Software House in Mingora",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Mingora. Lean HMS, school platforms, and tourism software for Swat.",
     aboutTitle: "A top-rated software house and software development company in Mingora",
@@ -460,7 +460,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Mingora. Clinics, schools, and tourism businesses in Swat hire our software company for lean digital products and mobile-friendly tools sized for their teams.",
       "As a practical software house in Mingora, we prioritize clarity and usability so staff adopt the system quickly and operations stay simple through busy tourist seasons.",
       "Booking and guest ops for hospitality, school portals, and clinic scheduling are frequent Swat requests: we ship mobile-first where field teams work on phones first.",
-      "Choose a software house and software development company in Mingora that delivers senior engineering, fixed-scope options, and long-term support as a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Choose a software house and software development company in Mingora that delivers senior engineering, fixed-scope options, and long-term support as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Lean clinic, school, and tourism products from a Mingora software development company for Swat.",
@@ -469,7 +469,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Mingora. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and tourism businesses in Mingora and across Swat.",
   },
   Nawabshah: {
-    metaTitle: "Nawabshah Software Company | HMS, ERP & Digital Products",
+    metaTitle: "Nawabshah Software Company",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Nawabshah. Custom ops, HMS, and ERP for Benazirabad.",
     aboutTitle: "A top-rated software house and software development company in Nawabshah",
@@ -477,7 +477,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Nawabshah. Businesses and institutions in Benazirabad partner with our software company for operations and institutional platforms that improve day-to-day visibility.",
       "As a hands-on software house in Nawabshah, we build practical tools for stock, admin, and reporting that owners can trust without hiring a large IT department.",
       "Agriculture-linked commerce, campus admin, and clinic management are typical Benazirabad builds: we keep roadmaps phased so value shows up early.",
-      "Hire a software house and software development company in Nawabshah that delivers senior engineering, transparent pricing, and support after go-live as a [[Pakistan leading software house]] and [[Pakistan leading software company in Pakistan]].",
+      "Hire a software house and software development company in Nawabshah that delivers senior engineering, transparent pricing, and support after go-live as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Ops and institutional platforms from a Nawabshah software house for Benazirabad businesses and organizations.",
@@ -486,7 +486,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Nawabshah. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Nawabshah (Benazirabad).",
   },
   Mirpur: {
-    metaTitle: "Software Development Company in Mirpur | Senior Delivery",
+    metaTitle: "Software Development Company in Mirpur",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Mirpur. Custom software for AJK teams and diaspora-linked firms.",
     aboutTitle: "A top-rated software house and software development company in Mirpur",
@@ -494,7 +494,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Mirpur. Local teams and diaspora-linked firms in AJK work with our software company for product builds, business platforms, and practical digital tools.",
       "As an experienced software house in Mirpur, our senior engineers deliver English-first communication, clear milestones, and systems built for growth across local and overseas stakeholders.",
       "Remittance-adjacent business tools, education platforms, and SME ops software are common Mirpur engagements: we design for timezone-friendly collaboration with UK and Gulf partners when needed.",
-      "Partner with a software house and software company in Mirpur that stays accountable from discovery through launch and maintenance as a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Partner with a software house and software company in Mirpur that stays accountable from discovery through launch and maintenance as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Product and business software from a Mirpur software house for AJK teams and diaspora-linked firms.",
@@ -503,7 +503,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Mirpur. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Mirpur (AJK).",
   },
   Muzaffarabad: {
-    metaTitle: "Best Software House in Muzaffarabad | Local Product Teams",
+    metaTitle: "Best Software House in Muzaffarabad",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Muzaffarabad. Custom digital systems for AJK institutions and businesses.",
     aboutTitle: "A top-rated software house and software development company in Muzaffarabad",
@@ -511,7 +511,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Muzaffarabad. Institutions and local businesses hire our software company for reliable digital systems that improve service delivery across AJK’s capital region.",
       "As a dependable software house in Muzaffarabad, we focus on stable delivery, clear documentation, and practical workflows teams can run confidently with limited IT staff.",
       "Government-adjacent admin tools, campus platforms, and clinic systems are frequent requests: we emphasize security basics, audit-friendly logs, and handover training for Muzaffarabad operators.",
-      "Choose a software house and software development company in Muzaffarabad that delivers senior craft with practical scope and post-launch care from [[Pakistan's top rated software house]] and [[Pakistan's top rated software company in Pakistan]].",
+      "Choose a software house and software development company in Muzaffarabad that delivers senior craft with practical scope and post-launch care from [[software company in Pakistan]].",
     ],
     factDetail:
       "Institutional and business platforms from a Muzaffarabad software development company for AJK organizations.",
@@ -520,14 +520,14 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Muzaffarabad. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Muzaffarabad (AJK).",
   },
   Jhelum: {
-    metaTitle: "Jhelum Software Development | Web, Mobile & Ops Platforms",
+    metaTitle: "Jhelum Software Development",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Jhelum. Custom HMS, ERP, and digital products for regional businesses.",
     aboutTitle: "A top-rated software house and software development company in Jhelum",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Jhelum. Clinics, schools, and regional businesses partner with our software company for practical digital systems sized for local teams.",
       "As a hands-on software house in Jhelum, we replace spreadsheets and fragmented tools with clear workflows for appointments, fees, inventory, and reporting.",
-      "Hire a software house and software development company in Jhelum that delivers senior engineering, transparent pricing, and support after go-live as a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Hire a software house and software development company in Jhelum that delivers senior engineering, transparent pricing, and support after go-live as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Practical clinic, school, and SME platforms from a Jhelum software house for the Gujranwala region.",
@@ -536,14 +536,14 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Jhelum. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Jhelum.",
   },
   Chakwal: {
-    metaTitle: "Software House in Chakwal | Custom Software & ERP",
+    metaTitle: "Software House in Chakwal",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Chakwal. Lean software for SMEs, clinics, and local services.",
     aboutTitle: "A top-rated software house and software development company in Chakwal",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Chakwal. SMEs, clinics, and local services hire our software company for lean digital products that fit how Potohar teams actually work.",
       "As a practical software house in Chakwal, we prioritize clarity and usability so staff adopt systems quickly without a large IT department.",
-      "Choose a software house and software development company in Chakwal that stays accountable from discovery through launch as a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Choose a software house and software development company in Chakwal that stays accountable from discovery through launch as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Lean SME and service platforms from a Chakwal software development company for the Potohar belt.",
@@ -552,14 +552,14 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Chakwal. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Chakwal.",
   },
   Wazirabad: {
-    metaTitle: "Wazirabad Software Company | HMS, ERP & Digital Products",
+    metaTitle: "Wazirabad Software Company",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Wazirabad. Custom ERP and trade software for manufacturers.",
     aboutTitle: "A top-rated software house and software development company in Wazirabad",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Wazirabad. Manufacturers and trading houses partner with our software company to digitize production, inventory, and sales workflows.",
       "As a hands-on software house in Wazirabad, we build systems that fit the shop floor and office without forcing a one-size-fits-all ERP.",
-      "Hire a software house and software development company in Wazirabad for senior delivery, fixed scope when you need it, and ongoing support from a [[top rated software house]] and [[top rated software company in Pakistan]].",
+      "Hire a software house and software development company in Wazirabad for senior delivery, fixed scope when you need it, and ongoing support from a [[software company in Pakistan]].",
     ],
     factDetail:
       "Manufacturing and trade digitization from a Wazirabad software house for industrial operators.",
@@ -568,14 +568,14 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Wazirabad. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for manufacturers, traders, and growing businesses in Wazirabad.",
   },
   Chiniot: {
-    metaTitle: "Software Development Company in Chiniot | Senior Delivery",
+    metaTitle: "Software Development Company in Chiniot",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Chiniot. Custom ops and commerce software for furniture trade and SMEs.",
     aboutTitle: "A top-rated software house and software development company in Chiniot",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Chiniot. Furniture workshops and growing SMEs use our software company for inventory, orders, and ops tools that replace manual tracking.",
       "As a practical software house in Chiniot, we design workflows around local trade realities: role-based access, clear reporting, and systems staff can learn quickly.",
-      "Partner with a software house and software development company in Chiniot that ships senior delivery and post-launch support as a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Partner with a software house and software development company in Chiniot that ships senior delivery and post-launch support as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Ops and commerce platforms from a Chiniot software house for furniture trade and local SMEs.",
@@ -584,14 +584,14 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Chiniot. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for traders, workshops, clinics, and growing businesses in Chiniot.",
   },
   "Toba Tek Singh": {
-    metaTitle: "Best Software House in Toba Tek Singh | Local Product Teams",
+    metaTitle: "Best Software House in Toba Tek Singh",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Toba Tek Singh. Custom software for agribusiness and growing SMEs.",
     aboutTitle: "A top-rated software house and software development company in Toba Tek Singh",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Toba Tek Singh. Agribusiness teams and SMEs hire our software company for affordable custom software sized for central Punjab operations.",
       "As a lean software house in Toba Tek Singh, we keep delivery useful: stock, billing, and admin tools without overbuilding unused modules.",
-      "Choose a software house and software development company in Toba Tek Singh that delivers senior craft with practical scope from the [[Best software house]] and [[Best Software company in Pakistan]].",
+      "Choose a software house and software development company in Toba Tek Singh that delivers senior craft with practical scope from our [[software company in Pakistan]].",
     ],
     factDetail:
       "Affordable agribusiness and SME platforms from a Toba Tek Singh software development company.",
@@ -600,14 +600,14 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Toba Tek Singh. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for agribusiness teams, clinics, schools, and SMEs in Toba Tek Singh.",
   },
   Khanewal: {
-    metaTitle: "Khanewal Software Development | Web, Mobile & Ops Platforms",
+    metaTitle: "Khanewal Software Development",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Khanewal. Custom ops, HMS, and ERP for central Punjab.",
     aboutTitle: "A top-rated software house and software development company in Khanewal",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Khanewal. Regional businesses and institutions partner with our software company for operations and institutional platforms.",
       "As a hands-on software house in Khanewal, we build practical tools for stock, admin, and reporting that owners can trust without hiring a large IT team.",
-      "Hire a software house and software development company in Khanewal for transparent pricing and support after go-live as a [[Pakistan leading software house]] and [[Pakistan leading software company in Pakistan]].",
+      "Hire a software house and software development company in Khanewal for transparent pricing and support after go-live as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Regional ops and institutional platforms from a Khanewal software house for central Punjab.",
@@ -616,14 +616,14 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Khanewal. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Khanewal.",
   },
   Vehari: {
-    metaTitle: "Software House in Vehari | Custom Software & ERP",
+    metaTitle: "Software House in Vehari",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Vehari. Custom ERP and web tools for agribusiness and local trade.",
     aboutTitle: "A top-rated software house and software development company in Vehari",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Vehari. Agribusiness and local trade teams use our software company for ERP and web tools that improve day-to-day visibility.",
       "As a practical software house in Vehari, we prioritize phased roadmaps so value shows up early for cotton-belt operators and SMEs.",
-      "Work with a software house and software development company in Vehari that stays involved after launch as a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Work with a software house and software development company in Vehari that stays involved after launch as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Agribusiness and trade platforms from a Vehari software house for central and south Punjab.",
@@ -632,14 +632,14 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Vehari. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for agribusiness teams, traders, clinics, and growing businesses in Vehari.",
   },
   Muzaffargarh: {
-    metaTitle: "Muzaffargarh Software Company | HMS, ERP & Digital Products",
+    metaTitle: "Muzaffargarh Software Company",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Muzaffargarh. Custom web and ops systems for south Punjab.",
     aboutTitle: "A top-rated software house and software development company in Muzaffargarh",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Muzaffargarh. South Punjab businesses hire our software company for custom web apps and ops systems that help teams scale.",
       "As a dependable software house in Muzaffargarh, we focus on clear requirements, usable interfaces, and systems that work for regional operators.",
-      "Partner with a software house and software development company in Muzaffargarh for senior delivery and post-launch care from a [[top rated software house]] and [[top rated software company in Pakistan]].",
+      "Partner with a software house and software development company in Muzaffargarh for senior delivery and post-launch care from a [[software company in Pakistan]].",
     ],
     factDetail:
       "Custom web and ops systems from a Muzaffargarh software development company for south Punjab.",
@@ -648,14 +648,14 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Muzaffargarh. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Muzaffargarh.",
   },
   Nowshera: {
-    metaTitle: "Software Development Company in Nowshera | Senior Delivery",
+    metaTitle: "Software Development Company in Nowshera",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Nowshera. Custom web apps, HMS, and ERP for KPK organizations.",
     aboutTitle: "A top-rated software house and software development company in Nowshera",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Nowshera. Organizations and local businesses use our software company for reliable web apps and internal tools across KPK.",
       "As a lean software house in Nowshera, we keep delivery useful: software that solves real admin and ops problems without overbuilding.",
-      "Choose a software house and software development company in Nowshera that delivers English-first communication and clear milestones as a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Choose a software house and software development company in Nowshera that delivers English-first communication and clear milestones as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Reliable web apps and internal tools from a Nowshera software house for KPK organizations.",
@@ -664,14 +664,14 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Nowshera. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Nowshera.",
   },
   Kohat: {
-    metaTitle: "Best Software House in Kohat | Local Product Teams",
+    metaTitle: "Best Software House in Kohat",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Kohat. Lean HMS, school platforms, and ops software for regional teams.",
     aboutTitle: "A top-rated software house and software development company in Kohat",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Kohat. Clinics, schools, and regional teams hire our software company for lean HMS, education platforms, and ops software.",
       "As a practical software house in Kohat, we prioritize clarity so staff adopt the system quickly with limited IT support.",
-      "Hire a software house and software development company in Kohat that stays accountable after go-live as a [[Pakistan leading software house]] and [[Pakistan leading software company in Pakistan]].",
+      "Hire a software house and software development company in Kohat that stays accountable after go-live as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Lean HMS, school, and ops platforms from a Kohat software development company for southern KPK.",
@@ -680,14 +680,14 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Kohat. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Kohat.",
   },
   Swabi: {
-    metaTitle: "Swabi Software Development | Web, Mobile & Ops Platforms",
+    metaTitle: "Swabi Software Development",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Swabi. Practical digital products for clinics, schools, and SMEs.",
     aboutTitle: "A top-rated software house and software development company in Swabi",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Swabi. Clinics, schools, and SMEs partner with our software company for practical digital products sized for local teams.",
       "As a hands-on software house in Swabi, we replace manual tracking with systems that fit day-to-day operations without unused enterprise modules.",
-      "Work with a software house and software development company in Swabi for senior delivery and transparent scoping as a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Work with a software house and software development company in Swabi for senior delivery and transparent scoping as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Practical clinic, school, and SME products from a Swabi software house across KPK.",
@@ -696,14 +696,14 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Swabi. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Swabi.",
   },
   Charsadda: {
-    metaTitle: "Software House in Charsadda | Custom Software & ERP",
+    metaTitle: "Software House in Charsadda",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Charsadda. Affordable custom software for trade, education, and local services.",
     aboutTitle: "A top-rated software house and software development company in Charsadda",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Charsadda. Trade, education, and local services hire our software company for affordable custom software that improves visibility.",
       "As a lean software house in Charsadda, we ship phased roadmaps so owners see value early without locking into bloated platforms.",
-      "Choose a software house and software development company in Charsadda that delivers senior craft with practical scope from the [[Best software house]] and [[Best Software company in Pakistan]].",
+      "Choose a software house and software development company in Charsadda that delivers senior craft with practical scope from our [[software company in Pakistan]].",
     ],
     factDetail:
       "Affordable trade, education, and service platforms from a Charsadda software development company.",
@@ -712,14 +712,14 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Charsadda. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for traders, clinics, schools, and local services in Charsadda.",
   },
   "Dera Ismail Khan": {
-    metaTitle: "Dera Ismail Khan Software Company | HMS, ERP & Digital Products",
+    metaTitle: "Dera Ismail Khan Software Company",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Dera Ismail Khan. Custom ops and institutional platforms for southern KPK.",
     aboutTitle: "A top-rated software house and software development company in Dera Ismail Khan",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Dera Ismail Khan. Regional businesses and institutions partner with our software company for ops and institutional platforms across southern KPK.",
       "As a dependable software house in Dera Ismail Khan, we focus on stable delivery, clear documentation, and workflows teams can run confidently.",
-      "Hire a software house and software development company in Dera Ismail Khan for transparent pricing and long-term support as a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Hire a software house and software development company in Dera Ismail Khan for transparent pricing and long-term support as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Regional ops and institutional platforms from a Dera Ismail Khan software house for southern KPK.",
@@ -728,14 +728,14 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Dera Ismail Khan. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Dera Ismail Khan.",
   },
   "Mirpur Khas": {
-    metaTitle: "Software Development Company in Mirpur Khas | Senior Delivery",
+    metaTitle: "Software Development Company in Mirpur Khas",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Mirpur Khas. Custom ops, inventory, and commerce systems for lower Sindh.",
     aboutTitle: "A top-rated software house and software development company in Mirpur Khas",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Mirpur Khas. Lower Sindh businesses use our software company for ops, inventory, and commerce systems that replace fragmented tools.",
       "As a practical software house in Mirpur Khas, we design around agriculture-linked trade and regional commerce realities.",
-      "Partner with a software house and software development company in Mirpur Khas that stays involved after launch as a [[top rated software house]] and [[top rated software company in Pakistan]].",
+      "Partner with a software house and software development company in Mirpur Khas that stays involved after launch as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Ops, inventory, and commerce systems from a Mirpur Khas software house for lower Sindh.",
@@ -744,14 +744,14 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Mirpur Khas. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for traders, clinics, schools, and growing businesses in Mirpur Khas.",
   },
   Khairpur: {
-    metaTitle: "Best Software House in Khairpur | Local Product Teams",
+    metaTitle: "Best Software House in Khairpur",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Khairpur. Custom web and admin systems for upper Sindh.",
     aboutTitle: "A top-rated software house and software development company in Khairpur",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Khairpur. Organizations and regional businesses hire our software company for web applications and admin systems that improve service delivery.",
       "As a lean software house in Khairpur, we keep delivery useful: software that solves real admin and ops problems without overbuilding.",
-      "Choose a software house and software development company in Khairpur for senior delivery and clear support options as a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Choose a software house and software development company in Khairpur for senior delivery and clear support options as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Web and admin systems from a Khairpur software house for institutions and SMEs in upper Sindh.",
@@ -760,14 +760,14 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Khairpur. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Khairpur.",
   },
   Jacobabad: {
-    metaTitle: "Jacobabad Software Development | Web, Mobile & Ops Platforms",
+    metaTitle: "Jacobabad Software Development",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Jacobabad. Practical software for clinics, schools, and regional commerce.",
     aboutTitle: "A top-rated software house and software development company in Jacobabad",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Jacobabad. Clinics, schools, and regional commerce teams partner with our software company for practical digital systems.",
       "As a hands-on software house in Jacobabad, we prioritize usability so staff adopt tools quickly through peak seasons.",
-      "Hire a software house and software development company in Jacobabad that delivers senior engineering and post-launch care from a [[Pakistan leading software house]] and [[Pakistan leading software company in Pakistan]].",
+      "Hire a software house and software development company in Jacobabad that delivers senior engineering and post-launch care from a [[software company in Pakistan]].",
     ],
     factDetail:
       "Practical clinic, school, and commerce platforms from a Jacobabad software development company.",
@@ -776,14 +776,14 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Jacobabad. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Jacobabad.",
   },
   Dadu: {
-    metaTitle: "Software House in Dadu | Custom Software & ERP",
+    metaTitle: "Software House in Dadu",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Dadu. Lean digital products for SMEs, clinics, and local institutions.",
     aboutTitle: "A top-rated software house and software development company in Dadu",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Dadu. SMEs, clinics, and local institutions hire our software company for lean digital products sized for their teams.",
       "As a practical software house in Dadu, we avoid over-engineering and ship the features that matter first.",
-      "Work with a software house and software development company in Dadu for transparent scoping and ongoing support as a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Work with a software house and software development company in Dadu for transparent scoping and ongoing support as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Lean SME, clinic, and institutional products from a Dadu software house across Sindh.",
@@ -792,14 +792,14 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Dadu. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for SMEs, clinics, schools, and local institutions in Dadu.",
   },
   Thatta: {
-    metaTitle: "Thatta Software Company | HMS, ERP & Digital Products",
+    metaTitle: "Thatta Software Company",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Thatta. Affordable custom software for coastal Sindh businesses.",
     aboutTitle: "A top-rated software house and software development company in Thatta",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Thatta. Coastal Sindh businesses partner with our software company for affordable custom software that improves day-to-day ops.",
       "As a lean software house in Thatta, we build practical tools for stock, admin, and reporting without a large IT overhead.",
-      "Choose a software house and software development company in Thatta that stays accountable from discovery through maintenance as a [[top rated software house]] and [[top rated software company in Pakistan]].",
+      "Choose a software house and software development company in Thatta that stays accountable from discovery through maintenance as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Affordable custom software from a Thatta software development company for coastal Sindh businesses.",
@@ -808,14 +808,14 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Thatta. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Thatta.",
   },
   Gwadar: {
-    metaTitle: "Software Development Company in Gwadar | Senior Delivery",
+    metaTitle: "Software Development Company in Gwadar",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Gwadar. Custom port, logistics, and commerce platforms for the coastal hub.",
     aboutTitle: "A top-rated software house and software development company in Gwadar",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Gwadar. Port, logistics, and commerce operators hire our software company for platforms built for the coastal hub’s growth.",
       "As an experienced software house in Gwadar, we design for visibility: inventory, bookings, reporting, and role-based access suited to multi-stakeholder operations.",
-      "Partner with a software house and software development company in Gwadar that delivers senior engineering and English-first collaboration as a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Partner with a software house and software development company in Gwadar that delivers senior engineering and English-first collaboration as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Port, logistics, and commerce platforms from a Gwadar software house for Balochistan’s coastal hub.",
@@ -824,14 +824,14 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Gwadar. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for logistics, commerce, clinics, and growing businesses in Gwadar.",
   },
   Turbat: {
-    metaTitle: "Best Software House in Turbat | Local Product Teams",
+    metaTitle: "Best Software House in Turbat",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Turbat. Reliable HMS, ERP, and ops software for Makran businesses.",
     aboutTitle: "A top-rated software house and software development company in Turbat",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Turbat. Makran businesses and institutions use our software company for reliable HMS, ERP, and ops software.",
       "As a dependable software house in Turbat, we focus on stable delivery and practical workflows teams can run with limited IT staff.",
-      "Hire a software house and software development company in Turbat for transparent pricing and support after go-live from a [[Pakistan leading software house]] and [[Pakistan leading software company in Pakistan]].",
+      "Hire a software house and software development company in Turbat for transparent pricing and support after go-live from a [[software company in Pakistan]].",
     ],
     factDetail:
       "Reliable HMS, ERP, and ops software from a Turbat software development company for Makran.",
@@ -840,14 +840,14 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Turbat. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Turbat.",
   },
   Khuzdar: {
-    metaTitle: "Khuzdar Software Development | Web, Mobile & Ops Platforms",
+    metaTitle: "Khuzdar Software Development",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Khuzdar. Practical digital systems for regional institutions and SMEs.",
     aboutTitle: "A top-rated software house and software development company in Khuzdar",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Khuzdar. Regional institutions and SMEs partner with our software company for practical digital systems that improve service delivery.",
       "As a lean software house in Khuzdar, we keep delivery useful without overbuilding or locking you into unused modules.",
-      "Choose a software house and software development company in Khuzdar that delivers senior craft with practical scope as a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Choose a software house and software development company in Khuzdar that delivers senior craft with practical scope as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Practical institutional and SME platforms from a Khuzdar software house across Balochistan.",
@@ -856,14 +856,14 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Khuzdar. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Khuzdar.",
   },
   Kotli: {
-    metaTitle: "Software House in Kotli | Custom Software & ERP",
+    metaTitle: "Software House in Kotli",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Kotli. Custom software for AJK teams and local firms.",
     aboutTitle: "A top-rated software house and software development company in Kotli",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Kotli. Local teams and firms in AJK work with our software company for product builds, business platforms, and practical digital tools.",
       "As an experienced software house in Kotli, our senior engineers deliver English-first communication, clear milestones, and systems built for growth.",
-      "Partner with a software house and software company in Kotli that stays accountable from discovery through launch as a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Partner with a software house and software company in Kotli that stays accountable from discovery through launch as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Product and business software from a Kotli software house for AJK teams and local firms.",
@@ -872,14 +872,14 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Kotli. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Kotli (AJK).",
   },
   Rawalakot: {
-    metaTitle: "Rawalakot Software Company | HMS, ERP & Digital Products",
+    metaTitle: "Rawalakot Software Company",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Rawalakot. Lean software for clinics, schools, and tourism in Poonch.",
     aboutTitle: "A top-rated software house and software development company in Rawalakot",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Rawalakot. Clinics, schools, and tourism businesses in Poonch hire our software company for lean digital products and mobile-friendly tools.",
       "As a practical software house in Rawalakot, we prioritize clarity and usability so staff adopt systems quickly through busy seasons.",
-      "Choose a software house and software development company in Rawalakot that delivers senior engineering and long-term support from the [[Best software house]] and [[Best Software company in Pakistan]].",
+      "Choose a software house and software development company in Rawalakot that delivers senior engineering and long-term support from our [[software company in Pakistan]].",
     ],
     factDetail:
       "Lean clinic, school, and tourism products from a Rawalakot software development company for Poonch.",
@@ -888,14 +888,14 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Rawalakot. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and tourism businesses in Rawalakot (AJK).",
   },
   Gilgit: {
-    metaTitle: "Software Development Company in Gilgit | Senior Delivery",
+    metaTitle: "Software Development Company in Gilgit",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Gilgit. Reliable digital systems for GB institutions and tourism.",
     aboutTitle: "A top-rated software house and software development company in Gilgit",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Gilgit. Institutions and tourism businesses in Gilgit-Baltistan hire our software company for reliable digital systems that improve service delivery.",
       "As a dependable software house in Gilgit, we focus on stable delivery, clear documentation, and mobile-first tools suited to mountain-region operations.",
-      "Hire a software house and software development company in Gilgit for transparent pricing and post-launch care as a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Hire a software house and software development company in Gilgit for transparent pricing and post-launch care as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Institutional and tourism platforms from a Gilgit software house for Gilgit-Baltistan.",
@@ -904,14 +904,14 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Gilgit. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and tourism businesses in Gilgit.",
   },
   Skardu: {
-    metaTitle: "Best Software House in Skardu | Local Product Teams",
+    metaTitle: "Best Software House in Skardu",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Skardu. Hospitality, tourism, and ops software for Baltistan.",
     aboutTitle: "A top-rated software house and software development company in Skardu",
     paragraphs: [
       "Next Software Development Company is the best software house and top-rated software development company in Skardu. Hospitality and tourism operators in Baltistan partner with our software company for bookings, guest ops, and practical digital tools.",
       "As a practical software house in Skardu, we ship mobile-first where field teams work on phones first and keep systems simple through peak tourist seasons.",
-      "Work with a software house and software development company in Skardu that delivers senior craft with practical scope as a [[top rated software house]] and [[top rated software company in Pakistan]].",
+      "Work with a software house and software development company in Skardu that delivers senior craft with practical scope as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Hospitality, tourism, and ops software from a Skardu software development company for Baltistan.",
@@ -920,14 +920,14 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Skardu. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for hospitality, tourism, clinics, and growing businesses in Skardu.",
   },
   "Wah Cantt": {
-    metaTitle: "Wah Cantt Software Development | Web, Mobile & Ops Platforms",
+    metaTitle: "Wah Cantt Software Development",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Wah Cantt. Custom industrial and institutional software for the Islamabad metro belt.",
     aboutTitle: "A top-rated software house and software development company in Wah Cantt",
     paragraphs: [
-      "Next Software Development Company is the best software house and top-rated software development company in Wah Cantt. Industrial and institutional teams on the Islamabad metro belt hire our software company for custom software paired with capital-region delivery capacity.",
+      "Next Software Development Company is the best software house and top-rated software development company in Wah Cantt. Industrial and institutional teams on the [[Islamabad]] metro belt hire our software company for custom software paired with capital-region delivery capacity.",
       "As a hands-on software house in Wah Cantt, we build ERP, ops, and admin systems that match how local factories and organizations actually work.",
-      "Choose a software house and software development company in Wah Cantt that combines twin-city proximity with senior nationwide standards as a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Choose a software house and software development company in Wah Cantt that combines proximity to [[Islamabad]] and [[Rawalpindi]] with senior nationwide standards as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Industrial and institutional platforms from a Wah Cantt software house for the Islamabad metro belt.",
@@ -936,14 +936,14 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Wah Cantt. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for industry, institutions, clinics, and growing businesses in Wah Cantt.",
   },
   Taxila: {
-    metaTitle: "Software House in Taxila | Custom Software & ERP",
+    metaTitle: "Software House in Taxila",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Taxila. Practical software for industry, education, and local services.",
     aboutTitle: "A top-rated software house and software development company in Taxila",
     paragraphs: [
-      "Next Software Development Company is the best software house and top-rated software development company in Taxila. Industry, education, and local services partner with our software company for practical digital systems near the capital corridor.",
+      "Next Software Development Company is the best software house and top-rated software development company in Taxila. Industry, education, and local services partner with our software company for practical digital systems near the [[Islamabad]] capital corridor.",
       "As a lean software house in Taxila, we replace manual tracking with clear workflows for inventory, campus admin, and service ops.",
-      "Hire a software house and software development company in Taxila for senior delivery and support after go-live from a [[Pakistan leading software house]] and [[Pakistan leading software company in Pakistan]].",
+      "Hire a software house and software development company in Taxila for senior delivery and support after go-live from a [[software company in Pakistan]].",
     ],
     factDetail:
       "Industry, education, and service platforms from a Taxila software development company for the metro belt.",
@@ -952,14 +952,14 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is the best software house and top-rated software development company in Taxila. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for industry, education, clinics, and local services in Taxila.",
   },
   Attock: {
-    metaTitle: "Attock Software Company | HMS, ERP & Digital Products",
+    metaTitle: "Attock Software Company",
     metaDescription:
       "Next Software Development Company is the best software house and top-rated software development company in Attock. Custom web and ops tools for northern Punjab businesses.",
     aboutTitle: "A top-rated software house and software development company in Attock",
     paragraphs: [
-      "Next Software Development Company is the best software house and top-rated software development company in Attock. Northern Punjab businesses hire our software company for custom web apps and ops tools with Islamabad-metro delivery proximity.",
+      "Next Software Development Company is the best software house and top-rated software development company in Attock. Northern Punjab businesses hire our software company for custom web apps and ops tools with [[Islamabad]]-metro delivery proximity.",
       "As a practical software house in Attock, we design around local commerce and institutional realities without forcing bloated enterprise software.",
-      "Partner with a software house and software development company in Attock that stays involved after launch as a [[software house in Pakistan]] and [[software company in Pakistan]].",
+      "Partner with a software house and software development company in Attock that stays involved after launch as a [[software company in Pakistan]].",
     ],
     factDetail:
       "Custom web and ops tools from an Attock software house for northern Punjab businesses.",
@@ -984,7 +984,7 @@ function buildCityPage(cityMeta: LocationCity): LocationPageContent {
       paragraphs: [
         `Next Software Development Company is the best software house and top-rated software development company in ${cityMeta.city}. As a trusted software house and software company, we build ${cityMeta.blurb ?? "digital products for growing local businesses."}`,
         `Our software development company delivers HMS, ERP, web, and mobile systems with the same standards we apply across Pakistan.`,
-        `Hire a software house and software company in ${cityMeta.city} for transparent scoping, senior-only teams, and support after go-live as a [[software house in Pakistan]] and [[software company in Pakistan]].`,
+        `Hire a software house and software company in ${cityMeta.city} for transparent scoping, senior-only teams, and support after go-live as a [[software company in Pakistan]].`,
       ],
       factDetail: `Dedicated software house delivery for businesses and institutions in ${cityMeta.city}.`,
       heroImageSrc: cityHeroImageSrc,

@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 
 import { CaseStudyPageContent } from "@/components/case-study/case-study-page";
 import { caseStudies, caseStudyPageMeta } from "@/data/caseStudy";
-import { selfCanonical } from "@/seo/canonical";
+import { selfCanonical, pageTitle, pageTitleString } from "@/seo/canonical";
 import { breadcrumbSchema, itemListSchema } from "@/seo/schema";
 
 export const metadata: Metadata = {
-  title: caseStudyPageMeta.title,
+  title: pageTitle(caseStudyPageMeta.title),
   description: caseStudyPageMeta.description,
   ...selfCanonical("/case-study"),
   openGraph: {
-    title: caseStudyPageMeta.title,
+    title: pageTitleString(caseStudyPageMeta.title),
     description: caseStudyPageMeta.description,
     type: "website",
   },
