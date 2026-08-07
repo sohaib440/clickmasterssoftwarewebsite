@@ -53,7 +53,12 @@ export type CaseStudy = {
 const webStack = (
   extras: Partial<ProjectTechnologyStack> = {},
 ): ProjectTechnologyStack => ({
-  frontend: extras.frontend ?? ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+  frontend: extras.frontend ?? [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+  ],
   backend: extras.backend ?? ["Node.js", "REST APIs"],
   database: extras.database ?? ["PostgreSQL"],
   cloud: extras.cloud ?? ["Vercel", "Cloud hosting"],
@@ -61,9 +66,10 @@ const webStack = (
 
 export const projectCaseStudyMeta: Record<string, ProjectCaseStudyMeta> = {
   "prime-lead-crm": {
-    clientName: "Apex Call Center Group",
-    cardTitle: "Unifying Lead Ownership and Sales Visibility for Call Center Teams",
-    industry: "Call Center · Sales Operations",
+    clientName: "Prime Leads",
+    cardTitle:
+      "Unifying Lead Ownership and Sales Visibility for a Call Center Floor",
+    industry: "Call Center, Sales Operations",
     duration: "12 weeks",
     technologiesUsed: [
       "Next.js",
@@ -84,12 +90,13 @@ export const projectCaseStudyMeta: Record<string, ProjectCaseStudyMeta> = {
       "Secure role-based login for admins, managers, and agents",
     ],
     solutionApproach:
-      "We mapped the full call-center floor — lead intake, ownership, coaching, and attendance — then shipped a single CRM so managers and agents run daily sales from one workspace instead of spreadsheets and side chats.",
+      "We mapped the Prime Leads call-center floor, lead intake, ownership, coaching, and attendance, then shipped Prime Lead CRM so managers and agents run daily sales from one workspace instead of spreadsheets and side chats.",
   },
   "ai-school-erp": {
     clientName: "BrightPath Academy Network",
-    cardTitle: "Modernizing School Operations with AI Attendance and Unified Portals",
-    industry: "Education · School Administration",
+    cardTitle:
+      "Modernizing School Operations with AI Attendance and Unified Portals",
+    industry: "Education, School Administration",
     duration: "16 weeks",
     technologiesUsed: [
       "Next.js",
@@ -118,7 +125,7 @@ export const projectCaseStudyMeta: Record<string, ProjectCaseStudyMeta> = {
   "travel-and-tour-website": {
     clientName: "Horizon Trails Travel Co",
     cardTitle: "Launching a Booking Ready Travel Website with Admin Control",
-    industry: "Travel · Tourism · Booking",
+    industry: "Travel, Tourism, Booking",
     duration: "10 weeks",
     technologiesUsed: [
       "Next.js",
@@ -141,8 +148,9 @@ export const projectCaseStudyMeta: Record<string, ProjectCaseStudyMeta> = {
   },
   "restaurant-pos": {
     clientName: "Harbor Table Hospitality",
-    cardTitle: "Streamlining Restaurant Orders Inventory and Front of House Speed",
-    industry: "Hospitality · Restaurant Operations",
+    cardTitle:
+      "Streamlining Restaurant Orders Inventory and Front of House Speed",
+    industry: "Hospitality, Restaurant Operations",
     duration: "12 weeks",
     technologiesUsed: [
       "Next.js",
@@ -168,7 +176,7 @@ export const projectCaseStudyMeta: Record<string, ProjectCaseStudyMeta> = {
   "travel-and-tours-management": {
     clientName: "Atlas Journeys Operations",
     cardTitle: "Centralizing Tour Bookings Flights Hotels and Payments",
-    industry: "Travel · Tour Operations",
+    industry: "Travel, Tour Operations",
     duration: "14 weeks",
     technologiesUsed: [
       "Next.js",
@@ -189,12 +197,13 @@ export const projectCaseStudyMeta: Record<string, ProjectCaseStudyMeta> = {
       "Secure operations login",
     ],
     solutionApproach:
-      "We unified tour operations — packages, bookings, flights, hotels, transport, payments, and invoices — into one management system so agencies stop juggling disconnected tools.",
+      "We unified tour operations, packages, bookings, flights, hotels, transport, payments, and invoices, into one management system so agencies stop juggling disconnected tools.",
   },
   "hotel-management-system": {
     clientName: "Grand Meridian Hotels",
-    cardTitle: "Connecting Reservations Housekeeping Finance and Hotel Security",
-    industry: "Hospitality · Hotels",
+    cardTitle:
+      "Connecting Reservations Housekeeping Finance and Hotel Security",
+    industry: "Hospitality, Hotels",
     duration: "16 weeks",
     technologiesUsed: [
       "Next.js",
@@ -221,8 +230,9 @@ export const projectCaseStudyMeta: Record<string, ProjectCaseStudyMeta> = {
   },
   "royal-pos": {
     clientName: "Royal Retail Collective",
-    cardTitle: "Powering Multi Branch Retail Checkout Inventory and AI Monitoring",
-    industry: "Retail · Point of Sale",
+    cardTitle:
+      "Powering Multi Branch Retail Checkout Inventory and AI Monitoring",
+    industry: "Retail, Point of Sale",
     duration: "14 weeks",
     technologiesUsed: [
       "Next.js",
@@ -249,7 +259,7 @@ export const projectCaseStudyMeta: Record<string, ProjectCaseStudyMeta> = {
   "hospital-management-system": {
     clientName: "CareBridge Medical Group",
     cardTitle: "Unifying Appointments Patients Billing and Doctor Workflows",
-    industry: "Healthcare · Hospitals & Clinics",
+    industry: "Healthcare, Hospitals & Clinics",
     duration: "16 weeks",
     technologiesUsed: [
       "Next.js",
@@ -275,7 +285,7 @@ export const projectCaseStudyMeta: Record<string, ProjectCaseStudyMeta> = {
   "cash-management-system": {
     clientName: "Northline Finance Ops",
     cardTitle: "Giving Finance Teams Clear Cash Flow Control and Audit Trails",
-    industry: "Finance · Cash Operations",
+    industry: "Finance, Cash Operations",
     duration: "10 weeks",
     technologiesUsed: [
       "Next.js",
@@ -300,8 +310,9 @@ export const projectCaseStudyMeta: Record<string, ProjectCaseStudyMeta> = {
   },
   "hr-management-software": {
     clientName: "PeopleFirst Workforce Ltd",
-    cardTitle: "Running Hire to Exit HR Payroll and Performance in One Platform",
-    industry: "Human Resources · Workforce",
+    cardTitle:
+      "Running Hire to Exit HR Payroll and Performance in One Platform",
+    industry: "Human Resources, Workforce",
     duration: "16 weeks",
     technologiesUsed: [
       "Next.js",
@@ -322,12 +333,13 @@ export const projectCaseStudyMeta: Record<string, ProjectCaseStudyMeta> = {
       "Exit management end to end",
     ],
     solutionApproach:
-      "We built an AI-assisted HRMS covering the full employee lifecycle — hire to exit — so HR teams run attendance, payroll, recruitment, and performance from one platform.",
+      "We built an AI-assisted HRMS covering the full employee lifecycle, hire to exit, so HR teams run attendance, payroll, recruitment, and performance from one platform.",
   },
   "medicine-inventory-system": {
     clientName: "MediStock Pharmacy Chain",
-    cardTitle: "Improving Pharmacy Stock Accuracy Expiry Control and Purchasing",
-    industry: "Healthcare · Pharmacy Inventory",
+    cardTitle:
+      "Improving Pharmacy Stock Accuracy Expiry Control and Purchasing",
+    industry: "Healthcare, Pharmacy Inventory",
     duration: "10 weeks",
     technologiesUsed: [
       "Next.js",
@@ -348,12 +360,13 @@ export const projectCaseStudyMeta: Record<string, ProjectCaseStudyMeta> = {
       "Pharmacy inventory dashboard",
     ],
     solutionApproach:
-      "We designed inventory around pharmacy realities — batches, expiry, suppliers, and purchase orders — so stock movement stays accurate and near-expiry losses are caught early.",
+      "We designed inventory around pharmacy realities, batches, expiry, suppliers, and purchase orders, so stock movement stays accurate and near-expiry losses are caught early.",
   },
   "e-learning-portal": {
     clientName: "EduLearn Training Institute",
-    cardTitle: "Delivering Courses Enrollments Assessments and Attendance in One LMS",
-    industry: "Education · E-Learning · LMS",
+    cardTitle:
+      "Delivering Courses Enrollments Assessments and Attendance in One LMS",
+    industry: "Education, E-Learning, LMS",
     duration: "12 weeks",
     technologiesUsed: [
       "Next.js",
@@ -374,22 +387,23 @@ export const projectCaseStudyMeta: Record<string, ProjectCaseStudyMeta> = {
       "System settings and certificate-ready operations",
     ],
     solutionApproach:
-      "We built EduLearn as one LMS for admins and instructors — courses, enrollments, lessons, assessments, and attendance — so learning teams stop running training across emails and folders.",
+      "We built EduLearn as one LMS for admins and instructors, courses, enrollments, lessons, assessments, and attendance, so learning teams stop running training across emails and folders.",
   },
 };
 
 type CaseStudyNarrative = {
   metaTitle: string;
   metaDescription: string;
-  /** Hero lede — business outcome framing, not product brochure copy */
+  /** Hero lede, business outcome framing, not product brochure copy */
   lede: string;
   /** Short tags shown under the hero */
   highlights: string[];
   overview: string[];
-  challenge: string;
+  /** Detailed business problem, shown as multiple paragraphs */
+  challenge: string[];
   approach: string;
   approachPoints: string[];
-  /** Business results — distinct from project “outcome” feature list */
+  /** Business results, distinct from project “outcome” feature list */
   outcomes: string[];
   /** What we learned / decisions that shaped delivery */
   insights: string[];
@@ -412,70 +426,123 @@ function faq(
  */
 const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
   "prime-lead-crm": {
-    metaTitle: "Call Center CRM Case Study | Apex Lead Ownership Turnaround",
+    metaTitle: "Prime Lead CRM Case Study | Call Center Lead Ownership",
     metaDescription:
-      "How we helped a call center replace spreadsheet lead tracking with one CRM for ownership, coaching, attendance, and live conversion visibility in 12 weeks.",
-    lede: "Apex Call Center Group was closing deals, but leadership could not see who owned which lead or why conversion slipped mid-shift. This engagement rebuilt their sales floor around one source of truth.",
+      "Case study: how we built Prime Lead CRM for Prime Leads, replacing spreadsheet lead tracking with one call center CRM for ownership, coaching, attendance, and live conversion visibility in 12 weeks.",
+    lede: "Prime Leads was closing deals, but leadership could not see who owned which lead or why conversion slipped mid-shift. This engagement built Prime Lead CRM so their sales floor runs from one source of truth.",
     highlights: [
       "12-week engagement",
-      "Sales floor discovery",
-      "Role-based rollout",
+      "Prime Leads floor discovery",
+      "Role-based CRM rollout",
       "Live conversion KPIs",
     ],
     overview: [
-      "The brief was not “build another CRM.” Apex needed a sales operating system that mirrored how their floor already worked: license agents, shift coverage, coaching, and fast handoffs.",
-      "We spent the first two weeks shadowing managers and agents, mapping every place a lead could disappear — WhatsApp threads, shared sheets, and personal notebooks.",
-      "Delivery focused on decision clarity: every inquiry got an owner, every role got a bounded workspace, and every morning standup started from the same dashboard.",
-      "The result is a call-center-shaped CRM the team actually opens first thing — not a generic pipeline tool they work around.",
+      "The brief was not “build another generic CRM.” Prime Leads needed Prime Lead CRM: a sales operating system that mirrored how their call center already worked, including licensed agents, shift coverage, coaching, and fast handoffs.",
+      "We spent the first two weeks shadowing Prime Leads managers and agents, mapping every place a lead could disappear: WhatsApp threads, shared sheets, and personal notebooks.",
+      "Delivery focused on decision clarity: every inquiry got an owner, every role got a bounded workspace, and every morning standup started from the same Prime Lead CRM dashboard.",
+      "The result is a call-center-shaped CRM the Prime Leads team actually opens first thing, not a generic pipeline tool they work around.",
     ],
-    challenge:
-      "Lead ownership was tribal knowledge. Agents chased the same prospects, managers rebuilt reports by hand each evening, and training lived in folders nobody opened during peak hours. Conversion looked fine in monthly totals and chaotic in daily operations.",
+    challenge: [
+      "At Prime Leads, lead ownership was tribal knowledge. Agents on overlapping shifts chased the same prospects because WhatsApp threads, shared sheets, and personal notebooks never agreed on who had spoken last. Managers spent evenings rebuilding conversion reports by hand while the floor kept selling from incomplete lists.",
+      "Day to day, licensed agents lost time confirming assignment before they dialed. Team leads could not see which pipeline stages stalled mid-shift, so coaching arrived as hallway advice instead of evidence tied to a specific lead. New hires shadowed veterans without a checklist, which stretched ramp time and diluted script consistency.",
+      "Prior tools failed because generic CRM labels did not match Prime Leads call scripts, and side chats never enforced a single owner. Spreadsheets updated after the fact, so morning standups argued about whose file was current. Attendance and licensed-agent counts lived apart from conversion, so staffing decisions were gut feel.",
+      "What was at stake was not only monthly totals that still looked acceptable. Duplicate outreach damaged prospect trust, managers burned hours on reconciliation instead of coaching, and leadership lacked a shared vocabulary for pipeline stages across shifts. Without one source of truth, scaling the floor would multiply the same chaos.",
+      "Prime Leads needed Prime Lead CRM to make every inquiry have an owner, every role a bounded workspace, and every standup start from the same live dashboard. Conversion had to become visible in daily operations, not only in end-of-month summaries.",
+    ],
     approach:
-      "We treated the CRM as a floor redesign: intake states, assignment rules, attendance signals, and coaching content were modeled together so the product matched the shift, not the other way around.",
+      "We treated Prime Lead CRM as a floor redesign for Prime Leads: intake states, assignment rules, attendance signals, and coaching content were modeled together so the product matched the shift, not the other way around.",
     approachPoints: [
-      "Ran discovery workshops with managers and top closers to define lead states that match real conversations.",
-      "Prioritized dashboard and assignment before chat so ownership shipped in the first release.",
+      "Ran discovery workshops with Prime Leads managers and top closers to define lead states that match real conversations.",
+      "Prioritized dashboard and assignment before chat so ownership shipped in the first Prime Lead CRM release.",
       "Embedded training next to the pipeline so coaching is part of selling, not a separate LMS login.",
-      "Piloted with one team for two weeks, then rolled out role packs for agents, team leads, and admins.",
+      "Piloted with one Prime Leads team for two weeks, then rolled out role packs for agents, team leads, and admins.",
     ],
     outcomes: [
-      "Managers review pipeline health in one morning view instead of rebuilding spreadsheet reports",
-      "Lead assignment disputes dropped because ownership is visible on every record",
+      "Prime Leads managers review pipeline health in one morning view instead of rebuilding spreadsheet reports",
+      "Lead assignment disputes dropped because ownership is visible on every Prime Lead CRM record",
       "New agents ramp with structured modules instead of shadowing without a checklist",
       "Team chat stays beside the deal, cutting context loss across side apps",
-      "Attendance and license-agent counts sit next to conversion so staffing decisions are evidence-based",
+      "Attendance and licensed-agent counts sit next to conversion so staffing decisions are evidence-based",
       "Leadership finally has a shared vocabulary for pipeline stages across shifts",
     ],
     insights: [
-      "Call centers reject generic CRM labels — states must sound like their scripts.",
+      "Call centers reject generic CRM labels; states must sound like their scripts.",
       "Shipping chat before clear ownership would have amplified chaos, not collaboration.",
-      "Training adoption rose when modules appeared inside the daily workspace.",
+      "Training adoption rose when modules appeared inside the daily Prime Lead CRM workspace.",
     ],
     clientQuote:
-      "For the first time our morning huddle starts from the same screen. Owners are clear, coaching is attached to the work, and we stopped arguing about whose spreadsheet was right.",
+      "For the first time our morning huddle starts from the same Prime Lead CRM screen. Owners are clear, coaching is attached to the work, and we stopped arguing about whose spreadsheet was right.",
     faqs: [
       faq(
         "How is this case study different from the product page?",
-        "This page covers the business problem, engagement decisions, and outcomes. The project page documents modules, procedure, and product FAQs for buyers evaluating the software itself.",
+        "This page covers the Prime Leads business problem, engagement decisions, and outcomes for Prime Lead CRM. The project page documents modules, procedure, and product FAQs for buyers evaluating the software itself.",
         "Scope",
         "left",
       ),
       faq(
         "How long did discovery take?",
-        "Two weeks of floor observation and workshops before the first build sprint, so lead states and roles matched real shift work.",
+        "Two weeks of floor observation and workshops with Prime Leads before the first build sprint, so lead states and roles matched real shift work.",
         "Process",
         "right",
       ),
       faq(
         "What changed for managers first?",
-        "A live dashboard and assignment rules shipped early so leadership could trust ownership before we expanded chat and training.",
+        "A live Prime Lead CRM dashboard and assignment rules shipped early so leadership could trust ownership before we expanded chat and training.",
         "Rollout",
         "left",
       ),
       faq(
+        "Who was involved from the Prime Leads side?",
+        "Managers, team leads, and top closers joined discovery; admins defined role packs. Agents from the pilot team validated lead states against real conversations.",
+        "Roles",
+        "right",
+      ),
+      faq(
+        "What was the overall timeline?",
+        "The engagement ran 12 weeks: two weeks of discovery, then build sprints with a two-week pilot before wider role-pack rollout across the floor.",
+        "Timeline",
+        "left",
+      ),
+      faq(
+        "Were WhatsApp or email integrated?",
+        "We focused on ownership inside Prime Lead CRM first. Side-channel capture was mapped in discovery; deeper messaging integrations can follow once assignment is trusted.",
+        "Integrations",
+        "right",
+      ),
+      faq(
+        "How was agent training handled?",
+        "Structured training modules shipped inside the CRM workspace so coaching sits beside the pipeline. Pilot agents ramped with checklists instead of shadowing alone.",
+        "Training",
+        "left",
+      ),
+      faq(
         "Can a similar engagement fit a smaller sales team?",
-        "Yes. We scale role packs and modules to team size while keeping the same ownership and visibility principles.",
+        "Yes. We scale role packs and modules to team size while keeping the same ownership and visibility principles used for Prime Leads.",
         "Fit",
+        "right",
+      ),
+      faq(
+        "How did you measure outcomes?",
+        "Prime Leads tracked morning report rebuild time, assignment dispute frequency, and new-agent ramp against the pre-CRM baseline from discovery workshops.",
+        "Outcomes",
+        "left",
+      ),
+      faq(
+        "Was historical lead data migrated?",
+        "Active pipeline and ownership-critical records were mapped into Prime Lead CRM with manager sign-off. Stale sheet archives stayed reference-only where they added noise.",
+        "Migration",
+        "right",
+      ),
+      faq(
+        "What support continued after launch?",
+        "After floor-wide rollout we stayed available for role-pack tweaks, coaching module updates, and dashboard KPI refinements based on standup feedback.",
+        "Support",
+        "left",
+      ),
+      faq(
+        "What engagement model did Prime Leads use?",
+        "A fixed 12-week delivery with discovery, pilot, and phased role packs. Scope stayed tied to call-center ownership, attendance visibility, and conversion dashboards.",
+        "Engagement",
         "right",
       ),
     ],
@@ -493,13 +560,18 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
       "Role-based portals",
     ],
     overview: [
-      "School leaders wanted fewer morning bottlenecks — not a longer feature checklist. Parents needed timely updates; teachers needed one place for classes, exams, and attendance.",
+      "School leaders wanted fewer morning bottlenecks, not a longer feature checklist. Parents needed timely updates; teachers needed one place for classes, exams, and attendance.",
       "We sequenced delivery around trust: accurate attendance first, then fees and academics, then richer parent and student experiences.",
       "AI recognition was introduced carefully with human override paths so staff stayed in control during the transition from paper registers.",
       "Today BrightPath runs daily school operations from portals that match each role instead of forcing everyone through a single overloaded admin screen.",
     ],
-    challenge:
-      "Registers were late, fee follow-ups were manual, and parents heard different answers depending on who they called. Campus staff spent mornings reconciling attendance before teaching could start.",
+    challenge: [
+      "BrightPath Academy Network ran attendance, fees, and parent updates across paper registers and disconnected tools. Campus admins spent the first hour of each morning reconciling who was present before teachers could start lessons with confidence.",
+      "Parents heard different answers depending on who they called at the front office. Fee follow-ups were manual lists that lagged classroom reality, so billing conversations often started from incomplete rosters. Teachers juggled class lists, exam marks, and attendance in separate places.",
+      "Prior school tools failed because they forced everyone through overloaded admin screens or treated AI attendance as a bolt-on without human override. Paper registers stayed late; recognition without audit paths made staff distrust the numbers. Multi-campus leadership could not see patterns across sites.",
+      "What was at stake was instructional time, parent trust, and the ability to grow the network without multiplying morning bottlenecks. Incomplete attendance also poisoned fee and academic records, creating disputes that absorbed leadership attention.",
+      "BrightPath needed one ERP with role-based portals and carefully introduced AI attendance so admins, teachers, parents, and students shared the same student truth in real time.",
+    ],
     approach:
       "We built a shared student and staff data model first, then layered AI attendance channels (webcam, mobile, CCTV) and role portals so each audience sees only what they need.",
     approachPoints: [
@@ -526,26 +598,74 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
     faqs: [
       faq(
         "Was AI attendance mandatory from day one?",
-        "No. We ran parallel manual marking during pilots so campuses could adopt recognition at a comfortable pace.",
+        "No. We ran parallel manual marking during pilots so BrightPath campuses could adopt recognition at a comfortable pace.",
         "Adoption",
         "left",
       ),
       faq(
         "How did you handle parent communication?",
-        "Parent portals show attendance and academic status from the same student record admins use — reducing conflicting updates.",
+        "Parent portals show attendance and academic status from the same student record admins use, reducing conflicting updates across the network.",
         "Parents",
         "right",
       ),
       faq(
         "Can this model work for a single campus first?",
-        "Yes. We often start with one campus, prove attendance and portals, then expand the same data model.",
+        "Yes. BrightPath proved attendance and portals on a lead campus, then expanded the same data model to additional sites.",
         "Rollout",
         "left",
       ),
       faq(
         "What is covered on the project page vs this case study?",
-        "The project page details ERP modules and product FAQs. This case study focuses on the engagement story, sequencing, and school outcomes.",
-        "Content",
+        "The project page details ERP modules and product FAQs. This case study focuses on the BrightPath engagement story, sequencing, and school outcomes.",
+        "Scope",
+        "right",
+      ),
+      faq(
+        "Who participated in discovery?",
+        "School leaders, campus admins, teachers, and parent-communication owners mapped journeys before UI polish. Campus champions later supported day-one questions.",
+        "Roles",
+        "left",
+      ),
+      faq(
+        "What was the engagement timeline?",
+        "Sixteen weeks: shared data model and portals first, AI attendance validation on-site, then fees and timetable once attendance was stable.",
+        "Timeline",
+        "right",
+      ),
+      faq(
+        "Which camera or device integrations were in scope?",
+        "Webcam, mobile, and CCTV channels were configured where infrastructure was ready, always with manual override and recognition logs for staff review.",
+        "Integrations",
+        "left",
+      ),
+      faq(
+        "How were staff trained?",
+        "We trained campus champions at each school so local teams could answer day-one questions without waiting on a central helpdesk.",
+        "Training",
+        "right",
+      ),
+      faq(
+        "Does this fit a smaller single-school team?",
+        "Yes. The same role portals and attendance sequencing apply at smaller scale; you can defer multi-campus reporting until you need it.",
+        "Fit",
+        "left",
+      ),
+      faq(
+        "How were outcomes measured?",
+        "BrightPath compared morning register close time, parent call volume for basic status, and attendance correction rates against the paper-register baseline.",
+        "Outcomes",
+        "right",
+      ),
+      faq(
+        "Was student historical data migrated?",
+        "Core student and staff records were loaded into the shared model before go-live. Fee history followed once attendance identity was trusted.",
+        "Migration",
+        "left",
+      ),
+      faq(
+        "What support continued after launch?",
+        "Post-launch we refined recognition thresholds, portal permissions, and fee workflows based on campus champion feedback across the network.",
+        "Support",
         "right",
       ),
     ],
@@ -555,7 +675,7 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
     metaTitle: "Travel Booking Website Case Study | Package Catalog Launch",
     metaDescription:
       "How a travel brand launched a booking-ready website with package search, destination pages, and admin tools so marketing and operations stay aligned.",
-    lede: "Horizon Trails needed a public site travelers would trust and an admin panel the agency would actually update — delivered together so content never drifted from bookings.",
+    lede: "Horizon Trails needed a public site travelers would trust and an admin panel the agency would actually update, delivered together so content never drifted from bookings.",
     highlights: [
       "10-week launch",
       "Public + admin together",
@@ -568,8 +688,13 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
       "Destination and package templates were designed for search visibility without forcing editors to touch code.",
       "Launch meant travelers could browse and inquire while staff managed bookings, customers, and rental questions in one place.",
     ],
-    challenge:
-      "Marketing promised trips the ops team could not update quickly. Inquiries stalled in email, and destination pages were either thin or frozen until a developer was free.",
+    challenge: [
+      "Horizon Trails Travel Co marketed trips from a brochure-style site that could not capture demand. Packages lived in PDFs and shared drives, so marketing promised itineraries the operations team could not update quickly when dates, pricing, or availability changed.",
+      "Booking questions landed in shared inboxes that nobody owned overnight. Travelers waited while staff forwarded emails; rental inquiries mixed with package requests and disappeared. Destination pages were thin or frozen until a developer was free.",
+      "Prior tools failed because the public site and admin work were disconnected. Editors could not publish without engineering help, and ops tracked customers in separate lists from what the website showed. Seasonal campaigns amplified the gap between advertised trips and what the desk could confirm.",
+      "What was at stake was lost inquiries during peak interest windows, damaged trust when the site lagged reality, and an inability to scale organic search or paid traffic on a stable catalog. Marketing and operations needed one booking-ready content model.",
+      "Horizon Trails needed a public booking website and admin panel delivered together so every published package had a maintainable backend path, and inquiries never vanished into email.",
+    ],
     approach:
       "We shipped a booking-oriented content model: packages, destinations, and inquiries as first-class records, with public templates fed directly from admin data.",
     approachPoints: [
@@ -596,33 +721,82 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
     faqs: [
       faq(
         "Did you redesign brand visuals from scratch?",
-        "We focused on conversion and maintainable templates first, then aligned visual polish with the brand’s existing direction.",
+        "We focused on conversion and maintainable templates first, then aligned visual polish with Horizon Trails existing brand direction.",
         "Design",
         "left",
       ),
       faq(
         "How soon could the team edit packages?",
-        "Admin create/edit flows were usable before public launch so content was ready on day one.",
+        "Admin create and edit flows were usable before public launch so Horizon Trails content was ready on day one.",
         "Admin",
         "right",
       ),
       faq(
         "Is online payment required in this case study scope?",
-        "This engagement prioritized catalog, inquiry, and booking management. Payments can layer on once volume justifies it.",
+        "This engagement prioritized catalog, inquiry, and booking management. Payments can layer on once booking volume justifies it.",
         "Scope",
         "left",
       ),
       faq(
         "Where do I see module screenshots?",
-        "Product screenshots and module detail live on the corresponding project page; this case study covers the business launch story.",
-        "Assets",
+        "Product screenshots and module detail live on the travel website project page. This case study covers the Horizon Trails launch story.",
+        "Scope",
+        "right",
+      ),
+      faq(
+        "Who owned discovery and content decisions?",
+        "Marketing and operations leads defined package fields together. Editors validated publish workflows before any paid traffic campaigns.",
+        "Roles",
+        "left",
+      ),
+      faq(
+        "What was the launch timeline?",
+        "Ten weeks from discovery through public launch, with admin tools ready early so the catalog was populated before go-live.",
+        "Timeline",
+        "right",
+      ),
+      faq(
+        "Were payment gateways or OTAs integrated?",
+        "Not in this engagement. We kept the spine on packages, destinations, bookings, customers, and rental inquiries; supplier or payment APIs can follow.",
+        "Integrations",
+        "left",
+      ),
+      faq(
+        "How were editors trained?",
+        "We trained Horizon Trails editors on create, edit, and publish steps that mirror how they already describe trips, before campaigns drove traffic.",
+        "Training",
+        "right",
+      ),
+      faq(
+        "Can a smaller agency use the same model?",
+        "Yes. A leaner catalog and smaller admin team still benefit from public pages fed by the same records ops maintain.",
+        "Fit",
+        "left",
+      ),
+      faq(
+        "How did you measure launch success?",
+        "Horizon Trails tracked inquiry response ownership, time to publish a package change, and whether marketing and ops shared one live catalog.",
+        "Outcomes",
+        "right",
+      ),
+      faq(
+        "Was existing package content migrated?",
+        "Yes. PDF and sheet itineraries were structured into package and destination records with SEO fields before public launch.",
+        "Migration",
+        "left",
+      ),
+      faq(
+        "What support continued after launch?",
+        "We supported early seasonal campaign tweaks, rental inquiry routing refinements, and editor workflow adjustments after go-live.",
+        "Support",
         "right",
       ),
     ],
   },
 
   "restaurant-pos": {
-    metaTitle: "Restaurant POS Case Study | Front-of-House Speed & Stock Control",
+    metaTitle:
+      "Restaurant POS Case Study | Front-of-House Speed & Stock Control",
     metaDescription:
       "Case study: how a hospitality group unified orders, menus, inventory, and staff reporting so service speed and stock accuracy improved together.",
     lede: "Harbor Table Hospitality was losing tickets between the floor and the kitchen while inventory lived in a separate habit. We connected service and stock in one POS rhythm.",
@@ -634,12 +808,17 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
     ],
     overview: [
       "Peak hours exposed every gap: slow modifiers, unclear table status, and stock counts that never matched the night’s sales.",
-      "We designed around ticket velocity — fewer taps to fire an order — then wired inventory so popular items could not silently stock out.",
+      "We designed around ticket velocity, fewer taps to fire an order, then wired inventory so popular items could not silently stock out.",
       "Staff and reporting modules followed once the order path felt natural to servers and managers.",
       "Harbor Table now runs front-of-house and back-office decisions from the same nightly picture.",
     ],
-    challenge:
-      "Orders were fast only when veterans remembered workarounds. Newer staff slowed the line, and managers discovered missing stock after the rush — too late to fix the shift.",
+    challenge: [
+      "Harbor Table Hospitality was losing tickets between the floor and the kitchen while inventory lived in a separate habit. Peak hours exposed every gap: slow modifiers, unclear table status, and stock counts that never matched the night’s sales.",
+      "Orders were fast only when veterans remembered workarounds. Newer servers slowed the line hunting taps, and managers discovered missing stock after the rush, too late to fix the shift. Front-of-house speed and back-office control never shared one nightly picture.",
+      "Prior POS and stock tools failed because inventory lagged the ticket path. Staff treated stock counts as a chore after close, so low inventory never warned the dinner rush. Reporting required exports that managers did not trust during service.",
+      "What was at stake was guest wait times, food cost waste from silent stockouts, and an expensive training burden every time a new server joined. Multi-outlet growth would copy the same fragmented habits without a shared playbook.",
+      "Harbor Table needed a POS designed around ticket velocity first, then menus, inventory, staff, and reports wired so numbers matched what the floor actually sold.",
+    ],
     approach:
       "We instrumented the real ticket path first, simplified modifiers and table flow, then attached inventory and employee modules so numbers matched what the floor sold.",
     approachPoints: [
@@ -657,22 +836,22 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
       "Multi-outlet expansion can reuse the same POS playbook",
     ],
     insights: [
-      "Restaurants punish extra taps — UX testing on live shifts beats lab prototypes.",
+      "Restaurants punish extra taps, UX testing on live shifts beats lab prototypes.",
       "Inventory adoption failed historically because it lagged the ticket; we reversed that.",
       "Reporting only matters if it matches what managers already argue about at close.",
     ],
     clientQuote:
-      "The POS finally feels like how we run a busy floor. Stock stops surprising us mid-service, and close-out is a review — not a scavenger hunt.",
+      "The POS finally feels like how we run a busy floor. Stock stops surprising us mid-service, and close-out is a review, not a scavenger hunt.",
     faqs: [
       faq(
         "Did you replace hardware?",
-        "Software and workflows were the focus; existing station setups were adapted where possible to reduce disruption.",
+        "Software and workflows were the focus for Harbor Table. Existing station setups were adapted where possible to reduce disruption.",
         "Hardware",
         "left",
       ),
       faq(
         "How did staff training work?",
-        "We trained on live stations in off-peak windows and kept a parallel path until teams were confident.",
+        "We trained on live stations in off-peak windows and kept a parallel path until Harbor Table teams were confident.",
         "Training",
         "right",
       ),
@@ -683,9 +862,57 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
         "left",
       ),
       faq(
-        "Project page vs case study?",
-        "Use the project page for module lists and product FAQs; this case study explains the hospitality engagement and results.",
-        "Navigation",
+        "How is this case study different from the project page?",
+        "Use the project page for module lists and product FAQs. This case study explains the Harbor Table hospitality engagement and results.",
+        "Scope",
+        "right",
+      ),
+      faq(
+        "Who joined discovery on the floor?",
+        "Servers, kitchen leads, and shift managers timed order entry with us before we locked the interaction model and inventory links.",
+        "Roles",
+        "left",
+      ),
+      faq(
+        "What was the delivery timeline?",
+        "Twelve weeks with a service-first order path early, then inventory, staff, and reporting modules once ticket velocity was proven.",
+        "Timeline",
+        "right",
+      ),
+      faq(
+        "Were printers or payment terminals integrated?",
+        "We adapted existing station setups where possible. Deep hardware swaps were out of scope unless a station could not support the new ticket path.",
+        "Integrations",
+        "left",
+      ),
+      faq(
+        "How did rollout avoid stopping service?",
+        "We rolled out station by station so training never halted a full floor. Off-peak windows carried the heaviest coaching.",
+        "Rollout",
+        "right",
+      ),
+      faq(
+        "Does this fit a single restaurant?",
+        "Yes. Harbor Table’s playbook scales down to one outlet; multi-outlet reporting is optional until you expand.",
+        "Fit",
+        "left",
+      ),
+      faq(
+        "How were outcomes measured?",
+        "We timed complex modifier entry, tracked low-stock warning timing versus rush hours, and reviewed close-out report usage with managers.",
+        "Outcomes",
+        "right",
+      ),
+      faq(
+        "Was menu and stock history migrated?",
+        "Active menus, modifiers, and on-hand stock baselines were loaded before cutover. Historical sheet archives stayed available for reference.",
+        "Migration",
+        "left",
+      ),
+      faq(
+        "What support continued after launch?",
+        "Post-launch we refined modifiers, inventory thresholds, and shift report layouts based on real service feedback.",
+        "Support",
         "right",
       ),
     ],
@@ -695,7 +922,7 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
     metaTitle: "Tour Operations Case Study | Bookings Flights & Payments Hub",
     metaDescription:
       "How a tour operator centralized bookings, packages, flights, hotels, transport, and invoicing so agents stop juggling disconnected tools.",
-    lede: "Atlas Journeys Operations ran trips successfully — but confirmations, supplier pieces, and payments lived in too many places. We built one operations hub for the whole journey.",
+    lede: "Atlas Journeys Operations ran trips successfully, but confirmations, supplier pieces, and payments lived in too many places. We built one operations hub for the whole journey.",
     highlights: [
       "14-week engagement",
       "Ops consolidation",
@@ -704,12 +931,17 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
     ],
     overview: [
       "Growth made fragmentation expensive: agents retyped traveler details into flights, hotels, and payment trackers.",
-      "We modeled a booking as a spine — packages, transport, stays, and invoices hang off one customer journey.",
+      "We modeled a booking as a spine, packages, transport, stays, and invoices hang off one customer journey.",
       "Reporting followed the money and the movement so leadership could see both occupancy of packages and cash position.",
       "Atlas agents now open one system to move a traveler from inquiry to invoice.",
     ],
-    challenge:
-      "Each supplier step had its own spreadsheet. When a flight changed, hotel and invoice updates lagged, creating traveler friction and reconciliation pain at month end.",
+    challenge: [
+      "Atlas Journeys Operations ran trips successfully, but confirmations, supplier pieces, and payments lived in too many places. Growth made fragmentation expensive: agents retyped traveler details into flights, hotels, and payment trackers for every booking.",
+      "Each supplier step had its own spreadsheet. When a flight changed, hotel and invoice updates lagged, creating traveler friction and reconciliation pain at month end. Agents could not see the whole journey without opening several files.",
+      "Prior tools failed because “booking” meant different things in each module, and payments sat apart from the trip record. Finance fought month-end merges while agents sold from incomplete confirmations. Peak season multiplied spreadsheet risk instead of capacity.",
+      "What was at stake was traveler trust on last-minute changes, cash visibility for leadership, and the cost of onboarding new agents into five file-naming schemes. Atlas needed one operations hub from inquiry to invoice.",
+      "Without a booking spine that carried packages, transport, stays, payments, and invoices together, every change would keep creating parallel work and month-end surprises.",
+    ],
     approach:
       "We centralized the booking record first, then attached flights, hotels, transport, payments, and invoices so every change propagated from one place.",
     approachPoints: [
@@ -727,7 +959,7 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
       "Peak season volume no longer multiplies spreadsheet risk",
     ],
     insights: [
-      "Tour ops tools fail when “booking” means different things in each module — we forced one definition.",
+      "Tour ops tools fail when “booking” means different things in each module, we forced one definition.",
       "Payments without booking context create finance fights; we refused that split.",
       "Phased supplier rollout protected service levels during training.",
     ],
@@ -736,26 +968,74 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
     faqs: [
       faq(
         "Did you integrate every airline API on day one?",
-        "No. We focused on operational control and records first; deeper supplier APIs can follow once processes are stable.",
+        "No. For Atlas Journeys we focused on operational control and records first. Deeper supplier APIs can follow once processes are stable.",
         "Integrations",
         "left",
       ),
       faq(
         "How do agents handle last-minute changes?",
-        "They update the central booking; related modules stay attached so confirmations and invoices can be revised from the same record.",
+        "They update the central booking. Related modules stay attached so confirmations and invoices can be revised from the same record.",
         "Changes",
         "right",
       ),
       faq(
         "Is this suitable for multi-agent teams?",
-        "Yes. Roles and reporting support shared queues while preserving accountability on each booking.",
+        "Yes. Roles and reporting support shared queues while preserving accountability on each Atlas booking.",
         "Teams",
         "left",
       ),
       faq(
         "Where are deep product FAQs?",
-        "Module-level FAQs live on the project page. This case study stays on the operational turnaround story.",
-        "Docs",
+        "Module-level FAQs live on the tour management project page. This case study stays on the Atlas operational turnaround story.",
+        "Scope",
+        "right",
+      ),
+      faq(
+        "Who was involved in discovery?",
+        "Operations leads, agents, and finance stakeholders defined a single booking meaning across packages, suppliers, and invoices.",
+        "Roles",
+        "left",
+      ),
+      faq(
+        "What was the engagement timeline?",
+        "Fourteen weeks with the booking spine first, then phased supplier modules so the team was never learning everything at once.",
+        "Timeline",
+        "right",
+      ),
+      faq(
+        "How was rollout staged?",
+        "We phased flights, hotels, transport, and payment modules after the central booking record was trusted in daily agent work.",
+        "Rollout",
+        "left",
+      ),
+      faq(
+        "How were agents trained?",
+        "Training followed each module wave. Agents practiced package and booking updates before supplier and invoice complexity expanded.",
+        "Training",
+        "right",
+      ),
+      faq(
+        "Can a smaller tour desk use this approach?",
+        "Yes. A smaller team still benefits from one booking record; you can delay advanced supplier modules until volume requires them.",
+        "Fit",
+        "left",
+      ),
+      faq(
+        "How were outcomes measured?",
+        "Atlas tracked retyping of traveler details, invoice linkage to bookings, and whether leadership reports needed manual merges at month end.",
+        "Outcomes",
+        "right",
+      ),
+      faq(
+        "Was booking history migrated?",
+        "Active and upcoming bookings were centralized with customer identity intact. Legacy sheets remained available for historical reference during cutover.",
+        "Migration",
+        "left",
+      ),
+      faq(
+        "What support continued after launch?",
+        "After go-live we refined invoice workflows, reporting views, and agent role permissions based on peak-season feedback.",
+        "Support",
         "right",
       ),
     ],
@@ -774,12 +1054,17 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
     ],
     overview: [
       "Guest experience suffered when room status lagged check-in and finance closed books on delayed data.",
-      "We mapped the stay lifecycle — reservation to checkout — and made housekeeping and finance consume the same room state.",
+      "We mapped the stay lifecycle, reservation to checkout, and made housekeeping and finance consume the same room state.",
       "AI attendance and camera monitoring were added as operational layers, not gimmicks, with clear staff workflows.",
       "Meridian teams now coordinate rooms, people, and incidents from one HMS backbone.",
     ],
-    challenge:
-      "Front desk promised rooms housekeeping had not released. Finance chased folios while security reviewed footage in isolation. Guests felt the gaps even when staff worked hard.",
+    challenge: [
+      "Grand Meridian Hotels needed the front desk, housekeeping, and security signals to stop living in separate worlds. Guest experience suffered when room status lagged check-in and finance closed books on delayed data.",
+      "Front desk promised rooms housekeeping had not released. Housekeeping worked from boards that did not match reservation state. Finance chased folios while security reviewed footage in isolation. Guests felt the gaps even when staff worked hard.",
+      "Prior hotel tools failed because AI attendance and cameras arrived as side systems without room-state context, and finance reporting was not tied to stay events. Staff argued from different truths; multi-property expansion would copy the same silos.",
+      "What was at stake was check-in waits, housekeeping turnaround quality, folio accuracy at close, and safety visibility that managers could act on inside daily ops. Meridian needed one HMS backbone for rooms, people, and incidents.",
+      "Without unified reservation and room status first, adding more monitoring or reports would only create noise. The engagement had to sequence operational truth before AI layers.",
+    ],
     approach:
       "We unified room and reservation state, then connected housekeeping boards, finance modules, and AI monitoring so exceptions surface where staff already work.",
     approachPoints: [
@@ -792,7 +1077,7 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
       "Check-in waits drop when room readiness is visible in real time",
       "Housekeeping prioritizes turns from the same status front desk trusts",
       "Finance closes with fewer missing folio surprises",
-      "Attendance and camera alerts sit inside ops — not a separate silo",
+      "Attendance and camera alerts sit inside ops, not a separate silo",
       "Managers coach with shared occupancy and staffing context",
       "Multi-property playbooks reuse the same HMS model",
     ],
@@ -806,26 +1091,74 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
     faqs: [
       faq(
         "Was property Wi-Fi a blocker for AI features?",
-        "We assessed on-site connectivity early and staged camera features where infrastructure was ready.",
+        "We assessed Grand Meridian on-site connectivity early and staged camera features where infrastructure was ready.",
         "Infra",
         "left",
       ),
       faq(
         "How disruptive was go-live?",
-        "We piloted on selected floors/shifts, then expanded once room-status accuracy was proven.",
-        "Go-live",
+        "We piloted on selected floors and shifts, then expanded once room-status accuracy was proven.",
+        "Rollout",
         "right",
       ),
       faq(
         "Can finance keep existing chart of accounts?",
-        "Yes. We map stay events into reporting structures the finance team already understands.",
+        "Yes. We map stay events into reporting structures the Meridian finance team already understands.",
         "Finance",
         "left",
       ),
       faq(
-        "Project details?",
-        "Full module inventory and product FAQs are on the Hotel Management System project page.",
-        "More",
+        "How is this different from the project page?",
+        "Full module inventory and product FAQs are on the Hotel Management System project page. This case study covers the Meridian engagement and outcomes.",
+        "Scope",
+        "right",
+      ),
+      faq(
+        "Who participated from the hotel side?",
+        "Front desk, housekeeping leads, finance, and security stakeholders mapped the stay lifecycle before AI monitoring was configured.",
+        "Roles",
+        "left",
+      ),
+      faq(
+        "What was the engagement timeline?",
+        "Sixteen weeks: reservation and room status first, then housekeeping and finance, with AI attendance and cameras sequenced last.",
+        "Timeline",
+        "right",
+      ),
+      faq(
+        "Which systems were integrated?",
+        "Camera monitoring and AI attendance were connected where infrastructure allowed, always with human review paths inside the HMS workflow.",
+        "Integrations",
+        "left",
+      ),
+      faq(
+        "How were teams trained?",
+        "Floor and shift pilots carried training. Housekeeping boards and front desk status were coached together so both sides trusted the same room truth.",
+        "Training",
+        "right",
+      ),
+      faq(
+        "Does this fit a smaller property?",
+        "Yes. A single property can run the same room-status and housekeeping model; multi-property playbooks reuse it when you expand.",
+        "Fit",
+        "left",
+      ),
+      faq(
+        "How were outcomes measured?",
+        "Meridian reviewed check-in wait feedback, room-status disputes between desks, folio close delays, and whether security alerts appeared in ops workflows.",
+        "Outcomes",
+        "right",
+      ),
+      faq(
+        "Was reservation history migrated?",
+        "Active reservations and room inventory were stabilized in the HMS before cutover. Folio mapping followed stay-event definitions finance signed off.",
+        "Migration",
+        "left",
+      ),
+      faq(
+        "What support continued after launch?",
+        "Post-launch we tuned housekeeping board priorities, finance mappings, and alert rules based on pilot-floor feedback.",
+        "Support",
         "right",
       ),
     ],
@@ -835,7 +1168,7 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
     metaTitle: "Retail POS Case Study | Multi-Branch Checkout & AI Monitoring",
     metaDescription:
       "How a retail collective standardized checkout, inventory, and AI camera monitoring across branches without slowing the till.",
-    lede: "Royal Retail Collective needed faster checkouts and tighter inventory — plus loss-prevention visibility that did not interrupt cashiers. We delivered an AI-ready POS for multi-branch reality.",
+    lede: "Royal Retail Collective needed faster checkouts and tighter inventory, plus loss-prevention visibility that did not interrupt cashiers. We delivered an AI-ready POS for multi-branch reality.",
     highlights: [
       "14-week engagement",
       "Multi-branch ops",
@@ -848,10 +1181,15 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
       "Branch managers got reports that compare cleanly because the underlying sale events match.",
       "Royal now scales playbooks across stores without forcing cashiers through clumsy extra steps.",
     ],
-    challenge:
-      "Shrink and stockouts were debated with anecdotes. Checkout customizations per branch made training expensive and HQ reporting unreliable.",
+    challenge: [
+      "Royal Retail Collective needed faster checkouts and tighter inventory, plus loss-prevention visibility that did not interrupt cashiers. Branches ran slightly different till habits, so inventory never matched HQ expectations.",
+      "Shrink and stockouts were debated with anecdotes instead of shared sale events. Checkout customizations per branch made training expensive, and HQ reporting was unreliable because each store defined a sale differently.",
+      "Prior retail tools failed when AI camera features added friction at the till, or when HQ forced uniformity that cashiers worked around. Inventory movements lagged checkout, so low-stock and product issues surfaced late across locations.",
+      "What was at stake was cashier speed during peak hours, trustworthy multi-branch comparisons, and loss-prevention review that managers could use without slowing the critical path. New branches would inherit chaos without a known POS playbook.",
+      "Royal needed one sale event model across branches, local configuration within guardrails, and AI monitoring that reviews exceptions after the sale, not during it.",
+    ],
     approach:
-      "One sale event model across branches, local configuration within guardrails, and AI monitoring that reviews exceptions after the sale — not during it.",
+      "One sale event model across branches, local configuration within guardrails, and AI monitoring that reviews exceptions after the sale, not during it.",
     approachPoints: [
       "Unified SKU and sale events so HQ reporting stops fighting branch variants.",
       "Protected cashier speed as a non-negotiable acceptance criterion.",
@@ -867,7 +1205,7 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
       "Customer history follows the shopper across participating stores",
     ],
     insights: [
-      "Retail AI fails when it adds friction at the till — we kept monitoring off the critical path.",
+      "Retail AI fails when it adds friction at the till, we kept monitoring off the critical path.",
       "Multi-branch success is mostly data discipline, not more buttons.",
       "Branch champions beat central training alone for lasting adoption.",
     ],
@@ -876,26 +1214,74 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
     faqs: [
       faq(
         "Do all branches go live together?",
-        "We prefer a pilot branch, then a coordinated wave once the sale path is proven.",
+        "For Royal Retail we prefer a pilot branch, then a coordinated wave once the sale path is proven.",
         "Rollout",
         "left",
       ),
       faq(
         "Will AI flag every camera event?",
-        "No. Rules focus on exceptions for manager review so teams are not flooded.",
+        "No. Rules focus on exceptions for manager review so branch teams are not flooded.",
         "AI",
         "right",
       ),
       faq(
         "Can pricing differ by branch?",
-        "Yes, within policies you define — while sale events remain comparable for HQ.",
+        "Yes, within policies Royal defines, while sale events remain comparable for HQ.",
         "Pricing",
         "left",
       ),
       faq(
         "Where is the product walkthrough?",
-        "Screenshots and module detail are on the Royal POS project page.",
-        "Product",
+        "Screenshots and module detail are on the Royal POS project page. This case study covers the multi-branch engagement story.",
+        "Scope",
+        "right",
+      ),
+      faq(
+        "Who owned acceptance criteria?",
+        "Branch managers and HQ ops jointly protected cashier speed as non-negotiable. Loss-prevention leads scoped AI as a post-sale review layer.",
+        "Roles",
+        "left",
+      ),
+      faq(
+        "What was the engagement timeline?",
+        "Fourteen weeks: unify sale events and inventory first, then customer modules, then AI camera monitoring for exception review.",
+        "Timeline",
+        "right",
+      ),
+      faq(
+        "What integrations were included?",
+        "AI camera monitoring was layered for manager review beside operational context. Deeper ERP links can follow once sale definitions are stable.",
+        "Integrations",
+        "left",
+      ),
+      faq(
+        "How were cashiers and leads trained?",
+        "We trained branch leads who could coach peers without waiting on HQ, after the pilot sale path was proven.",
+        "Training",
+        "right",
+      ),
+      faq(
+        "Does this fit a smaller retail group?",
+        "Yes. Even a few stores benefit from one sale event model; AI monitoring can wait until you need exception review at scale.",
+        "Fit",
+        "left",
+      ),
+      faq(
+        "How were outcomes measured?",
+        "Royal compared checkout path timing, HQ branch report consistency, low-stock signal timing, and manager exception-review load.",
+        "Outcomes",
+        "right",
+      ),
+      faq(
+        "Was SKU and inventory data migrated?",
+        "SKU catalogs and on-hand baselines were unified into the shared sale event model before pilot cutover, with HQ reconciliation checks.",
+        "Migration",
+        "left",
+      ),
+      faq(
+        "What support continued after launch?",
+        "After the branch wave we refined pricing guardrails, inventory alerts, and AI exception rules from store-lead feedback.",
+        "Support",
         "right",
       ),
     ],
@@ -918,8 +1304,13 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
       "Billing and pharmacy were connected next so charges and medicines followed the same encounter story.",
       "A dedicated doctor portal reduced workarounds that previously lived in chat apps and paper notes.",
     ],
-    challenge:
-      "Front desk, wards, pharmacy, and billing each held partial truth. Doctors wasted time reconstructing context; patients waited while staff hunted records.",
+    challenge: [
+      "CareBridge Medical Group’s clinical care was strong, but appointments, beds, billing, and pharmacy updates lagged each other. Patients felt delays that were really handoff problems between desks and departments.",
+      "Front desk, wards, pharmacy, and billing each held partial truth. Doctors wasted time reconstructing context from chat apps and paper notes. Patients waited while staff hunted records that should have been one timeline.",
+      "Prior hospital tools failed when “patient” meant different IDs per desk, or when doctor portals were as heavy as admin consoles and got abandoned. Billing leakage and pharmacy mismatches followed from parallel encounter stories.",
+      "What was at stake was throughput, bed visibility without phone chains, end-of-day billing gaps, and clinician time spent on reconstruction instead of care. Leadership could not trust occupancy and throughput reports.",
+      "CareBridge needed an encounter-centric HMS so appointments, admissions, billing, pharmacy, and the doctor portal consumed one shared patient day instead of inventing parallel ones.",
+    ],
     approach:
       "Encounter-centric design: appointments and admissions create a shared timeline; billing, pharmacy, and the doctor portal consume that timeline instead of inventing parallel ones.",
     approachPoints: [
@@ -937,7 +1328,7 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
       "Leadership reports occupancy and throughput from trusted operational data",
     ],
     insights: [
-      "Hospital software fails when “patient” means different IDs per desk — identity came first.",
+      "Hospital software fails when “patient” means different IDs per desk, identity came first.",
       "Doctor portals must be thinner than admin consoles or they get abandoned.",
       "Billing accuracy is an encounter-design problem, not only a finance UI problem.",
     ],
@@ -946,26 +1337,74 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
     faqs: [
       faq(
         "How did you handle clinical change management?",
-        "Department champions, short floor training, and phased module activation kept care moving during rollout.",
+        "Department champions, short floor training, and phased module activation kept CareBridge care moving during rollout.",
         "Change",
         "left",
       ),
       faq(
         "Is this a full EMR replacement?",
-        "This engagement focused on hospital operations — appointments, beds, billing, pharmacy, and doctor workflows — scoped to CareBridge’s priorities.",
+        "This engagement focused on hospital operations: appointments, beds, billing, pharmacy, and doctor workflows, scoped to CareBridge priorities.",
         "Scope",
         "right",
       ),
       faq(
         "Can roles separate clinical and billing access?",
-        "Yes. Role-based access keeps sensitive clinical and financial actions appropriately bounded.",
+        "Yes. Role-based access keeps sensitive clinical and financial actions appropriately bounded across CareBridge teams.",
         "Access",
         "left",
       ),
       faq(
-        "More product detail?",
-        "See the Hospital Management System project page for module lists and product FAQs.",
-        "Product",
+        "Where are product module FAQs?",
+        "See the Hospital Management System project page for module lists and product FAQs. This case study covers the CareBridge engagement.",
+        "Scope",
+        "right",
+      ),
+      faq(
+        "Who joined discovery?",
+        "Front desk, ward leads, pharmacy, billing, and physicians mapped identity and encounter flows before specialty modules expanded.",
+        "Roles",
+        "left",
+      ),
+      faq(
+        "What was the engagement timeline?",
+        "Sixteen weeks: patient identity and appointments first, then beds, then billing and pharmacy, with the doctor portal focused on daily clinical tasks.",
+        "Timeline",
+        "right",
+      ),
+      faq(
+        "Were lab or imaging systems integrated?",
+        "Not as a primary scope. We stabilized the operational backbone first; specialty system links can follow once encounter identity is trusted.",
+        "Integrations",
+        "left",
+      ),
+      faq(
+        "How were clinicians trained?",
+        "Short floor sessions with department champions. The doctor portal stayed thinner than admin consoles so daily clinical tasks remained usable.",
+        "Training",
+        "right",
+      ),
+      faq(
+        "Does this fit a smaller clinic group?",
+        "Yes. The same encounter spine works at smaller scale; bed and multi-ward complexity can be lighter until you need it.",
+        "Fit",
+        "left",
+      ),
+      faq(
+        "How were outcomes measured?",
+        "CareBridge tracked record hunt time, bed phone-chain frequency, end-of-day billing gaps, and doctor use of side channels versus the portal.",
+        "Outcomes",
+        "right",
+      ),
+      faq(
+        "Was patient data migrated?",
+        "Patient identity and active appointments were stabilized before go-live. Billing and pharmacy history followed encounter definitions clinical and finance leads signed off.",
+        "Migration",
+        "left",
+      ),
+      faq(
+        "What support continued after launch?",
+        "Post-launch we refined role permissions, bed status rules, and doctor portal task lists from department champion feedback.",
+        "Support",
         "right",
       ),
     ],
@@ -975,7 +1414,7 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
     metaTitle: "Cash Management Case Study | Flow Control & Audit Trails",
     metaDescription:
       "How a finance ops team replaced scattered ledgers with multi-account cash control, budgets, reporting, and audit-ready history.",
-    lede: "Northline Finance Ops could move money — they just could not explain it quickly. We gave them multi-account clarity, budgets, and audit trails in one cash system.",
+    lede: "Northline Finance Ops could move money, they just could not explain it quickly. We gave them multi-account clarity, budgets, and audit trails in one cash system.",
     highlights: [
       "10-week engagement",
       "Audit-ready",
@@ -985,11 +1424,16 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
     overview: [
       "Month-end meant exporting, reconciling, and arguing about which file was authoritative.",
       "We centered accounts, categories, payees, and transfers in one model so every movement left a trail.",
-      "Budgets and reports were designed for how Northline already decided — not a textbook accounting fantasy.",
+      "Budgets and reports were designed for how Northline already decided, not a textbook accounting fantasy.",
       "The team now answers cash questions from the system during the week, not only after close.",
     ],
-    challenge:
-      "Income and expenses were tracked, but transfers, payee history, and approvals were uneven. Audits required archaeology across sheets and chat approvals.",
+    challenge: [
+      "Northline Finance Ops could move money, they just could not explain it quickly. Month-end meant exporting, reconciling, and arguing about which file was authoritative across multi-account cash activity.",
+      "Income and expenses were tracked, but transfers, payee history, and approvals were uneven. Audits required archaeology across sheets and chat approvals. Weekly cash questions forced rebuilds instead of answers from a living system.",
+      "Prior ledgers and sheet habits failed because transfers vanished between account files and budgets ignored how leadership already reviewed cash. Audit trails, if they existed, were not readable by managers without IT help.",
+      "What was at stake was close-cycle length, audit readiness, and the ability to flag budget overruns while teams could still act. Without attributable cash events, Northline would keep proving history instead of operating from it.",
+      "Northline needed every cash movement as a first-class event, with budgets and reports that read those events without parallel books.",
+    ],
     approach:
       "Make every cash movement a first-class, attributable event. Then layer budgets and reports that read those events without parallel books.",
     approachPoints: [
@@ -1012,11 +1456,11 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
       "Budget UX fails if it ignores how leaders already run reviews.",
     ],
     clientQuote:
-      "We used to spend close week proving what happened. Now the trail is the work itself — accounts, transfers, and budgets finally agree.",
+      "We used to spend close week proving what happened. Now the trail is the work itself, accounts, transfers, and budgets finally agree.",
     faqs: [
       faq(
         "Did you replace the accounting package?",
-        "This case study focuses on cash operations control and auditability. Broader GL strategy can stay complementary.",
+        "This Northline engagement focuses on cash operations control and auditability. Broader GL strategy can stay complementary.",
         "Scope",
         "left",
       ),
@@ -1028,14 +1472,62 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
       ),
       faq(
         "Who can approve sensitive movements?",
-        "Role-based access separates day-to-day entry from higher-risk actions according to your policy.",
+        "Role-based access separates day-to-day entry from higher-risk actions according to Northline policy.",
         "Controls",
         "left",
       ),
       faq(
-        "Product modules list?",
-        "See the Cash Management System project page for module-level detail and FAQs.",
-        "Product",
+        "Where is the product modules list?",
+        "See the Cash Management System project page for module-level detail and FAQs. This case study covers the engagement outcomes.",
+        "Scope",
+        "right",
+      ),
+      faq(
+        "Who participated in discovery?",
+        "Finance ops leads and managers who already run cash reviews defined categories, payees, and budget views before cutover.",
+        "Roles",
+        "left",
+      ),
+      faq(
+        "What was the engagement timeline?",
+        "Ten weeks: account migration with reconciliation checkpoints, then budgets, reporting, and readable audit logs.",
+        "Timeline",
+        "right",
+      ),
+      faq(
+        "Were bank feeds integrated?",
+        "Operational control and attributable events came first. Bank feed automation can layer on once category and payee discipline holds.",
+        "Integrations",
+        "left",
+      ),
+      faq(
+        "How was the team trained?",
+        "Northline users practiced entry, transfer, and audit filter workflows against migrated accounts before legacy sheets were frozen.",
+        "Training",
+        "right",
+      ),
+      faq(
+        "Does this fit a smaller finance team?",
+        "Yes. Smaller teams still need attributable transfers and readable history; budget complexity can stay light until reviews demand more.",
+        "Fit",
+        "left",
+      ),
+      faq(
+        "How were outcomes measured?",
+        "Northline compared weekly cash answer time, transfer visibility across accounts, audit request turnaround, and close-cycle length.",
+        "Outcomes",
+        "right",
+      ),
+      faq(
+        "How was rollout staged?",
+        "Accounts went live after reconciliation checkpoints. Budgets and advanced reports followed once daily movements were trusted in-system.",
+        "Rollout",
+        "left",
+      ),
+      faq(
+        "What support continued after launch?",
+        "Post-launch we refined categories, approval roles, and budget views from the first close cycles under the new system.",
+        "Support",
         "right",
       ),
     ],
@@ -1045,7 +1537,7 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
     metaTitle: "HRMS Case Study | Hire-to-Exit Workforce Platform",
     metaDescription:
       "Case study of consolidating recruitment, attendance, payroll, performance, and exit into one HR platform for a growing workforce team.",
-    lede: "PeopleFirst Workforce Ltd hired quickly — and outgrew a maze of HR tools. We connected hire-to-exit so people data stopped fragmenting at every stage.",
+    lede: "PeopleFirst Workforce Ltd hired quickly, and outgrew a maze of HR tools. We connected hire-to-exit so people data stopped fragmenting at every stage.",
     highlights: [
       "16-week engagement",
       "ATS to payroll",
@@ -1058,10 +1550,15 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
       "Managers got self-serve paths for common requests so HR could focus on exceptions.",
       "PeopleFirst now runs people operations as one system of record instead of a monthly reconciliation project.",
     ],
-    challenge:
-      "Headcount reports disagreed depending on who exported. Onboarding missed IT and payroll steps; exits left access and asset trails incomplete.",
+    challenge: [
+      "PeopleFirst Workforce Ltd hired quickly and outgrew a maze of HR tools. Recruitment lived in one place, attendance in another, payroll in a third. Employee truth became a monthly merge job instead of a living record.",
+      "Headcount reports disagreed depending on who exported. Onboarding missed IT and payroll steps; exits left access and asset trails incomplete. Managers ping-ponged tickets for routine requests HR should have self-served.",
+      "Prior HR stacks failed because payroll was bolted on late, portals only notified without actionable steps, and exit was treated as a final form rather than a lifecycle stage. Double entry from ATS offers into employee systems created constant drift.",
+      "What was at stake was pay accuracy, security on exit, manager time, and leadership trust in workforce numbers. Scaling headcount without one hire-to-exit spine would multiply reconciliation, not capacity.",
+      "PeopleFirst needed one employee record across ATS, attendance, payroll, performance, assets, and exit, with workflows that force handoffs to complete, not just notify.",
+    ],
     approach:
-      "One employee record across ATS, attendance, payroll, performance, assets, and exit — with workflows that force handoffs to complete, not just notify.",
+      "One employee record across ATS, attendance, payroll, performance, assets, and exit, with workflows that force handoffs to complete, not just notify.",
     approachPoints: [
       "Mapped hire-to-exit states with HR, payroll, and hiring managers together.",
       "Connected ATS offers to employee creation to kill double entry.",
@@ -1077,7 +1574,7 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
       "Leadership trusts headcount and workforce reports from one source",
     ],
     insights: [
-      "HR platforms stall when payroll is bolted on late — we sequenced pay carefully.",
+      "HR platforms stall when payroll is bolted on late, we sequenced pay carefully.",
       "Managers ignore portals that only notify; they need actionable self-serve steps.",
       "Exit quality is a lifecycle design problem, not a final form.",
     ],
@@ -1086,26 +1583,74 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
     faqs: [
       faq(
         "How disruptive was payroll cutover?",
-        "We ran parallel checks on attendance and pay inputs before switching, with HR sign-off gates.",
+        "For PeopleFirst we ran parallel checks on attendance and pay inputs before switching, with HR sign-off gates.",
         "Payroll",
         "left",
       ),
       faq(
         "Can existing job boards still feed candidates?",
-        "ATS workflows can ingest from your channels; the key is that offers create the same employee spine.",
+        "ATS workflows can ingest from PeopleFirst channels. The key is that offers create the same employee spine.",
         "ATS",
         "right",
       ),
       faq(
         "Is AI required to get value?",
-        "No. Lifecycle clarity delivers the core win; AI-assisted workflows can layer where they help.",
+        "No. Lifecycle clarity delivers the core win. AI-assisted workflows can layer where they help.",
         "AI",
         "left",
       ),
       faq(
-        "Full module list?",
-        "See the HR Management Software project page for product modules and FAQs.",
-        "Product",
+        "Where is the full module list?",
+        "See the HR Management Software project page for product modules and FAQs. This case study covers the PeopleFirst engagement.",
+        "Scope",
+        "right",
+      ),
+      faq(
+        "Who mapped hire-to-exit states?",
+        "HR, payroll, and hiring managers defined states together so handoffs completed instead of only sending notifications.",
+        "Roles",
+        "left",
+      ),
+      faq(
+        "What was the engagement timeline?",
+        "Sixteen weeks: lifecycle spine and ATS-to-employee connection first, attendance stability next, then payroll, performance, and exit checklists.",
+        "Timeline",
+        "right",
+      ),
+      faq(
+        "Were identity or SSO tools integrated?",
+        "Access and asset steps on exit were first-class in the workflow. Deeper identity provider links can follow once the employee spine is trusted.",
+        "Integrations",
+        "left",
+      ),
+      faq(
+        "How were managers trained?",
+        "Managers learned self-serve paths for common requests so HR could focus on exceptions. Training emphasized actionable steps, not notification-only portals.",
+        "Training",
+        "right",
+      ),
+      faq(
+        "Does this fit a smaller HR team?",
+        "Yes. Smaller teams gain even more from one employee record; you can phase performance and advanced ATS features after core hire-to-pay flows.",
+        "Fit",
+        "left",
+      ),
+      faq(
+        "How were outcomes measured?",
+        "PeopleFirst compared headcount report agreement, onboarding step completion, payroll input rework, and exit access or asset closure rates.",
+        "Outcomes",
+        "right",
+      ),
+      faq(
+        "Was employee history migrated?",
+        "Active employees and critical attendance or pay inputs were migrated with reconciliation before payroll cutover. Legacy tool exports stayed for audit reference.",
+        "Migration",
+        "left",
+      ),
+      faq(
+        "What support continued after launch?",
+        "After go-live we refined manager self-serve flows, exit checklists, and payroll sign-off gates from the first full cycles.",
+        "Support",
         "right",
       ),
     ],
@@ -1115,7 +1660,7 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
     metaTitle: "Pharmacy Inventory Case Study | Batch Expiry & Purchasing",
     metaDescription:
       "How a pharmacy chain reduced near-expiry waste and stock blind spots with batch tracking, purchasing, and inventory reporting built for medicine realities.",
-    lede: "MediStock Pharmacy Chain did not have a generic inventory problem — they had a medicine problem: batches, expiry, and purchasing lag. We built stock control around those constraints.",
+    lede: "MediStock Pharmacy Chain did not have a generic inventory problem, they had a medicine problem: batches, expiry, and purchasing lag. We built stock control around those constraints.",
     highlights: [
       "10-week engagement",
       "Batch & expiry",
@@ -1126,10 +1671,15 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
       "Shelves looked full while near-expiry units silently became write-offs.",
       "We modeled stock movements with batch identity and expiry as mandatory, not optional fields.",
       "Purchasing tied to real on-hand and inbound so orders stopped being guesswork between branches.",
-      "MediStock now sees what will expire, what to transfer, and what to buy — before waste happens.",
+      "MediStock now sees what will expire, what to transfer, and what to buy, before waste happens.",
     ],
-    challenge:
-      "Quantity-only stock counts hid which batches were aging out. Purchase orders lagged sales reality, and valuation reports required painful manual cleanup.",
+    challenge: [
+      "MediStock Pharmacy Chain did not have a generic inventory problem. They had a medicine problem: batches, expiry, and purchasing lag. Shelves looked full while near-expiry units silently became write-offs.",
+      "Quantity-only stock counts hid which batches were aging out. Purchase orders lagged sales reality between branches, and valuation reports required painful manual cleanup. Pharmacists lacked actionable expiry alerts in daily ops.",
+      "Prior inventory tools failed because they treated SKUs like retail widgets. Batch and expiry were optional fields, transfers lost identity, and alerts were monthly spreadsheet exercises staff ignored. Purchasing guessed instead of reading on-hand and inbound truth.",
+      "What was at stake was write-off cost, branch transfer effectiveness, regulatory-friendly audit trails, and inventory valuation leadership could trust. Without batch-aware movements, growth would multiply waste and cleanup work.",
+      "MediStock needed inventory events that always carry batch and expiry, with purchasing, stock-in/out, and reports enforcing pharmacy rules in the system.",
+    ],
     approach:
       "Inventory events always carry batch and expiry. Purchasing, stock-in/out, and reports read that model so pharmacy rules are enforced by the system.",
     approachPoints: [
@@ -1152,30 +1702,78 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
       "Purchasing accuracy depends on trusting stock-in discipline first.",
     ],
     clientQuote:
-      "We finally manage medicines as batches with dates — not just counts. Purchasing and expiry conversations are calmer because the system shows the same truth.",
+      "We finally manage medicines as batches with dates, not just counts. Purchasing and expiry conversations are calmer because the system shows the same truth.",
     faqs: [
       faq(
         "Did you barcode every shelf on week one?",
-        "We prioritized high-risk and high-velocity items first, then expanded coverage with the pharmacy team.",
+        "For MediStock we prioritized high-risk and high-velocity items first, then expanded coverage with the pharmacy team.",
         "Rollout",
         "left",
       ),
       faq(
         "Can transfers between branches be tracked?",
-        "Yes. Movements keep batch identity so receiving branches inherit expiry truth.",
+        "Yes. Movements keep batch identity so receiving MediStock branches inherit expiry truth.",
         "Transfers",
         "right",
       ),
       faq(
         "How are damaged goods handled?",
-        "Adjustment workflows with reasons keep valuation and audit history intact.",
+        "Adjustment workflows with reasons keep valuation and audit history intact for each batch.",
         "Adjustments",
         "left",
       ),
       faq(
-        "Product FAQs?",
-        "Module details live on the Medicine Inventory System project page.",
-        "Product",
+        "Where are product FAQs?",
+        "Module details live on the Medicine Inventory System project page. This case study covers the MediStock engagement.",
+        "Scope",
+        "right",
+      ),
+      faq(
+        "Who defined catalog and alert rules?",
+        "Pharmacists and purchasing leads designed medicine fields and expiry-aware alerts so floor actions stayed practical.",
+        "Roles",
+        "left",
+      ),
+      faq(
+        "What was the engagement timeline?",
+        "Ten weeks: batch and expiry catalog model first, then stock movements, purchasing, valuation reports, and branch expansion of coverage.",
+        "Timeline",
+        "right",
+      ),
+      faq(
+        "Were supplier portals integrated?",
+        "Suppliers and purchase orders connect to on-hand truth in-system. Deeper supplier portal APIs can follow once stock-in discipline is solid.",
+        "Integrations",
+        "left",
+      ),
+      faq(
+        "How were pharmacists trained?",
+        "We trained exception handling for damaged or returned stock and daily expiry alert workflows, not only count entry.",
+        "Training",
+        "right",
+      ),
+      faq(
+        "Does this fit a smaller pharmacy group?",
+        "Yes. Batch and expiry discipline matters at any size; multi-branch transfer complexity can grow as locations are added.",
+        "Fit",
+        "left",
+      ),
+      faq(
+        "How were outcomes measured?",
+        "MediStock tracked near-expiry visibility lead time, PO alignment with consumption, valuation cleanup effort, and write-off conversations backed by batch data.",
+        "Outcomes",
+        "right",
+      ),
+      faq(
+        "Was existing stock migrated?",
+        "On-hand stock was loaded with batch and expiry where known. High-risk items were verified first before broader shelf coverage expanded.",
+        "Migration",
+        "left",
+      ),
+      faq(
+        "What support continued after launch?",
+        "Post-launch we refined alert thresholds, transfer workflows, and purchasing views from pharmacist and buyer feedback.",
+        "Support",
         "right",
       ),
     ],
@@ -1196,10 +1794,15 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
       "Instructors spent more time hunting materials than teaching. Admins could not see enrollment health without exporting sheets.",
       "We built role-aware dashboards: admins operate the catalog; instructors run lessons, assessments, and attendance.",
       "Assignments and quizzes were designed as part of the course path, not bolted-on forms.",
-      "EduLearn now runs cohorts from one portal — from enrollment to certificate-ready completion tracking.",
+      "EduLearn now runs cohorts from one portal, from enrollment to certificate-ready completion tracking.",
     ],
-    challenge:
-      "Course files, attendance lists, and quiz results lived apart. Learners got inconsistent experiences; admins reported progress manually for every cohort.",
+    challenge: [
+      "EduLearn Training Institute’s programs were strong, but delivery was scattered across drives and inboxes. Instructors spent more time hunting materials than teaching. Admins could not see enrollment health without exporting sheets.",
+      "Course files, attendance lists, and quiz results lived apart. Learners got inconsistent experiences depending on which folder or email thread their cohort used. Progress reporting was a manual rebuild for every program.",
+      "Prior tools failed when instructors inherited admin complexity, or when assessments were bolted-on forms disconnected from enrollment and attendance. Certificate readiness became a PDF exercise without honest completion data.",
+      "What was at stake was instructor time, learner consistency, and leadership visibility into training throughput. Scaling cohorts without a course-centric LMS would multiply improvisation instead of reusable program structure.",
+      "EduLearn needed lessons, enrollments, assessments, and attendance hanging off the same course record, with clear admin catalog work and instructor delivery duties.",
+    ],
     approach:
       "A course-centric LMS: lessons, enrollments, assessments, and attendance hang off the same course record with clear admin and instructor duties.",
     approachPoints: [
@@ -1217,22 +1820,22 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
       "Leadership gets consistent training throughput metrics",
     ],
     insights: [
-      "LMS adoption dies when instructors inherit admin complexity — roles must split.",
+      "LMS adoption dies when instructors inherit admin complexity, roles must split.",
       "Assessments only matter when enrollment and attendance definitions are clear.",
       "Certificate readiness is a data discipline, not a PDF template alone.",
     ],
     clientQuote:
-      "Training finally feels operated, not improvised. Courses, enrollments, and assessments live together — and we stopped running cohorts from inboxes.",
+      "Training finally feels operated, not improvised. Courses, enrollments, and assessments live together, and we stopped running cohorts from inboxes.",
     faqs: [
       faq(
         "Can existing course videos be reused?",
-        "Yes. We typically connect existing media into lesson structures rather than forcing a full remake.",
+        "Yes. For EduLearn we connect existing media into lesson structures rather than forcing a full remake.",
         "Content",
         "left",
       ),
       faq(
         "Do learners get a separate portal experience?",
-        "Learners follow enrolled courses with clear lesson and assessment paths; admins and instructors keep operational dashboards.",
+        "Learners follow enrolled courses with clear lesson and assessment paths. Admins and instructors keep operational dashboards.",
         "Roles",
         "right",
       ),
@@ -1244,15 +1847,67 @@ const caseStudyNarratives: Record<string, CaseStudyNarrative> = {
       ),
       faq(
         "Where are product module FAQs?",
-        "On the E-Learning Portal project page — this case study stays on the training-operations story.",
-        "Product",
+        "On the E-Learning Portal project page. This case study stays on the EduLearn training-operations story.",
+        "Scope",
         "right",
+      ),
+      faq(
+        "Who defined admin vs instructor duties?",
+        "Training admins and instructors separated catalog work from delivery early so instructors never inherited full admin complexity.",
+        "Roles",
+        "left",
+      ),
+      faq(
+        "What was the engagement timeline?",
+        "Twelve weeks: catalog and enrollment visibility first, then lessons and attendance, then assessments and certificate-ready status fields.",
+        "Timeline",
+        "right",
+      ),
+      faq(
+        "Were video hosting or SSO integrated?",
+        "Existing media was structured into lessons. Deeper SSO or live-class integrations can follow once enrollment and assessment paths are stable.",
+        "Integrations",
+        "left",
+      ),
+      faq(
+        "How were instructors trained?",
+        "Instructors practiced launching lessons, recording attendance, and running assessments inside the course path before new cohorts went fully live.",
+        "Training",
+        "right",
+      ),
+      faq(
+        "Does this fit a smaller training team?",
+        "Yes. A leaner catalog still benefits from one course record. Advanced assessment types can wait until enrollment operations are smooth.",
+        "Fit",
+        "left",
+      ),
+      faq(
+        "How were outcomes measured?",
+        "EduLearn tracked instructor material hunt time, admin export dependency, assessment completion inside the course path, and consistency of throughput metrics.",
+        "Outcomes",
+        "right",
+      ),
+      faq(
+        "Was existing course content migrated?",
+        "Yes. Drive and inbox materials were structured into courses and lessons. Enrollment lists for active cohorts were loaded before assessments expanded.",
+        "Migration",
+        "left",
+      ),
+      faq(
+        "What support continued after launch?",
+        "Post-launch we refined enrollment views, attendance rules, and certificate-ready fields from the first cohorts on the new portal.",
+        "Support",
+        "right",
+      ),
+      faq(
+        "How did discovery shape the LMS?",
+        "Discovery showed EduLearn pain was operational scatter, not lack of courses. That drove a course-centric model before advanced assessment features.",
+        "Engagement",
+        "left",
       ),
     ],
   },
 };
-
-
 
 export type CaseStudyDetail = {
   slug: string;
@@ -1266,7 +1921,7 @@ export type CaseStudyDetail = {
   metaDescription: string;
   highlights: string[];
   overview: string[];
-  challenge: string;
+  challenge: string[];
   approach: string;
   approachPoints: string[];
   keyFeatures: string[];
@@ -1299,7 +1954,8 @@ export function getCaseStudyDetailBySlug(
   const modulePictures =
     project.slug === "hr-management-software"
       ? project.slides.filter(
-          (slide) => !slide.image.src.includes("Hr-Management-Software-Overview"),
+          (slide) =>
+            !slide.image.src.includes("Hr-Management-Software-Overview"),
         )
       : project.slides;
 
@@ -1311,11 +1967,11 @@ export function getCaseStudyDetailBySlug(
     industry: undashText(meta.industry),
     duration: undashText(meta.duration),
     lede: undashText(narrative.lede),
-    metaTitle: narrative.metaTitle,
-    metaDescription: narrative.metaDescription,
+    metaTitle: undashText(narrative.metaTitle),
+    metaDescription: undashText(narrative.metaDescription),
     highlights: undashList(narrative.highlights),
     overview: undashList(narrative.overview),
-    challenge: undashText(narrative.challenge),
+    challenge: undashList(narrative.challenge),
     approach: undashText(narrative.approach),
     approachPoints: undashList(narrative.approachPoints),
     keyFeatures: undashList(meta.keyFeatures),
@@ -1392,7 +2048,7 @@ function toCaseStudy(project: (typeof projects)[number]): CaseStudy {
     clientName: undashText(meta.clientName),
     category: undashText(meta.industry),
     status: "Completed",
-    problem: undashText(narrative.challenge),
+    problem: undashText(narrative.challenge.join(" ")),
     solution: undashText(narrative.approach),
     summary,
     technologies: techTags(project.slug),
@@ -1410,7 +2066,7 @@ export function getCaseStudyBySlug(slug: string): CaseStudy | undefined {
 export const caseStudyPageMeta = {
   title: "Software Case Studies | Challenges, Approach & Outcomes",
   description:
-    "Engagement case studies covering business challenges, delivery approach, and outcomes for CRM, ERP, POS, HMS, and custom software clients — distinct from our product project pages.",
+    "Engagement case studies covering business challenges, delivery approach, and outcomes for CRM, ERP, POS, HMS, and custom software clients, distinct from our product project pages.",
   hero: {
     eyebrow: "Case Studies",
     title: "How we solve real product problems",
