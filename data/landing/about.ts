@@ -5,14 +5,14 @@ export const aboutSection = {
   teamCta: "Meet our engineering team",
   paragraphs: [
     "Next Software Development Company is a trusted software house and software company partnering with founders and operators across the United States, United Kingdom, United Arab Emirates, Canada, and Australia. We were founded with one belief: that great software should be accessible to every business, not just the Fortune 500.",
-    "Our team of 60+ engineers, designers, QA specialists, and project managers has spent over a decade turning complex business challenges into clean, efficient, and scalable digital products. Whether you need a mobile app for your startup, an ERP for manufacturing, or a SaaS platform for recurring revenue, we have delivered similar systems and can build yours with the same care.",
+    "Over 7+ years we have supported 500+ happy clients across 10+ countries, with 99% client satisfaction. Our engineers, designers, QA specialists, and project managers turn complex business challenges into clean, efficient, and scalable digital products — whether you need a mobile app for your startup, an ERP for manufacturing, or a SaaS platform for recurring revenue.",
     "Clients choose us as a top rated software company for senior delivery quality and practical pricing. You get English-speaking, timezone-flexible teams with strong technical craft, clear communication, and ownership that continues after launch.",
   ],
   values: [
     {
       title: "Proven delivery record",
       description:
-        "Decade-long track record with 250+ delivered software projects across 20+ industries.",
+        "7+ years of delivery with 500+ happy clients and 99% satisfaction across 10+ countries.",
     },
     {
       title: "Senior-only teams",

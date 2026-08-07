@@ -4,6 +4,7 @@ import {
   type LocationCity,
   type LocationPageContent,
 } from "@/data/locations";
+import { companyStats } from "@/data/landing/trust";
 import { showcaseProjects } from "@/data/projects";
 import { contactPath, teamPath } from "@/lib/landing/constants";
 
@@ -1067,43 +1068,15 @@ function buildCityPage(cityMeta: LocationCity): LocationPageContent {
     projects: projectsForCity(cityMeta.city),
     facts: {
       title: `${cityMeta.city} software house and software company facts`,
-      subtitle: `Next Software Development Company is a software house delivering senior engineering for ${cityMeta.city} with national software company capacity across Pakistan.`,
-      items: [
-        {
-          value: "57+",
-          label: "Cities covered",
-          detail: copy.factDetail,
-        },
-        {
-          value: "250+",
-          label: "Projects delivered",
-          detail:
-            "Custom software, HMS, ERP, mobile apps, and SaaS platforms shipped by our software development company for local and global clients.",
-        },
-        {
-          value: "60+",
-          label: "Engineers in Pakistan",
-          detail:
-            "Senior developers, designers, and QA specialists in our software house with English-first communication.",
-        },
-        {
-          value: "20+",
-          label: "Industries served",
-          detail:
-            "Healthcare, education, retail, logistics, fintech, and manufacturing workflows from a trusted software company.",
-        },
-        {
-          value: "10+",
-          label: "Years building",
-          detail: "A decade as a software development company headquartered in Pakistan.",
-        },
-        {
-          value: "100%",
-          label: "Senior delivery",
-          detail:
-            "Every software house project is staffed with experienced engineers with no junior-only production teams.",
-        },
-      ],
+      subtitle: `Next Software Development Company delivers for ${cityMeta.city} with the same company-wide track record we publish on our homepage.`,
+      items: companyStats.map(({ value, label, detail }) => ({
+        value,
+        label,
+        detail:
+          label === "Happy Clients"
+            ? `${detail} Including teams we support in ${cityMeta.city}.`
+            : detail,
+      })),
     },
     industries: {
       title: `Industries our software house serves in ${cityMeta.city}`,

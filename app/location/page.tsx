@@ -59,9 +59,9 @@ const upcomingMarkets = [
 ];
 
 const featuredStats = [
-  { value: "13+", label: "Cities live" },
-  { value: "250+", label: "Projects" },
-  { value: "60+", label: "Engineers" },
+  { value: "500+", label: "Happy Clients" },
+  { value: "7+", label: "Years of Experience" },
+  { value: "99%", label: "Client Satisfaction" },
 ];
 
 export default function LocationsPage() {

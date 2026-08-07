@@ -1,4 +1,5 @@
 import type { FaqItem } from "@/data/landing/types";
+import { companyStats } from "@/data/landing/trust";
 import type { ImageAsset } from "@/data/landingPage";
 import { showcaseProjects, type ShowcaseProject } from "@/data/projects";
 import { contactPath, teamPath } from "@/lib/landing/constants";
@@ -534,7 +535,7 @@ export const pakistanLocation: LocationPageContent = {
     title: "A top-rated software house and software development company in Pakistan",
     paragraphs: [
       "Next Software Development Company is a leading software house and software development company headquartered in Islamabad, with delivery teams across Lahore, Karachi, and major cities nationwide. Our software company builds custom software, HMS, ERP, mobile apps, and SaaS for clinics, schools, retailers, and growing enterprises in Pakistan, and for international clients who want senior Pakistani engineering at scale.",
-      "As an experienced software house in Pakistan, our 60+ engineers, designers, and QA specialists have shipped 250+ projects over more than a decade. From Urdu-ready clinic workflows in Islamabad to multi-campus school platforms in Lahore and retail POS across Karachi, this software development company combines local market understanding with the same delivery standards we apply on global engagements.",
+      "As an experienced software house in Pakistan, we bring 7+ years of delivery, 500+ happy clients, and 99% client satisfaction across 10+ countries. From Urdu-ready clinic workflows in Islamabad to multi-campus school platforms in Lahore and retail POS across Karachi, this software development company combines local market understanding with the same delivery standards we apply on global engagements.",
       "Whether you are a founder in Pakistan or an overseas company hiring a software house and software company in Pakistan, you get English-first communication, timezone-friendly collaboration, transparent fixed pricing, and post-launch support that does not disappear after go-live.",
     ],
     values: [
@@ -595,45 +596,12 @@ export const pakistanLocation: LocationPageContent = {
   facts: {
     title: "Pakistan software house and software company facts",
     subtitle:
-      "Next Software Development Company is a national software house with senior delivery from Islamabad, serving clinics, schools, startups, and enterprises across major Pakistani cities.",
-    items: [
-      {
-        value: "57+",
-        label: "Cities covered",
-        detail:
-          "Software house delivery and sales coverage from Islamabad and Lahore to Karachi, Faisalabad, Multan, and more.",
-      },
-      {
-        value: "250+",
-        label: "Projects delivered",
-        detail:
-          "Custom software, HMS, ERP, mobile apps, and SaaS platforms shipped by our software development company for local and global clients.",
-      },
-      {
-        value: "60+",
-        label: "Engineers in Pakistan",
-        detail:
-          "Senior developers, designers, and QA specialists in our Pakistan software company with English-first communication.",
-      },
-      {
-        value: "20+",
-        label: "Industries served",
-        detail:
-          "Healthcare, education, retail, logistics, fintech, and manufacturing workflows built by a trusted software house for Pakistani ops.",
-      },
-      {
-        value: "10+",
-        label: "Years building",
-        detail:
-          "A decade as a software development company headquartered in Pakistan for worldwide delivery.",
-      },
-      {
-        value: "100%",
-        label: "Senior delivery",
-        detail:
-          "Every software house project is staffed with experienced engineers with no junior-only teams on production work.",
-      },
-    ],
+      "Next Software Development Company is a national software house with senior delivery from Islamabad — the same company stats we publish on the homepage.",
+    items: companyStats.map(({ value, label, detail }) => ({
+      value,
+      label,
+      detail,
+    })),
   },
   industries: {
     title: "Industries our software house serves in Pakistan",
