@@ -42,10 +42,6 @@ export type ImageAsset = {
   height: number;
 };
 
-export type HeroImageAsset = ImageAsset & {
-  caption?: string;
-};
-
 export type ServiceSubItem = { label: string; slug: string; href: string };
 
 export type ServiceCategory = {
