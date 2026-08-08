@@ -22,7 +22,7 @@ function FlipCardShell({ index, frontTitle, front, back, className }: FlipCardSh
   return (
     <div
       className={cn(
-        "group/blog-flip h-[360px] w-full [perspective:1200px] sm:h-[380px] lg:h-[400px] xl:h-[420px]",
+        "group/blog-flip h-[360px] w-full text-white [perspective:1200px] sm:h-[380px] lg:h-[400px] xl:h-[420px]",
         flipped && "is-flipped",
         className
       )}
@@ -47,22 +47,22 @@ function FlipCardShell({ index, frontTitle, front, back, className }: FlipCardSh
           "motion-reduce:transition-none motion-reduce:group-hover/blog-flip:[transform:none] motion-reduce:group-[.is-flipped]/blog-flip:[transform:none]"
         )}
       >
-        <div className="absolute inset-0 overflow-hidden rounded-2xl border border-white/15 bg-zinc-900 shadow-[0_18px_48px_rgba(0,0,0,0.45)] [backface-visibility:hidden] 2xl:rounded-[1.25rem]">
+        <div className="absolute inset-0 overflow-hidden rounded-2xl border border-white/15 bg-zinc-900 text-white shadow-[0_18px_48px_rgba(0,0,0,0.45)] [backface-visibility:hidden] 2xl:rounded-[1.25rem]">
           {front}
           <span
-            className="pointer-events-none absolute bottom-16 right-4 select-none font-heading text-[5.5rem] font-bold leading-none tracking-tight text-[#d4af37]/25 sm:bottom-20 sm:text-[6.5rem] lg:text-[7.5rem]"
+            className="pointer-events-none absolute bottom-16 right-4 select-none font-heading text-[5.5rem] font-bold leading-none tracking-tight !text-[#d4af37]/25 sm:bottom-20 sm:text-[6.5rem] lg:text-[7.5rem]"
             aria-hidden
           >
             {number}
           </span>
           <div className="absolute inset-x-0 bottom-0 px-5 pb-6 pt-16 text-center sm:px-6 sm:pb-8">
-            <p className="font-heading text-xl font-semibold tracking-tight text-white sm:text-2xl lg:text-[1.65rem]">
+            <p className="font-heading text-xl font-semibold tracking-tight !text-white sm:text-2xl lg:text-[1.65rem]">
               {frontTitle}
             </p>
           </div>
         </div>
 
-        <div className="absolute inset-0 flex flex-col rounded-2xl border border-white/15 bg-black p-6 shadow-[0_18px_48px_rgba(0,0,0,0.55)] [backface-visibility:hidden] [transform:rotateY(180deg)] sm:p-7 2xl:rounded-[1.25rem]">
+        <div className="absolute inset-0 flex flex-col rounded-2xl border border-white/15 bg-black p-6 text-white shadow-[0_18px_48px_rgba(0,0,0,0.55)] [backface-visibility:hidden] [transform:rotateY(180deg)] sm:p-7 2xl:rounded-[1.25rem]">
           {back}
         </div>
       </div>
