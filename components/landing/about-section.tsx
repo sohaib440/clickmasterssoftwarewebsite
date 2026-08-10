@@ -5,7 +5,7 @@ import { CardImage } from "@/components/landing/card-image";
 import { Reveal } from "@/components/landing/reveal";
 import { SectionHeading } from "@/components/landing/section-heading";
 import { pakistanCities, pakistanLocation } from "@/data/locations";
-import { btnOutline, card, cardSoft, container, sectionPad } from "@/lib/landing/constants";
+import { btnOutline, card, cardSoft, container, sectionPad, teamPath } from "@/lib/landing/constants";
 import { aboutSection } from "@/data/landingPage";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
@@ -36,10 +36,22 @@ type AboutSectionProps = {
 
 /**
  * Resolve `[[anchor text]]` to a real internal URL.
- * City names → that city page; Pakistan / generic software-house anchors → Pakistan hub.
+ * Team → /team; city names → that city page; Pakistan / software-company anchors → Pakistan hub.
  */
-function resolveInternalWikiHref(label: string): string {
+export function resolveInternalWikiHref(label: string): string {
   const lower = label.toLowerCase().trim();
+
+  if (
+    lower === "team" ||
+    lower === "our team" ||
+    lower === "the team" ||
+    lower === "dedicated team" ||
+    lower === "experienced team" ||
+    lower === "experienced & certified team"
+  ) {
+    return teamPath;
+  }
+
   const cities = [...pakistanCities].sort((a, b) => b.city.length - a.city.length);
 
   for (const city of cities) {
@@ -51,8 +63,8 @@ function resolveInternalWikiHref(label: string): string {
   return pakistanLocation.href;
 }
 
-/** Renders `[[anchor text]]` as contextual internal links (city or Pakistan hub). */
-function renderParagraphWithCountryLinks(paragraph: string): ReactNode {
+/** Renders `[[anchor text]]` as contextual internal links (city, Pakistan hub, or team). */
+export function renderParagraphWithCountryLinks(paragraph: string): ReactNode {
   const parts = paragraph.split(/(\[\[[^\]]+\]\])/g);
   if (parts.length === 1) return paragraph;
 

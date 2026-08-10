@@ -43,17 +43,20 @@ export function LocationWhyChooseSection({
           className="mb-8 md:mb-10"
         />
 
-        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {values.map((item, index) => (
-            <li key={item.title}>
-              <Reveal delay={index * motionStagger} className={cn(cardSoft, "h-full p-6")}>
-                <span className="flex size-9 items-center justify-center rounded-full bg-horizon-navy/5 text-primary ring-1 ring-horizon-border">
+            <li key={item.title} className="h-full min-h-0">
+              <Reveal
+                delay={index * motionStagger}
+                className={cn(cardSoft, "flex h-full flex-col p-6")}
+              >
+                <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-horizon-navy/5 text-primary ring-1 ring-horizon-border">
                   <Check className="size-4" strokeWidth={2} aria-hidden />
                 </span>
                 <h3 className="mt-4 font-heading text-lg font-medium text-horizon-navy">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-horizon-muted">
+                <p className="mt-2 flex-1 text-justify text-sm leading-relaxed text-horizon-muted">
                   {item.description}
                 </p>
               </Reveal>

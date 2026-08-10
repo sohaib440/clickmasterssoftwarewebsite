@@ -178,7 +178,7 @@ export type LocationPageContent = {
   slug: string;
   country: string;
   href: string;
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   description: string;
   /** Optional second hero paragraph (rendered below description) */
@@ -1062,12 +1062,11 @@ export const pakistanLocation: LocationPageContent = {
   slug: "software-house-and-software-company-in-pakistan",
   country: "Pakistan",
   href: "/location/software-house-and-software-company-in-pakistan",
-  eyebrow: "Locations · Pakistan",
   title: "Software House in Pakistan",
   description:
-    "Next Software Development Company is the best software house and top-rated software development company in Pakistan. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Islamabad, Lahore, Karachi, and beyond.",
+    "Next Software Development Company is the best software house and [[top-rated software development company in Pakistan]]. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Islamabad, Lahore, Karachi, and beyond.",
   descriptionSecondary:
-    "Our experienced team of developers, designers, and engineers combines technical expertise with deep local market insight to deliver scalable, secure, and affordable solutions that streamline operations and drive sustainable growth. Whether you are a startup building your first MVP or an enterprise seeking a full scale ERP system, we turn your vision into reliable, high performing software.",
+    "Our experienced [[team]] of developers, designers, and engineers combines technical expertise with deep local market insight to deliver scalable, secure, and affordable solutions that streamline operations and drive sustainable growth. Whether you are a startup building your first MVP or an enterprise seeking a full scale ERP system, we turn your vision into reliable, high performing software.",
   metaTitle: "Software House in Pakistan",
   metaDescription:
     "Next Software Development Company is the best software house and top-rated software development company in Pakistan. Custom HMS, ERP, and digital products for businesses nationwide.",
@@ -1078,8 +1077,8 @@ export const pakistanLocation: LocationPageContent = {
     overlineText: "Who we are",
     title: "A top-rated software house and software development company in Pakistan",
     paragraphs: [
-      "Next Software Development Company is a leading software house and software development company headquartered in Islamabad, with delivery teams across Lahore, Karachi, and major cities nationwide. Our software company builds custom software, HMS, ERP, mobile apps, and SaaS for clinics, schools, retailers, and growing enterprises in Pakistan, and for international clients who want senior Pakistani engineering at scale.",
-      "As an experienced software house in Pakistan, we bring 7+ years of experience since our founding in 2019, 500+ happy clients, and a team of 20+ software engineers across 10+ countries. From Urdu-ready clinic workflows in Islamabad to multi-campus school platforms in Lahore and retail POS across Karachi, this software development company combines local market understanding with the same delivery standards we apply on global engagements.",
+      "Next Software Development Company is a leading software house and [[top-rated software development company in Pakistan]] headquartered in Islamabad, with delivery teams across Lahore, Karachi, and major cities nationwide. Our software company builds custom software, HMS, ERP, mobile apps, and SaaS for clinics, schools, retailers, and growing enterprises in Pakistan, and for international clients who want senior Pakistani engineering at scale.",
+      "As an experienced software house in Pakistan, we bring 7+ years of experience since our founding in 2019, 500+ happy clients, and a [[team]] of 20+ software engineers across 10+ countries. From Urdu-ready clinic workflows in Islamabad to multi-campus school platforms in Lahore and retail POS across Karachi, this software development company combines local market understanding with the same delivery standards we apply on global engagements.",
       "Whether you are a founder in Pakistan or an overseas company hiring a software house and software company in Pakistan, you get English-first communication, timezone-friendly collaboration, transparent fixed pricing, and post-launch support that does not disappear after go-live.",
     ],
     values: pakistanSections.whyChoose.values,

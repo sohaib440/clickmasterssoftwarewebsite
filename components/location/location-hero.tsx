@@ -1,9 +1,9 @@
 import Link from "next/link";
 
+import { renderParagraphWithCountryLinks } from "@/components/landing/about-section";
 import { CardImage } from "@/components/landing/card-image";
 import { RatingBadges } from "@/components/landing/rating-badges";
 import { Reveal } from "@/components/landing/reveal";
-import { ServiceBreadcrumbs } from "@/components/services/shared/service-breadcrumbs";
 import {
   btnOutlineDark,
   btnPrimary,
@@ -30,39 +30,26 @@ export function LocationHero({ location }: LocationHeroProps) {
       </div>
 
       <div className={cn(container, sectionPad, "relative")}>
-        <Reveal immediate>
-          <ServiceBreadcrumbs
-            className="mb-6"
-            items={
-              location.breadcrumbs ?? [
-                { label: "Home", href: "/" },
-                { label: "Locations", href: "/location" },
-                { label: location.country },
-              ]
-            }
-          />
-        </Reveal>
-
         <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-10">
           <div className="flex min-w-0 flex-col gap-5 lg:max-w-2xl lg:pt-1 xl:max-w-3xl">
-            <Reveal immediate delay={motionStagger}>
+            <Reveal immediate>
               <h1 className="font-heading text-4xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.15rem]">
                 {location.title}
               </h1>
             </Reveal>
-            <Reveal immediate delay={motionStagger * 2}>
+            <Reveal immediate delay={motionStagger}>
               <div className="flex flex-col gap-4">
                 <p className="text-justify text-base leading-relaxed text-white/70 md:text-lg">
-                  {location.description}
+                  {renderParagraphWithCountryLinks(location.description)}
                 </p>
                 {location.descriptionSecondary ? (
                   <p className="text-justify text-base leading-relaxed text-white/70 md:text-lg">
-                    {location.descriptionSecondary}
+                    {renderParagraphWithCountryLinks(location.descriptionSecondary)}
                   </p>
                 ) : null}
               </div>
             </Reveal>
-            <Reveal immediate delay={motionStagger * 3}>
+            <Reveal immediate delay={motionStagger * 2}>
               <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:items-center">
                 <Link href={contactPath} className={btnPrimary}>
                   Get a Free Quote
