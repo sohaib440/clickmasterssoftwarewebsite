@@ -10,11 +10,17 @@ import { cn } from "@/lib/utils";
 type LocationWhyChooseSectionProps = {
   cityName: string;
   values: LocationAboutContent["values"];
+  overlineText?: string;
+  title?: React.ReactNode;
+  description?: string;
 };
 
 export function LocationWhyChooseSection({
   cityName,
   values,
+  overlineText = "Why choose us",
+  title,
+  description,
 }: LocationWhyChooseSectionProps) {
   if (!values.length) return null;
 
@@ -22,13 +28,18 @@ export function LocationWhyChooseSection({
     <section id="why-choose-us" className="w-full bg-white text-horizon-navy">
       <div className={cn(container, sectionPad)}>
         <SectionHeading
-          overlineText="Why choose us"
+          overlineText={overlineText}
           title={
-            <>
-              Why businesses in <span className="italic">{cityName}</span> work with us
-            </>
+            title ?? (
+              <>
+                Why businesses in <span className="italic">{cityName}</span> work with us
+              </>
+            )
           }
-          description={`Genuine differentiators from a software house that stays accountable from discovery through launch and support in ${cityName}.`}
+          description={
+            description ??
+            `Genuine differentiators from a software house that stays accountable from discovery through launch and support in ${cityName}.`
+          }
           className="mb-8 md:mb-10"
         />
 

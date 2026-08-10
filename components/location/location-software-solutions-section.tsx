@@ -5,7 +5,7 @@ import { Reveal } from "@/components/landing/reveal";
 import { SectionHeading } from "@/components/landing/section-heading";
 import {
   locationSoftwareSolutions,
-} from "@/data/location-software-solutions";
+} from "@/data/locations";
 import { cardSoft, container, sectionPad } from "@/lib/landing/constants";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";

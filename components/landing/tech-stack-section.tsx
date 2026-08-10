@@ -368,7 +368,23 @@ function TechBubbleCanvas({ logos }: { logos: readonly TechStackLogo[] }) {
   );
 }
 
-export function TechStackSection() {
+type TechStackSectionProps = {
+  overlineText?: string;
+  title?: React.ReactNode;
+  description?: string;
+  badgeText?: string;
+};
+
+export function TechStackSection({
+  overlineText = "Technology stack",
+  title = (
+    <>
+      Built with <span className="text-primary">proven, modern tools</span>
+    </>
+  ),
+  description = techStackIntro,
+  badgeText = "Technology built around your Business",
+}: TechStackSectionProps = {}) {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeGroup = techStackLogoGroups[activeIndex];
 
@@ -377,21 +393,16 @@ export function TechStackSection() {
       <LandingContainer className="relative z-10">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading
-            overlineText="Technology stack"
-            title={
-              <>
-                Built with{" "}
-                <span className="text-primary">proven, modern tools</span>
-              </>
-            }
-            description={techStackIntro}
+            overlineText={overlineText}
+            title={title}
+            description={description}
             align="left"
             dark
             className="max-w-3xl"
           />
           <div className="shrink-0 rounded-2xl border border-primary/25 bg-primary/5 px-5 py-4 text-center lg:text-right">
             <p className="mt-1 text-[11px] uppercase tracking-[0.16em] text-white/50">
-              Technology built around your Business
+              {badgeText}
             </p>
           </div>
         </div>

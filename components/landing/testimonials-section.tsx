@@ -32,6 +32,7 @@ type TestimonialItem = {
 type TestimonialsSectionProps = {
   overlineText?: string;
   title?: React.ReactNode;
+  description?: string;
   items?: readonly TestimonialItem[];
   variant?: "light" | "dark";
 };
@@ -43,6 +44,7 @@ export function TestimonialsSection({
       What <span className="italic">partners</span> say
     </>
   ),
+  description,
   items,
   variant = "light",
 }: TestimonialsSectionProps = {}) {
@@ -83,6 +85,7 @@ export function TestimonialsSection({
           dark={dark}
           overlineText={overlineText}
           title={title}
+          description={description}
           className={sectionHeadingGap}
         />
 

@@ -13,6 +13,19 @@ import { motionStagger } from "@/lib/landing/motion";
 import { btnPrimary } from "@/lib/landing/constants";
 import { cn } from "@/lib/utils";
 
+type ServiceOverride = {
+  title: string;
+  description: string;
+  tag?: string;
+};
+
+type ServicesSectionProps = {
+  overlineText?: string;
+  title?: React.ReactNode;
+  description?: string;
+  serviceOverrides?: ServiceOverride[];
+};
+
 function ServiceCard({ service, index }: { service: ServiceCardData; index: number }) {
   const route = serviceRoutes[service.title] || "/software-development";
 
@@ -74,23 +87,43 @@ function ServiceCard({ service, index }: { service: ServiceCardData; index: numb
   );
 }
 
-export function ServicesSection() {
+export function ServicesSection({
+  overlineText = "What we deliver",
+  title = (
+    <>
+      Innovating your <span className="italic">digital future</span>
+    </>
+  ),
+  description = "As a leading software company, we blend modern engineering with thoughtful product design to ship platforms teams can rely on every day.",
+  serviceOverrides,
+}: ServicesSectionProps = {}) {
   const [showAll, setShowAll] = useState(false);
   const initialVisibleCount = 9;
-  const visibleServices = showAll ? services : services.slice(0, initialVisibleCount);
-  const hiddenCount = Math.max(services.length - initialVisibleCount, 0);
+
+  const resolvedServices = serviceOverrides?.length
+    ? services.map((service) => {
+        const override = serviceOverrides.find((item) => item.title === service.title);
+        if (!override) return service;
+        return {
+          ...service,
+          description: override.description,
+          tag: override.tag ?? service.tag,
+        };
+      })
+    : services;
+
+  const visibleServices = showAll
+    ? resolvedServices
+    : resolvedServices.slice(0, initialVisibleCount);
+  const hiddenCount = Math.max(resolvedServices.length - initialVisibleCount, 0);
 
   return (
     <section id="services" className="relative overflow-hidden bg-black text-white">
       <LandingContainer className="relative z-10">
         <SectionHeading
-          overlineText="What we deliver"
-          title={
-            <>
-              Innovating your <span className="italic">digital future</span>
-            </>
-          }
-          description="As a leading software company, we blend modern engineering with thoughtful product design to ship platforms teams can rely on every day."
+          overlineText={overlineText}
+          title={title}
+          description={description}
           align="left"
           dark
           className={sectionHeadingGap}

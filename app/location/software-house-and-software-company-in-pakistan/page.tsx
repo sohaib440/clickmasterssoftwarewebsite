@@ -19,7 +19,6 @@ import { TechStackSection } from "@/components/landing/tech-stack-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { TrustNumbersSection } from "@/components/landing/trust-numbers-section";
 import { CaseStudiesSection } from "@/components/case-study/case-studies-section";
-import { caseStudies } from "@/data/caseStudy";
 import { pakistanLocation } from "@/data/locations";
 import { btnOnDark, container, sectionPad } from "@/lib/landing/constants";
 import { selfCanonical, pageTitle, pageTitleString } from "@/seo/canonical";
@@ -46,6 +45,7 @@ export const metadata: Metadata = {
 
 export default function PakistanLocationPage() {
   const location = pakistanLocation;
+  const { sections } = location;
 
   const schemas = jsonLdGraph([
     organizationSchema,
@@ -80,54 +80,73 @@ export default function PakistanLocationPage() {
       <SiteHeader />
 
       <main className="flex w-full flex-1 flex-col overflow-x-clip">
-        {/* Breadcrumb + Hero */}
         <LocationHero location={location} />
 
-        {/* Local Trust */}
         <TrustNumbersSection />
 
-        {/* Who we are */}
         <AboutSection
           content={{ ...location.about, overlineText: "Who we are" }}
           showValues={false}
         />
 
-        {/* Services */}
-        <ServicesSection />
+        <ServicesSection
+          overlineText={sections.services.overlineText}
+          title={
+            <>
+              {sections.services.title}{" "}
+              <span className="italic">{sections.services.titleItalic}</span>
+            </>
+          }
+          description={sections.services.description}
+          serviceOverrides={sections.services.items}
+        />
 
-        {/* Why Choose Us */}
-        <LocationWhyChooseSection cityName="Pakistan" values={location.about.values} />
+        <LocationWhyChooseSection
+          cityName="Pakistan"
+          values={sections.whyChoose.values}
+          overlineText={sections.whyChoose.overlineText}
+          title={sections.whyChoose.title}
+          description={sections.whyChoose.description}
+        />
 
-        {/* Recent Projects */}
         <ProjectsSection
           id="recent-projects"
           projects={location.projects}
-          overlineText="Recent projects"
-          title={
-            <>
-              Recent projects from <span className="italic">Pakistan</span>
-            </>
-          }
+          overlineText={sections.projects.overlineText}
+          title={sections.projects.title}
         />
 
-        {/* Industries */}
         <IndustriesSection
-          overlineText="Industries"
-          title={
-            <>
-              Industries we serve in <span className="italic">Pakistan</span>
-            </>
-          }
-          description={location.industries.subtitle}
+          overlineText={sections.industries.overlineText}
+          title={sections.industries.title}
+          description={sections.industries.description}
+          items={sections.industries.items}
         />
 
-        {/* Technologies */}
-        <TechStackSection />
+        <TechStackSection
+          overlineText={sections.tech.overlineText}
+          title={
+            <>
+              Built with <span className="text-primary">{sections.tech.titleItalic}</span>
+            </>
+          }
+          description={sections.tech.description}
+          badgeText={`Technology for ${location.country} delivery`}
+        />
 
-        {/* Development Process */}
-        <ProcessSection />
+        <ProcessSection
+          overlineText={sections.process.overlineText}
+          title={
+            <>
+              {sections.process.title}{" "}
+              <span className="italic">{sections.process.titleItalic}</span>
+            </>
+          }
+          description={sections.process.description}
+          steps={sections.process.steps}
+          ctaLabel={sections.process.ctaLabel}
+        />
 
-        {/* Service Areas */}
         <SubLocationsSection
           country={location.country}
           cities={location.cities}
@@ -140,27 +159,37 @@ export default function PakistanLocationPage() {
           }
         />
 
-        {/* Case Studies */}
-        {caseStudies.length > 0 ? (
+        {sections.caseStudies.items.length > 0 ? (
           <CaseStudiesSection
-            items={caseStudies.slice(0, 6)}
-            overlineText="Case studies"
-            title={
-              <>
-                Results from <span className="italic">real engagements</span>
-              </>
-            }
-            description="Selected case studies showing how we deliver outcomes for Pakistani businesses and international clients."
+            items={sections.caseStudies.items}
+            overlineText={sections.caseStudies.overlineText}
+            title={sections.caseStudies.title}
+            description={sections.caseStudies.description}
           />
         ) : null}
 
-        {/* Testimonials */}
-        <TestimonialsSection variant="dark" />
+        <TestimonialsSection
+          variant="dark"
+          overlineText={sections.testimonials.overlineText}
+          title={
+            <>
+              What <span className="italic">{sections.testimonials.titleItalic}</span> say
+            </>
+          }
+          description={sections.testimonials.description}
+          items={sections.testimonials.items}
+        />
 
-        {/* Team */}
-        <TeamSection />
+        <TeamSection
+          overlineText={sections.team.overlineText}
+          title={
+            <>
+              A senior <span className="italic">{sections.team.titleItalic}</span>
+            </>
+          }
+          intro={sections.team.intro}
+        />
 
-        {/* FAQ */}
         <FaqSection
           items={location.faqs}
           intro={location.faqIntro}
@@ -172,7 +201,6 @@ export default function PakistanLocationPage() {
           }
         />
 
-        {/* CTA */}
         <section className="w-full bg-horizon-navy text-white">
           <div className={cn(container, sectionPad, "text-center")}>
             <Reveal>

@@ -20,7 +20,6 @@ import { TechStackSection } from "@/components/landing/tech-stack-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { TrustNumbersSection } from "@/components/landing/trust-numbers-section";
 import { CaseStudiesSection } from "@/components/case-study/case-studies-section";
-import { caseStudies } from "@/data/caseStudy";
 import {
   getAllPakistanCitySlugs,
   getPakistanCityBySlug,
@@ -79,7 +78,7 @@ export default async function CityLocationPage({ params }: CityLocationPageProps
 
   const cityName =
     location.breadcrumbs?.[location.breadcrumbs.length - 1]?.label ?? location.country;
-
+  const { sections } = location;
   const nearbyCities = getNearbyCitiesFor(cityName);
 
   const breadcrumbItems =
@@ -121,54 +120,73 @@ export default async function CityLocationPage({ params }: CityLocationPageProps
       <SiteHeader />
 
       <main className="flex w-full flex-1 flex-col overflow-x-clip">
-        {/* Breadcrumb + Hero */}
         <LocationHero location={location} />
 
-        {/* Local Trust */}
         <TrustNumbersSection />
 
-        {/* Who we are */}
         <AboutSection
           content={{ ...location.about, overlineText: "Who we are" }}
           showValues={false}
         />
 
-        {/* Services */}
-        <ServicesSection />
+        <ServicesSection
+          overlineText={sections.services.overlineText}
+          title={
+            <>
+              {sections.services.title}{" "}
+              <span className="italic">{sections.services.titleItalic}</span>
+            </>
+          }
+          description={sections.services.description}
+          serviceOverrides={sections.services.items}
+        />
 
-        {/* Why Choose Us */}
-        <LocationWhyChooseSection cityName={cityName} values={location.about.values} />
+        <LocationWhyChooseSection
+          cityName={cityName}
+          values={sections.whyChoose.values}
+          overlineText={sections.whyChoose.overlineText}
+          title={sections.whyChoose.title}
+          description={sections.whyChoose.description}
+        />
 
-        {/* Recent Projects */}
         <ProjectsSection
           id="recent-projects"
           projects={location.projects}
-          overlineText="Recent projects"
-          title={
-            <>
-              Recent projects from <span className="italic">{cityName}</span>
-            </>
-          }
+          overlineText={sections.projects.overlineText}
+          title={sections.projects.title}
         />
 
-        {/* Industries */}
         <IndustriesSection
-          overlineText="Industries"
-          title={
-            <>
-              Industries we serve in <span className="italic">{cityName}</span>
-            </>
-          }
-          description={location.industries.subtitle}
+          overlineText={sections.industries.overlineText}
+          title={sections.industries.title}
+          description={sections.industries.description}
+          items={sections.industries.items}
         />
 
-        {/* Technologies */}
-        <TechStackSection />
+        <TechStackSection
+          overlineText={sections.tech.overlineText}
+          title={
+            <>
+              Modern tools for <span className="text-primary">{cityName}</span> products
+            </>
+          }
+          description={sections.tech.description}
+          badgeText={`Technology for ${cityName} delivery`}
+        />
 
-        {/* Development Process */}
-        <ProcessSection />
+        <ProcessSection
+          overlineText={sections.process.overlineText}
+          title={
+            <>
+              {sections.process.title}{" "}
+              <span className="italic">{sections.process.titleItalic}</span>
+            </>
+          }
+          description={sections.process.description}
+          steps={sections.process.steps}
+          ctaLabel={sections.process.ctaLabel}
+        />
 
-        {/* Service Areas */}
         {nearbyCities.length > 0 ? (
           <SubLocationsSection
             country={cityName}
@@ -184,27 +202,33 @@ export default async function CityLocationPage({ params }: CityLocationPageProps
           />
         ) : null}
 
-        {/* Case Studies */}
-        {caseStudies.length > 0 ? (
+        {sections.caseStudies.items.length > 0 ? (
           <CaseStudiesSection
-            items={caseStudies.slice(0, 6)}
-            overlineText="Case studies"
-            title={
-              <>
-                Results from <span className="italic">real engagements</span>
-              </>
-            }
-            description={`Selected case studies showing how we deliver outcomes for businesses in ${cityName} and across Pakistan.`}
+            items={sections.caseStudies.items}
+            overlineText={sections.caseStudies.overlineText}
+            title={sections.caseStudies.title}
+            description={sections.caseStudies.description}
           />
         ) : null}
 
-        {/* Testimonials */}
-        <TestimonialsSection variant="dark" />
+        <TestimonialsSection
+          variant="dark"
+          overlineText={sections.testimonials.overlineText}
+          title={sections.testimonials.title}
+          description={sections.testimonials.description}
+          items={sections.testimonials.items}
+        />
 
-        {/* Team */}
-        <TeamSection />
+        <TeamSection
+          overlineText={sections.team.overlineText}
+          title={
+            <>
+              The team behind <span className="italic">{cityName}</span> delivery
+            </>
+          }
+          intro={sections.team.intro}
+        />
 
-        {/* FAQ */}
         <FaqSection
           items={location.faqs}
           intro={location.faqIntro}
@@ -216,7 +240,6 @@ export default async function CityLocationPage({ params }: CityLocationPageProps
           }
         />
 
-        {/* CTA */}
         <section className="w-full bg-horizon-navy text-white">
           <div className={cn(container, sectionPad, "text-center")}>
             <Reveal>

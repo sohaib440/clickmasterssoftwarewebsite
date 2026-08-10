@@ -1,11 +1,12 @@
 import {
   pakistanCities,
   pakistanLocation,
+  buildLocationFacts,
+  buildLocationSections,
+  filterProjectsForPlace,
   type LocationCity,
   type LocationPageContent,
 } from "@/data/locations";
-import { companyStats } from "@/data/landing/trust";
-import { showcaseProjects } from "@/data/projects";
 import { contactPath, teamPath } from "@/lib/landing/constants";
 
 const pakistanHref = pakistanLocation.href;
@@ -970,10 +971,7 @@ const cityCopy: Record<string, CityCopy> = {
 };
 
 function projectsForCity(city: string): LocationPageContent["projects"] {
-  const matched = showcaseProjects.filter((project) =>
-    project.category.toLowerCase().includes(city.toLowerCase())
-  );
-  return matched.length > 0 ? matched : showcaseProjects;
+  return filterProjectsForPlace(city);
 }
 
 function buildCityPage(cityMeta: LocationCity): LocationPageContent {
@@ -992,6 +990,8 @@ function buildCityPage(cityMeta: LocationCity): LocationPageContent {
       metaTitle: `Best software house and top rated software company in ${cityMeta.city}`,
       metaDescription: `Next Software Development Company is the best software house and top-rated software development company in ${cityMeta.city}. Custom HMS, ERP, and digital products for local businesses.`,
     } satisfies CityCopy);
+
+  const sections = buildLocationSections(cityMeta.city);
 
   return {
     slug: cityMeta.slug,
@@ -1012,40 +1012,10 @@ function buildCityPage(cityMeta: LocationCity): LocationPageContent {
       { label: cityMeta.city },
     ],
     about: {
-      overlineText: "About us",
+      overlineText: "Who we are",
       title: copy.aboutTitle,
       paragraphs: [...copy.paragraphs],
-      values: [
-        {
-          title: `${cityMeta.city} focus`,
-          description: copy.factDetail,
-        },
-        {
-          title: "Senior-only teams",
-          description:
-            "Every software development company engagement is staffed with senior developers, designers, and QA, with no junior-only delivery squads.",
-        },
-        {
-          title: "Pakistan + global clients",
-          description:
-            "Local market understanding from a Pakistan software house with the same delivery standard we use on international software company builds.",
-        },
-        {
-          title: "Transparent pricing",
-          description:
-            "Fixed-price contracts from a reliable software house with clear scope and no surprise invoices mid-project.",
-        },
-        {
-          title: "Post-launch support",
-          description:
-            "Our software development company stays involved after go-live with maintenance, updates, and ongoing improvements.",
-        },
-        {
-          title: "Secure delivery",
-          description:
-            "ISO-aligned processes, code reviews, and data security best practices on every software house engagement.",
-        },
-      ],
+      values: sections.whyChoose.values,
       image: {
         ...pakistanLocation.about.image,
         alt: `Next Software Development Company, a top software house and software company in ${cityMeta.city}`,
@@ -1054,9 +1024,9 @@ function buildCityPage(cityMeta: LocationCity): LocationPageContent {
       teamCta: `Meet our ${cityMeta.city} software house team`,
     },
     caseWork: {
-      overlineText: "Recent projects",
-      title: `Recent projects from ${cityMeta.city}`,
-      description: `Selected builds from our software development company for ${cityMeta.city} and nearby Pakistani markets, with the same delivery standard as our national software company recent projects.`,
+      overlineText: sections.projects.overlineText,
+      title: sections.projects.title,
+      description: sections.projects.description,
     },
     heroImage: {
       src: copy.heroImageSrc,
@@ -1066,21 +1036,10 @@ function buildCityPage(cityMeta: LocationCity): LocationPageContent {
     },
     cities: pakistanCities,
     projects: projectsForCity(cityMeta.city),
-    facts: {
-      title: `${cityMeta.city} software house and software company facts`,
-      subtitle: `Next Software Development Company delivers for ${cityMeta.city} with the same company-wide track record we publish on our homepage.`,
-      items: companyStats.map(({ value, label, detail }) => ({
-        value,
-        label,
-        detail:
-          label === "Happy Clients"
-            ? `${detail} Including teams we support in ${cityMeta.city}.`
-            : detail,
-      })),
-    },
+    facts: buildLocationFacts(cityMeta.city),
     industries: {
-      title: `Industries our software house serves in ${cityMeta.city}`,
-      subtitle: `As a software development company and software house in ${cityMeta.city}, we deliver healthcare, education, retail, and ops software tailored to how local businesses work.`,
+      title: sections.industries.title,
+      subtitle: sections.industries.description,
       items: pakistanLocation.industries.items.map((item) => ({
         ...item,
         description: item.description.replace("across Pakistan", `in ${cityMeta.city}`),
@@ -1135,6 +1094,7 @@ function buildCityPage(cityMeta: LocationCity): LocationPageContent {
       buttonLabel: "Get a Free Quote",
       buttonHref: contactPath,
     },
+    sections,
   };
 }
 

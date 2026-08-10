@@ -10,7 +10,6 @@ import {
   cardDark,
   contactPath,
   container,
-  overline,
   projectPath,
   sectionPad,
 } from "@/lib/landing/constants";
@@ -47,14 +46,11 @@ export function LocationHero({ location }: LocationHeroProps) {
         <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-10">
           <div className="flex min-w-0 flex-col gap-5 lg:max-w-2xl lg:pt-1 xl:max-w-3xl">
             <Reveal immediate delay={motionStagger}>
-              <p className={cn(overline, "text-white/60")}>{location.eyebrow}</p>
-            </Reveal>
-            <Reveal immediate delay={motionStagger * 2}>
               <h1 className="font-heading text-4xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.15rem]">
                 {location.title}
               </h1>
             </Reveal>
-            <Reveal immediate delay={motionStagger * 3}>
+            <Reveal immediate delay={motionStagger * 2}>
               <div className="flex flex-col gap-4">
                 <p className="text-justify text-base leading-relaxed text-white/70 md:text-lg">
                   {location.description}
@@ -66,7 +62,7 @@ export function LocationHero({ location }: LocationHeroProps) {
                 ) : null}
               </div>
             </Reveal>
-            <Reveal immediate delay={motionStagger * 4}>
+            <Reveal immediate delay={motionStagger * 3}>
               <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:items-center">
                 <Link href={contactPath} className={btnPrimary}>
                   Get a Free Quote
