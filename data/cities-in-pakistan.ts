@@ -1,11 +1,12 @@
 import {
   pakistanCities,
   pakistanLocation,
+  buildLocationFacts,
+  buildLocationSections,
+  filterProjectsForPlace,
   type LocationCity,
   type LocationPageContent,
 } from "@/data/locations";
-import { companyStats } from "@/data/landing/trust";
-import { showcaseProjects } from "@/data/projects";
 import { contactPath, teamPath } from "@/lib/landing/constants";
 
 const pakistanHref = pakistanLocation.href;
@@ -19,6 +20,10 @@ type CityCopy = {
   factDetail: string;
   heroImageSrc: string;
   heroLead: string;
+  /** Optional second hero paragraph; falls back to Pakistan shared secondary copy */
+  descriptionSecondary?: string;
+  /** Optional Why Choose Us cards for this city */
+  whyChoose?: Array<{ title: string; description: string }>;
   /** Edit per city, used as <title> / Open Graph title */
   metaTitle: string;
   /** Edit per city, used as meta description / Open Graph description */
@@ -79,20 +84,54 @@ const cityCopy: Record<string, CityCopy> = {
   },
   Faisalabad: {
     // --- SEO: edit these two fields for this city page ---
-    metaTitle: "Best Software House in Faisalabad",
+    metaTitle: "Top Rated & Certified Software House & Software Company in Faisalabad",
     metaDescription:
-      "Next Software Development Company is the best software house and top-rated software development company in Faisalabad. Custom ERP, ops software, and digital products for industry.",
-    aboutTitle: "A top-rated software house and software development company in Faisalabad",
+      "If you are looking for a top-rated software house & software company in Faisalabad for custom software development, app development, web development, or AI automation, and you want to take your business to the next level, then you are at the right place. We are Next Software Development Company in Faisalabad, helping many Faisalabad businesses, organisations, institutes, and industries make their businesses smarter and more advanced with our different products like CMS, HMS, ERPs, websites, and automation workflows.",
+    aboutTitle: "Who We Are?",
     paragraphs: [
-      "Next Software Development Company is the best software house and top-rated software development company in Faisalabad. Manufacturers and growing businesses use our software company for ERP, inventory, and custom ops software that replaces spreadsheets and fragmented tools.",
-      "As a practical software house in Faisalabad, we design workflows around local production and trade realities: role-based access, reporting owners can trust, and systems staff can learn quickly.",
-      "Partner with a software house and software development company in Faisalabad that ships senior delivery, fixed scope when you need it, and ongoing support after go-live from a [[software house in Pakistan]].",
+      "Next Software Development Company is the [[certified software house and top-rated software development company in Pakistan]], serving across Pakistan for a decade since 2019. We work with thousands of businesses, startups, and organisations on different software development projects, app development, and other software projects that help them make their businesses advanced and smart.",
+      "We are top-rated and loved by Pakistani business owners and the top-chosen software development company and software house in Pakistan, having an experienced team of software engineers, software designers, creative teams, and experienced strategists and planners who understand your requirements, the problems you face, and make plans that work best for you. We believe in quality work. Our first focus is to solve the problems that businesses face. Our vision is to make Next Software Development a leading software house in Pakistan that helps businesses with a customer-first approach.",
+      "For Faisalabad businesses, we have a dedicated [[team]] that helps Faisalabad businesses make their businesses or companies better with our multiple services that are listed below.",
     ],
     factDetail:
       "ERP and operations platforms from a Faisalabad software house for industrial and commercial teams.",
     heroImageSrc: cityHeroImageSrc,
     heroLead:
-      "Next Software Development Company is the best software house and top-rated software development company in Faisalabad. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for manufacturers, clinics, schools, and growing businesses in Faisalabad.",
+      "If you are looking for a top-rated software house & software company in Faisalabad for custom software development, app development, web development, or AI automation, and you want to take your business to the next level, then you are at the right place. We are Next Software Development Company in Faisalabad, helping many Faisalabad businesses, organisations, institutes, and industries make their businesses smarter and more advanced with our different products like CMS, HMS, ERPs, websites, and automation workflows.",
+    descriptionSecondary:
+      "We have an experienced & certified team of software developers and software designers who understand, plan, and execute strategies for Faisalabad businesses that suit them best. We are top-rated on Google and Clutch & trusted by Faisalabad business owners. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for manufacturers, clinics, schools, and growing businesses in Faisalabad. Whether you are a startup building your first MVP or an enterprise seeking a full-scale ERP system, we turn your vision into reliable, high-performing software.",
+    whyChoose: [
+      {
+        title: "Faisalabad Focus",
+        description:
+          "We have surveyed and worked with many startups and businesses. We know what challenges Faisalabad businesses and companies face. We have custom solutions for every business in Faisalabad that overcome challenges with Faisalabad-focused plans.",
+      },
+      {
+        title: "Experienced and Certified Software Development Team",
+        description:
+          "We have different teams of software engineers, software designers, creative teams, and research teams that are led by experienced and expert developers.",
+      },
+      {
+        title: "Pakistan + Global Clients",
+        description:
+          "We have successfully completed thousands of software development projects with international and national clients, startups, and businesses across the globe. We have thousands of happy customers across the world that choose Next Software Development.",
+      },
+      {
+        title: "Transparent Pricing",
+        description:
+          "We are not like other software houses, with hidden pricing and charges. We have pre-planned pricing plans according to your requirements that best suit your budget. Because our focus is on quality first. First, we deliver; if you are happy, then we charge for our efforts.",
+      },
+      {
+        title: "Post-Launch Support",
+        description:
+          "Firstly, we listen to and understand your requirements, what clients face, and what challenges and problems you are facing. Then, after meetings and planning, we recommend solutions. We provide ongoing support and maintenance services, pre-launch support, and post-launch support, and give training to your staff to better understand your software.",
+      },
+      {
+        title: "Secure Delivery",
+        description:
+          "We have ISO-aligned processes. We write code with our hearts, not just using AI to write code that contains security issues and bugs. We understand, we write, and we deliver secure code without bugs and security issues.",
+      },
+    ],
   },
   Multan: {
     // --- SEO: edit these two fields for this city page ---
@@ -970,10 +1009,7 @@ const cityCopy: Record<string, CityCopy> = {
 };
 
 function projectsForCity(city: string): LocationPageContent["projects"] {
-  const matched = showcaseProjects.filter((project) =>
-    project.category.toLowerCase().includes(city.toLowerCase())
-  );
-  return matched.length > 0 ? matched : showcaseProjects;
+  return filterProjectsForPlace(city);
 }
 
 function buildCityPage(cityMeta: LocationCity): LocationPageContent {
@@ -993,14 +1029,21 @@ function buildCityPage(cityMeta: LocationCity): LocationPageContent {
       metaDescription: `Next Software Development Company is the best software house and top-rated software development company in ${cityMeta.city}. Custom HMS, ERP, and digital products for local businesses.`,
     } satisfies CityCopy);
 
+  const sections = buildLocationSections(cityMeta.city);
+  if (copy.whyChoose?.length) {
+    sections.whyChoose = {
+      ...sections.whyChoose,
+      values: copy.whyChoose,
+    };
+  }
+
   return {
     slug: cityMeta.slug,
     country: "Pakistan",
     href: cityMeta.href,
-    eyebrow: `Locations · Pakistan · ${cityMeta.city}`,
     title: copy.metaTitle,
     description: copy.heroLead,
-    descriptionSecondary: pakistanLocation.descriptionSecondary,
+    descriptionSecondary: copy.descriptionSecondary ?? pakistanLocation.descriptionSecondary,
     metaTitle: copy.metaTitle,
     metaDescription: copy.metaDescription,
     coverageTitle: `Explore more cities across Pakistan`,
@@ -1012,40 +1055,10 @@ function buildCityPage(cityMeta: LocationCity): LocationPageContent {
       { label: cityMeta.city },
     ],
     about: {
-      overlineText: "About us",
+      overlineText: "Who we are",
       title: copy.aboutTitle,
       paragraphs: [...copy.paragraphs],
-      values: [
-        {
-          title: `${cityMeta.city} focus`,
-          description: copy.factDetail,
-        },
-        {
-          title: "Senior-only teams",
-          description:
-            "Every software development company engagement is staffed with senior developers, designers, and QA, with no junior-only delivery squads.",
-        },
-        {
-          title: "Pakistan + global clients",
-          description:
-            "Local market understanding from a Pakistan software house with the same delivery standard we use on international software company builds.",
-        },
-        {
-          title: "Transparent pricing",
-          description:
-            "Fixed-price contracts from a reliable software house with clear scope and no surprise invoices mid-project.",
-        },
-        {
-          title: "Post-launch support",
-          description:
-            "Our software development company stays involved after go-live with maintenance, updates, and ongoing improvements.",
-        },
-        {
-          title: "Secure delivery",
-          description:
-            "ISO-aligned processes, code reviews, and data security best practices on every software house engagement.",
-        },
-      ],
+      values: sections.whyChoose.values,
       image: {
         ...pakistanLocation.about.image,
         alt: `Next Software Development Company, a top software house and software company in ${cityMeta.city}`,
@@ -1054,9 +1067,9 @@ function buildCityPage(cityMeta: LocationCity): LocationPageContent {
       teamCta: `Meet our ${cityMeta.city} software house team`,
     },
     caseWork: {
-      overlineText: "Recent projects",
-      title: `Recent projects from ${cityMeta.city}`,
-      description: `Selected builds from our software development company for ${cityMeta.city} and nearby Pakistani markets, with the same delivery standard as our national software company recent projects.`,
+      overlineText: sections.projects.overlineText,
+      title: sections.projects.title,
+      description: sections.projects.description,
     },
     heroImage: {
       src: copy.heroImageSrc,
@@ -1066,21 +1079,10 @@ function buildCityPage(cityMeta: LocationCity): LocationPageContent {
     },
     cities: pakistanCities,
     projects: projectsForCity(cityMeta.city),
-    facts: {
-      title: `${cityMeta.city} software house and software company facts`,
-      subtitle: `Next Software Development Company delivers for ${cityMeta.city} with the same company-wide track record we publish on our homepage.`,
-      items: companyStats.map(({ value, label, detail }) => ({
-        value,
-        label,
-        detail:
-          label === "Happy Clients"
-            ? `${detail} Including teams we support in ${cityMeta.city}.`
-            : detail,
-      })),
-    },
+    facts: buildLocationFacts(cityMeta.city),
     industries: {
-      title: `Industries our software house serves in ${cityMeta.city}`,
-      subtitle: `As a software development company and software house in ${cityMeta.city}, we deliver healthcare, education, retail, and ops software tailored to how local businesses work.`,
+      title: sections.industries.title,
+      subtitle: sections.industries.description,
       items: pakistanLocation.industries.items.map((item) => ({
         ...item,
         description: item.description.replace("across Pakistan", `in ${cityMeta.city}`),
@@ -1135,6 +1137,7 @@ function buildCityPage(cityMeta: LocationCity): LocationPageContent {
       buttonLabel: "Get a Free Quote",
       buttonHref: contactPath,
     },
+    sections,
   };
 }
 

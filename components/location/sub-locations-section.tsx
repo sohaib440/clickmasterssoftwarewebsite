@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { ArrowUpRight, MapPinned } from "lucide-react";
 
@@ -50,6 +50,9 @@ type SubLocationsSectionProps = {
   country: string;
   cities: LocationCity[];
   description?: string;
+  overlineText?: string;
+  title?: ReactNode;
+  metricLabel?: string;
 };
 
 function CityCard({ city, index }: { city: LocationCity; index: number }) {
@@ -114,6 +117,9 @@ export function SubLocationsSection({
   country,
   cities,
   description,
+  overlineText = "Coverage",
+  title,
+  metricLabel = "cities · nationwide delivery",
 }: SubLocationsSectionProps) {
   const [expanded, setExpanded] = useState(false);
   const initialVisible = useInitialCityCount();
@@ -125,25 +131,33 @@ export function SubLocationsSection({
     description ??
     `We partner with founders and operators nationwide, building HMS for Islamabad clinics, school platforms in Lahore, and retail systems in Karachi. Choose a city to see how a dedicated software house can support your market.`;
 
+  const heading =
+    title ?? (
+      <>
+        Cities we serve across <span className="italic text-primary/95">{country}</span>
+      </>
+    );
+
   return (
     <section
+      id="service-area"
       className="relative w-full overflow-hidden bg-black text-white"
       aria-labelledby="sub-locations-heading"
     >
       <div className={cn(container, sectionPad, "relative")}>
         <Reveal>
-          <p className={cn(overline, "text-white/55")}>Coverage</p>
+          <p className={cn(overline, "text-white/55")}>{overlineText}</p>
           <h2
             id="sub-locations-heading"
             className="mt-3 max-w-xl font-heading text-3xl font-normal leading-[1.12] tracking-tight md:text-4xl lg:text-[2.75rem]"
           >
-            Cities we serve across <span className="italic text-primary/95">{country}</span>
+            {heading}
           </h2>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
             {copy}
           </p>
           <p className="mt-4 text-sm font-medium text-white/45">
-            <span className="text-primary">{cities.length}</span> cities · nationwide delivery
+            <span className="text-primary">{cities.length}</span> {metricLabel}
           </p>
         </Reveal>
 

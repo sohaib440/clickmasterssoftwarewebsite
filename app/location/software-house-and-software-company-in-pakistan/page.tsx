@@ -2,25 +2,34 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import {
-  LocationFactsSection,
   LocationHero,
+  LocationWhyChooseSection,
   SubLocationsSection,
 } from "@/components/location";
 import { AboutSection } from "@/components/landing/about-section";
-import { TrustedPartnersSection } from "@/components/landing/clients-section";
 import { FaqSection } from "@/components/landing/faq-section";
 import { IndustriesSection } from "@/components/landing/industries-section";
+import { ProcessSection } from "@/components/landing/process-section";
 import { ProjectsSection } from "@/components/landing/projects-section";
 import { Reveal } from "@/components/landing/reveal";
 import { ServicesSection } from "@/components/landing/services-section";
 import { SiteHeader } from "@/components/landing/navbar";
 import { TeamSection } from "@/components/landing/team-section";
+import { TechStackSection } from "@/components/landing/tech-stack-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
+import { TrustNumbersSection } from "@/components/landing/trust-numbers-section";
+import { CaseStudiesSection } from "@/components/case-study/case-studies-section";
 import { pakistanLocation } from "@/data/locations";
 import { btnOnDark, container, sectionPad } from "@/lib/landing/constants";
 import { selfCanonical, pageTitle, pageTitleString } from "@/seo/canonical";
 import { cn } from "@/lib/utils";
-import { locationLocalBusinessSchema, organizationSchema, breadcrumbSchema, faqPageSchema } from "@/seo/schema";
+import {
+  locationLocalBusinessSchema,
+  organizationSchema,
+  breadcrumbSchema,
+  faqPageSchema,
+  jsonLdGraph,
+} from "@/seo/schema";
 import { siteBrand } from "@/lib/landing/brand";
 
 export const metadata: Metadata = {
@@ -36,8 +45,9 @@ export const metadata: Metadata = {
 
 export default function PakistanLocationPage() {
   const location = pakistanLocation;
+  const { sections } = location;
 
-  const schemas = [
+  const schemas = jsonLdGraph([
     organizationSchema,
     locationLocalBusinessSchema({
       areaServedName: "Pakistan",
@@ -59,7 +69,7 @@ export default function PakistanLocationPage() {
           }),
         ]
       : []),
-  ];
+  ]);
 
   return (
     <div className="flex min-h-full w-full flex-col overflow-x-clip bg-black text-foreground">
@@ -70,58 +80,116 @@ export default function PakistanLocationPage() {
       <SiteHeader />
 
       <main className="flex w-full flex-1 flex-col overflow-x-clip">
-        {/* 1. Hero */}
         <LocationHero location={location} />
 
-        {/* 2. Trust */}
-        <TrustedPartnersSection className="border-horizon-border/60 bg-white" />
+        <TrustNumbersSection />
 
-        {/* 3. About */}
-        <AboutSection content={location.about} />
+        <AboutSection
+          content={{ ...location.about, overlineText: "Who we are" }}
+          showValues={false}
+        />
 
-        {/* 4. Coverage map of cities */}
+        <ServicesSection
+          overlineText={sections.services.overlineText}
+          title={
+            <>
+              {sections.services.title}{" "}
+              <span className="italic">{sections.services.titleItalic}</span>
+            </>
+          }
+          description={sections.services.description}
+          serviceOverrides={sections.services.items}
+        />
+
+        <LocationWhyChooseSection
+          cityName="Pakistan"
+          values={sections.whyChoose.values}
+          overlineText={sections.whyChoose.overlineText}
+          title={sections.whyChoose.title}
+          description={sections.whyChoose.description}
+        />
+
+        <ProjectsSection
+          id="recent-projects"
+          projects={location.projects}
+          overlineText={sections.projects.overlineText}
+          title={sections.projects.title}
+        />
+
+        <IndustriesSection
+          overlineText={sections.industries.overlineText}
+          title={sections.industries.title}
+          description={sections.industries.description}
+          items={sections.industries.items}
+        />
+
+        <TechStackSection
+          overlineText={sections.tech.overlineText}
+          title={
+            <>
+              Built with <span className="text-primary">{sections.tech.titleItalic}</span>
+            </>
+          }
+          description={sections.tech.description}
+          badgeText={`Technology for ${location.country} delivery`}
+        />
+
+        <ProcessSection
+          overlineText={sections.process.overlineText}
+          title={
+            <>
+              {sections.process.title}{" "}
+              <span className="italic">{sections.process.titleItalic}</span>
+            </>
+          }
+          description={sections.process.description}
+          steps={sections.process.steps}
+          ctaLabel={sections.process.ctaLabel}
+        />
+
         <SubLocationsSection
           country={location.country}
           cities={location.cities}
           description={location.coverageDescription}
-        />
-
-        {/* 5. Industry focus */}
-        <IndustriesSection
-          overlineText="Industries"
+          overlineText="Service areas"
           title={
             <>
-              Industries we serve in <span className="italic">Pakistan</span>
-            </>
-          }
-          description={location.industries.subtitle}
-        />
-
-        {/* 6. What we deliver */}
-        <ServicesSection />
-
-        {/* 7. Local proof metrics */}
-        <LocationFactsSection facts={location.facts} />
-
-        {/* 8. Recent projects */}
-        <ProjectsSection
-          id="case-work"
-          projects={location.projects}
-          overlineText={location.caseWork?.overlineText ?? "Recent projects"}
-          title={
-            <>
-              Recent projects from <span className="italic">Pakistan</span>
+              Cities we serve across <span className="italic text-primary/95">Pakistan</span>
             </>
           }
         />
 
-        {/* 9. Social proof */}
-        <TestimonialsSection />
+        {sections.caseStudies.items.length > 0 ? (
+          <CaseStudiesSection
+            items={sections.caseStudies.items}
+            overlineText={sections.caseStudies.overlineText}
+            title={sections.caseStudies.title}
+            description={sections.caseStudies.description}
+          />
+        ) : null}
 
-        {/* 10. People */}
-        <TeamSection />
+        <TestimonialsSection
+          variant="dark"
+          overlineText={sections.testimonials.overlineText}
+          title={
+            <>
+              What <span className="italic">{sections.testimonials.titleItalic}</span> say
+            </>
+          }
+          description={sections.testimonials.description}
+          items={sections.testimonials.items}
+        />
 
-        {/* 11. Objections */}
+        <TeamSection
+          overlineText={sections.team.overlineText}
+          title={
+            <>
+              A senior <span className="italic">{sections.team.titleItalic}</span>
+            </>
+          }
+          intro={sections.team.intro}
+        />
+
         <FaqSection
           items={location.faqs}
           intro={location.faqIntro}
@@ -133,7 +201,6 @@ export default function PakistanLocationPage() {
           }
         />
 
-        {/* 12. Convert */}
         <section className="w-full bg-horizon-navy text-white">
           <div className={cn(container, sectionPad, "text-center")}>
             <Reveal>

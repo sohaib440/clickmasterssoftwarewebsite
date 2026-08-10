@@ -30,19 +30,19 @@ export function TrustNumbersSection({
         dark ? "bg-black text-white" : "bg-white text-horizon-navy",
         className
       )}
-      aria-label="Trust numbers"
+      aria-label="Local trust"
     >
       <div className={cn(container, sectionPad)}>
         <Reveal>
           <div
             className={cn(
-              "rounded-2xl border px-4 py-6 sm:px-8",
+              "rounded-[2rem] border px-5 py-8 sm:rounded-[2.5rem] sm:px-10 sm:py-10",
               dark
-                ? "border-white/10 bg-zinc-950/90"
+                ? "border-white/10 bg-zinc-950"
                 : "border-horizon-border bg-horizon-cream/60"
             )}
           >
-            <dl className="grid grid-cols-2 gap-6 sm:grid-cols-4 sm:gap-0">
+            <dl className="grid grid-cols-2 gap-8 sm:grid-cols-4 sm:gap-0">
               {stats.map((stat) => {
                 const Icon = statIcons[stat.icon];
                 return (
@@ -51,12 +51,13 @@ export function TrustNumbersSection({
                     className="flex flex-col items-center text-center sm:px-4"
                   >
                     <Icon
-                      className={cn("mb-2 h-5 w-5", dark ? "text-primary" : "text-primary")}
+                      className="mb-3 h-5 w-5 text-primary sm:h-6 sm:w-6"
+                      strokeWidth={1.75}
                       aria-hidden
                     />
                     <dt
                       className={cn(
-                        "font-heading text-2xl font-normal md:text-3xl",
+                        "font-heading text-3xl font-normal tracking-tight md:text-4xl lg:text-[2.75rem]",
                         dark ? "text-white" : "text-horizon-navy"
                       )}
                     >
@@ -64,8 +65,8 @@ export function TrustNumbersSection({
                     </dt>
                     <dd
                       className={cn(
-                        "mt-1 text-xs sm:text-sm",
-                        dark ? "text-white/60" : "text-horizon-muted"
+                        "mt-2 text-sm font-medium sm:text-base",
+                        dark ? "text-white" : "text-horizon-muted"
                       )}
                     >
                       {stat.label}

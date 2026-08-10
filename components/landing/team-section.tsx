@@ -6,22 +6,29 @@ import { motionStagger } from "@/lib/landing/motion";
 import { teamIntro, teamMembers } from "@/data/landingPage";
 import { cn } from "@/lib/utils";
 
-export function TeamSection() {
+type TeamSectionProps = {
+  overlineText?: string;
+  title?: React.ReactNode;
+  intro?: string;
+};
+
+export function TeamSection({
+  overlineText = "Leading software company team",
+  title = (
+    <>
+      A small <span className="italic">team</span>.
+    </>
+  ),
+  intro = teamIntro,
+}: TeamSectionProps = {}) {
   return (
     <section id="team" className="w-full bg-white text-horizon-navy">
       <LandingContainer>
-        <SectionHeading
-          overlineText="Leading software company team"
-          title={
-            <>
-              A small <span className="italic">team</span>.
-            </>
-          }
-        />
+        <SectionHeading overlineText={overlineText} title={title} />
 
         <Reveal delay={motionStagger}>
           <p className="mt-3 mb-8 max-w-3xl text-justify text-base leading-relaxed text-horizon-navy md:mb-10 md:text-lg">
-            {teamIntro}
+            {intro}
           </p>
         </Reveal>
 

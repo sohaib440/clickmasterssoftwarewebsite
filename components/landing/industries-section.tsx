@@ -2,14 +2,14 @@ import Link from "next/link";
 
 import { SectionHeading } from "@/components/landing/section-heading";
 import { contactPath, container, sectionPad } from "@/lib/landing/constants";
-import { industries } from "@/data/industriesPage";
+import { industries as defaultIndustries, type Industry } from "@/data/industriesPage";
 import { cn } from "@/lib/utils";
 
 function IndustryCell({
   item,
   className,
 }: {
-  item: (typeof industries)[number];
+  item: Industry;
   className?: string;
 }) {
   return (
@@ -46,13 +46,17 @@ type IndustriesSectionProps = {
   overlineText?: string;
   title?: React.ReactNode;
   description?: string;
+  items?: Industry[];
 };
 
 export function IndustriesSection({
   overlineText = "Industries we serve",
   title = "Software solutions for every sector",
   description = "As a best software house for complex industry work, we tailor products to the workflows, compliance needs, and growth goals of every sector we support.",
+  items,
 }: IndustriesSectionProps = {}) {
+  const list = items?.length ? items : defaultIndustries;
+
   return (
     <section id="industries" className="relative w-full overflow-hidden bg-white text-horizon-navy">
       <div className={cn(container, sectionPad, "relative")}>
@@ -67,7 +71,7 @@ export function IndustriesSection({
       <div className={cn(container, "relative pb-8 md:pb-10 lg:pb-12")}>
         <div className="overflow-hidden">
           <div className="grid grid-cols-1 border-l border-t border-horizon-border md:grid-cols-2 lg:grid-cols-3">
-            {industries.map((item) => (
+            {list.map((item) => (
               <IndustryCell
                 key={item.slug}
                 item={item}

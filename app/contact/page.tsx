@@ -4,7 +4,13 @@ import { ContactPage } from "@/components/pages/contact-page";
 import { siteBrand, siteMetadata } from "@/lib/landing/brand";
 import { parseContactSearchParams } from "@/lib/landing/contact-form-state";
 import { selfCanonical } from "@/seo/canonical";
-import { breadcrumbSchema, contactPageSchema } from "@/seo/schema";
+import {
+  breadcrumbSchema,
+  contactPageSchema,
+  jsonLdGraph,
+  localBusinessSchema,
+  organizationSchema,
+} from "@/seo/schema";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -20,13 +26,15 @@ export default async function ContactRoute({
   const params = await searchParams;
   const initialValues = parseContactSearchParams(params);
 
-  const schemas = [
+  const schemas = jsonLdGraph([
+    organizationSchema,
+    localBusinessSchema,
     contactPageSchema,
     breadcrumbSchema([
       { name: "Home", path: "/" },
       { name: "Contact", path: "/contact" },
     ]),
-  ];
+  ]);
 
   return (
     <>

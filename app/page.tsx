@@ -23,6 +23,7 @@ import {
   breadcrumbSchema,
   homepageFaqSchema,
   homepageServiceSchema,
+  jsonLdGraph,
   localBusinessSchema,
   organizationSchema,
   reviewSchema,
@@ -32,7 +33,6 @@ import {
 export const metadata: Metadata = {
   title: pageTitle(siteMetadata.title),
   description: siteMetadata.description,
-  keywords: [...siteMetadata.keywords],
   ...selfCanonical("/"),
   openGraph: {
     title: pageTitleString(siteMetadata.title),
@@ -63,23 +63,29 @@ function DeferredSection({ children }: { children: React.ReactNode }) {
 }
 
 export default function Home() {
-  const homepageReviews = testimonials.slice(0, 3).map((item) =>
+  const homepageReviews = testimonials.slice(0, 3).map((item, index) =>
     reviewSchema({
       authorName: item.author,
       reviewBody: item.quote,
       jobTitle: item.role,
+      idSuffix: String(index + 1),
     }),
   );
 
-  const schemas = [
+  const schemas = jsonLdGraph([
     organizationSchema,
-    localBusinessSchema,
+    {
+      ...localBusinessSchema,
+      review: homepageReviews.map((review) => ({
+        "@id": review["@id"],
+      })),
+    },
     webSiteSchema,
     homepageServiceSchema,
     homepageFaqSchema,
     breadcrumbSchema([{ name: "Home", path: "/" }]),
     ...homepageReviews,
-  ];
+  ]);
 
   return (
     <div className="flex min-h-full w-full max-w-full flex-col overflow-x-clip bg-black text-white">

@@ -5,7 +5,7 @@ import { CardImage } from "@/components/landing/card-image";
 import { Reveal } from "@/components/landing/reveal";
 import { SectionHeading } from "@/components/landing/section-heading";
 import { pakistanCities, pakistanLocation } from "@/data/locations";
-import { btnOutline, card, cardSoft, container, sectionPad } from "@/lib/landing/constants";
+import { btnOutline, card, cardSoft, container, sectionPad, teamPath } from "@/lib/landing/constants";
 import { aboutSection } from "@/data/landingPage";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
@@ -30,14 +30,28 @@ type AboutSectionContent = {
 
 type AboutSectionProps = {
   content?: AboutSectionContent;
+  /** When false, hides the values grid (use a dedicated Why Choose section instead). */
+  showValues?: boolean;
 };
 
 /**
  * Resolve `[[anchor text]]` to a real internal URL.
- * City names → that city page; Pakistan / generic software-house anchors → Pakistan hub.
+ * Team → /team; city names → that city page; Pakistan / software-company anchors → Pakistan hub.
  */
-function resolveInternalWikiHref(label: string): string {
+export function resolveInternalWikiHref(label: string): string {
   const lower = label.toLowerCase().trim();
+
+  if (
+    lower === "team" ||
+    lower === "our team" ||
+    lower === "the team" ||
+    lower === "dedicated team" ||
+    lower === "experienced team" ||
+    lower === "experienced & certified team"
+  ) {
+    return teamPath;
+  }
+
   const cities = [...pakistanCities].sort((a, b) => b.city.length - a.city.length);
 
   for (const city of cities) {
@@ -49,8 +63,8 @@ function resolveInternalWikiHref(label: string): string {
   return pakistanLocation.href;
 }
 
-/** Renders `[[anchor text]]` as contextual internal links (city or Pakistan hub). */
-function renderParagraphWithCountryLinks(paragraph: string): ReactNode {
+/** Renders `[[anchor text]]` as contextual internal links (city, Pakistan hub, or team). */
+export function renderParagraphWithCountryLinks(paragraph: string): ReactNode {
   const parts = paragraph.split(/(\[\[[^\]]+\]\])/g);
   if (parts.length === 1) return paragraph;
 
@@ -70,7 +84,7 @@ function renderParagraphWithCountryLinks(paragraph: string): ReactNode {
   });
 }
 
-export function AboutSection({ content }: AboutSectionProps = {}) {
+export function AboutSection({ content, showValues = true }: AboutSectionProps = {}) {
   const data = content ?? {
     overlineText: "About us",
     title: "Who Is Next Software Development Company?",
@@ -120,20 +134,22 @@ export function AboutSection({ content }: AboutSectionProps = {}) {
           </Reveal>
         </div>
 
-        <ul className="mt-12 grid gap-4 md:grid-cols-3 lg:mt-14">
-          {data.values.map((value, i) => (
-            <li key={value.title}>
-              <Reveal delay={i * motionStagger} className={cn(cardSoft, "h-full p-6 lg:p-7")}>
-                <h3 className="font-heading text-xl font-medium text-horizon-navy">
-                  {value.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-justify text-horizon-muted">
-                  {value.description}
-                </p>
-              </Reveal>
-            </li>
-          ))}
-        </ul>
+        {showValues && data.values.length > 0 ? (
+          <ul className="mt-12 grid gap-4 md:grid-cols-3 lg:mt-14">
+            {data.values.map((value, i) => (
+              <li key={value.title}>
+                <Reveal delay={i * motionStagger} className={cn(cardSoft, "h-full p-6 lg:p-7")}>
+                  <h3 className="font-heading text-xl font-medium text-horizon-navy">
+                    {value.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-justify text-horizon-muted">
+                    {value.description}
+                  </p>
+                </Reveal>
+              </li>
+            ))}
+          </ul>
+        ) : null}
       </div>
     </section>
   );

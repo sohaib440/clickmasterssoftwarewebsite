@@ -14,10 +14,13 @@ function StarIcon({
   filled,
   className,
   square,
+  pureWhite,
 }: {
   filled: boolean;
   className?: string;
   square?: boolean;
+  /** Solid white fill (no muted opacity) for dark badges without a live score */
+  pureWhite?: boolean;
 }) {
   if (square) {
     return (
@@ -44,7 +47,13 @@ function StarIcon({
     >
       <path
         d="M12 2.5l2.9 5.88 6.49.94-4.7 4.58 1.11 6.47L12 17.77l-5.8 3.05 1.11-6.47-4.7-4.58 6.49-.94L12 2.5z"
-        className={filled ? "fill-current" : "fill-current opacity-25"}
+        className={
+          pureWhite
+            ? "fill-white"
+            : filled
+              ? "fill-current"
+              : "fill-current opacity-25"
+        }
       />
     </svg>
   );
@@ -59,9 +68,14 @@ function Stars({
 }) {
   const rating = Math.max(0, Math.min(5, platform.rating));
   const full = Math.round(rating);
+  const clutchWhite =
+    platform.starTone === "clutch" && variant === "dark" && rating <= 0;
+
   const toneClass =
     platform.starTone === "clutch"
-      ? "text-[#ff3d2e]"
+      ? variant === "dark"
+        ? "text-white"
+        : "text-horizon-navy"
       : platform.starTone === "google"
         ? "text-[#fbbc04]"
         : platform.starTone === "trustpilot"
@@ -70,25 +84,13 @@ function Stars({
             ? "text-white"
             : "text-horizon-navy";
 
-  if (rating <= 0) {
-    return (
-      <span
-        className={cn(
-          "text-[10px] font-medium uppercase tracking-[0.14em]",
-          variant === "dark" ? "text-white/55" : "text-horizon-muted"
-        )}
-      >
-        View profile
-      </span>
-    );
-  }
-
   return (
     <span className={cn("inline-flex items-center gap-0.5", toneClass)} aria-hidden>
       {Array.from({ length: 5 }, (_, index) => (
         <StarIcon
           key={index}
-          filled={index < full}
+          filled={rating > 0 && index < full}
+          pureWhite={clutchWhite}
           square={platform.starTone === "trustpilot"}
         />
       ))}

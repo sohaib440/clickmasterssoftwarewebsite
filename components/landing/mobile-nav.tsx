@@ -149,11 +149,11 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
         )}
       >
         <div className="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3 sm:px-5 sm:py-4">
-          <SiteLogo
+          {/* <SiteLogo
             className="min-w-0 max-w-[min(70vw,14rem)]"
             imageClassName="h-9 w-auto max-w-full sm:h-10"
             onNavigate={onClose}
-          />
+          /> */}
           <button
             type="button"
             onClick={onClose}

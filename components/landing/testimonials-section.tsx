@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { LandingContainer, sectionHeadingGap } from "@/components/landing/landing-container";
 import { Reveal } from "@/components/landing/reveal";
 import { SectionHeading } from "@/components/landing/section-heading";
-import { card } from "@/lib/landing/constants";
+import { card, cardDark } from "@/lib/landing/constants";
 import { motionStagger } from "@/lib/landing/motion";
 import { testimonials } from "@/data/landingPage";
 import { cn } from "@/lib/utils";
@@ -32,7 +32,9 @@ type TestimonialItem = {
 type TestimonialsSectionProps = {
   overlineText?: string;
   title?: React.ReactNode;
+  description?: string;
   items?: readonly TestimonialItem[];
+  variant?: "light" | "dark";
 };
 
 export function TestimonialsSection({
@@ -42,12 +44,15 @@ export function TestimonialsSection({
       What <span className="italic">partners</span> say
     </>
   ),
+  description,
   items,
+  variant = "light",
 }: TestimonialsSectionProps = {}) {
   const reviews = items ?? testimonials;
   const pageCount = Math.max(1, Math.ceil(reviews.length / PAGE_SIZE));
   const [page, setPage] = useState(0);
   const [visible, setVisible] = useState(true);
+  const dark = variant === "dark";
 
   useEffect(() => {
     if (pageCount <= 1) return;
@@ -71,11 +76,16 @@ export function TestimonialsSection({
   }
 
   return (
-    <section id="testimonials" className="w-full bg-horizon-cream">
+    <section
+      id="testimonials"
+      className={cn("w-full", dark ? "bg-black text-white" : "bg-horizon-cream")}
+    >
       <LandingContainer>
         <SectionHeading
+          dark={dark}
           overlineText={overlineText}
           title={title}
+          description={description}
           className={sectionHeadingGap}
         />
 
@@ -90,26 +100,53 @@ export function TestimonialsSection({
             <li key={`${item.author}-${page}`}>
               <Reveal
                 delay={i * motionStagger}
-                className={cn(card, "flex h-full flex-col p-4 lg:p-5")}
+                className={cn(
+                  dark ? cardDark : card,
+                  "flex h-full flex-col p-4 lg:p-5"
+                )}
               >
                 {item.source ? (
-                  <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.16em] text-horizon-muted">
+                  <p
+                    className={cn(
+                      "mb-3 text-[10px] font-medium uppercase tracking-[0.16em]",
+                      dark ? "text-white/50" : "text-horizon-muted"
+                    )}
+                  >
                     Via {item.source}
                   </p>
                 ) : null}
-                <blockquote className="flex-1 text-sm leading-relaxed text-left text-horizon-muted md:text-[15px]">
+                <blockquote
+                  className={cn(
+                    "flex-1 text-left text-sm leading-relaxed md:text-[15px]",
+                    dark ? "text-white/70" : "text-horizon-muted"
+                  )}
+                >
                   &ldquo;{item.quote}&rdquo;
                 </blockquote>
-                <footer className="mt-4 flex items-center gap-3 border-t border-horizon-border pt-4">
+                <footer
+                  className={cn(
+                    "mt-4 flex items-center gap-3 border-t pt-4",
+                    dark ? "border-white/10" : "border-horizon-border"
+                  )}
+                >
                   <div
-                    className="flex size-12 shrink-0 items-center justify-center rounded-full border border-horizon-border bg-horizon-navy/5 font-heading text-sm font-medium text-horizon-navy"
+                    className={cn(
+                      "flex size-12 shrink-0 items-center justify-center rounded-full border font-heading text-sm font-medium",
+                      dark
+                        ? "border-white/15 bg-white/5 text-white"
+                        : "border-horizon-border bg-horizon-navy/5 text-horizon-navy"
+                    )}
                     aria-hidden
                   >
                     {getInitials(item.author)}
                   </div>
                   <div className="min-w-0">
-                    <p className="font-medium text-horizon-navy">{item.author}</p>
-                    <p className="mt-1 text-sm text-horizon-muted">{item.role}</p>
+                    <p className={cn("font-medium", dark ? "text-white" : "text-horizon-navy")}>
+                      {item.author}
+                    </p>
+                    <p className={cn("mt-1 text-sm", dark ? "text-white/55" : "text-horizon-muted")}>
+                      {item.role}
+                    </p>
                   </div>
                 </footer>
               </Reveal>
@@ -133,8 +170,12 @@ export function TestimonialsSection({
                 className={cn(
                   "h-2 rounded-full transition-all duration-300",
                   index === page
-                    ? "w-6 bg-horizon-navy"
-                    : "w-2 bg-horizon-navy/25 hover:bg-horizon-navy/45"
+                    ? dark
+                      ? "w-6 bg-primary"
+                      : "w-6 bg-horizon-navy"
+                    : dark
+                      ? "w-2 bg-white/25 hover:bg-white/45"
+                      : "w-2 bg-horizon-navy/25 hover:bg-horizon-navy/45"
                 )}
                 aria-label={`Show reviews group ${index + 1}`}
                 aria-current={index === page ? "true" : undefined}
