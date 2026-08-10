@@ -199,7 +199,7 @@ export default async function CityLocationPage({ params }: CityLocationPageProps
         ) : null}
 
         {/* Testimonials */}
-        <TestimonialsSection />
+        <TestimonialsSection variant="dark" />
 
         {/* Team */}
         <TeamSection />

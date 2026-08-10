@@ -155,7 +155,7 @@ export default function PakistanLocationPage() {
         ) : null}
 
         {/* Testimonials */}
-        <TestimonialsSection />
+        <TestimonialsSection variant="dark" />
 
         {/* Team */}
         <TeamSection />
