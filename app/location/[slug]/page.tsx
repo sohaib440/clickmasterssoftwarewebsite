@@ -3,23 +3,29 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import {
-  LocationFactsSection,
   LocationHero,
+  LocationWhyChooseSection,
+  SubLocationsSection,
 } from "@/components/location";
 import { AboutSection } from "@/components/landing/about-section";
 import { FaqSection } from "@/components/landing/faq-section";
 import { IndustriesSection } from "@/components/landing/industries-section";
+import { ProcessSection } from "@/components/landing/process-section";
 import { ProjectsSection } from "@/components/landing/projects-section";
 import { Reveal } from "@/components/landing/reveal";
 import { ServicesSection } from "@/components/landing/services-section";
 import { SiteHeader } from "@/components/landing/navbar";
 import { TeamSection } from "@/components/landing/team-section";
+import { TechStackSection } from "@/components/landing/tech-stack-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
-import { TrustedPartnersSection } from "@/components/landing/clients-section";
+import { TrustNumbersSection } from "@/components/landing/trust-numbers-section";
+import { CaseStudiesSection } from "@/components/case-study/case-studies-section";
+import { caseStudies } from "@/data/caseStudy";
 import {
   getAllPakistanCitySlugs,
   getPakistanCityBySlug,
 } from "@/data/cities-in-pakistan";
+import { getNearbyCitiesFor } from "@/data/nearby-cities";
 import { btnOnDark, container, sectionPad } from "@/lib/landing/constants";
 import { selfCanonical, pageTitle, pageTitleString } from "@/seo/canonical";
 import { cn } from "@/lib/utils";
@@ -74,6 +80,8 @@ export default async function CityLocationPage({ params }: CityLocationPageProps
   const cityName =
     location.breadcrumbs?.[location.breadcrumbs.length - 1]?.label ?? location.country;
 
+  const nearbyCities = getNearbyCitiesFor(cityName);
+
   const breadcrumbItems =
     location.breadcrumbs?.map((crumb) => ({
       name: crumb.label,
@@ -113,14 +121,37 @@ export default async function CityLocationPage({ params }: CityLocationPageProps
       <SiteHeader />
 
       <main className="flex w-full flex-1 flex-col overflow-x-clip">
+        {/* Breadcrumb + Hero */}
         <LocationHero location={location} />
 
-        <TrustedPartnersSection className="border-horizon-border/60 bg-white" />
+        {/* Local Trust */}
+        <TrustNumbersSection />
 
-        <AboutSection content={location.about} />
+        {/* Who we are */}
+        <AboutSection
+          content={{ ...location.about, overlineText: "Who we are" }}
+          showValues={false}
+        />
 
+        {/* Services */}
         <ServicesSection />
 
+        {/* Why Choose Us */}
+        <LocationWhyChooseSection cityName={cityName} values={location.about.values} />
+
+        {/* Recent Projects */}
+        <ProjectsSection
+          id="recent-projects"
+          projects={location.projects}
+          overlineText="Recent projects"
+          title={
+            <>
+              Recent projects from <span className="italic">{cityName}</span>
+            </>
+          }
+        />
+
+        {/* Industries */}
         <IndustriesSection
           overlineText="Industries"
           title={
@@ -131,23 +162,49 @@ export default async function CityLocationPage({ params }: CityLocationPageProps
           description={location.industries.subtitle}
         />
 
-        <LocationFactsSection facts={location.facts} />
+        {/* Technologies */}
+        <TechStackSection />
 
-        <ProjectsSection
-          id="case-work"
-          projects={location.projects}
-          overlineText={location.caseWork?.overlineText ?? "Recent projects"}
-          title={
-            <>
-              Recent projects from <span className="italic">{cityName}</span>
-            </>
-          }
-        />
+        {/* Development Process */}
+        <ProcessSection />
 
+        {/* Service Areas */}
+        {nearbyCities.length > 0 ? (
+          <SubLocationsSection
+            country={cityName}
+            cities={nearbyCities}
+            overlineText="Service areas"
+            title={
+              <>
+                {cityName} and surrounding <span className="italic text-primary/95">areas</span>
+              </>
+            }
+            description={`We support businesses in ${cityName} and nearby cities with the same software house delivery standards — discovery, build, launch, and ongoing support.`}
+            metricLabel="nearby cities · regional delivery"
+          />
+        ) : null}
+
+        {/* Case Studies */}
+        {caseStudies.length > 0 ? (
+          <CaseStudiesSection
+            items={caseStudies.slice(0, 6)}
+            overlineText="Case studies"
+            title={
+              <>
+                Results from <span className="italic">real engagements</span>
+              </>
+            }
+            description={`Selected case studies showing how we deliver outcomes for businesses in ${cityName} and across Pakistan.`}
+          />
+        ) : null}
+
+        {/* Testimonials */}
         <TestimonialsSection />
 
+        {/* Team */}
         <TeamSection />
 
+        {/* FAQ */}
         <FaqSection
           items={location.faqs}
           intro={location.faqIntro}
@@ -159,6 +216,7 @@ export default async function CityLocationPage({ params }: CityLocationPageProps
           }
         />
 
+        {/* CTA */}
         <section className="w-full bg-horizon-navy text-white">
           <div className={cn(container, sectionPad, "text-center")}>
             <Reveal>

@@ -30,6 +30,8 @@ type AboutSectionContent = {
 
 type AboutSectionProps = {
   content?: AboutSectionContent;
+  /** When false, hides the values grid (use a dedicated Why Choose section instead). */
+  showValues?: boolean;
 };
 
 /**
@@ -70,7 +72,7 @@ function renderParagraphWithCountryLinks(paragraph: string): ReactNode {
   });
 }
 
-export function AboutSection({ content }: AboutSectionProps = {}) {
+export function AboutSection({ content, showValues = true }: AboutSectionProps = {}) {
   const data = content ?? {
     overlineText: "About us",
     title: "Who Is Next Software Development Company?",
@@ -120,20 +122,22 @@ export function AboutSection({ content }: AboutSectionProps = {}) {
           </Reveal>
         </div>
 
-        <ul className="mt-12 grid gap-4 md:grid-cols-3 lg:mt-14">
-          {data.values.map((value, i) => (
-            <li key={value.title}>
-              <Reveal delay={i * motionStagger} className={cn(cardSoft, "h-full p-6 lg:p-7")}>
-                <h3 className="font-heading text-xl font-medium text-horizon-navy">
-                  {value.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-justify text-horizon-muted">
-                  {value.description}
-                </p>
-              </Reveal>
-            </li>
-          ))}
-        </ul>
+        {showValues && data.values.length > 0 ? (
+          <ul className="mt-12 grid gap-4 md:grid-cols-3 lg:mt-14">
+            {data.values.map((value, i) => (
+              <li key={value.title}>
+                <Reveal delay={i * motionStagger} className={cn(cardSoft, "h-full p-6 lg:p-7")}>
+                  <h3 className="font-heading text-xl font-medium text-horizon-navy">
+                    {value.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-justify text-horizon-muted">
+                    {value.description}
+                  </p>
+                </Reveal>
+              </li>
+            ))}
+          </ul>
+        ) : null}
       </div>
     </section>
   );

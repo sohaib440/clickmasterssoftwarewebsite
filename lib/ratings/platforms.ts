@@ -12,7 +12,7 @@ export type ReviewPlatform = {
   reviewCount?: number;
   /** How stars are painted to match each platform */
   starTone: "white" | "clutch" | "trustpilot" | "google";
-  /** Prefer showing "4.9/5.0" under the name (Clutch-style) */
+  /** Prefer showing "4.9/5.0" under the name when a live score exists (Clutch-style) */
   showScore?: boolean;
 };
 
@@ -32,8 +32,9 @@ export const reviewPlatformFallbacks: ReviewPlatform[] = [
     slug: "clutch",
     name: "Clutch",
     href: siteSocial.clutch,
-    rating: 4.9,
-    showScore: true,
+    // No fabricated score — only show stars/score when live Clutch data confirms one.
+    rating: 0,
+    showScore: false,
     starTone: "clutch",
   },
   {

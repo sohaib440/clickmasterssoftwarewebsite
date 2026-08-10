@@ -172,10 +172,21 @@ export async function getReviewPlatforms(): Promise<ReviewPlatform[]> {
       };
     }
 
-    return {
+    const next = {
       ...platform,
       ...override,
       rating: override.rating ?? platform.rating,
     };
+
+    // Never invent a Clutch score if live data did not provide one.
+    if (platform.slug === "clutch" && (override.rating == null || next.rating <= 0)) {
+      return { ...next, rating: 0, showScore: false };
+    }
+
+    if (platform.slug === "clutch" && next.rating > 0) {
+      return { ...next, showScore: true };
+    }
+
+    return next;
   });
 }
