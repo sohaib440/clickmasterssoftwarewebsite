@@ -118,7 +118,6 @@ export type FaqItem = {
 
 // ===== data/landing/hero.ts =====
 export const homeHero = {
-  eyebrow: "Software house & software company",
   headlineBefore: "We build",
   headlineEmphasis: "powerful software",
   headlineAfter:
@@ -1264,7 +1263,7 @@ export const homepageSeo = {
 export const homepageSectionCopy = {
   about: {
     overlineText: "About us",
-    title: "Who Is Next Software Development Company?",
+    title: "Who we are?",
   },
   services: {
     overlineText: "What we deliver",

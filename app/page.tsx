@@ -15,6 +15,7 @@ import {
   TeamSection,
   TechStackSection,
   TestimonialsSection,
+  WhyChooseSection,
 } from "@/components/landing";
 import { siteBrand } from "@/lib/landing/brand";
 import { homepageSeo, testimonials } from "@/data/homepage-content";
@@ -98,10 +99,13 @@ export default function Home() {
       <main className="flex w-full max-w-full flex-1 flex-col overflow-x-clip">
         <TrustedPartnersSection />
         <DeferredSection>
-          <AboutSection />
+          <AboutSection showValues={false} />
         </DeferredSection>
         <DeferredSection>
           <ServicesSection />
+        </DeferredSection>
+        <DeferredSection>
+          <WhyChooseSection />
         </DeferredSection>
         <IndustriesSection />
         <DeferredSection>

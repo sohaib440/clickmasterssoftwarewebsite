@@ -69,16 +69,7 @@ export function HeroSection() {
         <div className="grid min-w-0 items-center gap-10 lg:grid-cols-[minmax(0,1.75fr)_minmax(0,22rem)] lg:gap-10 xl:grid-cols-[minmax(0,1.9fr)_minmax(0,23rem)] xl:gap-14">
           <div className="min-w-0 max-w-none lg:max-w-[58rem] xl:max-w-[64rem]">
             <Reveal immediate delay={0}>
-              <div className="inline-flex items-center gap-2 rounded-full border border-primary/50 px-4 py-1.5">
-                <Globe className="h-3.5 w-3.5 shrink-0 text-primary" aria-hidden />
-                <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-white/90 sm:text-[11px]">
-                  {homeHero.eyebrow}
-                </span>
-              </div>
-            </Reveal>
-
-            <Reveal immediate delay={motionStagger}>
-              <h1 className="mt-5 max-w-none text-left font-heading text-4xl font-normal leading-[1.15] tracking-tight text-white sm:text-5xl lg:text-[3.25rem] xl:text-[3.4rem]">
+              <h1 className="max-w-none text-left font-heading text-4xl font-normal leading-[1.15] tracking-tight text-white sm:text-5xl lg:text-[3.25rem] xl:text-[3.4rem]">
                 {homeHero.headlineBefore}{" "}
                 <span className="text-primary">{homeHero.headlineEmphasis}</span>{" "}
                 {homeHero.headlineAfter}
