@@ -214,7 +214,15 @@ export default async function CityLocationPage({ params }: CityLocationPageProps
         <TestimonialsSection
           variant="dark"
           overlineText={sections.testimonials.overlineText}
-          title={sections.testimonials.title}
+          title={
+            sections.testimonials.title === "Local engagement examples" ? (
+              <>
+                Local <span className="italic">engagement</span> examples
+              </>
+            ) : (
+              sections.testimonials.title
+            )
+          }
           description={sections.testimonials.description}
           items={sections.testimonials.items}
         />

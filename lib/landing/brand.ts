@@ -44,5 +44,5 @@ export const siteSocial = {
 export const siteMetadata = {
   title: "Software House & Software Development Company",
   description:
-    "Next Software Development Company is a top rated software house and leading software development company helping startups, SMBs, and enterprises build web apps, mobile apps, AI features, CRM, ERP, SaaS platforms, and cloud systems worldwide.",
+    "Software house and software development company building web apps, mobile apps, AI, CRM, ERP, and SaaS platforms for startups and enterprises worldwide.",
 } as const;

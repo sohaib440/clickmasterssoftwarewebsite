@@ -16,9 +16,9 @@ import {
   TechStackSection,
   TestimonialsSection,
 } from "@/components/landing";
-import { testimonials } from "@/data/landingPage";
-import { siteBrand, siteMetadata } from "@/lib/landing/brand";
-import { selfCanonical, pageTitle, pageTitleString } from "@/seo/canonical";
+import { siteBrand } from "@/lib/landing/brand";
+import { homepageSeo, testimonials } from "@/data/homepage-content";
+import { selfCanonical } from "@/seo/canonical";
 import {
   breadcrumbSchema,
   homepageFaqSchema,
@@ -31,12 +31,12 @@ import {
 } from "@/seo/schema";
 
 export const metadata: Metadata = {
-  title: pageTitle(siteMetadata.title),
-  description: siteMetadata.description,
+  title: { absolute: homepageSeo.title },
+  description: homepageSeo.description,
   ...selfCanonical("/"),
   openGraph: {
-    title: pageTitleString(siteMetadata.title),
-    description: siteMetadata.description,
+    title: homepageSeo.title,
+    description: homepageSeo.description,
     type: "website",
     locale: "en_PK",
     url: siteBrand.url,
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: pageTitleString(siteMetadata.title),
-    description: siteMetadata.description,
+    title: homepageSeo.title,
+    description: homepageSeo.description,
     images: [siteBrand.logo.src],
   },
 };

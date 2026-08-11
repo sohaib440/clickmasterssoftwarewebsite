@@ -1,5 +1,6 @@
 /**
- * @deprecated Import from `@/data/landing` for new code.
- * This barrel preserves backward compatibility with existing imports.
+ * Homepage + shared landing content.
+ * Prefer editing `data/homepage-content.ts` (complete home page content).
  */
-export * from "./landing";
+export * from "./homepage-content";
+export * from "./landing/services-nav";

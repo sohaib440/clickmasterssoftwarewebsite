@@ -172,9 +172,15 @@ export default function PakistanLocationPage() {
           variant="dark"
           overlineText={sections.testimonials.overlineText}
           title={
-            <>
-              What <span className="italic">{sections.testimonials.titleItalic}</span> say
-            </>
+            sections.testimonials.title === "Local engagement examples" ? (
+              <>
+                Local <span className="italic">engagement</span> examples
+              </>
+            ) : (
+              <>
+                What <span className="italic">{sections.testimonials.titleItalic}</span> say
+              </>
+            )
           }
           description={sections.testimonials.description}
           items={sections.testimonials.items}
