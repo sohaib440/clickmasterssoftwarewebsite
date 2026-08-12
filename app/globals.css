@@ -73,13 +73,13 @@
   --popover: #ffffff;
   --popover-foreground: var(--horizon-navy);
   --primary: #d4af37;
-  --primary-foreground: #111111;
+  --primary-foreground: #ffffff;
   --secondary: var(--horizon-peach);
   --secondary-foreground: var(--horizon-navy);
   --muted: var(--horizon-sky);
   --muted-foreground: var(--horizon-muted);
   --accent: #d4af37;
-  --accent-foreground: #111111;
+  --accent-foreground: #ffffff;
   --section-muted: var(--horizon-peach);
   --section-accent: var(--horizon-sky);
   --destructive: #c1121f;
@@ -118,6 +118,17 @@
   .bg-white :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label),
   .bg-horizon-cream :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label) {
     color: var(--horizon-navy);
+  }
+
+  /*
+   * Dark CTAs nested inside MarketingShell (`bg-horizon-cream`) must beat the
+   * cream rule above — otherwise headings/paragraphs stay navy on navy.
+   */
+  .bg-horizon-cream .bg-horizon-navy :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label),
+  .bg-white .bg-horizon-navy :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label),
+  .bg-horizon-cream .bg-black :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label),
+  .bg-white .bg-black :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label) {
+    color: #ffffff;
   }
 }
 
