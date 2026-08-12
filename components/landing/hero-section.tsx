@@ -12,7 +12,6 @@ import {
 } from "@/lib/landing/constants";
 import { heroBackgroundVideo, heroFeatures, homeHero, stats } from "@/data/landingPage";
 import { motionStagger } from "@/lib/landing/motion";
-import { cn } from "@/lib/utils";
 
 const statIcons = {
   users: Users,
@@ -69,19 +68,35 @@ export function HeroSection() {
         <div className="grid min-w-0 items-center gap-10 lg:grid-cols-[minmax(0,1.75fr)_minmax(0,22rem)] lg:gap-10 xl:grid-cols-[minmax(0,1.9fr)_minmax(0,23rem)] xl:gap-14">
           <div className="min-w-0 max-w-none lg:max-w-[58rem] xl:max-w-[64rem]">
             <Reveal immediate delay={0}>
-              <h1 className="max-w-none text-left font-heading text-4xl font-normal leading-[1.15] tracking-tight text-white sm:text-5xl lg:text-[3.25rem] xl:text-[3.4rem]">
+              <div className="flex items-center gap-3">
+                <span className="motion-line h-px w-8 !bg-[#d4af37]/70" aria-hidden />
+                <p className="text-[10px] font-medium uppercase tracking-[0.22em] !text-[#d4af37] sm:text-[11px]">
+                  {homeHero.eyebrow}
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal immediate delay={motionStagger}>
+              <h1 className="mt-5 max-w-none text-left font-heading text-4xl font-normal leading-[1.12] tracking-tight text-white sm:text-5xl lg:text-[3.25rem] xl:text-[3.45rem]">
                 {homeHero.headlineBefore}{" "}
-                <span className="text-primary">{homeHero.headlineEmphasis}</span>{" "}
-                {homeHero.headlineAfter}
+                <span className="!text-[#d4af37]">{homeHero.headlineEmphasis}</span>{" "}
+                {homeHero.headlineMiddle}{" "}
+                <span className="italic !text-[#d4af37]">{homeHero.headlineAfter}</span>
               </h1>
             </Reveal>
 
             <Reveal immediate delay={motionStagger * 2}>
-              <p className="mt-5 max-w-none text-left text-base leading-relaxed text-white/70 md:text-lg lg:max-w-[56rem] lg:text-justify">
-                {homeHero.subtextBefore}
-                <span className="font-medium text-primary">{homeHero.subtextHighlight}</span>
-                {homeHero.subtextAfter}
-              </p>
+              <div className="mt-5 max-w-none space-y-4 text-left text-base leading-relaxed text-white/70 md:text-lg lg:max-w-[56rem] lg:text-justify">
+                <p>{homeHero.description[0]}</p>
+                <p>{homeHero.description[1]}</p>
+                <p className="font-medium text-white">
+                  Your idea deserves more than code. It deserves a{" "}
+                  <span className="italic !text-[#d4af37]">
+                    technology partner who builds it right
+                  </span>
+                  .
+                </p>
+              </div>
             </Reveal>
 
             <Reveal immediate delay={motionStagger * 2.5}>

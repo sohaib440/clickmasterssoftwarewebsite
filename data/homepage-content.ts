@@ -118,15 +118,16 @@ export type FaqItem = {
 
 // ===== data/landing/hero.ts =====
 export const homeHero = {
-  headlineBefore: "We build",
-  headlineEmphasis: "powerful software",
-  headlineAfter:
-    "as a leading software development company businesses depend on",
-  subtextBefore:
-    "A top rated software house and leading software company empowering startups, SMBs, and enterprises worldwide with ",
-  subtextHighlight: "scalable, secure, and innovative",
-  subtextAfter:
-    " web apps, mobile apps, AI features, CRM, ERP, SaaS platforms, cloud systems, and DevOps workflows that drive measurable growth.",
+  eyebrow: "Next Software Development",
+  headlineBefore: "The",
+  headlineEmphasis: "Software Development Company",
+  headlineMiddle: "Turning Ambitious Ideas Into",
+  headlineAfter: "Scalable Software",
+  description: [
+    "Next Software Development is a full-service software development company helping startups, small and medium-sized businesses, and enterprises design, build, and scale secure, high-performance software. We combine senior engineering expertise with real business insight to create technology that solves complex problems, improves operations, and supports measurable business growth.",
+    "From your first conversation through launch and beyond, our dedicated software consultants and development team work closely with you to turn ambitious ideas into reliable, scalable software built around your goals.",
+    "Your idea deserves more than code. It deserves a technology partner who builds it right.",
+  ],
   primaryCta: "Get a Free Quote",
   secondaryCta: "View Our Work",
   secondaryHref: projectPath,
