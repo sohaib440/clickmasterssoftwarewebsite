@@ -18,7 +18,15 @@ import {
   WhyChooseSection,
 } from "@/components/landing";
 import { siteBrand } from "@/lib/landing/brand";
-import { homepageSeo, testimonials } from "@/data/homepage-content";
+import {
+  homepageAbout,
+  homepageFaqIntro,
+  homepageFaqs,
+  homepageSeo,
+  homepageTestimonials,
+  homepageTestimonialsIntro,
+  homepageWhyChoose,
+} from "@/data/homepage-content";
 import { selfCanonical } from "@/seo/canonical";
 import {
   breadcrumbSchema,
@@ -64,7 +72,7 @@ function DeferredSection({ children }: { children: React.ReactNode }) {
 }
 
 export default function Home() {
-  const homepageReviews = testimonials.slice(0, 3).map((item, index) =>
+  const homepageReviews = homepageTestimonials.slice(0, 3).map((item, index) =>
     reviewSchema({
       authorName: item.author,
       reviewBody: item.quote,
@@ -99,13 +107,22 @@ export default function Home() {
       <main className="flex w-full max-w-full flex-1 flex-col overflow-x-clip">
         <TrustedPartnersSection />
         <DeferredSection>
-          <AboutSection showValues={false} />
+          <AboutSection content={homepageAbout} showValues={false} />
         </DeferredSection>
         <DeferredSection>
           <ServicesSection />
         </DeferredSection>
         <DeferredSection>
-          <WhyChooseSection />
+          <WhyChooseSection
+            values={homepageWhyChoose.values}
+            overlineText={homepageWhyChoose.overlineText}
+            title={
+              <>
+                Why businesses <span className="italic">choose us</span>
+              </>
+            }
+            description={homepageWhyChoose.description}
+          />
         </DeferredSection>
         <IndustriesSection />
         <DeferredSection>
@@ -118,10 +135,19 @@ export default function Home() {
           <ProjectsSection />
         </DeferredSection>
         <TeamSection />
-        <TestimonialsSection />
+        <TestimonialsSection
+          items={homepageTestimonials}
+          description={homepageTestimonialsIntro}
+          overlineText="Client testimonials"
+          title={
+            <>
+              What our <span className="italic">clients</span> say
+            </>
+          }
+        />
         <BlogSection />
         <DeferredSection>
-          <FaqSection />
+          <FaqSection items={homepageFaqs} intro={homepageFaqIntro} />
         </DeferredSection>
         <ContactSection />
       </main>

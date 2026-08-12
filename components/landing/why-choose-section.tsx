@@ -41,7 +41,7 @@ export function WhyChooseSection({
           className="mb-8 md:mb-10"
         />
 
-        <ul className="grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {values.map((item, index) => (
             <li key={item.title} className="h-full min-h-0">
               <Reveal

@@ -1,3 +1,3 @@
 /** @deprecated Import from `@/data/homepage-content` or `@/data/landingPage` */
-export type { TestimonialSource, Testimonial } from "../homepage-content";
-export { testimonials } from "../homepage-content";
+export type { Testimonial, TestimonialSource } from "../homepage-content";
+export { testimonials, homepageTestimonials, homepageTestimonialsIntro } from "../homepage-content";
