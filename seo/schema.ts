@@ -17,7 +17,7 @@
  */
 
 import type { FaqItem, ImageAsset } from "@/data/landingPage";
-import { faqs } from "@/data/landingPage";
+import { homepageFaqs } from "@/data/landingPage";
 import { siteBrand, siteMetadata, siteSocial } from "@/lib/landing/brand";
 
 /** Short alias so schemas read like the examples — all values come from site brand/content */
@@ -500,7 +500,7 @@ export function faqPageSchema(faqItems: FaqItem[], options?: { id?: string; page
 }
 
 /** Homepage FAQ – matches the FAQ section on / */
-export const homepageFaqSchema = faqPageSchema(faqs, {
+export const homepageFaqSchema = faqPageSchema(homepageFaqs, {
   id: `${siteConfig.url}/#faq`,
   pageUrl: `${siteConfig.url}/`,
 });

@@ -87,7 +87,7 @@ export function renderParagraphWithCountryLinks(paragraph: string): ReactNode {
 export function AboutSection({ content, showValues = true }: AboutSectionProps = {}) {
   const data = content ?? {
     overlineText: "About us",
-    title: "Who Is Next Software Development Company?",
+    title: "Who we are?",
     paragraphs: aboutSection.paragraphs,
     values: aboutSection.values,
     image: aboutSection.image,

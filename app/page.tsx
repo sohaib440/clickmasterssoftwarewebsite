@@ -15,10 +15,20 @@ import {
   TeamSection,
   TechStackSection,
   TestimonialsSection,
+  WhyChooseSection,
 } from "@/components/landing";
-import { testimonials } from "@/data/landingPage";
-import { siteBrand, siteMetadata } from "@/lib/landing/brand";
-import { selfCanonical, pageTitle, pageTitleString } from "@/seo/canonical";
+import { siteBrand } from "@/lib/landing/brand";
+import {
+  homepageAbout,
+  homepageContact,
+  homepageFaqIntro,
+  homepageFaqs,
+  homepageSeo,
+  homepageTestimonials,
+  homepageTestimonialsIntro,
+  homepageWhyChoose,
+} from "@/data/homepage-content";
+import { selfCanonical } from "@/seo/canonical";
 import {
   breadcrumbSchema,
   homepageFaqSchema,
@@ -31,12 +41,12 @@ import {
 } from "@/seo/schema";
 
 export const metadata: Metadata = {
-  title: pageTitle(siteMetadata.title),
-  description: siteMetadata.description,
+  title: { absolute: homepageSeo.title },
+  description: homepageSeo.description,
   ...selfCanonical("/"),
   openGraph: {
-    title: pageTitleString(siteMetadata.title),
-    description: siteMetadata.description,
+    title: homepageSeo.title,
+    description: homepageSeo.description,
     type: "website",
     locale: "en_PK",
     url: siteBrand.url,
@@ -52,8 +62,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: pageTitleString(siteMetadata.title),
-    description: siteMetadata.description,
+    title: homepageSeo.title,
+    description: homepageSeo.description,
     images: [siteBrand.logo.src],
   },
 };
@@ -63,7 +73,7 @@ function DeferredSection({ children }: { children: React.ReactNode }) {
 }
 
 export default function Home() {
-  const homepageReviews = testimonials.slice(0, 3).map((item, index) =>
+  const homepageReviews = homepageTestimonials.slice(0, 3).map((item, index) =>
     reviewSchema({
       authorName: item.author,
       reviewBody: item.quote,
@@ -98,10 +108,22 @@ export default function Home() {
       <main className="flex w-full max-w-full flex-1 flex-col overflow-x-clip">
         <TrustedPartnersSection />
         <DeferredSection>
-          <AboutSection />
+          <AboutSection content={homepageAbout} showValues={false} />
         </DeferredSection>
         <DeferredSection>
           <ServicesSection />
+        </DeferredSection>
+        <DeferredSection>
+          <WhyChooseSection
+            values={homepageWhyChoose.values}
+            overlineText={homepageWhyChoose.overlineText}
+            title={
+              <>
+                Why businesses <span className="italic">choose us</span>
+              </>
+            }
+            description={homepageWhyChoose.description}
+          />
         </DeferredSection>
         <IndustriesSection />
         <DeferredSection>
@@ -114,12 +136,21 @@ export default function Home() {
           <ProjectsSection />
         </DeferredSection>
         <TeamSection />
-        <TestimonialsSection />
+        <TestimonialsSection
+          items={homepageTestimonials}
+          description={homepageTestimonialsIntro}
+          overlineText="Client testimonials"
+          title={
+            <>
+              What our <span className="italic">clients</span> say
+            </>
+          }
+        />
         <BlogSection />
         <DeferredSection>
-          <FaqSection />
+          <FaqSection items={homepageFaqs} intro={homepageFaqIntro} />
         </DeferredSection>
-        <ContactSection />
+        <ContactSection content={homepageContact} />
       </main>
     </div>
   );

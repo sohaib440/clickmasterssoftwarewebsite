@@ -26,7 +26,6 @@ type TestimonialItem = {
   quote: string;
   author: string;
   role: string;
-  source?: string;
 };
 
 type TestimonialsSectionProps = {
@@ -38,7 +37,7 @@ type TestimonialsSectionProps = {
 };
 
 export function TestimonialsSection({
-  overlineText = "Reviews from Google, Clutch & Trustpilot",
+  overlineText = "Client feedback",
   title = (
     <>
       What <span className="italic">partners</span> say
@@ -105,16 +104,6 @@ export function TestimonialsSection({
                   "flex h-full flex-col p-4 lg:p-5"
                 )}
               >
-                {item.source ? (
-                  <p
-                    className={cn(
-                      "mb-3 text-[10px] font-medium uppercase tracking-[0.16em]",
-                      dark ? "text-white/50" : "text-horizon-muted"
-                    )}
-                  >
-                    Via {item.source}
-                  </p>
-                ) : null}
                 <blockquote
                   className={cn(
                     "flex-1 text-left text-sm leading-relaxed md:text-[15px]",

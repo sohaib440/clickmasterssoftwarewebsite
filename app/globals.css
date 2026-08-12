@@ -103,15 +103,21 @@
 }
 
 @layer utilities {
-  .bg-white :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label),
-  .bg-horizon-cream :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label) {
-    color: var(--horizon-navy);
-  }
-
+  /* Dark sections inherit light text from the section/page wrapper */
   .bg-black :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label),
   .bg-zinc-900 :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label),
   .bg-horizon-navy :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label) {
     color: inherit;
+  }
+
+  /*
+   * Light sections must win when nested inside a dark page wrapper
+   * (e.g. homepage `bg-black text-white` → cream testimonials).
+   * Keep these rules AFTER the dark inherit block above.
+   */
+  .bg-white :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label),
+  .bg-horizon-cream :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label) {
+    color: var(--horizon-navy);
   }
 }
 

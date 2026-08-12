@@ -86,8 +86,16 @@ export type LocationTeamContent = LocationSectionHeading & {
   intro: string;
 };
 
+export type LocationSocialProofItem = {
+  quote: string;
+  author: string;
+  role: string;
+  /** Omit for anonymized case blurbs — never invent Google/Clutch/Trustpilot tags */
+  source?: string;
+};
+
 export type LocationTestimonialsContent = LocationSectionHeading & {
-  items: typeof baseTestimonials;
+  items: LocationSocialProofItem[];
 };
 
 export type LocationCaseStudiesContent = LocationSectionHeading & {
@@ -882,14 +890,79 @@ function pickIndustries(place: string, focus: PlaceFocus): Industry[] {
   }));
 }
 
-function pickTestimonials(place: string) {
+/**
+ * Anonymized city engagement blurbs for Pakistan location pages.
+ * Illustrative composites from real project types — not attributed customer reviews.
+ */
+export const pakistanCityCaseBlurbs: LocationSocialProofItem[] = [
+  {
+    quote:
+      "A multi-doctor clinic in Islamabad needed a single system to replace paper registers and three separate spreadsheets for billing and inventory. We delivered a unified HMS/ERP with Urdu-ready workflows, cutting patient check-in time and giving the front desk one place to manage appointments, pharmacy stock, and invoicing.",
+    author: "Clinic engagement",
+    role: "Islamabad · HMS / ERP",
+  },
+  {
+    quote:
+      "A retail business in Lahore was losing leads between phone calls, WhatsApp, and a shared spreadsheet with no visibility into who owned which conversation. We built a CRM that consolidated lead tracking, staff assignment, and conversion reporting into one dashboard the sales floor actually uses daily.",
+    author: "Retail engagement",
+    role: "Lahore · CRM",
+  },
+  {
+    quote:
+      "An online retailer in Karachi was running checkout on a patchwork of outdated plugins causing regular payment failures. We rebuilt the storefront with JazzCash and Easypaisa integration and a streamlined checkout flow, resolving the payment failures and reducing cart abandonment.",
+    author: "Ecommerce engagement",
+    role: "Karachi · Storefront / Payments",
+  },
+  {
+    quote:
+      "A real estate agency in Rawalpindi was managing listings and tenant communication across email and paper files. We delivered a property management platform unifying listings, contracts, and tenant relationships in one system.",
+    author: "Real estate engagement",
+    role: "Rawalpindi · Property platform",
+  },
+  {
+    quote:
+      "A textile manufacturing unit in Faisalabad was tracking inventory across Excel sheets maintained by multiple people, leading to frequent stock discrepancies. We built an ERP connecting inventory directly to billing, eliminating the manual reconciliation that caused the discrepancies.",
+    author: "Manufacturing engagement",
+    role: "Faisalabad · Inventory ERP",
+  },
+];
+
+const CASE_BLURB_CITIES = new Set(
+  pakistanCityCaseBlurbs.map((item) => item.role.split("·")[0]?.trim().toLowerCase() ?? "")
+);
+
+function caseBlurbsForPlace(place: string): LocationSocialProofItem[] {
+  const key = place.toLowerCase();
+  if (key === "pakistan") return [...pakistanCityCaseBlurbs];
+  return pakistanCityCaseBlurbs.filter((item) =>
+    item.role.toLowerCase().includes(key)
+  );
+}
+
+function usesCaseBlurbs(place: string) {
+  const key = place.toLowerCase();
+  return key === "pakistan" || CASE_BLURB_CITIES.has(key);
+}
+
+function pickTestimonials(place: string): LocationSocialProofItem[] {
+  const blurbs = caseBlurbsForPlace(place);
   const matched = baseTestimonials.filter(
     (t) =>
       t.role.toLowerCase().includes(place.toLowerCase()) ||
       t.quote.toLowerCase().includes(place.toLowerCase())
   );
-  if (matched.length >= 3) return matched;
-  return rotate([...baseTestimonials], place).slice(0, 6);
+  const named =
+    matched.length >= 3
+      ? matched
+      : rotate([...baseTestimonials], place).slice(0, 6);
+
+  if (blurbs.length === 0) return named;
+  // City/Pakistan pages: lead with honest anonymized blurbs, then other city blurbs for depth
+  if (place.toLowerCase() === "pakistan") return blurbs;
+  const otherBlurbs = pakistanCityCaseBlurbs.filter(
+    (item) => !blurbs.includes(item)
+  );
+  return [...blurbs, ...otherBlurbs];
 }
 
 function pickCaseStudies(place: string): CaseStudy[] {
@@ -1004,14 +1077,24 @@ export function buildLocationSections(
       items: pickCaseStudies(placeLabel),
     },
     testimonials: {
-      overlineText: isPakistan
-        ? "Reviews from Google, Clutch & Trustpilot"
-        : `${placeLabel} client reviews`,
-      title: isPakistan ? "What partners say" : `What clients say about work near ${placeLabel}`,
-      titleItalic: "partners",
-      description: isPakistan
-        ? "Feedback from founders and operators who hired us for Pakistani and international delivery."
-        : `Reviews relevant to teams evaluating a software house for ${placeLabel}.`,
+      overlineText: usesCaseBlurbs(placeLabel)
+        ? "How we've helped businesses like yours"
+        : isPakistan
+          ? "Client feedback"
+          : `${placeLabel} client reviews`,
+      title: usesCaseBlurbs(placeLabel)
+        ? "Local engagement examples"
+        : isPakistan
+          ? "What partners say"
+          : `What clients say about work near ${placeLabel}`,
+      titleItalic: usesCaseBlurbs(placeLabel) ? "engagement" : "partners",
+      description: usesCaseBlurbs(placeLabel)
+        ? isPakistan
+          ? "Illustrative composites based on project types we deliver across Pakistani cities — not attributed customer reviews."
+          : `An anonymized engagement example for ${placeLabel}, plus similar work in other Pakistani cities — not attributed customer reviews.`
+        : isPakistan
+          ? "Feedback from founders and operators who hired us for Pakistani and international delivery."
+          : `Reviews relevant to teams evaluating a software house for ${placeLabel}.`,
       items: pickTestimonials(placeLabel),
     },
     team: {
