@@ -839,7 +839,14 @@ export function locationServiceSchema(options: {
   };
 }
 
-/** Review – only with real testimonials visible on the page (no fake star ratings). */
+/**
+ * Review markup — only use when you also provide:
+ * - `reviewRating` on each review, and
+ * - `aggregateRating` on the reviewed LocalBusiness/Organization.
+ * Without both, Google flags "Multiple reviews without aggregateRating" and
+ * reviews are ineligible for rich results. Testimonials on the page can stay
+ * as HTML without this schema.
+ */
 export function reviewSchema(options: {
   authorName: string;
   reviewBody: string;

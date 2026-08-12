@@ -36,7 +36,6 @@ import {
   jsonLdGraph,
   localBusinessSchema,
   organizationSchema,
-  reviewSchema,
   webSiteSchema,
 } from "@/seo/schema";
 
@@ -73,28 +72,13 @@ function DeferredSection({ children }: { children: React.ReactNode }) {
 }
 
 export default function Home() {
-  const homepageReviews = homepageTestimonials.slice(0, 3).map((item, index) =>
-    reviewSchema({
-      authorName: item.author,
-      reviewBody: item.quote,
-      jobTitle: item.role,
-      idSuffix: String(index + 1),
-    }),
-  );
-
   const schemas = jsonLdGraph([
     organizationSchema,
-    {
-      ...localBusinessSchema,
-      review: homepageReviews.map((review) => ({
-        "@id": review["@id"],
-      })),
-    },
+    localBusinessSchema,
     webSiteSchema,
     homepageServiceSchema,
     homepageFaqSchema,
     breadcrumbSchema([{ name: "Home", path: "/" }]),
-    ...homepageReviews,
   ]);
 
   return (
