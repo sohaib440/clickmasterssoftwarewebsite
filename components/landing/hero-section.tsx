@@ -78,7 +78,6 @@ export function HeroSection() {
 
             <Reveal immediate delay={motionStagger}>
               <h1 className="mt-5 max-w-none text-left font-heading text-4xl font-normal leading-[1.12] tracking-tight text-white sm:text-5xl lg:text-[3.25rem] xl:text-[3.45rem]">
-                {homeHero.headlineBefore}{" "}
                 <span className="!text-[#d4af37]">{homeHero.headlineEmphasis}</span>{" "}
                 {homeHero.headlineMiddle}{" "}
                 <span className="italic !text-[#d4af37]">{homeHero.headlineAfter}</span>

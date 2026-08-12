@@ -119,7 +119,6 @@ export type FaqItem = {
 // ===== data/landing/hero.ts =====
 export const homeHero = {
   eyebrow: "Next Software Development",
-  headlineBefore: "The",
   headlineEmphasis: "Software Development Company",
   headlineMiddle: "Turning Ambitious Ideas Into",
   headlineAfter: "Scalable Software",
