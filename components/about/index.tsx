@@ -5,7 +5,7 @@ import { Reveal } from "@/components/landing/reveal";
 import { TeamTeaser } from "@/components/team/team-teaser";
 import { MarketingShell } from "@/components/layout/marketing-shell";
 import { PageBreadcrumb } from "@/components/layout/page-breadcrumb";
-import { btnPrimary, contactPath, container, sectionPad } from "@/lib/landing/constants";
+import { btnOnDark, contactPath, container, sectionPad } from "@/lib/landing/constants";
 import { stats } from "@/data/landingPage";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
@@ -34,18 +34,21 @@ export function AboutPage() {
       </section>
       <TeamTeaser />
       <section className="w-full bg-horizon-navy text-white">
-        <div className={cn(container, sectionPad, "text-center")}>
+        <div className={cn(container, sectionPad, "text-center text-white")}>
           <Reveal>
-            <h2 className="font-heading text-3xl font-normal text-white md:text-4xl">
-              Ready to work <span className="italic">together</span>?
+            <h2 className="font-heading text-3xl font-normal !text-white md:text-4xl">
+              Ready to work <span className="italic !text-white">together</span>?
             </h2>
-            <p className="mx-auto mt-4 max-w-lg text-sm text-white/75 md:text-base">
+            <p className="mx-auto mt-4 max-w-lg text-sm !text-white md:text-base">
               Tell us about your product, we&apos;ll share how we can help from discovery through
               launch.
             </p>
             <Link
               href={contactPath}
-              className={cn(btnPrimary, "mt-8 bg-white text-horizon-navy hover:bg-white/90")}
+              className={cn(
+                btnOnDark,
+                "mt-8 !text-white hover:!bg-white hover:!text-horizon-navy"
+              )}
             >
               Start a conversation
             </Link>

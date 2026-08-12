@@ -4,15 +4,15 @@
   <!-- Homepage -->
   <url>
     <loc>https://nextsoftwaredevelopment.com/</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- About -->
   <url>
     <loc>https://nextsoftwaredevelopment.com/about</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -20,7 +20,7 @@
   <!-- Team -->
   <url>
     <loc>https://nextsoftwaredevelopment.com/team</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -28,7 +28,7 @@
   <!-- Gallery -->
   <url>
     <loc>https://nextsoftwaredevelopment.com/gallery</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -36,7 +36,7 @@
   <!-- Contact -->
   <url>
     <loc>https://nextsoftwaredevelopment.com/contact</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -44,7 +44,7 @@
   <!-- FAQ -->
   <url>
     <loc>https://nextsoftwaredevelopment.com/faqs</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -52,7 +52,7 @@
   <!-- Industries -->
   <url>
     <loc>https://nextsoftwaredevelopment.com/industries</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -60,7 +60,7 @@
   <!-- Case Studies -->
   <url>
     <loc>https://nextsoftwaredevelopment.com/case-study</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -68,7 +68,7 @@
   <!-- Projects index -->
   <url>
     <loc>https://nextsoftwaredevelopment.com/projects</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -76,7 +76,7 @@
   <!-- Blog index -->
   <url>
     <loc>https://nextsoftwaredevelopment.com/blog</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -84,7 +84,7 @@
   <!-- Solutions index -->
   <url>
     <loc>https://nextsoftwaredevelopment.com/solutions</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -92,21 +92,21 @@
   <!-- Locations index -->
   <url>
     <loc>https://nextsoftwaredevelopment.com/location</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://nextsoftwaredevelopment.com/privacy</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
     <loc>https://nextsoftwaredevelopment.com/terms</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
