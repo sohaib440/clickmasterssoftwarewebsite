@@ -42,7 +42,7 @@ export const siteSocial = {
 } as const;
 
 export const siteMetadata = {
-  title: "Software House & Software Development Company",
+  title: "Your Top Rated Software House & Software Development Company",
   description:
-    "Software house and software development company building web apps, mobile apps, AI, CRM, ERP, and SaaS platforms for startups and enterprises worldwide.",
+    "Top rated software house and software development company building web apps, mobile apps, AI, CRM, ERP, and SaaS platforms for startups & enterprises worldwide.",
 } as const;
