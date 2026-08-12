@@ -1115,70 +1115,70 @@ export const testimonials: Testimonial[] = [
 
 /** Homepage-only client testimonials — distinct from location and shared landing reviews. */
 export const homepageTestimonialsIntro =
-  "Feedback from founders, operators, and technology leaders who searched for a software house near me or a software development company near me and partnered with Next Software Development to design, build, and scale production software.";
+  "Hear from founders, business leaders, and technology teams who partnered with Next Software Development after looking for a trusted software house near me or a reliable software development company near me. From custom software and web development to mobile applications and artificial intelligence solutions, our clients work with us to build technology that supports real business goals.";
 
-  export const homepageTestimonials: Testimonial[] = [
-    {
-      quote:
-        "We hired Next Software Development for custom web application development after two local vendors couldn't scope the project properly. Their business analysts got our requirements right the first time, and the platform launched on schedule with clean, documented code our internal team could maintain.",
-      author: "Ahmed Raza",
-      role: "CEO, E-commerce Business · Lahore, Pakistan",
-    },
-    {
-      quote:
-        "Our clinic needed a custom CRM to manage patient follow-ups and staff scheduling in one place. The team understood healthcare workflows quickly and delivered a system that actually reduced our front-desk workload instead of adding to it.",
-      author: "Ayesha Khan",
-      role: "Operations Manager, Healthcare Clinic · Karachi, Pakistan",
-    },
-    {
-      quote:
-        "We needed mobile app development for both iOS and Android on a tight budget. Next Software Development scoped an MVP that covered our core features without over-building, and QA caught issues before our users ever saw them.",
-      author: "Hamza Malik",
-      role: "Founder, Retail Startup · Islamabad, Pakistan",
-    },
-    {
-      quote:
-        "Our old ERP setup couldn't keep up with our warehouse operations. The business automation work they did cut our manual stock reconciliation down significantly, and their support team has stayed responsive since launch.",
-      author: "Usman Farooq",
-      role: "Supply Chain Head, Manufacturing Company · Faisalabad, Pakistan",
-    },
-    {
-      quote:
-        "We came to them for a SaaS product build from scratch. Their engineers were hands-on from architecture through deployment, and having QA specialists embedded in the process meant far fewer bugs at launch than our previous project.",
-      author: "Bilal Ahmed",
-      role: "Co-Founder, B2B Software Company · Peshawar, Pakistan",
-    },
-    {
-      quote:
-        "We brought them in for enterprise software development to replace a legacy internal tool. The migration was handled carefully, with zero downtime for our operations team, and the documentation they left behind has made ongoing maintenance straightforward.",
-      author: "Michael Carter",
-      role: "IT Director, Logistics Company · Chicago, USA",
-    },
-    {
-      quote:
-        "Their artificial intelligence solutions team built a recommendation engine that integrated cleanly with our existing platform. What stood out was how clearly they explained trade-offs before we committed to an approach, instead of just building what we initially asked for.",
-      author: "Daniel Brooks",
-      role: "Vice President of Product, Marketplace Platform · Austin, USA",
-    },
-    {
-      quote:
-        "We needed cloud platform migration done without disrupting a live customer base. Next Software Development planned the cutover carefully and kept us informed at every stage. It was the smoothest infrastructure project we've run.",
-      author: "James Wilson",
-      role: "Chief Technology Officer, Financial Technology Startup · New York, USA",
-    },
-    {
-      quote:
-        "Our CRM software development project involved integrating with several legacy systems we'd been told were too fragile to touch. Their engineers handled the integration carefully, and our sales team adopted the new system within days.",
-      author: "Oliver Bennett",
-      role: "Managing Director, Professional Services Firm · London, UK",
-    },
-    {
-      quote:
-        "We needed a software development company that could take ownership of both frontend and backend for an enterprise resource planning rebuild. The rollout was well-documented, thoroughly tested, and our compliance team approved it without any rework requests.",
-      author: "William Harris",
-      role: "Head of Information Technology, Enterprise Operations · Manchester, UK",
-    },
-  ];
+export const homepageTestimonials: Testimonial[] = [
+  {
+    quote:
+      "We needed a software house near me that could understand our business before starting development. Next Software Development took the time to understand our requirements, planned the architecture properly, and delivered a custom web application that our team could maintain and grow.",
+    author: "Ahmed Raza",
+    role: "CEO, E-commerce Business · Lahore, Pakistan",
+  },
+  {
+    quote:
+      "Our clinic needed a custom customer relationship management system to manage patient follow-ups and staff scheduling in one place. The team understood our healthcare workflows quickly and delivered a system that reduced our front desk workload and made daily operations much easier.",
+    author: "Ayesha Khan",
+    role: "Operations Manager, Healthcare Clinic · Karachi, Pakistan",
+  },
+  {
+    quote:
+      "We were looking for a software development company near me that could handle both iOS and Android development without overcomplicating the first release. Next Software Development helped us define a focused minimum viable product, built the core features, and maintained a clear development process throughout the project.",
+    author: "Hamza Malik",
+    role: "Founder, Retail Startup · Islamabad, Pakistan",
+  },
+  {
+    quote:
+      "Our existing enterprise resource planning system could not keep up with our warehouse operations. Next Software Development helped us automate several manual processes and improve inventory management. Their team also remained responsive after launch whenever we needed technical support.",
+    author: "Usman Farooq",
+    role: "Supply Chain Head, Manufacturing Company · Faisalabad, Pakistan",
+  },
+  {
+    quote:
+      "We came to Next Software Development to build a software as a service product from the ground up. Their engineers were involved from architecture through deployment, while quality assurance was integrated throughout the process. The result was a much more reliable launch and a strong foundation for future development.",
+    author: "Bilal Ahmed",
+    role: "Co Founder, Business Software Company · Peshawar, Pakistan",
+  },
+  {
+    quote:
+      "We needed an experienced software development company to replace a legacy internal system without disrupting our operations. Next Software Development handled the migration carefully, maintained clear communication throughout the project, and provided documentation that made ongoing maintenance much easier for our internal team.",
+    author: "Michael Carter",
+    role: "IT Director, Logistics Company · Chicago, USA",
+  },
+  {
+    quote:
+      "The artificial intelligence team at Next Software Development helped us develop a recommendation engine that integrated with our existing platform. What impressed us most was their ability to explain the technical options clearly and connect each decision to our actual product and business requirements.",
+    author: "Daniel Brooks",
+    role: "Vice President of Product, Marketplace Platform · Austin, USA",
+  },
+  {
+    quote:
+      "We needed a technology partner to migrate our cloud platform without disrupting our customers. Next Software Development planned the transition carefully, communicated clearly at every stage, and helped our team move to a more scalable infrastructure with minimal disruption.",
+    author: "James Wilson",
+    role: "Chief Technology Officer, Financial Technology Startup · New York, USA",
+  },
+  {
+    quote:
+      "Our customer relationship management software development project required integration with several legacy systems. Next Software Development approached the integrations carefully, tested the system thoroughly, and helped our sales team transition to the new platform with very little disruption.",
+    author: "Oliver Bennett",
+    role: "Managing Director, Professional Services Firm · London, UK",
+  },
+  {
+    quote:
+      "We were searching for a software development company that could take ownership of both frontend and backend development for an enterprise resource planning platform. Next Software Development provided a structured process, strong technical communication, thorough testing, and a well documented rollout.",
+    author: "William Harris",
+    role: "Head of Information Technology, Enterprise Operations · Manchester, UK",
+  },
+];
 
 
 // ===== data/landing/blog.ts =====
@@ -1479,6 +1479,18 @@ export const homeContact = {
     "Tell our software house about your goals. We will get back to you within 24 hours with a clear path forward: no obligation, no sales pressure.",
   emailPlaceholder: "Your email address",
   cta: "Request a project consultation",
+  reassurance: "Free consultation · No commitment · Global delivery",
+} as const;
+
+/** Homepage-only contact CTA — not reused on service pages. */
+export const homepageContact = {
+  overline: "Start a conversation",
+  titleBefore: "Ready to build your next big",
+  titleEmphasis: "software solution?",
+  subtext:
+    "Partner with Next Software Development Company to turn ambitious ideas into secure, scalable, production-ready software. Share your business goals, technical requirements, and project vision—our experienced team will help you define the right solution and path forward.",
+  emailPlaceholder: homeContact.emailPlaceholder,
+  cta: "Request a free consultation",
   reassurance: "Free consultation · No commitment · Global delivery",
 } as const;
 

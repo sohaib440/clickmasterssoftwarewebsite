@@ -34,12 +34,14 @@ type ContactFormProps = {
   variant?: "full" | "short";
   className?: string;
   initialValues?: Partial<ContactFormState>;
+  ctaLabel?: string;
 };
 
 export function ContactForm({
   variant = "full",
   className,
   initialValues,
+  ctaLabel,
 }: ContactFormProps) {
   const router = useRouter();
   const [form, setForm] = useState<ContactFormState>(() =>
@@ -137,7 +139,7 @@ export function ContactForm({
           className={cn(inputField, "w-full sm:flex-1 text-sm")}
         />
         <button type="submit" className={cn(btnPrimary, "w-full sm:w-auto shrink-0 px-8 text-sm sm:text-base")}>
-          {homeContact.cta}
+          {ctaLabel ?? homeContact.cta}
         </button>
       </form>
     );

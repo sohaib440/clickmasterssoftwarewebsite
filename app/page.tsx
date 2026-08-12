@@ -20,6 +20,7 @@ import {
 import { siteBrand } from "@/lib/landing/brand";
 import {
   homepageAbout,
+  homepageContact,
   homepageFaqIntro,
   homepageFaqs,
   homepageSeo,
@@ -149,7 +150,7 @@ export default function Home() {
         <DeferredSection>
           <FaqSection items={homepageFaqs} intro={homepageFaqIntro} />
         </DeferredSection>
-        <ContactSection />
+        <ContactSection content={homepageContact} />
       </main>
     </div>
   );
