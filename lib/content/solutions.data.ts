@@ -43,7 +43,7 @@ export const solutions: SolutionContent[] = [
     metaDescription:
       "Custom ERP software for finance, inventory, and operations. Next Software Development Company builds scalable enterprise resource planning systems.",
     heroImage: img(
-      "/projects/cash-management-system/Cash-Management-System-Dashboard.webp",
+      "/projects/cash-management-system/cash-management-system-dashboard.webp",
       "Enterprise dashboard with charts and KPIs"
     ),
     summary: ["Finance & accounting", "Inventory & supply chain", "Role-based access"],
@@ -118,7 +118,7 @@ export const solutions: SolutionContent[] = [
     metaDescription:
       "Custom CRM development for sales pipelines, account management, and customer success. Built by Next Software Development Company.",
     heroImage: img(
-      "/projects/prime-leads-project/Prime-Lead-Crm-Dashboard.webp",
+      "/projects/prime-leads-project/prime-lead-crm-dashboard.webp",
       "Sales team reviewing CRM dashboard"
     ),
     summary: ["Lead & deal pipelines", "Account timelines", "Email & calendar sync"],
@@ -190,7 +190,7 @@ export const solutions: SolutionContent[] = [
     metaDescription:
       "Custom AI agents for support, sales, and operations. RAG, tool use, and safe deployment by Next Software Development Company.",
     heroImage: img(
-      "/services/Artificial-Intelligence.webp",
+      "/services/artificial-intelligence.webp",
       "Abstract AI and neural network visualization"
     ),
     summary: ["RAG over your docs", "Tool & API actions", "Human handoff"],
@@ -262,7 +262,7 @@ export const solutions: SolutionContent[] = [
     metaDescription:
       "Custom HRMS software for employee management, leave, and HR workflows. Next Software Development Company builds people platforms.",
     heroImage: img(
-      "/projects/hr-management-software/Hr-Management-Software-Dashboard.webp",
+      "/projects/hr-management-software/hr-management-software-dashboard.webp",
       "HR team in a modern office"
     ),
     summary: ["Employee profiles", "Leave & attendance", "Performance reviews"],
@@ -334,7 +334,7 @@ export const solutions: SolutionContent[] = [
     metaDescription:
       "Inventory management software for warehouses and retail. Real-time stock tracking by Next Software Development Company.",
     heroImage: img(
-      "/projects/medicine-inventory-system/Medicine-Inventory-System-Dashboard.webp",
+      "/projects/medicine-inventory-system/medicine-inventory-system-dashboard.webp",
       "Warehouse shelves and logistics"
     ),
     summary: ["Multi-location stock", "Barcode scanning", "Low-stock alerts"],
@@ -406,7 +406,7 @@ export const solutions: SolutionContent[] = [
     metaDescription:
       "Custom e-commerce platform development. Storefronts, checkout, and admin by Next Software Development Company.",
     heroImage: img(
-      "/projects/royal-pos/Royal-Pos-Checkout.webp",
+      "/projects/royal-pos/royal-pos-checkout.webp",
       "Online shopping on laptop and phone"
     ),
     summary: ["Custom checkout", "Catalog & variants", "Admin & promotions"],
@@ -478,7 +478,7 @@ export const solutions: SolutionContent[] = [
     metaDescription:
       "Custom business analytics dashboards and BI tools. Data visualization by Next Software Development Company.",
     heroImage: img(
-      "/projects/cash-management-system/Cash-Management-System-Dashboard.webp",
+      "/projects/cash-management-system/cash-management-system-dashboard.webp",
       "Analytics charts on a monitor"
     ),
     summary: ["Live dashboards", "Scheduled reports", "Role-based views"],
@@ -550,7 +550,7 @@ export const solutions: SolutionContent[] = [
     metaDescription:
       "Workflow automation software for approvals and business processes. Built by Next Software Development Company.",
     heroImage: img(
-      "/projects/cash-management-system/Cash-Management-System-Reports.webp",
+      "/projects/cash-management-system/cash-management-system-reports.webp",
       "Business planning and workflow diagrams"
     ),
     summary: ["Approval chains", "System integrations", "Audit trails"],

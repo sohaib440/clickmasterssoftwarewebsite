@@ -92,7 +92,7 @@ export const services: ServiceCard[] = [
     title: "Web Development",
     description:
       "Modern web applications from a trusted software company with responsive design, strong performance, and SEO-friendly architecture for every device and browser.",
-    image: "/services/Web-Development.webp",
+    image: "/services/web-development.webp",
     imageAlt: "Web development services illustration",
     Icon: Globe2,
     AltIcon: Server,
@@ -103,7 +103,7 @@ export const services: ServiceCard[] = [
     title: "Ecommerce Development",
     description:
       "Storefronts, marketplaces, and checkout systems from a leading software company built for conversion, catalog complexity, and reliable order operations.",
-    image: "/services/ecommerce-development.png",
+    image: "/services/ecommerce-development.webp",
     imageAlt: "Ecommerce development services illustration",
     Icon: ShoppingCart,
     AltIcon: Globe2,
@@ -125,7 +125,7 @@ export const services: ServiceCard[] = [
     title: "Artificial Intelligence",
     description:
       "Production AI from a top rated software company covering automation, insights, agents, NLP, and vision systems with clear guardrails, monitoring, and human oversight.",
-    image: "/services/Artificial-Intelligence.webp",
+    image: "/services/artificial-intelligence.webp",
     imageAlt: "Artificial intelligence services illustration",
     Icon: BrainCircuit,
     AltIcon: Database,
@@ -148,7 +148,7 @@ export const services: ServiceCard[] = [
     title: "Automation Services",
     description:
       "Workflow, RPA, and document automation from a best software company so teams eliminate repetitive work and move data between systems reliably.",
-    image: "/services/automation-services.png",
+    image: "/services/automation-services.webp",
     imageAlt: "Automation services illustration",
     Icon: Workflow,
     AltIcon: Server,
@@ -182,7 +182,7 @@ export const services: ServiceCard[] = [
     title: "Cybersecurity",
     description:
       "Application security, audits, and compliance readiness from a trusted software house so products stay resilient as they scale.",
-    image: "/services/cybersecurity.png",
+    image: "/services/cybersecurity.webp",
     imageAlt: "Cybersecurity services illustration",
     Icon: Shield,
     AltIcon: ShieldCheck,
@@ -193,7 +193,7 @@ export const services: ServiceCard[] = [
     title: "Enterprise Solutions",
     description:
       "ERP, CRM, and internal platforms from a leading software development company that replace disconnected tools with one system of record.",
-    image: "/services/enterprise-solutions.png",
+    image: "/services/enterprise-solutions.webp",
     imageAlt: "Enterprise solutions services illustration",
     Icon: Building2,
     AltIcon: Code2,
@@ -204,7 +204,7 @@ export const services: ServiceCard[] = [
     title: "Blockchain Development",
     description:
       "Smart contracts, dApps, and Web3 integrations from a software company built for secure on-chain workflows and real product use cases.",
-    image: "/services/blockchain-development.png",
+    image: "/services/blockchain-development.webp",
     imageAlt: "Blockchain development services illustration",
     Icon: Blocks,
     AltIcon: Shield,
@@ -215,7 +215,7 @@ export const services: ServiceCard[] = [
     title: "Healthcare Software Development",
     description:
       "Hospital, clinic, and telemedicine platforms from a software house designed for clinical workflows, patient data, and compliance needs.",
-    image: "/services/healthcare-software-development.png",
+    image: "/services/healthcare-software-development.webp",
     imageAlt: "Healthcare software development services illustration",
     Icon: HeartPulse,
     AltIcon: Database,
@@ -226,7 +226,7 @@ export const services: ServiceCard[] = [
     title: "AR/VR Development",
     description:
       "Augmented and virtual reality experiences from a top rated software company for training, retail, and immersive product visualization.",
-    image: "/services/ar-vr-development.png",
+    image: "/services/ar-vr-development.webp",
     imageAlt: "AR/VR development services illustration",
     Icon: Glasses,
     AltIcon: Smartphone,
@@ -237,7 +237,7 @@ export const services: ServiceCard[] = [
     title: "Testing & QA",
     description:
       "Manual and automated testing from our software development company across web, mobile, and APIs covering functional, regression, and performance checks before release.",
-    image: "/services/Testing-and-QA.webp",
+    image: "/services/testing-and-qa.webp",
     imageAlt: "Software testing and QA services illustration",
     Icon: ClipboardCheck,
     AltIcon: ShieldCheck,
@@ -471,7 +471,7 @@ export const mainCategories: MainCategoryContent[] = [
     metaDescription:
       "Best software company for web development: custom websites, web apps, frontend, backend, full stack, and CMS. SEO-friendly senior delivery.",
     heroImage: {
-      src: "/services/Web-Development.webp",
+      src: "/services/web-development.webp",
       alt: "Web development services",
       width: 800,
       height: 800,
@@ -489,7 +489,7 @@ export const mainCategories: MainCategoryContent[] = [
     metaDescription:
       "Leading software company for ecommerce development: Shopify, WooCommerce, Magento, custom stores, marketplaces, and payments.",
     heroImage: {
-      src: "/services/ecommerce-development.png",
+      src: "/services/ecommerce-development.webp",
       alt: "Ecommerce development services",
       width: 800,
       height: 800,
@@ -556,7 +556,7 @@ export const mainCategories: MainCategoryContent[] = [
     metaDescription:
       "Top rated software company for artificial intelligence: generative AI, chatbots, agents, computer vision, and NLP.",
     heroImage: {
-      src: "/services/Artificial-Intelligence.webp",
+      src: "/services/artificial-intelligence.webp",
       alt: "Artificial intelligence services",
       width: 800,
       height: 800,
@@ -592,7 +592,7 @@ export const mainCategories: MainCategoryContent[] = [
     metaDescription:
       "Best software company for automation services: BPA, RPA, workflow, CRM, ERP, and AI workflow automation.",
     heroImage: {
-      src: "/services/automation-services.png",
+      src: "/services/automation-services.webp",
       alt: "Automation services",
       width: 800,
       height: 800,
@@ -646,7 +646,7 @@ export const mainCategories: MainCategoryContent[] = [
     metaDescription:
       "Trusted software house for cybersecurity: penetration testing, vulnerability assessment, app and cloud security, compliance, and monitoring.",
     heroImage: {
-      src: "/services/cybersecurity.png",
+      src: "/services/cybersecurity.webp",
       alt: "Cybersecurity services",
       width: 800,
       height: 800,
@@ -664,7 +664,7 @@ export const mainCategories: MainCategoryContent[] = [
     metaDescription:
       "Leading software development company for enterprise solutions: ERP, CRM, HRM, supply chain, integration, and document management.",
     heroImage: {
-      src: "/services/enterprise-solutions.png",
+      src: "/services/enterprise-solutions.webp",
       alt: "Enterprise solutions",
       width: 800,
       height: 800,
@@ -682,7 +682,7 @@ export const mainCategories: MainCategoryContent[] = [
     metaDescription:
       "Software company for blockchain development: smart contracts, dApps, Web3, DeFi, wallets, and NFT marketplaces.",
     heroImage: {
-      src: "/services/blockchain-development.png",
+      src: "/services/blockchain-development.webp",
       alt: "Blockchain development services",
       width: 800,
       height: 800,
@@ -700,7 +700,7 @@ export const mainCategories: MainCategoryContent[] = [
     metaDescription:
       "Software house for healthcare software development: EHR, EMR, telemedicine, hospital systems, patient portals, and healthcare apps.",
     heroImage: {
-      src: "/services/healthcare-software-development.png",
+      src: "/services/healthcare-software-development.webp",
       alt: "Healthcare software development services",
       width: 800,
       height: 800,
@@ -718,7 +718,7 @@ export const mainCategories: MainCategoryContent[] = [
     metaDescription:
       "Top rated software company for AR/VR development: AR, VR, mixed reality, metaverse, 3D visualization, and VR training.",
     heroImage: {
-      src: "/services/ar-vr-development.png",
+      src: "/services/ar-vr-development.webp",
       alt: "AR/VR development services",
       width: 800,
       height: 800,
@@ -736,7 +736,7 @@ export const mainCategories: MainCategoryContent[] = [
     metaDescription:
       "Software development company for testing and QA: manual, automation, performance, security, API, and mobile app testing.",
     heroImage: {
-      src: "/services/Testing-and-QA.webp",
+      src: "/services/testing-and-qa.webp",
       alt: "Software testing and QA services",
       width: 800,
       height: 800,
