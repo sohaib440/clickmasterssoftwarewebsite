@@ -12,7 +12,7 @@ import { contactPath, teamPath } from "@/lib/landing/constants";
 const pakistanHref = pakistanLocation.href;
 
 /** Shared hero image for all Pakistan city location pages */
-const cityHeroImageSrc = "/locations/Location-Pakistan.webp";
+const cityHeroImageSrc = "/locations/location-pakistan.webp";
 
 type CityCopy = {
   aboutTitle: string;

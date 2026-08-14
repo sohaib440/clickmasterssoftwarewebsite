@@ -138,7 +138,7 @@ export const heroFeatures = [
   { icon: BarChart3, label: "Business Growth" },
 ] as const;
 
-export const heroBackgroundVideo = "/heroSection/software-development-company.mp4";
+export const heroBackgroundVideo = "/herosection/software-development-company.mp4";
 
 export const heroCtaForm = {
   title: "Get a free quote",
@@ -190,7 +190,7 @@ export const aboutSection = {
     },
   ],
   image: {
-    src: "/about us/software-development-company.webp",
+    src: "/about-us/software-development-company.webp",
     alt: "Next Software Development Company team collaborating on product delivery",
     width: 1000,
     height: 700,
@@ -339,22 +339,22 @@ export const stats = companyStats.map(({ value, label, icon }) => ({
 }));
 
 export const clients: Client[] = [
-  { slug: "google", name: "Google", logo: "/trustedPartners/google.svg" },
-  { slug: "microsoft", name: "Microsoft", logo: "/trustedPartners/microsoft.svg" },
-  { slug: "amazon", name: "Amazon", logo: "/trustedPartners/amazon.svg" },
-  { slug: "apple", name: "Apple", logo: "/trustedPartners/apple.svg" },
-  { slug: "meta", name: "Meta", logo: "/trustedPartners/meta.svg" },
-  { slug: "netflix", name: "Netflix", logo: "/trustedPartners/netflix.svg" },
-  { slug: "adobe", name: "Adobe", logo: "/trustedPartners/adobe.svg" },
-  { slug: "salesforce", name: "Salesforce", logo: "/trustedPartners/salesforce.svg" },
-  { slug: "ibm", name: "IBM", logo: "/trustedPartners/ibm.svg" },
-  { slug: "intel", name: "Intel", logo: "/trustedPartners/intel.svg" },
-  { slug: "nvidia", name: "Nvidia", logo: "/trustedPartners/nvidia.svg" },
-  { slug: "tesla", name: "Tesla", logo: "/trustedPartners/tesla.svg" },
-  { slug: "shopify", name: "Shopify", logo: "/trustedPartners/shopify.svg" },
-  { slug: "slack", name: "Slack", logo: "/trustedPartners/slack.svg" },
-  { slug: "oracle", name: "Oracle", logo: "/trustedPartners/oracle.svg" },
-  { slug: "cisco", name: "Cisco", logo: "/trustedPartners/cisco.svg" },
+  { slug: "google", name: "Google", logo: "/trustedpartners/google.svg" },
+  { slug: "microsoft", name: "Microsoft", logo: "/trustedpartners/microsoft.svg" },
+  { slug: "amazon", name: "Amazon", logo: "/trustedpartners/amazon.svg" },
+  { slug: "apple", name: "Apple", logo: "/trustedpartners/apple.svg" },
+  { slug: "meta", name: "Meta", logo: "/trustedpartners/meta.svg" },
+  { slug: "netflix", name: "Netflix", logo: "/trustedpartners/netflix.svg" },
+  { slug: "adobe", name: "Adobe", logo: "/trustedpartners/adobe.svg" },
+  { slug: "salesforce", name: "Salesforce", logo: "/trustedpartners/salesforce.svg" },
+  { slug: "ibm", name: "IBM", logo: "/trustedpartners/ibm.svg" },
+  { slug: "intel", name: "Intel", logo: "/trustedpartners/intel.svg" },
+  { slug: "nvidia", name: "Nvidia", logo: "/trustedpartners/nvidia.svg" },
+  { slug: "tesla", name: "Tesla", logo: "/trustedpartners/tesla.svg" },
+  { slug: "shopify", name: "Shopify", logo: "/trustedpartners/shopify.svg" },
+  { slug: "slack", name: "Slack", logo: "/trustedpartners/slack.svg" },
+  { slug: "oracle", name: "Oracle", logo: "/trustedpartners/oracle.svg" },
+  { slug: "cisco", name: "Cisco", logo: "/trustedpartners/cisco.svg" },
 ];
 
 
@@ -783,7 +783,7 @@ export const projects = [
     description:
       "A call center CRM built to capture leads, assign staff, track attendance, run training, and keep sales conversations in one system so teams convert faster with full visibility.",
     image: {
-      src: "/projects/prime-leads-project/Prime-Lead-Crm-Dashboard.webp",
+      src: "/projects/prime-leads-project/prime-lead-crm-dashboard.webp",
       alt: "Prime Lead CRM dashboard overview",
       width: 1536,
       height: 1024,
@@ -796,7 +796,7 @@ export const projects = [
     description:
       "A smart school management ERP with AI-powered face recognition attendance, student and teacher management, fees, exams, timetables, and role-based portals for admins, teachers, parents, and students.",
     image: {
-      src: "/projects/ai-school-erp/AI-School-Erp-Showcase.webp",
+      src: "/projects/ai-school-erp/ai-school-erp-showcase.webp",
       alt: "AI School ERP showcase overview",
       width: 1200,
       height: 750,
@@ -809,7 +809,7 @@ export const projects = [
     description:
       "A full travel and tour platform with a public booking website, package listings, destination pages, customer management, bookings, rental inquiries, and an admin panel to manage packages end to end.",
     image: {
-      src: "/projects/travel-and-tour-website/Travel-And-Tour-Website-Homepage.webp",
+      src: "/projects/travel-and-tour-website/travel-and-tour-website-homepage.webp",
       alt: "Travel and tour website homepage",
       width: 1200,
       height: 750,
@@ -822,7 +822,7 @@ export const projects = [
     description:
       "An all-in-one restaurant point-of-sale and management platform for orders, menus, tables, customers, inventory, employees, reporting, and day-to-day business settings.",
     image: {
-      src: "/projects/restaurant-pos/Restaurant-Pos-Overview.webp",
+      src: "/projects/restaurant-pos/restaurant-pos-overview.webp",
       alt: "Restaurant POS system overview",
       width: 1024,
       height: 683,
@@ -835,7 +835,7 @@ export const projects = [
     description:
       "An all-in-one travel and tour management system for bookings, customers, packages, flights, hotels, transport, payments, invoices, agents, and business reporting.",
     image: {
-      src: "/projects/travel-and-tours-management/Travel-And-Tours-Management-Overview.webp",
+      src: "/projects/travel-and-tours-management/travel-and-tours-management-overview.webp",
       alt: "Travel and tours management system overview",
       width: 1024,
       height: 683,
@@ -848,7 +848,7 @@ export const projects = [
     description:
       "A complete hotel management platform for reservations, front desk, rooms, housekeeping, guests, finance, reports, employees, AI attendance, and AI camera monitoring.",
     image: {
-      src: "/projects/hotel-management-system/Hotel-Management-System-Overview.webp",
+      src: "/projects/hotel-management-system/hotel-management-system-overview.webp",
       alt: "Hotel management system overview",
       width: 1200,
       height: 750,
@@ -861,7 +861,7 @@ export const projects = [
     description:
       "An AI-powered retail POS and business platform for checkout, inventory, products, customers, sales, reports, multi-branch operations, and live AI camera monitoring.",
     image: {
-      src: "/projects/royal-pos/Royal-Pos-Overview.webp",
+      src: "/projects/royal-pos/royal-pos-overview.webp",
       alt: "Royal POS AI-powered retail system overview",
       width: 1200,
       height: 750,
@@ -874,7 +874,7 @@ export const projects = [
     description:
       "A complete hospital management platform for appointments, patients, doctors, departments, beds, billing, pharmacy, reports, users, and a dedicated doctor portal.",
     image: {
-      src: "/projects/hospital-management-system/Hospital-Management-System-Sign-In.webp",
+      src: "/projects/hospital-management-system/hospital-management-system-sign-in.webp",
       alt: "Hospital management system login and sign-up",
       width: 1200,
       height: 750,
@@ -887,7 +887,7 @@ export const projects = [
     description:
       "A complete cash management platform for accounts, income, expenses, transfers, categories, payees, budgets, reports, and audit trails so teams control cash flow with full visibility.",
     image: {
-      src: "/projects/cash-management-system/Cash-Management-System-Sign-In.webp",
+      src: "/projects/cash-management-system/cash-management-system-sign-in.webp",
       alt: "Cash management system sign-in",
       width: 1200,
       height: 750,
@@ -900,7 +900,7 @@ export const projects = [
     description:
       "An AI-powered HRMS for employees, attendance, leave, payroll, recruitment, onboarding, performance, training, assets, expenses, and exit management in one platform.",
     image: {
-      src: "/projects/hr-management-software/Hr-Management-Software-Overview.webp",
+      src: "/projects/hr-management-software/hr-management-software-overview.webp",
       alt: "HR management software overview",
       width: 1200,
       height: 750,
@@ -913,7 +913,7 @@ export const projects = [
     description:
       "A pharmacy inventory platform for medicines, suppliers, purchase orders, stock in and out, adjustments, batch and expiry tracking, and stock and purchase reports.",
     image: {
-      src: "/projects/medicine-inventory-system/Medicine-Inventory-System-Overview.webp",
+      src: "/projects/medicine-inventory-system/medicine-inventory-system-overview.webp",
       alt: "Medicine inventory system overview",
       width: 1200,
       height: 750,
@@ -926,7 +926,7 @@ export const projects = [
     description:
       "A complete EduLearn e-learning platform for courses, enrollments, lessons, assignments, quizzes, attendance, certificates, instructor dashboards, and admin management.",
     image: {
-      src: "/projects/e-learning-portal/E-Learning-Portal-Sign-In.webp",
+      src: "/projects/e-learning-portal/e-learning-portal-sign-in.webp",
       alt: "E-Learning Portal secure sign-in login",
       width: 1200,
       height: 750,
@@ -945,7 +945,7 @@ export const teamMembers = [
     role: "Senior Full-stack Developer",
     bio: "Senior full-stack engineer specializing in scalable Node.js and React applications, with a strong focus on clean architecture, performance, and production reliability.",
     image: {
-      src: "/team/Shahvaiz-Ahmed.webp",
+      src: "/team/shahvaiz-ahmed.webp",
       alt: "Portrait of Shahvaiz Ahmed",
       width: 600,
       height: 600,
@@ -956,7 +956,7 @@ export const teamMembers = [
     role: "Machine Learning Engineer",
     bio: "Machine learning engineer focused on designing, training, and deploying practical ML models that support intelligent product features and data-driven decisions.",
     image: {
-      src: "/team/Abdullah-Mehdi.webp",
+      src: "/team/abdullah-mehdi.webp",
       alt: "Portrait of Abdullah Mehdi",
       width: 600,
       height: 600,
@@ -967,7 +967,7 @@ export const teamMembers = [
     role: "DevOps Engineer",
     bio: "DevOps engineer responsible for cloud infrastructure, CI/CD pipelines, and secure deployment workflows that keep environments stable and releases predictable.",
     image: {
-      src: "/team/Izaan-Ali.webp",
+      src: "/team/izaan-ali.webp",
       alt: "Portrait of Izaan Ali",
       width: 600,
       height: 600,
@@ -978,7 +978,7 @@ export const teamMembers = [
     role: "Data Engineer",
     bio: "Data engineer building reliable data pipelines and warehouse foundations so teams can access accurate, well-structured data for analytics and operations.",
     image: {
-      src: "/team/Haider-Saleem.webp",
+      src: "/team/haider-saleem.webp",
       alt: "Portrait of Haider Saleem",
       width: 600,
       height: 600,
@@ -989,7 +989,7 @@ export const teamMembers = [
     role: "iOS Developer",
     bio: "iOS developer crafting polished native applications with attention to usability, performance, and App Store–ready quality standards.",
     image: {
-      src: "/team/Abdul-Hadi.webp",
+      src: "/team/abdul-hadi.webp",
       alt: "Portrait of Abdul Hadi",
       width: 600,
       height: 600,
@@ -1000,7 +1000,7 @@ export const teamMembers = [
     role: "Mobile App Developer",
     bio: "Mobile app developer delivering cross-platform experiences with a focus on responsive interfaces, maintainable code, and smooth user journeys.",
     image: {
-      src: "/team/Muhammad-Zeeshan.webp",
+      src: "/team/muhammad-zeeshan.webp",
       alt: "Portrait of Muhammad Zeeshan",
       width: 600,
       height: 600,
@@ -1253,7 +1253,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "11 min",
     category: "Engineering",
     image: {
-      src: "/insights/Engeenring.webp",
+      src: "/insights/engeenring.webp",
       alt: "Engineering and software delivery",
       width: 1200,
       height: 750,

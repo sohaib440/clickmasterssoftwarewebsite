@@ -424,7 +424,7 @@ const subServicesByCategoryRaw: SubServicesMap = {
         "As a software house, we connect design, frontend, and technical SEO so your site supports discovery and lead generation from day one, with room to grow into richer web experiences later.",
       ],
       image: {
-        src: "/services/Web-Development.webp",
+        src: "/services/web-development.webp",
         alt: "Custom website development services",
         width: 800,
         height: 500,
@@ -712,7 +712,7 @@ const subServicesByCategoryRaw: SubServicesMap = {
         "Our software house approach includes evaluation, fallbacks, and observability so AI features remain useful after the launch demo fades.",
       ],
       image: {
-        src: "/services/Artificial-Intelligence.webp",
+        src: "/services/artificial-intelligence.webp",
         alt: "AI software development services",
         width: 800,
         height: 500,
@@ -1656,7 +1656,7 @@ const subServicesByCategoryRaw: SubServicesMap = {
         "Findings are reported with reproduction steps and severity so developers can fix quickly before release.",
       ],
       image: {
-        src: "/services/Testing-and-QA.webp",
+        src: "/services/testing-and-qa.webp",
         alt: "Manual testing services",
         width: 800,
         height: 500,
