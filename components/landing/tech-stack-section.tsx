@@ -289,8 +289,8 @@ function TechBubbleCanvas({ logos }: { logos: readonly TechStackLogo[] }) {
             const isHovered = hoveredId === i;
             const isDragging = dragId === i;
             const active = isHovered || isDragging;
-            const iconSize = Math.min(46, Math.max(20, b.r * 0.52));
-            const labelSize = Math.max(7, Math.min(9, b.r * 0.13));
+            const iconSize = Math.min(32, Math.max(14, b.r * 0.34));
+            const labelSize = Math.max(9, Math.min(12, b.r * 0.22));
 
             return (
               <div
@@ -311,7 +311,7 @@ function TechBubbleCanvas({ logos }: { logos: readonly TechStackLogo[] }) {
                 onPointerDown={(e) => onBubblePointerDown(e, i)}
               >
                 <div
-                  className="relative flex flex-col items-center justify-center rounded-full px-1.5 backdrop-blur-sm"
+                  className="relative flex flex-col items-center justify-center overflow-hidden rounded-full px-1.5 backdrop-blur-sm"
                   style={{
                     width: size,
                     height: size,
@@ -338,12 +338,12 @@ function TechBubbleCanvas({ logos }: { logos: readonly TechStackLogo[] }) {
                     loading="lazy"
                     decoding="async"
                     draggable={false}
-                    className="max-h-full max-w-full shrink-0 object-contain"
+                    className="max-h-[38%] max-w-[42%] shrink-0 object-contain"
                   />
                   {logo.name ? (
                     <span
-                      className="mt-0.5 line-clamp-1 max-w-[92%] text-center font-medium leading-tight text-zinc-700"
-                      style={{ fontSize: labelSize }}
+                      className="mt-0.5 max-w-[88%] truncate text-center font-semibold leading-none"
+                      style={{ fontSize: labelSize, color: "#111111" }}
                     >
                       {logo.name}
                     </span>
