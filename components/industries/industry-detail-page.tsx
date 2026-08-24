@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight, Check } from "lucide-react";
+import { ArrowLeft, Check } from "lucide-react";
 
 import { CardImage } from "@/components/landing/card-image";
 import { FaqSection } from "@/components/landing/faq-section";
@@ -17,10 +17,6 @@ import {
   sectionPad,
 } from "@/lib/landing/constants";
 import { type IndustryPageContent } from "@/data/industries";
-import {
-  industryRelatedLinks,
-  renderIndustryLinks,
-} from "@/lib/content/industry-links";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
 
@@ -29,10 +25,6 @@ type Props = {
 };
 
 export function IndustryDetailPage({ industry }: Props) {
-  const usedPhrases = new Set<string>();
-  const relatedServices = industryRelatedLinks[industry.slug] ?? [];
-  const linkText = (text: string) => renderIndustryLinks(text, industry.slug, usedPhrases);
-
   return (
     <div className="flex min-h-full w-full flex-col overflow-x-clip bg-[#f0f1f3] text-horizon-navy">
       <SiteHeader />
@@ -72,12 +64,12 @@ export function IndustryDetailPage({ industry }: Props) {
                 </Reveal>
                 <Reveal immediate delay={motionStagger * 3}>
                   <p className="mt-5 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
-                    {linkText(industry.tagline)}
+                    {industry.tagline}
                   </p>
                 </Reveal>
                 <Reveal immediate delay={motionStagger * 4}>
                   <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/60">
-                    {linkText(industry.description)}
+                    {industry.description}
                   </p>
                 </Reveal>
                 <Reveal immediate delay={motionStagger * 5}>
@@ -123,7 +115,7 @@ export function IndustryDetailPage({ industry }: Props) {
             <div className="mt-6 max-w-3xl space-y-4">
               {industry.overview.map((paragraph) => (
                 <p key={paragraph} className="text-sm leading-relaxed text-horizon-muted md:text-base">
-                  {linkText(paragraph)}
+                  {paragraph}
                 </p>
               ))}
             </div>
@@ -162,7 +154,7 @@ export function IndustryDetailPage({ industry }: Props) {
                       {item.title}
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-horizon-muted">
-                      {linkText(item.description)}
+                      {item.description}
                     </p>
                   </Reveal>
                 </li>
@@ -186,7 +178,7 @@ export function IndustryDetailPage({ industry }: Props) {
                       {item.title}
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-horizon-muted">
-                      {linkText(item.description)}
+                      {item.description}
                     </p>
                   </Reveal>
                 </li>
@@ -213,7 +205,7 @@ export function IndustryDetailPage({ industry }: Props) {
                       {item.title}
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-horizon-muted">
-                      {linkText(item.description)}
+                      {item.description}
                     </p>
                   </Reveal>
                 </li>
@@ -246,7 +238,7 @@ export function IndustryDetailPage({ industry }: Props) {
                         strokeWidth={2}
                         aria-hidden
                       />
-                      {linkText(item)}
+                      {item}
                     </li>
                   ))}
                 </ul>
@@ -279,7 +271,7 @@ export function IndustryDetailPage({ industry }: Props) {
                         strokeWidth={2}
                         aria-hidden
                       />
-                      {linkText(item)}
+                      {item}
                     </li>
                   ))}
                 </ul>
@@ -306,7 +298,7 @@ export function IndustryDetailPage({ industry }: Props) {
                       {item.title}
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-horizon-muted">
-                      {linkText(item.description)}
+                      {item.description}
                     </p>
                   </Reveal>
                 </li>
@@ -330,7 +322,7 @@ export function IndustryDetailPage({ industry }: Props) {
                       {item.title}
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-horizon-muted">
-                      {linkText(item.description)}
+                      {item.description}
                     </p>
                   </Reveal>
                 </li>
@@ -355,7 +347,7 @@ export function IndustryDetailPage({ industry }: Props) {
                       {step.title}
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-horizon-muted">
-                      {linkText(step.description)}
+                      {step.description}
                     </p>
                   </Reveal>
                 </li>
@@ -379,47 +371,7 @@ export function IndustryDetailPage({ industry }: Props) {
                 Questions, <span className="italic">answered</span>
               </>
             }
-            renderAnswer={(answer) => renderIndustryLinks(answer, industry.slug, usedPhrases)}
           />
-        ) : null}
-
-        {relatedServices.length > 0 ? (
-          <section className="w-full bg-horizon-cream text-horizon-navy">
-            <div className={cn(container, sectionPad)}>
-              <Reveal>
-                <h2 className="font-heading text-3xl font-normal md:text-4xl">
-                  Related <span className="italic">services</span>
-                </h2>
-                <p className="mt-3 max-w-2xl text-horizon-muted">
-                  Work we often pair with {industry.label.toLowerCase()} software, from the same
-                  delivery team.
-                </p>
-              </Reveal>
-              <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                {relatedServices.map((item, index) => (
-                  <li key={item.href}>
-                    <Reveal delay={index * motionStagger}>
-                      <Link
-                        href={item.href}
-                        className={cn(
-                          cardSoft,
-                          "group flex items-center justify-between gap-3 p-5 transition-colors hover:border-horizon-sky"
-                        )}
-                      >
-                        <p className="font-heading text-lg font-medium text-horizon-navy">
-                          {item.label}
-                        </p>
-                        <ArrowUpRight
-                          className="size-5 shrink-0 text-horizon-muted transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-horizon-navy"
-                          aria-hidden
-                        />
-                      </Link>
-                    </Reveal>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </section>
         ) : null}
 
         <section className="bg-horizon-navy text-white">
