@@ -24,7 +24,7 @@ export default function IndustriesRoute() {
       path: "/industries",
       items: industries.map((industry) => ({
         name: industry.industry,
-        path: `/industries#${industry.slug}`,
+        path: `/industries/${industry.slug}`,
       })),
     }),
     breadcrumbSchema([

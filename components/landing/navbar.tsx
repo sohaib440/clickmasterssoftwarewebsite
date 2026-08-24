@@ -104,6 +104,7 @@ export const footerColumns = [
     links: [
       { label: "About Us", href: aboutPath },
       { label: "Our Work", href: projectPath },
+      { label: "Industries", href: industriesPath },
       { label: "Solutions", href: "/solutions" },
       { label: "Blog", href: "/blog" },
       { label: "FAQ", href: "/faqs" },
