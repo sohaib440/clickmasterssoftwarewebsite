@@ -3,17 +3,19 @@ import { ArrowLeft, Check } from "lucide-react";
 
 import { CardImage } from "@/components/landing/card-image";
 import { FaqSection } from "@/components/landing/faq-section";
+import { RatingBadges } from "@/components/landing/rating-badges";
 import { Reveal } from "@/components/landing/reveal";
 import { SiteHeader } from "@/components/landing/navbar";
 import {
   btnOnDark,
+  btnOutlineDark,
   btnPrimary,
   card,
   cardSoft,
   contactPath,
   container,
   industriesPath,
-  overline,
+  projectPath,
   sectionPad,
 } from "@/lib/landing/constants";
 import { type IndustryPageContent } from "@/data/industries";
@@ -25,6 +27,11 @@ type Props = {
 };
 
 export function IndustryDetailPage({ industry }: Props) {
+  const [heroOverview, ...restOverview] = industry.overview;
+  const heroSolutions = industry.solutions.slice(0, 4);
+  const heroAudiences = industry.whoWeServe.slice(0, 4);
+  const heroOutcomes = industry.outcomes.slice(0, 3);
+
   return (
     <div className="flex min-h-full w-full flex-col overflow-x-clip bg-[#f0f1f3] text-horizon-navy">
       <SiteHeader />
@@ -32,8 +39,8 @@ export function IndustryDetailPage({ industry }: Props) {
       <main className="flex-1">
         <section className="relative overflow-hidden bg-black text-white">
           <div className="pointer-events-none absolute inset-0" aria-hidden>
-            <div className="absolute -left-16 top-0 h-72 w-72 rounded-full bg-primary/12 blur-[100px]" />
-            <div className="absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-white/[0.04] blur-[110px]" />
+            <div className="absolute -left-16 top-0 h-72 w-72 rounded-full bg-white/[0.04] blur-[100px]" />
+            <div className="absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-white/[0.03] blur-[110px]" />
           </div>
 
           <div className={cn(container, sectionPad, "relative")}>
@@ -52,26 +59,30 @@ export function IndustryDetailPage({ industry }: Props) {
               </nav>
             </Reveal>
 
-            <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10">
+            <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
               <div className="min-w-0">
                 <Reveal immediate delay={motionStagger}>
-                  <p className={cn(overline, "text-white/80")}>Industry</p>
-                </Reveal>
-                <Reveal immediate delay={motionStagger * 2}>
-                  <h1 className="mt-4 font-heading text-4xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
+                  <h1 className="font-heading text-4xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
                     {industry.label} software development
                   </h1>
                 </Reveal>
-                <Reveal immediate delay={motionStagger * 3}>
+                <Reveal immediate delay={motionStagger * 2}>
                   <p className="mt-5 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
                     {industry.tagline}
                   </p>
                 </Reveal>
-                <Reveal immediate delay={motionStagger * 4}>
+                <Reveal immediate delay={motionStagger * 3}>
                   <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/60">
                     {industry.description}
                   </p>
                 </Reveal>
+                {heroOverview ? (
+                  <Reveal immediate delay={motionStagger * 4}>
+                    <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/55">
+                      {heroOverview}
+                    </p>
+                  </Reveal>
+                ) : null}
                 <Reveal immediate delay={motionStagger * 5}>
                   <ul className="mt-5 flex flex-wrap gap-2">
                     {industry.tags.map((tag) => (
@@ -84,10 +95,58 @@ export function IndustryDetailPage({ industry }: Props) {
                     ))}
                   </ul>
                 </Reveal>
-                <Reveal immediate delay={motionStagger * 6}>
-                  <Link href={contactPath} className={cn(btnPrimary, "mt-8")}>
-                    Discuss your {industry.label.toLowerCase()} project
-                  </Link>
+                {heroSolutions.length > 0 ? (
+                  <Reveal immediate delay={motionStagger * 6}>
+                    <div className="mt-7">
+                      <p className="text-xs font-medium uppercase tracking-[0.14em] text-white/45">
+                        What we build
+                      </p>
+                      <ul className="mt-3 space-y-2.5">
+                        {heroSolutions.map((item) => (
+                          <li
+                            key={item}
+                            className="flex items-start gap-2.5 text-sm leading-snug text-white/75"
+                          >
+                            <Check
+                              className="mt-0.5 size-4 shrink-0 text-primary"
+                              strokeWidth={2}
+                              aria-hidden
+                            />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </Reveal>
+                ) : null}
+                {heroAudiences.length > 0 ? (
+                  <Reveal immediate delay={motionStagger * 7}>
+                    <div className="mt-7">
+                      <p className="text-xs font-medium uppercase tracking-[0.14em] text-white/45">
+                        Who we work with
+                      </p>
+                      <ul className="mt-3 flex flex-wrap gap-2">
+                        {heroAudiences.map((item) => (
+                          <li
+                            key={item}
+                            className="rounded-full border border-white/15 bg-white/[0.04] px-3 py-1.5 text-xs text-white/75"
+                          >
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </Reveal>
+                ) : null}
+                <Reveal immediate delay={motionStagger * 8}>
+                  <div className="mt-8 flex flex-col gap-2 sm:flex-row sm:items-center">
+                    <Link href={contactPath} className={btnPrimary}>
+                      Discuss your {industry.label.toLowerCase()} project
+                    </Link>
+                    <Link href={projectPath} className={btnOutlineDark}>
+                      See our work
+                    </Link>
+                  </div>
                 </Reveal>
               </div>
 
@@ -100,6 +159,24 @@ export function IndustryDetailPage({ industry }: Props) {
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>
+                {heroOutcomes.length > 0 ? (
+                  <ul className="mt-5 space-y-2.5 border-t border-white/10 pt-5">
+                    {heroOutcomes.map((item) => (
+                      <li
+                        key={item.title}
+                        className="flex items-start gap-2.5 text-sm leading-snug text-white/75"
+                      >
+                        <Check
+                          className="mt-0.5 size-4 shrink-0 text-primary"
+                          strokeWidth={2}
+                          aria-hidden
+                        />
+                        <span>{item.title}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+                <RatingBadges variant="dark" className="mt-5" />
               </Reveal>
             </div>
           </div>
@@ -113,7 +190,7 @@ export function IndustryDetailPage({ industry }: Props) {
               </h2>
             </Reveal>
             <div className="mt-6 max-w-3xl space-y-4">
-              {industry.overview.map((paragraph) => (
+              {(restOverview.length > 0 ? restOverview : industry.overview).map((paragraph) => (
                 <p key={paragraph} className="text-sm leading-relaxed text-horizon-muted md:text-base">
                   {paragraph}
                 </p>
