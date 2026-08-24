@@ -6,12 +6,11 @@ import { FaqSection } from "@/components/landing/faq-section";
 import { RatingBadges } from "@/components/landing/rating-badges";
 import { Reveal } from "@/components/landing/reveal";
 import { SiteHeader } from "@/components/landing/navbar";
+import { TechStackSection } from "@/components/landing/tech-stack-section";
 import {
   btnOnDark,
   btnOutlineDark,
   btnPrimary,
-  card,
-  cardSoft,
   contactPath,
   container,
   industriesPath,
@@ -28,9 +27,6 @@ type Props = {
 
 export function IndustryDetailPage({ industry }: Props) {
   const [heroOverview, ...restOverview] = industry.overview;
-  const heroSolutions = industry.solutions.slice(0, 4);
-  const heroAudiences = industry.whoWeServe.slice(0, 4);
-  const heroOutcomes = industry.outcomes.slice(0, 3);
 
   return (
     <div className="flex min-h-full w-full flex-col overflow-x-clip bg-[#f0f1f3] text-horizon-navy">
@@ -95,14 +91,14 @@ export function IndustryDetailPage({ industry }: Props) {
                     ))}
                   </ul>
                 </Reveal>
-                {heroSolutions.length > 0 ? (
+                {industry.solutions.length > 0 ? (
                   <Reveal immediate delay={motionStagger * 6}>
                     <div className="mt-7">
                       <p className="text-xs font-medium uppercase tracking-[0.14em] text-white/45">
                         What we build
                       </p>
                       <ul className="mt-3 space-y-2.5">
-                        {heroSolutions.map((item) => (
+                        {industry.solutions.map((item) => (
                           <li
                             key={item}
                             className="flex items-start gap-2.5 text-sm leading-snug text-white/75"
@@ -119,14 +115,14 @@ export function IndustryDetailPage({ industry }: Props) {
                     </div>
                   </Reveal>
                 ) : null}
-                {heroAudiences.length > 0 ? (
+                {industry.whoWeServe.length > 0 ? (
                   <Reveal immediate delay={motionStagger * 7}>
                     <div className="mt-7">
                       <p className="text-xs font-medium uppercase tracking-[0.14em] text-white/45">
                         Who we work with
                       </p>
                       <ul className="mt-3 flex flex-wrap gap-2">
-                        {heroAudiences.map((item) => (
+                        {industry.whoWeServe.map((item) => (
                           <li
                             key={item}
                             className="rounded-full border border-white/15 bg-white/[0.04] px-3 py-1.5 text-xs text-white/75"
@@ -159,9 +155,9 @@ export function IndustryDetailPage({ industry }: Props) {
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>
-                {heroOutcomes.length > 0 ? (
+                {industry.outcomes.length > 0 ? (
                   <ul className="mt-5 space-y-2.5 border-t border-white/10 pt-5">
-                    {heroOutcomes.map((item) => (
+                    {industry.outcomes.map((item) => (
                       <li
                         key={item.title}
                         className="flex items-start gap-2.5 text-sm leading-snug text-white/75"
@@ -182,55 +178,46 @@ export function IndustryDetailPage({ industry }: Props) {
           </div>
         </section>
 
-        <section className="w-full bg-white">
-          <div className={cn(container, sectionPad)}>
-            <Reveal>
-              <h2 className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
-                Software for <span className="italic">{industry.label.toLowerCase()}</span>
-              </h2>
-            </Reveal>
-            <div className="mt-6 max-w-3xl space-y-4">
-              {(restOverview.length > 0 ? restOverview : industry.overview).map((paragraph) => (
-                <p key={paragraph} className="text-sm leading-relaxed text-horizon-muted md:text-base">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-            {industry.whoWeServe.length > 0 ? (
-              <div className="mt-8">
-                <h3 className="text-sm font-medium uppercase tracking-[0.14em] text-horizon-muted">
-                  Who we work with
-                </h3>
-                <ul className="mt-3 flex flex-wrap gap-2">
-                  {industry.whoWeServe.map((item) => (
-                    <li
-                      key={item}
-                      className="rounded-full border border-horizon-border bg-[#f5f6f8] px-3 py-1.5 text-sm text-horizon-navy"
-                    >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+        {restOverview.length > 0 ? (
+          <section className="w-full bg-white">
+            <div className={cn(container, sectionPad)}>
+              <Reveal>
+                <h2 className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
+                  Software for <span className="italic">{industry.label.toLowerCase()}</span>
+                </h2>
+              </Reveal>
+              <div className="mt-6 max-w-3xl space-y-4">
+                {restOverview.map((paragraph) => (
+                  <p
+                    key={paragraph}
+                    className="text-sm leading-relaxed text-horizon-muted md:text-base"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
               </div>
-            ) : null}
-          </div>
-        </section>
+            </div>
+          </section>
+        ) : null}
 
-        <section className="w-full bg-[#f5f6f8]">
+        <section className="w-full bg-black text-white">
           <div className={cn(container, sectionPad)}>
             <Reveal>
-              <h2 className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
+              <h2 className="font-heading text-3xl font-normal text-white md:text-4xl">
                 Problems we <span className="italic">solve</span>
               </h2>
             </Reveal>
             <ul className="mt-10 grid gap-4 md:grid-cols-3">
               {industry.challenges.map((item, i) => (
                 <li key={item.title}>
-                  <Reveal delay={i * motionStagger} className={cn(card, "h-full p-6")}>
-                    <h3 className="font-heading text-lg font-medium text-horizon-navy">
+                  <Reveal
+                    delay={i * motionStagger}
+                    className="h-full rounded-2xl border border-white/15 bg-black p-6"
+                  >
+                    <h3 className="font-heading text-lg font-medium text-white">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-horizon-muted">
+                    <p className="mt-2 text-sm leading-relaxed text-white/70">
                       {item.description}
                     </p>
                   </Reveal>
@@ -240,21 +227,24 @@ export function IndustryDetailPage({ industry }: Props) {
           </div>
         </section>
 
-        <section className="w-full bg-horizon-sky/30">
+        <section className="w-full bg-white text-black">
           <div className={cn(container, sectionPad)}>
             <Reveal>
-              <h2 className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
+              <h2 className="font-heading text-3xl font-normal text-black md:text-4xl">
                 Typical <span className="italic">use cases</span>
               </h2>
             </Reveal>
             <ul className="mt-10 grid gap-4 md:grid-cols-3">
               {industry.useCases.map((item, i) => (
                 <li key={item.title}>
-                  <Reveal delay={i * motionStagger} className={cn(card, "h-full p-6")}>
-                    <h3 className="font-heading text-lg font-medium text-horizon-navy">
+                  <Reveal
+                    delay={i * motionStagger}
+                    className="h-full rounded-2xl border border-black/10 bg-white p-6"
+                  >
+                    <h3 className="font-heading text-lg font-medium text-black">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-horizon-muted">
+                    <p className="mt-2 text-sm leading-relaxed text-black/70">
                       {item.description}
                     </p>
                   </Reveal>
@@ -264,12 +254,12 @@ export function IndustryDetailPage({ industry }: Props) {
           </div>
         </section>
 
-        <section className="w-full bg-white">
+        <section className="w-full bg-black text-white">
           <div className={cn(container, sectionPad)}>
             <Reveal>
               <h2
                 id="capabilities-heading"
-                className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl"
+                className="font-heading text-3xl font-normal text-white md:text-4xl"
               >
                 What we <span className="italic">deliver</span>
               </h2>
@@ -277,11 +267,14 @@ export function IndustryDetailPage({ industry }: Props) {
             <ul className="mt-10 grid gap-4 md:grid-cols-2">
               {industry.capabilities.map((item, i) => (
                 <li key={item.title}>
-                  <Reveal delay={i * motionStagger} className={cn(cardSoft, "h-full p-6")}>
-                    <h3 className="font-heading text-lg font-medium text-horizon-navy">
+                  <Reveal
+                    delay={i * motionStagger}
+                    className="h-full rounded-2xl border border-white/15 bg-black p-6"
+                  >
+                    <h3 className="font-heading text-lg font-medium text-white">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-horizon-muted">
+                    <p className="mt-2 text-sm leading-relaxed text-white/70">
                       {item.description}
                     </p>
                   </Reveal>
@@ -291,47 +284,14 @@ export function IndustryDetailPage({ industry }: Props) {
           </div>
         </section>
 
-        <section className="w-full bg-horizon-peach/40">
+        <section className="w-full bg-white text-black">
           <div className={cn(container, sectionPad)}>
             <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
               <Reveal>
-                <h2 className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
-                  Systems we <span className="italic">build</span>
-                </h2>
-                <p className="mt-3 text-horizon-muted">
-                  Typical {industry.label.toLowerCase()} products and modules we design, build, and
-                  support.
-                </p>
-              </Reveal>
-              <Reveal delay={motionStagger}>
-                <ul className="grid gap-2 sm:grid-cols-2">
-                  {industry.solutions.map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-2.5 rounded-xl border border-horizon-border/80 bg-white/90 px-4 py-3 text-sm text-horizon-navy"
-                    >
-                      <Check
-                        className="mt-0.5 size-4 shrink-0 text-horizon-navy/60"
-                        strokeWidth={2}
-                        aria-hidden
-                      />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </Reveal>
-            </div>
-          </div>
-        </section>
-
-        <section className="w-full bg-[#f5f6f8]">
-          <div className={cn(container, sectionPad)}>
-            <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
-              <Reveal>
-                <h2 className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
+                <h2 className="font-heading text-3xl font-normal text-black md:text-4xl">
                   Integrations we <span className="italic">connect</span>
                 </h2>
-                <p className="mt-3 text-horizon-muted">
+                <p className="mt-3 text-black/70">
                   {industry.label} systems rarely live alone. We wire the tools you already run so
                   staff are not retyping the same fact in three places.
                 </p>
@@ -341,10 +301,10 @@ export function IndustryDetailPage({ industry }: Props) {
                   {industry.integrations.map((item) => (
                     <li
                       key={item}
-                      className="flex items-start gap-2.5 rounded-xl border border-horizon-border/80 bg-white px-4 py-3 text-sm text-horizon-navy"
+                      className="flex items-start gap-2.5 rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-black"
                     >
                       <Check
-                        className="mt-0.5 size-4 shrink-0 text-horizon-navy/60"
+                        className="mt-0.5 size-4 shrink-0 text-black/50"
                         strokeWidth={2}
                         aria-hidden
                       />
@@ -357,48 +317,27 @@ export function IndustryDetailPage({ industry }: Props) {
           </div>
         </section>
 
-        <section className="w-full bg-white">
+        <section className="w-full bg-black text-white">
           <div className={cn(container, sectionPad)}>
             <Reveal>
-              <h2 className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
+              <h2 className="font-heading text-3xl font-normal text-white md:text-4xl">
                 Why teams <span className="italic">choose us</span>
               </h2>
             </Reveal>
             <ul className="mt-10 grid gap-4 md:grid-cols-3">
               {industry.highlights.map((item, i) => (
                 <li key={item.title}>
-                  <Reveal delay={i * motionStagger} className={cn(card, "h-full p-6")}>
-                    <span className="flex size-9 items-center justify-center rounded-full bg-horizon-sky/60 text-horizon-navy">
+                  <Reveal
+                    delay={i * motionStagger}
+                    className="h-full rounded-2xl border border-white/15 bg-black p-6"
+                  >
+                    <span className="flex size-9 items-center justify-center rounded-full bg-white/10 text-white">
                       <Check className="size-4" strokeWidth={2} aria-hidden />
                     </span>
-                    <h3 className="mt-4 font-heading text-lg font-medium text-horizon-navy">
+                    <h3 className="mt-4 font-heading text-lg font-medium text-white">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-horizon-muted">
-                      {item.description}
-                    </p>
-                  </Reveal>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        <section className="w-full bg-horizon-peach/30">
-          <div className={cn(container, sectionPad)}>
-            <Reveal>
-              <h2 className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
-                What good <span className="italic">looks like</span>
-              </h2>
-            </Reveal>
-            <ul className="mt-10 grid gap-4 md:grid-cols-3">
-              {industry.outcomes.map((item, i) => (
-                <li key={item.title}>
-                  <Reveal delay={i * motionStagger} className={cn(cardSoft, "h-full p-6")}>
-                    <h3 className="font-heading text-lg font-medium text-horizon-navy">
-                      {item.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-horizon-muted">
+                    <p className="mt-2 text-sm leading-relaxed text-white/70">
                       {item.description}
                     </p>
                   </Reveal>
@@ -432,6 +371,17 @@ export function IndustryDetailPage({ industry }: Props) {
             </ol>
           </div>
         </section>
+
+        <TechStackSection
+          overlineText={`${industry.label} technology`}
+          title={
+            <>
+              Built with <span className="text-primary">proven, modern tools</span>
+            </>
+          }
+          description={`The same production stack we use across products, tuned for ${industry.label.toLowerCase()} workflows, integrations, and scale.`}
+          badgeText={`Technology for ${industry.label.toLowerCase()} delivery`}
+        />
 
         {industry.faqs.length > 0 ? (
           <FaqSection

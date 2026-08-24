@@ -93,9 +93,9 @@ const industryDrafts: IndustryDraft[] = [
       "Manufacturing software only helps when it matches the floor: machines, shifts, quality checks, and the people who keep orders moving. We build operations platforms, ERP modules, and IoT dashboards that reduce downtime instead of adding another screen nobody opens.",
       "From job tracking and inventory to maintenance and quality, we connect the data you already collect so supervisors see issues early and planners stop working from spreadsheets.",
     ],
-    pageTitle: "Manufacturing Software Development",
+    pageTitle: "Manufacturing Software Development for Plants & Factory Work",
     metaDescription:
-      "Custom manufacturing software for production, inventory, quality, and IoT operations. Built by a software house that ships plant-ready systems.",
+      "Custom manufacturing software for production, inventory, quality, and IoT operations. Built by a software house that ships plant-ready systems for plant floors.",
     heroImage: img("/industries/manufacturing.webp", "Manufacturing software and factory operations"),
     challenges: [
       {
@@ -191,9 +191,9 @@ const industryDrafts: IndustryDraft[] = [
       "Healthcare software has to respect how clinicians work: interruptions, handoffs, privacy, and the cost of a wrong click. We build hospital systems, patient portals, and telehealth products that reduce admin load instead of adding it.",
       "As a software house with healthcare delivery experience, we treat access control, audit trails, and reliable uptime as part of the product, not a late checklist.",
     ],
-    pageTitle: "Healthcare Software Development",
+    pageTitle: "Healthcare Software Development for Clinics & Hospital Teams",
     metaDescription:
-      "Custom healthcare software for hospitals, clinics, telehealth, and patient portals. Privacy-aware delivery from a trusted software house.",
+      "Custom healthcare software for hospitals, clinics, telehealth, and patient portals. Privacy-aware delivery from a trusted software house for clinical ops teams.",
     heroImage: img("/industries/healthcare.webp", "Healthcare software for clinics and hospitals"),
     challenges: [
       {
@@ -289,9 +289,9 @@ const industryDrafts: IndustryDraft[] = [
       "Retail software has to keep catalog, stock, and checkout honest across stores and the web. We build POS, ecommerce, and inventory platforms that reduce stockouts and speed the queue instead of adding another dashboard.",
       "Whether you run a single brand or many locations, we design for promotions, returns, and the messy reality of omnichannel orders.",
     ],
-    pageTitle: "Retail Software Development",
+    pageTitle: "Retail Software Development for Stores & Ecommerce Platforms",
     metaDescription:
-      "Custom retail software for POS, ecommerce, inventory, and loyalty. Built by a software house that ships store-ready systems.",
+      "Custom retail software for POS, ecommerce, inventory, and loyalty programs. Built by a software house that ships store-ready systems for modern retail networks.",
     heroImage: img("/industries/retail.webp", "Retail POS and ecommerce software"),
     challenges: [
       {
@@ -387,9 +387,9 @@ const industryDrafts: IndustryDraft[] = [
       "Real estate teams lose deals when listings, leads, and documents live in chats and shared drives. We build CRM, listing, and property management software that keeps the pipeline and the portfolio in one place.",
       "From agency desks to landlords and developers, we focus on the tasks people repeat every day: matching buyers, tracking viewings, and keeping contracts current.",
     ],
-    pageTitle: "Real Estate Software Development",
+    pageTitle: "Real Estate Software Development for Agents & Property Firms",
     metaDescription:
-      "Custom real estate software for listings, agent CRM, and property management. Built by a software development company that ships usable platforms.",
+      "Custom real estate software for listings, agent CRM, and property management. Built by a software company that ships usable platforms for brokers and operators.",
     heroImage: img("/industries/realestate.webp", "Real estate listings and property management software"),
     challenges: [
       {
@@ -485,9 +485,9 @@ const industryDrafts: IndustryDraft[] = [
       "Education software fails when it ignores how schools actually operate: timetables, parents, fees, and teachers with limited time. We build LMS, school ERP, and student apps that reduce admin and make progress visible.",
       "From admissions to attendance and assessments, we keep roles clear so students, faculty, and back office are not fighting the same form.",
     ],
-    pageTitle: "Education Software Development",
+    pageTitle: "Education Software Development for Schools & EdTech Products",
     metaDescription:
-      "Custom education software for LMS, school ERP, student portals, and digital classrooms. Built by a software house for schools and EdTech teams.",
+      "Custom education software for LMS, school ERP, student portals, and classrooms. Built by a software house for schools, universities, and EdTech teams worldwide.",
     heroImage: img("/industries/education.webp", "Education LMS and school management software"),
     challenges: [
       {
@@ -583,9 +583,9 @@ const industryDrafts: IndustryDraft[] = [
       "Finance products live or die on correctness, latency, and auditability. We build trading, portfolio, and analytics platforms with clear controls so operations and risk teams can trust what they see.",
       "As a software development company used to regulated delivery, we treat permissions, logging, and reconciliation as core product work.",
     ],
-    pageTitle: "Finance Software Development",
+    pageTitle: "Finance Software Development for Fintech & Trading Platforms",
     metaDescription:
-      "Custom finance and fintech software for trading, analytics, and operations. Secure delivery from a leading software house.",
+      "Custom finance and fintech software for trading, analytics, payments, and operations. Secure delivery from a leading software house for finance teams worldwide.",
     heroImage: img("/industries/finance.webp", "Finance and fintech analytics software"),
     challenges: [
       {
@@ -681,9 +681,9 @@ const industryDrafts: IndustryDraft[] = [
       "Logistics software has to survive messy reality: delayed trucks, split consignments, and customers who want a status now. We build tracking, warehouse, and fleet systems that give operations a live picture instead of a trail of phone calls.",
       "From first mile to last, we connect orders, vehicles, and warehouses so exceptions are handled as a process, not a crisis.",
     ],
-    pageTitle: "Logistics Software Development",
+    pageTitle: "Logistics Software Development for Fleet & Warehouse Systems",
     metaDescription:
-      "Custom logistics software for shipment tracking, fleet, and warehouse operations. Built by a software house for transport and 3PL teams.",
+      "Custom logistics software for shipment tracking, fleet, and warehouse operations. Built by a software house for transport, distribution, and logistics partners.",
     heroImage: img("/industries/logistics.webp", "Logistics tracking and fleet management software"),
     challenges: [
       {
@@ -779,9 +779,9 @@ const industryDrafts: IndustryDraft[] = [
       "Media companies need software that respects deadlines, rights, and the way editors actually work. We build CMS, streaming, and production workflow tools that move assets from ingest to publish without a tangle of shared folders.",
       "Whether you run newsroom, OTT, or brand content, we focus on metadata, approvals, and delivery that can keep up with the schedule.",
     ],
-    pageTitle: "Media Software Development",
+    pageTitle: "Media Software Development for Streaming & Publishing Brands",
     metaDescription:
-      "Custom media software for CMS, streaming, and production workflows. Built by a software development company for publishers and broadcasters.",
+      "Custom media software for CMS, streaming, and production workflows. Built by a software development company for publishers, studios, and media brands worldwide.",
     heroImage: img("/industries/media.webp", "Media streaming and content production software"),
     challenges: [
       {
@@ -877,9 +877,9 @@ const industryDrafts: IndustryDraft[] = [
       "Banking software has to be correct under scrutiny: onboarding, ledgers, and customer channels cannot drift. We build digital banking, KYC, and operations tools with the controls your risk and audit teams expect.",
       "We work as a software house that can sit with product, ops, and security so the release is usable in branches and on mobile, not only in a slide deck.",
     ],
-    pageTitle: "Banking Software Development",
+    pageTitle: "Banking Software Development for Digital Banks & Mobile Apps",
     metaDescription:
-      "Custom banking software for digital onboarding, core workflows, and fraud controls. Secure delivery from a trusted software house.",
+      "Custom banking software for digital onboarding, core workflows, and fraud controls. Secure delivery from a trusted software house for banks and fintech clients.",
     heroImage: img("/industries/banking.webp", "Digital banking and onboarding software"),
     challenges: [
       {
@@ -975,9 +975,9 @@ const industryDrafts: IndustryDraft[] = [
       "Agriculture software has to work with seasons, connectivity, and people who are not sitting at a desk. We build farm management, sensor, and supply-chain tools that turn field data into decisions instead of unused charts.",
       "From cooperatives to agribusiness, we connect plots, inventory, and logistics so agronomy and operations share the same numbers.",
     ],
-    pageTitle: "Agriculture Software Development",
+    pageTitle: "Agriculture Software Development for Farms & Field Platforms",
     metaDescription:
-      "Custom agriculture software for farm management, IoT sensors, and agribusiness operations. Built by a practical software house.",
+      "Custom agriculture software for farm management, IoT sensors, and agribusiness ops. Built by a practical software house for growers and agribusiness leadership.",
     heroImage: img("/industries/agriculture.webp", "Agriculture and precision farming software"),
     challenges: [
       {
@@ -1073,9 +1073,9 @@ const industryDrafts: IndustryDraft[] = [
       "Hospitality software is judged at check-in, not in a demo. We build reservation, PMS-adjacent, and guest apps that keep front desk, housekeeping, and F&B aligned when the house is full.",
       "From independent hotels to groups, we focus on the guest journey and the staff tools that make it possible.",
     ],
-    pageTitle: "Hospitality Software Development",
+    pageTitle: "Hospitality Software Development for Hotels & Resort Systems",
     metaDescription:
-      "Custom hospitality software for reservations, guest experience, and hotel operations. Built by a software house for hotels and venues.",
+      "Custom hospitality software for reservations, guest experience, and hotel operations. Built by a software house for hotels, resorts, and venue operations teams.",
     heroImage: img("/industries/hospitality.webp", "Hospitality reservation and hotel operations software"),
     challenges: [
       {
@@ -1171,9 +1171,9 @@ const industryDrafts: IndustryDraft[] = [
       "Fitness businesses grow when booking, membership, and coaching are easy on a phone. We build club apps, class systems, and trainer tools that reduce no-shows and make retention measurable.",
       "From boutique studios to multi-site gyms, we connect payments, schedules, and access so the front desk is not the bottleneck.",
     ],
-    pageTitle: "Health and Fitness Software Development",
+    pageTitle: "Health & Fitness Software Development for Gyms & Studio Apps",
     metaDescription:
-      "Custom fitness software for memberships, class booking, and member apps. Built by a software house for gyms and wellness brands.",
+      "Custom fitness software for memberships, class booking, and member apps. Built by a software house for gyms, studios, and wellness brands needing reliable apps.",
     heroImage: img("/industries/fitness.webp", "Fitness membership and class booking software"),
     challenges: [
       {
@@ -1269,9 +1269,9 @@ const industryDrafts: IndustryDraft[] = [
       "Technology companies need a software house that can join an existing codebase, not only start greenfield. We build SaaS products, APIs, and internal platforms with the engineering standards your team can inherit.",
       "From MVP to scale-up, we focus on architecture, observability, and delivery cadence so you are not stuck with a prototype that cannot grow.",
     ],
-    pageTitle: "Technology Company Software Development",
+    pageTitle: "Technology Software Development for SaaS & Platform Products",
     metaDescription:
-      "Custom software, APIs, and SaaS platforms for technology companies. Senior product engineering from a top rated software house.",
+      "Custom software, APIs, and SaaS platforms for technology companies. Senior product engineering from a top rated software house for startups and scale-up groups.",
     heroImage: img("/industries/technology.webp", "SaaS and technology platform software development"),
     challenges: [
       {
@@ -1367,9 +1367,9 @@ const industryDrafts: IndustryDraft[] = [
       "Insurance operations stall when quotes, underwriting, and claims live in disconnected tools. We build policy admin, FNOL, and broker portals that make the file the system of record.",
       "We design for rules, documents, and exceptions so automation helps examiners instead of hiding decisions.",
     ],
-    pageTitle: "Insurance Software Development",
+    pageTitle: "Insurance Software Development for Carriers & Claims Systems",
     metaDescription:
-      "Custom insurance software for quoting, underwriting, and claims. Built by a software house for carriers and MGAs.",
+      "Custom insurance software for quoting, underwriting, policy admin, and claims. Built by a software house for carriers, brokers, and MGA product teams worldwide.",
     heroImage: img("/industries/insurance.webp", "Insurance quoting and claims software"),
     challenges: [
       {
@@ -1465,9 +1465,9 @@ const industryDrafts: IndustryDraft[] = [
       "Consulting firms sell trust and time. Software should make delivery visible, not add another status meeting. We build client portals, CRM, and resource tools that keep engagements, documents, and billing aligned.",
       "Partners get a picture of pipeline and utilization; clients get a professional place to collaborate instead of a messy shared drive.",
     ],
-    pageTitle: "Consulting Firm Software Development",
+    pageTitle: "Consulting Software Development for Firms & Client Platforms",
     metaDescription:
-      "Custom software for consulting firms: client portals, CRM, and delivery analytics. Built by a software house for professional services.",
+      "Custom software for consulting firms: client portals, CRM, and delivery analytics. Built by a software house for professional services and advisory teams today.",
     heroImage: img("/industries/consulting.webp", "Consulting client portal and delivery software"),
     challenges: [
       {

@@ -9,7 +9,7 @@ import {
   isIndustrySlug,
 } from "@/data/industries";
 import { siteBrand } from "@/lib/landing/brand";
-import { selfCanonical, pageTitle, pageTitleString } from "@/seo/canonical";
+import { selfCanonical } from "@/seo/canonical";
 import { breadcrumbSchema, faqPageSchema, serviceSchema } from "@/seo/schema";
 
 type PageProps = {
@@ -28,11 +28,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const path = industryPath(slug);
 
   return {
-    title: pageTitle(industry.pageTitle),
+    title: { absolute: industry.pageTitle },
     description: industry.metaDescription,
     ...selfCanonical(path),
     openGraph: {
-      title: pageTitleString(industry.pageTitle),
+      title: industry.pageTitle,
       description: industry.metaDescription,
       type: "website",
     },
