@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { EmailLink } from "@/components/landing/email-link";
+import { PhoneLink } from "@/components/landing/phone-link";
 import {
   btnPrimary,
   contactApiPath,
@@ -336,6 +337,10 @@ export function ContactForm({
           <EmailLink className="break-all font-medium text-horizon-navy hover:underline">
             {contactInfo.email}
           </EmailLink>
+          {" · "}
+          <PhoneLink className="font-medium text-horizon-navy hover:underline">
+            Call Now
+          </PhoneLink>
         </p>
       </div>
     </form>

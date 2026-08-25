@@ -1436,6 +1436,7 @@ export const homepageFaqs: FaqItem[] = [
 // ===== data/landing/contact.ts =====
 export const contactInfo = {
   email: siteBrand.email,
+  phone: siteBrand.phone,
   responseTime: "Within 24 hours",
   hours: "Monday – Friday, 9:00 – 18:00 (PKT)",
   location: siteBrand.location,

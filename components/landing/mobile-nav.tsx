@@ -10,8 +10,9 @@ import {
   type NavLink,
 } from "@/components/landing/navbar";
 import { EmailLink } from "@/components/landing/email-link";
+import { PhoneLink } from "@/components/landing/phone-link";
 import { SiteLogo } from "@/components/landing/site-logo";
-import { btnPrimary, contactPath } from "@/lib/landing/constants";
+import { btnOutlineDark, btnPrimary, contactPath } from "@/lib/landing/constants";
 import { siteBrand } from "@/lib/landing/brand";
 import { cn } from "@/lib/utils";
 
@@ -194,6 +195,16 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
             {navCtaLabel}
             <ArrowRight className="size-4" aria-hidden />
           </Link>
+          <PhoneLink
+            onClick={onClose}
+            className={cn(
+              btnOutlineDark,
+              "mt-2 flex h-11 w-full items-center justify-center gap-2 rounded-2xl text-sm font-semibold sm:h-12"
+            )}
+            ariaLabel={`Call Now ${siteBrand.phone}`}
+          >
+            Call Now
+          </PhoneLink>
           <p className="mt-3 text-center text-xs text-white/45">
             <EmailLink className="text-white/65 underline-offset-2 hover:text-white hover:underline">
               {siteBrand.email}

@@ -1,7 +1,8 @@
-import { Clock, Globe, Mail } from "lucide-react";
+import { Clock, Globe, Mail, Phone } from "lucide-react";
 
 import { ContactForm } from "@/components/landing/contact-form";
 import { EmailLink } from "@/components/landing/email-link";
+import { PhoneLink } from "@/components/landing/phone-link";
 import { Reveal } from "@/components/landing/reveal";
 import { SiteHeader } from "@/components/landing/navbar";
 import { PageBreadcrumb } from "@/components/layout/page-breadcrumb";
@@ -17,7 +18,14 @@ const contactItems: {
   label: string;
   value: string;
   isEmail?: boolean;
+  isPhone?: boolean;
 }[] = [
+  {
+    icon: Phone,
+    label: "Phone",
+    value: contactInfo.phone,
+    isPhone: true,
+  },
   {
     icon: Mail,
     label: "Email",
@@ -71,7 +79,7 @@ export function ContactPage({ initialValues }: ContactPageProps) {
                   </p>
                 </Reveal>
 
-                <ul className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3 lg:grid-cols-1">
+                <ul className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-1">
                   {contactItems.map((item, i) => (
                     <li key={item.label} className="min-w-0">
                       <Reveal delay={i * motionStagger} className="h-full">
@@ -87,6 +95,10 @@ export function ContactPage({ initialValues }: ContactPageProps) {
                               <EmailLink className="mt-1 block break-words font-medium text-horizon-navy hover:underline">
                                 {item.value}
                               </EmailLink>
+                            ) : item.isPhone ? (
+                              <PhoneLink className="mt-1 block break-words font-medium text-horizon-navy hover:underline">
+                                {item.value}
+                              </PhoneLink>
                             ) : (
                               <p className="mt-1 break-words font-medium text-horizon-navy">
                                 {item.value}

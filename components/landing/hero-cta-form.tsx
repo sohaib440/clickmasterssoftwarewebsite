@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { PhoneLink } from "@/components/landing/phone-link";
 import { contactApiPath } from "@/lib/landing/constants";
 import { heroCtaForm } from "@/data/landingPage";
 import { cn } from "@/lib/utils";
@@ -197,6 +198,9 @@ export function HeroCtaForm({ className }: HeroCtaFormProps) {
           >
             {submitting ? "Sending…" : heroCtaForm.submitLabel}
           </button>
+          <PhoneLink className="mt-2 block text-center text-[11px] font-medium uppercase tracking-[0.14em] text-white/70 underline-offset-2 hover:text-white hover:underline">
+            Call Now
+          </PhoneLink>
         </form>
       )}
     </div>

@@ -5,6 +5,7 @@ import { Mail, MapPin, Phone, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
 import { EmailLink } from "@/components/landing/email-link";
+import { PhoneLink } from "@/components/landing/phone-link";
 import { SiteLogo } from "@/components/landing/site-logo";
 import { SocialIconLinks } from "@/components/landing/social-icon-links";
 import { container } from "@/lib/landing/constants";
@@ -45,9 +46,11 @@ export function SiteFooter() {
                     {siteBrand.email}
                   </EmailLink>
                 </li>
-                <li className="site-footer__link inline-flex max-w-full items-start gap-2">
-                  <Phone className="site-footer__icon mt-0.5 size-4 shrink-0" aria-hidden />
-                  <span className="min-w-0 break-words">{siteBrand.phone}</span>
+                <li>
+                  <PhoneLink className="site-footer__link inline-flex max-w-full items-start gap-2">
+                    <Phone className="site-footer__icon mt-0.5 size-4 shrink-0" aria-hidden />
+                    <span className="min-w-0 break-words">{siteBrand.phone}</span>
+                  </PhoneLink>
                 </li>
                 <li className="site-footer__link inline-flex max-w-full items-start gap-2">
                   <MapPin className="site-footer__icon mt-0.5 size-4 shrink-0" aria-hidden />
