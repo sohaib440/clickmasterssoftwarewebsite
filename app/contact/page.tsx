@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { ContactPage } from "@/components/pages/contact-page";
-import { siteBrand, siteMetadata } from "@/lib/landing/brand";
+import { siteBrand } from "@/lib/landing/brand";
 import { parseContactSearchParams } from "@/lib/landing/contact-form-state";
 import { selfCanonical } from "@/seo/canonical";
 import {
@@ -13,8 +13,8 @@ import {
 } from "@/seo/schema";
 
 export const metadata: Metadata = {
-  title: "Contact",
-  description: `Contact ${siteBrand.name} in ${siteBrand.location}. ${siteMetadata.description}`,
+  title: "Start Your Project",
+  description: `Start your project with ${siteBrand.name}. WhatsApp, call, email, or request a quote — we reply within one business day.`,
   ...selfCanonical("/contact"),
 };
 
