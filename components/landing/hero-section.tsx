@@ -32,7 +32,7 @@ export function HeroSection() {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           className="hero-bg-video h-full w-full object-cover opacity-35"
           src={heroBackgroundVideo}
         />
