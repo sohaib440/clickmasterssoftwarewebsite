@@ -25,6 +25,11 @@ export const siteEmailMailto = `mailto:${siteBrand.email}`;
 /** Opens the device dialer with the company number. */
 export const sitePhoneTel = `tel:${siteBrand.phoneE164}`;
 
+/** Opens WhatsApp chat with the company number. */
+export const siteWhatsAppHref = `https://wa.me/${siteBrand.phoneE164.replace("+", "")}?text=${encodeURIComponent(
+  "Hi, I'd like to discuss a software project."
+)}`;
+
 /**
  * Opens Gmail compose in the browser — reliable on laptops/desktops
  * that have no default mail app configured for mailto: links.

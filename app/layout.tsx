@@ -4,6 +4,7 @@ import Script from "next/script";
 
 import { ClearStaleServiceWorker } from "@/components/dev/clear-stale-sw";
 import { SiteFooter } from "@/components/landing/site-footer";
+import { WhatsAppFloat } from "@/components/landing/whatsapp-float";
 import { MotionInit } from "@/components/motion-init";
 import { siteBrand, siteMetadata } from "@/lib/landing/brand";
 import "./globals.css";
@@ -97,6 +98,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <MotionInit />
         <div className="flex w-full flex-1 flex-col">{children}</div>
         <SiteFooter />
+        <WhatsAppFloat />
       </body>
     </html>
   );
