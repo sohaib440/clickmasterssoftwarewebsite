@@ -30,7 +30,7 @@ const siteConfig = {
   /** Display phone as shown on the site */
   phone: siteBrand.phone,
   /** E.164 for Schema.org telephone where a machine-readable form helps */
-  phoneE164: "+923710510083",
+  phoneE164: siteBrand.phoneE164,
   logoUrl: `${siteBrand.url}${siteBrand.logo.src}`,
   logoWidth: siteBrand.logo.width,
   logoHeight: siteBrand.logo.height,

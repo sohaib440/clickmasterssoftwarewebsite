@@ -114,21 +114,28 @@
    * Light sections must win when nested inside a dark page wrapper
    * (e.g. homepage `bg-black text-white` → cream testimonials).
    * Keep these rules AFTER the dark inherit block above.
+   * `.bg-black .bg-white` covers the sticky header's white top bar.
    */
   .bg-white :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label),
-  .bg-horizon-cream :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label) {
+  .bg-horizon-cream :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label),
+  .bg-black .bg-white :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label) {
     color: var(--horizon-navy);
   }
 
   /*
    * Dark CTAs nested inside MarketingShell (`bg-horizon-cream`) must beat the
    * cream rule above — otherwise headings/paragraphs stay navy on navy.
+   * Scoped to `main` so the sticky header's white top bar is not forced white.
    */
-  .bg-horizon-cream .bg-horizon-navy :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label),
-  .bg-white .bg-horizon-navy :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label),
-  .bg-horizon-cream .bg-black :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label),
-  .bg-white .bg-black :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label) {
+  .bg-horizon-cream main .bg-horizon-navy :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label),
+  .bg-white main .bg-horizon-navy :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label),
+  .bg-horizon-cream main .bg-black :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label),
+  .bg-white main .bg-black :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label) {
     color: #ffffff;
+  }
+
+  header.bg-black .bg-white :where(h1, h2, h3, h4, h5, h6, p, span, li, dt, dd, label, a) {
+    color: var(--horizon-navy);
   }
 }
 

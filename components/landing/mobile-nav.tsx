@@ -10,8 +10,9 @@ import {
   type NavLink,
 } from "@/components/landing/navbar";
 import { EmailLink } from "@/components/landing/email-link";
+import { PhoneLink } from "@/components/landing/phone-link";
 import { SiteLogo } from "@/components/landing/site-logo";
-import { btnPrimary, contactPath } from "@/lib/landing/constants";
+import { btnOutlineDark, btnPrimary, contactPath } from "@/lib/landing/constants";
 import { siteBrand } from "@/lib/landing/brand";
 import { cn } from "@/lib/utils";
 
@@ -149,11 +150,11 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
         )}
       >
         <div className="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3 sm:px-5 sm:py-4">
-          {/* <SiteLogo
+          <SiteLogo
             className="min-w-0 max-w-[min(70vw,14rem)]"
             imageClassName="h-9 w-auto max-w-full sm:h-10"
             onNavigate={onClose}
-          /> */}
+          />
           <button
             type="button"
             onClick={onClose}
@@ -194,6 +195,16 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
             {navCtaLabel}
             <ArrowRight className="size-4" aria-hidden />
           </Link>
+          <PhoneLink
+            onClick={onClose}
+            className={cn(
+              btnOutlineDark,
+              "mt-2 flex h-11 w-full items-center justify-center gap-2 rounded-2xl text-sm font-semibold sm:h-12"
+            )}
+            ariaLabel={`Call Now ${siteBrand.phone}`}
+          >
+            Call Now
+          </PhoneLink>
           <p className="mt-3 text-center text-xs text-white/45">
             <EmailLink className="text-white/65 underline-offset-2 hover:text-white hover:underline">
               {siteBrand.email}

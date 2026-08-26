@@ -12,6 +12,7 @@ import {
   sectionPad,
 } from "@/lib/landing/constants";
 import { industries, industriesPageMeta } from "@/data/industriesPage";
+import { industryPath } from "@/data/industries";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
 
@@ -51,7 +52,7 @@ function IndustryCard({ item, index }: { item: (typeof industries)[number]; inde
           </ul>
 
           <Link
-            href={contactPath}
+            href={industryPath(item.slug)}
             className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-horizon-navy transition-colors group-hover:text-primary"
           >
             Learn about {item.industry}

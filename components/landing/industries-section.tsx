@@ -1,8 +1,9 @@
 import Link from "next/link";
 
 import { SectionHeading } from "@/components/landing/section-heading";
-import { contactPath, container, sectionPad } from "@/lib/landing/constants";
+import { container, sectionPad } from "@/lib/landing/constants";
 import { industries as defaultIndustries, type Industry } from "@/data/industriesPage";
+import { industryPath } from "@/data/industries";
 import { cn } from "@/lib/utils";
 
 function IndustryCell({
@@ -32,7 +33,7 @@ function IndustryCell({
           {item.description}
         </p>
         <Link
-          href={contactPath}
+          href={industryPath(item.slug)}
           className="mt-8 inline-block text-sm font-bold text-horizon-navy transition-colors group-hover:text-primary"
         >
           Learn About {item.industry}

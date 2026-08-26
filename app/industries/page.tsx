@@ -8,6 +8,10 @@ import { breadcrumbSchema, itemListSchema } from "@/seo/schema";
 export const metadata: Metadata = {
   title: pageTitle(industriesPageMeta.title),
   description: industriesPageMeta.description,
+  robots: {
+    index: false,
+    follow: true,
+  },
   ...selfCanonical("/industries"),
   openGraph: {
     title: pageTitleString(industriesPageMeta.title),
@@ -24,7 +28,7 @@ export default function IndustriesRoute() {
       path: "/industries",
       items: industries.map((industry) => ({
         name: industry.industry,
-        path: `/industries#${industry.slug}`,
+        path: `/industries/${industry.slug}`,
       })),
     }),
     breadcrumbSchema([

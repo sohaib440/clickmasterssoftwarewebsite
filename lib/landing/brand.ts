@@ -6,6 +6,8 @@ export const siteBrand = {
   location: "Islamabad, Pakistan",
   email: "info@nextsoftwaredevelopment.com",
   phone: "+92 371 0510083",
+  /** E.164 — tel: links and Schema.org telephone */
+  phoneE164: "+923710510083",
   url: "https://nextsoftwaredevelopment.com",
   logo: {
     src: "/brand/next-logo.webp",
@@ -19,6 +21,14 @@ export const siteBrand = {
 
 /** Opens the OS mail client (may do nothing if none is installed). */
 export const siteEmailMailto = `mailto:${siteBrand.email}`;
+
+/** Opens the device dialer with the company number. */
+export const sitePhoneTel = `tel:${siteBrand.phoneE164}`;
+
+/** Opens WhatsApp chat with the company number. */
+export const siteWhatsAppHref = `https://wa.me/${siteBrand.phoneE164.replace("+", "")}?text=${encodeURIComponent(
+  "Hi, I'd like to discuss a software project."
+)}`;
 
 /**
  * Opens Gmail compose in the browser — reliable on laptops/desktops

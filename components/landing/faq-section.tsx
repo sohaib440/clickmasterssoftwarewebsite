@@ -1,5 +1,6 @@
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 import { Reveal } from "@/components/landing/reveal";
 import { SectionHeading } from "@/components/landing/section-heading";
@@ -12,9 +13,10 @@ type FaqColumnProps = {
   startIndex: number;
   items: FaqItem[];
   justify?: boolean;
+  renderAnswer?: (answer: string) => ReactNode;
 };
 
-function FaqColumn({ startIndex, items, justify = false }: FaqColumnProps) {
+function FaqColumn({ startIndex, items, justify = false, renderAnswer }: FaqColumnProps) {
   return (
     <div className="flex flex-col gap-3">
       {items.map((faq, i) => {
@@ -77,7 +79,7 @@ function FaqColumn({ startIndex, items, justify = false }: FaqColumnProps) {
                       justify ? "text-justify" : "text-left"
                     )}
                   >
-                    {faq.answer}
+                    {renderAnswer ? renderAnswer(faq.answer) : faq.answer}
                   </p>
                 </div>
               </div>
@@ -98,6 +100,7 @@ type FaqSectionProps = {
   footerHref?: string;
   className?: string;
   justify?: boolean;
+  renderAnswer?: (answer: string) => ReactNode;
 };
 
 export function FaqSection({
@@ -113,6 +116,7 @@ export function FaqSection({
   footerHref,
   className,
   justify = false,
+  renderAnswer,
 }: FaqSectionProps = {}) {
   const mid = Math.ceil(items.length / 2);
   const leftItems = items.slice(0, mid);
@@ -132,8 +136,8 @@ export function FaqSection({
         />
 
         <div className="grid gap-6 md:grid-cols-2 lg:gap-10">
-          <FaqColumn startIndex={0} items={leftItems} justify={justify} />
-          <FaqColumn startIndex={mid} items={rightItems} justify={justify} />
+          <FaqColumn startIndex={0} items={leftItems} justify={justify} renderAnswer={renderAnswer} />
+          <FaqColumn startIndex={mid} items={rightItems} justify={justify} renderAnswer={renderAnswer} />
         </div>
 
         {footerCta && footerHref ? (

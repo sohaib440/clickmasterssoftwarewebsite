@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 
 import { PageBreadcrumb } from "@/components/layout/page-breadcrumb";
 import { MarketingShell } from "@/components/layout/marketing-shell";
-import { siteBrand } from "@/lib/landing/brand";
+import { siteBrand, sitePhoneTel } from "@/lib/landing/brand";
 import { contactPath, container, sectionPad } from "@/lib/landing/constants";
 import { selfCanonical, pageTitle, pageTitleString } from "@/seo/canonical";
 import { breadcrumbSchema } from "@/seo/schema";
@@ -124,7 +124,12 @@ export default function PrivacyPage() {
                       {siteBrand.email}
                     </a>
                   </li>
-                  <li>Phone: {siteBrand.phone}</li>
+                  <li>
+                    Phone:{" "}
+                    <a className="text-primary underline" href={sitePhoneTel}>
+                      {siteBrand.phone}
+                    </a>
+                  </li>
                 </ul>
               </Section>
 
@@ -323,7 +328,11 @@ export default function PrivacyPage() {
                   <a className="text-primary underline" href={`mailto:${siteBrand.email}`}>
                     {siteBrand.email}
                   </a>
-                  , phone {siteBrand.phone}, or our{" "}
+                  , phone{" "}
+                  <a className="text-primary underline" href={sitePhoneTel}>
+                    {siteBrand.phone}
+                  </a>
+                  , or our{" "}
                 <Link href={contactPath} className="text-primary underline">
                   contact page
                 </Link>
