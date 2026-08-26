@@ -49,14 +49,6 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Industries -->
-  <url>
-    <loc>https://nextsoftwaredevelopment.com/industries</loc>
-    <lastmod>2026-08-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <!-- Case Studies -->
   <url>
     <loc>https://nextsoftwaredevelopment.com/case-study</loc>
