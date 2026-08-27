@@ -355,13 +355,13 @@ export const mainCategories: MainCategoryContent[] = [
     icon: Code2,
     label: "Software Development",
     exploreCta: "Explore software development",
-    pageTitle: "Software Development Company ",
+    pageTitle: "Software Development Company | Custom Apps & SaaS Experts",
     tagline:
       "Leading Software Development Company Building Products Businesses Depend On",
     description:
       "As a leading software development company and software house, we design, build, and maintain software for startups, SMBs, and enterprises. Our software development services cover custom applications, enterprise systems, SaaS products, MVPs, and API integrations from discovery and architecture through build, launch, and ongoing support so your team ships with clarity and confidence.",
     metaDescription:
-      "Leading software development company and software house for custom apps, SaaS, MVPs, and API integrations. Senior-led delivery. Get a free quote.",
+      "Hire a senior-led software development company for custom apps, SaaS platforms, MVPs, and API integrations worldwide. Get a free quote today.",
     heroImage: {
       src: "/services/software-development.webp",
       alt: "Software development services",
@@ -446,12 +446,13 @@ export const mainCategories: MainCategoryContent[] = [
     icon: Smartphone,
     label: "Mobile App Development",
     exploreCta: "Explore mobile app development",
+    pageTitle: "Mobile App Development Company | Android, iOS & Flutter",
     tagline:
       "Top Rated Software House for Mobile App Development That Scales",
     description:
       "As a top rated software house, we deliver mobile app development for iOS and Android with native quality and production reliability. Our mobile practice includes Android, iOS, Flutter, React Native, cross-platform, and progressive web apps so your product feels fast, secure, and ready for real users from first release through growth.",
     metaDescription:
-      "Top rated software house for mobile app development: Android, iOS, Flutter, React Native, cross-platform, and PWA. Senior-led delivery.",
+      "Top-rated mobile app development company for Android, iOS, Flutter, React Native & cross-platform apps. Senior-led delivery. Get a free quote.",
     heroImage: {
       src: "/services/mobile-development.webp",
       alt: "Mobile development services",
@@ -464,12 +465,13 @@ export const mainCategories: MainCategoryContent[] = [
     icon: Globe2,
     label: "Web Development",
     exploreCta: "Explore web development",
+    pageTitle: "Web Development Company | Custom Websites & Web Apps",
     tagline:
       "Best Software Company for Web Development Built to Perform",
     description:
       "As a best software company for modern web work, we build websites and web applications that are fast, accessible, and SEO-friendly. Our web development services cover custom websites, web applications, frontend, backend, full stack, and CMS platforms so brands and product teams get maintainable systems that convert and scale.",
     metaDescription:
-      "Best software company for web development: custom websites, web apps, frontend, backend, full stack, and CMS. SEO-friendly senior delivery.",
+      "Leading web development company for custom websites, web apps, frontend, backend & CMS builds. SEO-friendly, senior-led. Request a free quote.",
     heroImage: {
       src: "/services/web-development.webp",
       alt: "Web development services",
@@ -482,12 +484,13 @@ export const mainCategories: MainCategoryContent[] = [
     icon: ShoppingCart,
     label: "Ecommerce Development",
     exploreCta: "Explore ecommerce development",
+    pageTitle: "Ecommerce Development Company | Shopify & WooCommerce",
     tagline:
       "Leading Software Company for Ecommerce Development That Converts",
     description:
       "As a leading software company, we engineer ecommerce platforms that balance conversion, catalog complexity, and reliable operations. Our ecommerce development services include Shopify, WooCommerce, Magento, custom storefronts, multi-vendor marketplaces, and payment gateway integrations so checkout, inventory, and fulfillment stay dependable as you grow.",
     metaDescription:
-      "Leading software company for ecommerce development: Shopify, WooCommerce, Magento, custom stores, marketplaces, and payments.",
+      "Leading ecommerce development company for Shopify, WooCommerce, Magento stores, marketplaces & secure payments. Request a free quote today.",
     heroImage: {
       src: "/services/ecommerce-development.webp",
       alt: "Ecommerce development services",
@@ -500,12 +503,13 @@ export const mainCategories: MainCategoryContent[] = [
     icon: Palette,
     label: "UI/UX Design",
     exploreCta: "Explore UI/UX design",
+    pageTitle: "UI/UX Design Company | Wireframes, Prototypes & Systems",
     tagline:
       "Leading Software House for UI/UX Design That Converts",
     description:
       "As a leading software house, our UI/UX design practice turns complex products into clear, confident experiences. We deliver UI design, UX design, wireframing, prototyping, design systems, and usability testing so interfaces stay consistent across breakpoints, feel easy to use, and support conversion from discovery through design QA.",
     metaDescription:
-      "Leading software house for UI/UX design: UI, UX, wireframing, prototyping, design systems, and usability testing.",
+      "Hire a UI/UX design company for wireframing, prototyping, design systems & usability testing that boosts conversions. Get a free consultation.",
     heroImage: {
       src: "/services/ui-ux-design.webp",
       alt: "UI/UX design services",
@@ -549,12 +553,13 @@ export const mainCategories: MainCategoryContent[] = [
     icon: BrainCircuit,
     label: "Artificial Intelligence",
     exploreCta: "Explore AI services",
+    pageTitle: "AI Development Company | Chatbots, Agents & AI Solutions",
     tagline:
       "Top Rated Software Company for Artificial Intelligence in Production",
     description:
       "As a top rated software company, we ship artificial intelligence that works in real products, not slide decks. Our AI services cover AI software development, generative AI, chatbots, AI agents, computer vision, and NLP with clear guardrails, monitoring, and human oversight so automation and insights stay safe, measurable, and useful.",
     metaDescription:
-      "Top rated software company for artificial intelligence: generative AI, chatbots, agents, computer vision, and NLP.",
+      "Top-rated AI development company building generative AI, chatbots, AI agents, computer vision & NLP solutions. Get a free consultation today.",
     heroImage: {
       src: "/services/artificial-intelligence.webp",
       alt: "Artificial intelligence services",
@@ -567,12 +572,13 @@ export const mainCategories: MainCategoryContent[] = [
     icon: LineChart,
     label: "Machine Learning",
     exploreCta: "Explore ML services",
+    pageTitle: "Machine Learning Development Company | Predictive AI",
     tagline:
       "Top Rated Software House for Machine Learning at Scale",
     description:
       "As a top rated software house, we build machine learning systems that move from notebook to production with discipline. Our ML services include predictive analytics, deep learning, MLOps, image recognition, recommendation systems, and model deployment so forecasts, rankings, and detections run reliably under real traffic and cost constraints.",
     metaDescription:
-      "Top rated software house for machine learning: predictive analytics, deep learning, MLOps, image recognition, and model deployment.",
+      "Top-rated machine learning development company for predictive analytics, deep learning, MLOps & model deployment. Request a free quote today.",
     heroImage: {
       src: "/services/machine-learning.webp",
       alt: "Machine learning services",
@@ -585,12 +591,13 @@ export const mainCategories: MainCategoryContent[] = [
     icon: Workflow,
     label: "Automation Services",
     exploreCta: "Explore automation services",
+    pageTitle: "Business Automation Services | RPA, BPA & AI Workflows",
     tagline:
       "Best Software Company for Automation Services That Stick",
     description:
       "As a best software company for operations tooling, we remove repetitive work with automation that your teams can trust. Our automation services cover business process automation, RPA, workflow automation, CRM automation, ERP automation, and AI workflow automation so data moves cleanly between systems and people focus on higher-value work.",
     metaDescription:
-      "Best software company for automation services: BPA, RPA, workflow, CRM, ERP, and AI workflow automation.",
+      "Leading business automation services: RPA, BPA, workflow automation, CRM, ERP & AI-driven processes. Cut manual work. Get a free quote today.",
     heroImage: {
       src: "/services/automation-services.webp",
       alt: "Automation services",
@@ -603,12 +610,13 @@ export const mainCategories: MainCategoryContent[] = [
     icon: Cloud,
     label: "Cloud & DevOps",
     exploreCta: "Explore cloud services",
+    pageTitle: "Cloud & DevOps Services | AWS, Azure, GCP & CI/CD",
     tagline:
       "Leading Software Development Company for Cloud & DevOps",
         description:
       "As a leading software development company, we make infrastructure as dependable as the product it runs. Our Cloud and DevOps services span AWS, Azure, GCP, Docker, Kubernetes, and CI/CD pipeline setup so deployments stay secure, observable, and ready to scale from first release to multi-region growth.",
     metaDescription:
-      "Leading software development company for Cloud and DevOps: AWS, Azure, GCP, Docker, Kubernetes, and CI/CD.",
+      "Leading cloud and DevOps services covering AWS, Azure, GCP, Docker, Kubernetes & CI/CD pipelines. Scale reliably. Request a free consultation.",
     heroImage: {
       src: "/services/cloud-devops.webp",
       alt: "Cloud and DevOps services",
@@ -621,12 +629,13 @@ export const mainCategories: MainCategoryContent[] = [
     icon: Database,
     label: "Data & Business Intelligence",
     exploreCta: "Explore data & BI",
+    pageTitle: "Data & Business Intelligence Services | Power BI, Tableau",
     tagline:
       "Leading Software Company for Data & Business Intelligence",
         description:
       "As a leading software company, we turn raw business data into decisions teams can act on. Our data and business intelligence services include Power BI, Tableau, data analytics, data engineering, data visualization, and BI platforms so executives and operators share trusted metrics instead of conflicting spreadsheets.",
     metaDescription:
-      "Leading software company for data and BI: Power BI, Tableau, analytics, data engineering, visualization, and BI solutions.",
+      "Expert data and business intelligence services: Power BI, Tableau, analytics, data engineering & visualization. Get a free quote and grow smarter.",
     heroImage: {
       src: "/services/data-business-intelligence.webp",
       alt: "Data and business intelligence services",
@@ -639,12 +648,13 @@ export const mainCategories: MainCategoryContent[] = [
     icon: Shield,
     label: "Cybersecurity",
     exploreCta: "Explore cybersecurity",
+    pageTitle: "Cybersecurity Services Company | Pen Testing & Compliance",
     tagline:
       "Trusted Software House for Cybersecurity That Protects Delivery",
     description:
       "As a trusted software house, we build security into how products are designed, shipped, and operated. Our cybersecurity services cover penetration testing, vulnerability assessment, application security, cloud security, security compliance, and security monitoring so risks are found early and controls scale with your product.",
     metaDescription:
-      "Trusted software house for cybersecurity: penetration testing, vulnerability assessment, app and cloud security, compliance, and monitoring.",
+      "Trusted cybersecurity services company for penetration testing, vulnerability assessment, app & cloud security, compliance. Request a free audit.",
     heroImage: {
       src: "/services/cybersecurity.webp",
       alt: "Cybersecurity services",
@@ -657,12 +667,13 @@ export const mainCategories: MainCategoryContent[] = [
     icon: Building2,
     label: "Enterprise Solutions",
     exploreCta: "Explore enterprise solutions",
+    pageTitle: "Enterprise Software Solutions | ERP, CRM & HRM Systems",
     tagline:
       "Leading Software Development Company for Enterprise Solutions",
     description:
       "As a leading software development company, we replace disconnected tools with systems of record your organization can run on. Our enterprise solutions cover ERP, CRM, HRM, supply chain management, enterprise integration, and document management so finance, operations, and leadership share one reliable platform.",
     metaDescription:
-      "Leading software development company for enterprise solutions: ERP, CRM, HRM, supply chain, integration, and document management.",
+      "Leading enterprise software solutions covering ERP, CRM, HRM, supply chain & document management integration. Get a free consultation today.",
     heroImage: {
       src: "/services/enterprise-solutions.webp",
       alt: "Enterprise solutions",
@@ -675,12 +686,13 @@ export const mainCategories: MainCategoryContent[] = [
     icon: Blocks,
     label: "Blockchain Development",
     exploreCta: "Explore blockchain development",
+    pageTitle: "Blockchain Development Company | Web3, dApps & DeFi",
     tagline:
       "Software Company for Blockchain Development With Real Utility",
     description:
       "As a software company focused on usable Web3 outcomes, we build blockchain products for real business workflows. Our blockchain development services include smart contracts, dApps, Web3 development, DeFi, cryptocurrency wallets, and NFT marketplaces with security and clarity prioritized over hype demos.",
     metaDescription:
-      "Software company for blockchain development: smart contracts, dApps, Web3, DeFi, wallets, and NFT marketplaces.",
+      "Hire a blockchain development company for smart contracts, dApps, Web3, DeFi, wallets & NFT marketplaces. Request a free quote today.",
     heroImage: {
       src: "/services/blockchain-development.webp",
       alt: "Blockchain development services",
@@ -693,12 +705,13 @@ export const mainCategories: MainCategoryContent[] = [
     icon: HeartPulse,
     label: "Healthcare Software Development",
     exploreCta: "Explore healthcare software",
+    pageTitle: "Healthcare Software Development | EHR, EMR & Telemedicine",
     tagline:
       "Software House for Healthcare Software Development Care Teams Trust",
     description:
       "As a software house experienced in clinical workflows, we build healthcare software that respects privacy, reliability, and day-to-day care delivery. Our healthcare software development services include EHR, EMR, telemedicine, hospital management systems, patient portals, and healthcare mobile apps designed for patients and providers.",
     metaDescription:
-      "Software house for healthcare software development: EHR, EMR, telemedicine, hospital systems, patient portals, and healthcare apps.",
+      "Trusted healthcare software development for EHR, EMR, telemedicine, hospital systems & patient portals. HIPAA-ready. Request a free quote.",
     heroImage: {
       src: "/services/healthcare-software-development.webp",
       alt: "Healthcare software development services",
@@ -711,12 +724,13 @@ export const mainCategories: MainCategoryContent[] = [
     icon: Glasses,
     label: "AR/VR Development",
     exploreCta: "Explore AR/VR development",
+    pageTitle: "AR VR Development Company | Metaverse & 3D Visualization",
     tagline:
       "Top Rated Software Company for AR/VR Development Experiences",
         description:
       "As a top rated software company for immersive products, we design and engineer AR and VR applications that feel practical in training, retail, and enterprise settings. Our AR/VR development services cover augmented reality, virtual reality, mixed reality, metaverse experiences, 3D visualization, and VR training simulations.",
     metaDescription:
-      "Top rated software company for AR/VR development: AR, VR, mixed reality, metaverse, 3D visualization, and VR training.",
+      "Top-rated AR VR development company for augmented reality, virtual reality, mixed reality, metaverse & 3D visualization. Get a free quote today.",
     heroImage: {
       src: "/services/ar-vr-development.webp",
       alt: "AR/VR development services",
@@ -729,12 +743,13 @@ export const mainCategories: MainCategoryContent[] = [
     icon: ClipboardCheck,
     label: "Testing & QA",
     exploreCta: "Explore QA services",
+    pageTitle: "Software Testing & QA Services | Manual & Automation",
     tagline:
       "Software Development Company for Testing & QA That Protects Releases",
     description:
       "As a software development company with a senior QA practice, we catch issues before users do. Our testing and QA services cover manual testing, automation testing, performance testing, security testing, API testing, and mobile app testing so releases stay confident across web, mobile, and backend systems.",
     metaDescription:
-      "Software development company for testing and QA: manual, automation, performance, security, API, and mobile app testing.",
+      "Reliable software testing and QA services: manual, automation, performance, security, API & mobile app testing. Request a free QA audit today.",
     heroImage: {
       src: "/services/testing-and-qa.webp",
       alt: "Software testing and QA services",

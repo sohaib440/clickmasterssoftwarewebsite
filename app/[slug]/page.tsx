@@ -32,14 +32,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const path = mainCategoryPath(slug);
   const description = category.metaDescription;
-  const titleSegment = category.pageTitle || category.label;
+  const documentTitle = category.pageTitle?.trim();
 
   return {
-    title: pageTitle(titleSegment),
+    title: documentTitle ? { absolute: documentTitle } : pageTitle(category.label),
     description,
     ...selfCanonical(path),
     openGraph: {
-      title: pageTitleString(titleSegment),
+      title: documentTitle ?? pageTitleString(category.label),
       description,
       type: "website",
       locale: "en_PK",
