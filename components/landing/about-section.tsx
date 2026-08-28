@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { ArrowRight } from "lucide-react";
 
 import { CardImage } from "@/components/landing/card-image";
 import { Reveal } from "@/components/landing/reveal";
@@ -117,14 +118,19 @@ export function AboutSection({ content, showValues = true }: AboutSectionProps =
               ))}
               <Reveal delay={motionStagger * 2}>
                 <Link href={data.teamLink} className={btnOutline}>
-                  {data.teamCta} →
+                  <span>{data.teamCta}</span>
+                  <ArrowRight className="ml-2 size-4" aria-hidden />
                 </Link>
               </Reveal>
             </div>
           </div>
 
-          <Reveal delay={motionStagger} direction="right" className="w-full justify-self-end">
-            <div className={cn(card, "mx-auto w-full max-w-xl overflow-hidden p-0 lg:mx-0 lg:max-w-none")}>
+          <Reveal
+            delay={motionStagger}
+            direction="right"
+            className="w-full max-w-xl justify-self-center"
+          >
+            <div className={cn(card, "mx-auto w-full max-w-xl overflow-hidden p-0")}>
               <CardImage
                 {...data.image}
                 className="aspect-[5/4] w-full object-cover"
