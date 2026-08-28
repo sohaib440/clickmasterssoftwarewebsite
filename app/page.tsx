@@ -15,6 +15,7 @@ import {
   TeamSection,
   TechStackSection,
   TestimonialsSection,
+  TrustedPartnersSection,
   WhyChooseSection,
 } from "@/components/landing";
 import { siteBrand } from "@/lib/landing/brand";
@@ -95,6 +96,7 @@ export default function Home() {
       <HeroSection />
       <main className="flex w-full max-w-full flex-1 flex-col overflow-x-clip">
         <TrustNumbersSection />
+        <TrustedPartnersSection />
         <DeferredSection>
           <AboutSection content={homepageAbout} showValues={false} />
         </DeferredSection>
