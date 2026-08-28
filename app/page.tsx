@@ -23,6 +23,8 @@ import {
   homepageContact,
   homepageFaqIntro,
   homepageFaqs,
+  homepageServiceOverrides,
+  homepageServicesIntro,
   homepageSeo,
   homepageTestimonials,
   homepageTestimonialsIntro,
@@ -95,7 +97,10 @@ export default function Home() {
           <AboutSection content={homepageAbout} showValues={false} />
         </DeferredSection>
         <DeferredSection>
-          <ServicesSection />
+          <ServicesSection
+            description={homepageServicesIntro}
+            serviceOverrides={homepageServiceOverrides}
+          />
         </DeferredSection>
         <DeferredSection>
           <WhyChooseSection
