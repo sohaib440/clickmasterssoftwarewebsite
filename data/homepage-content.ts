@@ -4,7 +4,7 @@
  */
 
 import type { LucideIcon } from "lucide-react";
-import { BarChart3, Rocket, Shield } from "lucide-react";
+import { BarChart3, Globe2, Rocket, Shield } from "lucide-react";
 import { projectPath } from "@/lib/landing/constants";
 import { siteBrand } from "@/lib/landing/brand";
 import { teamPath } from "@/lib/landing/constants";
@@ -123,8 +123,8 @@ export const homeHero = {
   headlineMiddle: "Turning Ambitious Ideas Into",
   headlineAfter: "Scalable Software",
   description: [
-    "Next Software Development is a full-service software development company helping startups, small and medium-sized businesses, and enterprises design, build, and scale secure, high-performance software. We combine senior engineering expertise with real business insight to create technology that solves complex problems, improves operations, and supports measurable business growth.",
-    "From your first conversation through launch and beyond, our dedicated software consultants and development team work closely with you to turn ambitious ideas into reliable, scalable software built around your goals.",
+    "Next Software Development is a full-service custom software development company helping startups, small and medium-sized businesses, and enterprises design, build, and scale secure, high-performance software. We combine senior engineering expertise with real business insight to create technology that solves complex problems, streamlines operations, and drives measurable business growth.",
+    "From your first conversation through launch and beyond, our dedicated software consultants and development team work closely with you as your technology partner, turning ambitious ideas into reliable, scalable software built around your goals.",
     "Your idea deserves more than code. It deserves a technology partner who builds it right.",
   ],
   primaryCta: "Get a Free Quote",
@@ -134,8 +134,9 @@ export const homeHero = {
 
 export const heroFeatures = [
   { icon: Rocket, label: "Scalable Solutions" },
-  { icon: Shield, label: "Secure & Reliable" },
-  { icon: BarChart3, label: "Business Growth" },
+  { icon: Shield, label: "Secure and Reliable" },
+  { icon: BarChart3, label: "Business Focused" },
+  { icon: Globe2, label: "Global Delivery" },
 ] as const;
 
 export const heroBackgroundVideo = "/herosection/software-development-company.mp4";
@@ -1501,7 +1502,7 @@ export const homepageContact = {
 export const homepageSeo = {
   title: "Top Rated Software House & Software Development Company",
   description:
-    "Top rated software house and software development company building web apps, mobile apps, AI, CRM, ERP, and SaaS platforms for startups & enterprises worldwide.",
+    "Next Software Development builds custom software, web & mobile apps, and AI solutions for startups and enterprises across the US, UK, UAE, Canada, Australia & Pakistan. Get a free quote.",
 } as const;
 
 export const homepageSectionCopy = {
