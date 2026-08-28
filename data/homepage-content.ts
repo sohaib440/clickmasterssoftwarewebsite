@@ -1219,61 +1219,73 @@ export const homepageTestimonials: Testimonial[] = [
     quote:
       "We were looking for a reliable custom software development company that could understand our business requirements rather than simply build according to a specification. Next Software Development took the time to understand our workflows, provided clear technical guidance, and delivered a scalable solution that has made our operations much more efficient.",
     author: "Ahmed Raza",
-    role: "Founder, Lahore, Pakistan · Project: Custom Software Development",
+    role: "Founder, Lahore, Pakistan",
   },
   {
     quote:
       "Finding the right software house made a significant difference to our project. Next Software Development provided a professional team, clear communication, and a structured development process from planning through delivery. They understood our requirements and built a solution that was practical, reliable, and easy for our team to use.",
     author: "Ayesha Khan",
-    role: "Business Owner, Karachi, Pakistan · Project: Web Application Development",
+    role: "Business Owner, Karachi, Pakistan",
   },
   {
     quote:
       "We engaged Next Software Development for custom software development services because we needed a solution designed specifically around our business processes. Their team helped us with architecture, development, testing, and deployment while maintaining clear communication throughout the project. The result was a scalable platform that gave our organization a stronger technology foundation.",
     author: "Hamza Malik",
-    role: "Technology Director, Islamabad, Pakistan · Project: Enterprise Software Development",
+    role: "Technology Director, Islamabad, Pakistan",
   },
   {
     quote:
       "We needed an experienced enterprise software development company that could handle a complex platform and understand the operational requirements behind it. Next Software Development provided strong engineering expertise throughout the project and helped us build a secure, scalable system that could support our growing business.",
     author: "Michael Anderson",
-    role: "Founder, United States · Project: Enterprise Software Development",
+    role: "Founder, United States",
   },
   {
     quote:
       "Our search for a mobile app development company focused on finding a team that could combine technical expertise with a strong understanding of user experience. Next Software Development managed the process from product planning and interface design through development and testing, delivering a mobile application that aligned closely with our business objectives.",
     author: "James Wilson",
-    role: "Managing Director, United Kingdom · Project: Mobile App Development",
+    role: "Managing Director, United Kingdom",
   },
   {
     quote:
       "We were evaluating several providers before choosing an AI software development company for our project. Next Software Development stood out because the team focused on the practical business use of artificial intelligence rather than simply adding AI features. They helped us develop a solution around automation, data, and our specific operational requirements.",
     author: "Omar Al Mansouri",
-    role: "Business Owner, United Arab Emirates · Project: Artificial Intelligence Development",
+    role: "Business Owner, United Arab Emirates",
   },
   {
     quote:
       "Working with an offshore software development company can be challenging when communication and project ownership are not handled properly. Next Software Development made the process straightforward through regular communication, structured development, and clear project coordination. Their team worked closely with us across time zones and maintained a strong focus on quality.",
     author: "Daniel Thompson",
-    role: "Founder, Canada · Project: Custom Software Development",
+    role: "Founder, Canada",
   },
   {
     quote:
       "We initially searched for a software development company near me because we wanted a development partner we could communicate with easily. After evaluating our options, we chose Next Software Development because their technical capabilities and development process were a strong fit for our project. The team provided reliable communication and delivered the software according to our requirements.",
     author: "Liam Anderson",
-    role: "Director, Australia · Project: Web and Software Development",
+    role: "Director, Australia",
   },
   {
     quote:
       "Next Software Development provided the custom software development services we needed to transform a complex product concept into a reliable application. Their team was involved throughout discovery, architecture, development, testing, and deployment, giving us technical guidance at every stage while keeping the project focused on our business goals.",
     author: "David Carter",
-    role: "Product Manager, United States · Project: Custom Software Development",
+    role: "Product Manager, United States",
   },
   {
     quote:
       "We wanted more than a development vendor. We needed a software house that could understand our operational challenges and help us make the right technical decisions. Next Software Development worked closely with our team, connected our business requirements with the right technology, and delivered a solution designed for long term scalability.",
     author: "William Harris",
-    role: "Operations Director, United Kingdom · Project: Business Automation and Enterprise Software",
+    role: "Operations Director, United Kingdom",
+  },
+  {
+    quote:
+      "Next Software Development helped us turn a complex business requirement into a practical digital platform. Their team kept communication clear, delivered regular progress updates, and handled the project with strong technical ownership from planning through launch.",
+    author: "Sophia Bennett",
+    role: "Founder, United States",
+  },
+  {
+    quote:
+      "We needed a dependable team to modernize our internal systems and improve how our staff managed daily operations. Next Software Development provided thoughtful recommendations, reliable development, and ongoing support that made the transition smooth for our organization.",
+    author: "Robert Mitchell",
+    role: "Operations Manager, Australia",
   },
 ];
 
