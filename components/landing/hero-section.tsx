@@ -1,4 +1,4 @@
-import { ArrowRight, Briefcase, Code2, Globe, Users } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 import { HeroCtaForm } from "@/components/landing/hero-cta-form";
@@ -10,15 +10,8 @@ import {
   btnPrimary,
   contactPath,
 } from "@/lib/landing/constants";
-import { heroBackgroundVideo, heroFeatures, homeHero, stats } from "@/data/landingPage";
+import { heroBackgroundVideo, heroFeatures, homeHero } from "@/data/landingPage";
 import { motionStagger } from "@/lib/landing/motion";
-
-const statIcons = {
-  users: Users,
-  briefcase: Briefcase,
-  code: Code2,
-  globe: Globe,
-} as const;
 
 export function HeroSection() {
   return (
@@ -64,7 +57,7 @@ export function HeroSection() {
         aria-hidden
       />
 
-      <LandingContainer className="relative z-10">
+      <LandingContainer className="relative z-10 pb-4 md:pb-6 lg:pb-8">
         <div className="grid min-w-0 items-center gap-10 lg:grid-cols-[minmax(0,1.75fr)_minmax(0,22rem)] lg:gap-10 xl:grid-cols-[minmax(0,1.9fr)_minmax(0,23rem)] xl:gap-14">
           <div className="min-w-0 max-w-none lg:max-w-[58rem] xl:max-w-[64rem]">
             <Reveal immediate delay={0}>
@@ -134,30 +127,9 @@ export function HeroSection() {
         </div>
 
         <Reveal immediate delay={motionStagger * 3.5}>
-          <RatingBadges variant="dark" className="mt-10" />
+          <RatingBadges variant="dark" className="mt-8" />
         </Reveal>
 
-        <Reveal immediate delay={motionStagger * 4}>
-          <div className="mt-6 rounded-2xl border border-white/10 bg-zinc-950/90 px-4 py-6 sm:px-8">
-            <dl className="grid grid-cols-2 gap-6 sm:grid-cols-4 sm:gap-0">
-              {stats.map((stat) => {
-                const Icon = statIcons[stat.icon];
-                return (
-                  <div
-                    key={stat.label}
-                    className="flex flex-col items-center text-center sm:px-4"
-                  >
-                    <Icon className="mb-2 h-5 w-5 text-primary" aria-hidden />
-                    <dt className="font-heading text-2xl font-normal text-white md:text-3xl">
-                      {stat.value}
-                    </dt>
-                    <dd className="mt-1 text-xs text-white/60 sm:text-sm">{stat.label}</dd>
-                  </div>
-                );
-              })}
-            </dl>
-          </div>
-        </Reveal>
       </LandingContainer>
     </section>
   );

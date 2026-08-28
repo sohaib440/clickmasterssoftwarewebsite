@@ -25,4 +25,5 @@ export { SiteLogo } from "./site-logo";
 export { TeamSection } from "./team-section";
 export { TechStackSection } from "./tech-stack-section";
 export { TestimonialsSection } from "./testimonials-section";
+export { TrustNumbersSection } from "./trust-numbers-section";
 export { WhyChooseSection } from "./why-choose-section";

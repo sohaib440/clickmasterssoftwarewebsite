@@ -4,7 +4,7 @@ import {
   AboutSection,
   BlogSection,
   ContactSection,
-  TrustedPartnersSection,
+  TrustNumbersSection,
   FaqSection,
   HeroSection,
   IndustriesSection,
@@ -90,7 +90,7 @@ export default function Home() {
       <SiteHeader />
       <HeroSection />
       <main className="flex w-full max-w-full flex-1 flex-col overflow-x-clip">
-        <TrustedPartnersSection />
+        <TrustNumbersSection />
         <DeferredSection>
           <AboutSection content={homepageAbout} showValues={false} />
         </DeferredSection>

@@ -1,7 +1,7 @@
 import { Briefcase, Code2, Globe, Users } from "lucide-react";
 
 import { Reveal } from "@/components/landing/reveal";
-import { container, sectionPad } from "@/lib/landing/constants";
+import { container } from "@/lib/landing/constants";
 import { stats } from "@/data/landingPage";
 import { cn } from "@/lib/utils";
 
@@ -32,32 +32,36 @@ export function TrustNumbersSection({
       )}
       aria-label="Local trust"
     >
-      <div className={cn(container, sectionPad)}>
+      <div className={cn(container, "pt-2 pb-5 md:pt-3 md:pb-6")}>
         <Reveal>
           <div
             className={cn(
-              "rounded-[2rem] border px-5 py-8 sm:rounded-[2.5rem] sm:px-10 sm:py-10",
+              "rounded-2xl border px-4 py-4 sm:px-5 sm:py-5",
               dark
                 ? "border-white/10 bg-zinc-950"
                 : "border-horizon-border bg-horizon-cream/60"
             )}
           >
-            <dl className="grid grid-cols-2 gap-8 sm:grid-cols-4 sm:gap-0">
+            <dl className="grid grid-cols-2 gap-y-5 sm:grid-cols-4 sm:gap-y-0">
               {stats.map((stat) => {
                 const Icon = statIcons[stat.icon];
                 return (
                   <div
                     key={stat.label}
-                    className="flex flex-col items-center text-center sm:px-4"
+                    className={cn(
+                      "flex flex-col items-center text-center sm:px-4",
+                      "sm:border-l sm:border-white/10 sm:first:border-l-0",
+                      !dark && "sm:border-horizon-border"
+                    )}
                   >
                     <Icon
-                      className="mb-3 h-5 w-5 text-primary sm:h-6 sm:w-6"
+                      className="mb-2 h-4 w-4 text-primary sm:h-5 sm:w-5"
                       strokeWidth={1.75}
                       aria-hidden
                     />
                     <dt
                       className={cn(
-                        "font-heading text-3xl font-normal tracking-tight md:text-4xl lg:text-[2.75rem]",
+                        "font-heading text-2xl font-normal tracking-tight md:text-3xl",
                         dark ? "text-white" : "text-horizon-navy"
                       )}
                     >
@@ -65,12 +69,22 @@ export function TrustNumbersSection({
                     </dt>
                     <dd
                       className={cn(
-                        "mt-2 text-sm font-medium sm:text-base",
+                        "mt-1 text-xs font-medium sm:text-sm",
                         dark ? "text-white" : "text-horizon-muted"
                       )}
                     >
                       {stat.label}
                     </dd>
+                    {stat.detail ? (
+                      <p
+                        className={cn(
+                          "mt-1.5 max-w-[14rem] text-[10px] leading-snug",
+                          dark ? "text-white/45" : "text-horizon-muted"
+                        )}
+                      >
+                        {stat.detail}
+                      </p>
+                    ) : null}
                   </div>
                 );
               })}

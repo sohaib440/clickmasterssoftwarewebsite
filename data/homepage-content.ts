@@ -324,10 +324,10 @@ export const companyStats = [
     icon: "code" as const,
   },
   {
-    value: "10+",
+    value: "6",
     label: "Countries Served",
     detail:
-      "Delivery for clients in Pakistan and overseas markets including the USA, UK, UAE, Canada, and Australia.",
+      "Pakistan, USA, UK, UAE, Canada, and Australia.",
     icon: "globe" as const,
   },
 ] as const;
@@ -337,6 +337,7 @@ export const stats = companyStats.map(({ value, label, icon }) => ({
   value,
   label,
   icon,
+  detail: companyStats.find((stat) => stat.value === value)?.detail ?? "",
 }));
 
 export const clients: Client[] = [
