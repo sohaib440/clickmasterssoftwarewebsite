@@ -18,7 +18,7 @@ type FaqColumnProps = {
 
 function FaqColumn({ startIndex, items, justify = false, renderAnswer }: FaqColumnProps) {
   return (
-    <div className="flex flex-col gap-3">
+    <div className="contents">
       {items.map((faq, i) => {
         const index = startIndex + i;
         return (
@@ -135,7 +135,7 @@ export function FaqSection({
           className={cn("mb-10 md:mb-12", justify && "[&_p:last-child]:text-justify")}
         />
 
-        <div className="grid gap-6 md:grid-cols-2 lg:gap-10">
+        <div className="grid gap-2 md:grid-flow-col md:grid-cols-2 md:grid-rows-[repeat(6,auto)] md:gap-4 lg:gap-6">
           <FaqColumn startIndex={0} items={leftItems} justify={justify} renderAnswer={renderAnswer} />
           <FaqColumn startIndex={mid} items={rightItems} justify={justify} renderAnswer={renderAnswer} />
         </div>

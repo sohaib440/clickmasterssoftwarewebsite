@@ -23,7 +23,7 @@ type ServicesSectionProps = {
   overlineText?: string;
   title?: React.ReactNode;
   description?: string;
-  serviceOverrides?: ServiceOverride[];
+  serviceOverrides?: readonly ServiceOverride[];
 };
 
 function ServiceCard({ service, index }: { service: ServiceCardData; index: number }) {

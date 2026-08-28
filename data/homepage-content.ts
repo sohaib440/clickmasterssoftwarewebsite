@@ -8,6 +8,7 @@ import { BarChart3, Globe2, Rocket, Shield } from "lucide-react";
 import { projectPath } from "@/lib/landing/constants";
 import { siteBrand } from "@/lib/landing/brand";
 import { teamPath } from "@/lib/landing/constants";
+import { industries as defaultIndustries, type Industry } from "@/data/industriesPage";
 
 
 // ===== data/landing/types.ts =====
@@ -219,15 +220,15 @@ export const homepageServicesIntro =
   "We combine engineering expertise, thoughtful product design, and a deep understanding of business requirements to build digital products that are secure, scalable, and built to perform. From custom software and mobile applications to artificial intelligence, enterprise platforms, cloud infrastructure, and specialized solutions, we help organizations turn complex requirements into dependable technology.";
 
 export const homepageServiceOverrides = [
-  { title: "Software Development", description: "We design and build custom software around your business processes, users, and long term objectives. From product discovery and system architecture to development, deployment, and ongoing support, we create secure and scalable solutions that improve operations and provide a strong foundation for growth." },
-  { title: "Mobile App Development", description: "We create high quality mobile applications for iOS and Android that combine intuitive experiences with reliable performance. Our team handles product strategy, interface design, development, integration, testing, deployment, and ongoing improvement to deliver mobile products that users can depend on." },
-  { title: "Web Development", description: "We build modern web applications that are responsive, fast, secure, and designed around real business requirements. Whether you need a customer facing platform, internal application, online portal, or complex web system, we develop solutions that provide a dependable experience across devices and browsers." },
-  { title: "Ecommerce Development", description: "We develop ecommerce platforms that make it easier for businesses to sell, manage, and scale online. From storefronts and marketplaces to custom checkout, catalog management, payment integration, order processing, and administration, we build commerce experiences around your products, customers, and operational needs." },
-  { title: "UI/UX Design", description: "We design digital experiences that are clear, intuitive, consistent, and aligned with user expectations. Our process combines research, information architecture, user flows, wireframes, interface design, design systems, prototyping, and design quality assurance to create products that are easier to use and more effective." },
-  { title: "Artificial Intelligence", description: "We develop practical artificial intelligence solutions that help organizations automate processes, extract insights, improve decision making, and create intelligent digital experiences. Our work includes intelligent agents, natural language processing, computer vision, predictive systems, and AI powered automation, with appropriate evaluation, monitoring, security, and human oversight." },
-  { title: "Machine Learning", description: "We build machine learning solutions that turn business data into useful predictions and intelligent capabilities. From data preparation and model development to evaluation, optimization, deployment, and production monitoring, we create reliable machine learning systems designed to perform as your data and requirements evolve." },
-  { title: "Automation Services", description: "We help organizations eliminate repetitive manual work by connecting systems and automating business processes. Our solutions include workflow automation, robotic process automation, document processing, data synchronization, notifications, approvals, and other operational workflows that improve efficiency and reduce unnecessary effort." },
-  { title: "Cloud & DevOps", description: "We design and manage cloud environments that support reliable application delivery, performance, security, and scalability. Our services include cloud architecture, infrastructure automation, continuous integration and deployment, monitoring, system optimization, backup strategies, and operational improvements that help teams release and maintain software with confidence." },
+  { title: "Software Development", description: "As a leading custom software development company and software house, we deliver full cycle software development, from discovery and architecture through build, launch, and ongoing support, for startups and enterprises worldwide." },
+  { title: "Mobile App Development", description: "Secure, scalable iOS and Android app development from a software house delivering native quality mobile applications with shared logic where it speeds delivery without sacrificing performance." },
+  { title: "Web Development", description: "Modern web application development from a trusted software development company, with responsive design, strong performance, and SEO friendly architecture for every device and browser." },
+  { title: "Ecommerce Development", description: "Storefronts, marketplaces, and checkout systems from a leading ecommerce development company, built for conversion, catalog complexity, and reliable order operations." },
+  { title: "UI/UX Design", description: "Research led interfaces and design systems from a leading software house, focused on usability, consistency, and conversion, from wireframes to design QA." },
+  { title: "Artificial Intelligence", description: "Production grade AI development services covering automation, predictive insights, AI agents, NLP, and computer vision, with clear guardrails, monitoring, and human oversight." },
+  { title: "Machine Learning", description: "ML models and pipelines from a top rated software house covering data preparation, training, evaluation, and production inference so predictions run reliably at scale." },
+  { title: "Automation Services", description: "Workflow automation, RPA, and document automation from a trusted software company so teams eliminate repetitive work and move data between systems reliably." },
+  { title: "Cloud & DevOps", description: "Secure cloud native infrastructure and CI/CD pipelines from a best software development company, with monitoring and scalable DevOps workflows so teams ship reliably and grow with confidence." },
   { title: "Data & Business Intelligence", description: "We turn complex business data into structured information that teams can understand and act upon. From data pipelines and centralized data platforms to dashboards, reporting, analytics, and business intelligence solutions, we help organizations monitor performance, identify trends, and make informed decisions." },
   { title: "Cybersecurity", description: "We integrate security into applications and infrastructure from the beginning rather than treating it as an afterthought. Our services include application security assessments, vulnerability testing, security reviews, access controls, infrastructure protection, and compliance readiness to help organizations reduce risk and protect critical systems and information." },
   { title: "Enterprise Solutions", description: "We develop enterprise software that connects people, processes, data, and systems across an organization. Our solutions include enterprise resource planning, customer relationship management, internal business platforms, workflow management, operational systems, and custom applications designed to replace disconnected tools with efficient, connected processes." },
@@ -237,72 +238,96 @@ export const homepageServiceOverrides = [
   { title: "Testing & QA", description: "We help organizations deliver dependable software through structured manual and automated testing. Our quality assurance services cover functional testing, integration testing, regression testing, usability testing, application programming interface testing, compatibility testing, and performance testing to identify issues early and improve release quality." },
 ] as const;
 
+/** Homepage-only Industries We Serve copy — not reused on industry detail pages. */
+const homepageIndustryDescriptions: Record<string, string> = {
+  manufacturing: "Automate production lines and streamline factory operations with intelligent control systems.",
+  healthcare: "Custom healthcare software, patient management, and diagnostic tools built for HIPAA/GDPR-aware markets.",
+  retail: "Modern storefronts with smart inventory, checkout, and loyalty experiences.",
+  "real-estate": "Unified platforms for listings, contracts, and tenant management.",
+  education: "Adaptive learning platforms and digital classrooms that scale with every student.",
+  finance: "Secure trading platforms and compliance-ready analytics dashboards.",
+  logistics: "End-to-end shipment tracking and fleet routing intelligence.",
+  media: "High-performance tools for broadcasting, streaming, and content workflows.",
+  banking: "Modern core banking, digital onboarding, and fraud protection.",
+  agriculture: "Precision farming software turning sensor data into higher yields.",
+  hospitality: "Reservation, guest experience, and operations platforms.",
+  "health-fitness": "Member apps, class booking, and performance tracking.",
+  technology: "Platforms, APIs, and infrastructure for software-first companies.",
+  insurance: "Automated quoting, underwriting, and policy servicing.",
+  consulting: "Client portals and engagement tooling for consultancies.",
+};
+
+export const homepageIndustries: Industry[] = defaultIndustries.map((industry) => ({
+  ...industry,
+  description: homepageIndustryDescriptions[industry.slug] ?? industry.description,
+}));
+
 /** Homepage-only Why choose us — not reused on location or other pages. */
 export const homepageWhyChoose = {
-  overlineText: "Why choose us",
-  title: "Why businesses choose us",
+  overlineText: "Why Choose Us",
+  title: "Why Businesses Across the US, UK, UAE, Canada, Australia & Pakistan Choose Us",
   description:
-    "What you can expect when you partner with Next Software Development for discovery, delivery, and long-term support.",
+    "What you can expect when you partner with Next Software Development for discovery, delivery, and long term support.",
   values: [
     {
       title: "Experienced Senior Engineering Team",
       description:
-        "Work with experienced software engineers and specialists who take ownership of your project from planning through delivery.",
+        "Work with senior software engineers who take ownership from planning through delivery.",
     },
     {
-      title: "Transparent Pricing and Communication",
+      title: "Transparent Pricing & Communication",
       description:
-        "Receive clear pricing, regular progress updates, and straightforward communication throughout the engagement with no unexpected costs.",
+        "Clear pricing, regular progress updates, and no unexpected costs, whether you are hiring a software development company in Pakistan or the USA.",
     },
     {
-      title: "Agile Development and Regular Demos",
+      title: "Agile Development with Regular Demos",
       description:
-        "Your project is developed in structured sprints with regular demonstrations, giving you continuous visibility into progress and allowing feedback to shape the product.",
+        "Structured sprints with regular demos so you see continuous progress and can shape the product.",
     },
     {
       title: "Dedicated Software Consultant",
       description:
-        "Every project has a dedicated software consultant who understands your business, coordinates the development team, and remains your primary point of contact.",
+        "A single point of contact who understands your business and coordinates the team.",
     },
     {
-      title: "Complete End to End Development",
+      title: "Complete End-to-End Development",
       description:
-        "From business analysis and user experience design to architecture, development, quality assurance, deployment, and support, we manage the complete software development lifecycle.",
+        "Business analysis, UX, architecture, development, QA, deployment, and support under one roof.",
     },
     {
-      title: "Security Focused Development",
+      title: "Security-Focused Development",
       description:
-        "Security is considered throughout planning, development, testing, deployment, and maintenance to help protect your software, systems, and business data.",
+        "Security is built in from planning through maintenance to protect your software and business data.",
     },
     {
       title: "Scalable Software Architecture",
       description:
-        "We design software with long term growth in mind, creating architectures that can support increasing users, data, integrations, and business requirements.",
+        "Architectures designed for growing users, data, and integrations.",
     },
     {
       title: "Quality Assurance at Every Stage",
       description:
-        "Our quality assurance process combines functional testing, performance testing, security testing, and cross device testing to help ensure reliable production software.",
+        "Functional, performance, security, and cross-device testing before every release.",
     },
     {
-      title: "Ongoing Support and Maintenance",
+      title: "Ongoing Support & Maintenance",
       description:
-        "Our relationship does not end at launch. We provide ongoing maintenance, technical support, optimization, and improvements as your software and business evolve.",
+        "Maintenance, technical support, and optimization long after launch.",
     },
     {
-      title: "Business Focused Engineering",
+      title: "Business-Focused Engineering",
       description:
-        "We look beyond technical requirements to understand your goals, users, workflows, and challenges so the software delivers meaningful business value.",
+        "We engineer around your goals and workflows, not just a spec sheet.",
     },
     {
       title: "Flexible Global Delivery",
       description:
-        "Our team works with businesses across different regions and time zones, providing flexible communication and collaboration for international projects.",
+        "We work across time zones to support clients in North America, Europe, the Middle East, Australia, and South Asia.",
     },
     {
       title: "Proven Development Process",
       description:
-        "Our structured development process has been refined since 2019, covering discovery, planning, design, development, testing, deployment, and ongoing support.",
+        "A structured process refined since 2019, covering discovery through ongoing support.",
     },
   ],
 };
@@ -430,10 +455,56 @@ export const processSteps = [
   },
 ];
 
+/** Homepage-only delivery process copy — not reused on location pages. */
+export const homepageProcessSteps = [
+  {
+    step: "01",
+    shortLabel: "Discover",
+    title: "Discover & Business Analysis",
+    description:
+      "We understand your business, users, and goals, document requirements, define success metrics, and align on scope before design or code.",
+  },
+  {
+    step: "02",
+    shortLabel: "Architecture",
+    title: "Architecture & Technical Planning",
+    description:
+      "Senior engineers define system architecture, select the right technology stack, and produce a full project plan with milestones, deliverables, timeline, and cost.",
+  },
+  {
+    step: "03",
+    shortLabel: "Design",
+    title: "UI/UX Design & Prototyping",
+    description:
+      "Wireframes and clickable prototypes you review and approve at every stage.",
+  },
+  {
+    step: "04",
+    shortLabel: "Development",
+    title: "Agile Development in Sprints",
+    description:
+      "Two-week agile sprints with a working demo at the end of each one.",
+  },
+  {
+    step: "05",
+    shortLabel: "QA & Security",
+    title: "Quality Assurance & Security Testing",
+    description:
+      "Functional, performance, security, and cross-device testing using manual QA and automated frameworks.",
+  },
+  {
+    step: "06",
+    shortLabel: "Launch",
+    title: "Launch, Handover & Ongoing Support",
+    description:
+      "Smooth go-live, full handover documentation, code access, team training, and flexible post-launch support plans.",
+  },
+] as const;
+
 
 // ===== data/landing/tech-stack.ts =====
 export const techStackIntro =
-  "As a leading software house, we engineer across the full delivery spectrum from polished interfaces and resilient APIs to data platforms, cloud infrastructure, and production AI. Every technology below reflects real project experience, selected for performance, security, team velocity, and long-term maintainability.";
+  "As a leading software house, we engineer across the full delivery spectrum from polished interfaces and resilient APIs to data platforms, cloud infrastructure, and production AI. Every technology below reflects real project experience, chosen for performance, security, team velocity, and long-term maintainability.";
 
 
 export const techStackLogoGroupMeta: TechStackLogoGroup[] = [
@@ -963,7 +1034,7 @@ export const projects = [
 
 // ===== data/landing/team.ts =====
 export const teamIntro =
-  "We are a focused team of 20+ software engineers, designers, and delivery specialists. Founded in 2019, we are small enough to stay close to every project and experienced enough to deliver from startup MVPs to enterprise platforms. Each member is selected for technical craft, clear communication, and professional ownership.";
+  "We are a focused team of 20+ software engineers, designers, and delivery specialists. Founded in 2019, we are small enough to stay close to every project and experienced enough to deliver everything from startup MVPs to enterprise platforms.";
 
 export const teamMembers = [
   {
@@ -1141,68 +1212,68 @@ export const testimonials: Testimonial[] = [
 
 /** Homepage-only client testimonials — distinct from location and shared landing reviews. */
 export const homepageTestimonialsIntro =
-  "Hear from founders, business leaders, and technology teams who partnered with Next Software Development after looking for a trusted software house near me or a reliable software development company near me. From custom software and web development to mobile applications and artificial intelligence solutions, our clients work with us to build technology that supports real business goals.";
+  "Hear from business owners, founders, and technology leaders who have partnered with Next Software Development for custom software development, web applications, mobile products, enterprise platforms, artificial intelligence, and business automation.";
 
 export const homepageTestimonials: Testimonial[] = [
   {
     quote:
-      "We needed a software house near me that could understand our business before starting development. Next Software Development took the time to understand our requirements, planned the architecture properly, and delivered a custom web application that our team could maintain and grow.",
+      "We were looking for a reliable custom software development company that could understand our business requirements rather than simply build according to a specification. Next Software Development took the time to understand our workflows, provided clear technical guidance, and delivered a scalable solution that has made our operations much more efficient.",
     author: "Ahmed Raza",
-    role: "CEO, E-commerce Business · Lahore, Pakistan",
+    role: "Founder, Lahore, Pakistan · Project: Custom Software Development",
   },
   {
     quote:
-      "Our clinic needed a custom customer relationship management system to manage patient follow-ups and staff scheduling in one place. The team understood our healthcare workflows quickly and delivered a system that reduced our front desk workload and made daily operations much easier.",
+      "Finding the right software house made a significant difference to our project. Next Software Development provided a professional team, clear communication, and a structured development process from planning through delivery. They understood our requirements and built a solution that was practical, reliable, and easy for our team to use.",
     author: "Ayesha Khan",
-    role: "Operations Manager, Healthcare Clinic · Karachi, Pakistan",
+    role: "Business Owner, Karachi, Pakistan · Project: Web Application Development",
   },
   {
     quote:
-      "We were looking for a software development company near me that could handle both iOS and Android development without overcomplicating the first release. Next Software Development helped us define a focused minimum viable product, built the core features, and maintained a clear development process throughout the project.",
+      "We engaged Next Software Development for custom software development services because we needed a solution designed specifically around our business processes. Their team helped us with architecture, development, testing, and deployment while maintaining clear communication throughout the project. The result was a scalable platform that gave our organization a stronger technology foundation.",
     author: "Hamza Malik",
-    role: "Founder, Retail Startup · Islamabad, Pakistan",
+    role: "Technology Director, Islamabad, Pakistan · Project: Enterprise Software Development",
   },
   {
     quote:
-      "Our existing enterprise resource planning system could not keep up with our warehouse operations. Next Software Development helped us automate several manual processes and improve inventory management. Their team also remained responsive after launch whenever we needed technical support.",
-    author: "Usman Farooq",
-    role: "Supply Chain Head, Manufacturing Company · Faisalabad, Pakistan",
+      "We needed an experienced enterprise software development company that could handle a complex platform and understand the operational requirements behind it. Next Software Development provided strong engineering expertise throughout the project and helped us build a secure, scalable system that could support our growing business.",
+    author: "Michael Anderson",
+    role: "Founder, United States · Project: Enterprise Software Development",
   },
   {
     quote:
-      "We came to Next Software Development to build a software as a service product from the ground up. Their engineers were involved from architecture through deployment, while quality assurance was integrated throughout the process. The result was a much more reliable launch and a strong foundation for future development.",
-    author: "Bilal Ahmed",
-    role: "Co Founder, Business Software Company · Peshawar, Pakistan",
-  },
-  {
-    quote:
-      "We needed an experienced software development company to replace a legacy internal system without disrupting our operations. Next Software Development handled the migration carefully, maintained clear communication throughout the project, and provided documentation that made ongoing maintenance much easier for our internal team.",
-    author: "Michael Carter",
-    role: "IT Director, Logistics Company · Chicago, USA",
-  },
-  {
-    quote:
-      "The artificial intelligence team at Next Software Development helped us develop a recommendation engine that integrated with our existing platform. What impressed us most was their ability to explain the technical options clearly and connect each decision to our actual product and business requirements.",
-    author: "Daniel Brooks",
-    role: "Vice President of Product, Marketplace Platform · Austin, USA",
-  },
-  {
-    quote:
-      "We needed a technology partner to migrate our cloud platform without disrupting our customers. Next Software Development planned the transition carefully, communicated clearly at every stage, and helped our team move to a more scalable infrastructure with minimal disruption.",
+      "Our search for a mobile app development company focused on finding a team that could combine technical expertise with a strong understanding of user experience. Next Software Development managed the process from product planning and interface design through development and testing, delivering a mobile application that aligned closely with our business objectives.",
     author: "James Wilson",
-    role: "Chief Technology Officer, Financial Technology Startup · New York, USA",
+    role: "Managing Director, United Kingdom · Project: Mobile App Development",
   },
   {
     quote:
-      "Our customer relationship management software development project required integration with several legacy systems. Next Software Development approached the integrations carefully, tested the system thoroughly, and helped our sales team transition to the new platform with very little disruption.",
-    author: "Oliver Bennett",
-    role: "Managing Director, Professional Services Firm · London, UK",
+      "We were evaluating several providers before choosing an AI software development company for our project. Next Software Development stood out because the team focused on the practical business use of artificial intelligence rather than simply adding AI features. They helped us develop a solution around automation, data, and our specific operational requirements.",
+    author: "Omar Al Mansouri",
+    role: "Business Owner, United Arab Emirates · Project: Artificial Intelligence Development",
   },
   {
     quote:
-      "We were searching for a software development company that could take ownership of both frontend and backend development for an enterprise resource planning platform. Next Software Development provided a structured process, strong technical communication, thorough testing, and a well documented rollout.",
+      "Working with an offshore software development company can be challenging when communication and project ownership are not handled properly. Next Software Development made the process straightforward through regular communication, structured development, and clear project coordination. Their team worked closely with us across time zones and maintained a strong focus on quality.",
+    author: "Daniel Thompson",
+    role: "Founder, Canada · Project: Custom Software Development",
+  },
+  {
+    quote:
+      "We initially searched for a software development company near me because we wanted a development partner we could communicate with easily. After evaluating our options, we chose Next Software Development because their technical capabilities and development process were a strong fit for our project. The team provided reliable communication and delivered the software according to our requirements.",
+    author: "Liam Anderson",
+    role: "Director, Australia · Project: Web and Software Development",
+  },
+  {
+    quote:
+      "Next Software Development provided the custom software development services we needed to transform a complex product concept into a reliable application. Their team was involved throughout discovery, architecture, development, testing, and deployment, giving us technical guidance at every stage while keeping the project focused on our business goals.",
+    author: "David Carter",
+    role: "Product Manager, United States · Project: Custom Software Development",
+  },
+  {
+    quote:
+      "We wanted more than a development vendor. We needed a software house that could understand our operational challenges and help us make the right technical decisions. Next Software Development worked closely with our team, connected our business requirements with the right technology, and delivered a solution designed for long term scalability.",
     author: "William Harris",
-    role: "Head of Information Technology, Enterprise Operations · Manchester, UK",
+    role: "Operations Director, United Kingdom · Project: Business Automation and Enterprise Software",
   },
 ];
 
@@ -1391,70 +1462,84 @@ export const homepageFaqs: FaqItem[] = [
     tag: "Overview",
     question: "What does a software development company actually do?",
     answer:
-      "A software development company designs, builds, tests, deploys, and maintains software tailored to specific business requirements. This can include web applications, mobile applications, cloud platforms, enterprise systems, software as a service products, and custom business solutions. Unlike off the shelf software, custom software is designed around an organization's unique workflows, users, goals, and operational needs.",
+      "A software development company helps businesses plan, design, build, test, deploy, and maintain software solutions. Next Software Development provides custom software development, web application development, mobile application development, enterprise software, artificial intelligence solutions, automation, cloud services, and ongoing software support.",
   },
   {
     column: "left",
     tag: "Pricing",
     question: "How much does custom software development cost?",
     answer:
-      "The cost of custom software development depends on the project's scope, complexity, features, integrations, technology requirements, and timeline. A focused minimum viable product may require a smaller investment, while a complex enterprise platform may require a larger, multi phase engagement. Next Software Development provides a clear project estimate after understanding your requirements during an initial consultation.",
+      "The cost depends on the complexity of the project, required features, integrations, design requirements, technology stack, security needs, and development timeline. We first understand your requirements and then provide an estimate based on the actual scope of work rather than using a fixed price for every project.",
   },
   {
     column: "left",
     tag: "Choosing",
     question: "How do I choose the right software development company?",
     answer:
-      "Look for a software development company with relevant project experience, a verifiable portfolio, experienced engineers, clear communication, transparent pricing, a structured development process, and reliable post launch support. Client reviews and independent platforms can also help you evaluate a company's reputation. The right partner should understand your business goals as well as your technical requirements.",
+      "Consider the company's technical expertise, relevant project experience, development process, communication practices, quality assurance, security standards, and post launch support. You should also review previous work and determine whether the development team understands your business objectives rather than focusing only on technical requirements.",
   },
   {
     column: "left",
     tag: "Terminology",
     question: "What is the difference between a software house and a software development agency?",
     answer:
-      "In practice, the terms software house and software development agency are often used interchangeably. Both can provide services such as software engineering, application development, design, testing, deployment, and maintenance. What matters most is the team's technical expertise, development process, communication, project experience, and ability to deliver software that meets your business objectives.",
+      "The terms are often used interchangeably, although their focus can differ. A software house generally has a strong focus on software engineering and product development, while a software development agency may offer a broader range of digital services. Next Software Development combines engineering, design, business analysis, quality assurance, consulting, and development to provide complete software solutions.",
   },
   {
     column: "left",
     tag: "Timeline",
     question: "How long does a typical software development project take?",
     answer:
-      "Project timelines depend on the scope, complexity, number of features, integrations, and level of customization required. A focused minimum viable product may take several weeks, while a mid sized application can take several months and a complex enterprise platform may require six months or longer. After discovery and technical planning, we provide a project timeline based on your specific requirements.",
+      "Project timelines vary according to scope, complexity, features, integrations, design requirements, and team size. Smaller applications may take a few months, while complex enterprise platforms can require longer development cycles. We establish milestones and a development roadmap so clients have clear expectations throughout the project.",
   },
   {
     column: "right",
     tag: "Support",
     question: "Do you provide support after the software is launched?",
     answer:
-      "Yes. We provide ongoing software maintenance and support after launch. Depending on your requirements, support can include monitoring, bug fixes, security updates, performance optimization, technical improvements, infrastructure support, and future feature development. Our goal is to help your software remain reliable and effective as your business evolves.",
+      "Yes. We provide ongoing software maintenance, technical support, performance optimization, security updates, monitoring, troubleshooting, and additional development when required. Continued support helps keep software reliable as your users, data, integrations, and business requirements evolve.",
   },
   {
     column: "right",
     tag: "Legal",
     question: "Will you sign a non disclosure agreement before discussing our project?",
     answer:
-      "Yes. We can sign a non disclosure agreement when required to protect confidential business information, product ideas, technical details, and other sensitive project information. You can discuss your project requirements with our team with confidence before development begins.",
+      "Yes. We understand that business ideas, product concepts, technical specifications, processes, and other project information can be confidential. When required, we can review and sign a non disclosure agreement before discussing sensitive project information, subject to the terms of the agreement.",
   },
   {
     column: "right",
     tag: "Clients",
     question: "Do you work with early stage startups as well as enterprises?",
     answer:
-      "Yes. We work with businesses at different stages, from early stage startups developing their first minimum viable product to established organizations building complex business and enterprise software. Our development approach can be adapted to the project's size, budget, technical requirements, and growth objectives.",
+      "Yes. We work with startups, growing businesses, and established enterprises. For startups, we can help with product planning, technical architecture, minimum viable product development, and scalable foundations. For enterprises, we support complex software development, system integration, modernization, automation, and large scale platforms.",
   },
   {
     column: "right",
     tag: "Getting started",
     question: "How do I get a free quote from Next Software Development?",
     answer:
-      "You can submit your project details through our free quote form or book a consultation with our team. We will review your requirements, discuss your goals, identify the appropriate development approach, and provide a clear project estimate based on the scope of work.",
+      "Contact our team and provide information about your project, business objectives, required features, expected timeline, and any available technical documentation. We will review your requirements, discuss the project with you, and provide an initial estimate based on the scope and complexity of the work.",
   },
   {
     column: "right",
     tag: "Team",
     question: "Can you provide dedicated software developers for my project?",
     answer:
-      "Yes. We can provide dedicated software developers and development teams based on your project's requirements. You can work with experienced software engineers across frontend development, backend development, mobile development, artificial intelligence, quality assurance, and DevOps, with the flexibility to scale the team as your project evolves.",
+      "Yes. We can provide dedicated software developers or complete development teams based on your requirements. Depending on the project, your team can include software engineers, user interface and user experience designers, quality assurance specialists, business analysts, software consultants, and technical specialists.",
+  },
+  {
+    column: "right",
+    tag: "Global delivery",
+    question: "Do you work with clients outside Pakistan?",
+    answer:
+      "Yes. We work with businesses in Pakistan and international markets, including the United States, United Kingdom, United Arab Emirates, Canada, and Australia. Our remote development process supports communication, collaboration, project management, documentation, and delivery across different regions.",
+  },
+  {
+    column: "right",
+    tag: "Collaboration",
+    question: "How do you handle time zone differences for international clients?",
+    answer:
+      "We use structured communication, project management tools, documentation, scheduled meetings, and agreed response windows to collaborate effectively across time zones. Important meetings, demonstrations, and discussions can be scheduled around mutually suitable working hours while project progress remains visible between meetings.",
   },
 ];
 
@@ -1525,9 +1610,9 @@ export const homepageContact = {
 // ===== Homepage SEO + section headings =====
 
 export const homepageSeo = {
-  title: "Top Rated Software House & Software Development Company",
+  title: "Custom Software Development Company | Next",
   description:
-    "Next Software Development builds custom software, web & mobile apps, and AI solutions for startups and enterprises across the US, UK, UAE, Canada, Australia & Pakistan. Get a free quote.",
+    "Custom software development company building web, mobile, and AI solutions for startups and enterprises worldwide. Get a free quote.",
 } as const;
 
 export const homepageSectionCopy = {
@@ -1592,7 +1677,7 @@ export const homepageSectionCopy = {
   },
 } as const;
 
-export const homepageIndustries = [
+export const homepageIndustriesLegacy = [
   {
     slug: "manufacturing",
     name: "TechCorp",

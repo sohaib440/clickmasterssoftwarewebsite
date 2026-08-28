@@ -23,6 +23,8 @@ import {
   homepageContact,
   homepageFaqIntro,
   homepageFaqs,
+  homepageIndustries,
+  homepageProcessSteps,
   homepageServiceOverrides,
   homepageServicesIntro,
   homepageSeo,
@@ -106,20 +108,25 @@ export default function Home() {
           <WhyChooseSection
             values={homepageWhyChoose.values}
             overlineText={homepageWhyChoose.overlineText}
-            title={
-              <>
-                Why businesses <span className="italic">choose us</span>
-              </>
-            }
+            title={homepageWhyChoose.title}
             description={homepageWhyChoose.description}
           />
         </DeferredSection>
-        <IndustriesSection />
+        <IndustriesSection
+          overlineText="Industries We Serve"
+          title="Software Solutions for Every Industry, In Every Market We Serve"
+          description="As a software house trusted by clients across Pakistan, the USA, UK, UAE, Canada, and Australia, we tailor software to the workflows, compliance requirements, and growth goals of each industry we support."
+          items={homepageIndustries}
+        />
         <DeferredSection>
           <TechStackSection />
         </DeferredSection>
         <DeferredSection>
-          <ProcessSection />
+          <ProcessSection
+            overlineText="How We Work"
+            title="Our Delivery Process — Transparent, Agile, and Built Around You"
+            steps={homepageProcessSteps}
+          />
         </DeferredSection>
         <DeferredSection>
           <ProjectsSection />
