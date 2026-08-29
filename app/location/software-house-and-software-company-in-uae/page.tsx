@@ -17,7 +17,6 @@ import { SiteHeader } from "@/components/landing/navbar";
 import { TeamSection } from "@/components/landing/team-section";
 import { TechStackSection } from "@/components/landing/tech-stack-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
-import { TrustNumbersSection } from "@/components/landing/trust-numbers-section";
 import { CaseStudiesSection } from "@/components/case-study/case-studies-section";
 import { uaeLocation } from "@/data/locations";
 import { btnOnDark, container, sectionPad } from "@/lib/landing/constants";
@@ -81,8 +80,6 @@ export default function UAELocationPage() {
 
       <main className="flex w-full flex-1 flex-col overflow-x-clip">
         <LocationHero location={location} />
-
-        <TrustNumbersSection />
 
         <AboutSection
           content={{ ...location.about, overlineText: "Who we are" }}
