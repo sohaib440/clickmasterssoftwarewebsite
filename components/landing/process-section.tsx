@@ -25,7 +25,7 @@ export function ProcessSection({
       <span className="italic">transparent, agile, and built around you</span>
     </>
   ),
-  description = "Many teams talk about best practices. As a top rated software house, we show you exactly what delivery looks like at every stage of your project.",
+  description = "Many teams talk about best practices. We show you exactly what delivery looks like at every stage of your project.",
   steps,
   ctaLabel = "Start your project",
 }: ProcessSectionProps = {}) {

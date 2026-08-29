@@ -154,14 +154,14 @@ export const aboutSection = {
   teamCta: "Meet our engineering team",
   paragraphs: [
     "Next Software Development is a trusted software partner to founders and operators across the United States, United Kingdom, United Arab Emirates, Canada, and Australia. We were founded in 2019 with one belief: that great software should be accessible to every business, not just the Fortune 500.",
-    "Since 2019 we have built 7+ years of experience supporting 500+ happy clients across 10+ countries with a team of 20+ software engineers, designers, QA specialists, and project managers. We turn complex business challenges into clean, efficient, and scalable digital products, whether you need a mobile app for your startup, an ERP for manufacturing, or a SaaS platform for recurring revenue.",
+    "Since 2019 we have built 7+ years of experience supporting 500+ happy clients across 6 countries with a team of 20+ software engineers, designers, QA specialists, and project managers. We turn complex business challenges into clean, efficient, and scalable digital products, whether you need a mobile app for your startup, an ERP for manufacturing, or a SaaS platform for recurring revenue.",
     "Clients choose us for senior delivery quality and practical pricing. You get English-speaking, timezone-flexible teams with strong technical craft, clear communication, and ownership that continues after launch.",
   ],
   values: [
     {
       title: "Proven delivery record",
       description:
-        "Founded in 2019, with 7+ years of experience, 500+ happy clients, and delivery across 10+ countries.",
+        "Founded in 2019, with 7+ years of experience, 500+ happy clients, and delivery across 6 countries.",
     },
     {
       title: "20+ software engineers",
@@ -323,10 +323,10 @@ export const companyStats = [
     icon: "code" as const,
   },
   {
-    value: "10+",
+    value: "6+",
     label: "Countries Served",
     detail:
-      "Delivery for clients in Pakistan and overseas markets including the USA, UK, UAE, Canada, and Australia.",
+      "Delivery for clients in Pakistan, the United States, the United Kingdom, the United Arab Emirates, Canada, and Australia.",
     icon: "globe" as const,
   },
 ] as const;
