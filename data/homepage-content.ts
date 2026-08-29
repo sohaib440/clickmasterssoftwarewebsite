@@ -1059,7 +1059,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "Finding a software development company in Peshawar that actually understood what a logistics business needs was harder than I expected. Most agencies just wanted to build a generic website. This software house asked about our fleet tracking problems first and built the product around solving that, not the other way round.",
+      "Looking for a software house near me in Peshawar was harder than I expected because most agencies just wanted to build a generic website. This software house asked about our fleet tracking problems first and built the product around solving that, not the other way round.",
     author: "Fahad Yousafzai",
     role: "Director, Logistics Company · Peshawar, Pakistan",
   },
