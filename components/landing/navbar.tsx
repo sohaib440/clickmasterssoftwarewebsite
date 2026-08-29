@@ -112,6 +112,17 @@ export const footerColumns = [
     ],
   },
   {
+    title: "Locations",
+    links: [
+      { label: "Pakistan", href: "/location/software-house-and-software-company-in-pakistan" },
+      { label: "USA", href: "/location" },
+      { label: "UK", href: "/location" },
+      { label: "UAE", href: "/location" },
+      { label: "Canada", href: "/location" },
+      { label: "Australia", href: "/location" },
+    ],
+  },
+  {
     title: "Connect",
     links: [
       { label: "LinkedIn", href: siteSocial.linkedin },
