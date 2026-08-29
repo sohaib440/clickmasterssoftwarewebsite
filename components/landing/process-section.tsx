@@ -1,3 +1,4 @@
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 import { LandingContainer, sectionHeadingGap } from "@/components/landing/landing-container";
@@ -41,8 +42,9 @@ export function ProcessSection({
         <ProcessStepsGrid steps={steps} />
 
         <div className="mt-12 text-center md:mt-14">
-          <Link href={contactPath} className={btnPrimary}>
+          <Link href={contactPath} className={`${btnPrimary} group`}>
             {ctaLabel}
+            <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden />
           </Link>
         </div>
       </LandingContainer>

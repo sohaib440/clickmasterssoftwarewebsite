@@ -1,4 +1,4 @@
-import { Briefcase, Code2, Globe, Users } from "lucide-react";
+import { ArrowRight, Briefcase, Code2, Globe, Users } from "lucide-react";
 import Link from "next/link";
 
 import { HeroCtaForm } from "@/components/landing/hero-cta-form";
@@ -113,11 +113,13 @@ export function HeroSection() {
 
             <Reveal immediate delay={motionStagger * 3}>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <Link href={contactPath} className={btnPrimary}>
-                  {homeHero.primaryCta} →
+                <Link href={contactPath} className={`${btnPrimary} group`}>
+                  {homeHero.primaryCta}
+                  <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden />
                 </Link>
-                <Link href={homeHero.secondaryHref} className={btnOutlineDark}>
-                  {homeHero.secondaryCta} →
+                <Link href={homeHero.secondaryHref} className={`${btnOutlineDark} group`}>
+                  {homeHero.secondaryCta}
+                  <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden />
                 </Link>
               </div>
             </Reveal>

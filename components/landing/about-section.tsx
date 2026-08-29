@@ -1,3 +1,4 @@
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
@@ -116,8 +117,9 @@ export function AboutSection({ content, showValues = true }: AboutSectionProps =
                 </Reveal>
               ))}
               <Reveal delay={motionStagger * 2}>
-                <Link href={data.teamLink} className={btnOutline}>
-                  {data.teamCta} →
+                <Link href={data.teamLink} className={`${btnOutline} group`}>
+                  {data.teamCta}
+                  <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden />
                 </Link>
               </Reveal>
             </div>

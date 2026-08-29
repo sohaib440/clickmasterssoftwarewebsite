@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, type ReactNode } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -136,7 +136,7 @@ export function BlogFlipCard({
             className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-white transition-colors hover:text-primary"
           >
             Read article
-            <ArrowUpRight className="size-4" />
+            <ArrowRight className="size-4" />
           </Link>
         </>
       }
@@ -182,7 +182,7 @@ export function BlogViewAllFlipCard({
             className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-white transition-colors hover:text-primary"
           >
             Browse all engineering insights
-            <ArrowUpRight className="size-4" />
+            <ArrowRight className="size-4" />
           </Link>
         </>
       }
