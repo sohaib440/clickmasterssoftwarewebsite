@@ -59,15 +59,21 @@ export function Reveal({
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(true);
 
+  const markVisible = () => {
+    const el = ref.current;
+    if (!el || !el.isConnected) return;
+    setVisible(true);
+  };
+
   useLayoutEffect(() => {
     /* eslint-disable react-hooks/set-state-in-effect -- reveal/observe mount sync */
     if (prefersReducedMotion()) {
-      setVisible(true);
+      markVisible();
       return;
     }
 
     if (immediate) {
-      setVisible(true);
+      markVisible();
       return;
     }
 
@@ -75,14 +81,17 @@ export function Reveal({
     if (!el) return;
 
     if (isInViewport(el)) {
-      setVisible(true);
+      markVisible();
       return;
     }
 
     setVisible(false);
     /* eslint-enable react-hooks/set-state-in-effect */
     initRevealObserver();
-    revealCallbacks.set(el, () => setVisible(true));
+    revealCallbacks.set(el, () => {
+      if (!el.isConnected) return;
+      setVisible(true);
+    });
     sharedObserver?.observe(el);
 
     return () => {
@@ -97,7 +106,7 @@ export function Reveal({
 
     if (!isInViewport(el)) return;
 
-    setVisible(true);
+    markVisible();
     sharedObserver?.unobserve(el);
     revealCallbacks.delete(el);
   }, [immediate, visible]);
