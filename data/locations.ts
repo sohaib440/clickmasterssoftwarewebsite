@@ -189,8 +189,9 @@ export type LocationPageContent = {
   eyebrow?: string;
   title: string;
   description: string;
-  /** Optional second hero paragraph (rendered below description) */
+  /** Optional hero paragraphs rendered below the main description */
   descriptionSecondary?: string;
+  descriptionTertiary?: string;
   /** SEO meta title (falls back to title). Avoid brand suffix; layout template adds it. */
   metaTitle?: string;
   /** SEO meta description (~150–160 chars). Falls back to description. */
@@ -941,10 +942,120 @@ function caseBlurbsForPlace(place: string): LocationSocialProofItem[] {
 
 function usesCaseBlurbs(place: string) {
   const key = place.toLowerCase();
-  return key === "pakistan" || CASE_BLURB_CITIES.has(key);
+  return (
+    key === "pakistan" ||
+    CASE_BLURB_CITIES.has(key) ||
+    Object.keys(countrySpecificTestimonials).some(
+      (country) => country.toLowerCase() === key
+    )
+  );
 }
 
+const countrySpecificTestimonials: Record<string, LocationSocialProofItem[]> = {
+  "United States": [
+    {
+      quote:
+        "We needed a more reliable product partner for a SaaS workflow that had grown beyond our internal tools. The team brought structure, fast iteration, and a thoughtful product process that made launch and handoff far smoother than our previous agency relationships.",
+      author: "Operations Lead",
+      role: "New York · SaaS platform",
+    },
+    {
+      quote:
+        "Our healthcare delivery workflow had too many manual steps and too much spreadsheet dependence. The build gave us clearer scheduling, lower admin overhead, and much better visibility for staff and management.",
+      author: "Clinic Director",
+      role: "Los Angeles · Healthcare Ops",
+    },
+    {
+      quote:
+        "The project was delivered with clear milestones and direct communication, so our team always knew what had changed and what was coming next. It felt like working with an embedded senior product team, not a remote vendor.",
+      author: "Product Manager",
+      role: "Chicago · B2B platform",
+    },
+  ],
+  Canada: [
+    {
+      quote:
+        "We needed a custom system for service scheduling and client follow-up without a bloated platform. The result was faster internal operations, better communication with customers, and a cleaner system our team could actually maintain.",
+      author: "Founder",
+      role: "Toronto · Service business",
+    },
+    {
+      quote:
+        "Their team took the time to understand our workflow before writing code. The final product matched our operational reality and gave us better visibility across staff and client touchpoints.",
+      author: "Director",
+      role: "Vancouver · Digital operations",
+    },
+    {
+      quote:
+        "The process was disciplined, transparent, and fast. We got a product that was easier to run and easier to expand as the business grew.",
+      author: "Operations Manager",
+      role: "Montreal · Growth company",
+    },
+  ],
+  Australia: [
+    {
+      quote:
+        "They helped us replace fragmented internal workflows with a clearer system and better reporting. The process was organized, the communication was strong, and the final product felt built around our real operating model.",
+      author: "Business Owner",
+      role: "Sydney · Operations software",
+    },
+    {
+      quote:
+        "Our old software had become a bottleneck. The new platform simplified scheduling, reporting, and team coordination without disrupting the business while we were switching over.",
+      author: "Healthcare Manager",
+      role: "Melbourne · Healthcare workflow",
+    },
+    {
+      quote:
+        "The team understood the need for practical, scalable software rather than decorative features. We got something reliable that our staff could use immediately.",
+      author: "COO",
+      role: "Brisbane · Service operations",
+    },
+  ],
+  "United Kingdom": [
+    {
+      quote:
+        "The team gave us a clear roadmap and kept communication tight throughout the build. The outcome was a better product, a better project rhythm, and a more confident internal team.",
+      author: "Head of Product",
+      role: "London · SaaS product",
+    },
+    {
+      quote:
+        "We needed a partner to untangle manual processes and create a cleaner operational system. The build improved productivity quickly and gave us new confidence in our internal tooling.",
+      author: "Operations Director",
+      role: "Manchester · Service company",
+    },
+    {
+      quote:
+        "Their structured delivery approach gave us visibility at every milestone. We always knew what was being built, why it mattered, and what the next decision point was.",
+      author: "Founder",
+      role: "Birmingham · Digital business",
+    },
+  ],
+  "United Arab Emirates": [
+    {
+      quote:
+        "We needed software that could handle real operations and not just look good in a demo. The final system gave us stronger visibility, better process control, and smoother day-to-day execution.",
+      author: "General Manager",
+      role: "Dubai · Business operations",
+    },
+    {
+      quote:
+        "The project felt organized from the start. Scope, responsibilities, and delivery milestones were clear, and the system we received fit the pace of our real business operations.",
+      author: "Operations Lead",
+      role: "Abu Dhabi · Service operations",
+    },
+    {
+      quote:
+        "We wanted a software partner that would stay accountable after launch. That is exactly what happened, and the system kept improving as our team adapted to it.",
+      author: "Founder",
+      role: "Sharjah · Growth company",
+    },
+  ],
+};
+
 function pickTestimonials(place: string): LocationSocialProofItem[] {
+  if (countrySpecificTestimonials[place]) return countrySpecificTestimonials[place];
   const blurbs = caseBlurbsForPlace(place);
   const matched = baseTestimonials.filter(
     (t) =>
@@ -1150,6 +1261,8 @@ export const pakistanLocation: LocationPageContent = {
     "Next Software Development Company is the best software house and [[top-rated software development company in Pakistan]]. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Islamabad, Lahore, Karachi, and beyond.",
   descriptionSecondary:
     "Our experienced [[team]] of developers, designers, and engineers combines technical expertise with deep local market insight to deliver scalable, secure, and affordable solutions that streamline operations and drive sustainable growth. Whether you are a startup building your first MVP or an enterprise seeking a full scale ERP system, we turn your vision into reliable, high performing software.",
+  descriptionTertiary:
+    "From Islamabad to Karachi and every major business center in between, our software house works with clinics, schools, retailers, and growing enterprises that need senior delivery, practical communication, and post-launch support. You get transparent planning, fixed-price options, and dependable engineering that keeps your operations moving with less risk and more clarity.",
   metaTitle: "Software House in Pakistan",
   metaDescription:
     "Next Software Development Company is the best software house and top-rated software development company in Pakistan. Custom HMS, ERP, and digital products for businesses nationwide.",
@@ -1275,7 +1388,740 @@ export const pakistanLocation: LocationPageContent = {
   sections: pakistanSections,
 };
 
-export const locationPages: LocationPageContent[] = [pakistanLocation];
+const usaSections = buildLocationSections("United States");
+const canadaSections = buildLocationSections("Canada");
+const australiaSections = buildLocationSections("Australia");
+const ukSections = buildLocationSections("United Kingdom");
+const uaeSections = buildLocationSections("United Arab Emirates");
+
+export const usaLocation: LocationPageContent = {
+  slug: "software-house-and-software-company-in-usa",
+  country: "United States",
+  href: "/location/software-house-and-software-company-in-usa",
+  title: "Software Company in USA",
+  description:
+    "Next Software Development Company is a reliable software company in the USA for SaaS founders, healthcare operators, and growing businesses needing custom software, web apps, ERP, and mobile product development.",
+  descriptionSecondary:
+    "Our senior team partners with US businesses from discovery through launch, giving you transparent delivery, clear communication, and product systems that support real operational growth without the typical agency friction.",
+  descriptionTertiary:
+    "Whether you are building a SaaS product, modernizing a legacy workflow, or improving a patient or operations system, we keep scope clear, collaboration tight, and delivery accountable from kickoff through launch and support. That gives your team a senior product partner instead of a disconnected vendor queue.",
+  metaTitle: "Software Company in USA",
+  metaDescription:
+    "Custom software company in the USA for SaaS, healthcare, logistics, and business operations. Senior-led product engineering with clear collaboration and transparent delivery.",
+  coverageTitle: "Software house coverage across the USA",
+  coverageDescription:
+    "We work with teams in the U.S. on product strategy, custom web platforms, healthcare workflows, and business systems built for speed, security, and scale.",
+  about: {
+    overlineText: "Who we are",
+    title: "A software company in the USA for product and operational software",
+    paragraphs: [
+      "Next Software Development Company works with growing businesses, clinic groups, SaaS founders, and service organizations across the United States. Our software company brings senior product engineering, UI/UX design, and technical planning to help teams build the right system without the usual agency delays.",
+      "As a software company in the USA, we cover custom web development, SaaS platforms, ERP and CRM integrations, mobile apps, and workflow automation that support operations in healthcare, logistics, education, and professional services.",
+      "Whether you need a new product MVP, a legacy modernization project, or a partner to maintain a mission-critical system, our team focuses on clear scope, business alignment, and post-launch accountability.",
+    ],
+    values: usaSections.whyChoose.values,
+    image: {
+      src: "/about-us/software-development-company.webp",
+      alt: "Software company in the USA",
+      width: 1000,
+      height: 700,
+    },
+    teamLink: "/team",
+    teamCta: "Meet our US delivery team",
+  },
+  heroImage: {
+    src: "/locations/location-pakistan.webp",
+    alt: "Software company in the USA",
+    width: 1536,
+    height: 1024,
+  },
+  cities: [
+    { slug: "new-york", label: "Main city in United States", href: "#", city: "New York", blurb: "Software for ambitious teams, SaaS products, and digital operations in New York." },
+    { slug: "los-angeles", label: "Main city in United States", href: "#", city: "Los Angeles", blurb: "Custom platform work for media, services, SaaS, and growth-stage businesses." },
+    { slug: "chicago", label: "Main city in United States", href: "#", city: "Chicago", blurb: "Operations software, CRM, ERP, and web platforms for mid-market teams." },
+    { slug: "houston", label: "Main city in United States", href: "#", city: "Houston", blurb: "Business systems for growing enterprises, services, and industrial operations." },
+    { slug: "miami", label: "Main city in United States", href: "#", city: "Miami", blurb: "Digital products and automation for service businesses and fast-scaling brands." },
+    { slug: "san-francisco", label: "Main city in United States", href: "#", city: "San Francisco", blurb: "Product engineering and software strategy for startup and SaaS teams." },
+  ],
+  projects: showcaseProjects,
+  facts: buildLocationFacts("United States"),
+  industries: {
+    title: "Industries we serve in the USA",
+    subtitle:
+      "We support healthcare, SaaS, logistics, education, retail, and service businesses with software built around real operational workflows and growth goals.",
+    items: [
+      { slug: "healthcare", title: "Healthcare", description: "Digital systems for clinics, care teams, and healthcare operators needing efficient scheduling, billing, and patient workflows.", href: "/industries" },
+      { slug: "saas", title: "SaaS & digital products", description: "MVPs and product platforms for founders building software companies with scalable architecture and clear roadmaps.", href: "/industries" },
+    ],
+  },
+  faqIntro:
+    "Common questions about hiring a software company in the USA for product development, healthcare systems, and business automation.",
+  faqs: [
+    {
+      question: "Why hire a software company in the USA?",
+      answer:
+        "US-based teams often need product partners who can align with internal stakeholders, communicate in real time, and ship measurable business outcomes. We provide senior engineering with a practical delivery rhythm.",
+      tag: "USA",
+      column: "left",
+    },
+    {
+      question: "Can you build SaaS and custom web platforms?",
+      answer:
+        "Yes. We build SaaS products, dashboards, internal systems, and web platforms for businesses that need speed, clarity, and maintainable code from day one.",
+      tag: "SaaS",
+      column: "right",
+    },
+    {
+      question: "Do you support healthcare software in the USA?",
+      answer:
+        "Yes. We design healthcare-facing systems, practice tools, scheduling workflows, and secure digital operations to keep patient and staff processes running smoothly.",
+      tag: "Healthcare",
+      column: "left",
+    },
+    {
+      question: "Do you work with startup product teams?",
+      answer:
+        "Yes. We support startup founders who need product strategy, prototype validation, MVP build-outs, and experienced technical guidance without bloated agency layers.",
+      tag: "Startups",
+      column: "right",
+    },
+    {
+      question: "Can you modernize legacy business systems?",
+      answer:
+        "Absolutely. We review old workflows, map pain points, and redesign the right architecture so your team can replace fragile legacy processes with stable, maintainable software.",
+      tag: "Modernization",
+      column: "left",
+    },
+    {
+      question: "Do you build internal tools for US companies?",
+      answer:
+        "Yes. We build operational dashboards, internal platforms, CRM tools, and workflow automation so teams can work faster without unnecessary manual coordination.",
+      tag: "Operations",
+      column: "right",
+    },
+    {
+      question: "Can you support multi-team product delivery?",
+      answer:
+        "Yes. We structure delivery around clear milestones, stakeholder reviews, and accountable engineering so product, operations, and leadership teams stay aligned.",
+      tag: "Delivery",
+      column: "left",
+    },
+    {
+      question: "Do you provide post-launch support?",
+      answer:
+        "Yes. We stay involved after deployment to fix issues, iterate features, and support the product as your technical and operational needs evolve.",
+      tag: "Support",
+      column: "right",
+    },
+    {
+      question: "What industries do you work with in the USA?",
+      answer:
+        "We regularly support healthcare, SaaS, education, logistics, retail, service businesses, and B2B operations teams with tailored product and workflow solutions.",
+      tag: "Industries",
+      column: "left",
+    },
+    {
+      question: "How do we start a US project with your team?",
+      answer:
+        "We begin with discovery, business goals, and a technical review. From there, we scope the product, recommend the best architecture, and propose a realistic delivery plan.",
+      tag: "Process",
+      column: "right",
+    },
+  ],
+  cta: {
+    title: "Ready to hire a software company in the USA?",
+    description:
+      "Tell us about your product idea, workflow challenge, or modernization project. We’ll help you scope the right next step.",
+    buttonLabel: "Get a Free Quote",
+    buttonHref: "/contact",
+  },
+  sections: usaSections,
+};
+
+export const canadaLocation: LocationPageContent = {
+  slug: "software-house-and-software-company-in-canada",
+  country: "Canada",
+  href: "/location/software-house-and-software-company-in-canada",
+  title: "Software Company in Canada",
+  description:
+    "Next Software Development Company is a software company in Canada helping founders, clinics, and growing businesses build custom software, web platforms, ERP workflows, and mobile products with senior delivery.",
+  descriptionSecondary:
+    "We work closely with Canadian teams on product strategy and engineering execution, keeping communication transparent and building systems around real business workflows rather than one-size-fits-all templates.",
+  descriptionTertiary:
+    "From custom web platforms and healthcare workflows to internal operations tools and digital product launches, our team gives Canadian businesses a reliable engineering partner that stays engaged after the build starts. We aim for systems that are maintainable, practical, and aligned with how your team really works.",
+  metaTitle: "Software Company in Canada",
+  metaDescription:
+    "Custom software company in Canada for SaaS, healthcare, operations, and digital product work. Senior engineering, clear communication, and practical delivery.",
+  coverageTitle: "Software house coverage across Canada",
+  coverageDescription:
+    "We support Canadian businesses with software strategy, custom web build-outs, healthcare workflow tooling, and digital systems that scale with operational needs.",
+  about: {
+    overlineText: "Who we are",
+    title: "A software company in Canada for digital product and operations work",
+    paragraphs: [
+      "Next Software Development Company helps businesses across Canada launch and improve digital products without the common friction of delayed discovery, unclear scope, or junior-heavy teams.",
+      "From website platforms and SaaS products to internal operations software and workflow automation, our team builds software around the realities of Canadian SMEs and growth-stage founders.",
+      "We focus on business clarity, maintainable engineering, and strong collaboration so each release brings measurable improvement instead of just a feature list.",
+    ],
+    values: canadaSections.whyChoose.values,
+    image: {
+      src: "/about-us/software-development-company.webp",
+      alt: "Software company in Canada",
+      width: 1000,
+      height: 700,
+    },
+    teamLink: "/team",
+    teamCta: "Meet our Canada software team",
+  },
+  heroImage: {
+    src: "/locations/location-pakistan.webp",
+    alt: "Software company in Canada",
+    width: 1536,
+    height: 1024,
+  },
+  cities: [
+    { slug: "toronto", label: "Main city in Canada", href: "#", city: "Toronto", blurb: "Product engineering and digital business platforms for growing Canadian teams." },
+    { slug: "vancouver", label: "Main city in Canada", href: "#", city: "Vancouver", blurb: "SaaS, web, and operations software for founders and scaling businesses." },
+    { slug: "montreal", label: "Main city in Canada", href: "#", city: "Montreal", blurb: "Custom software for service businesses, healthcare, and digital operations." },
+    { slug: "calgary", label: "Main city in Canada", href: "#", city: "Calgary", blurb: "Business automation and web platforms for operations-focused teams." },
+    { slug: "ottawa", label: "Main city in Canada", href: "#", city: "Ottawa", blurb: "Technology and public-service software for growing organizations." },
+    { slug: "edmonton", label: "Main city in Canada", href: "#", city: "Edmonton", blurb: "Digital product builds centered on efficiency, operations, and growth." },
+  ],
+  projects: showcaseProjects,
+  facts: buildLocationFacts("Canada"),
+  industries: {
+    title: "Industries we serve in Canada",
+    subtitle:
+      "Our software company supports healthcare, service businesses, education, logistics, and digital brands with custom platforms tuned to real operational needs.",
+    items: [
+      { slug: "healthcare", title: "Healthcare", description: "Clinic, scheduling, and operations systems for practices and care teams across Canada.", href: "/industries" },
+      { slug: "education", title: "Education", description: "Student portals, administrative dashboards, and learning systems built for schools and institutions.", href: "/industries" },
+    ],
+  },
+  faqIntro:
+    "Common questions about custom software development, digital product delivery, and business systems in Canada.",
+  faqs: [
+    {
+      question: "Do you work with Canadian companies?",
+      answer:
+        "Yes. We partner with Canadian founders and business operators on product strategy, web applications, CRM and ERP workflows, and business automation projects.",
+      tag: "Canada",
+      column: "left",
+    },
+    {
+      question: "Can you support healthcare software projects?",
+      answer:
+        "Yes. We build workflow tools and systems for clinics and healthcare teams focused on operational clarity, scheduling, and patient intake efficiency.",
+      tag: "Healthcare",
+      column: "right",
+    },
+    {
+      question: "Do you build SaaS products for Canadian startups?",
+      answer:
+        "Yes. We help product founders validate ideas, shape roadmaps, and build scalable MVPs and early-stage product systems with clear ownership and technical discipline.",
+      tag: "SaaS",
+      column: "left",
+    },
+    {
+      question: "Can you improve internal workflows and operations?",
+      answer:
+        "Yes. We design dashboards, automation, CRM, and operational systems that reduce manual work and improve visibility across teams and departments.",
+      tag: "Operations",
+      column: "right",
+    },
+    {
+      question: "Do you support service businesses in Canada?",
+      answer:
+        "Yes. We build customer-facing and internal software for service organizations that need better scheduling, tracking, billing, and follow-up processes.",
+      tag: "Services",
+      column: "left",
+    },
+    {
+      question: "Can you handle website and web app builds?",
+      answer:
+        "Yes. We create business websites, conversion-focused web platforms, and custom web applications tailored to your customer journey and internal workflows.",
+      tag: "Web",
+      column: "right",
+    },
+    {
+      question: "Do you work on legacy modernization?",
+      answer:
+        "Yes. We review older systems, identify bottlenecks, and redesign them into maintainable software that supports modem operations and long-term scale.",
+      tag: "Modernization",
+      column: "left",
+    },
+    {
+      question: "What is your approach to product discovery?",
+      answer:
+        "We start by understanding your business model, constraints, and stakeholder needs. Then we turn that into a practical scope, milestones, and build plan.",
+      tag: "Process",
+      column: "right",
+    },
+    {
+      question: "Do you provide ongoing support after launch?",
+      answer:
+        "Yes. We offer feature iteration, maintenance, QA support, and technical guidance so your system keeps working reliably after go-live.",
+      tag: "Support",
+      column: "left",
+    },
+    {
+      question: "How do we start a project in Canada?",
+      answer:
+        "Start with a quick consultation and project review. We evaluate the problem, clarify goals, and propose a practical next step with timeline and scope.",
+      tag: "Start",
+      column: "right",
+    },
+  ],
+  cta: {
+    title: "Ready to build in Canada?",
+    description:
+      "Tell us what you need to improve, automate, or launch next. We’ll help scope the right software partner approach.",
+    buttonLabel: "Get a Free Quote",
+    buttonHref: "/contact",
+  },
+  sections: canadaSections,
+};
+
+export const australiaLocation: LocationPageContent = {
+  slug: "software-house-and-software-company-in-australia",
+  country: "Australia",
+  href: "/location/software-house-and-software-company-in-australia",
+  title: "Software Company in Australia",
+  description:
+    "Next Software Development Company is a trusted software company in Australia helping businesses build custom software, mobile products, operational platforms, and digital transformation projects with senior technical leadership.",
+  descriptionSecondary:
+    "We help Australian teams replace manual processes, modernize legacy systems, and launch product experiences that align with business growth and day-to-day operations.",
+  descriptionTertiary:
+    "Our focus is on clear discovery, practical planning, and senior delivery that keeps projects moving without unnecessary complexity. For Australian teams, that means a partner who understands operational realities and builds software that supports real performance, service quality, and scale.",
+  metaTitle: "Software Company in Australia",
+  metaDescription:
+    "Software company in Australia for custom platforms, SaaS apps, ERP, healthcare software, and digital transformation. Clear delivery and senior engineering support.",
+  coverageTitle: "Software house coverage across Australia",
+  coverageDescription:
+    "We support Australian businesses in sectors like healthcare, finance, logistics, education, and service operations with software designed around local workflows and measurable ROI.",
+  about: {
+    overlineText: "Who we are",
+    title: "A software company in Australia for practical digital transformation",
+    paragraphs: [
+      "Next Software Development Company supports Australian businesses that need reliable software partnerships without the compromises of poorly scoped vendor work.",
+      "Whether you need a custom web platform, CRM/ERP support, a mobile app, or a senior technical team for system modernization, we help clarify the build and deliver with accountability.",
+      "Our focus is on products and workflows that solve real business problems—improving service delivery, reducing manual overhead, and creating more dependable operations.",
+    ],
+    values: australiaSections.whyChoose.values,
+    image: {
+      src: "/about-us/software-development-company.webp",
+      alt: "Software company in Australia",
+      width: 1000,
+      height: 700,
+    },
+    teamLink: "/team",
+    teamCta: "Meet our Australia team",
+  },
+  heroImage: {
+    src: "/locations/location-pakistan.webp",
+    alt: "Software company in Australia",
+    width: 1536,
+    height: 1024,
+  },
+  cities: [
+    { slug: "sydney", label: "Main city in Australia", href: "#", city: "Sydney", blurb: "Product and business software for growing Australian teams and service businesses." },
+    { slug: "melbourne", label: "Main city in Australia", href: "#", city: "Melbourne", blurb: "Modern digital platforms for operations, healthcare, and customer experiences." },
+    { slug: "brisbane", label: "Main city in Australia", href: "#", city: "Brisbane", blurb: "Custom software for digital transformation and internal workflow improvement." },
+    { slug: "perth", label: "Main city in Australia", href: "#", city: "Perth", blurb: "Business automation and product engineering for fast-moving teams." },
+    { slug: "adelaide", label: "Main city in Australia", href: "#", city: "Adelaide", blurb: "Reliable software for service businesses, healthcare, and operational scale." },
+    { slug: "canberra", label: "Main city in Australia", href: "#", city: "Canberra", blurb: "Technology support for institutions, service teams, and digital delivery." },
+  ],
+  projects: showcaseProjects,
+  facts: buildLocationFacts("Australia"),
+  industries: {
+    title: "Industries we serve in Australia",
+    subtitle:
+      "We work with Australian organizations in healthcare, service operations, education, logistics, and digital businesses across growth, modernization, and automation needs.",
+    items: [
+      { slug: "healthcare", title: "Healthcare", description: "Practice management, scheduling, and patient software for healthcare teams and service providers.", href: "/industries" },
+      { slug: "logistics", title: "Logistics", description: "Operations dashboards and workflow tools for teams managing movement, fulfillment, and process visibility.", href: "/industries" },
+    ],
+  },
+  faqIntro:
+    "Common questions about product engineering and software partnership support in Australia.",
+  faqs: [
+    {
+      question: "Do you build custom software for Australia businesses?",
+      answer:
+        "Yes. We help Australian firms build custom web platforms, mobile apps, ERP/CRM workflows, healthcare systems, and internal tools around real productivity gains.",
+      tag: "Australia",
+      column: "left",
+    },
+    {
+      question: "Can you modernize legacy systems?",
+      answer:
+        "Yes. We can review existing processes, identify operational bottlenecks, and create a structured modernization plan that improves the system while reducing risk.",
+      tag: "Transformation",
+      column: "right",
+    },
+    {
+      question: "Do you support healthcare technology projects?",
+      answer:
+        "Yes. We build scheduling, patient workflow, and operational tools for healthcare providers who need more structured processes and less manual admin.",
+      tag: "Healthcare",
+      column: "left",
+    },
+    {
+      question: "Can you help with digital transformation?",
+      answer:
+        "Yes. We work with teams to simplify manual workflows, clarify systems, and digitize operations in a way that improves efficiency without adding complexity.",
+      tag: "Digital Transformation",
+      column: "right",
+    },
+    {
+      question: "Do you build web apps and portals?",
+      answer:
+        "Yes. We design feature-rich web apps and business platforms tailored to your internal processes, customer journeys, or service delivery model.",
+      tag: "Web",
+      column: "left",
+    },
+    {
+      question: "Can you support service businesses in Australia?",
+      answer:
+        "Yes. We create software for scheduling, client communication, lead management, and operational visibility for service-driven organizations.",
+      tag: "Services",
+      column: "right",
+    },
+    {
+      question: "Do you work with SaaS and product companies?",
+      answer:
+        "Yes. We support SaaS founders and product teams with MVP development, product iteration, and software architecture decisions that prioritize scale and usability.",
+      tag: "SaaS",
+      column: "left",
+    },
+    {
+      question: "Can you deliver business dashboards and reporting?",
+      answer:
+        "Yes. We build analytics and operational dashboards that make performance trends, service output, and business metrics easier to understand and act on.",
+      tag: "Reporting",
+      column: "right",
+    },
+    {
+      question: "Do you offer maintenance after launch?",
+      answer:
+        "Yes. We provide support for fixes, feature improvements, user training, and product iterations after the software is live.",
+      tag: "Support",
+      column: "left",
+    },
+    {
+      question: "How do we begin an Australian project?",
+      answer:
+        "We start with a discovery call and requirements review, then propose the right scope, milestones, and implementation approach based on your business goals.",
+      tag: "Process",
+      column: "right",
+    },
+  ],
+  cta: {
+    title: "Ready to plan your next software project in Australia?",
+    description:
+      "Whether it is a product launch, workflow improvement, or system modernization, we can help you move from idea to implementation with clarity.",
+    buttonLabel: "Get a Free Quote",
+    buttonHref: "/contact",
+  },
+  sections: australiaSections,
+};
+
+export const ukLocation: LocationPageContent = {
+  slug: "software-house-and-software-company-in-uk",
+  country: "United Kingdom",
+  href: "/location/software-house-and-software-company-in-uk",
+  title: "Software Company in UK",
+  description:
+    "Next Software Development Company is a software company in the UK helping startups, SMEs, and businesses build custom web products, SaaS, ERP tools, and digital operations software with senior engineering support.",
+  descriptionSecondary:
+    "We work with UK teams on product discovery, architecture, UI/UX, and implementation, creating digital systems that improve customer experience and internal operations without bloated delivery.",
+  descriptionTertiary:
+    "From SaaS product work and internal systems to healthcare and operations software, we build around transparent scoping, measurable milestones, and senior technical ownership. That gives UK businesses a delivery rhythm that stays clear and dependable from kickoff to support.",
+  metaTitle: "Software Company in UK",
+  metaDescription:
+    "Software company in the UK for custom software, SaaS, healthcare software, and digital operations. Senior-led engineering with transparent delivery and practical collaboration.",
+  coverageTitle: "Software house coverage across the UK",
+  coverageDescription:
+    "We support UK businesses with custom software design and build, digital transformation work, and product engineering for operations, internal systems, and service delivery.",
+  about: {
+    overlineText: "Who we are",
+    title: "A software company in the UK for product and operations software",
+    paragraphs: [
+      "Next Software Development Company works with businesses across the UK that need a dependable digital partner for custom software, interfaces, and operational improvements.",
+      "As a software company in the UK, we support startups, service businesses, and growing organizations with strategy, product design, custom web development, and documentation-driven execution.",
+      "Our goal is to make technology feel like a strategic advantage: clear communication, well-scoped work, and systems that support long-term growth.",
+    ],
+    values: ukSections.whyChoose.values,
+    image: {
+      src: "/about-us/software-development-company.webp",
+      alt: "Software company in the UK",
+      width: 1000,
+      height: 700,
+    },
+    teamLink: "/team",
+    teamCta: "Meet our UK delivery team",
+  },
+  heroImage: {
+    src: "/locations/location-pakistan.webp",
+    alt: "Software company in the UK",
+    width: 1536,
+    height: 1024,
+  },
+  cities: [
+    { slug: "london", label: "Main city in United Kingdom", href: "#", city: "London", blurb: "Product engineering and strategic software partnerships for ambitious UK teams." },
+    { slug: "manchester", label: "Main city in United Kingdom", href: "#", city: "Manchester", blurb: "Custom software that supports growth, operations, and customer experience." },
+    { slug: "birmingham", label: "Main city in United Kingdom", href: "#", city: "Birmingham", blurb: "Digital systems for service businesses, healthcare, and scaling operations." },
+    { slug: "edinburgh", label: "Main city in United Kingdom", href: "#", city: "Edinburgh", blurb: "SaaS and business software support for teams with product ambition." },
+    { slug: "glasgow", label: "Main city in United Kingdom", href: "#", city: "Glasgow", blurb: "Custom platforms and operational tools for growing and established teams." },
+    { slug: "leeds", label: "Main city in United Kingdom", href: "#", city: "Leeds", blurb: "Product and operations software built around practical business needs." },
+  ],
+  projects: showcaseProjects,
+  facts: buildLocationFacts("United Kingdom"),
+  industries: {
+    title: "Industries we serve in the UK",
+    subtitle:
+      "We build software for the service sector, digital startups, healthcare, education, logistics, and operations-focused teams that need practical systems to grow.",
+    items: [
+      { slug: "healthcare", title: "Healthcare", description: "Software that streamlines patient intake, scheduling, and operational visibility for care providers.", href: "/industries" },
+      { slug: "finance", title: "Finance", description: "Secure and data-conscious systems for business operations, compliance workflows, and automation.", href: "/industries" },
+    ],
+  },
+  faqIntro:
+    "Common questions about hiring a software company in the UK for custom products, business systems, and digital workflows.",
+  faqs: [
+    {
+      question: "Do you support UK based businesses?",
+      answer:
+        "Yes. We work with UK founders and teams on product discovery, website platforms, internal systems, and software build-outs that need a reliable technical partner.",
+      tag: "UK",
+      column: "left",
+    },
+    {
+      question: "Can you build SaaS and internal tools?",
+      answer:
+        "Yes. We build product software, internal tools, dashboards, and operational platforms with a focus on maintainability and clear roadmap execution.",
+      tag: "SaaS",
+      column: "right",
+    },
+    {
+      question: "Do you work with healthcare and service businesses?",
+      answer:
+        "Yes. We support healthcare providers and service teams that need smoother scheduling, better record keeping, and more efficient customer or client management.",
+      tag: "Healthcare",
+      column: "left",
+    },
+    {
+      question: "Can you handle product design and UX?",
+      answer:
+        "Yes. We design user-friendly experiences, clear workflows, and clean interfaces so the product feels easy to use and easier to scale.",
+      tag: "UX",
+      column: "right",
+    },
+    {
+      question: "Do you build custom web apps?",
+      answer:
+        "Yes. We create custom portals, dashboards, client systems, and web apps suited to your business model and internal process requirements.",
+      tag: "Web",
+      column: "left",
+    },
+    {
+      question: "Can you support B2B software projects?",
+      answer:
+        "Yes. We build B2B systems for operations, workflow automation, client management, and data visibility across teams or departments.",
+      tag: "B2B",
+      column: "right",
+    },
+    {
+      question: "What is your delivery approach?",
+      answer:
+        "We use clear discovery, staged milestones, reviews, and implementation checkpoints so stakeholders stay informed and the build remains predictable.",
+      tag: "Process",
+      column: "left",
+    },
+    {
+      question: "Do you support legacy system changes?",
+      answer:
+        "Yes. We assess old workflows, identify what can be improved, and reshape them into maintainable software without unnecessary disruption.",
+      tag: "Modernization",
+      column: "right",
+    },
+    {
+      question: "Do you offer support after launch?",
+      answer:
+        "Yes. We remain available for updates, bug fixes, feature work, and technical support to keep the product stable as the business evolves.",
+      tag: "Support",
+      column: "left",
+    },
+    {
+      question: "How do we start a project in the UK?",
+      answer:
+        "We begin with a discovery conversation and requirement review, then propose a clear scope, architecture, and implementation plan tailored to your goals.",
+      tag: "Start",
+      column: "right",
+    },
+  ],
+  cta: {
+    title: "Ready to hire a software company in the UK?",
+    description:
+      "Bring your product idea or operational challenge and we’ll help shape the right scope, technology approach, and delivery plan.",
+    buttonLabel: "Get a Free Quote",
+    buttonHref: "/contact",
+  },
+  sections: ukSections,
+};
+
+export const uaeLocation: LocationPageContent = {
+  slug: "software-house-and-software-company-in-uae",
+  country: "United Arab Emirates",
+  href: "/location/software-house-and-software-company-in-uae",
+  title: "Software Company in UAE",
+  description:
+    "Next Software Development Company is a software company in the UAE supporting startups, service businesses, healthcare providers, and growing teams with custom software, ERP, CRM, and digital product engineering.",
+  descriptionSecondary:
+    "We help UAE organizations modernize internal systems, launch customer-facing platforms, and improve operational performance through well-scoped engineering and accountable delivery.",
+  descriptionTertiary:
+    "Whether you need a CRM, ERP workflow, customer portal, or digital product build, our team focuses on clear communication, business alignment, and maintainable code that supports long-term growth. The result is a software partner that moves with your business rather than against it.",
+  metaTitle: "Software Company in UAE",
+  metaDescription:
+    "Software company in UAE for custom digital products, ERP, CRM, healthcare software, and business operations. Senior-led delivery and practical engineering support.",
+  coverageTitle: "Software house coverage across the UAE",
+  coverageDescription:
+    "We support UAE businesses across sectors like healthcare, property, retail, logistics, and service operations with software built for scale and efficiency.",
+  about: {
+    overlineText: "Who we are",
+    title: "A software company in the UAE for business and product systems",
+    paragraphs: [
+      "Next Software Development Company supports businesses across the UAE that need software built around operational reality rather than generic templates.",
+      "Our work spans property, healthcare, retail, service businesses, and startup product teams that need clear strategy, delivery structure, and senior technical execution.",
+      "We partner with you to design, build, and refine digital systems that improve service delivery, visibility, and growth without unnecessary overhead.",
+    ],
+    values: uaeSections.whyChoose.values,
+    image: {
+      src: "/about-us/software-development-company.webp",
+      alt: "Software company in the UAE",
+      width: 1000,
+      height: 700,
+    },
+    teamLink: "/team",
+    teamCta: "Meet our UAE delivery team",
+  },
+  heroImage: {
+    src: "/locations/location-pakistan.webp",
+    alt: "Software company in the UAE",
+    width: 1536,
+    height: 1024,
+  },
+  cities: [
+    { slug: "dubai", label: "Main city in United Arab Emirates", href: "#", city: "Dubai", blurb: "Business software, CRM, ERP, and mobile systems for UAE growth teams." },
+    { slug: "abu-dhabi", label: "Main city in United Arab Emirates", href: "#", city: "Abu Dhabi", blurb: "Digital transformation and operational systems for established organizations." },
+    { slug: "sharjah", label: "Main city in United Arab Emirates", href: "#", city: "Sharjah", blurb: "Custom software and workflow automation for growing businesses and service firms." },
+    { slug: "ajman", label: "Main city in United Arab Emirates", href: "#", city: "Ajman", blurb: "Reliable software for retail, service, and operations-heavy teams." },
+    { slug: "ras-al-khaimah", label: "Main city in United Arab Emirates", href: "#", city: "Ras Al Khaimah", blurb: "Modern business tools for operational efficiency and regional scale." },
+    { slug: "fujairah", label: "Main city in United Arab Emirates", href: "#", city: "Fujairah", blurb: "Application design and system improvements for growing business operators." },
+  ],
+  projects: showcaseProjects,
+  facts: buildLocationFacts("United Arab Emirates"),
+  industries: {
+    title: "Industries we serve in the UAE",
+    subtitle:
+      "We support growth-stage businesses and established operators in retail, healthcare, property, logistics, and service operations with modern software systems.",
+    items: [
+      { slug: "healthcare", title: "Healthcare", description: "Workflow software for clinics, care facilities, and service teams focused on operational efficiency.", href: "/industries" },
+      { slug: "retail", title: "Retail", description: "Operations, sales, and inventory software for retail teams building a dependable digital storefront and back office.", href: "/industries" },
+    ],
+  },
+  faqIntro:
+    "Common questions about software development, product build-outs, and business systems in the UAE.",
+  faqs: [
+    {
+      question: "Do you work with UAE based businesses?",
+      answer:
+        "Yes. We support UAE founders and operators with custom software, web products, internal business systems, and operational technology that fits the pace of business.",
+      tag: "UAE",
+      column: "left",
+    },
+    {
+      question: "Can you build customer systems and internal tools?",
+      answer:
+        "Yes. We design customer-facing platforms and internal workflows that improve operations, reduce manual work, and create better visibility across teams.",
+      tag: "Operations",
+      column: "right",
+    },
+    {
+      question: "Do you support startups and SMEs in the UAE?",
+      answer:
+        "Yes. We build MVPs, custom web platforms, dashboards, and internal systems for growing businesses that need reliable software without overcomplicated delivery.",
+      tag: "Startups",
+      column: "left",
+    },
+    {
+      question: "Can you build CRM and ERP solutions?",
+      answer:
+        "Yes. We design CRM, ERP, and operational tools that connect customer, sales, and internal process data in one place, helping teams work with less friction.",
+      tag: "ERP",
+      column: "right",
+    },
+    {
+      question: "Do you work in the healthcare sector?",
+      answer:
+        "Yes. We support healthcare and wellness businesses with scheduling, patient management, and internal operational systems designed around real service workflows.",
+      tag: "Healthcare",
+      column: "left",
+    },
+    {
+      question: "Can you build customer portals or booking systems?",
+      answer:
+        "Yes. We create portals, booking workflows, and client-facing systems that improve service access while reducing manual coordination and back-office overhead.",
+      tag: "Portals",
+      column: "right",
+    },
+    {
+      question: "Do you support business automation?",
+      answer:
+        "Yes. We develop automated workflows for approvals, task management, notifications, and process hand-offs so teams can move faster and with fewer errors.",
+      tag: "Automation",
+      column: "left",
+    },
+    {
+      question: "What industries do you serve in the UAE?",
+      answer:
+        "We commonly support retail, healthcare, property, service companies, and growth-stage businesses that need dependable digital systems.",
+      tag: "Industries",
+      column: "right",
+    },
+    {
+      question: "Do you offer ongoing product support?",
+      answer:
+        "Yes. We stay available after launch for feature improvements, bug fixes, maintenance, and strategic updates to keep your software aligned with the business.",
+      tag: "Support",
+      column: "left",
+    },
+    {
+      question: "How do we begin a UAE software project?",
+      answer:
+        "We start with a discovery conversation, requirement review, and technical assessment, then we scope the build and propose a clear delivery plan.",
+      tag: "Process",
+      column: "right",
+    },
+  ],
+  cta: {
+    title: "Ready to hire a software company in the UAE?",
+    description:
+      "Share your challenge, product idea, or operations improvement goal and we’ll help shape the right digital solution.",
+    buttonLabel: "Get a Free Quote",
+    buttonHref: "/contact",
+  },
+  sections: uaeSections,
+};
+
+export const locationPages: LocationPageContent[] = [
+  pakistanLocation,
+  usaLocation,
+  canadaLocation,
+  australiaLocation,
+  ukLocation,
+  uaeLocation,
+];
 
 export function getLocationBySlug(slug: string): LocationPageContent | undefined {
   return locationPages.find((page) => page.slug === slug);

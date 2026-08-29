@@ -47,6 +47,11 @@ export function LocationHero({ location }: LocationHeroProps) {
                     {renderParagraphWithCountryLinks(location.descriptionSecondary)}
                   </p>
                 ) : null}
+                {location.descriptionTertiary ? (
+                  <p className="text-justify text-base leading-relaxed text-white/70 md:text-lg">
+                    {renderParagraphWithCountryLinks(location.descriptionTertiary)}
+                  </p>
+                ) : null}
               </div>
             </Reveal>
             <Reveal immediate delay={motionStagger * 2}>
