@@ -1059,7 +1059,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "Looking for a software house near me in Peshawar was harder than I expected because most agencies just wanted to build a generic website. This software house asked about our fleet tracking problems first and built the product around solving that, not the other way round.",
+      "When I started searching for a software house near me in Peshawar, I expected the usual generic website pitches. This team asked about our fleet tracking problems first and built the product around the actual issues we were trying to solve, which made all the difference.",
     author: "Fahad Yousafzai",
     role: "Director, Logistics Company · Peshawar, Pakistan",
   },
@@ -1126,13 +1126,13 @@ export const homepageTestimonials: Testimonial[] = [
   },
   {
     quote:
-      "We needed a technology partner to migrate our cloud platform without disrupting our customers. Next Software Development planned the transition carefully, communicated clearly at every stage, and helped our team move to a more scalable infrastructure with minimal disruption.",
+      "We were looking for a software development company near me in New York, but more importantly we needed a partner who could migrate our cloud platform without disrupting our customers. Next Software Development planned the transition carefully, communicated clearly at every stage, and helped our team move to a more scalable infrastructure with minimal disruption.",
     author: "James Wilson",
     role: "Chief Technology Officer, Financial Technology Startup · New York, USA",
   },
   {
     quote:
-      "Our customer relationship management software development project required integration with several legacy systems. Next Software Development approached the integrations carefully, tested the system thoroughly, and helped our sales team transition to the new platform with very little disruption.",
+      "We were comparing options for a software development company near me in London, but we also needed a team that could handle several legacy system integrations without creating more operational risk. Next Software Development approached the project carefully, tested the system thoroughly, and helped our sales team transition to the new platform with very little disruption.",
     author: "Oliver Bennett",
     role: "Managing Director, Professional Services Firm · London, UK",
   },
