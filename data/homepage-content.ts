@@ -1517,9 +1517,9 @@ export const homepageContact = {
 // ===== Homepage SEO + section headings =====
 
 export const homepageSeo = {
-  title: "Software Development Company | Custom Web & Mobile Apps",
+  title: "Software Development Company | Next Software Development",
   description:
-    "Custom software development company building web apps, mobile apps, AI, CRM, ERP, and SaaS platforms for startups and enterprises worldwide.",
+    "We build scalable web, mobile, AI, and enterprise software for startups and growing businesses worldwide. Trusted engineering team since 2019.",
 } as const;
 
 export const homepageSectionCopy = {
