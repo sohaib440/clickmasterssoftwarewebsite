@@ -92,7 +92,8 @@ export function jsonLdGraph(
   return {
     "@context": "https://schema.org",
     "@graph": nodes.map((node) => {
-      const { ["@context"]: _context, ...rest } = node;
+      const rest = { ...node };
+      delete rest["@context"];
       return rest;
     }),
   };
