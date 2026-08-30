@@ -1037,6 +1037,18 @@ function buildCityPage(cityMeta: LocationCity): LocationPageContent {
     };
   }
 
+  const aboutParagraphs = [...copy.paragraphs];
+  if (!aboutParagraphs.some((paragraph) => paragraph.includes("[[team]]"))) {
+    const idx = Math.min(1, aboutParagraphs.length - 1);
+    const current = aboutParagraphs[idx]!;
+    if (/\bteam\b/i.test(current)) {
+      aboutParagraphs[idx] = current.replace(/\bteam\b/i, "[[team]]");
+    } else {
+      aboutParagraphs[idx] =
+        `${current} Our [[team]] delivers senior engineering on every engagement.`;
+    }
+  }
+
   return {
     slug: cityMeta.slug,
     country: "Pakistan",
@@ -1047,7 +1059,7 @@ function buildCityPage(cityMeta: LocationCity): LocationPageContent {
     metaTitle: copy.metaTitle,
     metaDescription: copy.metaDescription,
     coverageTitle: `Explore more cities across Pakistan`,
-    coverageDescription: `Looking beyond ${cityMeta.city}? Next Software Development Company is a nationwide software house and software company delivering from Islamabad and Lahore to Karachi and regional hubs. Pick another city to see how our software development company supports that market.`,
+    coverageDescription: `Looking beyond ${cityMeta.city}? We deliver nationwide from Islamabad and Lahore to Karachi and regional hubs. Pick another city to see local focus.`,
     breadcrumbs: [
       { label: "Home", href: "/" },
       { label: "Locations", href: "/location" },
@@ -1057,14 +1069,14 @@ function buildCityPage(cityMeta: LocationCity): LocationPageContent {
     about: {
       overlineText: "Who we are",
       title: copy.aboutTitle,
-      paragraphs: [...copy.paragraphs],
+      paragraphs: aboutParagraphs,
       values: sections.whyChoose.values,
       image: {
         ...pakistanLocation.about.image,
-        alt: `Next Software Development Company, a software house in ${cityMeta.city}`,
+        alt: `Next Software Development Company software house in ${cityMeta.city}`,
       },
       teamLink: teamPath,
-      teamCta: `Meet our ${cityMeta.city} software house team`,
+      teamCta: "Meet our delivery team",
     },
     caseWork: {
       overlineText: sections.projects.overlineText,

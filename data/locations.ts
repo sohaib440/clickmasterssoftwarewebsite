@@ -1632,7 +1632,7 @@ export const pakistanLocation: LocationPageContent = {
   description:
     "A software house in Pakistan helping clinics, schools, retailers, and enterprises ship HMS, ERP, and custom digital products that improve operations and support long-term growth.",
   descriptionSecondary:
-    "We build custom software, web and mobile apps, SaaS, AI features, ERP and CRM, Hospital Management Systems (HMS), and business automation. Our senior [[team]] stays with you from discovery through launch and ongoing support.",
+    "We build custom software, web and mobile apps, SaaS, AI features, ERP and CRM, Hospital Management Systems (HMS), and business automation. Our senior team stays with you from discovery through launch and ongoing support.",
   descriptionTertiary:
     "Whether you are launching a product, replacing outdated systems, or automating workflows across Islamabad, Lahore, Karachi, and beyond, we focus on practical systems that stay maintainable as you grow.",
   metaTitle: "Software House in Pakistan | Next Software Development",
@@ -1794,7 +1794,7 @@ export const usaLocation: LocationPageContent = {
     overlineText: "Who we are",
     title: "A software company in the USA for product and operational software",
     paragraphs: [
-      "Next Software Development Company works with growing businesses, clinic groups, SaaS founders, and service organizations across the United States. Our software company brings senior product engineering, UI/UX design, and technical planning to help teams build the right system without the usual agency delays.",
+      "Next Software Development Company works with growing businesses, clinic groups, SaaS founders, and service organizations across the United States. Our [[team]] brings senior product engineering, UI/UX design, and technical planning to help teams build the right system without the usual agency delays.",
       "As a software company in the USA, we cover custom web development, SaaS platforms, ERP and CRM integrations, mobile apps, and workflow automation that support operations in healthcare, logistics, education, and professional services.",
       "Whether you need a new product MVP, a legacy modernization project, or a partner to maintain a mission-critical system, our team focuses on clear scope, business alignment, and post-launch accountability.",
     ],
@@ -1805,8 +1805,8 @@ export const usaLocation: LocationPageContent = {
       width: 1000,
       height: 700,
     },
-    teamLink: "/team",
-    teamCta: "Meet our US delivery team",
+    teamLink: teamPath,
+    teamCta: "Meet our delivery team",
   },
   heroImage: {
     src: "/locations/location-pakistan.webp",
@@ -1918,7 +1918,7 @@ export const canadaLocation: LocationPageContent = {
     title: "A software company in Canada for digital product and operations work",
     paragraphs: [
       "Next Software Development Company helps businesses across Canada launch and improve digital products without the common friction of delayed discovery, unclear scope, or junior-heavy teams.",
-      "From website platforms and SaaS products to internal operations software and workflow automation, our team builds software around the realities of Canadian SMEs and growth-stage founders.",
+      "From website platforms and SaaS products to internal operations software and workflow automation, our [[team]] builds software around the realities of Canadian SMEs and growth-stage founders.",
       "We focus on business clarity, maintainable engineering, and strong collaboration so each release brings measurable improvement instead of just a feature list.",
     ],
     values: canadaSections.whyChoose.values,
@@ -1928,8 +1928,8 @@ export const canadaLocation: LocationPageContent = {
       width: 1000,
       height: 700,
     },
-    teamLink: "/team",
-    teamCta: "Meet our Canada software team",
+    teamLink: teamPath,
+    teamCta: "Meet our delivery team",
   },
   heroImage: {
     src: "/locations/location-pakistan.webp",
@@ -2041,8 +2041,8 @@ export const australiaLocation: LocationPageContent = {
     title: "A software company in Australia for practical digital transformation",
     paragraphs: [
       "Next Software Development Company supports Australian businesses that need reliable software partnerships without the compromises of poorly scoped vendor work.",
-      "Whether you need a custom web platform, CRM/ERP support, a mobile app, or a senior technical team for system modernization, we help clarify the build and deliver with accountability.",
-      "Our focus is on products and workflows that solve real business problems,improving service delivery, reducing manual overhead, and creating more dependable operations.",
+      "Whether you need a custom web platform, CRM/ERP support, a mobile app, or a senior technical [[team]] for system modernization, we help clarify the build and deliver with accountability.",
+      "Our focus is on products and workflows that solve real business problems, improving service delivery, reducing manual overhead, and creating more dependable operations.",
     ],
     values: australiaSections.whyChoose.values,
     image: {
@@ -2051,8 +2051,8 @@ export const australiaLocation: LocationPageContent = {
       width: 1000,
       height: 700,
     },
-    teamLink: "/team",
-    teamCta: "Meet our Australia team",
+    teamLink: teamPath,
+    teamCta: "Meet our delivery team",
   },
   heroImage: {
     src: "/locations/location-pakistan.webp",
@@ -2164,7 +2164,7 @@ export const ukLocation: LocationPageContent = {
     title: "A software company in the UK for product and operations software",
     paragraphs: [
       "Next Software Development Company works with businesses across the UK that need a dependable digital partner for custom software, interfaces, and operational improvements.",
-      "As a software company in the UK, we support startups, service businesses, and growing organizations with strategy, product design, custom web development, and documentation-driven execution.",
+      "As a software company in the UK, our [[team]] supports startups, service businesses, and growing organizations with strategy, product design, custom web development, and documentation-driven execution.",
       "Our goal is to make technology feel like a strategic advantage: clear communication, well-scoped work, and systems that support long-term growth.",
     ],
     values: ukSections.whyChoose.values,
@@ -2174,8 +2174,8 @@ export const ukLocation: LocationPageContent = {
       width: 1000,
       height: 700,
     },
-    teamLink: "/team",
-    teamCta: "Meet our UK delivery team",
+    teamLink: teamPath,
+    teamCta: "Meet our delivery team",
   },
   heroImage: {
     src: "/locations/location-pakistan.webp",
@@ -2287,7 +2287,7 @@ export const uaeLocation: LocationPageContent = {
     title: "A software company in the UAE for business and product systems",
     paragraphs: [
       "Next Software Development Company supports businesses across the UAE that need software built around operational reality rather than generic templates.",
-      "Our work spans property, healthcare, retail, service businesses, and startup product teams that need clear strategy, delivery structure, and senior technical execution.",
+      "Our [[team]] works across property, healthcare, retail, service businesses, and startup product teams that need clear strategy, delivery structure, and senior technical execution.",
       "We partner with you to design, build, and refine digital systems that improve service delivery, visibility, and growth without unnecessary overhead.",
     ],
     values: uaeSections.whyChoose.values,
@@ -2297,8 +2297,8 @@ export const uaeLocation: LocationPageContent = {
       width: 1000,
       height: 700,
     },
-    teamLink: "/team",
-    teamCta: "Meet our UAE delivery team",
+    teamLink: teamPath,
+    teamCta: "Meet our delivery team",
   },
   heroImage: {
     src: "/locations/location-pakistan.webp",

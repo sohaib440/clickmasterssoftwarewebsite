@@ -34,6 +34,7 @@ import {
   container,
   overline,
   sectionPad,
+  teamPath,
 } from "@/lib/landing/constants";
 import { motionStagger } from "@/lib/landing/motion";
 import { selfCanonical } from "@/seo/canonical";
@@ -433,6 +434,12 @@ export default function LocationsPage() {
         <ProjectsSection />
         <TestimonialsSection />
         <TeamSection />
+        <div className={cn(container, "pb-10 md:pb-12")}>
+          <Link href={teamPath} className={cn(btnPrimary, "inline-flex")}>
+            Meet our delivery team
+            <ArrowRight className="size-4" aria-hidden />
+          </Link>
+        </div>
         <FaqSection
           overlineText="Locations FAQs"
           title={
