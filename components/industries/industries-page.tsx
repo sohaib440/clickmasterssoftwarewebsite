@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight, Building2 } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
 import { Reveal } from "@/components/landing/reveal";
 import { SiteHeader } from "@/components/landing/navbar";
@@ -8,7 +8,6 @@ import {
   btnPrimary,
   contactPath,
   container,
-  overline,
   sectionPad,
 } from "@/lib/landing/constants";
 import { industries, industriesPageMeta } from "@/data/industriesPage";
@@ -72,19 +71,6 @@ export function IndustriesPageContent() {
       <main className="flex-1">
         {/* Hero */}
         <section className="relative overflow-hidden bg-black text-white">
-          <div className="pointer-events-none absolute inset-0" aria-hidden>
-            <div className="absolute -left-16 top-0 h-72 w-72 rounded-full bg-primary/12 blur-[100px]" />
-            <div className="absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-white/[0.04] blur-[110px]" />
-            <div
-              className="absolute inset-0 opacity-[0.15]"
-              style={{
-                backgroundImage:
-                  "linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px)",
-                backgroundSize: "56px 56px",
-              }}
-            />
-          </div>
-
           <div className={cn(container, sectionPad, "relative pb-10 md:pb-12")}>
             <Reveal immediate>
               <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-white/60">
@@ -98,16 +84,7 @@ export function IndustriesPageContent() {
             </Reveal>
 
             <Reveal immediate delay={motionStagger}>
-              <div className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5">
-                <Building2 className="size-3.5 text-primary" aria-hidden />
-                <span className={cn(overline, "text-white/90")}>
-                  {industriesPageMeta.hero.eyebrow}
-                </span>
-              </div>
-            </Reveal>
-
-            <Reveal immediate delay={motionStagger * 2}>
-              <h1 className="mt-5 max-w-4xl font-heading text-4xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
+              <h1 className="max-w-4xl font-heading text-4xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
                 {industriesPageMeta.hero.title}
               </h1>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">

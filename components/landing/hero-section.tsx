@@ -36,55 +36,21 @@ export function HeroSection() {
           className="hero-bg-video h-full w-full object-cover opacity-35"
           src={heroBackgroundVideo}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/90" />
+        <div className="absolute inset-0 bg-black/80" />
       </div>
-
-      <div
-        className="pointer-events-none absolute -right-24 top-16 z-[1] h-72 w-72 rounded-full border border-primary/20"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute -left-16 bottom-32 z-[1] h-48 w-48 rounded-full border border-primary/10"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute right-8 top-8 z-[1] h-24 w-24 opacity-30"
-        style={{
-          backgroundImage: "radial-gradient(circle, #d4af37 1px, transparent 1px)",
-          backgroundSize: "8px 8px",
-        }}
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute bottom-48 left-6 z-[1] h-16 w-16 opacity-20"
-        style={{
-          backgroundImage: "radial-gradient(circle, #d4af37 1px, transparent 1px)",
-          backgroundSize: "6px 6px",
-        }}
-        aria-hidden
-      />
 
       <LandingContainer className="relative z-10">
         <div className="grid min-w-0 items-center gap-10 lg:grid-cols-[minmax(0,1.75fr)_minmax(0,22rem)] lg:gap-10 xl:grid-cols-[minmax(0,1.9fr)_minmax(0,23rem)] xl:gap-14">
           <div className="min-w-0 max-w-none lg:max-w-[58rem] xl:max-w-[64rem]">
             <Reveal immediate delay={0}>
-              <div className="flex items-center gap-3">
-                <span className="motion-line h-px w-8 !bg-[#d4af37]/70" aria-hidden />
-                <p className="text-[10px] font-medium uppercase tracking-[0.22em] !text-[#d4af37] sm:text-[11px]">
-                  {homeHero.eyebrow}
-                </p>
-              </div>
-            </Reveal>
-
-            <Reveal immediate delay={motionStagger}>
-              <h1 className="mt-5 max-w-none text-left font-heading text-4xl font-normal leading-[1.12] tracking-tight text-white sm:text-5xl lg:text-[3.25rem] xl:text-[3.45rem]">
+              <h1 className="max-w-none text-left font-heading text-4xl font-normal leading-[1.12] tracking-tight text-white sm:text-5xl lg:text-[3.25rem] xl:text-[3.45rem]">
                 <span className="!text-[#d4af37]">{homeHero.headlineEmphasis}</span>{" "}
                 {homeHero.headlineMiddle}{" "}
                 <span className="italic !text-[#d4af37]">{homeHero.headlineAfter}</span>
               </h1>
             </Reveal>
 
-            <Reveal immediate delay={motionStagger * 2}>
+            <Reveal immediate delay={motionStagger}>
               <div className="mt-5 max-w-none space-y-4 text-left text-base leading-relaxed text-white/70 md:text-lg lg:max-w-[56rem] lg:text-justify">
                 <p>{homeHero.description[0]}</p>
                 <p>{homeHero.description[1]}</p>
@@ -136,7 +102,7 @@ export function HeroSection() {
         </div>
 
         <Reveal immediate delay={motionStagger * 3.5}>
-          <RatingBadges variant="dark" className="mt-10" />
+          <RatingBadges variant="dark" appearance="cards" className="mt-10" />
         </Reveal>
 
         <Reveal immediate delay={motionStagger * 4}>

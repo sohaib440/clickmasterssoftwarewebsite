@@ -12,7 +12,13 @@ type Props = {
   appearance?: "compact" | "cards";
 };
 
-const CARD_ORDER: ReviewPlatformSlug[] = ["google", "clutch", "trustpilot", "facebook"];
+/** Same order on homepage + location heroes: Google → Clutch → Trustpilot → Facebook */
+const PLATFORM_ORDER: ReviewPlatformSlug[] = [
+  "google",
+  "clutch",
+  "trustpilot",
+  "facebook",
+];
 
 /** Display defaults matching the location-hero trust card design */
 const CARD_DISPLAY: Record<
@@ -30,12 +36,14 @@ function StarIcon({
   className,
   square,
   pureWhite,
+  gold,
 }: {
   filled: boolean;
   className?: string;
   square?: boolean;
   /** Solid white fill (no muted opacity) for dark badges without a live score */
   pureWhite?: boolean;
+  gold?: boolean;
 }) {
   if (square) {
     return (
@@ -54,6 +62,16 @@ function StarIcon({
     );
   }
 
+  const fillClass = gold
+    ? filled
+      ? "fill-[#F5C518]"
+      : "fill-[#F5C518]/40"
+    : pureWhite
+      ? "fill-white"
+      : filled
+        ? "fill-current"
+        : "fill-current opacity-25";
+
   return (
     <svg
       viewBox="0 0 24 24"
@@ -62,13 +80,7 @@ function StarIcon({
     >
       <path
         d="M12 2.5l2.9 5.88 6.49.94-4.7 4.58 1.11 6.47L12 17.77l-5.8 3.05 1.11-6.47-4.7-4.58 6.49-.94L12 2.5z"
-        className={
-          pureWhite
-            ? "fill-white"
-            : filled
-              ? "fill-current"
-              : "fill-current opacity-25"
-        }
+        className={fillClass}
       />
     </svg>
   );
@@ -94,7 +106,7 @@ function Stars({
     platform.starTone === "clutch" && variant === "dark" && rating <= 0;
 
   const toneClass = gold
-    ? "!text-[#F5C518]"
+    ? "text-[#F5C518]"
     : platform.starTone === "clutch"
       ? variant === "dark"
         ? "text-white"
@@ -114,6 +126,7 @@ function Stars({
           key={index}
           filled={rating > 0 && index < full}
           pureWhite={clutchWhite && !gold}
+          gold={gold}
           square={!gold && platform.starTone === "trustpilot"}
         />
       ))}
@@ -244,8 +257,16 @@ function PlatformMark({
   return <FacebookMark colored={colored} lightText={lightText} />;
 }
 
+/** Card footer CTAs — invite clicks instead of fabricated review counts */
+const CARD_CTA: Record<ReviewPlatformSlug, string> = {
+  google: "View Google reviews",
+  clutch: "See Clutch profile",
+  trustpilot: "Read Trustpilot reviews",
+  facebook: "Check Facebook ratings",
+};
+
 function cardStats(platform: ReviewPlatform) {
-  // Location-hero cards match the design mock (scores + review counts).
+  // Location-hero / homepage cards: display score + golden stars.
   return CARD_DISPLAY[platform.slug];
 }
 
@@ -255,13 +276,14 @@ export async function RatingBadges({
   appearance = "compact",
 }: Props) {
   const platforms = await getReviewPlatforms();
-  const ordered =
-    appearance === "cards"
-      ? [...platforms].sort(
-          (a, b) => CARD_ORDER.indexOf(a.slug) - CARD_ORDER.indexOf(b.slug)
-        )
-      : platforms;
+  const ordered = [...platforms].sort(
+    (a, b) => PLATFORM_ORDER.indexOf(a.slug) - PLATFORM_ORDER.indexOf(b.slug)
+  );
   const cards = appearance === "cards";
+  /** Homepage + location dark badges use real platform marks and golden stars */
+  const useBrandMarks = cards || variant === "dark";
+  /** Always paint golden stars on rating badges */
+  const useGoldStars = true;
 
   return (
     <div
@@ -275,9 +297,15 @@ export async function RatingBadges({
     >
       {ordered.map((platform) => {
         const stats = cards ? cardStats(platform) : null;
+        const compactRating =
+          !cards && useGoldStars
+            ? platform.rating > 0
+              ? platform.rating
+              : CARD_DISPLAY[platform.slug].rating
+            : undefined;
         const label =
-          (stats?.rating ?? platform.rating) > 0
-            ? `${platform.name} ${(stats?.rating ?? platform.rating).toFixed(1)} out of 5`
+          (stats?.rating ?? compactRating ?? platform.rating) > 0
+            ? `${platform.name} ${(stats?.rating ?? compactRating ?? platform.rating).toFixed(1)} out of 5`
             : `${platform.name} profile`;
 
         return (
@@ -288,7 +316,7 @@ export async function RatingBadges({
             rel="noopener noreferrer"
             aria-label={label}
             className={cn(
-              "flex min-w-0 flex-col rounded-[0.75rem] border transition-colors",
+              "group flex min-w-0 flex-col rounded-[0.75rem] border transition-colors",
               cards
                 ? "items-start justify-start gap-2 px-3 py-3 sm:px-3.5 sm:py-3.5"
                 : "min-h-[4.25rem] items-center justify-center gap-1.5 px-3 py-3",
@@ -297,7 +325,11 @@ export async function RatingBadges({
                 : "border-horizon-border/20 bg-white/90 shadow-sm hover:border-primary/30"
             )}
           >
-            <PlatformMark platform={platform} variant={variant} colored={cards} />
+            <PlatformMark
+              platform={platform}
+              variant={variant}
+              colored={useBrandMarks}
+            />
             {cards && stats ? (
               <>
                 <span className="inline-flex items-center gap-1.5">
@@ -318,11 +350,11 @@ export async function RatingBadges({
                 </span>
                 <span
                   className={cn(
-                    "text-[11px] leading-tight sm:text-xs",
+                    "text-[11px] leading-tight underline-offset-2 transition-colors group-hover:underline sm:text-xs",
                     variant === "dark" ? "text-white/70" : "text-horizon-muted"
                   )}
                 >
-                  Based on {stats.reviewCount}+ Reviews
+                  {CARD_CTA[platform.slug]}
                 </span>
               </>
             ) : platform.showScore && platform.rating > 0 ? (
@@ -335,10 +367,20 @@ export async function RatingBadges({
                 <span className="tabular-nums font-medium">
                   {platform.rating.toFixed(1)}/5.0
                 </span>
-                <Stars platform={platform} variant={variant} />
+                <Stars
+                  platform={platform}
+                  variant={variant}
+                  gold={useGoldStars}
+                  ratingOverride={compactRating}
+                />
               </span>
             ) : (
-              <Stars platform={platform} variant={variant} />
+              <Stars
+                platform={platform}
+                variant={variant}
+                gold={useGoldStars}
+                ratingOverride={compactRating}
+              />
             )}
           </Link>
         );

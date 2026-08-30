@@ -22,11 +22,11 @@ export type ReviewPlatform = {
  */
 export const reviewPlatformFallbacks: ReviewPlatform[] = [
   {
-    slug: "facebook",
-    name: "facebook",
-    href: siteSocial.facebook,
+    slug: "google",
+    name: "Google",
+    href: siteSocial.googleReviews,
     rating: 5,
-    starTone: "white",
+    starTone: "google",
   },
   {
     slug: "clutch",
@@ -45,10 +45,10 @@ export const reviewPlatformFallbacks: ReviewPlatform[] = [
     starTone: "trustpilot",
   },
   {
-    slug: "google",
-    name: "Google",
-    href: siteSocial.googleReviews,
+    slug: "facebook",
+    name: "facebook",
+    href: siteSocial.facebook,
     rating: 5,
-    starTone: "google",
+    starTone: "white",
   },
 ];

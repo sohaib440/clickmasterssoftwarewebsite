@@ -102,15 +102,9 @@ function iconForLabel(label: string) {
 
 export function LocationHero({ location }: LocationHeroProps) {
   const place = getHeroPlace(location);
-  const eyebrow = location.eyebrow ?? `Software development company in ${place} —`;
 
   return (
     <section className="relative w-full overflow-hidden bg-black text-white">
-      <div className="pointer-events-none absolute inset-0" aria-hidden>
-        <div className="absolute -left-20 top-0 h-72 w-72 rounded-full bg-primary/10 blur-[100px]" />
-        <div className="absolute -right-16 bottom-0 h-64 w-64 rounded-full bg-white/[0.04] blur-[100px]" />
-      </div>
-
       <div className={cn(container, sectionPad, "relative")}>
         {/*
           Text + CTAs left, image right. Trust cards sit under the left content
@@ -120,16 +114,11 @@ export function LocationHero({ location }: LocationHeroProps) {
         <div className="relative grid items-stretch gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-10 xl:gap-12">
           <div className="relative z-20 flex min-w-0 flex-col gap-5 lg:pt-1">
             <Reveal immediate>
-              <p className="text-[11px] font-medium uppercase tracking-[0.22em] !text-primary">
-                {eyebrow}
-              </p>
-            </Reveal>
-            <Reveal immediate delay={motionStagger}>
               <h1 className="font-heading text-4xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[2.85rem] xl:text-[3.15rem]">
                 {renderHighlightedTitle(location.title, place)}
               </h1>
             </Reveal>
-            <Reveal immediate delay={motionStagger * 2}>
+            <Reveal immediate delay={motionStagger}>
               <div className="flex flex-col gap-3.5 sm:gap-4">
                 <p className="text-justify text-base leading-relaxed text-white/85 md:text-[1.05rem]">
                   {renderParagraphWithCountryLinks(location.description, {
@@ -152,7 +141,7 @@ export function LocationHero({ location }: LocationHeroProps) {
                 ) : null}
               </div>
             </Reveal>
-            <Reveal immediate delay={motionStagger * 3}>
+            <Reveal immediate delay={motionStagger * 2}>
               <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:items-center">
                 <Link
                   href={contactPath}
@@ -173,7 +162,7 @@ export function LocationHero({ location }: LocationHeroProps) {
 
           <Reveal
             immediate
-            delay={motionStagger * 2}
+            delay={motionStagger}
             direction="right"
             className="relative z-0 min-h-[16rem] w-full min-w-0 sm:min-h-[20rem] lg:min-h-0"
           >
@@ -199,14 +188,14 @@ export function LocationHero({ location }: LocationHeroProps) {
 
           <Reveal
             immediate
-            delay={motionStagger * 4}
+            delay={motionStagger * 3}
             className="relative z-30 w-full min-w-0 lg:absolute lg:bottom-0 lg:left-0 lg:w-[calc(50%+6.5rem)] xl:w-[calc(50%+7.5rem)]"
           >
             <RatingBadges variant="dark" appearance="cards" />
           </Reveal>
         </div>
 
-        <Reveal immediate delay={motionStagger * 5}>
+        <Reveal immediate delay={motionStagger * 4}>
           <div
             className="mt-8 rounded-[1.5rem] border border-white/10 bg-zinc-950 px-4 py-5 sm:mt-10 sm:rounded-[2rem] sm:px-6 sm:py-6 lg:mt-12"
             aria-label={`${place} delivery stats`}

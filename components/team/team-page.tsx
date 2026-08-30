@@ -53,10 +53,6 @@ export function TeamPageContent() {
 
       <main className="flex-1">
         <section className="relative overflow-hidden bg-black text-white">
-          <div className="pointer-events-none absolute inset-0" aria-hidden>
-            <div className="absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-white/[0.04] blur-[110px]" />
-          </div>
-
           <div className={cn(container, sectionPad, "relative")}>
             <Reveal immediate>
               <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-white/60">
@@ -74,8 +70,7 @@ export function TeamPageContent() {
             </Reveal>
 
             <Reveal immediate delay={motionStagger}>
-              <p className={cn(overline, "text-white/60")}>{teamPageMeta.hero.eyebrow}</p>
-              <h1 className="mt-4 max-w-4xl font-heading text-4xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
+              <h1 className="max-w-4xl font-heading text-4xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
                 {teamPageMeta.hero.title}
               </h1>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">

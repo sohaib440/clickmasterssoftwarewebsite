@@ -81,11 +81,6 @@ export function CaseStudyDetailPage({ study }: CaseStudyDetailPageProps) {
 
       <main className="flex w-full flex-1 flex-col overflow-x-clip">
         <section className="relative overflow-hidden bg-black text-white">
-          <div className="pointer-events-none absolute inset-0" aria-hidden>
-            <div className="absolute -left-20 top-0 h-72 w-72 rounded-full bg-primary/10 blur-[100px]" />
-            <div className="absolute -right-16 bottom-0 h-64 w-64 rounded-full bg-white/[0.04] blur-[100px]" />
-          </div>
-
           <div className={cn(container, sectionPad, "relative")}>
             <Reveal immediate>
               <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-white/60">
@@ -108,8 +103,7 @@ export function CaseStudyDetailPage({ study }: CaseStudyDetailPageProps) {
             <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-12">
               <div>
                 <Reveal immediate delay={motionStagger}>
-                  <p className={cn(overline, "text-white/60")}>Case Study</p>
-                  <p className="mt-3 text-sm font-medium text-primary">
+                  <p className="text-sm font-medium text-primary">
                     {study.clientName}
                   </p>
                   <h1 className="mt-3 font-heading text-4xl font-normal leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.15rem]">
