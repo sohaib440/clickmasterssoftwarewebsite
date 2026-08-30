@@ -170,7 +170,7 @@ export default function PakistanLocationPage() {
               </>
             ) : (
               <>
-                What <span className="italic">{sections.testimonials.titleItalic}</span> say
+                What Our <span className="italic">{sections.testimonials.titleItalic}</span> Say
               </>
             )
           }

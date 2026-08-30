@@ -1556,8 +1556,8 @@ export function buildLocationSections(
           : `${placeLabel} client feedback`,
       title: usesCaseBlurbs(placeLabel)
         ? "Local engagement examples"
-        : "What partners say",
-      titleItalic: usesCaseBlurbs(placeLabel) ? "engagement" : "partners",
+        : "What Our Clients Say",
+      titleItalic: usesCaseBlurbs(placeLabel) ? "engagement" : "Clients",
       description: usesCaseBlurbs(placeLabel)
         ? isPakistan
           ? "Illustrative composites based on project types we deliver across Pakistani cities — not attributed customer reviews."
