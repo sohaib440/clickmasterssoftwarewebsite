@@ -92,7 +92,8 @@ export function jsonLdGraph(
   return {
     "@context": "https://schema.org",
     "@graph": nodes.map((node) => {
-      const { ["@context"]: _context, ...rest } = node;
+      const rest = { ...node };
+      delete rest["@context"];
       return rest;
     }),
   };
@@ -414,9 +415,9 @@ export const localBusinessSchema = {
 /**
  * Location structured data.
  *
- * - Country (Pakistan hub): full LocalBusiness with real Islamabad HQ address/geo.
- * - City pages: Service + areaServed only — never LocalBusiness with Islamabad
- *   coordinates, which looks like fake local presence when scaled across cities.
+ * - Pakistan country hub only: full LocalBusiness with real Islamabad HQ address/geo.
+ * - Other country pages + city pages: Service + areaServed only — never LocalBusiness
+ *   with Islamabad coordinates (looks like fake local presence when scaled abroad).
  */
 export function locationLocalBusinessSchema(options: {
   /** e.g. "Pakistan" or "Lahore" */
@@ -429,6 +430,9 @@ export function locationLocalBusinessSchema(options: {
   idSuffix: string;
 }) {
   const pageUrl = absoluteUrl(options.pageUrl);
+  const isPakistanHq =
+    options.areaServedType === "Country" &&
+    options.areaServedName.toLowerCase() === "pakistan";
 
   const areaServed =
     options.areaServedType === "Country"
@@ -442,8 +446,8 @@ export function locationLocalBusinessSchema(options: {
           },
         };
 
-  // City service-area pages: no LocalBusiness geo/address (HQ remains Islamabad only).
-  if (options.areaServedType === "City") {
+  // Non-HQ markets: Service schema only (no Islamabad address/geo on foreign pages).
+  if (!isPakistanHq) {
     return {
       "@context": "https://schema.org",
       "@type": "Service",

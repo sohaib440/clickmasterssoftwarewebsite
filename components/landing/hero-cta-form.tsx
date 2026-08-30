@@ -73,9 +73,9 @@ export function HeroCtaForm({ className }: HeroCtaFormProps) {
       )}
     >
       <div className="border-b border-white/10 pb-4">
-        <h2 className="font-heading text-xl font-normal tracking-tight text-white">
+        <span className="block font-heading text-xl font-normal tracking-tight text-white">
           {heroCtaForm.title}
-        </h2>
+        </span>
         <p className="mt-1.5 text-[12px] leading-relaxed text-white/55">
           {heroCtaForm.subtitle}
         </p>

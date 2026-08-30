@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
-import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 import CardSwap, { Card } from "@/components/landing/card-swap";
 import {
@@ -211,7 +211,7 @@ export function ProjectsSection({
                 className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-white transition-colors hover:text-primary"
               >
                 View case study
-                <ArrowUpRight className="size-4" aria-hidden />
+                <ArrowRight className="size-4" aria-hidden />
               </Link>
             </div>
 
@@ -332,7 +332,7 @@ export function ProjectsSection({
             <div className="mt-8 flex justify-center sm:mt-10">
               <Link href={projectPath} className={btnOutlineDark}>
                 View all case studies and projects
-                <ArrowUpRight className="ml-2 size-4" aria-hidden />
+                <ArrowRight className="ml-2 size-4" aria-hidden />
               </Link>
             </div>
           ) : null}

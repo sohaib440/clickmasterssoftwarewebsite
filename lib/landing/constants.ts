@@ -35,17 +35,17 @@ export const cardDark =
   "motion-card overflow-hidden rounded-2xl border border-white/10 bg-zinc-950 text-white shadow-none";
 
 export const btnPrimary =
-  "inline-flex h-11 items-center justify-center rounded-full bg-primary px-4 sm:px-6 text-sm font-medium text-primary-foreground shadow-sm transition-[transform,background-color,border-color,color] duration-300 hover:border-transparent hover:bg-horizon-navy hover:!text-white hover:scale-[1.02] active:scale-[0.98]";
+  "inline-flex h-11 items-center justify-center gap-2 rounded-full bg-primary px-4 sm:px-6 text-sm font-medium text-primary-foreground shadow-sm transition-[transform,background-color,border-color,color] duration-300 hover:border-transparent hover:bg-horizon-navy hover:!text-white hover:scale-[1.02] active:scale-[0.98]";
 
 export const btnOutline =
-  "inline-flex h-11 items-center justify-center rounded-full border border-horizon-navy/25 bg-white px-4 sm:px-6 text-sm font-medium text-horizon-navy transition-[transform,background-color,border-color,color] duration-300 hover:border-horizon-navy hover:bg-horizon-navy hover:!text-white hover:scale-[1.02] active:scale-[0.98]";
+  "inline-flex h-11 items-center justify-center gap-2 rounded-full border border-horizon-navy/25 bg-white px-4 sm:px-6 text-sm font-medium text-horizon-navy transition-[transform,background-color,border-color,color] duration-300 hover:border-horizon-navy hover:bg-horizon-navy hover:!text-white hover:scale-[1.02] active:scale-[0.98]";
 
 export const btnOutlineDark =
-  "inline-flex h-11 items-center justify-center rounded-full border border-white/40 bg-transparent px-4 sm:px-6 text-sm font-medium text-white transition-[transform,background-color,border-color,color] duration-300 hover:border-white hover:bg-white hover:!text-horizon-navy hover:scale-[1.02] active:scale-[0.98]";
+  "inline-flex h-11 items-center justify-center gap-2 rounded-full border border-white/40 bg-transparent px-4 sm:px-6 text-sm font-medium text-white transition-[transform,background-color,border-color,color] duration-300 hover:border-white hover:bg-white hover:!text-horizon-navy hover:scale-[1.02] active:scale-[0.98]";
 
 /** CTA on dark (navy) sections */
 export const btnOnDark =
-  "inline-flex h-11 items-center justify-center rounded-full bg-primary px-8 text-sm font-medium text-primary-foreground ring-1 ring-white/15 transition-[transform,background-color,border-color,color,box-shadow] duration-300 hover:bg-white hover:!text-horizon-navy hover:scale-[1.02] hover:shadow-[0_8px_28px_rgba(255,255,255,0.15)] active:scale-[0.98]";
+  "inline-flex h-11 items-center justify-center gap-2 rounded-full bg-primary px-8 text-sm font-medium text-primary-foreground ring-1 ring-white/15 transition-[transform,background-color,border-color,color,box-shadow] duration-300 hover:bg-white hover:!text-horizon-navy hover:scale-[1.02] hover:shadow-[0_8px_28px_rgba(255,255,255,0.15)] active:scale-[0.98]";
 
 export const inputField =
   "h-12 w-full rounded-full border border-horizon-border bg-white px-5 text-sm text-horizon-navy placeholder:text-horizon-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-horizon-navy/20";

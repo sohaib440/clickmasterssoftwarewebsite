@@ -1,3 +1,4 @@
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 import { LandingContainer, sectionHeadingGap } from "@/components/landing/landing-container";
@@ -24,7 +25,7 @@ export function ProcessSection({
       <span className="italic">transparent, agile, and built around you</span>
     </>
   ),
-  description = "Many teams talk about best practices. As a top rated software house, we show you exactly what delivery looks like at every stage of your project.",
+  description = "Many teams talk about best practices. We show you exactly what delivery looks like at every stage of your project.",
   steps,
   ctaLabel = "Start your project",
 }: ProcessSectionProps = {}) {
@@ -41,8 +42,9 @@ export function ProcessSection({
         <ProcessStepsGrid steps={steps} />
 
         <div className="mt-12 text-center md:mt-14">
-          <Link href={contactPath} className={btnPrimary}>
+          <Link href={contactPath} className={`${btnPrimary} group`}>
             {ctaLabel}
+            <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden />
           </Link>
         </div>
       </LandingContainer>
