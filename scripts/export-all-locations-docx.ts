@@ -349,7 +349,7 @@ function pageBlock(page: LocationPageContent, index: number): Paragraph[] {
     heading("Projects", HeadingLevel.HEADING_2),
     labelValue("Overline", sections.projects.overlineText),
     labelValue("Title", sections.projects.title),
-    body(sections.projects.description),
+    body(sections.projects.description ?? ""),
   );
 
   blocks.push(
