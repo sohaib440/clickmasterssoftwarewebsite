@@ -132,16 +132,22 @@ export function LocationHero({ location }: LocationHeroProps) {
             <Reveal immediate delay={motionStagger * 2}>
               <div className="flex flex-col gap-3.5 sm:gap-4">
                 <p className="text-justify text-base leading-relaxed text-white/85 md:text-[1.05rem]">
-                  {renderParagraphWithCountryLinks(location.description)}
+                  {renderParagraphWithCountryLinks(location.description, {
+                    currentPath: location.href,
+                  })}
                 </p>
                 {location.descriptionSecondary ? (
                   <p className="text-justify text-base leading-relaxed text-white/85 md:text-[1.05rem]">
-                    {renderParagraphWithCountryLinks(location.descriptionSecondary)}
+                    {renderParagraphWithCountryLinks(location.descriptionSecondary, {
+                      currentPath: location.href,
+                    })}
                   </p>
                 ) : null}
                 {location.descriptionTertiary ? (
                   <p className="text-justify text-base leading-relaxed text-white/85 md:text-[1.05rem]">
-                    {renderParagraphWithCountryLinks(location.descriptionTertiary)}
+                    {renderParagraphWithCountryLinks(location.descriptionTertiary, {
+                      currentPath: location.href,
+                    })}
                   </p>
                 ) : null}
               </div>

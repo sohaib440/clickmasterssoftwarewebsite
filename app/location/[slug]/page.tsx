@@ -124,6 +124,7 @@ export default async function CityLocationPage({ params }: CityLocationPageProps
         <AboutSection
           content={{ ...location.about, overlineText: "Who we are" }}
           showValues={false}
+          currentPath={location.href}
         />
 
         <ServicesSection
@@ -189,7 +190,7 @@ export default async function CityLocationPage({ params }: CityLocationPageProps
                 {cityName} and surrounding <span className="italic text-primary/95">areas</span>
               </>
             }
-            description={`We support businesses in ${cityName} and nearby cities with the same software house delivery standards — discovery, build, launch, and ongoing support.`}
+            description={`We support businesses in ${cityName} and nearby cities with the same software house delivery standards: discovery, build, launch, and ongoing support.`}
             metricLabel="nearby cities · regional delivery"
           />
         ) : null}
@@ -246,9 +247,11 @@ export default async function CityLocationPage({ params }: CityLocationPageProps
               <h2 className="font-heading text-3xl font-normal md:text-4xl">
                 {location.cta.title}
               </h2>
-              <p className="mx-auto mt-4 max-w-lg text-sm text-white/75 md:text-base">
-                {location.cta.description}
-              </p>
+              <div className="mx-auto mt-4 max-w-lg space-y-3 text-sm text-white/75 md:text-base">
+                {location.cta.description.split("\n\n").map((paragraph) => (
+                  <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+                ))}
+              </div>
               <Link href={location.cta.buttonHref} className={cn("mt-8 inline-flex", btnOnDark)}>
                 {location.cta.buttonLabel}
               </Link>

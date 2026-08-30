@@ -84,6 +84,7 @@ export default function UKLocationPage() {
         <AboutSection
           content={{ ...location.about, overlineText: "Who we are" }}
           showValues={false}
+          currentPath={location.href}
         />
 
         <ServicesSection
@@ -205,9 +206,11 @@ export default function UKLocationPage() {
               <h2 className="font-heading text-3xl font-normal md:text-4xl">
                 {location.cta.title}
               </h2>
-              <p className="mx-auto mt-4 max-w-lg text-sm text-white/75 md:text-base">
-                {location.cta.description}
-              </p>
+              <div className="mx-auto mt-4 max-w-lg space-y-3 text-sm text-white/75 md:text-base">
+                {location.cta.description.split("\n\n").map((paragraph) => (
+                  <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+                ))}
+              </div>
               <Link href={location.cta.buttonHref} className={cn("mt-8 inline-flex", btnOnDark)}>
                 {location.cta.buttonLabel}
               </Link>

@@ -25,6 +25,7 @@ import {
   usaLocation,
 } from "@/data/locations";
 import { companyStats } from "@/data/landing/trust";
+import type { FaqItem } from "@/data/homepage-content";
 import {
   btnOnDark,
   btnOutlineDark,
@@ -39,9 +40,54 @@ import { selfCanonical } from "@/seo/canonical";
 import { breadcrumbSchema, itemListSchema } from "@/seo/schema";
 import { cn } from "@/lib/utils";
 
-const hubMetaTitle = "Software Company Locations Worldwide | Next Soft Development";
+const hubMetaTitle = "Software Development Company Locations | Next Soft Development";
 const hubDescription =
-  "Software development company serving businesses worldwide in Pakistan, the USA, UK, UAE, Canada, and Australia with web, mobile, SaaS, and AI solutions.";
+  "Software development company locations across Pakistan, the USA, UK, UAE, Canada, and Australia with web, mobile, SaaS, and AI delivery for each market.";
+
+const locationHubFaqs: FaqItem[] = [
+  {
+    question: "What types of software do you develop?",
+    answer:
+      "We build custom web applications, mobile apps, SaaS platforms, CRM and ERP systems, APIs, and AI-powered solutions based on your business requirements.",
+    tag: "Services",
+    column: "left",
+  },
+  {
+    question: "Which markets do you serve?",
+    answer:
+      "We deliver from our Pakistan headquarters for clients in Pakistan, the USA, UK, UAE, Canada, and Australia, with market-specific focus on each location page.",
+    tag: "Coverage",
+    column: "right",
+  },
+  {
+    question: "How do projects usually start?",
+    answer:
+      "A short discovery call leads to a scoped proposal with timeline and milestones. Most engagements begin with a fixed discovery or MVP phase.",
+    tag: "Process",
+    column: "left",
+  },
+  {
+    question: "Do you provide support after launch?",
+    answer:
+      "Yes. We offer maintenance, feature iterations, hosting guidance, and SLA-based support so your product stays reliable as you grow.",
+    tag: "Support",
+    column: "right",
+  },
+  {
+    question: "Do you offer fixed-price contracts?",
+    answer:
+      "Yes. Many builds use transparent fixed-price scopes with clear milestones. Time-and-materials is available when requirements need to evolve.",
+    tag: "Pricing",
+    column: "left",
+  },
+  {
+    question: "Who will work on my project?",
+    answer:
+      "Senior engineers, designers, and QA stay on the engagement. You get named ownership, not a junior-only handoff after the contract.",
+    tag: "Team",
+    column: "right",
+  },
+];
 
 export const metadata: Metadata = {
   title: { absolute: hubMetaTitle },
@@ -168,29 +214,28 @@ export default function LocationsPage() {
 
             <Reveal immediate delay={motionStagger}>
               <h1 className="mt-4 max-w-4xl font-heading text-4xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[2.85rem] xl:text-[3.15rem]">
-                Software Development Company Serving Businesses{" "}
-                <span className="!text-primary">Worldwide</span>
+                Software Development Company{" "}
+                <span className="!text-primary">Locations</span>
               </h1>
             </Reveal>
             <Reveal immediate delay={motionStagger}>
               <div className="mt-5 max-w-2xl space-y-4 text-justify text-base leading-relaxed text-white/70 md:text-lg">
                 <p>
-                  From our headquarters in Pakistan, we deliver software development services to
-                  startups, growing businesses, and enterprises across{" "}
+                  Browse our software development company locations, starting from our Pakistan
+                  headquarters, for startups, growing businesses, and enterprises across{" "}
                   <span className="font-medium text-white">
                     Pakistan, the USA, UK, UAE, Canada, and Australia
                   </span>
                   .
                 </p>
                 <p>
-                  Explore our locations to see how{" "}
+                  Each location page shows how{" "}
                   <span className="font-medium text-white">Next Software Development</span> supports
-                  businesses with scalable web applications, mobile apps, SaaS platforms, AI
-                  solutions, and custom software development.
+                  that market with web applications, mobile apps, SaaS platforms, AI solutions, and
+                  custom software.
                 </p>
                 <p className="font-medium text-white">
-                  Serving clients locally and globally, with engineering expertise built for
-                  businesses that want to grow.
+                  One senior delivery team, market-specific focus, local and global clients.
                 </p>
               </div>
             </Reveal>
@@ -238,7 +283,7 @@ export default function LocationsPage() {
                     aria-label="Open Pakistan location page"
                   />
 
-                  {/* Headquarters photo — top-right, same size feel as mock with soft white fade */}
+                  {/* Headquarters photo , top-right, same size feel as mock with soft white fade */}
                   <div
                     className="pointer-events-none absolute right-0 top-0 z-0 h-[11.5rem] w-[min(58%,22rem)] sm:h-[14rem] sm:w-[min(52%,26rem)] lg:h-[15.5rem] lg:w-[min(50%,28rem)]"
                     aria-hidden
@@ -252,7 +297,7 @@ export default function LocationsPage() {
                         className="object-cover object-[58%_42%]"
                         sizes="(max-width: 1024px) 55vw, 28rem"
                       />
-                      {/* Soft white dissolve — no hard edge into the card */}
+                      {/* Soft white dissolve , no hard edge into the card */}
                       <div className="absolute inset-0 bg-gradient-to-r from-white from-0% via-white/90 via-25% to-transparent to-65%" />
                       <div className="absolute inset-0 bg-gradient-to-t from-white from-0% via-white/90 via-35% to-transparent to-75%" />
                       <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent" />
@@ -395,18 +440,25 @@ export default function LocationsPage() {
               Location questions, <span className="italic">answered</span>
             </>
           }
+          items={locationHubFaqs}
         />
 
         <section className="w-full bg-horizon-navy text-white">
           <div className={cn(container, sectionPad, "text-center")}>
             <Reveal>
               <h2 className="font-heading text-3xl font-normal md:text-4xl">
-                Ready to build with a software partner in your market?
+                Have a software project in mind?
               </h2>
-              <p className="mx-auto mt-4 max-w-lg text-sm text-white/75 md:text-base">
-                Whether you are in Pakistan, the USA, UK, UAE, Canada, or Australia, tell us about
-                your project. We’ll reply within one business day with a clear next step.
-              </p>
+              <div className="mx-auto mt-4 max-w-lg space-y-3 text-sm text-white/75 md:text-base">
+                <p>
+                  Tell us what you&apos;re building, what problem you&apos;re trying to solve, and
+                  where you want to take it. We&apos;ll help you define the right technical approach.
+                </p>
+                <p>
+                  Looking for a software development partner across Pakistan, the USA, UK, UAE,
+                  Canada, or Australia? Let&apos;s talk.
+                </p>
+              </div>
               <Link href={contactPath} className={cn("mt-8 inline-flex", btnOnDark)}>
                 Get a Free Quote
               </Link>

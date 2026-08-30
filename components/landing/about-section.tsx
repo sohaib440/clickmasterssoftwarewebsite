@@ -33,11 +33,14 @@ type AboutSectionProps = {
   content?: AboutSectionContent;
   /** When false, hides the values grid (use a dedicated Why Choose section instead). */
   showValues?: boolean;
+  /** When set, wiki links that resolve to this path render as plain text (no self-links). */
+  currentPath?: string;
 };
 
 /**
  * Resolve `[[anchor text]]` to a real internal URL.
  * Team → /team; city names → that city page; Pakistan / software-company anchors → Pakistan hub.
+ * Avoid wiki-linking the Pakistan hub phrase on the Pakistan page itself (self-link).
  */
 export function resolveInternalWikiHref(label: string): string {
   const lower = label.toLowerCase().trim();
@@ -65,7 +68,10 @@ export function resolveInternalWikiHref(label: string): string {
 }
 
 /** Renders `[[anchor text]]` as contextual internal links (city, Pakistan hub, or team). */
-export function renderParagraphWithCountryLinks(paragraph: string): ReactNode {
+export function renderParagraphWithCountryLinks(
+  paragraph: string,
+  options?: { currentPath?: string }
+): ReactNode {
   const parts = paragraph.split(/(\[\[[^\]]+\]\])/g);
   if (parts.length === 1) return paragraph;
 
@@ -73,10 +79,14 @@ export function renderParagraphWithCountryLinks(paragraph: string): ReactNode {
     const match = /^\[\[([^\]]+)\]\]$/.exec(part);
     if (!match) return part;
     const label = match[1];
+    const href = resolveInternalWikiHref(label);
+    if (options?.currentPath && href === options.currentPath) {
+      return label;
+    }
     return (
       <Link
         key={`${label}-${i}`}
-        href={resolveInternalWikiHref(label)}
+        href={href}
         className="font-medium text-primary underline underline-offset-4 transition-colors hover:text-[#b8941f]"
       >
         {label}
@@ -85,7 +95,11 @@ export function renderParagraphWithCountryLinks(paragraph: string): ReactNode {
   });
 }
 
-export function AboutSection({ content, showValues = true }: AboutSectionProps = {}) {
+export function AboutSection({
+  content,
+  showValues = true,
+  currentPath,
+}: AboutSectionProps = {}) {
   const data = content ?? {
     overlineText: "About us",
     title: "Who we are?",
@@ -112,7 +126,7 @@ export function AboutSection({ content, showValues = true }: AboutSectionProps =
               {data.paragraphs.map((paragraph, i) => (
                 <Reveal key={i} delay={i * motionStagger}>
                   <p className="text-base leading-relaxed text-justify text-horizon-navy md:text-lg">
-                    {renderParagraphWithCountryLinks(paragraph)}
+                    {renderParagraphWithCountryLinks(paragraph, { currentPath })}
                   </p>
                 </Reveal>
               ))}
