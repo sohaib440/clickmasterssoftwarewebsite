@@ -182,9 +182,13 @@ export default function USALocationPage() {
         <TeamSection
           overlineText={sections.team.overlineText}
           title={
-            <>
-              A senior <span className="italic">{sections.team.titleItalic}</span>
-            </>
+            sections.team.titleItalic ? (
+              <>
+                A senior <span className="italic">{sections.team.titleItalic}</span>
+              </>
+            ) : (
+              sections.team.title
+            )
           }
           intro={sections.team.intro}
         />

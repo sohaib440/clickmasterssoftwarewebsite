@@ -224,7 +224,7 @@ export default async function CityLocationPage({ params }: CityLocationPageProps
           overlineText={sections.team.overlineText}
           title={
             <>
-              The team behind <span className="italic">{cityName}</span> delivery
+              The Team Behind Our <span className="italic">{cityName}</span> Delivery
             </>
           }
           intro={sections.team.intro}

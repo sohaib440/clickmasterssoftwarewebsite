@@ -325,7 +325,9 @@ function pageBlock(page: LocationPageContent, index: number): Paragraph[] {
     labelValue("Overline", sections.tech.overlineText),
     labelValue(
       "Title",
-      `${sections.tech.title}${sections.tech.titleItalic ? ` (${sections.tech.titleItalic})` : ""}`
+      sections.tech.titleItalic && !sections.tech.title.includes(sections.tech.titleItalic)
+        ? `${sections.tech.title} (${sections.tech.titleItalic})`
+        : sections.tech.title
     ),
     body(sections.tech.description),
   );
@@ -393,7 +395,9 @@ function pageBlock(page: LocationPageContent, index: number): Paragraph[] {
     labelValue("Overline", sections.team.overlineText),
     labelValue(
       "Title",
-      `${sections.team.title}${sections.team.titleItalic ? ` ${sections.team.titleItalic}` : ""}`
+      sections.team.titleItalic && !sections.team.title.toLowerCase().includes(sections.team.titleItalic.toLowerCase())
+        ? `${sections.team.title} ${sections.team.titleItalic}`
+        : sections.team.title
     ),
     body(sections.team.intro),
   );

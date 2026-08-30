@@ -1519,10 +1519,8 @@ export function buildLocationSections(
     },
     tech: {
       overlineText: isPakistan ? "Technology stack" : `${placeLabel} tech stack`,
-      title: isPakistan
-        ? "Built with proven, modern tools"
-        : `Modern tools for ${placeLabel} products`,
-      titleItalic: "proven, modern tools",
+      title: "Built with Proven, Modern Tools",
+      titleItalic: "Proven, Modern Tools",
       description: isPakistan
         ? `${baseTechIntro} Chosen for nationwide delivery reliability across Pakistani markets.`
         : `We pick stacks that ${placeLabel} teams can maintain: modern, proven, and matched to ${focus.serviceAngle}.`,
@@ -1575,11 +1573,19 @@ export function buildLocationSections(
       items: pickTestimonials(placeLabel),
     },
     team: {
-      overlineText: isPakistan
-        ? "Pakistan software house team"
-        : `${placeLabel} delivery team`,
-      title: isPakistan ? "A senior team" : `The team behind ${placeLabel} delivery`,
-      titleItalic: "team",
+      overlineText: isPakistan ? "Pakistan software house team" : "Delivery team",
+      title: isPakistan
+        ? "A senior team"
+        : `The Team Behind Our ${
+            placeLabel === "United States"
+              ? "USA"
+              : placeLabel === "United Kingdom"
+                ? "UK"
+                : placeLabel === "United Arab Emirates"
+                  ? "UAE"
+                  : placeLabel
+          } Delivery`,
+      titleItalic: isPakistan ? "team" : undefined,
       description: isPakistan
         ? "Senior engineers and designers shipping for clients across Pakistan and overseas."
         : `The same senior bench that supports ${placeLabel} projects from kickoff through maintenance.`,
