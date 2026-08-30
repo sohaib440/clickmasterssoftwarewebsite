@@ -41,12 +41,18 @@ export function ServiceHero({ breadcrumbs, hero }: ServiceHeroProps) {
 
   return (
     <section className="relative w-full overflow-hidden bg-black text-white">
-      <div className={cn(container, sectionPad, "relative")}>
+      <div
+        className={cn(
+          container,
+          sectionPad,
+          "relative !pb-4 !pt-5 md:!pb-5 md:!pt-7 lg:!pb-6 lg:!pt-8"
+        )}
+      >
         <Reveal immediate>
           <ServiceBreadcrumbs items={breadcrumbs} />
         </Reveal>
 
-        <div className="relative mt-6 grid items-stretch gap-8 lg:mt-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-10 xl:gap-12">
+        <div className="relative mt-3 grid items-stretch gap-8 lg:mt-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-10 xl:gap-12">
           <div className="relative z-20 flex min-w-0 flex-col gap-5 lg:pt-1">
             <Reveal immediate delay={motionStagger}>
               <h1 className="font-heading text-4xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[2.85rem] xl:text-[3.15rem]">

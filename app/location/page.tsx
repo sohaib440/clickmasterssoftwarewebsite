@@ -210,7 +210,7 @@ export default function LocationsPage() {
 
       <main className="flex w-full flex-1 flex-col overflow-x-clip">
         <section className="relative w-full overflow-hidden bg-black text-white">
-          <div className={cn(container, sectionPad, "relative")}>
+          <div className={cn(container, sectionPad, "relative !pt-6 md:!pt-8 lg:!pt-10")}>
             <Reveal immediate>
               <ServiceBreadcrumbs
                 items={[{ label: "Home", href: "/" }, { label: "Locations" }]}
@@ -218,7 +218,7 @@ export default function LocationsPage() {
             </Reveal>
 
             <Reveal immediate delay={motionStagger}>
-              <h1 className="mt-4 max-w-4xl font-heading text-4xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[2.85rem] xl:text-[3.15rem]">
+              <h1 className="mt-2 max-w-4xl font-heading text-4xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[2.85rem] xl:text-[3.15rem]">
                 Software Development Company{" "}
                 <span className="!text-primary">Locations</span>
               </h1>

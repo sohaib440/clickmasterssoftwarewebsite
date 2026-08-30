@@ -37,9 +37,9 @@ export function SolutionDetailPage({ solution }: Props) {
 
       <main className="flex-1">
         <section className="relative w-full overflow-hidden bg-gradient-to-b from-horizon-cream via-horizon-cream to-horizon-sky">
-          <div className={cn(container, sectionPad)}>
+          <div className={cn(container, sectionPad, "!pt-6 md:!pt-8 lg:!pt-10")}>
             <Reveal immediate>
-              <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-horizon-muted">
+              <nav className="mb-3 flex flex-wrap items-center gap-2 text-sm text-horizon-muted">
                 <Link href="/" className="inline-flex items-center gap-1.5 hover:text-horizon-navy">
                   <ArrowLeft className="size-4" aria-hidden />
                   Home

@@ -71,9 +71,9 @@ export function IndustriesPageContent() {
       <main className="flex-1">
         {/* Hero */}
         <section className="relative overflow-hidden bg-black text-white">
-          <div className={cn(container, sectionPad, "relative pb-10 md:pb-12")}>
+          <div className={cn(container, sectionPad, "relative !pt-6 pb-10 md:!pt-8 md:pb-12 lg:!pt-10")}>
             <Reveal immediate>
-              <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-white/60">
+              <nav className="mb-3 flex flex-wrap items-center gap-2 text-sm text-white/60">
                 <Link href="/" className="inline-flex items-center gap-1.5 hover:text-white">
                   <ArrowLeft className="size-4" aria-hidden />
                   Home

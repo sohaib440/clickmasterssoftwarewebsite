@@ -80,9 +80,9 @@ export function MainServicePageLayout({ content }: MainServicePageLayoutProps) {
       <main className="flex-1">
         <ServiceHero breadcrumbs={breadcrumbs} hero={hero} />
 
-        <TrustNumbersSection />
+        <TrustNumbersSection className="[&>div]:!pt-2 [&>div]:md:!pt-3 [&>div]:!pb-6 [&>div]:md:!pb-8" />
         <TrustedPartnersSection className="border-horizon-border/60 bg-white" />
-        <AboutSection />
+        <AboutSection showValues={false} />
 
         {capabilities.items.length > 0 ? (
           <section className="w-full bg-black text-white" aria-labelledby="capabilities-heading">

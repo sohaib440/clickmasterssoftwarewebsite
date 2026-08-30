@@ -151,9 +151,9 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
       <main className="flex w-full flex-1 flex-col overflow-x-clip">
         <section className="relative overflow-hidden bg-black text-white">
-          <div className={cn(container, sectionPad, "relative")}>
+          <div className={cn(container, sectionPad, "relative !pt-6 md:!pt-8 lg:!pt-10")}>
             <Reveal immediate>
-              <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-white/60">
+              <nav className="mb-3 flex flex-wrap items-center gap-2 text-sm text-white/60">
                 <Link href="/" className="inline-flex items-center gap-1.5 hover:text-white">
                   <ArrowLeft className="size-4" aria-hidden />
                   Home
