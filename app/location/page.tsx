@@ -6,6 +6,7 @@ import { ArrowRight, ChevronRight, MapPinned, Star } from "lucide-react";
 import { TrustedPartnersSection } from "@/components/landing/clients-section";
 import { FaqSection } from "@/components/landing/faq-section";
 import { IndustriesSection } from "@/components/landing/industries-section";
+import { ProcessSection } from "@/components/landing/process-section";
 import { ProjectsSection } from "@/components/landing/projects-section";
 import { Reveal } from "@/components/landing/reveal";
 import { ServicesSection } from "@/components/landing/services-section";
@@ -13,10 +14,13 @@ import { SiteHeader } from "@/components/landing/navbar";
 import { TeamSection } from "@/components/landing/team-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { CountryFlag } from "@/components/location/country-flag";
+import { LocationWhyChooseSection } from "@/components/location/location-why-choose-section";
 import { ServiceBreadcrumbs } from "@/components/services/shared/service-breadcrumbs";
 import {
   australiaLocation,
   canadaLocation,
+  locationHubProjects,
+  locationHubSections,
   locationPages,
   pakistanCities,
   pakistanLocation,
@@ -421,7 +425,19 @@ export default function LocationsPage() {
           </div>
         </section>
 
-        <ServicesSection />
+        <ServicesSection
+          overlineText={locationHubSections.services.overlineText}
+          title={locationHubSections.services.title}
+          description={locationHubSections.services.description}
+          serviceOverrides={locationHubSections.services.items}
+        />
+        <LocationWhyChooseSection
+          cityName="our markets"
+          values={locationHubSections.whyChoose.values}
+          overlineText={locationHubSections.whyChoose.overlineText}
+          title={locationHubSections.whyChoose.title}
+          description={locationHubSections.whyChoose.description}
+        />
         <IndustriesSection
           overlineText="Industries"
           title={
@@ -431,7 +447,23 @@ export default function LocationsPage() {
           }
           description="Software tailored to the workflows, compliance needs, and growth goals of every sector we work with, across Pakistan and global markets."
         />
-        <ProjectsSection />
+        <ProjectsSection
+          projects={locationHubProjects}
+          overlineText={locationHubSections.projects.overlineText}
+          title={locationHubSections.projects.title}
+        />
+        <ProcessSection
+          overlineText={locationHubSections.process.overlineText}
+          title={
+            <>
+              {locationHubSections.process.title}{" "}
+              <span className="italic">{locationHubSections.process.titleItalic}</span>
+            </>
+          }
+          description={locationHubSections.process.description}
+          steps={locationHubSections.process.steps}
+          ctaLabel={locationHubSections.process.ctaLabel}
+        />
         <TestimonialsSection />
         <TeamSection />
         <div className={cn(container, "pb-10 md:pb-12")}>

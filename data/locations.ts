@@ -20,6 +20,1234 @@ import { services as baseServices, type ServiceCard } from "@/data/services";
 import { solutionPath } from "@/lib/content/solutions";
 import { contactPath, teamPath } from "@/lib/landing/constants";
 
+/** Market-unique copy for location hub + country pages (services / process / why-choose / projects). */
+
+export type LocationMarketKey =
+  | "hub"
+  | "Pakistan"
+  | "United States"
+  | "Canada"
+  | "Australia"
+  | "United Kingdom"
+  | "United Arab Emirates";
+
+export const SERVICE_TITLES = [
+  "Software Development",
+  "Mobile App Development",
+  "Web Development",
+  "Ecommerce Development",
+  "UI/UX Design",
+  "Artificial Intelligence",
+  "Machine Learning",
+  "Automation Services",
+  "Cloud & DevOps",
+  "Data & Business Intelligence",
+  "Cybersecurity",
+  "Enterprise Solutions",
+  "Blockchain Development",
+  "Healthcare Software Development",
+  "AR/VR Development",
+  "Testing & QA",
+] as const;
+
+export type ServiceTitle = (typeof SERVICE_TITLES)[number];
+
+export type MarketProcessStep = {
+  step: "01" | "02" | "03" | "04" | "05" | "06";
+  shortLabel: string;
+  title: string;
+  description: string;
+};
+
+export type MarketWhyChooseItem = {
+  title: string;
+  description: string;
+};
+
+export type MarketSectionCopy = {
+  services: {
+    overlineText: string;
+    title: string;
+    description: string;
+    /** Display order; every title should appear once */
+    order: ServiceTitle[];
+    descriptions: Record<ServiceTitle, string>;
+    tags?: Partial<Record<ServiceTitle, string>>;
+  };
+  whyChoose: {
+    overlineText: string;
+    title: string;
+    description: string;
+    values: MarketWhyChooseItem[];
+  };
+  process: {
+    overlineText: string;
+    title: string;
+    titleItalic: string;
+    description: string;
+    ctaLabel: string;
+    steps: MarketProcessStep[];
+  };
+  projects: {
+    overlineText: string;
+    title: string;
+    description: string;
+    slugs: string[];
+  };
+};
+
+const ALL_SERVICES = [...SERVICE_TITLES] as ServiceTitle[];
+
+function orderFirst(priority: ServiceTitle[]): ServiceTitle[] {
+  const rest = ALL_SERVICES.filter((t) => !priority.includes(t));
+  return [...priority, ...rest];
+}
+
+export const LOCATION_MARKET_COPY: Record<LocationMarketKey, MarketSectionCopy> = {
+  hub: {
+    services: {
+      overlineText: "Services across markets",
+      title: "Software Development Services Across Our Locations",
+      description:
+        "One delivery bench spanning Pakistan HQ and partner markets in the USA, UK, UAE, Canada, and Australia. Pick a country page for market-specific scope; here is how we cover the core stack worldwide.",
+      order: orderFirst([
+        "Software Development",
+        "Web Development",
+        "Mobile App Development",
+        "Enterprise Solutions",
+        "Healthcare Software Development",
+        "Artificial Intelligence",
+      ]),
+      descriptions: {
+        "Software Development":
+          "End-to-end product builds for teams that need one accountable partner across discovery, architecture, launch, and maintenance, whether the buyer sits in Karachi or California.",
+        "Mobile App Development":
+          "iOS and Android apps for field staff, customers, and branch teams who need the same workflow offline and online, with shared APIs behind local-facing experiences.",
+        "Web Development":
+          "Browser-based platforms that stay fast under real traffic, with SEO-aware structure when the product is a public site and hardened auth when it is an internal tool.",
+        "Ecommerce Development":
+          "Catalog, checkout, and order ops for retailers selling across borders, including local payment habits and multi-warehouse inventory rules.",
+        "UI/UX Design":
+          "Interfaces designed for operators under time pressure and buyers who judge trust in the first session, with prototypes reviewed before major build spend.",
+        "Artificial Intelligence":
+          "Applied AI for intake, classification, and assistive workflows where automation cuts hours without inventing unsupported claims.",
+        "Machine Learning":
+          "Forecasting and prioritization models that sit beside existing ERP or CRM data so teams act on scores they can explain to stakeholders.",
+        "Automation Services":
+          "Approval chains, notifications, and system handoffs that replace spreadsheet ping-pong between offices in different time zones.",
+        "Cloud & DevOps":
+          "Hosting, CI/CD, and environment discipline so releases stay boring and uptime holds when demand spikes in any market we serve.",
+        "Data & Business Intelligence":
+          "Reporting layers that give founders and ops leads one trusted view of revenue, utilization, and backlog instead of conflicting exports.",
+        Cybersecurity:
+          "Access control, review habits, and hardening for products that touch customer, patient, or payment data across jurisdictions.",
+        "Enterprise Solutions":
+          "CRM, ERP, and internal platforms with role-based access for multi-department companies coordinating work across cities or countries.",
+        "Blockchain Development":
+          "Selective ledger work when auditability or shared records are a real requirement, not a buzzword slide.",
+        "Healthcare Software Development":
+          "Clinic and hospital workflows spanning appointments, records, billing, and pharmacy with the same senior bar we use on commercial SaaS.",
+        "AR/VR Development":
+          "Training and spatial demos where immersion improves outcomes enough to justify the build cost.",
+        "Testing & QA":
+          "Release testing across roles, devices, and peak paths so go-live is not the first time real users stress the system.",
+      },
+    },
+    whyChoose: {
+      overlineText: "Why choose us",
+      title: "Why teams across our locations work with us",
+      description:
+        "Shared delivery standards with market-aware scoping, so country pages are not clones of each other with a flag swapped in.",
+      values: [
+        {
+          title: "One senior bench, six markets",
+          description:
+            "Pakistan HQ engineering supports buyers in the USA, UK, UAE, Canada, and Australia with named ownership instead of an anonymous ticket queue.",
+        },
+        {
+          title: "Market pages with real intent",
+          description:
+            "Each country page focuses on a different buyer problem: HMS and ERP depth in Pakistan, SaaS product work in the US, regulated B2B in the UK, and so on.",
+        },
+        {
+          title: "Scope you can audit",
+          description:
+            "Written milestones, out-of-scope lists, and demo cadence so finance and product leads know what they are buying before code starts.",
+        },
+        {
+          title: "Timezone-friendly collaboration",
+          description:
+            "English-first communication and overlapping call windows so stakeholders in Islamabad, London, Dubai, or Toronto stay in the loop.",
+        },
+        {
+          title: "Post-launch continuity",
+          description:
+            "The same people who shipped the release stay available for fixes, iterations, and the issues that only appear in live operations.",
+        },
+        {
+          title: "Security as default practice",
+          description:
+            "Role-based access, code review, and careful data handling on builds that touch customer or operational records.",
+        },
+      ],
+    },
+    process: {
+      overlineText: "How we work across locations",
+      title: "A shared delivery process",
+      titleItalic: "adapted to each market",
+      description:
+        "The same six stages on every engagement, with discovery and compliance emphasis tuned on each country page rather than copy-pasted filler.",
+      ctaLabel: "Start your project",
+      steps: [
+        {
+          step: "01",
+          shortLabel: "Discover",
+          title: "Market and workflow discovery",
+          description:
+            "We clarify who the buyer is, which location page intent applies, and what success looks like before recommending a build path.",
+        },
+        {
+          step: "02",
+          shortLabel: "Plan",
+          title: "Architecture and commercial plan",
+          description:
+            "Stack, integrations, timeline, and cost are written down so stakeholders across time zones share one source of truth.",
+        },
+        {
+          step: "03",
+          shortLabel: "Design",
+          title: "Prototype before heavy build",
+          description:
+            "Wireframes and clickable flows are reviewed with operators and decision-makers so UX issues die early.",
+        },
+        {
+          step: "04",
+          shortLabel: "Build",
+          title: "Sprint delivery with demos",
+          description:
+            "Two-week cycles with working software to inspect, not status slides that hide risk until the end.",
+        },
+        {
+          step: "05",
+          shortLabel: "Assure",
+          title: "QA and release readiness",
+          description:
+            "Functional, security, and device checks before go-live so production is not the first stress test.",
+        },
+        {
+          step: "06",
+          shortLabel: "Support",
+          title: "Launch and ongoing ownership",
+          description:
+            "Handover docs, training, and maintenance options keep the product reliable after day one.",
+        },
+      ],
+    },
+    projects: {
+      overlineText: "Recent projects",
+      title: "Selected work across our markets",
+      description:
+        "A cross-section of HMS, CRM, hospitality, education, retail, and travel systems that show the kinds of products we ship for location-page buyers.",
+      slugs: [
+        "hospital-management-system",
+        "prime-lead-crm",
+        "hotel-management-system",
+        "ai-school-erp",
+        "royal-pos",
+        "travel-and-tours-management",
+      ],
+    },
+  },
+
+  Pakistan: {
+    services: {
+      overlineText: "Services across Pakistan",
+      title: "Software Development Services for Pakistani Businesses",
+      description:
+        "From Islamabad HQ to Lahore, Karachi, and cities nationwide: HMS, ERP, JazzCash-ready commerce, Urdu-capable workflows, and custom products for clinics, schools, and retailers.",
+      order: orderFirst([
+        "Healthcare Software Development",
+        "Enterprise Solutions",
+        "Ecommerce Development",
+        "Software Development",
+        "Mobile App Development",
+        "Data & Business Intelligence",
+      ]),
+      tags: {
+        "Healthcare Software Development": "HMS · Clinics",
+        "Enterprise Solutions": "ERP · CRM",
+        "Ecommerce Development": "Local payments",
+      },
+      descriptions: {
+        "Software Development":
+          "Custom platforms for Pakistani clinics, campuses, and retailers that need HMS, ERP, or ops software matched to how staff actually work on the floor.",
+        "Mobile App Development":
+          "Android-first and iOS apps for field sales, delivery riders, and branch managers who live on WhatsApp and need structured mobile workflows instead.",
+        "Web Development":
+          "Fast, maintainable web apps for Pakistani businesses that still take most payments and inquiries across desk, phone, and counter in the same day.",
+        "Ecommerce Development":
+          "Storefronts with JazzCash, Easypaisa, and card checkout, plus inventory that holds up when Karachi and Lahore warehouses disagree on stock.",
+        "UI/UX Design":
+          "Screens that stay clear for busy reception desks and shop floors, including bilingual layouts when Urdu and English both appear in the same product.",
+        "Artificial Intelligence":
+          "Practical AI for attendance, document sorting, and demand hints where Pakistani operators need hours back without a research lab.",
+        "Machine Learning":
+          "Models for stock risk, no-show prediction, and lead scoring trained on the messy operational data SMEs already collect in Excel.",
+        "Automation Services":
+          "Approvals, SMS or WhatsApp alerts, and handoffs that cut the chase between accounts, warehouse, and front desk.",
+        "Cloud & DevOps":
+          "Reliable hosting and release pipelines for products that must stay up during peak clinic hours and festival retail spikes.",
+        "Data & Business Intelligence":
+          "Owner dashboards for daily sales, fee recovery, bed occupancy, and branch performance without waiting on month-end exports.",
+        Cybersecurity:
+          "Access control and hardening for patient, student, and payment data under Pakistani operating realities.",
+        "Enterprise Solutions":
+          "ERP and CRM suites for multi-branch retailers, manufacturers, and service firms that outgrew spreadsheets years ago.",
+        "Blockchain Development":
+          "Audit trails and shared records only when Pakistani supply or credential use cases need them, not as decoration.",
+        "Healthcare Software Development":
+          "Hospital and clinic HMS covering appointments, EMR, billing, pharmacy, and doctor portals used across Pakistani cities.",
+        "AR/VR Development":
+          "Training and demo experiences for education and industrial teams when immersion beats slide decks.",
+        "Testing & QA":
+          "Device and role testing before launch so Islamabad pilots do not break the first week in Faisalabad or Karachi.",
+      },
+    },
+    whyChoose: {
+      overlineText: "Why choose us",
+      title: "Why teams across Pakistan work with us",
+      description:
+        "Differentiators that matter when you hire a nationwide software house headquartered in Islamabad, not a slide-deck agency.",
+      values: [
+        {
+          title: "Islamabad HQ, nationwide delivery",
+          description:
+            "We scope and ship for clinics, schools, and retailers from the capital belt through Lahore, Karachi, and dozens of Pakistani cities with one accountable team.",
+        },
+        {
+          title: "HMS and ERP depth",
+          description:
+            "Hospital, clinic, school, and retail systems are a core practice, not a side menu. Local payment and bilingual workflow experience comes with the build.",
+        },
+        {
+          title: "Senior-only staffing",
+          description:
+            "Engineers, designers, and QA who can sit with Pakistani operators, understand counter reality, and still write maintainable code.",
+        },
+        {
+          title: "Fixed scope when you need it",
+          description:
+            "Clear milestones and written out-of-scope lists so PKR budgets stay predictable for founders and hospital admins alike.",
+        },
+        {
+          title: "On-ground and remote hybrids",
+          description:
+            "Workshops in Islamabad or major cities when needed, with remote sprint cadence that still respects local business hours.",
+        },
+        {
+          title: "Support after go-live",
+          description:
+            "The team that launched your HMS or ERP stays available for the pharmacy edge case and the festival sales spike.",
+        },
+      ],
+    },
+    process: {
+      overlineText: "How we work in Pakistan",
+      title: "Our delivery process",
+      titleItalic: "built for Pakistani operators",
+      description:
+        "A clear path from discovery to launch for founders and administrators hiring a software house that understands Pakistani clinics, campuses, and retail floors.",
+      ctaLabel: "Start your Pakistan project",
+      steps: [
+        {
+          step: "01",
+          shortLabel: "Discover",
+          title: "On-site and remote discovery",
+          description:
+            "We map counter workflows, paper registers, WhatsApp handoffs, and success metrics with clinic, school, or retail stakeholders before any build starts.",
+        },
+        {
+          step: "02",
+          shortLabel: "Architecture",
+          title: "Local-fit architecture and pricing",
+          description:
+            "Stack, JazzCash or bank integrations, Urdu UI needs, timeline, and PKR-friendly milestones are agreed in writing up front.",
+        },
+        {
+          step: "03",
+          shortLabel: "Design",
+          title: "Operator-first prototypes",
+          description:
+            "Wireframes are reviewed with the people who will click them all day: reception, cashiers, teachers, and branch managers.",
+        },
+        {
+          step: "04",
+          shortLabel: "Build",
+          title: "Sprints with live demos",
+          description:
+            "Two-week increments your Pakistan stakeholders can steer, with working modules instead of progress theater.",
+        },
+        {
+          step: "05",
+          shortLabel: "QA",
+          title: "Role and peak-hour testing",
+          description:
+            "We test doctor portals, fee counters, and checkout paths under realistic load before the first city go-live.",
+        },
+        {
+          step: "06",
+          shortLabel: "Launch",
+          title: "City rollout and support",
+          description:
+            "Training, handover docs, and maintenance options so Islamabad pilots expand cleanly to other Pakistani cities.",
+        },
+      ],
+    },
+    projects: {
+      overlineText: "Recent projects",
+      title: "Recent projects from Pakistan",
+      description:
+        "HMS, school ERP, pharmacy inventory, retail POS, cash control, and learning platforms that mirror how Pakistani institutions actually run.",
+      slugs: [
+        "hospital-management-system",
+        "ai-school-erp",
+        "medicine-inventory-system",
+        "royal-pos",
+        "cash-management-system",
+        "e-learning-portal",
+      ],
+    },
+  },
+
+  "United States": {
+    services: {
+      overlineText: "Services in the United States",
+      title: "Software Development Services for US Product Teams",
+      description:
+        "SaaS platforms, workflow software, and scalable web systems for US founders and mid-market operators who want senior product engineering without agency bloat.",
+      order: orderFirst([
+        "Software Development",
+        "Web Development",
+        "Artificial Intelligence",
+        "Cloud & DevOps",
+        "UI/UX Design",
+        "Testing & QA",
+      ]),
+      tags: {
+        "Software Development": "SaaS · Product",
+        "Web Development": "Product web",
+        "Cloud & DevOps": "AWS-ready",
+      },
+      descriptions: {
+        "Software Development":
+          "Product platforms and internal tools for US SaaS teams that need roadmap clarity, maintainable architecture, and ship cadence investors can trust.",
+        "Mobile App Development":
+          "Customer and field apps that plug into your existing US product stack, with analytics and release discipline suitable for App Store review cycles.",
+        "Web Development":
+          "Next-generation web apps optimized for conversion, multi-tenant SaaS patterns, and the performance budgets US buyers expect.",
+        "Ecommerce Development":
+          "Subscription and catalog experiences with Stripe-friendly checkout flows and ops tooling for US fulfillment realities.",
+        "UI/UX Design":
+          "Product UX that survives buyer demos and daily operator use, with design systems your US engineers can extend without a redesign every quarter.",
+        "Artificial Intelligence":
+          "Feature-level AI inside US products: assistive workflows, document intake, and scoring that product managers can explain on a sales call.",
+        "Machine Learning":
+          "Models wired to your warehouse or product events so growth and ops teams prioritize work with measurable lift, not vanity accuracy.",
+        "Automation Services":
+          "Back-office and customer-success automations that cut ticket volume between Slack, CRM, and billing tools common in US stacks.",
+        "Cloud & DevOps":
+          "AWS-oriented pipelines, staging discipline, and observability so US releases stay reversible and auditable.",
+        "Data & Business Intelligence":
+          "Product and revenue dashboards for founders and RevOps who are tired of conflicting Looker, Sheets, and warehouse exports.",
+        Cybersecurity:
+          "Practical hardening and access reviews for US products handling PII, PHI-adjacent workflows, or payment metadata.",
+        "Enterprise Solutions":
+          "CRM and ops platforms that integrate with Salesforce, HubSpot, or custom US mid-market stacks without forcing a rip-and-replace.",
+        "Blockchain Development":
+          "Ledger features only when US compliance or multi-party audit needs justify the complexity.",
+        "Healthcare Software Development":
+          "Scheduling, charting adjuncts, and clinic ops software respectful of US care-team workflows and privacy expectations.",
+        "AR/VR Development":
+          "Training and spatial demos for US industrial and education buyers when immersion is part of the product thesis.",
+        "Testing & QA":
+          "Regression and release gates aligned to US sprint rituals so demos never ship on hope.",
+      },
+    },
+    whyChoose: {
+      overlineText: "Why choose us",
+      title: "Why US product teams work with us",
+      description:
+        "Senior product engineering for SaaS and mid-market operators who want demos, milestones, and ownership, not a black-box offshore queue.",
+      values: [
+        {
+          title: "Product-minded delivery",
+          description:
+            "We staff like an embedded product team: discovery, architecture, UX, and QA that speak roadmap language with US founders and PMs.",
+        },
+        {
+          title: "SaaS and workflow focus",
+          description:
+            "Multi-tenant patterns, subscription ops, and internal tools are core work, not a generic custom-software brochure claim.",
+        },
+        {
+          title: "USD-clear commercial terms",
+          description:
+            "Fixed-price when requirements are stable, or time-and-materials with burn visibility when the US product is still finding shape.",
+        },
+        {
+          title: "Overlap-friendly collaboration",
+          description:
+            "English-first standups and written decisions that respect Eastern and Pacific working windows without overnight surprises.",
+        },
+        {
+          title: "No junior bait-and-switch",
+          description:
+            "The seniors who scoped the engagement stay on the critical path through launch, not just the sales call.",
+        },
+        {
+          title: "Launch and iterate",
+          description:
+            "Post-launch capacity for the features your US users request once real usage data shows up.",
+        },
+      ],
+    },
+    process: {
+      overlineText: "How we work with United States teams",
+      title: "Delivery process for US projects",
+      titleItalic: "demo-driven and roadmap-aware",
+      description:
+        "Discovery through launch for US stakeholders who want sprint demos, explicit risk, and architecture that survives the next funding round.",
+      ctaLabel: "Start your USA project",
+      steps: [
+        {
+          step: "01",
+          shortLabel: "Discover",
+          title: "Product discovery and success metrics",
+          description:
+            "We align on ICP, workflow pain, and North Star metrics with US founders or ops leads before recommending MVP vs modernization.",
+        },
+        {
+          step: "02",
+          shortLabel: "Architecture",
+          title: "Scalable architecture and estimate",
+          description:
+            "Multi-tenant choices, integrations (Stripe, CRM, auth), timeline, and budget are documented for technical and commercial stakeholders.",
+        },
+        {
+          step: "03",
+          shortLabel: "Design",
+          title: "Prototype for buyers and users",
+          description:
+            "Clickable flows validated with the people who buy the product and the people who live in it daily.",
+        },
+        {
+          step: "04",
+          shortLabel: "Build",
+          title: "Two-week product sprints",
+          description:
+            "Working software every sprint, with backlog hygiene your US PM can defend in a board or customer meeting.",
+        },
+        {
+          step: "05",
+          shortLabel: "QA",
+          title: "Release-quality gates",
+          description:
+            "Automated and manual checks on the paths that break SaaS trust: auth, billing edges, permissions, and peak load.",
+        },
+        {
+          step: "06",
+          shortLabel: "Launch",
+          title: "Ship, hand over, iterate",
+          description:
+            "Runbooks, monitoring basics, and a maintenance lane so US go-live is the start of learning, not the end of attention.",
+        },
+      ],
+    },
+    projects: {
+      overlineText: "Recent projects",
+      title: "Projects relevant to US product buyers",
+      description:
+        "CRM, healthcare ops, HR, finance control, learning, and retail systems that map to SaaS and mid-market product patterns US teams recognize.",
+      slugs: [
+        "prime-lead-crm",
+        "hospital-management-system",
+        "hr-management-software",
+        "cash-management-system",
+        "e-learning-portal",
+        "royal-pos",
+      ],
+    },
+  },
+
+  Canada: {
+    services: {
+      overlineText: "Services in Canada",
+      title: "Software Development Services for Canadian Businesses",
+      description:
+        "Custom platforms, automation, and operational software for Canadian product companies and service businesses modernizing how they deliver and report.",
+      order: orderFirst([
+        "Software Development",
+        "Automation Services",
+        "Cloud & DevOps",
+        "Data & Business Intelligence",
+        "Healthcare Software Development",
+        "Web Development",
+      ]),
+      tags: {
+        "Automation Services": "Ops modernization",
+        "Data & Business Intelligence": "Reporting",
+        "Healthcare Software Development": "Clinic ops",
+      },
+      descriptions: {
+        "Software Development":
+          "Bespoke platforms for Canadian service firms and product teams that need bilingual-ready architecture options and sober operational scope.",
+        "Mobile App Development":
+          "Field and customer apps for Canadian provinces where staff move between sites and need reliable offline-tolerant workflows.",
+        "Web Development":
+          "Accessible, performant web products for Canadian buyers who care about clarity, privacy posture, and long-term maintainability.",
+        "Ecommerce Development":
+          "Commerce builds aware of Canadian shipping zones, tax display expectations, and payment habits beyond a single gateway.",
+        "UI/UX Design":
+          "Calm, usable interfaces for Canadian operators in healthcare, education, and professional services who reject cluttered dashboards.",
+        "Artificial Intelligence":
+          "Assistive AI for document and scheduling load in Canadian offices where staffing is tight and accuracy still matters.",
+        "Machine Learning":
+          "Demand and risk models that respect the data quality of mid-market Canadian ops systems rather than assuming perfect warehouses.",
+        "Automation Services":
+          "Workflow automation that replaces email chains between Canadian branches, clinics, or client-success teams.",
+        "Cloud & DevOps":
+          "Cloud setups with clear residency and backup conversations when Canadian stakeholders ask where data lives.",
+        "Data & Business Intelligence":
+          "Unified reporting for founders who operate across provinces and are tired of three different spreadsheet truths.",
+        Cybersecurity:
+          "Hardening and access reviews aligned to the privacy expectations Canadian clients raise in procurement.",
+        "Enterprise Solutions":
+          "CRM and ERP layers for Canadian organizations that need role clarity across departments without enterprise bloat.",
+        "Blockchain Development":
+          "Shared-record designs only when Canadian supply or credential use cases require them.",
+        "Healthcare Software Development":
+          "Clinic scheduling, records adjuncts, and billing-adjacent workflows designed with Canadian care-team realities in mind.",
+        "AR/VR Development":
+          "Training experiences for Canadian industrial and education teams when practice-in-simulation reduces live risk.",
+        "Testing & QA":
+          "Cross-device and role QA so bilingual or multi-province rollouts do not surprise you in production.",
+      },
+    },
+    whyChoose: {
+      overlineText: "Why choose us",
+      title: "Why Canadian businesses work with us",
+      description:
+        "Digital transformation and SaaS delivery with clear scope, privacy-aware practices, and seniors who stay on the engagement.",
+      values: [
+        {
+          title: "Ops and product balance",
+          description:
+            "We build for Canadian companies that need both customer-facing product quality and back-office reliability in the same roadmap.",
+        },
+        {
+          title: "Privacy-aware defaults",
+          description:
+            "Access control, least privilege, and clear data-handling conversations when Canadian buyers ask procurement questions early.",
+        },
+        {
+          title: "CAD-friendly commercial clarity",
+          description:
+            "Written milestones and change control so finance teams in Toronto, Vancouver, or Calgary can forecast without drama.",
+        },
+        {
+          title: "Overlap with Canadian hours",
+          description:
+            "Standups and written updates that fit Eastern and Pacific schedules without forcing midnight decisions.",
+        },
+        {
+          title: "Senior continuity",
+          description:
+            "Named engineers and designers from kickoff through maintenance, not a rotating cast after the contract is signed.",
+        },
+        {
+          title: "Modernization without theater",
+          description:
+            "We replace fragile tools with systems staff will use, not a transformation deck that never reaches production.",
+        },
+      ],
+    },
+    process: {
+      overlineText: "How we work with Canada",
+      title: "Delivery process for Canadian projects",
+      titleItalic: "clear, calm, and auditable",
+      description:
+        "A delivery path for Canadian product and service leaders who want discovery discipline, privacy questions answered early, and demos they can show internally.",
+      ctaLabel: "Start your Canada project",
+      steps: [
+        {
+          step: "01",
+          shortLabel: "Discover",
+          title: "Workflow and compliance discovery",
+          description:
+            "We document how Canadian teams actually operate, including privacy constraints and success metrics, before proposing architecture.",
+        },
+        {
+          step: "02",
+          shortLabel: "Plan",
+          title: "Architecture and commercial plan",
+          description:
+            "Hosting posture, integrations, timeline, and cost are agreed so technical and finance stakeholders share one plan.",
+        },
+        {
+          step: "03",
+          shortLabel: "Design",
+          title: "Inclusive, practical UX",
+          description:
+            "Prototypes reviewed with operators and managers until the flow fits bilingual or multi-site realities where they apply.",
+        },
+        {
+          step: "04",
+          shortLabel: "Build",
+          title: "Visible sprint delivery",
+          description:
+            "Two-week demos your Canadian stakeholders can critique, with backlog decisions written down.",
+        },
+        {
+          step: "05",
+          shortLabel: "Assure",
+          title: "QA before provincial rollout",
+          description:
+            "Role, device, and permissions testing so a Toronto pilot does not break the Vancouver week-one experience.",
+        },
+        {
+          step: "06",
+          shortLabel: "Support",
+          title: "Launch and steady support",
+          description:
+            "Handover, training, and maintenance options that keep Canadian operations stable after go-live.",
+        },
+      ],
+    },
+    projects: {
+      overlineText: "Recent projects",
+      title: "Projects relevant to Canadian buyers",
+      description:
+        "Education, learning, travel, finance, HR, and healthcare systems that mirror the modernization work Canadian service and product teams commission.",
+      slugs: [
+        "ai-school-erp",
+        "e-learning-portal",
+        "travel-and-tour-website",
+        "cash-management-system",
+        "hr-management-software",
+        "hospital-management-system",
+      ],
+    },
+  },
+
+  Australia: {
+    services: {
+      overlineText: "Services in Australia",
+      title: "Software Development Services for Australian Operators",
+      description:
+        "Automation and ops platforms for Australian service businesses and digital-first teams who need fewer manual steps across hospitality, retail, and field operations.",
+      order: orderFirst([
+        "Automation Services",
+        "Enterprise Solutions",
+        "Mobile App Development",
+        "Ecommerce Development",
+        "Cloud & DevOps",
+        "Healthcare Software Development",
+      ]),
+      tags: {
+        "Automation Services": "Ops · Field",
+        "Ecommerce Development": "Retail · Payments",
+        "Enterprise Solutions": "Multi-site",
+      },
+      descriptions: {
+        "Software Development":
+          "Practical systems for Australian operators who need rostering, inventory, and customer workflows to stop living in shared inboxes.",
+        "Mobile App Development":
+          "Field and venue apps for Australian teams working across sites, with offline-tolerant patterns for patchy connectivity.",
+        "Web Development":
+          "Reliable web platforms for Australian service brands that need speed on mobile and clear booking or ops journeys.",
+        "Ecommerce Development":
+          "Retail and hospitality commerce with Australian payment and shipping expectations, plus inventory that survives multi-site reality.",
+        "UI/UX Design":
+          "Straightforward interfaces for busy Australian floor staff who will abandon any tool that slows a service rush.",
+        "Artificial Intelligence":
+          "Assistive AI for roster hints, intake sorting, and demand signals where Australian venues and clinics feel staffing pressure.",
+        "Machine Learning":
+          "Forecasting for perishable stock, bookings, and labour demand using the operational data Australian teams already capture.",
+        "Automation Services":
+          "Approvals, alerts, and system handoffs that cut double entry between POS, rostering, and accounting tools.",
+        "Cloud & DevOps":
+          "Hosting and release discipline suited to Australian peak periods, from tourism seasons to retail campaigns.",
+        "Data & Business Intelligence":
+          "Site and region dashboards so Australian owners see utilisation and margin without waiting on weekly manual packs.",
+        Cybersecurity:
+          "Access control and hardening for customer and payment data under the expectations Australian buyers raise in vendor reviews.",
+        "Enterprise Solutions":
+          "Multi-site ERP and CRM patterns for Australian groups running venues, clinics, or warehouses under one brand.",
+        "Blockchain Development":
+          "Selective ledger use when Australian supply-chain audit needs are real.",
+        "Healthcare Software Development":
+          "Clinic and allied-health ops software focused on scheduling, records adjuncts, and less front-desk friction.",
+        "AR/VR Development":
+          "Training simulations for Australian industrial and safety contexts when practice reduces live-site risk.",
+        "Testing & QA":
+          "Peak-path and device testing so Friday night service or Monday clinic open is not when defects appear.",
+      },
+    },
+    whyChoose: {
+      overlineText: "Why choose us",
+      title: "Why Australian businesses work with us",
+      description:
+        "Automation-first delivery for operators who measure success in fewer manual hours, cleaner handoffs, and systems staff will actually use.",
+      values: [
+        {
+          title: "Built for multi-site ops",
+          description:
+            "We design for Australian groups running venues, clinics, or warehouses across cities, not single-desk demos.",
+        },
+        {
+          title: "Automation over admin theater",
+          description:
+            "Integrations and workflow rules come before vanity dashboards that nobody opens during a rush.",
+        },
+        {
+          title: "AUD-clear scoping",
+          description:
+            "Milestones and change control written so Australian finance leads can approve without decoding agency fluff.",
+        },
+        {
+          title: "AEST-friendly collaboration",
+          description:
+            "Call windows and written updates that respect Australian business days while keeping delivery moving.",
+        },
+        {
+          title: "Floor-tested UX",
+          description:
+            "Prototypes reviewed with the people taking orders, checking guests in, or moving stock, not only executives.",
+        },
+        {
+          title: "Steady after launch",
+          description:
+            "Support through peak seasons when Australian operators cannot afford a fragile go-live.",
+        },
+      ],
+    },
+    process: {
+      overlineText: "How we work with Australia",
+      title: "Delivery process for Australian projects",
+      titleItalic: "ops-first and peak-aware",
+      description:
+        "Discovery through launch for Australian stakeholders who care about roster reality, payment reliability, and demos that survive a busy Friday.",
+      ctaLabel: "Start your Australia project",
+      steps: [
+        {
+          step: "01",
+          shortLabel: "Discover",
+          title: "Operations discovery on the floor",
+          description:
+            "We map how Australian venues, clinics, or warehouses actually move work during peak hours before proposing automation.",
+        },
+        {
+          step: "02",
+          shortLabel: "Plan",
+          title: "Integrations and commercial plan",
+          description:
+            "POS, payments, rostering, timeline, and cost are locked in writing so surprises do not land mid-season.",
+        },
+        {
+          step: "03",
+          shortLabel: "Design",
+          title: "Staff-speed prototypes",
+          description:
+            "Flows validated with floor and admin staff until tap paths are short enough for real service pressure.",
+        },
+        {
+          step: "04",
+          shortLabel: "Build",
+          title: "Sprint delivery with live demos",
+          description:
+            "Working increments Australian stakeholders can trial on a quiet day before trusting a peak weekend.",
+        },
+        {
+          step: "05",
+          shortLabel: "Assure",
+          title: "Peak-path QA",
+          description:
+            "We test the booking, checkout, and roster paths that break when volume spikes.",
+        },
+        {
+          step: "06",
+          shortLabel: "Launch",
+          title: "Go-live with seasonal support",
+          description:
+            "Training and hypercare options timed around Australian peak trading or tourism windows.",
+        },
+      ],
+    },
+    projects: {
+      overlineText: "Recent projects",
+      title: "Projects relevant to Australian operators",
+      description:
+        "Hotel, restaurant, travel, retail POS, cash control, and pharmacy inventory systems aligned to Australian hospitality and multi-site ops.",
+      slugs: [
+        "hotel-management-system",
+        "restaurant-pos",
+        "travel-and-tours-management",
+        "royal-pos",
+        "cash-management-system",
+        "medicine-inventory-system",
+      ],
+    },
+  },
+
+  "United Kingdom": {
+    services: {
+      overlineText: "Services in the United Kingdom",
+      title: "Software Development Services for UK B2B Teams",
+      description:
+        "B2B SaaS and regulated-operator software for UK founders and professional services teams who need clear auditability, GDPR-aware design, and senior delivery.",
+      order: orderFirst([
+        "Software Development",
+        "Cybersecurity",
+        "Enterprise Solutions",
+        "Data & Business Intelligence",
+        "Cloud & DevOps",
+        "Testing & QA",
+      ]),
+      tags: {
+        Cybersecurity: "GDPR-aware",
+        "Software Development": "B2B SaaS",
+        "Enterprise Solutions": "Regulated ops",
+      },
+      descriptions: {
+        "Software Development":
+          "B2B platforms for UK SaaS and professional services teams that need contractual clarity, maintainable code, and features procurement can defend.",
+        "Mobile App Development":
+          "Client and field apps for UK service firms with secure auth patterns and offline-tolerant work where sites demand it.",
+        "Web Development":
+          "Web products with accessibility and performance expectations common in UK enterprise and public-adjacent buying cycles.",
+        "Ecommerce Development":
+          "Commerce and billing experiences for UK sellers who need VAT-aware display, dependable checkout, and sober ops tooling.",
+        "UI/UX Design":
+          "Interfaces that survive UK buyer demos and day-two admin use, with clarity favored over decorative complexity.",
+        "Artificial Intelligence":
+          "Assistive AI with documented limitations for UK buyers who will ask how decisions are made before signing.",
+        "Machine Learning":
+          "Scoring and forecasting models that plug into UK ops data with explainability suitable for internal audit questions.",
+        "Automation Services":
+          "Controlled automations across CRM, billing, and support tools with human checkpoints where UK process owners require them.",
+        "Cloud & DevOps":
+          "Environments and release gates that support UK change-management habits and rollback expectations.",
+        "Data & Business Intelligence":
+          "Reporting UK leadership can trust in board packs without reconciling three conflicting exports the night before.",
+        Cybersecurity:
+          "GDPR-aware access control, retention conversations, and hardening for products processing UK personal data.",
+        "Enterprise Solutions":
+          "CRM and internal platforms for UK firms juggling client confidentiality, roles, and multi-office delivery.",
+        "Blockchain Development":
+          "Audit-oriented ledger features only when UK multi-party trust problems need them.",
+        "Healthcare Software Development":
+          "Care-ops software respectful of UK clinic workflows and the privacy bar healthcare buyers set.",
+        "AR/VR Development":
+          "Training experiences for UK industrial and education contexts when simulation reduces live risk.",
+        "Testing & QA":
+          "Regression discipline aligned to UK release boards that will not accept hope as a test strategy.",
+      },
+    },
+    whyChoose: {
+      overlineText: "Why choose us",
+      title: "Why UK businesses work with us",
+      description:
+        "Senior delivery for B2B SaaS and regulated operators who need GDPR-aware design, written scope, and people who can answer procurement questions.",
+      values: [
+        {
+          title: "Regulated-buyer fluency",
+          description:
+            "We expect UK security questionnaires, DPIA conversations, and access reviews, and we design with those constraints visible from day one.",
+        },
+        {
+          title: "B2B SaaS craft",
+          description:
+            "Multi-tenant patterns, role models, and audit logs are treated as product requirements, not afterthoughts.",
+        },
+        {
+          title: "GBP-clear commercials",
+          description:
+            "Fixed phases and change control that UK finance and legal can read without translating agency jargon.",
+        },
+        {
+          title: "UK-hours collaboration",
+          description:
+            "Overlap with London time for decisions that should not wait overnight, plus written records for everything else.",
+        },
+        {
+          title: "Named senior ownership",
+          description:
+            "The people who answer the RFP stay accountable through build and launch.",
+        },
+        {
+          title: "Evidence over slogans",
+          description:
+            "Demos, test notes, and runbooks so UK stakeholders can show governance they are doing real diligence.",
+        },
+      ],
+    },
+    process: {
+      overlineText: "How we work with the United Kingdom",
+      title: "Delivery process for UK projects",
+      titleItalic: "audit-ready and milestone-clear",
+      description:
+        "A path for UK B2B and regulated buyers who want discovery notes, security conversations early, and sprint evidence they can file.",
+      ctaLabel: "Start your UK project",
+      steps: [
+        {
+          step: "01",
+          shortLabel: "Discover",
+          title: "Requirements and risk discovery",
+          description:
+            "We capture user journeys, personal-data touchpoints, and success metrics UK stakeholders will later defend in procurement.",
+        },
+        {
+          step: "02",
+          shortLabel: "Plan",
+          title: "Architecture and controls plan",
+          description:
+            "Hosting, auth, retention, integrations, timeline, and cost are documented before build spend ramps.",
+        },
+        {
+          step: "03",
+          shortLabel: "Design",
+          title: "Accessible, reviewable UX",
+          description:
+            "Prototypes checked with operators and compliance-minded reviewers until flows are clear and least-privilege ready.",
+        },
+        {
+          step: "04",
+          shortLabel: "Build",
+          title: "Evidence-producing sprints",
+          description:
+            "Working software plus written sprint outcomes UK PMs can share with sponsors without theatre.",
+        },
+        {
+          step: "05",
+          shortLabel: "Assure",
+          title: "Security and regression QA",
+          description:
+            "Permission, data, and peak-path testing before go-live, with defects tracked to closure.",
+        },
+        {
+          step: "06",
+          shortLabel: "Launch",
+          title: "Controlled launch and support",
+          description:
+            "Runbooks, access handover, and maintenance options aligned to UK change windows.",
+        },
+      ],
+    },
+    projects: {
+      overlineText: "Recent projects",
+      title: "Projects relevant to UK B2B buyers",
+      description:
+        "CRM, finance control, HR, healthcare ops, learning, and travel systems that map to UK professional services and SaaS buying patterns.",
+      slugs: [
+        "prime-lead-crm",
+        "cash-management-system",
+        "hr-management-software",
+        "hospital-management-system",
+        "e-learning-portal",
+        "travel-and-tour-website",
+      ],
+    },
+  },
+
+  "United Arab Emirates": {
+    services: {
+      overlineText: "Services in the United Arab Emirates",
+      title: "Software Development Services for UAE Businesses",
+      description:
+        "CRM, ERP, mobile apps, and business automation for UAE growth teams in retail, hospitality, logistics, and enterprise operations across Dubai and beyond.",
+      order: orderFirst([
+        "Enterprise Solutions",
+        "Mobile App Development",
+        "Ecommerce Development",
+        "Automation Services",
+        "Software Development",
+        "Cloud & DevOps",
+      ]),
+      tags: {
+        "Enterprise Solutions": "CRM · ERP",
+        "Ecommerce Development": "Retail · Gulf",
+        "Mobile App Development": "Field · Guest",
+      },
+      descriptions: {
+        "Software Development":
+          "Custom platforms for UAE operators who need CRM, ERP, and customer journeys that keep up with fast retail and hospitality growth.",
+        "Mobile App Development":
+          "Guest, driver, and staff apps for UAE businesses coordinating work across malls, warehouses, and multi-emirate sites.",
+        "Web Development":
+          "High-performance web products for UAE brands that sell and operate in bilingual environments and expect polished presentation.",
+        "Ecommerce Development":
+          "Retail and marketplace builds aware of Gulf payment habits, multi-warehouse stock, and campaign-driven traffic spikes.",
+        "UI/UX Design":
+          "Premium, clear interfaces for UAE customer-facing journeys and the ops screens that keep those journeys stocked and staffed.",
+        "Artificial Intelligence":
+          "Assistive AI for inventory hints, guest messaging triage, and document intake where UAE teams feel volume pressure.",
+        "Machine Learning":
+          "Demand and risk models for UAE retail and logistics patterns that swing hard around seasons and events.",
+        "Automation Services":
+          "Approval and notification flows that connect CRM, warehouse, and finance teams across emirates without WhatsApp chaos.",
+        "Cloud & DevOps":
+          "Release and hosting discipline for UAE products that must stay up through launches, sales, and peak travel periods.",
+        "Data & Business Intelligence":
+          "Executive and branch dashboards for UAE groups comparing site performance without waiting on manual consolidations.",
+        Cybersecurity:
+          "Access control and hardening for customer and payment data under the vendor expectations UAE enterprises set.",
+        "Enterprise Solutions":
+          "CRM and ERP cores for UAE retailers, hospitality groups, and logistics operators scaling past spreadsheet control.",
+        "Blockchain Development":
+          "Shared-record designs when UAE supply or multi-party audit needs are explicit.",
+        "Healthcare Software Development":
+          "Clinic and hospital ops software for UAE care providers who need scheduling, billing, and pharmacy coordination.",
+        "AR/VR Development":
+          "Showroom and training experiences for UAE retail and industrial buyers when immersion supports sales or safety.",
+        "Testing & QA":
+          "Campaign and peak-path testing so Dubai launch weeks are not the first real load test.",
+      },
+    },
+    whyChoose: {
+      overlineText: "Why choose us",
+      title: "Why UAE businesses work with us",
+      description:
+        "CRM, ERP, and automation delivery for growth teams who need bilingual-ready experiences, multi-site ops, and seniors who move at UAE pace.",
+      values: [
+        {
+          title: "CRM and ERP that fit Gulf ops",
+          description:
+            "We build around retail, hospitality, and logistics realities across emirates, not generic Western templates pasted onto Dubai.",
+        },
+        {
+          title: "Bilingual-ready product thinking",
+          description:
+            "Arabic and English journey needs are considered in UX and content structure when your UAE customers expect both.",
+        },
+        {
+          title: "AED-clear commercial terms",
+          description:
+            "Milestones and change control written for UAE finance approvers who move quickly but still want a paper trail.",
+        },
+        {
+          title: "Gulf-hours collaboration",
+          description:
+            "Overlap with UAE business days for decisions that unblock vendors, malls, and launch calendars.",
+        },
+        {
+          title: "Launch-week reliability",
+          description:
+            "QA and hypercare options aimed at the campaign and tourism peaks that define UAE trading.",
+        },
+        {
+          title: "One accountable senior team",
+          description:
+            "Named ownership from discovery through support so UAE stakeholders are not bounced between vendors.",
+        },
+      ],
+    },
+    process: {
+      overlineText: "How we work with the United Arab Emirates",
+      title: "Delivery process for UAE projects",
+      titleItalic: "fast, clear, and launch-ready",
+      description:
+        "Discovery through launch for UAE growth teams who need CRM/ERP clarity, bilingual UX checks, and demos that survive campaign week.",
+      ctaLabel: "Start your UAE project",
+      steps: [
+        {
+          step: "01",
+          shortLabel: "Discover",
+          title: "Growth and ops discovery",
+          description:
+            "We map how UAE retail, hospitality, or logistics teams sell, stock, and serve across sites before proposing CRM or ERP scope.",
+        },
+        {
+          step: "02",
+          shortLabel: "Plan",
+          title: "Architecture and launch plan",
+          description:
+            "Integrations, bilingual needs, timeline, and cost are agreed around the real launch calendar, not an abstract roadmap.",
+        },
+        {
+          step: "03",
+          shortLabel: "Design",
+          title: "Customer and ops prototypes",
+          description:
+            "Flows reviewed for guest-facing polish and back-office speed until both sides of the UAE operation work.",
+        },
+        {
+          step: "04",
+          shortLabel: "Build",
+          title: "Sprint delivery with stakeholder demos",
+          description:
+            "Working increments UAE decision-makers can trial before committing a campaign or multi-site rollout.",
+        },
+        {
+          step: "05",
+          shortLabel: "Assure",
+          title: "Campaign-path QA",
+          description:
+            "We pressure-test checkout, booking, and inventory paths that fail first when Gulf traffic spikes.",
+        },
+        {
+          step: "06",
+          shortLabel: "Launch",
+          title: "Go-live with hypercare",
+          description:
+            "Training, monitoring habits, and support coverage through the UAE launch window and the weeks after.",
+        },
+      ],
+    },
+    projects: {
+      overlineText: "Recent projects",
+      title: "Projects relevant to UAE growth teams",
+      description:
+        "Hospitality, travel, retail POS, healthcare, CRM, and restaurant systems that mirror CRM/ERP and guest-ops work common in the UAE.",
+      slugs: [
+        "hotel-management-system",
+        "travel-and-tours-management",
+        "royal-pos",
+        "hospital-management-system",
+        "prime-lead-crm",
+        "restaurant-pos",
+      ],
+    },
+  },
+};
+
+const COUNTRY_KEYS: LocationMarketKey[] = [
+  "Pakistan",
+  "United States",
+  "Canada",
+  "Australia",
+  "United Kingdom",
+  "United Arab Emirates",
+];
+
+/** Map any place label (country or Pakistan city) to a market copy key. */
+export function resolveLocationMarketKey(
+  place: string,
+  options?: { isPakistan?: boolean; hub?: boolean }
+): LocationMarketKey {
+  if (options?.hub) return "hub";
+  if (options?.isPakistan) return "Pakistan";
+  if ((COUNTRY_KEYS as string[]).includes(place)) return place as LocationMarketKey;
+  // Pakistan city pages and unknown places inherit Pakistan market substance
+  return "Pakistan";
+}
+
+export function getLocationMarketCopy(
+  place: string,
+  options?: { isPakistan?: boolean; hub?: boolean }
+): MarketSectionCopy {
+  return LOCATION_MARKET_COPY[resolveLocationMarketKey(place, options)];
+}
+
 export type LocationCity = {
   slug: string;
   label: string;
@@ -774,46 +2002,17 @@ function rotate<T>(items: T[], place: string): T[] {
   return [...items.slice(offset), ...items.slice(0, offset)];
 }
 
-function serviceDescription(title: string, place: string, focus: PlaceFocus): string {
-  void place;
-  const map: Record<string, string> = {
-    "Software Development":
-      `Custom software scoped around ${focus.serviceAngle}, with senior engineering from discovery through launch.`,
-    "Mobile App Development":
-      "iOS and Android apps for field teams, counters, and customers who need reliable workflows on the go.",
-    "Web Development":
-      "Modern web platforms that are fast, maintainable, and built for the browsers and devices your staff actually use.",
-    "Ecommerce Development":
-      "Online stores and marketplaces with catalog control, local payment options, and dependable order operations.",
-    "UI/UX Design":
-      "Interfaces clear enough for busy operators and polished enough to build trust with end users.",
-    "Artificial Intelligence":
-      "Practical AI features for document intake, forecasting, and automation where it saves real hours.",
-    "Machine Learning":
-      "ML models that help teams predict demand, flag risk, and prioritize work without black-box complexity.",
-    "Automation Services":
-      "Workflow automation for back-office approvals, notifications, and handoffs that used to live in chat and spreadsheets.",
-    "Cloud & DevOps":
-      "Cloud hosting and release pipelines so deploys stay safe and systems stay available during peak hours.",
-    "Data & Business Intelligence":
-      "Dashboards and reporting that give owners one trusted view of sales, stock, and performance.",
-    Cybersecurity:
-      "Security hardening for systems that handle customer, patient, or financial data, with practical access controls and reviews.",
-    "Enterprise Solutions":
-      "ERP, CRM, and internal platforms with role-based access for multi-department operations.",
-    "Blockchain Development":
-      "Selective blockchain builds where audit trails and shared ledgers create clear business value.",
-    "Healthcare Software Development":
-      "HMS and clinic software covering appointments, EMR, billing, and pharmacy in one practical flow.",
-    "AR/VR Development":
-      "Immersive experiences for training, product demos, and spatial workflows where AR/VR improves outcomes.",
-    "Testing & QA":
-      "QA and release testing so launches hold up across devices, roles, and peak traffic.",
-  };
-  return (
-    map[title] ??
-    `${title} delivered with the same senior standards we use on every engagement.`
-  );
+function serviceDescription(
+  title: string,
+  place: string,
+  focus: PlaceFocus,
+  options?: { isPakistan?: boolean; hub?: boolean }
+): string {
+  const market = getLocationMarketCopy(place, options);
+  const fromMarket =
+    market.services.descriptions[title as keyof typeof market.services.descriptions];
+  if (fromMarket) return fromMarket;
+  return `${title} scoped around ${focus.serviceAngle}, with senior engineering from discovery through launch.`;
 }
 
 const COUNTRY_FOCUS: Record<string, PlaceFocus> = {
@@ -1190,55 +2389,25 @@ function industryDescription(industry: Industry, place: string, focus: PlaceFocu
   return `${industry.description} Scoped around ${focus.serviceAngle}.`;
 }
 
-function processStepDescription(
-  step: (typeof baseProcessSteps)[number],
+function processStepsForPlace(
   place: string,
-  focus: PlaceFocus
-): string {
-  void place;
-  const byStep: Record<string, string> = {
-    "01": `We map how ${focus.economy} actually work: users, constraints, and success metrics before any build starts.`,
-    "02": "Architecture and milestones stay explicit: stack choices, integrations, timeline, and cost agreed upfront.",
-    "03": "Wireframes and prototypes reviewed with your stakeholders until the flow feels right for staff and customers.",
-    "04": "Two-week sprints with demos your team can see and steer, so progress stays visible instead of disappearing into a black box.",
-    "05": "Functional, security, and device testing before go-live so operators are not debugging in production.",
-    "06": "Launch support, handover docs, and maintenance options so your system stays reliable after day one.",
-  };
-  return byStep[step.step] ?? `${step.description} Delivered with clear ownership through launch.`;
+  options?: { isPakistan?: boolean; hub?: boolean }
+): typeof baseProcessSteps {
+  const market = getLocationMarketCopy(place, options);
+  return market.process.steps.map((step) => ({
+    step: step.step,
+    shortLabel: step.shortLabel,
+    title: step.title,
+    description: step.description,
+  })) as typeof baseProcessSteps;
 }
 
-function whyChooseValues(place: string, focus: PlaceFocus): LocationWhyChooseContent["values"] {
-  return [
-    {
-      title: `Built for Businesses in ${place}`,
-      description: `We design around ${focus.economy}: ${focus.serviceAngle} that match real operations, not generic templates.`,
-    },
-    {
-      title: "Senior-only delivery",
-      description:
-        "Engagements are staffed with senior engineers, designers, and QA. No junior-only bait-and-switch after the contract.",
-    },
-    {
-      title: "Clear scope & pricing",
-      description:
-        "Fixed-price options when requirements are clear, with written out-of-scope lists so invoices stay predictable.",
-    },
-    {
-      title: "Local + remote collaboration",
-      description:
-        "English-first communication and timezone-friendly calls, whether you are on-site or coordinating remotely.",
-    },
-    {
-      title: "Post-launch accountability",
-      description:
-        "After go-live, we stay available for maintenance, iterations, and the issues that only show up in real operations.",
-    },
-    {
-      title: "Secure by default",
-      description:
-        "Access control, code review, and data-handling practices on every build that touches customer or operational data.",
-    },
-  ];
+function whyChooseValues(
+  place: string,
+  _focus: PlaceFocus,
+  options?: { isPakistan?: boolean; hub?: boolean }
+): LocationWhyChooseContent["values"] {
+  return getLocationMarketCopy(place, options).whyChoose.values;
 }
 
 function pickIndustries(place: string, focus: PlaceFocus): Industry[] {
@@ -1444,9 +2613,15 @@ function pickCaseStudies(place: string): CaseStudy[] {
 
 export function buildLocationSections(
   place: string,
-  options?: { isPakistan?: boolean }
+  options?: { isPakistan?: boolean; hub?: boolean }
 ): LocationPageSections {
-  const isPakistan = options?.isPakistan ?? place.toLowerCase() === "pakistan";
+  const isHub = Boolean(options?.hub);
+  const isPakistan =
+    !isHub && (options?.isPakistan ?? place.toLowerCase() === "pakistan");
+  const marketPlace = isHub ? "Pakistan" : isPakistan ? "Pakistan" : place;
+  const marketOpts = { isPakistan, hub: isHub };
+  const sectionMarket = getLocationMarketCopy(marketPlace, marketOpts);
+
   const focus = isPakistan
     ? {
         economy: "clinics, schools, retailers, and enterprises nationwide",
@@ -1462,100 +2637,82 @@ export function buildLocationSections(
       }
     : getFocus(place);
 
-  const placeLabel = isPakistan ? "Pakistan" : place;
-
-  const servicesTitles: Record<string, string> = {
-    Pakistan: "Software Development Services for Pakistani Businesses",
-    "United States": "Software Development Services for US Businesses",
-    Canada: "Software Development Services for Canadian Businesses",
-    Australia: "Software Development Services for Australian Businesses",
-    "United Kingdom": "Software Development Services for UK Businesses",
-    "United Arab Emirates": "Software Development Services for UAE Businesses",
-  };
+  const displayPlace = isPakistan ? "Pakistan" : place;
+  const serviceByTitle = new Map(baseServices.map((service) => [service.title, service]));
+  const serviceItems = sectionMarket.services.order
+    .map((title) => {
+      const service = serviceByTitle.get(title);
+      if (!service) return null;
+      return {
+        title: service.title,
+        tag: sectionMarket.services.tags?.[title] ?? service.tag,
+        accent: service.accent,
+        description: serviceDescription(title, marketPlace, focus, marketOpts),
+      };
+    })
+    .filter((item): item is NonNullable<typeof item> => item !== null);
 
   return {
     trust: {
-      ariaLabel: `Trust numbers for our software house in ${placeLabel}`,
+      ariaLabel: isHub
+        ? "Trust numbers for Next Software Development locations"
+        : `Trust numbers for our software house in ${displayPlace}`,
     },
     services: {
-      overlineText: isPakistan ? "Services across Pakistan" : `Services in ${placeLabel}`,
-      title:
-        servicesTitles[placeLabel] ??
-        `Software Development Services for ${placeLabel} Businesses`,
-      description: isPakistan
-        ? `From Islamabad to Karachi, we ship ${focus.serviceAngle} for ${focus.economy}.`
-        : `We deliver ${focus.serviceAngle} for ${focus.economy}.`,
-      items: baseServices.map((service) => ({
-        title: service.title,
-        tag: service.tag,
-        accent: service.accent,
-        description: serviceDescription(service.title, placeLabel, focus),
-      })),
+      overlineText: sectionMarket.services.overlineText,
+      title: sectionMarket.services.title,
+      description: sectionMarket.services.description,
+      items: serviceItems,
     },
     whyChoose: {
-      overlineText: "Why choose us",
-      title: isPakistan
-        ? "Why teams across Pakistan work with us"
-        : `Why businesses in ${placeLabel} work with us`,
-      description: isPakistan
-        ? "Differentiators that matter when you hire a nationwide software house, not a slide-deck agency."
-        : "Accountability from discovery through support, without the black-box delivery model.",
-      values: whyChooseValues(placeLabel, focus),
+      overlineText: sectionMarket.whyChoose.overlineText,
+      title: sectionMarket.whyChoose.title,
+      description: sectionMarket.whyChoose.description,
+      values: whyChooseValues(marketPlace, focus, marketOpts),
     },
     projects: {
-      overlineText: "Recent projects",
-      title: isPakistan
-        ? "Recent projects from Pakistan"
-        : `Recent projects relevant to ${placeLabel}`,
-      description: isPakistan
-        ? "Selected builds showing how we ship for Pakistani clinics, schools, retailers, and product teams."
-        : `Selected product work that mirrors the systems ${placeLabel} ${focus.economy} typically need.`,
+      overlineText: sectionMarket.projects.overlineText,
+      title: sectionMarket.projects.title,
+      description: sectionMarket.projects.description,
     },
     industries: {
-      overlineText: isPakistan ? "Industries nationwide" : `Industries in ${placeLabel}`,
+      overlineText: isPakistan ? "Industries nationwide" : `Industries in ${displayPlace}`,
       title: isPakistan
         ? "Industries we serve in Pakistan"
-        : `Industries we serve in ${placeLabel}`,
+        : `Industries we serve in ${displayPlace}`,
       description: isPakistan
         ? "All 15 sectors we support , healthcare, education, retail, manufacturing, finance, logistics, and more , with copy tailored to Pakistani workflows and growth."
-        : `All 15 industries we serve, with ${placeLabel}-specific software focus across healthcare, education, retail, technology, finance, logistics, and more.`,
-      items: pickIndustries(placeLabel, focus),
+        : `All 15 industries we serve, with ${displayPlace}-specific software focus across healthcare, education, retail, technology, finance, logistics, and more.`,
+      items: pickIndustries(displayPlace, focus),
     },
     tech: {
-      overlineText: isPakistan ? "Technology stack" : `${placeLabel} tech stack`,
+      overlineText: isPakistan ? "Technology stack" : `${displayPlace} tech stack`,
       title: "Built with Proven, Modern Tools",
       titleItalic: "Proven, Modern Tools",
       description: isPakistan
         ? `${baseTechIntro} Chosen for nationwide delivery reliability across Pakistani markets.`
-        : `We pick stacks that ${placeLabel} teams can maintain: modern, proven, and matched to ${focus.serviceAngle}.`,
+        : `We pick stacks that ${displayPlace} teams can maintain: modern, proven, and matched to ${focus.serviceAngle}.`,
       intro: isPakistan
         ? `${baseTechIntro} Applied consistently from capital projects to regional launches.`
-        : `Frontend, backend, mobile, database, and cloud choices for ${placeLabel} builds that need longevity, not fashion.`,
+        : `Frontend, backend, mobile, database, and cloud choices for ${displayPlace} builds that need longevity, not fashion.`,
     },
     process: {
-      overlineText: isPakistan ? "How we work in Pakistan" : `How we work with ${placeLabel}`,
-      title: isPakistan
-        ? "Our delivery process"
-        : `Delivery process for ${placeLabel} projects`,
-      titleItalic: "transparent, agile, and built around you",
-      description: isPakistan
-        ? "A clear path from discovery to launch for founders and operators hiring a Pakistan software house."
-        : `Discovery through launch for ${placeLabel} stakeholders who want demos, milestones, and no black-box delivery.`,
-      steps: baseProcessSteps.map((step) => ({
-        ...step,
-        description: processStepDescription(step, placeLabel, focus),
-      })),
-      ctaLabel: isPakistan ? "Start your Pakistan project" : "Start your project",
+      overlineText: sectionMarket.process.overlineText,
+      title: sectionMarket.process.title,
+      titleItalic: sectionMarket.process.titleItalic,
+      description: sectionMarket.process.description,
+      steps: processStepsForPlace(marketPlace, marketOpts),
+      ctaLabel: sectionMarket.process.ctaLabel,
     },
     caseStudies: {
       overlineText: "Case studies",
       title: isPakistan
         ? "Results from real engagements"
-        : `Case studies for ${placeLabel} buyers`,
+        : `Case studies for ${displayPlace} buyers`,
       description: isPakistan
         ? "Outcomes from clinics, schools, retailers, and product teams across Pakistan."
-        : `Outcome stories that help ${placeLabel} decision-makers see how similar systems go live.`,
-      items: pickCaseStudies(placeLabel),
+        : `Outcome stories that help ${displayPlace} decision-makers see how similar systems go live.`,
+      items: pickCaseStudies(displayPlace),
     },
     testimonials: {
       overlineText: "How we've helped businesses like yours",
@@ -1563,35 +2720,35 @@ export function buildLocationSections(
       titleItalic: "engagement",
       description: isPakistan
         ? "Illustrative composites based on project types we deliver across Pakistani cities, not attributed customer reviews."
-        : placeLabel === "United States" ||
-            placeLabel === "Canada" ||
-            placeLabel === "Australia" ||
-            placeLabel === "United Kingdom" ||
-            placeLabel === "United Arab Emirates"
-          ? `Illustrative composites based on project types we deliver for ${placeLabel} markets, not attributed customer reviews.`
-          : `An anonymized engagement example for ${placeLabel}, plus similar work in other Pakistani cities, not attributed customer reviews.`,
-      items: pickTestimonials(placeLabel),
+        : displayPlace === "United States" ||
+            displayPlace === "Canada" ||
+            displayPlace === "Australia" ||
+            displayPlace === "United Kingdom" ||
+            displayPlace === "United Arab Emirates"
+          ? `Illustrative composites based on project types we deliver for ${displayPlace} markets, not attributed customer reviews.`
+          : `An anonymized engagement example for ${displayPlace}, plus similar work in other Pakistani cities, not attributed customer reviews.`,
+      items: pickTestimonials(displayPlace),
     },
     team: {
       overlineText: isPakistan ? "Pakistan software house team" : "Delivery team",
       title: isPakistan
         ? "A senior team"
         : `The Team Behind Our ${
-            placeLabel === "United States"
+            displayPlace === "United States"
               ? "USA"
-              : placeLabel === "United Kingdom"
+              : displayPlace === "United Kingdom"
                 ? "UK"
-                : placeLabel === "United Arab Emirates"
+                : displayPlace === "United Arab Emirates"
                   ? "UAE"
-                  : placeLabel
+                  : displayPlace
           } Delivery`,
       titleItalic: isPakistan ? "team" : undefined,
       description: isPakistan
         ? "Senior engineers and designers shipping for clients across Pakistan and overseas."
-        : `The same senior bench that supports ${placeLabel} projects from kickoff through maintenance.`,
+        : `The same senior bench that supports ${displayPlace} projects from kickoff through maintenance.`,
       intro: isPakistan
         ? `${baseTeamIntro} We deliver for cities nationwide with one accountable team.`
-        : `${baseTeamIntro} For ${placeLabel}, you get named senior ownership, not an anonymous offshore queue.`,
+        : `${baseTeamIntro} For ${displayPlace}, you get named senior ownership, not an anonymous offshore queue.`,
     },
   };
 }
@@ -1613,14 +2770,28 @@ export function buildLocationFacts(place: string) {
 
 export function filterProjectsForPlace(
   place: string,
-  all: ShowcaseProject[] = showcaseProjects
+  all: ShowcaseProject[] = showcaseProjects,
+  options?: { isPakistan?: boolean; hub?: boolean }
 ): ShowcaseProject[] {
+  const market = getLocationMarketCopy(place, options);
+  const bySlug = new Map(all.map((project) => [project.slug, project]));
+  const curated = market.projects.slugs
+    .map((slug) => bySlug.get(slug))
+    .filter((project): project is ShowcaseProject => Boolean(project));
+  if (curated.length > 0) return curated;
+
   const matched = all.filter((project) =>
     project.category.toLowerCase().includes(place.toLowerCase())
   );
   if (matched.length > 0) return matched;
   return rotate(all, place);
 }
+
+/** Hub page section copy (services / why-choose / process / projects headings). */
+export const locationHubSections = buildLocationSections("Pakistan", { hub: true });
+export const locationHubProjects = filterProjectsForPlace("Pakistan", showcaseProjects, {
+  hub: true,
+});
 
 const pakistanSections = buildLocationSections("Pakistan", { isPakistan: true });
 
@@ -1672,7 +2843,7 @@ export const pakistanLocation: LocationPageContent = {
     height: 1024,
   },
   cities: pakistanCities,
-  projects: showcaseProjects,
+  projects: filterProjectsForPlace("Pakistan", showcaseProjects, { isPakistan: true }),
   facts: {
     title: "Pakistan software house and software company facts",
     subtitle:
@@ -1822,7 +2993,7 @@ export const usaLocation: LocationPageContent = {
     { slug: "miami", label: "Main city in United States", href: "#", city: "Miami", blurb: "Digital products and automation for service businesses and fast-scaling brands." },
     { slug: "san-francisco", label: "Main city in United States", href: "#", city: "San Francisco", blurb: "Product engineering and software strategy for startup and SaaS teams." },
   ],
-  projects: showcaseProjects,
+  projects: filterProjectsForPlace("United States"),
   facts: buildLocationFacts("United States"),
   industries: {
     title: "Industries we serve in the USA",
@@ -1945,7 +3116,7 @@ export const canadaLocation: LocationPageContent = {
     { slug: "ottawa", label: "Main city in Canada", href: "#", city: "Ottawa", blurb: "Technology and public-service software for growing organizations." },
     { slug: "edmonton", label: "Main city in Canada", href: "#", city: "Edmonton", blurb: "Digital product builds centered on efficiency, operations, and growth." },
   ],
-  projects: showcaseProjects,
+  projects: filterProjectsForPlace("Canada"),
   facts: buildLocationFacts("Canada"),
   industries: {
     title: "Industries we serve in Canada",
@@ -2068,7 +3239,7 @@ export const australiaLocation: LocationPageContent = {
     { slug: "adelaide", label: "Main city in Australia", href: "#", city: "Adelaide", blurb: "Reliable software for service businesses, healthcare, and operational scale." },
     { slug: "canberra", label: "Main city in Australia", href: "#", city: "Canberra", blurb: "Technology support for institutions, service teams, and digital delivery." },
   ],
-  projects: showcaseProjects,
+  projects: filterProjectsForPlace("Australia"),
   facts: buildLocationFacts("Australia"),
   industries: {
     title: "Industries we serve in Australia",
@@ -2191,7 +3362,7 @@ export const ukLocation: LocationPageContent = {
     { slug: "glasgow", label: "Main city in United Kingdom", href: "#", city: "Glasgow", blurb: "Custom platforms and operational tools for growing and established teams." },
     { slug: "leeds", label: "Main city in United Kingdom", href: "#", city: "Leeds", blurb: "Product and operations software built around practical business needs." },
   ],
-  projects: showcaseProjects,
+  projects: filterProjectsForPlace("United Kingdom"),
   facts: buildLocationFacts("United Kingdom"),
   industries: {
     title: "Industries we serve in the UK",
@@ -2314,7 +3485,7 @@ export const uaeLocation: LocationPageContent = {
     { slug: "ras-al-khaimah", label: "Main city in United Arab Emirates", href: "#", city: "Ras Al Khaimah", blurb: "Modern business tools for operational efficiency and regional scale." },
     { slug: "fujairah", label: "Main city in United Arab Emirates", href: "#", city: "Fujairah", blurb: "Application design and system improvements for growing business operators." },
   ],
-  projects: showcaseProjects,
+  projects: filterProjectsForPlace("United Arab Emirates"),
   facts: buildLocationFacts("United Arab Emirates"),
   industries: {
     title: "Industries we serve in the UAE",

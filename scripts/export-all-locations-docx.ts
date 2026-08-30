@@ -23,6 +23,7 @@ import { companyStats } from "../data/landing/trust";
 import {
   australiaLocation,
   canadaLocation,
+  locationHubSections,
   locationPages,
   pakistanCities,
   pakistanLocation,
@@ -230,12 +231,53 @@ function hubBlock(): Paragraph[] {
     );
   }
 
+  const hubSections = locationHubSections;
+
   blocks.push(
-    heading("Shared sections on hub", HeadingLevel.HEADING_2),
+    heading("Services (hub-unique)", HeadingLevel.HEADING_2),
+    labelValue("Overline", hubSections.services.overlineText),
+    labelValue("Title", hubSections.services.title),
+    body(hubSections.services.description)
+  );
+  for (const item of hubSections.services.items) {
+    blocks.push(body(`${item.title}${item.tag ? ` [${item.tag}]` : ""}`, { bold: true }));
+    blocks.push(body(item.description));
+  }
+
+  blocks.push(
+    heading("Why choose us (hub-unique)", HeadingLevel.HEADING_2),
+    labelValue("Overline", hubSections.whyChoose.overlineText),
+    labelValue("Title", hubSections.whyChoose.title),
+    body(hubSections.whyChoose.description)
+  );
+  for (const value of hubSections.whyChoose.values) {
+    blocks.push(body(value.title, { bold: true }));
+    blocks.push(body(value.description));
+  }
+
+  blocks.push(
+    heading("Process (hub-unique)", HeadingLevel.HEADING_2),
+    labelValue("Overline", hubSections.process.overlineText),
+    labelValue(
+      "Title",
+      `${hubSections.process.title}${hubSections.process.titleItalic ? ` ${hubSections.process.titleItalic}` : ""}`
+    ),
+    body(hubSections.process.description),
+    labelValue("CTA", hubSections.process.ctaLabel)
+  );
+  for (const step of hubSections.process.steps) {
+    blocks.push(
+      body(`${step.step} · ${step.shortLabel} · ${step.title}`, { bold: true }),
+      body(step.description)
+    );
+  }
+
+  blocks.push(
+    heading("Other hub sections", HeadingLevel.HEADING_2),
     labelValue("Industries overline", HUB.industries.overline),
     labelValue("Industries title", HUB.industries.title),
     body(HUB.industries.description),
-    body("Also includes: Trusted partners, Services, Projects, Testimonials, Team"),
+    body("Also includes: Trusted partners, Projects, Testimonials, Team"),
     labelValue("FAQ overline", HUB.faq.overline),
     labelValue("FAQ title", HUB.faq.title),
 
@@ -243,7 +285,7 @@ function hubBlock(): Paragraph[] {
     labelValue("Title", HUB.cta.title),
     body(HUB.cta.description),
     labelValue("Button", `${HUB.cta.button} → /contact`),
-    divider(),
+    divider()
   );
 
   return blocks;

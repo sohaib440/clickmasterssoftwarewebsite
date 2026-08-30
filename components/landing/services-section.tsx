@@ -101,15 +101,17 @@ export function ServicesSection({
   const initialVisibleCount = 9;
 
   const resolvedServices = serviceOverrides?.length
-    ? services.map((service) => {
-        const override = serviceOverrides.find((item) => item.title === service.title);
-        if (!override) return service;
-        return {
-          ...service,
-          description: override.description,
-          tag: override.tag ?? service.tag,
-        };
-      })
+    ? serviceOverrides
+        .map((override) => {
+          const base = services.find((service) => service.title === override.title);
+          if (!base) return null;
+          return {
+            ...base,
+            description: override.description,
+            tag: override.tag ?? base.tag,
+          };
+        })
+        .filter((service): service is ServiceCardData => service !== null)
     : services;
 
   const visibleServices = showAll
