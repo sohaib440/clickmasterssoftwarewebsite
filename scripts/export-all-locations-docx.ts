@@ -1,6 +1,7 @@
 /**
- * Generates a Word (.docx) export of country location pages only:
- * Pakistan, USA, Canada, Australia, UK, UAE.
+ * Generates a Word (.docx) export of:
+ * 1. Main /location hub page
+ * 2. Six country location pages (Pakistan, USA, Canada, Australia, UK, UAE)
  *
  * Run from project root:
  *   npm run export:locations
@@ -18,12 +19,101 @@ import {
   TextRun,
 } from "docx";
 
+import { companyStats } from "../data/landing/trust";
 import {
+  australiaLocation,
+  canadaLocation,
   locationPages,
+  pakistanCities,
+  pakistanLocation,
+  uaeLocation,
+  ukLocation,
+  usaLocation,
   type LocationPageContent,
 } from "../data/locations";
 
 const SITE = "https://nextsoftwaredevelopment.com";
+
+const HUB = {
+  url: `${SITE}/location`,
+  metaTitle: "Software Company Locations Worldwide | Next Soft Development",
+  metaDescription:
+    "Software development company serving businesses worldwide in Pakistan, the USA, UK, UAE, Canada, and Australia with web, mobile, SaaS, and AI solutions.",
+  hero: {
+    overline: "Locations",
+    title: "Software Development Company Serving Businesses Worldwide",
+    paragraphs: [
+      "From our headquarters in Pakistan, we deliver software development services to startups, growing businesses, and enterprises across Pakistan, the USA, UK, UAE, Canada, and Australia.",
+      "Explore our locations to see how Next Software Development supports businesses with scalable web applications, mobile apps, SaaS platforms, AI solutions, and custom software development.",
+      "Serving clients locally and globally, with engineering expertise built for businesses that want to grow.",
+    ],
+    primaryCta: "Explore Pakistan",
+    secondaryCta: "Get a Free Quote",
+  },
+  footprint: {
+    overline: "Global footprint",
+    title: "Six Live Country Pages. One Delivery Team.",
+    description:
+      "Start with our Pakistan HQ and easily connect with a dedicated team for the USA, UK, UAE, Canada, or Australia.",
+  },
+  pakistanCard: {
+    badge: "Our home",
+    label: "Headquarters",
+    title: "Pakistan",
+    description: (cityCount: number) =>
+      `Headquarters and primary delivery base for HMS, ERP, mobile apps, and SaaS across ${cityCount} cities, including Islamabad, Lahore, Karachi, and every market we cover nationwide.`,
+    popularCities: ["Islamabad", "Lahore", "Karachi", "Faisalabad", "Multan"],
+    cta: "Open Pakistan location page",
+  },
+  internationalMarkets: [
+    {
+      name: "USA",
+      href: usaLocation.href,
+      blurb:
+        "Product engineering for startups, SaaS companies, and mid-market teams across the United States.",
+    },
+    {
+      name: "Canada",
+      href: canadaLocation.href,
+      blurb:
+        "Digital products, mobile apps, and custom software for Canadian businesses and scaling startups.",
+    },
+    {
+      name: "UK",
+      href: ukLocation.href,
+      blurb:
+        "English-first delivery for UK SaaS, operations, healthcare, and digital product teams.",
+    },
+    {
+      name: "Australia",
+      href: australiaLocation.href,
+      blurb:
+        "Workflow automation, digital transformation, and custom platforms for Australian teams.",
+    },
+    {
+      name: "UAE",
+      href: uaeLocation.href,
+      blurb:
+        "CRM, ERP, mobile apps, and business automation for founders and operators across the UAE.",
+    },
+  ],
+  industries: {
+    overline: "Industries",
+    title: "Industries we serve worldwide",
+    description:
+      "Software tailored to the workflows, compliance needs, and growth goals of every sector we work with, across Pakistan and global markets.",
+  },
+  faq: {
+    overline: "Locations FAQs",
+    title: "Location questions, answered",
+  },
+  cta: {
+    title: "Ready to build with a software partner in your market?",
+    description:
+      "Whether you are in Pakistan, the USA, UK, UAE, Canada, or Australia, tell us about your project. We'll reply within one business day with a clear next step.",
+    button: "Get a Free Quote",
+  },
+} as const;
 
 function stripWiki(text: string): string {
   return String(text ?? "").replace(/\[\[([^\]]+)\]\]/g, "$1");
@@ -87,6 +177,78 @@ function divider() {
   });
 }
 
+function hubBlock(): Paragraph[] {
+  const cityCount = pakistanCities.length;
+  const moreCities = Math.max(cityCount - HUB.pakistanCard.popularCities.length, 0);
+  const blocks: Paragraph[] = [
+    heading("0. Main Locations Hub", HeadingLevel.HEADING_1),
+    labelValue("URL", HUB.url),
+    labelValue("Path", "/location"),
+    labelValue("Meta title", HUB.metaTitle),
+    labelValue("Meta description", HUB.metaDescription),
+
+    heading("Hero", HeadingLevel.HEADING_2),
+    labelValue("Overline", HUB.hero.overline),
+    labelValue("Title", HUB.hero.title),
+    ...HUB.hero.paragraphs.map((paragraph) => body(paragraph)),
+    labelValue("Primary CTA", `${HUB.hero.primaryCta} → ${pakistanLocation.href}`),
+    labelValue("Secondary CTA", `${HUB.hero.secondaryCta} → /contact`),
+
+    heading("Global footprint", HeadingLevel.HEADING_2),
+    labelValue("Overline", HUB.footprint.overline),
+    labelValue("Title", HUB.footprint.title),
+    body(HUB.footprint.description),
+
+    heading("Pakistan headquarters card", HeadingLevel.HEADING_2),
+    labelValue("Badge", HUB.pakistanCard.badge),
+    labelValue("Label", HUB.pakistanCard.label),
+    labelValue("Title", HUB.pakistanCard.title),
+    body(HUB.pakistanCard.description(cityCount)),
+    labelValue("Image", "/locations/islamabad-headquater.png"),
+  ];
+
+  blocks.push(heading("Stats", HeadingLevel.HEADING_3));
+  for (const stat of companyStats) {
+    blocks.push(bullet(`${stat.value} ${stat.label}`));
+  }
+
+  blocks.push(
+    heading("Popular cities", HeadingLevel.HEADING_3),
+    body(
+      `${HUB.pakistanCard.popularCities.join(", ")} · +${moreCities} more (${cityCount} total)`
+    ),
+    labelValue("CTA", `${HUB.pakistanCard.cta} → ${pakistanLocation.href}`),
+
+    heading("International markets", HeadingLevel.HEADING_2),
+  );
+
+  for (const market of HUB.internationalMarkets) {
+    blocks.push(
+      body(market.name, { bold: true }),
+      body(market.blurb),
+      labelValue("URL", `${SITE}${market.href}`)
+    );
+  }
+
+  blocks.push(
+    heading("Shared sections on hub", HeadingLevel.HEADING_2),
+    labelValue("Industries overline", HUB.industries.overline),
+    labelValue("Industries title", HUB.industries.title),
+    body(HUB.industries.description),
+    body("Also includes: Trusted partners, Services, Projects, Testimonials, Team"),
+    labelValue("FAQ overline", HUB.faq.overline),
+    labelValue("FAQ title", HUB.faq.title),
+
+    heading("Hub CTA", HeadingLevel.HEADING_2),
+    labelValue("Title", HUB.cta.title),
+    body(HUB.cta.description),
+    labelValue("Button", `${HUB.cta.button} → /contact`),
+    divider(),
+  );
+
+  return blocks;
+}
+
 function pageBlock(page: LocationPageContent, index: number): Paragraph[] {
   const { sections } = page;
   const blocks: Paragraph[] = [
@@ -121,58 +283,14 @@ function pageBlock(page: LocationPageContent, index: number): Paragraph[] {
     blocks.push(body(p));
   }
 
-  if (page.coverageTitle || page.coverageDescription) {
-    blocks.push(heading("Coverage", HeadingLevel.HEADING_2));
-    if (page.coverageTitle) blocks.push(labelValue("Title", page.coverageTitle));
-    if (page.coverageDescription) blocks.push(body(page.coverageDescription));
-  }
-
-  if (page.cities?.length) {
-    blocks.push(heading("Cities / regions listed", HeadingLevel.HEADING_2));
-    for (const city of page.cities) {
-      blocks.push(
-        bullet(
-          `${city.city}${city.blurb ? ` — ${city.blurb}` : ""} (${city.href})`
-        )
-      );
-    }
-  }
-
-  blocks.push(
-    heading("Facts", HeadingLevel.HEADING_2),
-    labelValue("Title", page.facts.title),
-    body(page.facts.subtitle),
-  );
-  for (const fact of page.facts.items) {
-    blocks.push(
-      bullet(`${fact.value} — ${fact.label}${fact.detail ? `: ${fact.detail}` : ""}`)
-    );
-  }
-
-  blocks.push(
-    heading("Industries (legacy block)", HeadingLevel.HEADING_2),
-    labelValue("Title", page.industries.title),
-    body(page.industries.subtitle),
-  );
-  for (const item of page.industries.items) {
-    blocks.push(bullet(`${item.title}: ${item.description}`));
-  }
-
   blocks.push(
     heading("Services", HeadingLevel.HEADING_2),
     labelValue("Overline", sections.services.overlineText),
-    labelValue(
-      "Title",
-      `${sections.services.title}${sections.services.titleItalic ? ` ${sections.services.titleItalic}` : ""}`
-    ),
+    labelValue("Title", sections.services.title),
     body(sections.services.description),
   );
   for (const item of sections.services.items) {
-    blocks.push(
-      bullet(
-        `${item.title}${item.tag ? ` [${item.tag}]` : ""}: ${item.description}`
-      )
-    );
+    blocks.push(body(item.title, { bold: true }), body(item.description));
   }
 
   blocks.push(
@@ -182,39 +300,24 @@ function pageBlock(page: LocationPageContent, index: number): Paragraph[] {
     body(sections.whyChoose.description),
   );
   for (const value of sections.whyChoose.values) {
-    blocks.push(bullet(`${value.title}: ${value.description}`));
+    blocks.push(body(value.title, { bold: true }), body(value.description));
   }
 
   blocks.push(
     heading("Projects", HeadingLevel.HEADING_2),
     labelValue("Overline", sections.projects.overlineText),
     labelValue("Title", sections.projects.title),
+    body(sections.projects.description),
   );
-  if (sections.projects.description) {
-    blocks.push(body(sections.projects.description));
-  }
-  for (const project of page.projects.slice(0, 12)) {
-    blocks.push(
-      bullet(
-        `${project.title}${project.category ? ` (${project.category})` : ""}`
-      )
-    );
-  }
 
   blocks.push(
-    heading("Industries section", HeadingLevel.HEADING_2),
+    heading("Industries", HeadingLevel.HEADING_2),
     labelValue("Overline", sections.industries.overlineText),
     labelValue("Title", sections.industries.title),
     body(sections.industries.description),
   );
   for (const item of sections.industries.items) {
-    blocks.push(
-      bullet(
-        (item as { name?: string; title?: string }).name ??
-          (item as { title?: string }).title ??
-          "Industry"
-      )
-    );
+    blocks.push(body(item.industry, { bold: true }), body(item.description));
   }
 
   blocks.push(
@@ -222,10 +325,9 @@ function pageBlock(page: LocationPageContent, index: number): Paragraph[] {
     labelValue("Overline", sections.tech.overlineText),
     labelValue(
       "Title",
-      `${sections.tech.title}${sections.tech.titleItalic ? ` ${sections.tech.titleItalic}` : ""}`
+      `${sections.tech.title}${sections.tech.titleItalic ? ` (${sections.tech.titleItalic})` : ""}`
     ),
     body(sections.tech.description),
-    body(sections.tech.intro),
   );
 
   blocks.push(
@@ -236,13 +338,27 @@ function pageBlock(page: LocationPageContent, index: number): Paragraph[] {
       `${sections.process.title}${sections.process.titleItalic ? ` ${sections.process.titleItalic}` : ""}`
     ),
     body(sections.process.description),
-    labelValue("CTA", sections.process.ctaLabel),
   );
   for (const step of sections.process.steps) {
-    blocks.push(bullet(`${step.step} ${step.title}: ${step.description}`));
+    blocks.push(
+      body(`${step.step}. ${step.title}`, { bold: true }),
+      body(step.description)
+    );
   }
 
-  if (sections.caseStudies.items.length) {
+  if (page.cities?.length) {
+    blocks.push(heading("Cities / regions", HeadingLevel.HEADING_2));
+    if (page.coverageDescription) blocks.push(body(page.coverageDescription));
+    for (const city of page.cities) {
+      blocks.push(
+        bullet(
+          `${city.city}${city.blurb ? ` — ${city.blurb}` : ""}${city.href && city.href !== "#" ? ` (${SITE}${city.href})` : " (coming soon)"}`
+        )
+      );
+    }
+  }
+
+  if (sections.caseStudies.items.length > 0) {
     blocks.push(
       heading("Case studies", HeadingLevel.HEADING_2),
       labelValue("Overline", sections.caseStudies.overlineText),
@@ -265,7 +381,7 @@ function pageBlock(page: LocationPageContent, index: number): Paragraph[] {
   );
   for (const item of sections.testimonials.items) {
     blocks.push(
-      body(`“${item.quote}”`),
+      body(`"${item.quote}"`),
       body(`— ${item.author}${item.role ? `, ${item.role}` : ""}`, {
         italics: true,
       })
@@ -318,7 +434,7 @@ async function main() {
       spacing: { after: 80 },
       children: [
         new TextRun({
-          text: "Country Location Pages — Content Export",
+          text: "Locations Hub + Country Pages — Content Export",
           size: 28,
         }),
       ],
@@ -328,7 +444,7 @@ async function main() {
       spacing: { after: 80 },
       children: [
         new TextRun({
-          text: "Pakistan · USA · Canada · Australia · UK · UAE",
+          text: "Main /location · Pakistan · USA · Canada · Australia · UK · UAE",
           size: 22,
         }),
       ],
@@ -338,7 +454,7 @@ async function main() {
       spacing: { after: 200 },
       children: [
         new TextRun({
-          text: `Generated ${new Date().toISOString().slice(0, 10)} · ${allPages.length} country pages`,
+          text: `Generated ${new Date().toISOString().slice(0, 10)} · 1 hub + ${allPages.length} country pages`,
           size: 20,
           italics: true,
         }),
@@ -346,6 +462,7 @@ async function main() {
     }),
     divider(),
     heading("Table of contents", HeadingLevel.HEADING_1),
+    bullet(`0. Main Locations Hub — ${HUB.url}`),
   ];
 
   allPages.forEach((page, i) => {
@@ -353,6 +470,7 @@ async function main() {
   });
 
   children.push(divider());
+  children.push(...hubBlock());
 
   allPages.forEach((page, i) => {
     children.push(...pageBlock(page, i + 1));
@@ -360,9 +478,9 @@ async function main() {
 
   const doc = new Document({
     creator: "Next Software Development Company",
-    title: "Country Location Pages Content",
+    title: "Locations Hub and Country Pages Content",
     description:
-      "Full content export of Pakistan, USA, Canada, Australia, UK, and UAE location pages",
+      "Full content export of the main /location hub plus Pakistan, USA, Canada, Australia, UK, and UAE location pages",
     sections: [
       {
         properties: {
@@ -383,7 +501,7 @@ async function main() {
   const exportsDir = join(process.cwd(), "exports");
   mkdirSync(exportsDir, { recursive: true });
 
-  let outPath = join(exportsDir, "Country-Location-Pages-Content.docx");
+  let outPath = join(exportsDir, "Locations-Hub-and-Country-Pages-Content.docx");
   const buffer = await Packer.toBuffer(doc);
 
   try {
@@ -395,7 +513,10 @@ async function main() {
         .toISOString()
         .replace(/[:.]/g, "-")
         .slice(0, 19);
-      outPath = join(exportsDir, `Country-Location-Pages-Content-${stamp}.docx`);
+      outPath = join(
+        exportsDir,
+        `Locations-Hub-and-Country-Pages-Content-${stamp}.docx`
+      );
       writeFileSync(outPath, buffer);
       console.warn(
         "Original file is open/locked in Word. Wrote a timestamped copy instead."
@@ -405,7 +526,9 @@ async function main() {
     }
   }
 
-  console.log(`Wrote ${allPages.length} country location pages to:\n${outPath}`);
+  console.log(
+    `Wrote 1 hub + ${allPages.length} country location pages to:\n${outPath}`
+  );
 }
 
 main().catch((err) => {

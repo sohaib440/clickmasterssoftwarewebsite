@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Globe2, MapPinned } from "lucide-react";
+import { ArrowRight, ChevronRight, MapPinned, Star } from "lucide-react";
 
 import { TrustedPartnersSection } from "@/components/landing/clients-section";
 import { FaqSection } from "@/components/landing/faq-section";
@@ -11,6 +12,7 @@ import { ServicesSection } from "@/components/landing/services-section";
 import { SiteHeader } from "@/components/landing/navbar";
 import { TeamSection } from "@/components/landing/team-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
+import { CountryFlag } from "@/components/location/country-flag";
 import { ServiceBreadcrumbs } from "@/components/services/shared/service-breadcrumbs";
 import {
   australiaLocation,
@@ -33,19 +35,20 @@ import {
   sectionPad,
 } from "@/lib/landing/constants";
 import { motionStagger } from "@/lib/landing/motion";
-import { selfCanonical, pageTitle, pageTitleString } from "@/seo/canonical";
+import { selfCanonical } from "@/seo/canonical";
 import { breadcrumbSchema, itemListSchema } from "@/seo/schema";
 import { cn } from "@/lib/utils";
 
+const hubMetaTitle = "Software Company Locations Worldwide | Next Soft Development";
 const hubDescription =
-  "Explore Next Software Development Company locations across Pakistan, the USA, UK, UAE, Canada, and Australia — plus city pages across Pakistan.";
+  "Software development company serving businesses worldwide in Pakistan, the USA, UK, UAE, Canada, and Australia with web, mobile, SaaS, and AI solutions.";
 
 export const metadata: Metadata = {
-  title: pageTitle("Software House Locations Worldwide"),
+  title: { absolute: hubMetaTitle },
   description: hubDescription,
   ...selfCanonical("/location"),
   openGraph: {
-    title: pageTitleString("Software House Locations Worldwide"),
+    title: hubMetaTitle,
     description: hubDescription,
     type: "website",
   },
@@ -55,35 +58,35 @@ const internationalMarkets = [
   {
     location: usaLocation,
     shortName: "USA",
-    region: "Americas",
+    flag: "us" as const,
     blurb:
-      "Product partnerships for startups, SaaS companies, and mid-market teams across the United States.",
+      "Product engineering for startups, SaaS companies, and mid-market teams across the United States.",
   },
   {
     location: canadaLocation,
     shortName: "Canada",
-    region: "Americas",
+    flag: "ca" as const,
     blurb:
       "Digital products, mobile apps, and custom software for Canadian businesses and scaling startups.",
   },
   {
     location: ukLocation,
     shortName: "UK",
-    region: "Europe",
+    flag: "gb" as const,
     blurb:
       "English-first delivery for UK SaaS, operations, healthcare, and digital product teams.",
   },
   {
     location: australiaLocation,
     shortName: "Australia",
-    region: "Asia-Pacific",
+    flag: "au" as const,
     blurb:
       "Workflow automation, digital transformation, and custom platforms for Australian teams.",
   },
   {
     location: uaeLocation,
     shortName: "UAE",
-    region: "Middle East",
+    flag: "ae" as const,
     blurb:
       "CRM, ERP, mobile apps, and business automation for founders and operators across the UAE.",
   },
@@ -91,9 +94,37 @@ const internationalMarkets = [
 
 const featuredStats = companyStats.map(({ value, label }) => ({ value, label }));
 
+const POPULAR_CITY_NAMES = ["Islamabad", "Lahore", "Karachi", "Faisalabad", "Multan"] as const;
+
+function WorldMapBackdrop({ className }: { className?: string }) {
+  return (
+    <div className={cn("pointer-events-none absolute inset-0 overflow-hidden", className)} aria-hidden>
+      <svg
+        viewBox="0 0 800 360"
+        className="absolute -right-8 top-0 h-[220px] w-[min(100%,560px)] opacity-[0.55] sm:h-[260px] lg:right-0 lg:h-[300px] lg:w-[620px]"
+        fill="none"
+      >
+        <defs>
+          <pattern id="footprint-dots" width="10" height="10" patternUnits="userSpaceOnUse">
+            <circle cx="1.2" cy="1.2" r="1.1" fill="currentColor" className="text-primary/35" />
+          </pattern>
+          <clipPath id="footprint-map">
+            <ellipse cx="400" cy="180" rx="340" ry="140" />
+          </clipPath>
+        </defs>
+        <g clipPath="url(#footprint-map)" className="text-primary/25">
+          <rect width="800" height="360" fill="url(#footprint-dots)" />
+        </g>
+      </svg>
+    </div>
+  );
+}
+
 export default function LocationsPage() {
   const cityCount = pakistanCities.length;
-  const spotlightCities = pakistanCities.slice(0, 6);
+  const spotlightCities = POPULAR_CITY_NAMES.map((name) =>
+    pakistanCities.find((city) => city.city === name)
+  ).filter((city): city is (typeof pakistanCities)[number] => Boolean(city));
   const moreCitiesCount = Math.max(cityCount - spotlightCities.length, 0);
 
   const schemas = [
@@ -128,11 +159,6 @@ export default function LocationsPage() {
 
       <main className="flex w-full flex-1 flex-col overflow-x-clip">
         <section className="relative w-full overflow-hidden bg-black text-white">
-          <div className="pointer-events-none absolute inset-0" aria-hidden>
-            <div className="absolute -left-20 top-0 h-72 w-72 rounded-full bg-primary/10 blur-[100px]" />
-            <div className="absolute -right-16 bottom-0 h-64 w-64 rounded-full bg-white/[0.04] blur-[100px]" />
-          </div>
-
           <div className={cn(container, sectionPad, "relative")}>
             <Reveal immediate>
               <ServiceBreadcrumbs
@@ -141,21 +167,34 @@ export default function LocationsPage() {
             </Reveal>
 
             <Reveal immediate delay={motionStagger}>
-              <p className={cn(overline, "text-white/60")}>Locations</p>
-            </Reveal>
-            <Reveal immediate delay={motionStagger * 2}>
-              <h1 className="mt-4 max-w-3xl font-heading text-4xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.15rem]">
-                Software house coverage,{" "}
-                <span className="italic text-primary/95">worldwide</span>
+              <h1 className="mt-4 max-w-4xl font-heading text-4xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[2.85rem] xl:text-[3.15rem]">
+                Software Development Company Serving Businesses{" "}
+                <span className="!text-primary">Worldwide</span>
               </h1>
             </Reveal>
-            <Reveal immediate delay={motionStagger * 3}>
-              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
-                Pakistan is our headquarters and delivery base, with {cityCount} city pages
-                nationwide. We also serve teams in the USA, UK, UAE, Canada, and Australia.
-              </p>
+            <Reveal immediate delay={motionStagger}>
+              <div className="mt-5 max-w-2xl space-y-4 text-justify text-base leading-relaxed text-white/70 md:text-lg">
+                <p>
+                  From our headquarters in Pakistan, we deliver software development services to
+                  startups, growing businesses, and enterprises across{" "}
+                  <span className="font-medium text-white">
+                    Pakistan, the USA, UK, UAE, Canada, and Australia
+                  </span>
+                  .
+                </p>
+                <p>
+                  Explore our locations to see how{" "}
+                  <span className="font-medium text-white">Next Software Development</span> supports
+                  businesses with scalable web applications, mobile apps, SaaS platforms, AI
+                  solutions, and custom software development.
+                </p>
+                <p className="font-medium text-white">
+                  Serving clients locally and globally, with engineering expertise built for
+                  businesses that want to grow.
+                </p>
+              </div>
             </Reveal>
-            <Reveal immediate delay={motionStagger * 4}>
+            <Reveal immediate delay={motionStagger * 2}>
               <div className="mt-8 flex flex-col gap-2 sm:flex-row sm:items-center">
                 <Link href={pakistanLocation.href} className={btnPrimary}>
                   Explore Pakistan
@@ -171,148 +210,167 @@ export default function LocationsPage() {
         <TrustedPartnersSection className="border-horizon-border/60 bg-white" />
 
         <section className="relative w-full overflow-hidden bg-white text-horizon-navy">
-          <div className="pointer-events-none absolute inset-0" aria-hidden>
-            <div className="absolute -left-20 top-10 h-64 w-64 rounded-full bg-primary/10 blur-[100px]" />
-            <div className="absolute -right-16 bottom-0 h-72 w-72 rounded-full bg-horizon-sky/35 blur-[110px]" />
-          </div>
+          <WorldMapBackdrop />
 
           <div className={cn(container, sectionPad, "relative")}>
-            <div className="grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:items-end lg:gap-12">
-              <Reveal>
-                <div className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-3 py-1.5">
-                  <Globe2 className="size-3.5 text-primary" aria-hidden />
-                  <span className={cn(overline, "text-horizon-navy/80")}>Global footprint</span>
-                </div>
-                <h2 className="mt-5 max-w-xl font-heading text-3xl font-normal leading-[1.1] tracking-tight md:text-4xl lg:text-[2.85rem]">
-                  Six live country pages.{" "}
-                  <span className="italic text-primary">One delivery team.</span>
-                </h2>
-              </Reveal>
-              <Reveal delay={motionStagger}>
-                <p className="max-w-md text-base leading-relaxed text-horizon-muted md:text-lg lg:justify-self-end lg:text-right">
-                  Start with Pakistan HQ and city coverage, or open a dedicated page for the USA,
-                  UK, UAE, Canada, or Australia.
-                </p>
-              </Reveal>
-            </div>
+            <Reveal>
+              <div className="flex items-center gap-3">
+                <span className="motion-line h-px w-8 bg-horizon-navy/20" aria-hidden />
+                <p className={overline}>Global footprint</p>
+              </div>
+              <h2 className="mt-3 max-w-2xl font-heading text-3xl font-normal leading-[1.15] tracking-tight text-horizon-navy md:text-4xl lg:text-[2.75rem]">
+                Six Live Country Pages.
+                <br />
+                <span className="italic text-primary">One Delivery Team.</span>
+              </h2>
+              <p className="mt-3 max-w-xl text-base leading-relaxed text-horizon-muted md:text-lg">
+                Start with our Pakistan HQ and easily connect with a dedicated team for the USA, UK,
+                UAE, Canada, or Australia.
+              </p>
+            </Reveal>
 
-            <div className="mt-10 grid gap-6 lg:mt-12 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.9fr)] lg:gap-7">
+            <div className="mt-10 grid gap-5 lg:mt-12 lg:grid-cols-[minmax(0,1.45fr)_minmax(0,0.9fr)] lg:items-stretch lg:gap-6">
               <Reveal direction="left">
-                <Link
-                  href={pakistanLocation.href}
-                  className="group relative flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-horizon-border bg-horizon-cream/40 p-7 shadow-[0_18px_50px_-32px_rgba(13,27,42,0.2)] transition-[transform,border-color,box-shadow,background-color] duration-500 hover:-translate-y-1.5 hover:border-primary/40 hover:bg-white hover:shadow-[0_28px_60px_-28px_rgba(13,27,42,0.22)] sm:p-8 lg:p-10"
-                >
-                  <div className="relative flex flex-wrap items-center justify-between gap-3">
+                <article className="group relative flex flex-col overflow-hidden rounded-[1.5rem] border border-primary/70 bg-white p-6 shadow-[0_18px_50px_-34px_rgba(13,27,42,0.22)] transition-[transform,box-shadow] duration-500 hover:-translate-y-1 hover:shadow-[0_24px_56px_-30px_rgba(13,27,42,0.28)] sm:p-8 lg:p-9">
+                  <Link
+                    href={pakistanLocation.href}
+                    className="absolute inset-0 z-20 rounded-[1.5rem] no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                    aria-label="Open Pakistan location page"
+                  />
+
+                  {/* Headquarters photo — top-right, same size feel as mock with soft white fade */}
+                  <div
+                    className="pointer-events-none absolute right-0 top-0 z-0 h-[11.5rem] w-[min(58%,22rem)] sm:h-[14rem] sm:w-[min(52%,26rem)] lg:h-[15.5rem] lg:w-[min(50%,28rem)]"
+                    aria-hidden
+                  >
+                    <div className="relative h-full w-full overflow-hidden">
+                      <Image
+                        src="/locations/islamabad-headquater.png"
+                        alt=""
+                        fill
+                        priority
+                        className="object-cover object-[58%_42%]"
+                        sizes="(max-width: 1024px) 55vw, 28rem"
+                      />
+                      {/* Soft white dissolve — no hard edge into the card */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-white from-0% via-white/90 via-25% to-transparent to-65%" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-white from-0% via-white/90 via-35% to-transparent to-75%" />
+                      <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent" />
+                      <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-white to-transparent" />
+                    </div>
+                  </div>
+
+                  <div className="relative z-10 flex flex-wrap items-start justify-between gap-3">
                     <div className="flex items-center gap-3">
-                      <span className="flex size-12 items-center justify-center rounded-2xl bg-primary/15 text-primary ring-1 ring-primary/30 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
-                        <MapPinned className="size-5" aria-hidden />
-                      </span>
+                      <CountryFlag code="pk" title="Pakistan" />
                       <div>
-                        <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-primary">
+                        <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">
                           Headquarters
                         </p>
-                        <h3 className="mt-1 font-heading text-3xl font-medium tracking-tight text-horizon-navy sm:text-4xl">
+                        <h3 className="mt-0.5 font-heading text-3xl font-medium tracking-tight text-horizon-navy sm:text-4xl">
                           Pakistan
                         </h3>
                       </div>
                     </div>
-                    <span className="inline-flex items-center gap-2 rounded-full bg-primary px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-primary-foreground">
-                      <span className="size-1.5 rounded-full bg-horizon-navy motion-safe:animate-pulse" />
-                      Live now
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-primary px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-primary-foreground shadow-sm">
+                      <Star className="size-3.5 fill-current" aria-hidden />
+                      Our home
                     </span>
                   </div>
 
-                  <p className="relative mt-6 max-w-xl text-base leading-relaxed text-horizon-muted md:text-lg">
+                  <p className="relative z-10 mt-5 max-w-[34rem] text-sm leading-relaxed text-horizon-muted sm:text-[0.95rem]">
                     Headquarters and primary delivery base for HMS, ERP, mobile apps, and SaaS across{" "}
                     {cityCount} cities, including Islamabad, Lahore, Karachi, and every market we
                     cover nationwide.
                   </p>
 
-                  <dl className="relative mt-8 grid grid-cols-2 gap-4 border-y border-horizon-border py-5 sm:grid-cols-4">
-                    {featuredStats.map((stat) => (
-                      <div key={stat.label}>
-                        <dt className="font-heading text-2xl text-horizon-navy sm:text-3xl">
+                  <dl className="relative z-10 mt-8 grid grid-cols-2 gap-x-4 gap-y-5 py-5 sm:grid-cols-4 sm:gap-0">
+                    {featuredStats.map((stat, index) => (
+                      <div
+                        key={stat.label}
+                        className={cn(
+                          "sm:px-3 lg:px-4",
+                          index > 0 && "sm:border-l sm:border-[#ebebeb]",
+                          index === 0 && "sm:pl-0"
+                        )}
+                      >
+                        <dt className="font-heading text-2xl text-horizon-navy sm:text-[1.85rem]">
                           {stat.value}
                         </dt>
-                        <dd className="mt-1 text-[11px] uppercase tracking-[0.16em] text-horizon-muted">
+                        <dd className="mt-1 text-[10px] font-medium uppercase tracking-[0.14em] text-horizon-muted">
                           {stat.label}
                         </dd>
                       </div>
                     ))}
                   </dl>
 
-                  <div className="relative mt-7">
-                    <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-horizon-muted">
-                      Spotlight cities
+                  <div className="relative z-10 mt-6">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-horizon-muted">
+                      Popular cities
                     </p>
                     <ul className="mt-3 flex flex-wrap gap-2">
                       {spotlightCities.map((city) => (
                         <li
                           key={city.slug}
-                          className="rounded-full border border-horizon-border bg-white px-3 py-1.5 text-xs text-horizon-navy transition-colors duration-300 group-hover:border-primary/35"
+                          className="inline-flex items-center gap-1.5 rounded-full border border-horizon-border bg-[#f7f5f1] px-3 py-1.5 text-xs text-horizon-navy"
                         >
+                          <MapPinned className="size-3 text-primary" aria-hidden />
                           {city.city}
                         </li>
                       ))}
-                      <li className="rounded-full border border-dashed border-horizon-border px-3 py-1.5 text-xs text-horizon-muted">
+                      <li className="inline-flex items-center rounded-full border border-dashed border-horizon-border px-3 py-1.5 text-xs text-horizon-muted">
                         +{moreCitiesCount} more
                       </li>
                     </ul>
                   </div>
 
-                  <span className="relative mt-9 inline-flex items-center gap-2 text-sm font-semibold text-horizon-navy transition-colors group-hover:text-primary">
-                    Open Pakistan location page
-                    <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  <span className="relative z-10 mt-7 inline-flex w-fit items-center gap-2 text-sm font-semibold text-horizon-navy transition-colors group-hover:text-primary">
+                    <span className="border-b border-primary pb-0.5">
+                      Open Pakistan location page
+                    </span>
+                    <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5" />
                   </span>
-                </Link>
+                </article>
               </Reveal>
 
-              <div className="flex flex-col gap-4">
-                <Reveal delay={motionStagger}>
-                  <div className="flex items-center gap-2 rounded-2xl border border-horizon-border bg-horizon-cream/50 px-4 py-3">
-                    <Globe2 className="size-4 text-primary" aria-hidden />
-                    <p className="text-sm text-horizon-muted">
-                      <span className="font-medium text-horizon-navy">Live now</span>: dedicated
-                      pages for our international markets
-                    </p>
-                  </div>
-                </Reveal>
-
-                <ul className="flex flex-1 flex-col gap-3">
-                  {internationalMarkets.map((market, index) => (
-                    <li key={market.location.slug} className="flex-1">
-                      <Reveal delay={(index + 1) * motionStagger} direction="right" className="h-full">
-                        <Link
-                          href={market.location.href}
-                          className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-horizon-border bg-horizon-cream/30 p-5 transition-[transform,border-color,background-color] duration-500 hover:-translate-y-1 hover:border-primary/30 hover:bg-white sm:p-6"
-                        >
-                          <div
-                            className="pointer-events-none absolute inset-y-0 left-0 w-1 origin-top scale-y-0 bg-primary transition-transform duration-500 group-hover:scale-y-100"
-                            aria-hidden
-                          />
-                          <div className="flex items-start justify-between gap-3">
-                            <div>
-                              <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-horizon-muted">
-                                {market.region}
-                              </p>
-                              <h3 className="mt-1.5 font-heading text-xl font-medium text-horizon-navy sm:text-2xl">
-                                {market.shortName}
-                              </h3>
-                            </div>
-                            <span className="inline-flex items-center gap-1 rounded-full border border-primary/25 bg-primary/10 px-2.5 py-1 text-[10px] uppercase tracking-[0.16em] text-primary">
-                              Live
-                              <ArrowUpRight className="size-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                            </span>
-                          </div>
-                          <p className="mt-3 text-sm leading-relaxed text-horizon-muted">
+              {/*
+                height:0 + min-height:100% locks this column to the Pakistan card height
+                so the five market cards distribute inside it instead of pushing longer.
+              */}
+              <ul className="flex flex-col gap-2 lg:h-0 lg:min-h-full lg:justify-between lg:gap-2.5">
+                {internationalMarkets.map((market, index) => (
+                  <li key={market.location.slug} className="min-h-0 lg:flex-1">
+                    <Reveal
+                      delay={(index + 1) * motionStagger * 0.7}
+                      direction="right"
+                      className="h-full"
+                    >
+                      <Link
+                        href={market.location.href}
+                        className="group flex h-full items-center gap-3 rounded-2xl border border-horizon-border/80 bg-white px-4 py-3 shadow-[0_10px_30px_-24px_rgba(13,27,42,0.35)] transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-0.5 hover:border-primary/35 hover:shadow-[0_16px_36px_-22px_rgba(13,27,42,0.28)] sm:gap-3.5 sm:px-4 sm:py-2.5 lg:py-0"
+                      >
+                        <CountryFlag
+                          code={market.flag}
+                          title={market.shortName}
+                          className="size-9 sm:size-10"
+                        />
+                        <div className="min-w-0 flex-1">
+                          <h3 className="font-heading text-base font-medium tracking-tight text-horizon-navy sm:text-lg">
+                            {market.shortName}
+                          </h3>
+                          <p className="mt-0.5 line-clamp-2 text-xs leading-relaxed text-horizon-muted sm:text-sm">
                             {market.blurb}
                           </p>
-                        </Link>
-                      </Reveal>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                        </div>
+                        <ChevronRight
+                          className="size-4 shrink-0 text-horizon-muted/50 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:text-primary sm:size-5"
+                          aria-hidden
+                        />
+                      </Link>
+                    </Reveal>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </section>
