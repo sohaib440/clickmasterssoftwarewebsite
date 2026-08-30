@@ -247,14 +247,11 @@ export const LOCATION_MARKET_COPY: Record<LocationMarketKey, MarketSectionCopy> 
       overlineText: "Recent projects",
       title: "Selected work across our markets",
       description:
-        "A cross-section of HMS, CRM, hospitality, education, retail, and travel systems that show the kinds of products we ship for location-page buyers.",
+        "A cross-section of HMS, CRM, and hospitality systems that show the kinds of products we ship for location-page buyers.",
       slugs: [
         "hospital-management-system",
         "prime-lead-crm",
         "hotel-management-system",
-        "ai-school-erp",
-        "royal-pos",
-        "travel-and-tours-management",
       ],
     },
   },
@@ -407,14 +404,13 @@ export const LOCATION_MARKET_COPY: Record<LocationMarketKey, MarketSectionCopy> 
       overlineText: "Recent projects",
       title: "Recent projects from Pakistan",
       description:
-        "HMS, school ERP, pharmacy inventory, retail POS, cash control, and learning platforms that mirror how Pakistani institutions actually run.",
+        "HMS, school ERP, pharmacy inventory, retail POS, and cash control platforms that mirror how Pakistani institutions actually run.",
       slugs: [
         "hospital-management-system",
         "ai-school-erp",
         "medicine-inventory-system",
         "royal-pos",
         "cash-management-system",
-        "e-learning-portal",
       ],
     },
   },
@@ -567,14 +563,11 @@ export const LOCATION_MARKET_COPY: Record<LocationMarketKey, MarketSectionCopy> 
       overlineText: "Recent projects",
       title: "Projects relevant to US product buyers",
       description:
-        "CRM, healthcare ops, HR, finance control, learning, and retail systems that map to SaaS and mid-market product patterns US teams recognize.",
+        "CRM, healthcare ops, and HR platforms that map to SaaS and mid-market product patterns US teams recognize.",
       slugs: [
         "prime-lead-crm",
         "hospital-management-system",
         "hr-management-software",
-        "cash-management-system",
-        "e-learning-portal",
-        "royal-pos",
       ],
     },
   },
@@ -727,14 +720,11 @@ export const LOCATION_MARKET_COPY: Record<LocationMarketKey, MarketSectionCopy> 
       overlineText: "Recent projects",
       title: "Projects relevant to Canadian buyers",
       description:
-        "Education, learning, travel, finance, HR, and healthcare systems that mirror the modernization work Canadian service and product teams commission.",
+        "Education, learning, and finance systems that mirror the modernization work Canadian service and product teams commission.",
       slugs: [
         "ai-school-erp",
         "e-learning-portal",
-        "travel-and-tour-website",
         "cash-management-system",
-        "hr-management-software",
-        "hospital-management-system",
       ],
     },
   },
@@ -887,14 +877,11 @@ export const LOCATION_MARKET_COPY: Record<LocationMarketKey, MarketSectionCopy> 
       overlineText: "Recent projects",
       title: "Projects relevant to Australian operators",
       description:
-        "Hotel, restaurant, travel, retail POS, cash control, and pharmacy inventory systems aligned to Australian hospitality and multi-site ops.",
+        "Hotel, restaurant, and travel systems aligned to Australian hospitality and multi-site ops.",
       slugs: [
         "hotel-management-system",
         "restaurant-pos",
         "travel-and-tours-management",
-        "royal-pos",
-        "cash-management-system",
-        "medicine-inventory-system",
       ],
     },
   },
@@ -1047,14 +1034,11 @@ export const LOCATION_MARKET_COPY: Record<LocationMarketKey, MarketSectionCopy> 
       overlineText: "Recent projects",
       title: "Projects relevant to UK B2B buyers",
       description:
-        "CRM, finance control, HR, healthcare ops, learning, and travel systems that map to UK professional services and SaaS buying patterns.",
+        "CRM, finance control, and HR systems that map to UK professional services and SaaS buying patterns.",
       slugs: [
         "prime-lead-crm",
         "cash-management-system",
         "hr-management-software",
-        "hospital-management-system",
-        "e-learning-portal",
-        "travel-and-tour-website",
       ],
     },
   },
@@ -1207,14 +1191,11 @@ export const LOCATION_MARKET_COPY: Record<LocationMarketKey, MarketSectionCopy> 
       overlineText: "Recent projects",
       title: "Projects relevant to UAE growth teams",
       description:
-        "Hospitality, travel, retail POS, healthcare, CRM, and restaurant systems that mirror CRM/ERP and guest-ops work common in the UAE.",
+        "Hospitality, retail POS, and CRM systems that mirror guest-ops and sales work common in the UAE.",
       slugs: [
         "hotel-management-system",
-        "travel-and-tours-management",
         "royal-pos",
-        "hospital-management-system",
         "prime-lead-crm",
-        "restaurant-pos",
       ],
     },
   },
@@ -2607,8 +2588,19 @@ function pickTestimonials(place: string): LocationSocialProofItem[] {
   return pakistanCityCaseBlurbs;
 }
 
-function pickCaseStudies(place: string): CaseStudy[] {
-  return rotate([...caseStudies], place).slice(0, 6);
+function pickCaseStudies(
+  place: string,
+  options?: { isPakistan?: boolean; hub?: boolean }
+): CaseStudy[] {
+  const market = getLocationMarketCopy(place, options);
+  const bySlug = new Map(caseStudies.map((item) => [item.slug, item]));
+  const curated = market.projects.slugs
+    .map((slug) => bySlug.get(slug))
+    .filter((item): item is CaseStudy => Boolean(item));
+  if (curated.length > 0) return curated;
+
+  const limit = options?.hub ? 3 : options?.isPakistan || place.toLowerCase() === "pakistan" ? 5 : 3;
+  return rotate([...caseStudies], place).slice(0, limit);
 }
 
 export function buildLocationSections(
@@ -2712,7 +2704,7 @@ export function buildLocationSections(
       description: isPakistan
         ? "Outcomes from clinics, schools, retailers, and product teams across Pakistan."
         : `Outcome stories that help ${displayPlace} decision-makers see how similar systems go live.`,
-      items: pickCaseStudies(displayPlace),
+      items: pickCaseStudies(marketPlace, marketOpts),
     },
     testimonials: {
       overlineText: "How we've helped businesses like yours",
@@ -2780,11 +2772,12 @@ export function filterProjectsForPlace(
     .filter((project): project is ShowcaseProject => Boolean(project));
   if (curated.length > 0) return curated;
 
+  const limit = options?.hub ? 3 : options?.isPakistan || place.toLowerCase() === "pakistan" ? 5 : 3;
   const matched = all.filter((project) =>
     project.category.toLowerCase().includes(place.toLowerCase())
   );
-  if (matched.length > 0) return matched;
-  return rotate(all, place);
+  if (matched.length > 0) return matched.slice(0, limit);
+  return rotate(all, place).slice(0, limit);
 }
 
 /** Hub page section copy (services / why-choose / process / projects headings). */
@@ -2926,7 +2919,14 @@ export const pakistanLocation: LocationPageContent = {
         "We support clients nationwide, including Islamabad, Lahore, Karachi, Rawalpindi, Faisalabad, Multan, Peshawar, and other major business centers.",
       tag: "Coverage",
       column: "left",
-    }
+    },
+    {
+      question: "How long does a typical project take?",
+      answer:
+        "Timelines depend on scope. Focused MVPs often ship in weeks, while larger HMS, ERP, or multi-module builds usually run in clear milestone phases over a few months.",
+      tag: "Timeline",
+      column: "right",
+    },
   ],
   cta: {
     title: "Have a software project in mind?",
@@ -3055,7 +3055,14 @@ export const usaLocation: LocationPageContent = {
         "Yes. We run English-first collaboration with timezone-friendly calls so product, ops, and leadership stay aligned throughout delivery.",
       tag: "Collaboration",
       column: "left",
-    }
+    },
+    {
+      question: "How long does a typical US product engagement take?",
+      answer:
+        "An MVP or focused workflow build often lands in a few sprints. Larger SaaS or modernization programs are phased with demos and milestones so you can steer scope as you learn.",
+      tag: "Timeline",
+      column: "right",
+    },
   ],
   cta: {
     title: "Have a software project in mind?",
@@ -3178,7 +3185,14 @@ export const canadaLocation: LocationPageContent = {
         "Yes. We partner with Canadian founders and operators on product builds and digital transformation with clear scope and senior delivery.",
       tag: "Coverage",
       column: "left",
-    }
+    },
+    {
+      question: "How do you handle privacy and data expectations?",
+      answer:
+        "We design with least-privilege access, clear data-handling practices, and documentation your stakeholders can review during discovery and procurement.",
+      tag: "Privacy",
+      column: "right",
+    },
   ],
   cta: {
     title: "Have a software project in mind?",
@@ -3301,7 +3315,14 @@ export const australiaLocation: LocationPageContent = {
         "Yes. We support Australian service businesses and digital-first teams that need automation and ops software with measurable ROI.",
       tag: "Coverage",
       column: "left",
-    }
+    },
+    {
+      question: "Can you integrate with our existing POS or rostering tools?",
+      answer:
+        "Yes. We map your current stack during discovery and connect the workflows that matter, so new software fits peak trading and staff routines instead of fighting them.",
+      tag: "Integrations",
+      column: "right",
+    },
   ],
   cta: {
     title: "Have a software project in mind?",
@@ -3424,7 +3445,14 @@ export const ukLocation: LocationPageContent = {
         "Yes. We support UK SaaS founders, professional services, and regulated operators with documentation-driven delivery and clear milestones.",
       tag: "Coverage",
       column: "left",
-    }
+    },
+    {
+      question: "How do you approach GDPR and security questions?",
+      answer:
+        "We surface personal-data touchpoints early, document access and retention assumptions, and keep delivery evidence your team can share with procurement or compliance reviewers.",
+      tag: "Compliance",
+      column: "right",
+    },
   ],
   cta: {
     title: "Have a software project in mind?",
@@ -3547,7 +3575,14 @@ export const uaeLocation: LocationPageContent = {
         "Yes. We support UAE operators in retail, hospitality, real estate, logistics, and services with CRM, ERP, and automation built for scale.",
       tag: "Coverage",
       column: "left",
-    }
+    },
+    {
+      question: "Can you support bilingual Arabic and English experiences?",
+      answer:
+        "Yes. When your customers or staff need both languages, we plan UX, content structure, and layouts accordingly so guest-facing and ops screens stay clear.",
+      tag: "Localization",
+      column: "right",
+    },
   ],
   cta: {
     title: "Have a software project in mind?",
