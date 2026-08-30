@@ -10,7 +10,6 @@ import {
 import type { FaqItem } from "@/data/landing/types";
 import { companyStats } from "@/data/landing/trust";
 import { processSteps as baseProcessSteps } from "@/data/landing/process";
-import { testimonials as baseTestimonials } from "@/data/landing/testimonials";
 import { teamIntro as baseTeamIntro } from "@/data/landing/team";
 import { techStackIntro as baseTechIntro } from "@/data/landing/tech-stack";
 import type { ImageAsset } from "@/data/landingPage";
@@ -1303,135 +1302,140 @@ function caseBlurbsForPlace(place: string): LocationSocialProofItem[] {
   );
 }
 
-/** Pakistan hub + Pakistan city pages use anonymized engagement composites , not international countries. */
+/** Pakistan hub, Pakistan cities, and all country pages use anonymized engagement composites. */
 function usesCaseBlurbs(place: string) {
   const key = place.toLowerCase();
-  return key === "pakistan" || CASE_BLURB_CITIES.has(key);
+  return (
+    key === "pakistan" ||
+    CASE_BLURB_CITIES.has(key) ||
+    key === "united states" ||
+    key === "canada" ||
+    key === "australia" ||
+    key === "united kingdom" ||
+    key === "united arab emirates"
+  );
 }
 
-const countrySpecificTestimonials: Record<string, LocationSocialProofItem[]> = {
+/**
+ * Anonymized engagement composites for international country pages.
+ * Not attributed customer reviews — illustrative of project types we deliver.
+ */
+const countryEngagementBlurbs: Record<string, LocationSocialProofItem[]> = {
   "United States": [
     {
       quote:
-        "We needed a more reliable product partner for a SaaS workflow that had grown beyond our internal tools. The team brought structure, fast iteration, and a thoughtful product process that made launch and handoff far smoother than our previous agency relationships.",
-      author: "Operations Lead",
-      role: "New York",
+        "A US SaaS team needed a more reliable product partner after their workflow had grown beyond internal tools. We brought structure, fast iteration, and a clear product process that made launch and handoff smoother than their previous agency relationships.",
+      author: "SaaS engagement",
+      role: "United States",
     },
     {
       quote:
-        "Our healthcare delivery workflow had too many manual steps and too much spreadsheet dependence. The build gave us clearer scheduling, lower admin overhead, and much better visibility for staff and management.",
-      author: "Clinic Director",
-      role: "Los Angeles",
+        "A healthcare operator was stuck with too many manual steps and spreadsheet dependence. We delivered clearer scheduling, lower admin overhead, and better visibility for staff and management.",
+      author: "Healthcare engagement",
+      role: "United States",
     },
     {
       quote:
-        "The project was delivered with clear milestones and direct communication, so our team always knew what had changed and what was coming next. It felt like working with an embedded senior product team, not a remote vendor.",
-      author: "Product Manager",
-      role: "Chicago",
+        "A mid-market product team needed milestone clarity and direct communication throughout the build. The engagement felt like working with an embedded senior product team, not a remote vendor.",
+      author: "Product engagement",
+      role: "United States",
     },
   ],
   Canada: [
     {
       quote:
-        "We needed a custom system for service scheduling and client follow-up without a bloated platform. The result was faster internal operations, better communication with customers, and a cleaner system our team could actually maintain.",
-      author: "Founder",
-      role: "Toronto",
+        "A Canadian service business needed custom scheduling and client follow-up without a bloated platform. The result was faster operations, clearer customer communication, and a system their team could maintain.",
+      author: "Operations engagement",
+      role: "Canada",
     },
     {
       quote:
-        "Their team took the time to understand our workflow before writing code. The final product matched our operational reality and gave us better visibility across staff and client touchpoints.",
-      author: "Director",
-      role: "Vancouver",
+        "A growth-stage company needed software matched to real workflows before code started. Discovery-first delivery produced better visibility across staff and client touchpoints.",
+      author: "Workflow engagement",
+      role: "Canada",
     },
     {
       quote:
-        "The process was disciplined, transparent, and fast. We got a product that was easier to run and easier to expand as the business grew.",
-      author: "Operations Manager",
-      role: "Montreal",
+        "A digital transformation project needed disciplined, transparent delivery. The team received a product that was easier to run and easier to expand as the business grew.",
+      author: "Digital transformation engagement",
+      role: "Canada",
     },
   ],
   Australia: [
     {
       quote:
-        "They helped us replace fragmented internal workflows with a clearer system and better reporting. The process was organized, the communication was strong, and the final product felt built around our real operating model.",
-      author: "Business Owner",
-      role: "Sydney",
+        "An Australian operator needed fragmented internal workflows replaced with clearer systems and reporting. Organized delivery produced a platform built around their real operating model.",
+      author: "Ops platform engagement",
+      role: "Australia",
     },
     {
       quote:
-        "Our old software had become a bottleneck. The new platform simplified scheduling, reporting, and team coordination without disrupting the business while we were switching over.",
-      author: "Healthcare Manager",
-      role: "Melbourne",
+        "A healthcare provider was bottlenecked by aging software. The new platform simplified scheduling, reporting, and team coordination without disrupting day-to-day service.",
+      author: "Healthcare engagement",
+      role: "Australia",
     },
     {
       quote:
-        "The team understood the need for practical, scalable software rather than decorative features. We got something reliable that our staff could use immediately.",
-      author: "COO",
-      role: "Brisbane",
+        "A service business needed practical, scalable software rather than decorative features. Staff could use the delivered system immediately with reliable day-to-day operations.",
+      author: "Automation engagement",
+      role: "Australia",
     },
   ],
   "United Kingdom": [
     {
       quote:
-        "The team gave us a clear roadmap and kept communication tight throughout the build. The outcome was a better product, a better project rhythm, and a more confident internal team.",
-      author: "Head of Product",
-      role: "London",
+        "A UK product team needed a clear roadmap and tight communication throughout the build. The outcome was a stronger product rhythm and a more confident internal team.",
+      author: "B2B SaaS engagement",
+      role: "United Kingdom",
     },
     {
       quote:
-        "We needed a partner to untangle manual processes and create a cleaner operational system. The build improved productivity quickly and gave us new confidence in our internal tooling.",
-      author: "Operations Director",
-      role: "Manchester",
+        "A regulated operations group needed manual processes untangled into a cleaner system. Productivity improved quickly and internal tooling became more trustworthy.",
+      author: "Operations engagement",
+      role: "United Kingdom",
     },
     {
       quote:
-        "Their structured delivery approach gave us visibility at every milestone. We always knew what was being built, why it mattered, and what the next decision point was.",
-      author: "Founder",
-      role: "Birmingham",
+        "A professional services firm needed visibility at every milestone. Structured delivery kept scope, decisions, and next steps clear from kickoff through launch.",
+      author: "Delivery engagement",
+      role: "United Kingdom",
     },
   ],
   "United Arab Emirates": [
     {
       quote:
-        "We needed software that could handle real operations and not just look good in a demo. The final system gave us stronger visibility, better process control, and smoother day-to-day execution.",
-      author: "General Manager",
-      role: "Dubai",
+        "A UAE operator needed software that could handle real operations, not just look good in a demo. The system improved visibility, process control, and day-to-day execution.",
+      author: "ERP engagement",
+      role: "United Arab Emirates",
     },
     {
       quote:
-        "The project felt organized from the start. Scope, responsibilities, and delivery milestones were clear, and the system we received fit the pace of our real business operations.",
-      author: "Operations Lead",
-      role: "Abu Dhabi",
+        "A growing enterprise needed organized scope, responsibilities, and milestones from day one. The delivered system matched the pace of their real business operations.",
+      author: "CRM engagement",
+      role: "United Arab Emirates",
     },
     {
       quote:
-        "We wanted a software partner that would stay accountable after launch. That is exactly what happened, and the system kept improving as our team adapted to it.",
-      author: "Founder",
-      role: "Sharjah",
+        "A hospitality and retail team wanted a partner accountable after launch. Post-go-live support kept the system improving as staff adapted to new workflows.",
+      author: "Automation engagement",
+      role: "United Arab Emirates",
     },
   ],
 };
 
 function pickTestimonials(place: string): LocationSocialProofItem[] {
-  if (countrySpecificTestimonials[place]) return countrySpecificTestimonials[place];
-  const blurbs = caseBlurbsForPlace(place);
-  const matched = baseTestimonials.filter(
-    (t) =>
-      t.role.toLowerCase().includes(place.toLowerCase()) ||
-      t.quote.toLowerCase().includes(place.toLowerCase())
-  );
-  const named =
-    matched.length >= 3
-      ? matched
-      : rotate([...baseTestimonials], place).slice(0, 6);
+  const countryBlurbs = countryEngagementBlurbs[place];
+  if (countryBlurbs) return countryBlurbs;
 
-  if (blurbs.length === 0) return named;
-  // City/Pakistan pages: lead with honest anonymized blurbs, then other city blurbs for depth
+  const blurbs = caseBlurbsForPlace(place);
   if (place.toLowerCase() === "pakistan") return blurbs;
-  const otherBlurbs = pakistanCityCaseBlurbs.filter(
-    (item) => !blurbs.includes(item)
-  );
-  return [...blurbs, ...otherBlurbs];
+  if (blurbs.length > 0) {
+    const otherBlurbs = pakistanCityCaseBlurbs.filter((item) => !blurbs.includes(item));
+    return [...blurbs, ...otherBlurbs];
+  }
+
+  // Never fall back to homepage-style attributed reviews on location pages.
+  return pakistanCityCaseBlurbs;
 }
 
 function pickCaseStudies(place: string): CaseStudy[] {
@@ -1554,22 +1558,18 @@ export function buildLocationSections(
       items: pickCaseStudies(placeLabel),
     },
     testimonials: {
-      overlineText: usesCaseBlurbs(placeLabel)
-        ? "How we've helped businesses like yours"
-        : isPakistan
-          ? "Client feedback"
-          : `${placeLabel} client feedback`,
-      title: usesCaseBlurbs(placeLabel)
-        ? "Local engagement examples"
-        : "What Our Clients Say",
-      titleItalic: usesCaseBlurbs(placeLabel) ? "engagement" : "Clients",
-      description: usesCaseBlurbs(placeLabel)
-        ? isPakistan
-          ? "Illustrative composites based on project types we deliver across Pakistani cities , not attributed customer reviews."
-          : `An anonymized engagement example for ${placeLabel}, plus similar work in other Pakistani cities , not attributed customer reviews.`
-        : isPakistan
-          ? "Feedback from founders and operators who hired us for Pakistani and international delivery."
-          : `Feedback from founders and operators who worked with us on ${placeLabel} product and operations software.`,
+      overlineText: "How we've helped businesses like yours",
+      title: "Local engagement examples",
+      titleItalic: "engagement",
+      description: isPakistan
+        ? "Illustrative composites based on project types we deliver across Pakistani cities, not attributed customer reviews."
+        : placeLabel === "United States" ||
+            placeLabel === "Canada" ||
+            placeLabel === "Australia" ||
+            placeLabel === "United Kingdom" ||
+            placeLabel === "United Arab Emirates"
+          ? `Illustrative composites based on project types we deliver for ${placeLabel} markets, not attributed customer reviews.`
+          : `An anonymized engagement example for ${placeLabel}, plus similar work in other Pakistani cities, not attributed customer reviews.`,
       items: pickTestimonials(placeLabel),
     },
     team: {
