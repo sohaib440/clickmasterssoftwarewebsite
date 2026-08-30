@@ -4,7 +4,7 @@
  */
 
 import type { LucideIcon } from "lucide-react";
-import { BarChart3, Rocket, Shield } from "lucide-react";
+import { BarChart3, Globe, Rocket, Shield } from "lucide-react";
 import { projectPath } from "@/lib/landing/constants";
 import { siteBrand } from "@/lib/landing/brand";
 import { teamPath } from "@/lib/landing/constants";
@@ -136,6 +136,7 @@ export const heroFeatures = [
   { icon: Rocket, label: "Scalable Solutions" },
   { icon: Shield, label: "Secure & Reliable" },
   { icon: BarChart3, label: "Business Growth" },
+  { icon: Globe, label: "Global Delivery" },
 ] as const;
 
 export const heroBackgroundVideo = "/herosection/software-development-company.mp4";

@@ -754,10 +754,13 @@ const CITY_FOCUS: Record<string, PlaceFocus> = {
 };
 
 function getFocus(place: string): PlaceFocus {
-  return CITY_FOCUS[place] ?? {
-    ...DEFAULT_FOCUS,
-    economy: `${place} businesses, clinics, and schools`,
-  };
+  return (
+    CITY_FOCUS[place] ??
+    COUNTRY_FOCUS[place] ?? {
+      ...DEFAULT_FOCUS,
+      economy: `${place} businesses, clinics, and schools`,
+    }
+  );
 }
 
 function hashPlace(place: string): number {
@@ -813,25 +816,378 @@ function serviceDescription(title: string, place: string, focus: PlaceFocus): st
   );
 }
 
+const COUNTRY_FOCUS: Record<string, PlaceFocus> = {
+  Pakistan: {
+    economy: "clinics, schools, retailers, and enterprises nationwide",
+    priorityIndustrySlugs: [
+      "healthcare",
+      "education",
+      "retail",
+      "manufacturing",
+      "finance",
+      "logistics",
+    ],
+    serviceAngle: "HMS, ERP, and custom digital products across major cities",
+  },
+  "United States": {
+    economy: "startups, SaaS teams, clinics, and mid-market operators",
+    priorityIndustrySlugs: [
+      "technology",
+      "healthcare",
+      "finance",
+      "logistics",
+      "retail",
+      "consulting",
+    ],
+    serviceAngle: "product platforms, workflow software, and scalable web systems",
+  },
+  Canada: {
+    economy: "growing product companies, clinics, and service businesses",
+    priorityIndustrySlugs: [
+      "healthcare",
+      "education",
+      "technology",
+      "finance",
+      "retail",
+      "real-estate",
+    ],
+    serviceAngle: "custom platforms, automation, and operational software",
+  },
+  Australia: {
+    economy: "service businesses, healthcare providers, and digital-first teams",
+    priorityIndustrySlugs: [
+      "healthcare",
+      "logistics",
+      "retail",
+      "hospitality",
+      "education",
+      "technology",
+    ],
+    serviceAngle: "practical digital transformation and ops platforms",
+  },
+  "United Kingdom": {
+    economy: "SaaS founders, professional services, and regulated operators",
+    priorityIndustrySlugs: [
+      "finance",
+      "banking",
+      "healthcare",
+      "technology",
+      "consulting",
+      "insurance",
+    ],
+    serviceAngle: "secure product engineering and compliance-aware systems",
+  },
+  "United Arab Emirates": {
+    economy: "retail, hospitality, logistics, and fast-scaling enterprises",
+    priorityIndustrySlugs: [
+      "retail",
+      "hospitality",
+      "logistics",
+      "real-estate",
+      "finance",
+      "healthcare",
+    ],
+    serviceAngle: "CRM, ERP, mobile apps, and business automation",
+  },
+};
+
+/** Fully unique industry blurbs for each country location page (all 15 industries). */
+const COUNTRY_INDUSTRY_COPY: Record<string, Record<string, string>> = {
+  Pakistan: {
+    manufacturing:
+      "Factory ERP, production tracking, and inventory control for Pakistani manufacturers who need shop-floor numbers they can trust every shift.",
+    healthcare:
+      "HMS, clinic ERP, and patient workflows for hospitals and private practices across Pakistan — appointments, EMR, billing, and pharmacy in one system.",
+    retail:
+      "POS, multi-branch inventory, and storefront tools for Pakistani retailers who want daily sales visibility without chasing every manager on WhatsApp.",
+    "real-estate":
+      "Listings, lead CRM, and tenant workflows for property teams in Pakistan tired of deals dying in scattered chats and spreadsheets.",
+    education:
+      "School portals, fee systems, attendance, and parent apps for campuses nationwide that need software staff and families will actually use.",
+    finance:
+      "Secure finance ops and analytics for Pakistani firms that need accurate books, controlled access, and audit-ready records.",
+    logistics:
+      "Fleet, shipment, and warehouse visibility for logistics operators moving goods across Pakistani cities and corridors.",
+    media:
+      "Publishing and content workflow tools for Pakistani media teams that need faster handoffs without broken production pipelines.",
+    banking:
+      "Digital onboarding, ops tooling, and compliance-minded journeys for financial institutions modernizing how Pakistanis bank.",
+    agriculture:
+      "Agri inventory, buyer/seller tooling, and seasonal ops software for farms and traders who need clearer market and stock visibility.",
+    hospitality:
+      "Bookings, guest ops, and property tools for hotels and tourism businesses across Pakistan through peak travel seasons.",
+    "health-fitness":
+      "Membership apps, class booking, and gym ops platforms for fitness brands growing communities in major Pakistani cities.",
+    technology:
+      "SaaS platforms, APIs, and product infrastructure for Pakistani startups and software companies shipping to local and global users.",
+    insurance:
+      "Quote, claims, and policy servicing workflows for insurers and brokers who need faster turnaround without messy manual queues.",
+    consulting:
+      "Client portals, delivery tracking, and reporting tools for consultancies managing engagements across Pakistan and overseas clients.",
+  },
+  "United States": {
+    manufacturing:
+      "Production planning, inventory truth, and plant ops software for US manufacturers replacing fragile spreadsheets and disconnected shop-floor tools.",
+    healthcare:
+      "Scheduling, billing, and care-ops platforms for US clinics and care groups that need fewer manual steps and clearer staff visibility.",
+    retail:
+      "Inventory, checkout, and multi-location retail systems for US brands that need reliable daily numbers across stores and online channels.",
+    "real-estate":
+      "Listing CRM, agent pipelines, and property ops software for US brokerages and property managers scaling lead-to-lease workflows.",
+    education:
+      "Student portals, admin dashboards, and learning platforms for US schools and training providers modernizing enrollment and engagement.",
+    finance:
+      "Secure finance workflows, reporting, and analytics for US firms that need accuracy, permissions, and clean audit trails.",
+    logistics:
+      "Routing, warehouse, and shipment visibility for US logistics and fulfillment teams coordinating high-volume operations.",
+    media:
+      "Content ops, CMS, and publishing workflows for US media and digital teams that need speed without broken handoffs.",
+    banking:
+      "Onboarding, customer journeys, and ops tooling for US financial institutions tightening KYC, fraud checks, and digital service.",
+    agriculture:
+      "Farm ops, supply tracking, and buyer tooling for US agribusinesses that need clearer inventory and seasonal planning data.",
+    hospitality:
+      "Reservations, guest experience, and property ops software for US hotels and hospitality groups running multi-property portfolios.",
+    "health-fitness":
+      "Member apps, class scheduling, and studio ops platforms for US fitness brands growing retention and digital engagement.",
+    technology:
+      "Product MVPs, SaaS platforms, and API infrastructure for US startups and software companies shipping faster with senior engineering.",
+    insurance:
+      "Quote-to-bind, claims, and policy servicing systems for US insurers and MGAs reducing cycle time and manual rework.",
+    consulting:
+      "Client portals, engagement tracking, and delivery dashboards for US consultancies that need clearer project and client visibility.",
+  },
+  Canada: {
+    manufacturing:
+      "Shop-floor inventory, production tracking, and ops platforms for Canadian manufacturers who need dependable plant data day to day.",
+    healthcare:
+      "Clinic scheduling, patient workflows, and practice systems for Canadian care teams reducing admin load without disrupting care.",
+    retail:
+      "POS, catalog, and inventory tools for Canadian retailers coordinating stores, online orders, and seasonal demand.",
+    "real-estate":
+      "Listings, lead follow-up, and property management software for Canadian brokerages and landlords running cleaner pipelines.",
+    education:
+      "Student administration, portals, and learning tools for Canadian schools and institutions improving staff and family workflows.",
+    finance:
+      "Finance ops, reporting, and access-controlled systems for Canadian companies that need trustworthy numbers and clear approvals.",
+    logistics:
+      "Fleet, fulfillment, and shipment tracking for Canadian logistics teams managing regional and cross-border movement.",
+    media:
+      "Editorial and content production tools for Canadian media organizations that need reliable publishing workflows.",
+    banking:
+      "Digital onboarding and customer-ops tooling for Canadian financial services teams modernizing secure client journeys.",
+    agriculture:
+      "Agri inventory, supply coordination, and reporting for Canadian farms and food businesses planning around seasonal cycles.",
+    hospitality:
+      "Booking, guest ops, and property tools for Canadian hotels and hospitality operators through peak travel periods.",
+    "health-fitness":
+      "Membership, booking, and studio platforms for Canadian fitness brands building stronger member retention.",
+    technology:
+      "Custom SaaS, product platforms, and integrations for Canadian startups and tech teams shipping maintainable software.",
+    insurance:
+      "Policy, claims, and broker workflows for Canadian insurers simplifying intake, status tracking, and customer updates.",
+    consulting:
+      "Client portals and delivery reporting for Canadian consultancies managing multi-stakeholder engagements cleanly.",
+  },
+  Australia: {
+    manufacturing:
+      "Production and inventory systems for Australian manufacturers who need clearer factory visibility and fewer spreadsheet reconciliations.",
+    healthcare:
+      "Practice management, scheduling, and patient ops software for Australian healthcare providers improving day-to-day delivery.",
+    retail:
+      "Store and e-commerce operations tools for Australian retailers balancing inventory, fulfillment, and customer experience.",
+    "real-estate":
+      "Listings CRM and property workflows for Australian agencies and property managers keeping leads and tenancies organized.",
+    education:
+      "Campus portals, admin systems, and learning platforms for Australian schools and training providers.",
+    finance:
+      "Secure finance and reporting platforms for Australian businesses that need accurate ops data and controlled access.",
+    logistics:
+      "Warehouse, routing, and shipment visibility for Australian logistics operators coordinating national delivery networks.",
+    media:
+      "Content and broadcast workflow tools for Australian media teams producing and publishing at pace.",
+    banking:
+      "Digital service and ops tooling for Australian financial institutions strengthening onboarding and customer journeys.",
+    agriculture:
+      "Farm ops and supply software for Australian agribusinesses needing better seasonal planning and stock visibility.",
+    hospitality:
+      "Reservations and guest operations platforms for Australian hotels, venues, and tourism operators.",
+    "health-fitness":
+      "Class booking and member apps for Australian fitness studios growing digital engagement and retention.",
+    technology:
+      "Product engineering and platform builds for Australian startups and tech companies shipping practical SaaS.",
+    insurance:
+      "Claims and policy workflow software for Australian insurers reducing turnaround and manual status chasing.",
+    consulting:
+      "Engagement portals and reporting tools for Australian consultancies keeping clients and delivery teams aligned.",
+  },
+  "United Kingdom": {
+    manufacturing:
+      "Plant ops and inventory platforms for UK manufacturers replacing fragmented tools with one operational source of truth.",
+    healthcare:
+      "Care scheduling, intake, and practice systems for UK providers that need clearer operational visibility and less admin friction.",
+    retail:
+      "Inventory, checkout, and omnichannel tools for UK retailers coordinating stores, online orders, and stock accuracy.",
+    "real-estate":
+      "Agency CRM, listings, and property ops software for UK estate agents and managers running disciplined pipelines.",
+    education:
+      "Student portals and administrative platforms for UK schools, colleges, and training organisations.",
+    finance:
+      "Finance ops and analytics for UK firms that need secure workflows, permissions, and audit-ready reporting.",
+    logistics:
+      "Fleet and fulfillment visibility for UK logistics teams managing dense urban and national delivery networks.",
+    media:
+      "Publishing and production workflows for UK media organisations that need reliable content operations.",
+    banking:
+      "Onboarding, KYC-minded journeys, and ops tooling for UK financial institutions modernising digital service.",
+    agriculture:
+      "Agri supply and inventory tooling for UK farms and food businesses that need clearer operational reporting.",
+    hospitality:
+      "Booking and guest ops platforms for UK hotels, hospitality groups, and venue operators.",
+    "health-fitness":
+      "Membership and class platforms for UK fitness brands improving booking, retention, and studio operations.",
+    technology:
+      "SaaS product builds and platform engineering for UK startups and software companies shipping with senior delivery.",
+    insurance:
+      "Underwriting support, claims, and policy servicing systems for UK insurers and brokers.",
+    consulting:
+      "Client portals and delivery dashboards for UK consultancies managing complex stakeholder engagements.",
+  },
+  "United Arab Emirates": {
+    manufacturing:
+      "Production and inventory systems for UAE manufacturers and industrial operators needing clearer plant and stock control.",
+    healthcare:
+      "Clinic and care-ops software for UAE healthcare providers streamlining appointments, billing, and patient workflows.",
+    retail:
+      "POS, inventory, and commerce platforms for UAE retailers operating across malls, online channels, and multi-branch networks.",
+    "real-estate":
+      "Listings, lead CRM, and property management tools for UAE brokerages and developers managing high-volume pipelines.",
+    education:
+      "School portals and administrative systems for UAE campuses coordinating admissions, fees, and parent communication.",
+    finance:
+      "Secure finance and ops platforms for UAE businesses that need controlled access, accurate reporting, and clean approvals.",
+    logistics:
+      "Warehouse, fleet, and shipment tools for UAE logistics teams coordinating regional and cross-border movement.",
+    media:
+      "Content and campaign workflow tools for UAE media and marketing teams producing at pace across channels.",
+    banking:
+      "Digital onboarding and customer-ops tooling for UAE financial institutions modernising secure client journeys.",
+    agriculture:
+      "Supply and inventory software for UAE agri and food businesses coordinating sourcing, stock, and distribution.",
+    hospitality:
+      "Reservations, guest experience, and property ops platforms for UAE hotels and hospitality groups.",
+    "health-fitness":
+      "Member apps and studio platforms for UAE fitness brands growing bookings, memberships, and retention.",
+    technology:
+      "Custom SaaS, CRM, and product platforms for UAE startups and enterprises shipping digital products quickly.",
+    insurance:
+      "Quote, policy, and claims workflows for UAE insurers and brokers reducing turnaround and manual follow-up.",
+    consulting:
+      "Client portals and delivery tracking for UAE consultancies and professional services firms.",
+  },
+};
+
+/** Multiple city-specific angles per industry so each Pakistan city page gets distinct copy. */
+const CITY_INDUSTRY_ANGLES: Record<string, string[]> = {
+  manufacturing: [
+    "Production tracking, inventory, and factory ops software for {place} manufacturers who need shop-floor truth instead of spreadsheet chaos — especially for {economy}.",
+    "ERP-style inventory and production workflows for {place} industrial teams, scoped around {serviceAngle}.",
+    "Plant and warehouse systems for {place} manufacturers coordinating materials, output, and billing without daily reconciliation fights.",
+  ],
+  healthcare: [
+    "HMS, clinic ERP, and patient workflows for {place} hospitals and practices that need reliable appointments, EMR, billing, and pharmacy in one flow.",
+    "Care-ops software for {place} clinics serving {economy}, built around {serviceAngle}.",
+    "Scheduling, records, and front-desk systems for {place} healthcare operators tired of paper registers and disconnected tools.",
+  ],
+  retail: [
+    "POS, inventory, and multi-branch tools for {place} retailers who want daily sales visibility without calling every manager.",
+    "Store and catalog systems for {place} retail teams in {economy}, aligned with {serviceAngle}.",
+    "Checkout and stock platforms for {place} shop owners coordinating counters, warehouses, and online orders.",
+  ],
+  "real-estate": [
+    "Listings, lead CRM, and agent workflows for {place} property teams tired of leads dying in WhatsApp threads.",
+    "Property and tenant systems for {place} agencies supporting {economy}, with {serviceAngle} where they fit.",
+    "Deal pipelines and listing tools for {place} real-estate operators who need one place for leads, viewings, and follow-up.",
+  ],
+  education: [
+    "School portals, fees, attendance, and parent apps for {place} campuses that need systems staff and families will actually use.",
+    "Education platforms for {place} schools and institutes within {economy}, scoped to {serviceAngle}.",
+    "Admissions, fee, and classroom admin software for {place} education teams replacing fragmented campus tools.",
+  ],
+  finance: [
+    "Secure finance and analytics platforms for {place} firms that need accuracy, access control, and audit-ready records.",
+    "Finance ops tooling for {place} businesses in {economy}, designed around {serviceAngle}.",
+    "Reporting and approval workflows for {place} finance teams who need one trusted view of numbers and permissions.",
+  ],
+  logistics: [
+    "Fleet, shipment, and warehouse visibility for {place} logistics operators moving goods across the region.",
+    "Routing and fulfillment systems for {place} operators supporting {economy}, with {serviceAngle}.",
+    "Dispatch and tracking tools for {place} logistics teams who need live status instead of phone-chain updates.",
+  ],
+  media: [
+    "Content and publishing workflows for {place} media teams that need speed without broken handoffs.",
+    "Production and CMS tools for {place} creators and publishers in {economy}, matched to {serviceAngle}.",
+    "Editorial ops software for {place} media organisations coordinating briefs, assets, and publish schedules.",
+  ],
+  banking: [
+    "Onboarding, ops, and compliance-minded tools for {place} financial institutions modernizing customer journeys.",
+    "Digital banking workflows for {place} finance teams within {economy}, focused on {serviceAngle}.",
+    "Customer journey and ops platforms for {place} institutions tightening KYC steps and service turnaround.",
+  ],
+  agriculture: [
+    "Agri ops, inventory, and buyer/seller tooling for {place} farms and traders who need seasonal clarity.",
+    "Farm and trade systems for {place} agri businesses in {economy}, supporting {serviceAngle}.",
+    "Stock and buyer coordination software for {place} agriculture operators replacing seasonal spreadsheet chaos.",
+  ],
+  hospitality: [
+    "Bookings, guest ops, and property tools for {place} hotels and tourism businesses through peak seasons.",
+    "Hospitality platforms for {place} venues serving {economy}, built around {serviceAngle}.",
+    "Reservation and guest-experience software for {place} hotels that need smoother front-desk and room ops.",
+  ],
+  "health-fitness": [
+    "Member apps, class booking, and gym ops platforms for {place} fitness brands growing local communities.",
+    "Studio and membership systems for {place} fitness operators in {economy}, aligned with {serviceAngle}.",
+    "Scheduling and member retention tools for {place} gyms and studios that need cleaner booking operations.",
+  ],
+  technology: [
+    "SaaS platforms, APIs, and product infrastructure for {place} startups and software teams shipping to real users.",
+    "Product engineering for {place} tech companies within {economy}, focused on {serviceAngle}.",
+    "Custom platforms and integrations for {place} technology teams that need senior delivery without agency churn.",
+  ],
+  insurance: [
+    "Quote, underwrite, and claims workflows for {place} insurers and brokers who need faster turnaround.",
+    "Policy and claims systems for {place} insurance teams in {economy}, supporting {serviceAngle}.",
+    "Intake and servicing tools for {place} brokers reducing manual status chasing across policies and claims.",
+  ],
+  consulting: [
+    "Client portals, analytics, and engagement tooling for {place} consultancies managing delivery cleanly.",
+    "Engagement and reporting platforms for {place} professional services teams in {economy}, with {serviceAngle}.",
+    "Delivery dashboards and client portals for {place} consultancies that need clearer project visibility.",
+  ],
+};
+
+function fillIndustryTemplate(
+  template: string,
+  place: string,
+  focus: PlaceFocus
+): string {
+  return template
+    .replaceAll("{place}", place)
+    .replaceAll("{economy}", focus.economy)
+    .replaceAll("{serviceAngle}", focus.serviceAngle);
+}
+
 function industryDescription(industry: Industry, place: string, focus: PlaceFocus): string {
-  const local: Record<string, string> = {
-    Manufacturing: `Production, inventory, and factory ops software for ${place} manufacturers who need shop-floor truth, not spreadsheet chaos.`,
-    Healthcare: `HMS, clinic ERP, and patient workflows for ${place} hospitals and private practices that need reliable day-to-day systems.`,
-    Retail: `POS, inventory, and multi-branch retail tools for ${place} store owners who want daily sales visibility without calling every manager.`,
-    "Real Estate": `Listings, lead CRM, and agent workflows for ${place} property teams tired of leads dying in WhatsApp threads.`,
-    Education: `School portals, fees, attendance, and parent apps for ${place} campuses that need systems staff and families will actually use.`,
-    Finance: `Secure finance and analytics platforms for ${place} firms that need accuracy, access control, and audit-ready records.`,
-    Logistics: `Fleet, shipment, and warehouse visibility for ${place} logistics operators moving goods across the region.`,
-    Media: `Content and publishing workflows for ${place} media teams that need speed without broken handoffs.`,
-    Banking: `Onboarding, ops, and compliance-minded tools for ${place} financial institutions modernizing customer journeys.`,
-    Agriculture: `Agri ops, inventory, and buyer/seller tooling for ${place} farms and traders who need seasonal clarity.`,
-    Hospitality: `Bookings, guest ops, and property tools for ${place} hotels and tourism businesses through peak seasons.`,
-  };
-  const base = local[industry.industry] ?? `${industry.description} Built for how ${place} teams work.`;
-  if (focus.priorityIndustrySlugs.includes(industry.slug)) {
-    return `${base} A priority focus for ${place} ${focus.economy}.`;
+  const countryCopy = COUNTRY_INDUSTRY_COPY[place]?.[industry.slug];
+  if (countryCopy) return countryCopy;
+
+  const angles = CITY_INDUSTRY_ANGLES[industry.slug];
+  if (angles?.length) {
+    const idx = hashPlace(`${place}:${industry.slug}`) % angles.length;
+    return fillIndustryTemplate(angles[idx]!, place, focus);
   }
-  return base;
+
+  return `${industry.description} Built for how ${place} teams work across ${focus.economy}.`;
 }
 
 function processStepDescription(
@@ -853,7 +1209,7 @@ function processStepDescription(
 function whyChooseValues(place: string, focus: PlaceFocus): LocationWhyChooseContent["values"] {
   return [
     {
-      title: `${place} market focus`,
+      title: `Built for Businesses in ${place}`,
       description: `We design around ${focus.economy} in ${place}: ${focus.serviceAngle} that match local operations, not generic templates.`,
     },
     {
@@ -884,7 +1240,7 @@ function pickIndustries(place: string, focus: PlaceFocus): Industry[] {
     .map((slug) => baseIndustries.find((i) => i.slug === slug))
     .filter((i): i is Industry => Boolean(i));
   const rest = baseIndustries.filter((i) => !focus.priorityIndustrySlugs.includes(i.slug));
-  const ordered = [...prioritized, ...rotate(rest, place)].slice(0, 9);
+  const ordered = [...prioritized, ...rotate(rest, place)];
   return ordered.map((item) => ({
     ...item,
     description: industryDescription(item, place, focus),
@@ -900,36 +1256,36 @@ export const pakistanCityCaseBlurbs: LocationSocialProofItem[] = [
     quote:
       "A multi-doctor clinic in Islamabad needed a single system to replace paper registers and three separate spreadsheets for billing and inventory. We delivered a unified HMS/ERP with Urdu-ready workflows, cutting patient check-in time and giving the front desk one place to manage appointments, pharmacy stock, and invoicing.",
     author: "Clinic engagement",
-    role: "Islamabad · HMS / ERP",
+    role: "Islamabad",
   },
   {
     quote:
       "A retail business in Lahore was losing leads between phone calls, WhatsApp, and a shared spreadsheet with no visibility into who owned which conversation. We built a CRM that consolidated lead tracking, staff assignment, and conversion reporting into one dashboard the sales floor actually uses daily.",
     author: "Retail engagement",
-    role: "Lahore · CRM",
+    role: "Lahore",
   },
   {
     quote:
       "An online retailer in Karachi was running checkout on a patchwork of outdated plugins causing regular payment failures. We rebuilt the storefront with JazzCash and Easypaisa integration and a streamlined checkout flow, resolving the payment failures and reducing cart abandonment.",
     author: "Ecommerce engagement",
-    role: "Karachi · Storefront / Payments",
+    role: "Karachi",
   },
   {
     quote:
       "A real estate agency in Rawalpindi was managing listings and tenant communication across email and paper files. We delivered a property management platform unifying listings, contracts, and tenant relationships in one system.",
     author: "Real estate engagement",
-    role: "Rawalpindi · Property platform",
+    role: "Rawalpindi",
   },
   {
     quote:
       "A textile manufacturing unit in Faisalabad was tracking inventory across Excel sheets maintained by multiple people, leading to frequent stock discrepancies. We built an ERP connecting inventory directly to billing, eliminating the manual reconciliation that caused the discrepancies.",
     author: "Manufacturing engagement",
-    role: "Faisalabad · Inventory ERP",
+    role: "Faisalabad",
   },
 ];
 
 const CASE_BLURB_CITIES = new Set(
-  pakistanCityCaseBlurbs.map((item) => item.role.split("·")[0]?.trim().toLowerCase() ?? "")
+  pakistanCityCaseBlurbs.map((item) => item.role.trim().toLowerCase())
 );
 
 function caseBlurbsForPlace(place: string): LocationSocialProofItem[] {
@@ -940,15 +1296,10 @@ function caseBlurbsForPlace(place: string): LocationSocialProofItem[] {
   );
 }
 
+/** Pakistan hub + Pakistan city pages use anonymized engagement composites — not international countries. */
 function usesCaseBlurbs(place: string) {
   const key = place.toLowerCase();
-  return (
-    key === "pakistan" ||
-    CASE_BLURB_CITIES.has(key) ||
-    Object.keys(countrySpecificTestimonials).some(
-      (country) => country.toLowerCase() === key
-    )
-  );
+  return key === "pakistan" || CASE_BLURB_CITIES.has(key);
 }
 
 const countrySpecificTestimonials: Record<string, LocationSocialProofItem[]> = {
@@ -957,19 +1308,19 @@ const countrySpecificTestimonials: Record<string, LocationSocialProofItem[]> = {
       quote:
         "We needed a more reliable product partner for a SaaS workflow that had grown beyond our internal tools. The team brought structure, fast iteration, and a thoughtful product process that made launch and handoff far smoother than our previous agency relationships.",
       author: "Operations Lead",
-      role: "New York · SaaS platform",
+      role: "New York",
     },
     {
       quote:
         "Our healthcare delivery workflow had too many manual steps and too much spreadsheet dependence. The build gave us clearer scheduling, lower admin overhead, and much better visibility for staff and management.",
       author: "Clinic Director",
-      role: "Los Angeles · Healthcare Ops",
+      role: "Los Angeles",
     },
     {
       quote:
         "The project was delivered with clear milestones and direct communication, so our team always knew what had changed and what was coming next. It felt like working with an embedded senior product team, not a remote vendor.",
       author: "Product Manager",
-      role: "Chicago · B2B platform",
+      role: "Chicago",
     },
   ],
   Canada: [
@@ -977,19 +1328,19 @@ const countrySpecificTestimonials: Record<string, LocationSocialProofItem[]> = {
       quote:
         "We needed a custom system for service scheduling and client follow-up without a bloated platform. The result was faster internal operations, better communication with customers, and a cleaner system our team could actually maintain.",
       author: "Founder",
-      role: "Toronto · Service business",
+      role: "Toronto",
     },
     {
       quote:
         "Their team took the time to understand our workflow before writing code. The final product matched our operational reality and gave us better visibility across staff and client touchpoints.",
       author: "Director",
-      role: "Vancouver · Digital operations",
+      role: "Vancouver",
     },
     {
       quote:
         "The process was disciplined, transparent, and fast. We got a product that was easier to run and easier to expand as the business grew.",
       author: "Operations Manager",
-      role: "Montreal · Growth company",
+      role: "Montreal",
     },
   ],
   Australia: [
@@ -997,19 +1348,19 @@ const countrySpecificTestimonials: Record<string, LocationSocialProofItem[]> = {
       quote:
         "They helped us replace fragmented internal workflows with a clearer system and better reporting. The process was organized, the communication was strong, and the final product felt built around our real operating model.",
       author: "Business Owner",
-      role: "Sydney · Operations software",
+      role: "Sydney",
     },
     {
       quote:
         "Our old software had become a bottleneck. The new platform simplified scheduling, reporting, and team coordination without disrupting the business while we were switching over.",
       author: "Healthcare Manager",
-      role: "Melbourne · Healthcare workflow",
+      role: "Melbourne",
     },
     {
       quote:
         "The team understood the need for practical, scalable software rather than decorative features. We got something reliable that our staff could use immediately.",
       author: "COO",
-      role: "Brisbane · Service operations",
+      role: "Brisbane",
     },
   ],
   "United Kingdom": [
@@ -1017,19 +1368,19 @@ const countrySpecificTestimonials: Record<string, LocationSocialProofItem[]> = {
       quote:
         "The team gave us a clear roadmap and kept communication tight throughout the build. The outcome was a better product, a better project rhythm, and a more confident internal team.",
       author: "Head of Product",
-      role: "London · SaaS product",
+      role: "London",
     },
     {
       quote:
         "We needed a partner to untangle manual processes and create a cleaner operational system. The build improved productivity quickly and gave us new confidence in our internal tooling.",
       author: "Operations Director",
-      role: "Manchester · Service company",
+      role: "Manchester",
     },
     {
       quote:
         "Their structured delivery approach gave us visibility at every milestone. We always knew what was being built, why it mattered, and what the next decision point was.",
       author: "Founder",
-      role: "Birmingham · Digital business",
+      role: "Birmingham",
     },
   ],
   "United Arab Emirates": [
@@ -1037,19 +1388,19 @@ const countrySpecificTestimonials: Record<string, LocationSocialProofItem[]> = {
       quote:
         "We needed software that could handle real operations and not just look good in a demo. The final system gave us stronger visibility, better process control, and smoother day-to-day execution.",
       author: "General Manager",
-      role: "Dubai · Business operations",
+      role: "Dubai",
     },
     {
       quote:
         "The project felt organized from the start. Scope, responsibilities, and delivery milestones were clear, and the system we received fit the pace of our real business operations.",
       author: "Operations Lead",
-      role: "Abu Dhabi · Service operations",
+      role: "Abu Dhabi",
     },
     {
       quote:
         "We wanted a software partner that would stay accountable after launch. That is exactly what happened, and the system kept improving as our team adapted to it.",
       author: "Founder",
-      role: "Sharjah · Growth company",
+      role: "Sharjah",
     },
   ],
 };
@@ -1102,14 +1453,24 @@ export function buildLocationSections(
 
   const placeLabel = isPakistan ? "Pakistan" : place;
 
+  const servicesTitles: Record<string, string> = {
+    Pakistan: "Software Development Services for Pakistani Businesses",
+    "United States": "Software Development Services for US Businesses",
+    Canada: "Software Development Services for Canadian Businesses",
+    Australia: "Software Development Services for Australian Businesses",
+    "United Kingdom": "Software Development Services for UK Businesses",
+    "United Arab Emirates": "Software Development Services for UAE Businesses",
+  };
+
   return {
     trust: {
       ariaLabel: `Trust numbers for our software house in ${placeLabel}`,
     },
     services: {
       overlineText: isPakistan ? "Services across Pakistan" : `Services in ${placeLabel}`,
-      title: isPakistan ? "What we deliver" : `Software services for ${placeLabel}`,
-      titleItalic: isPakistan ? "digital future" : "local teams",
+      title:
+        servicesTitles[placeLabel] ??
+        `Software Development Services for ${placeLabel} Businesses`,
       description: isPakistan
         ? `From Islamabad to Karachi, we ship ${focus.serviceAngle} for ${focus.economy}.`
         : `As a software house serving ${placeLabel}, we deliver ${focus.serviceAngle} for ${focus.economy}.`,
@@ -1145,8 +1506,8 @@ export function buildLocationSections(
         ? "Industries we serve in Pakistan"
         : `Industries we serve in ${placeLabel}`,
       description: isPakistan
-        ? `Healthcare, education, retail, manufacturing, and more, tailored to Pakistani workflows and growth.`
-        : `Sector-focused software for ${placeLabel}, prioritized around ${focus.economy}.`,
+        ? "All 15 sectors we support — healthcare, education, retail, manufacturing, finance, logistics, and more — with copy tailored to Pakistani workflows and growth."
+        : `All 15 industries we serve, with ${placeLabel}-specific software focus across healthcare, education, retail, technology, finance, logistics, and more.`,
       items: pickIndustries(placeLabel, focus),
     },
     tech: {
@@ -1192,12 +1553,10 @@ export function buildLocationSections(
         ? "How we've helped businesses like yours"
         : isPakistan
           ? "Client feedback"
-          : `${placeLabel} client reviews`,
+          : `${placeLabel} client feedback`,
       title: usesCaseBlurbs(placeLabel)
         ? "Local engagement examples"
-        : isPakistan
-          ? "What partners say"
-          : `What clients say about work near ${placeLabel}`,
+        : "What partners say",
       titleItalic: usesCaseBlurbs(placeLabel) ? "engagement" : "partners",
       description: usesCaseBlurbs(placeLabel)
         ? isPakistan
@@ -1205,7 +1564,7 @@ export function buildLocationSections(
           : `An anonymized engagement example for ${placeLabel}, plus similar work in other Pakistani cities — not attributed customer reviews.`
         : isPakistan
           ? "Feedback from founders and operators who hired us for Pakistani and international delivery."
-          : `Reviews relevant to teams evaluating a software house for ${placeLabel}.`,
+          : `Feedback from founders and operators who worked with us on ${placeLabel} product and operations software.`,
       items: pickTestimonials(placeLabel),
     },
     team: {
@@ -1258,14 +1617,14 @@ export const pakistanLocation: LocationPageContent = {
   href: "/location/software-house-and-software-company-in-pakistan",
   title: "Software House in Pakistan",
   description:
-    "Next Software Development Company is the best software house and [[top-rated software development company in Pakistan]]. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Islamabad, Lahore, Karachi, and beyond.",
+    "Next Software Development Company helps Pakistani startups, SMEs, clinics, schools, and established businesses build reliable software that improves customer experiences, streamlines operations, and supports long-term growth.",
   descriptionSecondary:
-    "Our experienced [[team]] of developers, designers, and engineers combines technical expertise with deep local market insight to deliver scalable, secure, and affordable solutions that streamline operations and drive sustainable growth. Whether you are a startup building your first MVP or an enterprise seeking a full scale ERP system, we turn your vision into reliable, high performing software.",
+    "We provide custom software development, web and mobile app development, SaaS development, AI solutions, ERP and CRM systems, Hospital Management Systems (HMS), and business automation. Our senior [[team]] works with your stakeholders from discovery and architecture through development, testing, launch, and ongoing support.",
   descriptionTertiary:
-    "From Islamabad to Karachi and every major business center in between, our software house works with clinics, schools, retailers, and growing enterprises that need senior delivery, practical communication, and post-launch support. You get transparent planning, fixed-price options, and dependable engineering that keeps your operations moving with less risk and more clarity.",
-  metaTitle: "Software House in Pakistan",
+    "Whether you're launching a new digital product, replacing outdated systems, or automating manual workflows across Islamabad, Lahore, Karachi, and beyond, we focus on practical solutions that are scalable, maintainable, and aligned with your business goals.",
+  metaTitle: "Software House in Pakistan | Next Software Development",
   metaDescription:
-    "Next Software Development Company is the best software house and top-rated software development company in Pakistan. Custom HMS, ERP, and digital products for businesses nationwide.",
+    "Software house in Pakistan providing custom software, web and mobile app development, AI, SaaS, ERP, and business automation solutions.",
   coverageTitle: "Cities we serve across Pakistan",
   coverageDescription:
     "As a nationwide software house and software development company, we partner with founders and operators across Pakistan, building HMS for Islamabad clinics, school platforms in Lahore, and retail systems in Karachi. Pick your city to see how our software company can support your market.",
@@ -1398,16 +1757,16 @@ export const usaLocation: LocationPageContent = {
   slug: "software-house-and-software-company-in-usa",
   country: "United States",
   href: "/location/software-house-and-software-company-in-usa",
-  title: "Software Company in USA",
+  title: "Software Development Company in the USA",
   description:
-    "Next Software Development Company is a reliable software company in the USA for SaaS founders, healthcare operators, and growing businesses needing custom software, web apps, ERP, and mobile product development.",
+    "Next Software Development Company helps US startups, SMEs, and established businesses build reliable software that improves customer experiences, streamlines operations, and supports long-term growth.",
   descriptionSecondary:
-    "Our senior team partners with US businesses from discovery through launch, giving you transparent delivery, clear communication, and product systems that support real operational growth without the typical agency friction.",
+    "We provide custom software development, web and mobile app development, SaaS development, AI solutions, ERP and CRM systems, and business automation. Our senior engineering team works with your stakeholders from discovery and architecture through development, testing, launch, and ongoing support.",
   descriptionTertiary:
-    "Whether you are building a SaaS product, modernizing a legacy workflow, or improving a patient or operations system, we keep scope clear, collaboration tight, and delivery accountable from kickoff through launch and support. That gives your team a senior product partner instead of a disconnected vendor queue.",
-  metaTitle: "Software Company in USA",
+    "Whether you're launching a new digital product, replacing outdated systems, or automating manual workflows, we focus on practical solutions that are scalable, maintainable, and aligned with your business goals.",
+  metaTitle: "Software Development Company in the USA | Next Software Development",
   metaDescription:
-    "Custom software company in the USA for SaaS, healthcare, logistics, and business operations. Senior-led product engineering with clear collaboration and transparent delivery.",
+    "Software development company in the USA providing custom software, web and mobile apps, AI, SaaS, and business automation for growing companies.",
   coverageTitle: "Software house coverage across the USA",
   coverageDescription:
     "We work with teams in the U.S. on product strategy, custom web platforms, healthcare workflows, and business systems built for speed, security, and scale.",
@@ -1542,16 +1901,16 @@ export const canadaLocation: LocationPageContent = {
   slug: "software-house-and-software-company-in-canada",
   country: "Canada",
   href: "/location/software-house-and-software-company-in-canada",
-  title: "Software Company in Canada",
+  title: "Software Development Company in Canada",
   description:
-    "Next Software Development Company is a software company in Canada helping founders, clinics, and growing businesses build custom software, web platforms, ERP workflows, and mobile products with senior delivery.",
+    "Next Software Development Company helps Canadian startups, SMEs, and established businesses build reliable software that improves customer experiences, streamlines operations, and supports long-term growth.",
   descriptionSecondary:
-    "We work closely with Canadian teams on product strategy and engineering execution, keeping communication transparent and building systems around real business workflows rather than one-size-fits-all templates.",
+    "We provide custom software development, web and mobile app development, SaaS development, AI solutions, ERP and CRM systems, and business automation. Our senior engineering team works with your stakeholders from discovery and architecture through development, testing, launch, and ongoing support.",
   descriptionTertiary:
-    "From custom web platforms and healthcare workflows to internal operations tools and digital product launches, our team gives Canadian businesses a reliable engineering partner that stays engaged after the build starts. We aim for systems that are maintainable, practical, and aligned with how your team really works.",
-  metaTitle: "Software Company in Canada",
+    "Whether you're launching a new digital product, replacing outdated systems, or automating manual workflows, we focus on practical solutions that are scalable, maintainable, and aligned with your business goals.",
+  metaTitle: "Software Development Company in Canada | Next Software Development",
   metaDescription:
-    "Custom software company in Canada for SaaS, healthcare, operations, and digital product work. Senior engineering, clear communication, and practical delivery.",
+    "Software development company in Canada providing custom software, web and mobile apps, AI, SaaS, and business systems for growing companies.",
   coverageTitle: "Software house coverage across Canada",
   coverageDescription:
     "We support Canadian businesses with software strategy, custom web build-outs, healthcare workflow tooling, and digital systems that scale with operational needs.",
@@ -1686,16 +2045,16 @@ export const australiaLocation: LocationPageContent = {
   slug: "software-house-and-software-company-in-australia",
   country: "Australia",
   href: "/location/software-house-and-software-company-in-australia",
-  title: "Software Company in Australia",
+  title: "Software Development Company in Australia",
   description:
-    "Next Software Development Company is a trusted software company in Australia helping businesses build custom software, mobile products, operational platforms, and digital transformation projects with senior technical leadership.",
+    "Next Software Development Company helps Australian startups, SMEs, and established businesses build reliable software that improves customer experiences, streamlines operations, and supports long-term growth.",
   descriptionSecondary:
-    "We help Australian teams replace manual processes, modernize legacy systems, and launch product experiences that align with business growth and day-to-day operations.",
+    "We provide custom software development, web and mobile app development, SaaS development, AI solutions, ERP and CRM systems, and business automation. Our senior engineering team works with your stakeholders from discovery and architecture through development, testing, launch, and ongoing support.",
   descriptionTertiary:
-    "Our focus is on clear discovery, practical planning, and senior delivery that keeps projects moving without unnecessary complexity. For Australian teams, that means a partner who understands operational realities and builds software that supports real performance, service quality, and scale.",
-  metaTitle: "Software Company in Australia",
+    "Whether you're launching a new digital product, replacing outdated systems, or automating manual workflows, we focus on practical solutions that are scalable, maintainable, and aligned with your business goals.",
+  metaTitle: "Software Development Company in Australia | Next Software Development",
   metaDescription:
-    "Software company in Australia for custom platforms, SaaS apps, ERP, healthcare software, and digital transformation. Clear delivery and senior engineering support.",
+    "Software development company in Australia providing custom software, web and mobile apps, AI, SaaS, and business automation solutions.",
   coverageTitle: "Software house coverage across Australia",
   coverageDescription:
     "We support Australian businesses in sectors like healthcare, finance, logistics, education, and service operations with software designed around local workflows and measurable ROI.",
@@ -1830,16 +2189,16 @@ export const ukLocation: LocationPageContent = {
   slug: "software-house-and-software-company-in-uk",
   country: "United Kingdom",
   href: "/location/software-house-and-software-company-in-uk",
-  title: "Software Company in UK",
+  title: "Software Development Company in the UK",
   description:
-    "Next Software Development Company is a software company in the UK helping startups, SMEs, and businesses build custom web products, SaaS, ERP tools, and digital operations software with senior engineering support.",
+    "Next Software Development Company helps UK startups, SMEs, and established businesses build reliable software that improves customer experiences, streamlines operations, and supports long-term growth.",
   descriptionSecondary:
-    "We work with UK teams on product discovery, architecture, UI/UX, and implementation, creating digital systems that improve customer experience and internal operations without bloated delivery.",
+    "We provide custom software development, web and mobile app development, SaaS development, AI solutions, ERP and CRM systems, and business automation. Our senior engineering team works with your stakeholders from discovery and architecture through development, testing, launch, and ongoing support.",
   descriptionTertiary:
-    "From SaaS product work and internal systems to healthcare and operations software, we build around transparent scoping, measurable milestones, and senior technical ownership. That gives UK businesses a delivery rhythm that stays clear and dependable from kickoff to support.",
-  metaTitle: "Software Company in UK",
+    "Whether you're launching a new digital product, replacing outdated systems, or automating manual workflows, we focus on practical solutions that are scalable, maintainable, and aligned with your business goals.",
+  metaTitle: "Software Development Company in the UK | Next Software Development",
   metaDescription:
-    "Software company in the UK for custom software, SaaS, healthcare software, and digital operations. Senior-led engineering with transparent delivery and practical collaboration.",
+    "Software development company in the UK providing custom software, web and mobile apps, AI, SaaS, and digital solutions for businesses and startups.",
   coverageTitle: "Software house coverage across the UK",
   coverageDescription:
     "We support UK businesses with custom software design and build, digital transformation work, and product engineering for operations, internal systems, and service delivery.",
@@ -1974,16 +2333,16 @@ export const uaeLocation: LocationPageContent = {
   slug: "software-house-and-software-company-in-uae",
   country: "United Arab Emirates",
   href: "/location/software-house-and-software-company-in-uae",
-  title: "Software Company in UAE",
+  title: "Software Development Company in the UAE",
   description:
-    "Next Software Development Company is a software company in the UAE supporting startups, service businesses, healthcare providers, and growing teams with custom software, ERP, CRM, and digital product engineering.",
+    "Next Software Development Company helps UAE startups, SMEs, and established businesses build reliable software that improves customer experiences, streamlines operations, and supports long-term growth.",
   descriptionSecondary:
-    "We help UAE organizations modernize internal systems, launch customer-facing platforms, and improve operational performance through well-scoped engineering and accountable delivery.",
+    "We provide custom software development, web and mobile app development, SaaS development, AI solutions, ERP and CRM systems, and business automation. Our senior engineering team works with your stakeholders from discovery and architecture through development, testing, launch, and ongoing support.",
   descriptionTertiary:
-    "Whether you need a CRM, ERP workflow, customer portal, or digital product build, our team focuses on clear communication, business alignment, and maintainable code that supports long-term growth. The result is a software partner that moves with your business rather than against it.",
-  metaTitle: "Software Company in UAE",
+    "Whether you're launching a new digital product, replacing outdated systems, or automating manual workflows, we focus on practical solutions that are scalable, maintainable, and aligned with your business goals.",
+  metaTitle: "Software Development Company in the UAE | Next Software Development",
   metaDescription:
-    "Software company in UAE for custom digital products, ERP, CRM, healthcare software, and business operations. Senior-led delivery and practical engineering support.",
+    "Software development company in the UAE providing custom software, mobile apps, AI, SaaS, ERP, and business automation solutions for growing businesses.",
   coverageTitle: "Software house coverage across the UAE",
   coverageDescription:
     "We support UAE businesses across sectors like healthcare, property, retail, logistics, and service operations with software built for scale and efficiency.",

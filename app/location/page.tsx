@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight, Globe2, MapPinned, Sparkles } from "lucide-react";
+import { ArrowUpRight, Globe2, MapPinned } from "lucide-react";
 
 import { TrustedPartnersSection } from "@/components/landing/clients-section";
 import { FaqSection } from "@/components/landing/faq-section";
@@ -12,7 +12,16 @@ import { SiteHeader } from "@/components/landing/navbar";
 import { TeamSection } from "@/components/landing/team-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { ServiceBreadcrumbs } from "@/components/services/shared/service-breadcrumbs";
-import { pakistanCities, pakistanLocation } from "@/data/locations";
+import {
+  australiaLocation,
+  canadaLocation,
+  locationPages,
+  pakistanCities,
+  pakistanLocation,
+  uaeLocation,
+  ukLocation,
+  usaLocation,
+} from "@/data/locations";
 import { companyStats } from "@/data/landing/trust";
 import {
   btnOnDark,
@@ -28,34 +37,57 @@ import { selfCanonical, pageTitle, pageTitleString } from "@/seo/canonical";
 import { breadcrumbSchema, itemListSchema } from "@/seo/schema";
 import { cn } from "@/lib/utils";
 
+const hubDescription =
+  "Explore Next Software Development Company locations across Pakistan, the USA, UK, UAE, Canada, and Australia — plus city pages across Pakistan.";
+
 export const metadata: Metadata = {
   title: pageTitle("Software House Locations Worldwide"),
-  description: `Explore Next Software Development Company locations. Start with Pakistan and ${pakistanCities.length} city pages including Islamabad, Lahore, Karachi, and more.`,
+  description: hubDescription,
   ...selfCanonical("/location"),
   openGraph: {
     title: pageTitleString("Software House Locations Worldwide"),
-    description: `Explore Next Software Development Company locations. Start with Pakistan and ${pakistanCities.length} city pages including Islamabad, Lahore, Karachi, and more.`,
+    description: hubDescription,
     type: "website",
   },
 };
 
-const upcomingMarkets = [
+const internationalMarkets = [
   {
-    name: "United States",
+    location: usaLocation,
+    shortName: "USA",
     region: "Americas",
-    blurb: "Timezone-friendly product partnerships for startups and mid-market teams.",
+    blurb:
+      "Product partnerships for startups, SaaS companies, and mid-market teams across the United States.",
   },
   {
-    name: "Europe",
-    region: "UK & EU",
-    blurb: "English-first delivery for clients who want senior Pakistani engineering.",
+    location: canadaLocation,
+    shortName: "Canada",
+    region: "Americas",
+    blurb:
+      "Digital products, mobile apps, and custom software for Canadian businesses and scaling startups.",
   },
   {
-    name: "Middle East",
-    region: "UAE & GCC",
-    blurb: "Strong business-hour overlap for ERP, ops platforms, and digital products.",
+    location: ukLocation,
+    shortName: "UK",
+    region: "Europe",
+    blurb:
+      "English-first delivery for UK SaaS, operations, healthcare, and digital product teams.",
   },
-];
+  {
+    location: australiaLocation,
+    shortName: "Australia",
+    region: "Asia-Pacific",
+    blurb:
+      "Workflow automation, digital transformation, and custom platforms for Australian teams.",
+  },
+  {
+    location: uaeLocation,
+    shortName: "UAE",
+    region: "Middle East",
+    blurb:
+      "CRM, ERP, mobile apps, and business automation for founders and operators across the UAE.",
+  },
+] as const;
 
 const featuredStats = companyStats.map(({ value, label }) => ({ value, label }));
 
@@ -67,10 +99,13 @@ export default function LocationsPage() {
   const schemas = [
     itemListSchema({
       name: "Locations",
-      description: `Explore Next Software Development Company locations. Start with Pakistan and ${cityCount} city pages including Islamabad, Lahore, Karachi, and more.`,
+      description: hubDescription,
       path: "/location",
       items: [
-        { name: "Pakistan", path: pakistanLocation.href },
+        ...locationPages.map((page) => ({
+          name: page.country,
+          path: page.href,
+        })),
         ...pakistanCities.map((city) => ({
           name: city.city,
           path: city.href,
@@ -116,8 +151,8 @@ export default function LocationsPage() {
             </Reveal>
             <Reveal immediate delay={motionStagger * 3}>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
-                Start with Pakistan, our headquarters and delivery base, or explore {cityCount} city
-                pages including Islamabad, Lahore, Karachi, and more. Global markets are next.
+                Pakistan is our headquarters and delivery base, with {cityCount} city pages
+                nationwide. We also serve teams in the USA, UK, UAE, Canada, and Australia.
               </p>
             </Reveal>
             <Reveal immediate delay={motionStagger * 4}>
@@ -149,14 +184,14 @@ export default function LocationsPage() {
                   <span className={cn(overline, "text-horizon-navy/80")}>Global footprint</span>
                 </div>
                 <h2 className="mt-5 max-w-xl font-heading text-3xl font-normal leading-[1.1] tracking-tight md:text-4xl lg:text-[2.85rem]">
-                  One delivery hub today.{" "}
-                  <span className="italic text-primary">More markets</span> on the way.
+                  Six live country pages.{" "}
+                  <span className="italic text-primary">One delivery team.</span>
                 </h2>
               </Reveal>
               <Reveal delay={motionStagger}>
                 <p className="max-w-md text-base leading-relaxed text-horizon-muted md:text-lg lg:justify-self-end lg:text-right">
-                  Explore our live Pakistan coverage now: city pages, local case work, and senior
-                  teams ready to build. International location pages launch next.
+                  Start with Pakistan HQ and city coverage, or open a dedicated page for the USA,
+                  UK, UAE, Canada, or Australia.
                 </p>
               </Reveal>
             </div>
@@ -174,7 +209,7 @@ export default function LocationsPage() {
                       </span>
                       <div>
                         <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-primary">
-                          Featured location
+                          Headquarters
                         </p>
                         <h3 className="mt-1 font-heading text-3xl font-medium tracking-tight text-horizon-navy sm:text-4xl">
                           Pakistan
@@ -235,19 +270,22 @@ export default function LocationsPage() {
               <div className="flex flex-col gap-4">
                 <Reveal delay={motionStagger}>
                   <div className="flex items-center gap-2 rounded-2xl border border-horizon-border bg-horizon-cream/50 px-4 py-3">
-                    <Sparkles className="size-4 text-primary" aria-hidden />
+                    <Globe2 className="size-4 text-primary" aria-hidden />
                     <p className="text-sm text-horizon-muted">
-                      <span className="font-medium text-horizon-navy">Coming soon</span>: country
-                      pages for global markets
+                      <span className="font-medium text-horizon-navy">Live now</span>: dedicated
+                      pages for our international markets
                     </p>
                   </div>
                 </Reveal>
 
                 <ul className="flex flex-1 flex-col gap-3">
-                  {upcomingMarkets.map((market, index) => (
-                    <li key={market.name} className="flex-1">
+                  {internationalMarkets.map((market, index) => (
+                    <li key={market.location.slug} className="flex-1">
                       <Reveal delay={(index + 1) * motionStagger} direction="right" className="h-full">
-                        <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-horizon-border bg-horizon-cream/30 p-5 transition-[transform,border-color,background-color] duration-500 hover:-translate-y-1 hover:border-primary/30 hover:bg-white sm:p-6">
+                        <Link
+                          href={market.location.href}
+                          className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-horizon-border bg-horizon-cream/30 p-5 transition-[transform,border-color,background-color] duration-500 hover:-translate-y-1 hover:border-primary/30 hover:bg-white sm:p-6"
+                        >
                           <div
                             className="pointer-events-none absolute inset-y-0 left-0 w-1 origin-top scale-y-0 bg-primary transition-transform duration-500 group-hover:scale-y-100"
                             aria-hidden
@@ -258,17 +296,18 @@ export default function LocationsPage() {
                                 {market.region}
                               </p>
                               <h3 className="mt-1.5 font-heading text-xl font-medium text-horizon-navy sm:text-2xl">
-                                {market.name}
+                                {market.shortName}
                               </h3>
                             </div>
-                            <span className="rounded-full border border-horizon-border px-2.5 py-1 text-[10px] uppercase tracking-[0.16em] text-horizon-muted">
-                              Soon
+                            <span className="inline-flex items-center gap-1 rounded-full border border-primary/25 bg-primary/10 px-2.5 py-1 text-[10px] uppercase tracking-[0.16em] text-primary">
+                              Live
+                              <ArrowUpRight className="size-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                             </span>
                           </div>
                           <p className="mt-3 text-sm leading-relaxed text-horizon-muted">
                             {market.blurb}
                           </p>
-                        </div>
+                        </Link>
                       </Reveal>
                     </li>
                   ))}
@@ -304,11 +343,11 @@ export default function LocationsPage() {
           <div className={cn(container, sectionPad, "text-center")}>
             <Reveal>
               <h2 className="font-heading text-3xl font-normal md:text-4xl">
-                Looking for a software house near you?
+                Ready to build with a software partner in your market?
               </h2>
               <p className="mx-auto mt-4 max-w-lg text-sm text-white/75 md:text-base">
-                Tell us your city and project. We’ll reply within one business day with a clear next
-                step.
+                Whether you are in Pakistan, the USA, UK, UAE, Canada, or Australia, tell us about
+                your project. We’ll reply within one business day with a clear next step.
               </p>
               <Link href={contactPath} className={cn("mt-8 inline-flex", btnOnDark)}>
                 Get a Free Quote

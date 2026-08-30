@@ -202,34 +202,34 @@ export function LocationHero({ location }: LocationHeroProps) {
 
         <Reveal immediate delay={motionStagger * 5}>
           <div
-            className="mt-10 rounded-[2rem] border border-white/10 bg-zinc-950 px-5 py-8 sm:mt-12 sm:rounded-[2.5rem] sm:px-8 sm:py-10 lg:mt-14"
+            className="mt-8 rounded-[1.5rem] border border-white/10 bg-zinc-950 px-4 py-5 sm:mt-10 sm:rounded-[2rem] sm:px-6 sm:py-6 lg:mt-12"
             aria-label={`${place} delivery stats`}
           >
-            <dl className="grid grid-cols-2 gap-8 lg:grid-cols-4 lg:gap-0">
+            <dl className="grid grid-cols-2 gap-5 lg:grid-cols-4 lg:gap-0">
               {location.facts.items.map((stat, index) => {
                 const Icon = iconForLabel(stat.label);
                 return (
                   <div
                     key={stat.label}
                     className={cn(
-                      "relative flex flex-col items-center px-3 text-center sm:px-5",
+                      "relative flex flex-col items-center px-2 text-center sm:px-4",
                       index < location.facts.items.length - 1 &&
-                        "lg:after:absolute lg:after:right-0 lg:after:top-1/2 lg:after:h-[4.5rem] lg:after:w-px lg:after:-translate-y-1/2 lg:after:bg-gradient-to-b lg:after:from-transparent lg:after:via-primary/70 lg:after:to-transparent"
+                        "lg:after:absolute lg:after:right-0 lg:after:top-1/2 lg:after:h-16 lg:after:w-px lg:after:-translate-y-1/2 lg:after:bg-gradient-to-b lg:after:from-transparent lg:after:via-primary/70 lg:after:to-transparent"
                     )}
                   >
                     <span
-                      className="mb-3 inline-flex size-10 items-center justify-center rounded-full border border-primary/45 !text-primary sm:size-11"
+                      className="mb-2 inline-flex size-8 items-center justify-center rounded-full border border-primary/45 !text-primary sm:size-9"
                       aria-hidden
                     >
-                      <Icon className="size-5 !text-primary sm:size-[1.35rem]" strokeWidth={1.6} />
+                      <Icon className="size-4 !text-primary sm:size-[1.15rem]" strokeWidth={1.6} />
                     </span>
-                    <dt className="font-heading text-3xl font-normal tracking-tight text-white md:text-4xl lg:text-[2.75rem]">
+                    <dt className="font-heading text-2xl font-normal tracking-tight text-white sm:text-3xl md:text-[2.15rem]">
                       {stat.value}
                     </dt>
-                    <dd className="mt-2 text-sm font-semibold text-white sm:text-base">
+                    <dd className="mt-1 text-sm font-semibold text-white">
                       {stat.label}
                     </dd>
-                    <p className="mt-2 max-w-[16.5rem] text-xs leading-relaxed text-white/55 sm:text-sm">
+                    <p className="mt-1 max-w-[15rem] text-[11px] leading-snug text-white/55 sm:text-xs">
                       {statBlurb(stat.label, place)}
                     </p>
                   </div>

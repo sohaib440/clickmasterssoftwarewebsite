@@ -128,12 +128,7 @@ export default async function CityLocationPage({ params }: CityLocationPageProps
 
         <ServicesSection
           overlineText={sections.services.overlineText}
-          title={
-            <>
-              {sections.services.title}{" "}
-              <span className="italic">{sections.services.titleItalic}</span>
-            </>
-          }
+          title={sections.services.title}
           description={sections.services.description}
           serviceOverrides={sections.services.items}
         />
