@@ -2429,13 +2429,13 @@ function pickIndustries(place: string, focus: PlaceFocus): Industry[] {
 export const pakistanCityCaseBlurbs: LocationSocialProofItem[] = [
   {
     quote:
-      "A multi-doctor clinic in Islamabad needed a single system to replace paper registers and three separate spreadsheets for billing and inventory. We delivered a unified HMS/ERP with Urdu-ready workflows, cutting patient check-in time and giving the front desk one place to manage appointments, pharmacy stock, and invoicing.",
+      "A multi-doctor clinic in Islamabad had been searching for a software house near me that understood front-desk reality, not just another template HMS. We delivered a unified HMS/ERP with Urdu-ready workflows, cutting patient check-in time and giving staff one place for appointments, pharmacy stock, and invoicing.",
     author: "Clinic engagement",
     role: "Islamabad",
   },
   {
     quote:
-      "A retail business in Lahore was losing leads between phone calls, WhatsApp, and a shared spreadsheet with no visibility into who owned which conversation. We built a CRM that consolidated lead tracking, staff assignment, and conversion reporting into one dashboard the sales floor actually uses daily.",
+      "A retail business in Lahore was losing leads between phone calls, WhatsApp, and a shared spreadsheet. After looking for a software company near me that would fix the process rather than sell a bloated suite, they chose a CRM that consolidated lead tracking, staff assignment, and conversion reporting into one dashboard the sales floor actually uses daily.",
     author: "Retail engagement",
     role: "Lahore",
   },
@@ -2493,7 +2493,7 @@ const countryEngagementBlurbs: Record<string, LocationSocialProofItem[]> = {
   "United States": [
     {
       quote:
-        "A US SaaS team needed a more reliable product partner after their workflow had grown beyond internal tools. We brought structure, fast iteration, and a clear product process that made launch and handoff smoother than their previous agency relationships.",
+        "A US SaaS team needed a more reliable product partner after their workflow had grown beyond internal tools. They had tried finding a software company near me through directories and still ended up with slow handoffs. We brought structure, fast iteration, and a clear product process that made launch smoother than their previous agency relationships.",
       author: "SaaS engagement",
       role: "United States",
     },
@@ -2513,7 +2513,7 @@ const countryEngagementBlurbs: Record<string, LocationSocialProofItem[]> = {
   Canada: [
     {
       quote:
-        "A Canadian service business needed custom scheduling and client follow-up without a bloated platform. The result was faster operations, clearer customer communication, and a system their team could maintain.",
+        "A Canadian service business needed custom scheduling and client follow-up without a bloated platform. Looking for a software house near me that would stay accountable after launch, they ended up with faster operations, clearer customer communication, and a system their team could maintain.",
       author: "Operations engagement",
       role: "Canada",
     },

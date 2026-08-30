@@ -1042,7 +1042,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "We needed a booking app for our clinic in Islamabad and had zero idea where to start technically. This software development company explained everything in plain language, gave us a realistic timeline instead of over-promising, and the Android app has genuinely cut our front-desk phone calls in half. Patients book their own slots now.",
+      "Our clinic in Islamabad needed a booking app and we had zero idea where to start. After looking for a software company near me that would explain things in plain language, we found this team. They gave us a realistic timeline instead of over-promising, and the Android app has genuinely cut our front-desk phone calls in half.",
     author: "Dr. Hina Anwar",
     role: "Founder, Healthcare Clinic · Islamabad, Pakistan",
   },
@@ -1127,13 +1127,13 @@ export const homepageTestimonials: Testimonial[] = [
   },
   {
     quote:
-      "We were looking for a software development company near me in New York, but more importantly we needed a partner who could migrate our cloud platform without disrupting our customers. Next Software Development planned the transition carefully, communicated clearly at every stage, and helped our team move to a more scalable infrastructure with minimal disruption.",
+      "We were looking for a software company near me in New York, but more importantly we needed a partner who could migrate our cloud platform without disrupting our customers. Next Software Development planned the transition carefully, communicated clearly at every stage, and helped our team move to a more scalable infrastructure with minimal disruption.",
     author: "James Wilson",
     role: "Chief Technology Officer, Financial Technology Startup · New York, USA",
   },
   {
     quote:
-      "We were comparing options for a software development company near me in London, but we also needed a team that could handle several legacy system integrations without creating more operational risk. Next Software Development approached the project carefully, tested the system thoroughly, and helped our sales team transition to the new platform with very little disruption.",
+      "We needed a team in London that could handle several legacy system integrations without creating more operational risk. Next Software Development approached the project carefully, tested the system thoroughly, and helped our sales team transition to the new platform with very little disruption.",
     author: "Oliver Bennett",
     role: "Managing Director, Professional Services Firm · London, UK",
   },
@@ -1163,7 +1163,7 @@ export const homepageTestimonials: Testimonial[] = [
   },
   {
     quote:
-      "We needed a partner who would understand our business before starting development. Next Software Development took the time to understand our requirements, planned the architecture properly, and delivered a custom web application that our team could maintain and grow.",
+      "We were looking for a software house near me in Lahore that would understand retail operations, not just ship another generic build. Next Software Development took the time to understand our requirements, planned the architecture properly, and delivered a custom web application that our team could maintain and grow.",
     author: "Ahmed Raza",
     role: "CEO, E-commerce Business · Lahore, Pakistan",
   },
