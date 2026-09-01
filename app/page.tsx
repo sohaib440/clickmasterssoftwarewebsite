@@ -79,42 +79,42 @@ const countryNavigationItems = [
     label: "Software company in Pakistan",
     description:
       "Custom software development, enterprise systems, and digital transformation for businesses across Pakistan and global clients.",
-    href: "/location/software-house-and-software-company-in-pakistan",
+    href: "/location/software-house-and-software-development-company-in-pakistan",
   },
   {
     country: "USA",
     label: "Software company in the USA",
     description:
       "Remote software development and product engineering support for startups, SaaS companies, and growing businesses in the United States.",
-    href: "/location/software-house-and-software-company-in-usa",
+    href: "/location/software-house-and-software-development-company-in-usa",
   },
   {
     country: "UK",
     label: "Software company in the UK",
     description:
       "UK-focused software delivery for SaaS, operations, healthcare, and digital product teams seeking dependable product partners.",
-    href: "/location/software-house-and-software-company-in-uk",
+    href: "/location/software-house-and-software-development-company-in-uk",
   },
   {
     country: "UAE",
     label: "Software company in the UAE",
     description:
       "Software development company in the UAE helping founders and teams build CRM, ERP, mobile apps, and business automation platforms.",
-    href: "/location/software-house-and-software-company-in-uae",
+    href: "/location/software-house-and-software-development-company-in-uae",
   },
   {
     country: "Canada",
     label: "Software company in Canada",
     description:
       "Digital product development, mobile apps, and custom software solutions for Canadian businesses and scaling startups.",
-    href: "/location/software-house-and-software-company-in-canada",
+    href: "/location/software-house-and-software-development-company-in-canada",
   },
   {
     country: "Australia",
     label: "Software company in Australia",
     description:
       "Software development services in Australia for workflow automation, digital transformation, and custom business platforms.",
-    href: "/location/software-house-and-software-company-in-australia",
+    href: "/location/software-house-and-software-development-company-in-australia",
   },
 ] as const;
 

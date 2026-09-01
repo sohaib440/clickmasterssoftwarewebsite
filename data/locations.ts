@@ -1446,11 +1446,11 @@ export type LocationPageContent = {
   sections: LocationPageSections;
 };
 
-/** City pages live at /location/software-house-and-software-company-in-{city} */
+/** City pages live at /location/software-house-and-software-development-company-in-{city} */
 const locationBasePath = "/location";
 
 function cityLocationSlug(citySlug: string) {
-  return `software-house-and-software-company-in-${citySlug}`;
+  return `software-house-and-software-development-company-in-${citySlug}`;
 }
 
 function cityLocationHref(citySlug: string) {
@@ -2789,9 +2789,9 @@ export const locationHubProjects = filterProjectsForPlace("Pakistan", showcasePr
 const pakistanSections = buildLocationSections("Pakistan", { isPakistan: true });
 
 export const pakistanLocation: LocationPageContent = {
-  slug: "software-house-and-software-company-in-pakistan",
+  slug: "software-house-and-software-development-company-in-pakistan",
   country: "Pakistan",
-  href: "/location/software-house-and-software-company-in-pakistan",
+  href: "/location/software-house-and-software-development-company-in-pakistan",
   title: "Software House in Pakistan",
   description:
     "A software house in Pakistan helping clinics, schools, retailers, and enterprises ship HMS, ERP, and custom digital products that improve operations and support long-term growth.",
@@ -2945,9 +2945,9 @@ const ukSections = buildLocationSections("United Kingdom");
 const uaeSections = buildLocationSections("United Arab Emirates");
 
 export const usaLocation: LocationPageContent = {
-  slug: "software-house-and-software-company-in-usa",
+  slug: "software-house-and-software-development-company-in-usa",
   country: "United States",
-  href: "/location/software-house-and-software-company-in-usa",
+  href: "/location/software-house-and-software-development-company-in-usa",
   title: "Software Development Company in the USA",
   description:
     "A software development company in the USA for SaaS founders, product teams, and mid-market operators who need senior product engineering without agency bloat.",
@@ -3075,9 +3075,9 @@ export const usaLocation: LocationPageContent = {
 };
 
 export const canadaLocation: LocationPageContent = {
-  slug: "software-house-and-software-company-in-canada",
+  slug: "software-house-and-software-development-company-in-canada",
   country: "Canada",
-  href: "/location/software-house-and-software-company-in-canada",
+  href: "/location/software-house-and-software-development-company-in-canada",
   title: "Software Development Company in Canada",
   description:
     "A software development company in Canada for product companies and service businesses modernizing operations with SaaS and digital transformation.",
@@ -3205,9 +3205,9 @@ export const canadaLocation: LocationPageContent = {
 };
 
 export const australiaLocation: LocationPageContent = {
-  slug: "software-house-and-software-company-in-australia",
+  slug: "software-house-and-software-development-company-in-australia",
   country: "Australia",
-  href: "/location/software-house-and-software-company-in-australia",
+  href: "/location/software-house-and-software-development-company-in-australia",
   title: "Software Development Company in Australia",
   description:
     "A software development company in Australia for service businesses and digital-first operators who need automation and ops platforms that cut manual work.",
@@ -3335,9 +3335,9 @@ export const australiaLocation: LocationPageContent = {
 };
 
 export const ukLocation: LocationPageContent = {
-  slug: "software-house-and-software-company-in-uk",
+  slug: "software-house-and-software-development-company-in-uk",
   country: "United Kingdom",
-  href: "/location/software-house-and-software-company-in-uk",
+  href: "/location/software-house-and-software-development-company-in-uk",
   title: "Software Development Company UK",
   description:
     "A software development company UK teams trust for B2B SaaS, professional services platforms, and compliance-aware product engineering.",
@@ -3465,9 +3465,9 @@ export const ukLocation: LocationPageContent = {
 };
 
 export const uaeLocation: LocationPageContent = {
-  slug: "software-house-and-software-company-in-uae",
+  slug: "software-house-and-software-development-company-in-uae",
   country: "United Arab Emirates",
-  href: "/location/software-house-and-software-company-in-uae",
+  href: "/location/software-house-and-software-development-company-in-uae",
   title: "Software Development Company UAE",
   description:
     "A software development company UAE businesses hire for CRM, ERP, and automation across retail, hospitality, real estate, and fast-scaling enterprises.",
