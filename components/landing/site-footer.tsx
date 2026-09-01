@@ -76,9 +76,9 @@ export function SiteFooter() {
                       onClick={() => toggleSection(column.title)}
                       className="flex w-full items-center justify-between py-1 text-left"
                     >
-                      <h3 className="site-footer__heading text-xs font-medium uppercase tracking-[0.15em]">
+                      <span className="site-footer__heading text-xs font-medium uppercase tracking-[0.15em]">
                         {column.title}
-                      </h3>
+                      </span>
                       <ChevronDown
                         className={cn(
                           "site-footer__icon size-4 shrink-0 transition-transform duration-300",
