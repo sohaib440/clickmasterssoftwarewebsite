@@ -42,6 +42,58 @@ type AboutSectionProps = {
  * Team → /team; city names → that city page; Pakistan / software-company anchors → Pakistan hub.
  * Avoid wiki-linking the Pakistan hub phrase on the Pakistan page itself (self-link).
  */
+const homePageKeywordPhrases = [
+  "best software house",
+  "best software house in pakistan",
+  "best software house and top rated software company in pakistan",
+  "top rated software development company",
+  "leading software development company",
+  "best software development company",
+  "top rated software development company in the usa",
+  "leading software development company in canada",
+  "best software development company in australia",
+  "top rated software development company in the uk",
+  "leading software development company in the uae",
+  "software house in pakistan",
+  "software company in pakistan",
+  "software house and software company in pakistan",
+  "software development company in pakistan",
+  "software house in the usa",
+  "software company in the usa",
+  "software house and software company in the usa",
+  "software house in usa",
+  "software company in usa",
+  "software house and software company in usa",
+  "software house in canada",
+  "software company in canada",
+  "software house and software company in canada",
+  "software house in australia",
+  "software company in australia",
+  "software house and software company in australia",
+  "software house in the uk",
+  "software company in the uk",
+  "software house and software company in the uk",
+  "software house in uk",
+  "software company in uk",
+  "software house and software company in uk",
+  "software house in the uae",
+  "software company in the uae",
+  "software house and software company in the uae",
+  "software house in uae",
+  "software company in uae",
+  "software house and software company in uae",
+  "software house in the united arab emirates",
+  "software company in the united arab emirates",
+  "software house and software company in the united arab emirates",
+  "certified software house and top-rated software development company in pakistan",
+];
+
+function isHomePageKeyword(label: string): boolean {
+  const normalized = label.toLowerCase().trim().replace(/\s+/g, " ");
+
+  return homePageKeywordPhrases.some((phrase) => normalized === phrase || normalized.includes(phrase));
+}
+
 export function resolveInternalWikiHref(label: string): string {
   const lower = label.toLowerCase().trim();
 
@@ -54,6 +106,10 @@ export function resolveInternalWikiHref(label: string): string {
     lower === "experienced & certified team"
   ) {
     return teamPath;
+  }
+
+  if (isHomePageKeyword(lower)) {
+    return "/";
   }
 
   const cities = [...pakistanCities].sort((a, b) => b.city.length - a.city.length);
