@@ -12,7 +12,7 @@ type ServiceBreadcrumbsProps = {
 export function ServiceBreadcrumbs({ items, className }: ServiceBreadcrumbsProps) {
   return (
     <nav
-      className={cn("mb-8 flex flex-wrap items-center gap-2 text-sm text-white/60", className)}
+      className={cn("mb-2 flex flex-wrap items-center gap-2 text-sm text-white/60", className)}
       aria-label="Breadcrumb"
     >
       {items.map((crumb, index) => (

@@ -17,7 +17,6 @@ import { SiteHeader } from "@/components/landing/navbar";
 import { TeamSection } from "@/components/landing/team-section";
 import { TechStackSection } from "@/components/landing/tech-stack-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
-import { TrustNumbersSection } from "@/components/landing/trust-numbers-section";
 import { CaseStudiesSection } from "@/components/case-study/case-studies-section";
 import { pakistanLocation } from "@/data/locations";
 import { btnOnDark, container, sectionPad } from "@/lib/landing/constants";
@@ -82,21 +81,15 @@ export default function PakistanLocationPage() {
       <main className="flex w-full flex-1 flex-col overflow-x-clip">
         <LocationHero location={location} />
 
-        <TrustNumbersSection />
-
         <AboutSection
           content={{ ...location.about, overlineText: "Who we are" }}
           showValues={false}
+          currentPath={location.href}
         />
 
         <ServicesSection
           overlineText={sections.services.overlineText}
-          title={
-            <>
-              {sections.services.title}{" "}
-              <span className="italic">{sections.services.titleItalic}</span>
-            </>
-          }
+          title={sections.services.title}
           description={sections.services.description}
           serviceOverrides={sections.services.items}
         />
@@ -178,7 +171,7 @@ export default function PakistanLocationPage() {
               </>
             ) : (
               <>
-                What <span className="italic">{sections.testimonials.titleItalic}</span> say
+                What Our <span className="italic">{sections.testimonials.titleItalic}</span> Say
               </>
             )
           }
@@ -189,9 +182,13 @@ export default function PakistanLocationPage() {
         <TeamSection
           overlineText={sections.team.overlineText}
           title={
-            <>
-              A senior <span className="italic">{sections.team.titleItalic}</span>
-            </>
+            sections.team.titleItalic ? (
+              <>
+                A senior <span className="italic">{sections.team.titleItalic}</span>
+              </>
+            ) : (
+              sections.team.title
+            )
           }
           intro={sections.team.intro}
         />
@@ -213,9 +210,11 @@ export default function PakistanLocationPage() {
               <h2 className="font-heading text-3xl font-normal md:text-4xl">
                 {location.cta.title}
               </h2>
-              <p className="mx-auto mt-4 max-w-lg text-sm text-white/75 md:text-base">
-                {location.cta.description}
-              </p>
+              <div className="mx-auto mt-4 max-w-lg space-y-3 text-sm text-white/75 md:text-base">
+                {location.cta.description.split("\n\n").map((paragraph) => (
+                  <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+                ))}
+              </div>
               <Link href={location.cta.buttonHref} className={cn("mt-8 inline-flex", btnOnDark)}>
                 {location.cta.buttonLabel}
               </Link>

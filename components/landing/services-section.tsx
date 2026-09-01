@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import { SectionHeading } from "@/components/landing/section-heading";
 import { LandingContainer, sectionHeadingGap } from "@/components/landing/landing-container";
@@ -76,8 +76,8 @@ function ServiceCard({ service, index }: { service: ServiceCardData; index: numb
 
           <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-white transition-colors duration-300 group-hover:text-primary">
             Explore {service.title}
-            <ArrowUpRight
-              className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            <ArrowRight
+              className="size-4 transition-transform duration-300 group-hover:translate-x-1"
               aria-hidden
             />
           </span>
@@ -101,15 +101,17 @@ export function ServicesSection({
   const initialVisibleCount = 9;
 
   const resolvedServices = serviceOverrides?.length
-    ? services.map((service) => {
-        const override = serviceOverrides.find((item) => item.title === service.title);
-        if (!override) return service;
-        return {
-          ...service,
-          description: override.description,
-          tag: override.tag ?? service.tag,
-        };
-      })
+    ? serviceOverrides
+        .map((override) => {
+          const base = services.find((service) => service.title === override.title);
+          if (!base) return null;
+          return {
+            ...base,
+            description: override.description,
+            tag: override.tag ?? base.tag,
+          };
+        })
+        .filter((service): service is ServiceCardData => service !== null)
     : services;
 
   const visibleServices = showAll

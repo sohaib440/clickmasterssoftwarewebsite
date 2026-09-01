@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, FileText } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 
 import { CaseStudyCard } from "@/components/case-study/case-study-card";
 import { Reveal } from "@/components/landing/reveal";
@@ -20,14 +20,9 @@ export function CaseStudyPageContent() {
 
       <main className="flex-1">
         <section className="relative overflow-hidden bg-black text-white">
-          <div className="pointer-events-none absolute inset-0" aria-hidden>
-            <div className="absolute -left-16 top-0 h-72 w-72 rounded-full bg-primary/12 blur-[100px]" />
-            <div className="absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-white/[0.04] blur-[100px]" />
-          </div>
-
-          <div className={cn(container, sectionPad, "relative pb-10 md:pb-12")}>
+          <div className={cn(container, sectionPad, "relative !pt-6 pb-10 md:!pt-8 md:pb-12 lg:!pt-10")}>
             <Reveal immediate>
-              <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-white">
+              <nav className="mb-3 flex flex-wrap items-center gap-2 text-sm text-white">
                 <Link
                   href="/"
                   className="inline-flex items-center gap-1.5 text-white transition-colors hover:text-white/80"
@@ -43,16 +38,7 @@ export function CaseStudyPageContent() {
             </Reveal>
 
             <Reveal immediate delay={motionStagger}>
-              <div className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5">
-                <FileText className="size-3.5 text-white" aria-hidden />
-                <span className="text-[11px] font-medium uppercase tracking-[0.22em] text-white">
-                  {caseStudyPageMeta.hero.eyebrow}
-                </span>
-              </div>
-            </Reveal>
-
-            <Reveal immediate delay={motionStagger * 2}>
-              <h1 className="mt-5 max-w-4xl font-heading text-4xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
+              <h1 className="max-w-4xl font-heading text-4xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
                 {caseStudyPageMeta.hero.title}
               </h1>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-white md:text-lg">

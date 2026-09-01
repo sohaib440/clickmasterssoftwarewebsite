@@ -6,7 +6,8 @@
     "dev": "next dev --hostname 127.0.0.1",
     "build": "next build",
     "start": "next start --hostname 127.0.0.1",
-    "lint": "eslint"
+    "lint": "eslint",
+    "export:locations": "tsx scripts/export-all-locations-docx.ts"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",

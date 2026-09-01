@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
 
 import {
   LocationHero,
@@ -19,87 +18,48 @@ import { TeamSection } from "@/components/landing/team-section";
 import { TechStackSection } from "@/components/landing/tech-stack-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { CaseStudiesSection } from "@/components/case-study/case-studies-section";
-import {
-  getAllPakistanCitySlugs,
-  getPakistanCityBySlug,
-} from "@/data/cities-in-pakistan";
-import { getNearbyCitiesFor } from "@/data/nearby-cities";
+import { canadaLocation } from "@/data/locations";
 import { btnOnDark, container, sectionPad } from "@/lib/landing/constants";
 import { selfCanonical, pageTitle, pageTitleString } from "@/seo/canonical";
 import { cn } from "@/lib/utils";
-import { siteBrand } from "@/lib/landing/brand";
 import {
-  breadcrumbSchema,
-  faqPageSchema,
   locationLocalBusinessSchema,
   organizationSchema,
+  breadcrumbSchema,
+  faqPageSchema,
+  jsonLdGraph,
 } from "@/seo/schema";
+import { siteBrand } from "@/lib/landing/brand";
 
-type CityLocationPageProps = {
-  params: Promise<{ slug: string }>;
+export const metadata: Metadata = {
+  title: pageTitle(canadaLocation.metaTitle ?? canadaLocation.title),
+  description: canadaLocation.metaDescription ?? canadaLocation.description,
+  ...selfCanonical("/location/software-house-and-software-company-in-canada"),
+  openGraph: {
+    title: pageTitleString(canadaLocation.metaTitle ?? canadaLocation.title),
+    description: canadaLocation.metaDescription ?? canadaLocation.description,
+    type: "website",
+  },
 };
 
-export async function generateStaticParams() {
-  return getAllPakistanCitySlugs().map((slug) => ({ slug }));
-}
-
-export async function generateMetadata({
-  params,
-}: CityLocationPageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const location = getPakistanCityBySlug(slug);
-
-  if (!location) {
-    return { title: "Location not found" };
-  }
-
-  const titleSegment = location.metaTitle ?? location.title;
-
-  return {
-    title: pageTitle(titleSegment),
-    description: location.metaDescription ?? location.description,
-    ...selfCanonical(`/location/${slug}`),
-    openGraph: {
-      title: pageTitleString(titleSegment),
-      description: location.metaDescription ?? location.description,
-      type: "website",
-    },
-  };
-}
-
-export default async function CityLocationPage({ params }: CityLocationPageProps) {
-  const { slug } = await params;
-  const location = getPakistanCityBySlug(slug);
-
-  if (!location) {
-    notFound();
-  }
-
-  const cityName =
-    location.breadcrumbs?.[location.breadcrumbs.length - 1]?.label ?? location.country;
+export default function CanadaLocationPage() {
+  const location = canadaLocation;
   const { sections } = location;
-  const nearbyCities = getNearbyCitiesFor(cityName);
 
-  const breadcrumbItems =
-    location.breadcrumbs?.map((crumb) => ({
-      name: crumb.label,
-      path: crumb.href ?? location.href,
-    })) ?? [
-      { name: "Home", path: "/" },
-      { name: "Locations", path: "/location" },
-      { name: cityName, path: location.href },
-    ];
-
-  const schemas = [
+  const schemas = jsonLdGraph([
     organizationSchema,
     locationLocalBusinessSchema({
-      areaServedName: cityName,
-      areaServedType: "City",
+      areaServedName: "Canada",
+      areaServedType: "Country",
       pageUrl: location.href,
       description: location.metaDescription ?? location.description,
-      idSuffix: slug,
+      idSuffix: "canada",
     }),
-    breadcrumbSchema(breadcrumbItems),
+    breadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Locations", path: "/location" },
+      { name: "Canada", path: location.href },
+    ]),
     ...(location.faqs.length
       ? [
           faqPageSchema(location.faqs, {
@@ -108,7 +68,7 @@ export default async function CityLocationPage({ params }: CityLocationPageProps
           }),
         ]
       : []),
-  ];
+  ]);
 
   return (
     <div className="flex min-h-full w-full flex-col overflow-x-clip bg-black text-foreground">
@@ -135,7 +95,7 @@ export default async function CityLocationPage({ params }: CityLocationPageProps
         />
 
         <LocationWhyChooseSection
-          cityName={cityName}
+          cityName="Canada"
           values={sections.whyChoose.values}
           overlineText={sections.whyChoose.overlineText}
           title={sections.whyChoose.title}
@@ -160,11 +120,11 @@ export default async function CityLocationPage({ params }: CityLocationPageProps
           overlineText={sections.tech.overlineText}
           title={
             <>
-              Modern tools for <span className="text-primary">{cityName}</span> products
+              Built with <span className="text-primary">{sections.tech.titleItalic}</span>
             </>
           }
           description={sections.tech.description}
-          badgeText={`Technology for ${cityName} delivery`}
+          badgeText={`Technology for ${location.country} delivery`}
         />
 
         <ProcessSection
@@ -180,20 +140,17 @@ export default async function CityLocationPage({ params }: CityLocationPageProps
           ctaLabel={sections.process.ctaLabel}
         />
 
-        {nearbyCities.length > 0 ? (
-          <SubLocationsSection
-            country={cityName}
-            cities={nearbyCities}
-            overlineText="Service areas"
-            title={
-              <>
-                {cityName} and surrounding <span className="italic text-primary/95">areas</span>
-              </>
-            }
-            description={`We support businesses in ${cityName} and nearby cities with the same software house delivery standards: discovery, build, launch, and ongoing support.`}
-            metricLabel="nearby cities · regional delivery"
-          />
-        ) : null}
+        <SubLocationsSection
+          country={location.country}
+          cities={location.cities}
+          description={location.coverageDescription}
+          overlineText="Service areas"
+          title={
+            <>
+              Regions we serve across <span className="italic text-primary/95">Canada</span>
+            </>
+          }
+        />
 
         {sections.caseStudies.items.length > 0 ? (
           <CaseStudiesSection
@@ -213,7 +170,9 @@ export default async function CityLocationPage({ params }: CityLocationPageProps
                 Local <span className="italic">engagement</span> examples
               </>
             ) : (
-              sections.testimonials.title
+              <>
+                What Our <span className="italic">{sections.testimonials.titleItalic}</span> Say
+              </>
             )
           }
           description={sections.testimonials.description}
@@ -223,9 +182,13 @@ export default async function CityLocationPage({ params }: CityLocationPageProps
         <TeamSection
           overlineText={sections.team.overlineText}
           title={
-            <>
-              The Team Behind Our <span className="italic">{cityName}</span> Delivery
-            </>
+            sections.team.titleItalic ? (
+              <>
+                A senior <span className="italic">{sections.team.titleItalic}</span>
+              </>
+            ) : (
+              sections.team.title
+            )
           }
           intro={sections.team.intro}
         />
@@ -233,7 +196,7 @@ export default async function CityLocationPage({ params }: CityLocationPageProps
         <FaqSection
           items={location.faqs}
           intro={location.faqIntro}
-          overlineText={`${cityName} FAQs`}
+          overlineText="Canada FAQs"
           title={
             <>
               Software house questions, <span className="italic">answered</span>

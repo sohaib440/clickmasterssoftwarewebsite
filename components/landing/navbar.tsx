@@ -54,7 +54,11 @@ export const navLinks: readonly NavLink[] = [
     href: "/location",
     children: [
       { label: "Pakistan", href: "/location/software-house-and-software-company-in-pakistan" },
-      // { label: "All locations", href: "/location" },
+      { label: "USA", href: "/location/software-house-and-software-company-in-usa" },
+      { label: "Canada", href: "/location/software-house-and-software-company-in-canada" },
+      { label: "Australia", href: "/location/software-house-and-software-company-in-australia" },
+      { label: "UK", href: "/location/software-house-and-software-company-in-uk" },
+      { label: "UAE", href: "/location/software-house-and-software-company-in-uae" },
     ],
   },
   { label: "Industries", href: industriesPath },
@@ -109,6 +113,17 @@ export const footerColumns = [
       { label: "Blog", href: "/blog" },
       { label: "FAQ", href: "/faqs" },
       { label: "Contact", href: contactPath },
+    ],
+  },
+  {
+    title: "Locations",
+    links: [
+      { label: "Pakistan", href: "/location/software-house-and-software-company-in-pakistan" },
+      { label: "USA", href: "/location/software-house-and-software-company-in-usa" },
+      { label: "UK", href: "/location/software-house-and-software-company-in-uk" },
+      { label: "UAE", href: "/location/software-house-and-software-company-in-uae" },
+      { label: "Canada", href: "/location/software-house-and-software-company-in-canada" },
+      { label: "Australia", href: "/location/software-house-and-software-company-in-australia" },
     ],
   },
   {

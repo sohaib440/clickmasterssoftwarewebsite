@@ -151,14 +151,9 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
       <main className="flex w-full flex-1 flex-col overflow-x-clip">
         <section className="relative overflow-hidden bg-black text-white">
-          <div className="pointer-events-none absolute inset-0" aria-hidden>
-            <div className="absolute -left-20 top-0 h-72 w-72 rounded-full bg-primary/10 blur-[100px]" />
-            <div className="absolute -right-16 bottom-0 h-64 w-64 rounded-full bg-white/[0.04] blur-[100px]" />
-          </div>
-
-          <div className={cn(container, sectionPad, "relative")}>
+          <div className={cn(container, sectionPad, "relative !pt-6 md:!pt-8 lg:!pt-10")}>
             <Reveal immediate>
-              <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-white/60">
+              <nav className="mb-3 flex flex-wrap items-center gap-2 text-sm text-white/60">
                 <Link href="/" className="inline-flex items-center gap-1.5 hover:text-white">
                   <ArrowLeft className="size-4" aria-hidden />
                   Home
@@ -175,8 +170,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-12">
               <div>
                 <Reveal immediate delay={motionStagger}>
-                  <p className={cn(overline, "text-white/60")}>{project.category}</p>
-                  <h1 className="mt-4 font-heading text-4xl font-normal leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.15rem]">
+                  <h1 className="font-heading text-4xl font-normal leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.15rem]">
                     {project.title}
                   </h1>
                   <p className="mt-5 max-w-2xl text-justify text-base leading-relaxed text-white/70 md:text-lg">

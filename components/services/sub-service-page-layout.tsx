@@ -3,14 +3,12 @@ import { ArrowUpRight } from "lucide-react";
 
 import { AboutSection } from "@/components/landing/about-section";
 import { BlogSection } from "@/components/landing/blog-section";
-import { CardImage } from "@/components/landing/card-image";
 import { TrustedPartnersSection } from "@/components/landing/clients-section";
 import { ContactSection } from "@/components/landing/contact-section";
 import { FaqSection } from "@/components/landing/faq-section";
 import { IndustriesSection } from "@/components/landing/industries-section";
 import { ProcessSection } from "@/components/landing/process-section";
 import { ProjectsSection } from "@/components/landing/projects-section";
-import { RatingBadges } from "@/components/landing/rating-badges";
 import { Reveal } from "@/components/landing/reveal";
 import { SiteHeader } from "@/components/landing/navbar";
 import { TeamSection } from "@/components/landing/team-section";
@@ -19,17 +17,13 @@ import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { TrustNumbersSection } from "@/components/landing/trust-numbers-section";
 import { CaseStudiesSection } from "@/components/case-study/case-studies-section";
 import { caseStudies } from "@/data/caseStudy";
-import { ServiceBreadcrumbs } from "@/components/services/shared/service-breadcrumbs";
+import { ServiceHero } from "@/components/services/service-hero";
 import {
   btnOnDark,
-  btnOutlineDark,
-  btnPrimary,
   cardDark,
   cardSoft,
-  contactPath,
   container,
   overline,
-  projectPath,
   sectionPad,
 } from "@/lib/landing/constants";
 import type { SubServicePageContent } from "@/lib/content/service-page-types";
@@ -78,77 +72,16 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
     cta,
   } = content;
 
-  const primaryCta = hero.primaryCta ?? { label: "Get a Free Quote", href: contactPath };
-  const secondaryCta = hero.secondaryCta ?? { label: "See Our Work", href: projectPath };
-
   return (
     <div className="flex min-h-full w-full flex-col overflow-x-clip bg-[#f0f1f3] text-horizon-navy">
       <SiteHeader />
 
       <main className="flex-1">
-        <section className="relative w-full overflow-hidden bg-black text-white">
-          <div className="pointer-events-none absolute inset-0" aria-hidden>
-            <div className="absolute -left-20 top-0 h-72 w-72 rounded-full bg-primary/10 blur-[100px]" />
-            <div className="absolute -right-16 bottom-0 h-64 w-64 rounded-full bg-white/[0.04] blur-[100px]" />
-          </div>
+        <ServiceHero breadcrumbs={breadcrumbs} hero={hero} />
 
-          <div className={cn(container, sectionPad, "relative")}>
-            <Reveal immediate>
-              <ServiceBreadcrumbs items={breadcrumbs} />
-            </Reveal>
-
-            <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.65fr)] lg:gap-10">
-              <div className="min-w-0">
-                <Reveal immediate delay={motionStagger}>
-                  <p className={cn(overline, "text-white/60")}>{hero.eyebrow}</p>
-                </Reveal>
-                <Reveal immediate delay={motionStagger * 2}>
-                  <h1 className="mt-4 font-heading text-4xl font-normal leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
-                    {hero.title}
-                  </h1>
-                </Reveal>
-                <Reveal immediate delay={motionStagger * 3}>
-                  <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
-                    {hero.description}
-                  </p>
-                </Reveal>
-                <Reveal immediate delay={motionStagger * 4}>
-                  <div className="mt-8 flex flex-col gap-2 sm:flex-row sm:items-center">
-                    <Link href={primaryCta.href} className={btnPrimary}>
-                      {primaryCta.label}
-                    </Link>
-                    <Link href={secondaryCta.href} className={btnOutlineDark}>
-                      {secondaryCta.label}
-                    </Link>
-                  </div>
-                </Reveal>
-              </div>
-
-              <Reveal immediate delay={motionStagger * 2} direction="right">
-                {hero.image ? (
-                  <div className="mx-auto w-full max-w-[18rem] sm:max-w-[20rem] lg:ml-auto lg:mr-0 lg:max-w-[20rem]">
-                    <div className={cn(cardDark, "overflow-hidden p-0")}>
-                      <CardImage
-                        {...hero.image}
-                        className="aspect-square w-full"
-                        priority
-                        sizes="(max-width: 1024px) 288px, 280px"
-                      />
-                    </div>
-                  </div>
-                ) : null}
-                <RatingBadges
-                  variant="dark"
-                  className={hero.image ? "mt-5" : undefined}
-                />
-              </Reveal>
-            </div>
-          </div>
-        </section>
-
-        <TrustNumbersSection />
+        <TrustNumbersSection className="[&>div]:!pt-2 [&>div]:md:!pt-3 [&>div]:!pb-6 [&>div]:md:!pb-8" />
         <TrustedPartnersSection className="border-horizon-border/60 bg-white" />
-        <AboutSection />
+        <AboutSection showValues={false} />
 
         <section className="w-full bg-black text-white" aria-labelledby="sub-service-overview-heading">
           <div className={cn(container, sectionPad)}>

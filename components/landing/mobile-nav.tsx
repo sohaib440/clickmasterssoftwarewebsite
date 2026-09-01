@@ -36,50 +36,60 @@ function MobileNavAccordion({
   const children = link.children ?? [];
   const hasChildren = children.length > 0;
 
-  // Re-apply default open state each time the drawer opens (avoids stale /
-  // double-click accordion state after the panel was hidden).
-  useEffect(() => {
-    if (menuOpen) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect -- reset accordion when drawer opens
-      setExpanded(defaultOpen);
-    }
-  }, [menuOpen, defaultOpen]);
+  // Keep the accordion state tied to the user's interaction instead of resetting
+  // it each time the drawer opens. This allows nested mobile nav sections such as
+  // About, Portfolio, and Resources to expand correctly.
 
   if (!hasChildren) {
     return (
-      <Link
-        href={link.href}
-        onClick={(event) => {
-          if (link.href === "#") event.preventDefault();
-          else onClose();
-        }}
-        className="flex items-center justify-between rounded-2xl px-4 py-3.5 text-[15px] font-medium text-white transition-colors active:bg-white/10"
-      >
-        {link.label}
-        <ArrowRight className="size-4 text-white/35" aria-hidden />
-      </Link>
+      <div className="border-b border-white/10">
+        <Link
+          href={link.href}
+          onClick={(event) => {
+            if (link.href === "#") event.preventDefault();
+            else onClose();
+          }}
+          className="flex items-center justify-between py-4 text-[15px] font-medium tracking-[-0.01em] text-white/90 transition-colors hover:text-white"
+        >
+          <span>{link.label}</span>
+          <ArrowRight className="size-4 text-white/35" aria-hidden />
+        </Link>
+      </div>
     );
   }
 
   const showChildren = menuOpen && expanded;
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-white/8 bg-white/[0.03]">
-      <button
-        type="button"
-        aria-expanded={showChildren}
-        onClick={() => setExpanded((value) => !value)}
-        className="flex w-full items-center justify-between px-4 py-3.5 text-left text-[15px] font-medium text-white transition-colors active:bg-white/5"
-      >
-        {link.label}
-        <ChevronDown
-          className={cn(
-            "size-4 text-primary transition-transform duration-200",
-            showChildren && "rotate-180"
-          )}
-          aria-hidden
-        />
-      </button>
+    <div className="border-b border-white/10">
+      <div className="flex w-full items-center justify-between gap-3 py-4">
+        <Link
+          href={link.href}
+          onClick={(event) => {
+            if (link.href === "#") event.preventDefault();
+            else onClose();
+          }}
+          className="flex-1 text-left text-[15px] font-medium tracking-[-0.01em] text-white/90 transition-colors hover:text-white"
+        >
+          {link.label}
+        </Link>
+
+        <button
+          type="button"
+          aria-expanded={showChildren}
+          onClick={() => setExpanded((value) => !value)}
+          className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/[0.02] text-white/70 transition-colors hover:border-white/20 hover:text-white"
+          aria-label={showChildren ? `Collapse ${link.label} menu` : `Expand ${link.label} menu`}
+        >
+          <ChevronDown
+            className={cn(
+              "size-4 transition-transform duration-200",
+              showChildren && "rotate-180"
+            )}
+            aria-hidden
+          />
+        </button>
+      </div>
 
       <div
         className={cn(
@@ -88,7 +98,7 @@ function MobileNavAccordion({
         )}
       >
         <div className="min-h-0 overflow-hidden">
-          <div className="space-y-0.5 border-t border-white/8 px-2 pb-2 pt-1">
+          <div className="space-y-1 pb-3 pt-1">
             {children.map((child, index) => (
               <Link
                 key={`${child.href}-${index}`}
@@ -97,7 +107,7 @@ function MobileNavAccordion({
                   if (child.href === "#") event.preventDefault();
                   else onClose();
                 }}
-                className="block rounded-xl px-3 py-2.5 text-sm text-white/70 transition-colors active:bg-white/10 active:text-white"
+                className="block rounded-xl border border-white/5 bg-white/[0.02] px-3 py-2.5 text-sm text-white/70 transition-colors hover:bg-white/[0.04] hover:text-white"
               >
                 {child.label}
               </Link>
@@ -150,15 +160,10 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
         )}
       >
         <div className="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3 sm:px-5 sm:py-4">
-          <SiteLogo
-            className="min-w-0 max-w-[min(70vw,14rem)]"
-            imageClassName="h-9 w-auto max-w-full sm:h-10"
-            onNavigate={onClose}
-          />
           <button
             type="button"
             onClick={onClose}
-            className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-white/15 bg-white/5 text-white transition-colors active:bg-white/10 sm:h-11 sm:w-11"
+            className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.02] text-white/80 transition-colors hover:border-white/20 hover:text-white"
             aria-label="Close navigation menu"
           >
             <X className="size-5" aria-hidden />
@@ -166,13 +171,9 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
         </div>
 
         <nav
-          className="scrollbar-dark flex-1 space-y-2 overflow-y-auto overscroll-contain px-4 py-4 sm:px-5 sm:py-5"
+          className="scrollbar-dark flex-1 overflow-y-auto overscroll-contain px-4 py-4 sm:px-5 sm:py-5"
           aria-label="Main"
         >
-          <p className="px-1 pb-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/40">
-            Menu
-          </p>
-
           {navLinks.map((link, linkIndex) => (
             <MobileNavAccordion
               key={`${link.href}-${linkIndex}`}

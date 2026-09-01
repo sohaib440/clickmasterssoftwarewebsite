@@ -1,4 +1,4 @@
-import { ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
@@ -144,9 +144,10 @@ export function FaqSection({
           <Reveal delay={motionStagger * 2} className="mt-10 text-center md:mt-12">
             <Link
               href={footerHref}
-              className="text-sm font-medium text-horizon-navy underline-offset-4 hover:text-primary hover:underline"
+              className="group inline-flex items-center gap-2 text-sm font-medium text-horizon-navy underline-offset-4 hover:text-primary hover:underline"
             >
-              {footerCta} →
+              {footerCta}
+              <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden />
             </Link>
           </Reveal>
         ) : null}
