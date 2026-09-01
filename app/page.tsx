@@ -75,45 +75,45 @@ function DeferredSection({ children }: { children: React.ReactNode }) {
 
 const countryNavigationItems = [
   {
-    country: "Pakistan",
-    label: "Software company in Pakistan",
+    country: "Software development company in Pakistan",
+    label: "Software house and software company in Pakistan",
     description:
-      "Custom software development, enterprise systems, and digital transformation for businesses across Pakistan and global clients.",
+      "As a leading software development company in Pakistan, we deliver custom software development, enterprise systems, and digital transformation solutions for businesses across Pakistan and global clients.",
     href: "/location/software-house-and-software-development-company-in-pakistan",
   },
   {
-    country: "USA",
-    label: "Software company in the USA",
+    country: "Software development company in the USA",
+    label: "Software house and software company in the USA",
     description:
-      "Remote software development and product engineering support for startups, SaaS companies, and growing businesses in the United States.",
+      "Our software development company in the USA specializes in remote software development and product engineering support for startups, SaaS companies, and growing businesses throughout the United States.",
     href: "/location/software-house-and-software-development-company-in-usa",
   },
   {
-    country: "UK",
-    label: "Software company in the UK",
+    country: "Software development company in the UK",
+    label: "Software house and software company in the UK",
     description:
-      "UK-focused software delivery for SaaS, operations, healthcare, and digital product teams seeking dependable product partners.",
+      "As a trusted software development company in the UK, we provide comprehensive software delivery solutions for SaaS, operations, healthcare, and digital product teams seeking dependable development partners.",
     href: "/location/software-house-and-software-development-company-in-uk",
   },
   {
-    country: "UAE",
-    label: "Software company in the UAE",
+    country: "Software development company in the UAE",
+    label: "Software house and software company in the UAE",
     description:
-      "Software development company in the UAE helping founders and teams build CRM, ERP, mobile apps, and business automation platforms.",
+      "Our software development company in the UAE specializes in helping founders and entrepreneurs build custom CRM systems, ERP solutions, mobile applications, and intelligent business automation platforms.",
     href: "/location/software-house-and-software-development-company-in-uae",
   },
   {
-    country: "Canada",
-    label: "Software company in Canada",
+    country: "Software development company in Canada",
+    label: "Software house and software company in Canada",
     description:
-      "Digital product development, mobile apps, and custom software solutions for Canadian businesses and scaling startups.",
+      "As a software development company in Canada, we offer comprehensive digital product development, custom mobile apps, and scalable software solutions for Canadian businesses and startups.",
     href: "/location/software-house-and-software-development-company-in-canada",
   },
   {
-    country: "Australia",
-    label: "Software company in Australia",
+    country: "Software development company in Australia",
+    label: "Software house and software company in Australia",
     description:
-      "Software development services in Australia for workflow automation, digital transformation, and custom business platforms.",
+      "Our software development company in Australia delivers comprehensive software development services for workflow automation, digital transformation, and custom business platform development.",
     href: "/location/software-house-and-software-development-company-in-australia",
   },
 ] as const;
