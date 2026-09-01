@@ -61,7 +61,7 @@ function friendlyName(url, category) {
   if (staticNames[pathname]) return staticNames[pathname];
 
   const cityMatch = pathname.match(
-    /^\/location\/software-house-and-software-company-in-(.+)$/
+    /^\/location\/software-house-and-software-development-company-in-(.+)$/
   );
   if (cityMatch) {
     const city = titleCase(cityMatch[1].replace(/-/g, " "));

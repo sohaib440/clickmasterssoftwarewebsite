@@ -34,7 +34,7 @@ import { siteBrand } from "@/lib/landing/brand";
 export const metadata: Metadata = {
   title: pageTitle(uaeLocation.metaTitle ?? uaeLocation.title),
   description: uaeLocation.metaDescription ?? uaeLocation.description,
-  ...selfCanonical("/location/software-house-and-software-company-in-uae"),
+  ...selfCanonical("/location/software-house-and-software-development-company-in-uae"),
   openGraph: {
     title: pageTitleString(uaeLocation.metaTitle ?? uaeLocation.title),
     description: uaeLocation.metaDescription ?? uaeLocation.description,

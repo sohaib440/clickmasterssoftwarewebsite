@@ -137,6 +137,14 @@ function lookupLegacy(path: string): string | null {
     return "/blog";
   }
 
+  const legacyLocationPrefix = "/location/software-house-and-software-company-in-";
+  if (path.startsWith(legacyLocationPrefix)) {
+    return path.replace(
+      "software-house-and-software-company-in-",
+      "software-house-and-software-development-company-in-"
+    );
+  }
+
   if (EXACT[path]) {
     return EXACT[path];
   }

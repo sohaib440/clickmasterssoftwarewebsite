@@ -18,7 +18,7 @@ import { TeamSection } from "@/components/landing/team-section";
 import { TechStackSection } from "@/components/landing/tech-stack-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { CaseStudiesSection } from "@/components/case-study/case-studies-section";
-import { usaLocation } from "@/data/locations";
+import { canadaLocation } from "@/data/locations";
 import { btnOnDark, container, sectionPad } from "@/lib/landing/constants";
 import { selfCanonical, pageTitle, pageTitleString } from "@/seo/canonical";
 import { cn } from "@/lib/utils";
@@ -32,33 +32,33 @@ import {
 import { siteBrand } from "@/lib/landing/brand";
 
 export const metadata: Metadata = {
-  title: pageTitle(usaLocation.metaTitle ?? usaLocation.title),
-  description: usaLocation.metaDescription ?? usaLocation.description,
-  ...selfCanonical("/location/software-house-and-software-company-in-usa"),
+  title: pageTitle(canadaLocation.metaTitle ?? canadaLocation.title),
+  description: canadaLocation.metaDescription ?? canadaLocation.description,
+  ...selfCanonical("/location/software-house-and-software-development-company-in-canada"),
   openGraph: {
-    title: pageTitleString(usaLocation.metaTitle ?? usaLocation.title),
-    description: usaLocation.metaDescription ?? usaLocation.description,
+    title: pageTitleString(canadaLocation.metaTitle ?? canadaLocation.title),
+    description: canadaLocation.metaDescription ?? canadaLocation.description,
     type: "website",
   },
 };
 
-export default function USALocationPage() {
-  const location = usaLocation;
+export default function CanadaLocationPage() {
+  const location = canadaLocation;
   const { sections } = location;
 
   const schemas = jsonLdGraph([
     organizationSchema,
     locationLocalBusinessSchema({
-      areaServedName: "United States",
+      areaServedName: "Canada",
       areaServedType: "Country",
       pageUrl: location.href,
       description: location.metaDescription ?? location.description,
-      idSuffix: "usa",
+      idSuffix: "canada",
     }),
     breadcrumbSchema([
       { name: "Home", path: "/" },
       { name: "Locations", path: "/location" },
-      { name: "United States", path: location.href },
+      { name: "Canada", path: location.href },
     ]),
     ...(location.faqs.length
       ? [
@@ -95,7 +95,7 @@ export default function USALocationPage() {
         />
 
         <LocationWhyChooseSection
-          cityName="United States"
+          cityName="Canada"
           values={sections.whyChoose.values}
           overlineText={sections.whyChoose.overlineText}
           title={sections.whyChoose.title}
@@ -147,7 +147,7 @@ export default function USALocationPage() {
           overlineText="Service areas"
           title={
             <>
-              Cities we serve across <span className="italic text-primary/95">United States</span>
+              Regions we serve across <span className="italic text-primary/95">Canada</span>
             </>
           }
         />
@@ -196,7 +196,7 @@ export default function USALocationPage() {
         <FaqSection
           items={location.faqs}
           intro={location.faqIntro}
-          overlineText="United States FAQs"
+          overlineText="Canada FAQs"
           title={
             <>
               Software house questions, <span className="italic">answered</span>
