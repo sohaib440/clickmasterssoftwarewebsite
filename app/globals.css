@@ -170,6 +170,7 @@
 
 /* Site footer — forced light text so navy page theme never bleeds through */
 .site-footer {
+  background-color: #000000;
   color: #f4f4f5;
 }
 

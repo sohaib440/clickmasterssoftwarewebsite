@@ -25,8 +25,8 @@ export function BlogIndexPage() {
         }
         description="Ideas on product, design, and engineering, how we plan, build, and ship with clarity."
       />
-      <BlogSection showHeading={false} variant="light" />
-      <section className="w-full bg-black text-white">
+      <BlogSection showHeading={false} showAll variant="light" />
+      <section className="w-full bg-horizon-navy text-white">
         <div className={cn(container, sectionPad, "text-center")}>
           <Reveal>
             <h2 className="font-heading text-3xl font-normal text-white md:text-4xl">

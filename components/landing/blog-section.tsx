@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 
 type BlogSectionProps = {
   showHeading?: boolean;
+  showAll?: boolean;
   /** Homepage stays dark; blog index uses a white band between black sections */
   variant?: "dark" | "light";
 };
@@ -14,13 +15,8 @@ type BlogSectionProps = {
 const blogSectionDescription =
   "Practical notes on product delivery, discovery, and building systems that scale, written by the people behind the work.";
 
-function getFrontTitle(category: string) {
-  const short = category.split(" ").slice(0, 2).join(" ");
-  return short.length > 22 ? category.split(" ")[0] : short;
-}
-
-export function BlogSection({ showHeading = true, variant = "dark" }: BlogSectionProps) {
-  const featured = blogPosts.slice(0, 3);
+export function BlogSection({ showHeading = true, showAll = false, variant = "dark" }: BlogSectionProps) {
+  const featured = showAll ? blogPosts : blogPosts.slice(0, 3);
   const light = variant === "light";
 
   return (
@@ -50,7 +46,7 @@ export function BlogSection({ showHeading = true, variant = "dark" }: BlogSectio
               href={blogPostPath(post.slug)}
               image={post.image}
               index={index}
-              frontTitle={getFrontTitle(post.category)}
+              frontTitle={post.title}
               category={post.category}
               title={post.title}
               excerpt={post.excerpt}
