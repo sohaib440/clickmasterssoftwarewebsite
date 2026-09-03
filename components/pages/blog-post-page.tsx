@@ -220,7 +220,7 @@ export function BlogPostPage({ post }: BlogPostPageProps) {
             />
           </Reveal>
 
-          <div className="mt-12 grid gap-8 xl:grid-cols-[minmax(0,1fr)_17rem] xl:gap-10">
+          <div className="mt-12 grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem] xl:grid-cols-[minmax(0,1fr)_22rem] xl:gap-10">
             <div className="min-w-0">
               <details className="mb-10 rounded-xl border border-horizon-border/80 bg-white p-3 shadow-[0_1px_2px_rgba(0,0,0,0.04)] md:p-4 xl:hidden">
                 <summary className="cursor-pointer list-none font-heading text-sm font-semibold tracking-tight text-horizon-navy md:text-base [&::-webkit-details-marker]:hidden">
@@ -249,7 +249,7 @@ export function BlogPostPage({ post }: BlogPostPageProps) {
               ) : null}
             </div>
 
-            <aside className="relative hidden min-h-[28rem] xl:block">
+            <aside className="relative hidden min-h-[28rem] lg:block">
               <BlogStickySidebar>
                 {tocItems.length > 0 ? <BlogTableOfContents items={tocItems} /> : null}
                 <BlogSidebarCta />

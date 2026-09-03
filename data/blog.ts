@@ -477,7 +477,6 @@ export const blogPosts: BlogPost[] = [
 				type: "p",
 				text: "Quality assurance engineers test the product systematically. DevOps engineers manage deployment pipelines, infrastructure, and reliability. Project and engineering managers coordinate priorities, timelines, and communication. Smaller teams may combine these responsibilities, but ownership of product decisions, user experience, technical quality, and delivery should remain clear.",
 			},
-			{ type: "h2", text: "Tools and technologies" },
 			{
 				type: "p",
 				text: "Professional development teams rely on version control such as Git to track and merge code changes, development environments for writing and debugging, and project tracking tools for tasks, releases, and defects. Continuous integration and continuous delivery pipelines automate builds, tests, and deployments.",
@@ -486,7 +485,6 @@ export const blogPosts: BlogPost[] = [
 				type: "p",
 				text: "Cloud platforms such as AWS, Azure, and Google Cloud provide hosting, storage, and scalable infrastructure. Testing frameworks support unit, integration, and end to end testing. The right technology choices depend on the platform, users, security requirements, team capability, and long term maintenance needs.",
 			},
-			{ type: "h2", text: "Agile, Waterfall, and DevOps" },
 			{
 				type: "p",
 				text: "Agile breaks work into short cycles called sprints, usually lasting one to four weeks. Teams deliver working software frequently and adjust plans using regular feedback. Waterfall follows a linear sequence in which each stage is completed before the next begins. It can suit projects with fixed and well understood requirements, especially where changing course is expensive.",
@@ -504,7 +502,6 @@ export const blogPosts: BlogPost[] = [
 				type: "p",
 				text: "Because software affects product quality, security, cost, and speed to market, the choice to build in house, hire a development partner, or combine both is a strategic decision. A good development process makes those trade offs visible before they become expensive.",
 			},
-			{ type: "h2", text: "Building in house versus hiring a development partner" },
 			{
 				type: "p",
 				text: "An in house team offers strong control and builds long term knowledge of the organization, but it can take longer and cost more to hire and sustain. An outsourced development partner can usually begin sooner, adjust team size as needs change, and bring experience from different industries.",
@@ -513,7 +510,6 @@ export const blogPosts: BlogPost[] = [
 				type: "p",
 				text: "A hybrid team keeps core product ownership inside the business while using an external partner for additional capacity or specialist expertise. The right choice depends on the product, available leadership, security needs, budget, and the level of technical ownership the business wants to retain.",
 			},
-			{ type: "h2", text: "How should you start a software project?" },
 			{
 				type: "p",
 				text: "Start with the problem rather than a preferred technology. Describe who has the problem, how they handle it today, what constraints matter, and what a better outcome looks like. A focused discovery phase can turn those findings into user stories, an architecture direction, a milestone plan, and a clear first release.",
