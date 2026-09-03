@@ -410,7 +410,7 @@ export const blogPosts: BlogPost[] = [
 		slug: "what-is-software-development",
 		title: "What Is Software Development? A Practical Guide",
 		excerpt:
-			"Software development is the process of turning a business problem or idea into reliable digital software. Learn how the development life cycle works, which roles and technologies are involved, and what to plan before building.",
+			"Understand software development from planning and design to testing and launch. Learn about the SDLC, team roles, technologies, costs, and project planning.",
 		author: authors.shahvaizAhmed,
 		reviewedBy: technicalReviewer,
 		publishedAt: "Sep 3, 2026",
