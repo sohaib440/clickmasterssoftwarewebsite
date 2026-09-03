@@ -23,7 +23,7 @@ export const siteBrand = {
 export const siteEmailMailto = `mailto:${siteBrand.email}`;
 
 /** Opens the device dialer with the company number. */
-export const sitePhoneTel = `tel:${siteBrand.phoneE164}`;
+export const sitePhoneTel = `tel:${siteBrand.phone}`;
 
 /** Opens WhatsApp chat with the company number. */
 export const siteWhatsAppHref = `https://wa.me/${siteBrand.phoneE164.replace("+", "")}?text=${encodeURIComponent(
