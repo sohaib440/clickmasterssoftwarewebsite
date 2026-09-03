@@ -105,16 +105,16 @@ export function BlogTableOfContents({ items, className }: BlogTableOfContentsPro
     <nav
       aria-label="Table of contents"
       className={cn(
-        "rounded-xl border border-horizon-border/80 bg-white p-5 shadow-[0_1px_2px_rgba(0,0,0,0.04)] sm:p-6",
+        "rounded-xl border border-horizon-border/80 bg-white p-3 shadow-[0_1px_2px_rgba(0,0,0,0.04)] md:p-5 lg:p-6",
         className
       )}
     >
-      <p className="font-heading text-lg font-semibold tracking-tight text-horizon-navy">
+      <p className="font-heading text-sm font-semibold tracking-tight text-horizon-navy md:text-lg">
         In this article
       </p>
       <div className="mt-3 h-px w-full bg-primary/55" aria-hidden />
 
-      <ol className="relative mt-5 space-y-4 border-l border-horizon-border pl-5">
+      <ol className="relative mt-3 space-y-2.5 border-l border-horizon-border pl-3 md:mt-5 md:space-y-4 md:pl-5">
         {items.map((item) => {
           const isActive = item.id === activeId;
 
@@ -133,8 +133,8 @@ export function BlogTableOfContents({ items, className }: BlogTableOfContentsPro
                   scrollToHeading(item.id);
                 }}
                 className={cn(
-                  "block font-heading text-[0.95rem] leading-snug transition-colors",
-                  item.level === 3 && "pl-2 text-[0.9rem]",
+                  "block font-heading text-[0.72rem] leading-snug transition-colors md:text-[0.95rem]",
+                  item.level === 3 && "pl-2 text-[0.7rem] md:text-[0.9rem]",
                   isActive
                     ? "font-medium text-primary"
                     : "text-horizon-navy/85 hover:text-horizon-navy"

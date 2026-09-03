@@ -172,7 +172,7 @@ export function BlogPostPage({ post }: BlogPostPageProps) {
                   </div>
                 </div>
 
-                <dl className="grid grid-cols-3 gap-4 text-sm sm:gap-6">
+                <dl className="grid grid-cols-1 gap-3 text-sm min-[420px]:grid-cols-3 sm:gap-6">
                   <div>
                     <dt className="text-[11px] font-medium uppercase tracking-[0.18em] text-white/45">
                       Read time
@@ -207,8 +207,17 @@ export function BlogPostPage({ post }: BlogPostPageProps) {
             />
           </Reveal>
 
-          <div className="mt-12 grid gap-8 lg:grid-cols-[minmax(0,1fr)_16rem] xl:grid-cols-[minmax(0,1fr)_17rem] xl:gap-10">
+          <div className="mt-12 grid gap-8 xl:grid-cols-[minmax(0,1fr)_17rem] xl:gap-10">
             <div className="min-w-0">
+              <details className="mb-10 rounded-xl border border-horizon-border/80 bg-white p-3 shadow-[0_1px_2px_rgba(0,0,0,0.04)] md:p-4 xl:hidden">
+                <summary className="cursor-pointer list-none font-heading text-sm font-semibold tracking-tight text-horizon-navy md:text-base [&::-webkit-details-marker]:hidden">
+                  In this article
+                </summary>
+                <BlogTableOfContents
+                  items={tocItems.filter((item) => item.id !== "faqs")}
+                  className="mt-4 border-0 p-0 shadow-none [&>div]:hidden [&>p]:hidden"
+                />
+              </details>
               <BlogBodyContent blocks={post.body} headingIds={headingIds} />
               {post.faqs.length > 0 ? (
                 <FaqSection
@@ -227,7 +236,7 @@ export function BlogPostPage({ post }: BlogPostPageProps) {
               ) : null}
             </div>
 
-            <aside className="relative hidden min-h-[28rem] lg:block">
+            <aside className="relative hidden min-h-[28rem] xl:block">
               <BlogStickySidebar>
                 {tocItems.length > 0 ? <BlogTableOfContents items={tocItems} /> : null}
                 <BlogSidebarCta />
