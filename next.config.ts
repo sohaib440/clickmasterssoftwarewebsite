@@ -12,7 +12,7 @@ const contentSecurityPolicy = [
   "font-src 'self' data:",
   "media-src 'self' blob:",
   "connect-src 'self' https://www.googletagmanager.com https://*.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.g.doubleclick.net https://www.google.com https://*.google.com https://www.clarity.ms https://*.clarity.ms https://c.bing.com",
-  "frame-src 'self' https://www.googletagmanager.com https://www.youtube.com https://youtube.com https://www.youtube-nocookie.com",
+  "frame-src 'self' https://www.googletagmanager.com https://www.youtube.com https://youtube.com https://www.youtube-nocookie.com https://www.google.com",
   "worker-src 'self' blob:",
   "manifest-src 'self'",
   "upgrade-insecure-requests",

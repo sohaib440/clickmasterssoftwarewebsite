@@ -1,16 +1,12 @@
 import Link from "next/link";
 import {
   ArrowRight,
-  Award,
-  Briefcase,
   CalendarClock,
   Clock,
-  Code2,
   FileText,
   Mail,
   MapPin,
   Phone,
-  Users,
 } from "lucide-react";
 
 import { EmailLink } from "@/components/landing/email-link";
@@ -84,13 +80,6 @@ const details = [
   { icon: Mail, label: "Email Us", value: siteBrand.email, isEmail: true },
   { icon: Clock, label: "Response Time", value: contactInfo.responseTime },
   { icon: CalendarClock, label: "Working Hours", value: "Mon – Fri, 9:00 AM – 6:00 PM (PKT)" },
-] as const;
-
-const ribbon = [
-  { icon: Briefcase, value: "7+", label: "Years of Experience" },
-  { icon: Award, value: "250+", label: "Projects Delivered" },
-  { icon: Code2, value: "50+", label: "Expert Developers" },
-  { icon: Users, value: "98%", label: "Client Satisfaction" },
 ] as const;
 
 function HeroCardIcon({ name }: { name: (typeof heroCards)[number]["icon"] }) {
@@ -292,30 +281,29 @@ export function ContactPage({ initialValues }: ContactPageProps) {
                 </Reveal>
               </div>
             </div>
+
+            <Reveal delay={motionStagger} className="mt-12 md:mt-16">
+              <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-[0_24px_70px_rgba(0,0,0,0.08)]">
+                <div className="border-b border-neutral-200 px-5 py-4 sm:px-8">
+                  <h2 className="text-2xl font-bold tracking-tight text-horizon-navy sm:text-3xl">
+                    Find Us
+                  </h2>
+                  <p className="mt-1 text-sm text-horizon-muted">
+                    H # 592, Street 41, Phase 4A, Ghori Town, Islamabad
+                  </p>
+                </div>
+                <iframe
+                  title="Map showing Next Software Development Company in Ghori Town, Islamabad"
+                  src="https://www.google.com/maps?q=Next%20Software%20Development%20Company%2C%20H%20%23592%2C%20Street%2041%2C%20Phase%204A%2C%20Ghori%20Town%2C%20Islamabad&output=embed"
+                  className="min-h-80 h-80 w-full border-0 sm:h-112"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+            </Reveal>
           </div>
         </section>
 
-        <section className="w-full border-y border-neutral-200 bg-neutral-50" aria-label="Company stats">
-          <div className={cn(container, "py-10 md:py-12")}>
-            <ul className="grid grid-cols-2 gap-8 lg:grid-cols-4">
-              {ribbon.map((item, i) => (
-                <li key={item.label} className="flex items-center gap-4">
-                  <Reveal delay={i * motionStagger}>
-                    <div className="flex items-center gap-4">
-                      <span className="flex size-12 shrink-0 items-center justify-center rounded-full border border-primary/40 text-primary">
-                        <item.icon className="size-5" strokeWidth={1.5} aria-hidden />
-                      </span>
-                      <div>
-                        <p className="font-heading text-2xl text-horizon-navy sm:text-3xl">{item.value}</p>
-                        <p className="mt-0.5 text-sm text-horizon-muted">{item.label}</p>
-                      </div>
-                    </div>
-                  </Reveal>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
       </main>
     </div>
   );

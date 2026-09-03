@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_PK",
+    locale: "en_US",
     siteName: siteBrand.name,
     images: [
       {

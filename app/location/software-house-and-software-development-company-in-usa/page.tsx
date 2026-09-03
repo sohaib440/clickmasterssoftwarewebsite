@@ -39,6 +39,7 @@ export const metadata: Metadata = {
     title: pageTitleString(usaLocation.metaTitle ?? usaLocation.title),
     description: usaLocation.metaDescription ?? usaLocation.description,
     type: "website",
+    locale: "en_US",
   },
 };
 
