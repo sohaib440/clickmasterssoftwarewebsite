@@ -100,7 +100,7 @@ export type Client = {
 export type BlogBodyBlock =
   | { type: "h2"; text: string }
   | { type: "h3"; text: string }
-  | { type: "p"; text: string }
+  | { type: "p"; text: string; linkText?: string; linkHref?: string }
   | { type: "image"; src: string; alt: string; width: number; height: number };
 
 export type BlogAuthor = {

@@ -436,6 +436,8 @@ export const blogPosts: BlogPost[] = [
 			{
 				type: "p",
 				text: "For a business, software development turns an idea or manual process into a dependable digital product. That product may help customers place orders, help staff manage operations, or give leaders better information for important decisions. The strongest projects connect technical decisions to a measurable business outcome.",
+				linkText: "software development",
+				linkHref: "/software-development",
 			},
 			{ type: "h2", text: "The software development life cycle" },
 			{

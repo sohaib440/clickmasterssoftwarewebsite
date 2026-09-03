@@ -117,7 +117,20 @@ function BlogBodyContent({
         return (
           <Reveal key={`${block.type}-${i}`} delay={motionStagger * Math.min(i + 2, 8)}>
             <p className="mt-5 text-justify text-base leading-[1.8] text-horizon-muted md:text-lg md:leading-[1.85]">
-              {block.text}
+              {block.linkText && block.linkHref && block.text.includes(block.linkText) ? (
+                <>
+                  {block.text.split(block.linkText)[0]}
+                  <Link
+                    href={block.linkHref}
+                    className="font-medium text-primary underline decoration-primary/50 underline-offset-4 transition-colors hover:text-horizon-navy"
+                  >
+                    {block.linkText}
+                  </Link>
+                  {block.text.split(block.linkText).slice(1).join(block.linkText)}
+                </>
+              ) : (
+                block.text
+              )}
             </p>
           </Reveal>
         );
