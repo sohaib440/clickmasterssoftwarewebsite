@@ -46,6 +46,28 @@
       <lastmod>2026-08-12</lastmod>
   </url>
 
+  <!-- Blog article images -->
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/blog/choose-software-development-company-pakistan</loc>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/blog/software-development.webp</image:loc>
+      <image:title>How to Choose the Right Software Development Company in Pakistan</image:title>
+    </image:image>
+    <lastmod>2026-08-12</lastmod>
+  </url>
+  <url>
+    <loc>https://nextsoftwaredevelopment.com/blog/what-is-software-development</loc>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/blog/what-is-software-development.webp</image:loc>
+      <image:title>What Is Software Development? A Practical Guide</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextsoftwaredevelopment.com/blog/SDLC.webp</image:loc>
+      <image:title>Software Development Life Cycle</image:title>
+    </image:image>
+    <lastmod>2026-09-03</lastmod>
+  </url>
+
   <!-- Prime Lead CRM project images -->
   <url>
     <loc>https://nextsoftwaredevelopment.com/projects/prime-lead-crm</loc>

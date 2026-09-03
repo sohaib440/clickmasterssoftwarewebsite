@@ -295,7 +295,7 @@ export default function LocationsPage() {
                   >
                     <div className="relative h-full w-full overflow-hidden">
                       <Image
-                        src="/locations/islamabad-headquater.png"
+                        src="/locations/islamabad-headquater.webp"
                         alt=""
                         fill
                         priority

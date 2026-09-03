@@ -418,7 +418,7 @@ export const blogPosts: BlogPost[] = [
 		readTime: "8 min",
 		category: "Software Development",
 		image: {
-			src: "/blog/what-is-software-development.png",
+			src: "/blog/what-is-software-development.webp",
 			alt: "What is software development illustration",
 			width: 1200,
 			height: 750,
@@ -454,7 +454,7 @@ export const blogPosts: BlogPost[] = [
 			},
 			{
 				type: "image",
-				src: "/blog/SDLC.png",
+				src: "/blog/SDLC.webp",
 				alt: "Software development life cycle showing requirements analysis, system design, implementation, testing, deployment, and maintenance",
 				width: 1536,
 				height: 1024,
