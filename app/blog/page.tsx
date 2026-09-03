@@ -6,7 +6,7 @@ import { selfCanonical } from "@/seo/canonical";
 import { blogSchema, breadcrumbSchema, itemListSchema } from "@/seo/schema";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: { absolute: "Blog" },
   description:
     "Notes from the studio on product planning, calm interfaces, and shipping software weekly.",
   ...selfCanonical("/blog"),

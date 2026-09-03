@@ -114,7 +114,7 @@ export function BlogTableOfContents({ items, className }: BlogTableOfContentsPro
       </p>
       <div className="mt-3 h-px w-full bg-primary/55" aria-hidden />
 
-      <ol className="relative mt-3 space-y-2.5 border-l border-horizon-border pl-3 md:mt-5 md:space-y-4 md:pl-5">
+      <ol className="relative mt-3 space-y-2.5 border-l border-horizon-border pl-3 md:mt-5 md:space-y-4 md:pl-5 lg:space-y-2.5">
         {items.map((item) => {
           const isActive = item.id === activeId;
 
@@ -133,8 +133,8 @@ export function BlogTableOfContents({ items, className }: BlogTableOfContentsPro
                   scrollToHeading(item.id);
                 }}
                 className={cn(
-                  "block font-heading text-[0.72rem] leading-snug transition-colors md:text-[0.95rem]",
-                  item.level === 3 && "pl-2 text-[0.7rem] md:text-[0.9rem]",
+                  "block font-heading text-[0.72rem] leading-snug transition-colors md:text-[0.95rem] lg:text-[0.84rem]",
+                  item.level === 3 && "pl-2 text-[0.7rem] md:text-[0.9rem] lg:text-[0.8rem]",
                   isActive
                     ? "font-medium text-primary"
                     : "text-horizon-navy/85 hover:text-horizon-navy"
