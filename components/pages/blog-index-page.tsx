@@ -13,17 +13,17 @@ export function BlogIndexPage() {
     <MarketingShell>
       <PageBreadcrumb
         items={[{ label: "Blog" }]}
-        className="border-white/10 bg-black text-white [&_a]:text-white/60 [&_a:hover]:text-white [&_span]:text-white/40 [&_span.text-horizon-navy]:text-white"
+        className="border-b-0 bg-black text-white [&_a]:text-white/60 [&_a:hover]:text-white [&_span]:text-white/40 [&_span.text-horizon-navy]:text-white"
       />
       <PageHero
         dark
-        overlineText="Journal"
+        className="[&>div.relative]:!pt-2 md:[&>div.relative]:!pt-3 lg:[&>div.relative]:!pt-4"
         title={
           <>
-            Notes from the <span className="italic text-primary">studio</span>
+            Insights from the <span className="italic text-primary">studio</span>
           </>
         }
-        description="Ideas on product, design, and engineering, how we plan, build, and ship with clarity."
+        description="Practical perspectives from our team on product strategy, user experience, and software delivery, grounded in the decisions and systems that help ambitious teams build with confidence."
       />
       <BlogSection showHeading={false} showAll variant="light" />
       <section className="w-full bg-horizon-navy text-white">

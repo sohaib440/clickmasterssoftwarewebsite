@@ -4,7 +4,7 @@ import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
 
 type PageHeroProps = {
-  overlineText: string;
+  overlineText?: string;
   title: React.ReactNode;
   description?: string;
   className?: string;
@@ -37,13 +37,16 @@ export function PageHero({
         )}
       </div>
       <div className={cn(container, sectionPad, "relative")}>
-        <Reveal immediate>
-          <p className={cn(overline, dark && "text-white/55")}>{overlineText}</p>
-        </Reveal>
+        {overlineText ? (
+          <Reveal immediate>
+            <p className={cn(overline, dark && "text-white/55")}>{overlineText}</p>
+          </Reveal>
+        ) : null}
         <Reveal immediate delay={motionStagger}>
           <h1
             className={cn(
-              "mt-4 max-w-3xl font-heading text-4xl font-normal leading-[1.1] tracking-tight sm:text-5xl lg:text-[3.25rem]",
+              overlineText ? "mt-4" : "mt-0",
+              "max-w-3xl font-heading text-4xl font-normal leading-[1.1] tracking-tight sm:text-5xl lg:text-[3.25rem]",
               dark ? "text-white" : "text-horizon-navy"
             )}
           >
