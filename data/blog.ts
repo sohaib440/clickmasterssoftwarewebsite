@@ -426,74 +426,141 @@ export const blogPosts: BlogPost[] = [
 		body: [
 			{
 				type: "p",
-				text: "Software development is the process of designing, building, testing, releasing, and maintaining software. It can produce a website, mobile app, internal business system, or platform used by customers around the world. Successful development begins with understanding the problem, not simply writing code.",
+				text: "Software development is the process of conceiving, specifying, designing, building, testing, and maintaining the applications, platforms, and systems that run on computers, phones, and servers. It covers everything between identifying a problem and delivering a stable product that people can use, followed by the work required to keep that product reliable.",
 			},
 			{
 				type: "p",
-				text: "For a business, software development turns an idea or manual process into a dependable digital product. That product might help customers place orders, help staff manage operations, or give leaders better information for decisions.",
+				text: "Software development is broader than writing code. A dependable product needs a clear problem definition, an experience that fits real users, testing that catches what breaks, a reliable route to release, and an ongoing plan to improve it. Every website, mobile application, operating system, and embedded control unit exists because a development process took an idea from concept to release.",
 			},
-			{ type: "h2", text: "What does software development include?" },
+			{ type: "h2", text: "What software development actually means" },
 			{
 				type: "p",
-				text: "Software development includes discovery, requirements, user experience, system architecture, programming, quality assurance, deployment, security, monitoring, and ongoing improvements. Each stage reduces a different risk, from building the wrong feature to releasing a system that cannot scale.",
+				text: "For a business, software development turns an idea or manual process into a dependable digital product. That product may help customers place orders, help staff manage operations, or give leaders better information for important decisions. The strongest projects connect technical decisions to a measurable business outcome.",
 			},
-			{ type: "h2", text: "The software development lifecycle" },
+			{ type: "h2", text: "The software development life cycle" },
 			{
 				type: "p",
-				text: "Discovery defines the users, goals, constraints, and measures of success. Planning turns those findings into a roadmap. Design maps the experience and technical approach. Development creates working software, while testing checks that it behaves correctly and securely.",
-			},
-			{
-				type: "p",
-				text: "After testing, the team deploys the product and monitors how it performs in real use. Strong teams treat launch as the beginning of a feedback cycle, not the end of the project.",
-			},
-			{ type: "h2", text: "Common types of software development" },
-			{
-				type: "p",
-				text: "Web development creates browser-based websites and applications. Mobile development produces apps for phones and tablets. Backend development handles APIs, business rules, databases, and integrations. Desktop and embedded development support installed applications and connected devices.",
-			},
-			{ type: "h2", text: "Who works on a software project?" },
-			{
-				type: "p",
-				text: "A project may include a product owner, business analyst, UX or UI designer, software engineers, QA specialists, and delivery lead. Smaller projects often combine roles. What matters is clear ownership of product decisions, user experience, technical quality, and delivery.",
-			},
-			{ type: "h2", text: "How much does software development cost?" },
-			{
-				type: "p",
-				text: "There is no single useful price. Cost depends on scope, platforms, integrations, design depth, security requirements, team size, and support. A short discovery phase improves estimates by defining the first release, milestones, assumptions, and work that can wait.",
-			},
-			{ type: "h2", text: "How should you start?" },
-			{
-				type: "p",
-				text: "Start with the problem rather than a preferred technology. Describe who has the problem, how they handle it today, and what a better outcome looks like. Then prioritise the smallest set of capabilities that can prove the idea or improve the operation.",
+				text: "Most teams organize their work around a version of the software development life cycle, often called the SDLC. Planning defines the problem, goals, budget, and initial scope. Requirements analysis clarifies what the software needs to do, who it is for, and which constraints apply. Design turns those findings into an experience, architecture, and technical blueprint.",
 			},
 			{
 				type: "p",
-				text: "Good software development connects business goals with thoughtful design and disciplined engineering. The result is software people can use, a team can maintain, and a business can improve as its needs change.",
+				text: "Development creates the front end, back end, database, and integrations. Testing checks the software against requirements and looks for defects, security gaps, and performance issues. Deployment releases the product to real users, while maintenance covers bug fixes, security patches, performance improvements, and future features.",
+			},
+			{
+				type: "p",
+				text: "These stages are repeated rather than completed only once. Modern teams often plan, build, test, and learn in cycles that last one to four weeks. This approach gives stakeholders regular opportunities to review working software and adjust priorities before too much effort is invested in the wrong direction.",
+			},
+			{ type: "h2", text: "Main types of software development" },
+			{
+				type: "p",
+				text: "Web development creates websites and browser based applications, including the interfaces users interact with and the systems behind them. Mobile app development creates native or cross platform applications for iOS and Android. Desktop application development produces software installed on Windows, macOS, or Linux.",
+			},
+			{
+				type: "p",
+				text: "Backend and cloud development covers servers, APIs, databases, and infrastructure that power applications behind the scenes. Embedded systems development creates software for dedicated hardware such as vehicles, medical devices, appliances, and sensors. Enterprise software development builds systems such as ERPs, CRMs, and custom platforms around a specific organization. Most real projects combine several of these types.",
+			},
+			{ type: "h2", text: "Who does the work on a development team?" },
+			{
+				type: "p",
+				text: "A product manager owns what gets built and why, based on user and business needs. Software engineers design and write the code across front end, back end, and full stack responsibilities. UX and UI designers shape how the product looks, feels, and works for its users.",
+			},
+			{
+				type: "p",
+				text: "Quality assurance engineers test the product systematically. DevOps engineers manage deployment pipelines, infrastructure, and reliability. Project and engineering managers coordinate priorities, timelines, and communication. Smaller teams may combine these responsibilities, but ownership of product decisions, user experience, technical quality, and delivery should remain clear.",
+			},
+			{ type: "h2", text: "Tools and technologies" },
+			{
+				type: "p",
+				text: "Professional development teams rely on version control such as Git to track and merge code changes, development environments for writing and debugging, and project tracking tools for tasks, releases, and defects. Continuous integration and continuous delivery pipelines automate builds, tests, and deployments.",
+			},
+			{
+				type: "p",
+				text: "Cloud platforms such as AWS, Azure, and Google Cloud provide hosting, storage, and scalable infrastructure. Testing frameworks support unit, integration, and end to end testing. The right technology choices depend on the platform, users, security requirements, team capability, and long term maintenance needs.",
+			},
+			{ type: "h2", text: "Agile, Waterfall, and DevOps" },
+			{
+				type: "p",
+				text: "Agile breaks work into short cycles called sprints, usually lasting one to four weeks. Teams deliver working software frequently and adjust plans using regular feedback. Waterfall follows a linear sequence in which each stage is completed before the next begins. It can suit projects with fixed and well understood requirements, especially where changing course is expensive.",
+			},
+			{
+				type: "p",
+				text: "DevOps is a culture in which development and operations teams work together continuously. Automation, monitoring, and shared responsibility help teams release software faster and more reliably. In practice, many organizations combine Agile planning with DevOps practices and selected elements of a more structured delivery model.",
+			},
+			{ type: "h2", text: "Why software development matters for business" },
+			{
+				type: "p",
+				text: "Well executed software development turns a business idea into a product people can rely on. It can determine whether an application remains stable under real traffic, whether customer information is protected, and whether a team can improve the product without creating new problems.",
+			},
+			{
+				type: "p",
+				text: "Because software affects product quality, security, cost, and speed to market, the choice to build in house, hire a development partner, or combine both is a strategic decision. A good development process makes those trade offs visible before they become expensive.",
+			},
+			{ type: "h2", text: "Building in house versus hiring a development partner" },
+			{
+				type: "p",
+				text: "An in house team offers strong control and builds long term knowledge of the organization, but it can take longer and cost more to hire and sustain. An outsourced development partner can usually begin sooner, adjust team size as needs change, and bring experience from different industries.",
+			},
+			{
+				type: "p",
+				text: "A hybrid team keeps core product ownership inside the business while using an external partner for additional capacity or specialist expertise. The right choice depends on the product, available leadership, security needs, budget, and the level of technical ownership the business wants to retain.",
+			},
+			{ type: "h2", text: "How should you start a software project?" },
+			{
+				type: "p",
+				text: "Start with the problem rather than a preferred technology. Describe who has the problem, how they handle it today, what constraints matter, and what a better outcome looks like. A focused discovery phase can turn those findings into user stories, an architecture direction, a milestone plan, and a clear first release.",
+			},
+			{
+				type: "p",
+				text: "The goal is not to build everything at once. Prioritize the smallest set of capabilities that can prove the idea or improve the operation, then use evidence from real users to decide what comes next. Good software development connects business goals with thoughtful design and disciplined engineering.",
 			},
 		],
 		faqs: [
 			faq(
-				"What is software development in simple terms?",
-				"It is the process of turning a problem or idea into a digital product through planning, design, programming, testing, deployment, and maintenance.",
+				"What is software development in simple words?",
+				"Software development is the process of designing, building, testing, deploying, and maintaining applications or systems that run on computers, phones, or servers.",
 				"Definition",
 				"left"
 			),
 			faq(
-				"What is the first step in software development?",
-				"The first step is discovery: define the users, problem, business goal, constraints, and smallest useful release before choosing technologies.",
-				"Process",
+				"What are the main types of software development?",
+				"The main types are web, mobile, desktop, backend, cloud, embedded, and enterprise software development. Many projects combine several types.",
+				"Types",
 				"right"
 			),
 			faq(
-				"How long does software development take?",
-				"Timelines depend on scope, integrations, platforms, and team size. A focused first release may take weeks or months, while a complex platform needs a phased roadmap.",
+				"What is the software development life cycle?",
+				"The SDLC is a repeatable sequence of planning, requirements analysis, design, development, testing, deployment, and maintenance. Modern teams repeat these stages in short delivery cycles.",
+				"Process",
+				"left"
+			),
+			faq(
+				"What is the difference between software development and programming?",
+				"Programming is the activity of writing instructions for a computer. Software development is the broader discipline that also includes planning, design, testing, deployment, and maintenance.",
+				"Engineering",
+				"right"
+			),
+			faq(
+				"What programming languages are used in software development?",
+				"Common choices include JavaScript and TypeScript for web interfaces, Python and Java for backend systems, Swift and Kotlin for mobile applications, and C and C plus plus for embedded or performance critical software. The right choice depends on the platform and problem.",
+				"Technology",
+				"left"
+			),
+			faq(
+				"How long does custom software development take?",
+				"A simple application may take several weeks, while a complex enterprise system may take many months. Scope, integrations, compliance needs, and team size all affect the timeline.",
+				"Planning",
+				"right"
+			),
+			faq(
+				"How much does software development cost?",
+				"Cost depends on complexity, platforms, integrations, security requirements, timeline, and team location. A discovery phase produces a more realistic estimate by defining scope and assumptions.",
 				"Planning",
 				"left"
 			),
 			faq(
-				"What is the difference between software development and software engineering?",
-				"Software development focuses on creating and improving software. Software engineering applies broader practices such as architecture, testing, security, reliability, and maintainability.",
-				"Engineering",
+				"Should a business build software in house or outsource development?",
+				"In house teams offer control and long term knowledge. External partners can start faster and provide flexible capacity or specialist expertise. A hybrid model combines both approaches.",
+				"Business",
 				"right"
 			),
 		],

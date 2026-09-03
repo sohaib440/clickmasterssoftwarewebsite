@@ -186,7 +186,7 @@ export function BlogPostPage({ post }: BlogPostPageProps) {
           <Reveal immediate delay={motionStagger * 2} className="overflow-hidden rounded-2xl border border-horizon-border/60">
             <CardImage
               {...post.image}
-              className="aspect-[21/9] w-full"
+              className="h-auto w-full object-contain"
               priority
               sizes="(max-width: 1024px) 100vw, 1100px"
             />
