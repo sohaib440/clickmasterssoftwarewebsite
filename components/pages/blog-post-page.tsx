@@ -1,19 +1,9 @@
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
-
 import { CardImage } from "@/components/landing/card-image";
 import { Reveal } from "@/components/landing/reveal";
 import { MarketingShell } from "@/components/layout/marketing-shell";
 import { PageBreadcrumb } from "@/components/layout/page-breadcrumb";
-import {
-  btnOutline,
-  btnPrimary,
-  contactPath,
-  container,
-  overline,
-  sectionPad,
-} from "@/lib/landing/constants";
-import type { BlogPost } from "@/data/landingPage";
+import { container, overline, sectionPad } from "@/lib/landing/constants";
+import type { BlogPost } from "@/data/blog";
 import { blogIndexPath } from "@/lib/landing/blog";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
@@ -39,9 +29,18 @@ export function BlogPostPage({ post }: BlogPostPageProps) {
             <h1 className="mt-4 max-w-3xl font-heading text-4xl font-normal leading-[1.12] tracking-tight text-horizon-navy md:text-5xl">
               {post.title}
             </h1>
-            <p className="mt-4 text-sm text-horizon-muted">
-              {post.date} · {post.readTime}
-            </p>
+            <div className="mt-5 space-y-2 text-sm text-horizon-muted">
+              <p>
+                By <span className="font-medium text-horizon-navy">{post.author}</span>
+                <span aria-hidden> · </span>
+                {post.readTime} read
+              </p>
+              <p>
+                Published {post.publishedAt}
+                <span aria-hidden> · </span>
+                Updated {post.updatedAt}
+              </p>
+            </div>
           </Reveal>
 
           <Reveal immediate delay={motionStagger} className="mt-8 overflow-hidden rounded-2xl">
@@ -62,16 +61,6 @@ export function BlogPostPage({ post }: BlogPostPageProps) {
               </Reveal>
             ))}
           </div>
-
-          <Reveal delay={motionStagger * 6} className="mt-12 flex flex-col gap-2 sm:flex-row">
-            <Link href={blogIndexPath} className={btnOutline}>
-              <ArrowLeft className="mr-2 inline size-4" aria-hidden />
-              All posts
-            </Link>
-            <Link href={contactPath} className={btnPrimary}>
-              Work with us
-            </Link>
-          </Reveal>
         </div>
       </article>
     </MarketingShell>

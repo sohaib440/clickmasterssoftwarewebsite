@@ -32,6 +32,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: pageTitleString(post.title),
       description: post.excerpt,
       type: "article",
+      publishedTime: toIsoDate(post.publishedAt),
+      modifiedTime: toIsoDate(post.updatedAt),
+      authors: [post.author],
     },
   };
 }
@@ -59,9 +62,11 @@ export default async function BlogPostRoute({ params }: PageProps) {
       title: post.title,
       description: post.excerpt,
       path,
-      datePublished: toIsoDate(post.date),
+      datePublished: toIsoDate(post.publishedAt),
+      dateModified: toIsoDate(post.updatedAt),
       image: post.image,
       category: post.category,
+      authorName: post.author,
     }),
     breadcrumbSchema([
       { name: "Home", path: "/" },

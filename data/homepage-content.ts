@@ -101,7 +101,9 @@ export type BlogPost = {
   slug: string;
   title: string;
   excerpt: string;
-  date: string;
+  author: string;
+  publishedAt: string;
+  updatedAt: string;
   readTime: string;
   category: string;
   image: ImageAsset;
@@ -1201,99 +1203,7 @@ export const homepageTestimonials: Testimonial[] = [
 
 
 // ===== data/landing/blog.ts =====
-export const blogPosts: BlogPost[] = [
-  {
-    slug: "choose-software-development-company-pakistan",
-    title: "How to Choose the Right Software Development Company in Pakistan",
-    excerpt:
-      "There are hundreds of agencies offering software development services across Pakistan. Here is the honest framework we recommend for evaluating any software company including us.",
-    date: "May 12, 2026",
-    readTime: "14 min",
-    category: "Software Development",
-    image: {
-      src: "/insights/software-development.webp",
-      alt: "Software development insights",
-      width: 1200,
-      height: 750,
-    },
-    body: [
-      "Choosing a software development company in Pakistan is not about picking the lowest quote or the flashiest portfolio. It is about finding a partner who will still answer the phone six months after launch.",
-      "The market is crowded. Islamabad, Lahore, Karachi, and remote-first teams all compete on price, stack, and delivery claims. That noise makes it easy to confuse a polished pitch with a reliable engineering practice. A clear evaluation framework cuts through that.",
-      "Start with delivery proof: case studies with measurable outcomes, references you can call, and code you can inspect if you have a technical advisor. Ask how they handle scope changes, who owns the IP, and what happens when timelines slip.",
-      "Ask for specifics, not slogans. How many releases shipped in the last quarter? Who was the product owner on the client side? What tools do they use for tickets, CI, and staging? Vague answers usually mean vague delivery.",
-      "Look for a team that writes specifications before coding, demos working software every two weeks, and documents handoff. A good software company in Islamabad should overlap with your timezone if you are in the UK or UAE and communicate in plain language.",
-      "Timezone overlap matters more than most buyers admit. A four-hour daily window for decisions prevents week-long email chains. If your stakeholders are in Europe or the Gulf, Pakistan-based teams often have a natural advantage over farther-east outsourcing hubs.",
-      "Evaluate senior involvement early. Who writes the architecture? Who joins discovery calls? If you only meet sales until the contract is signed, expect junior-heavy staffing later. Ask for named roles on the proposal and confirm those people appear in kickoff.",
-      "Pricing models tell you how risk is shared. Fixed price works when scope is clear after discovery. Time and materials works when you need flexibility. Hybrid models with a discovery fixed fee and a build estimate range often protect both sides better than a single inflated lump sum.",
-      "Security and compliance should be ordinary conversation, not a surprise. Ask about access control, secrets management, backup policy, and how production credentials are handled. For fintech, health, or government-adjacent work, ask which standards they have already shipped against.",
-      "Finally, run a small paid discovery phase before committing to a six-figure build. The best firms will encourage that. It protects both sides and surfaces fit early.",
-      "A strong discovery should produce user stories, an architecture sketch, a milestone plan, and an explicit out-of-scope list. If a company resists writing that down, they are asking you to buy uncertainty.",
-      "Use the discovery output to compare vendors fairly. Same scope, same assumptions, same success metrics. The cheapest bid is rarely the cheapest outcome once rework, delays, and support are included.",
-      "After launch, support quality separates partners from project shops. Clarify response times, who owns bugs versus enhancements, and how knowledge is transferred if your internal team takes over. Handoff documentation should be part of the definition of done, not an optional extra.",
-      "If you apply this checklist consistently, you will filter out most of the market quickly. The remaining shortlist will look quieter on marketing and stronger on process, which is usually where good software comes from.",
-    ],
-  },
-  {
-    slug: "discovery-structure-prevents-problems",
-    title: "A little structure now prevents a lot of problems later",
-    excerpt:
-      "The most expensive software projects we have ever seen were not the complex ones. They were simple projects that skipped discovery. Here is what a proper discovery phase actually looks like.",
-    date: "Apr 28, 2026",
-    readTime: "12 min",
-    category: "Product Strategy",
-    image: {
-      src: "/insights/product-strategy.webp",
-      alt: "Product strategy and discovery",
-      width: 1200,
-      height: 750,
-    },
-    body: [
-      "Discovery is not a sales exercise. It is a short, structured phase where we map users, workflows, integrations, risks and success metrics then agree on a fixed scope and price before build.",
-      "Teams skip discovery for familiar reasons: urgency, budget pressure, or confidence that the idea is already clear. Urgency rarely survives the first integration surprise. Budget pressure often creates larger spend later. Confidence without shared documents is usually optimism, not alignment.",
-      "A proper discovery deliverable includes user stories, a technical architecture sketch, milestone plan, and explicit out-of-scope list. Stakeholders sign off so there is one shared truth.",
-      "User stories force the conversation onto outcomes. Instead of debating screens in isolation, you describe who needs what and why. That clarity reduces feature bloat and makes acceptance criteria testable.",
-      "Workflow mapping catches hidden steps that never appear in a pitch deck. Approvals, exception paths, offline scenarios, and role permissions often decide whether a system feels smooth or frustrating in week one of real use.",
-      "Integration inventory should be written early. Payment gateways, ERPs, CRMs, SMS providers, and legacy databases each bring constraints. Discovering them mid-build is how timelines quietly double.",
-      "Risks belong on paper too. Data migration quality, third-party API limits, regulatory review, and key-person dependency are not pessimism. They are planning inputs. A mature discovery names them and proposes mitigations.",
-      "Success metrics keep the project honest. Decide what good looks like before coding: conversion lift, ticket reduction, faster fulfillment, fewer manual reconciliations. Without metrics, every demo becomes a taste debate.",
-      "Skipping discovery feels faster until rework piles up: wrong database choices, missing compliance requirements, or features nobody actually uses. That is when budgets blow past PKR estimates and trust erodes.",
-      "The commercial shape of discovery should be simple. A fixed fee, a fixed window, and a concrete pack of deliverables. At the end, you either proceed with a clear build proposal or stop with useful artifacts and no sunk-build cost.",
-      "Stakeholders should leave discovery able to answer the same five questions: Who is this for? What is in scope? What is out of scope? What is the architecture direction? How will we measure success?",
-      "Whether you work with Software Development Company or another firm, invest in discovery. It is the cheapest insurance on any custom software project.",
-      "If a vendor says discovery is unnecessary because they have built something similar before, treat that as a yellow flag. Similarity helps, but your users, data, and constraints are still yours. Structure is how those differences get respected.",
-    ],
-  },
-  {
-    slug: "weekly-demos-keep-software-on-track",
-    title: "Why weekly demos keep software projects on track",
-    excerpt:
-      "Long gaps between demos hide problems until they are expensive. A simple weekly rhythm keeps stakeholders aligned and teams shipping visible progress.",
-    date: "Mar 15, 2026",
-    readTime: "11 min",
-    category: "Engineering",
-    image: {
-      src: "/insights/engeenring.webp",
-      alt: "Engineering and software delivery",
-      width: 1200,
-      height: 750,
-    },
-    body: [
-      "Weekly demos are not status meetings. They are working sessions where the team shows real software even if rough and collects feedback before the next sprint.",
-      "Status slides can say green while the product is wrong. A live build cannot hide that for long. Demos force truth into the open while changes are still cheap.",
-      "When demos slip to monthly, assumptions pile up. Product owners discover misaligned UI late. Integrations fail quietly. Budget conversations get harder because nobody saw progress.",
-      "A good demo cadence includes a short agenda: what shipped, what is blocked, what is next. Recordings help remote stakeholders. Notes become the living changelog.",
-      "Keep the demo audience intentional. Decision makers should attend often enough to steer. Subject-matter experts should join when their workflows are on screen. Large silent audiences slow feedback and dilute ownership.",
-      "Show working paths, not polished fiction. Incomplete UI is fine if the flow is real. Fake happy-path walkthroughs create false confidence and delay hard conversations about edge cases.",
-      "Feedback should be captured in one place and prioritized the same day. Untracked comments in a call become forgotten preferences. Tracked notes become the backlog the team can actually execute.",
-      "Blockers deserve daylight. If an API key, content decision, or legal review is stuck, the demo is the right moment to escalate. Waiting until a milestone review turns a one-week delay into a four-week surprise.",
-      "Remote-friendly habits matter for Pakistan-based teams serving UK, UAE, and US clients. Stable staging links, short recordings, and clear timestamps let async reviewers stay close without forcing every stakeholder into every call.",
-      "Weekly rhythm also improves team morale. Engineers ship visible increments. Clients see movement. Trust compounds because progress is demonstrated, not promised.",
-      "If your vendor resists regular demos, treat that as a signal. Transparency should be default, not a premium add-on.",
-      "Some teams worry that weekly demos create thrash. The opposite is usually true. Small course corrections each week prevent large pivots later. Thrash comes from silence, not from short feedback loops.",
-      "Make demos part of the contract language: cadence, attendees, staging environment, and how feedback enters the backlog. When the process is explicit, delivery quality stops depending on goodwill alone.",
-    ],
-  },
-];
+export { blogPosts } from "./blog";
 
 
 // ===== data/landing/faq.ts =====

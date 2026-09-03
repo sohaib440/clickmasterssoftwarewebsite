@@ -1,7 +1,7 @@
 import { LandingContainer, sectionHeadingGap } from "@/components/landing/landing-container";
 import { BlogFlipCard } from "@/components/landing/blog-flip-card";
 import { SectionHeading } from "@/components/landing/section-heading";
-import { blogPosts } from "@/data/landingPage";
+import { blogPosts } from "@/data/blog";
 import { blogPostPath } from "@/lib/landing/blog";
 import { cn } from "@/lib/utils";
 
@@ -48,7 +48,8 @@ export function BlogSection({ showHeading = true }: BlogSectionProps) {
               category={post.category}
               title={post.title}
               excerpt={post.excerpt}
-              date={post.date}
+              author={post.author}
+              publishedAt={post.publishedAt}
               readTime={post.readTime}
             />
           ))}
