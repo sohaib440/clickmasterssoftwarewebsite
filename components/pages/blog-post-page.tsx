@@ -10,7 +10,7 @@ import { FaqSection } from "@/components/landing/faq-section";
 import { Reveal } from "@/components/landing/reveal";
 import { MarketingShell } from "@/components/layout/marketing-shell";
 import { PageBreadcrumb } from "@/components/layout/page-breadcrumb";
-import { btnOnDark, contactPath, container, overline, sectionPad } from "@/lib/landing/constants";
+import { btnOnDark, contactPath, container, sectionPad } from "@/lib/landing/constants";
 import type { BlogBodyBlock, BlogPost } from "@/data/blog";
 import { blogIndexPath, blogPostPath } from "@/lib/landing/blog";
 import { siteBrand } from "@/lib/landing/brand";
@@ -72,6 +72,22 @@ function BlogBodyContent({
   return (
     <div>
       {blocks.map((block, i) => {
+        if (block.type === "image") {
+          return (
+            <Reveal key={`${block.type}-${i}`} delay={motionStagger * Math.min(i + 2, 8)}>
+              <figure className="mt-8 overflow-hidden rounded-2xl border border-horizon-border/60">
+                <Image
+                  src={block.src}
+                  alt={block.alt}
+                  width={block.width}
+                  height={block.height}
+                  className="h-auto w-full"
+                />
+              </figure>
+            </Reveal>
+          );
+        }
+
         if (block.type === "h2") {
           const id = headingIds[headingIndex++];
           return (
@@ -122,15 +138,14 @@ export function BlogPostPage({ post }: BlogPostPageProps) {
           { label: "Blog", href: blogIndexPath },
           { label: post.title },
         ]}
-        className="border-white/10 bg-black py-0 text-white [&_a]:text-white/60 [&_a:hover]:text-white [&_div]:!py-3 [&_span]:text-white/40 [&_span.text-horizon-navy]:text-white md:[&_div]:!py-3.5"
+        className="border-0 bg-black py-0 text-white [&_a]:text-white/60 [&_a:hover]:text-white [&_div]:!py-3 [&_span]:text-white/40 [&_span.text-horizon-navy]:text-white md:[&_div]:!py-3.5"
       />
 
       <article className="w-full bg-white">
         <header className="border-b border-white/10 bg-black text-white">
-          <div className={cn(container, "py-6 md:py-8 lg:py-9")}>
+          <div className={cn(container, "pt-1 pb-4 md:pt-2 md:pb-6 lg:pt-3 lg:pb-7")}>
             <Reveal immediate>
-              <p className={cn(overline, "text-white/55")}>{post.category}</p>
-              <h1 className="mt-2 max-w-4xl font-heading text-4xl font-normal leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[3.1rem]">
+              <h1 className="max-w-4xl font-heading text-4xl font-normal leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[3.1rem]">
                 {post.title}
               </h1>
               <p className="mt-3 max-w-3xl text-justify text-base leading-relaxed text-white/70 md:text-lg">
@@ -200,6 +215,7 @@ export function BlogPostPage({ post }: BlogPostPageProps) {
                   embedded
                   items={post.faqs}
                   justify
+                  className="border-t-0"
                   overlineText="Article FAQs"
                   title={
                     <>

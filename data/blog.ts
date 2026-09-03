@@ -410,7 +410,7 @@ export const blogPosts: BlogPost[] = [
 		slug: "what-is-software-development",
 		title: "What Is Software Development? A Practical Guide",
 		excerpt:
-			"Software development is the process of turning a business problem or idea into reliable digital software. Learn how the process works and what to plan before building.",
+			"Software development is the process of turning a business problem or idea into reliable digital software. Learn how the development life cycle works, which roles and technologies are involved, and what to plan before building.",
 		author: authors.shahvaizAhmed,
 		reviewedBy: technicalReviewer,
 		publishedAt: "Sep 3, 2026",
@@ -449,6 +449,13 @@ export const blogPosts: BlogPost[] = [
 			{
 				type: "p",
 				text: "These stages are repeated rather than completed only once. Modern teams often plan, build, test, and learn in cycles that last one to four weeks. This approach gives stakeholders regular opportunities to review working software and adjust priorities before too much effort is invested in the wrong direction.",
+			},
+			{
+				type: "image",
+				src: "/blog/SDLC.png",
+				alt: "Software development life cycle showing requirements analysis, system design, implementation, testing, deployment, and maintenance",
+				width: 1536,
+				height: 1024,
 			},
 			{ type: "h2", text: "Main types of software development" },
 			{
