@@ -87,50 +87,31 @@ export function SiteFooter() {
                         aria-hidden
                       />
                     </button>
-
-                    <ul
-                      className="mt-3 space-y-3 overflow-hidden transition-all duration-300"
-                      style={{
-                        maxHeight: isExpanded ? "1000px" : "0px",
-                        opacity: isExpanded ? 1 : 0,
-                      }}
-                    >
-                      {columnLinks.map((link, linkIndex) => (
-                        <li key={`${column.title}-${link.href}-${linkIndex}`}>
-                          <Link
-                            href={link.href}
-                            onClick={(event) => {
-                              if (link.href === "#") event.preventDefault();
-                            }}
-                            className="site-footer__link text-sm"
-                          >
-                            {link.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
                   </div>
 
-                  <div className="hidden sm:block">
-                    <h3 className="site-footer__heading border-b border-white/20 pb-3 text-xs font-medium uppercase tracking-[0.15em]">
-                      {column.title}
-                    </h3>
-                    <ul className="mt-4 space-y-2.5 md:mt-5 md:space-y-3">
-                      {columnLinks.map((link, linkIndex) => (
-                        <li key={`${column.title}-${link.href}-${linkIndex}`}>
-                          <Link
-                            href={link.href}
-                            onClick={(event) => {
-                              if (link.href === "#") event.preventDefault();
-                            }}
-                            className="site-footer__link text-sm"
-                          >
-                            {link.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <span className="site-footer__heading hidden border-b border-white/20 pb-3 text-xs font-medium uppercase tracking-[0.15em] sm:block">
+                    {column.title}
+                  </span>
+                  <ul
+                    className={cn(
+                      "mt-3 space-y-3 overflow-hidden transition-all duration-300 sm:!mt-4 sm:!max-h-none sm:!space-y-2.5 sm:!opacity-100 md:!mt-5 md:!space-y-3",
+                      isExpanded ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
+                    )}
+                  >
+                    {columnLinks.map((link, linkIndex) => (
+                      <li key={`${column.title}-${link.href}-${linkIndex}`}>
+                        <Link
+                          href={link.href}
+                          onClick={(event) => {
+                            if (link.href === "#") event.preventDefault();
+                          }}
+                          className="site-footer__link text-sm"
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               );
             })}
