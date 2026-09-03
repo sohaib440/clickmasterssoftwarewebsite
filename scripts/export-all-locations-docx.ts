@@ -205,7 +205,7 @@ function hubBlock(): Paragraph[] {
     labelValue("Label", HUB.pakistanCard.label),
     labelValue("Title", HUB.pakistanCard.title),
     body(HUB.pakistanCard.description(cityCount)),
-    labelValue("Image", "/locations/islamabad-headquater.png"),
+    labelValue("Image", "/locations/islamabad-headquater.webp"),
   ];
 
   blocks.push(heading("Stats", HeadingLevel.HEADING_3));

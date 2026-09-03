@@ -41,7 +41,7 @@ export function TrustedPartnersSection({
         "w-full overflow-x-clip border-y border-horizon-border/60 bg-horizon-cream py-0",
         className
       )}
-      aria-label="Trusted Partners"
+      aria-label="Technologies we work with"
     >
       <div className={cn(container, "py-2 md:py-2")}>
         <p className={cn(overline, "text-center", labelClassName)}>{trustedPartnersSection.label}</p>

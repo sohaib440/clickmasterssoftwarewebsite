@@ -39,6 +39,7 @@ export const metadata: Metadata = {
     title: pageTitleString(pakistanLocation.metaTitle ?? pakistanLocation.title),
     description: pakistanLocation.metaDescription ?? pakistanLocation.description,
     type: "website",
+    locale: "en_PK",
   },
 };
 

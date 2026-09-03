@@ -8,16 +8,14 @@ import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type FlipCardShellProps = {
-  index: number;
   frontTitle: string;
   front: ReactNode;
   back: ReactNode;
   className?: string;
 };
 
-function FlipCardShell({ index, frontTitle, front, back, className }: FlipCardShellProps) {
+function FlipCardShell({ frontTitle, front, back, className }: FlipCardShellProps) {
   const [flipped, setFlipped] = useState(false);
-  const number = String(index + 1).padStart(2, "0");
 
   return (
     <div
@@ -49,12 +47,6 @@ function FlipCardShell({ index, frontTitle, front, back, className }: FlipCardSh
       >
         <div className="absolute inset-0 overflow-hidden rounded-2xl border border-white/15 bg-zinc-900 text-white shadow-[0_18px_48px_rgba(0,0,0,0.45)] [backface-visibility:hidden] 2xl:rounded-[1.25rem]">
           {front}
-          <span
-            className="pointer-events-none absolute bottom-16 right-4 select-none font-heading text-[5.5rem] font-bold leading-none tracking-tight !text-[#d4af37]/25 sm:bottom-20 sm:text-[6.5rem] lg:text-[7.5rem]"
-            aria-hidden
-          >
-            {number}
-          </span>
           <div className="absolute inset-x-0 bottom-0 px-5 pb-6 pt-16 text-center sm:px-6 sm:pb-8">
             <p className="font-heading text-xl font-semibold tracking-tight !text-white sm:text-2xl lg:text-[1.65rem]">
               {frontTitle}
@@ -73,29 +65,30 @@ function FlipCardShell({ index, frontTitle, front, back, className }: FlipCardSh
 export type BlogFlipCardProps = {
   href: string;
   image: { src: string; alt: string; width: number; height: number };
-  index: number;
   frontTitle: string;
   category: string;
   title: string;
   excerpt: string;
-  date: string;
+  author: string;
+  authorRole: string;
+  publishedAt: string;
   readTime: string;
 };
 
 export function BlogFlipCard({
   href,
   image,
-  index,
   frontTitle,
   category,
   title,
   excerpt,
-  date,
+  author,
+  authorRole,
+  publishedAt,
   readTime,
 }: BlogFlipCardProps) {
   return (
     <FlipCardShell
-      index={index}
       frontTitle={frontTitle}
       front={
         <>
@@ -114,9 +107,6 @@ export function BlogFlipCard({
         <>
           <div className="flex items-start justify-between gap-3">
             <p className="text-[10px] font-medium uppercase tracking-[0.24em] text-primary">{category}</p>
-            <span className="font-heading text-3xl font-bold text-white/10">
-              {String(index + 1).padStart(2, "0")}
-            </span>
           </div>
 
           <h3 className="mt-4 font-heading text-xl font-medium leading-snug text-white sm:text-2xl">
@@ -125,10 +115,17 @@ export function BlogFlipCard({
 
           <p className="mt-3 flex-1 text-sm leading-relaxed text-white/65 sm:text-[0.95rem]">{excerpt}</p>
 
-          <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-white/45">
-            <span>{date}</span>
-            <span aria-hidden>·</span>
-            <span>{readTime} read</span>
+          <div className="mt-5 flex flex-col gap-1 text-xs text-white/45">
+            <span className="text-white/70">
+              {author}
+              <span className="text-white/40"> · </span>
+              {authorRole}
+            </span>
+            <span>
+              {publishedAt}
+              <span aria-hidden> · </span>
+              {readTime} read
+            </span>
           </div>
 
           <Link
@@ -145,15 +142,12 @@ export function BlogFlipCard({
 }
 
 export function BlogViewAllFlipCard({
-  index,
   image,
 }: {
-  index: number;
   image: { src: string; alt: string; width: number; height: number };
 }) {
   return (
     <FlipCardShell
-      index={index}
       frontTitle="All articles"
       front={
         <>

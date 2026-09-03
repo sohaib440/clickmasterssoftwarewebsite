@@ -138,7 +138,7 @@ function GoogleMark({ colored }: { colored?: boolean }) {
   if (colored) {
     return (
       <Image
-        src="/ratings/google-logo.png"
+        src="/ratings/google-logo.webp"
         alt="Google"
         width={92}
         height={30}
@@ -164,8 +164,8 @@ function ClutchMark({ colored, variant }: { colored?: boolean; variant: "default
     <Image
       src={
         colored || variant === "dark"
-          ? "/ratings/clutch-logo-white.png"
-          : "/ratings/clutch-logo.png"
+          ? "/ratings/clutch-logo-white.webp"
+          : "/ratings/clutch-logo.webp"
       }
       alt="Clutch"
       width={92}

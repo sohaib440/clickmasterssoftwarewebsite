@@ -100,6 +100,8 @@ type FaqSectionProps = {
   footerHref?: string;
   className?: string;
   justify?: boolean;
+  /** Render inside another column without its own page container */
+  embedded?: boolean;
   renderAnswer?: (answer: string) => ReactNode;
 };
 
@@ -116,11 +118,54 @@ export function FaqSection({
   footerHref,
   className,
   justify = false,
+  embedded = false,
   renderAnswer,
 }: FaqSectionProps = {}) {
   const mid = Math.ceil(items.length / 2);
   const leftItems = items.slice(0, mid);
   const rightItems = items.slice(mid);
+
+  const heading = (
+    <SectionHeading
+      overlineText={overlineText}
+      title={title}
+      description={intro}
+      className={cn(
+        embedded ? "mb-8 md:mb-10" : "mb-10 md:mb-12",
+        justify && "[&_p:last-child]:text-justify"
+      )}
+    />
+  );
+
+  const list = (
+    <div className={cn("grid gap-6", embedded ? "sm:grid-cols-2 sm:gap-5" : "md:grid-cols-2 lg:gap-10")}>
+      <FaqColumn startIndex={0} items={leftItems} justify={justify} renderAnswer={renderAnswer} />
+      <FaqColumn startIndex={mid} items={rightItems} justify={justify} renderAnswer={renderAnswer} />
+    </div>
+  );
+
+  const footer =
+    footerCta && footerHref ? (
+      <Reveal delay={motionStagger * 2} className="mt-10 text-center md:mt-12">
+        <Link
+          href={footerHref}
+          className="group inline-flex items-center gap-2 text-sm font-medium text-horizon-navy underline-offset-4 hover:text-primary hover:underline"
+        >
+          {footerCta}
+          <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden />
+        </Link>
+      </Reveal>
+    ) : null;
+
+  if (embedded) {
+    return (
+      <div id="faqs" className={cn("mt-14 scroll-mt-28 border-t border-horizon-border/70 pt-12 text-horizon-navy", className)}>
+        {heading}
+        {list}
+        {footer}
+      </div>
+    );
+  }
 
   return (
     <section
@@ -128,29 +173,9 @@ export function FaqSection({
       className={cn("relative w-full overflow-hidden bg-white text-horizon-navy", className)}
     >
       <div className={cn(container, sectionPad, "relative")}>
-        <SectionHeading
-          overlineText={overlineText}
-          title={title}
-          description={intro}
-          className={cn("mb-10 md:mb-12", justify && "[&_p:last-child]:text-justify")}
-        />
-
-        <div className="grid gap-6 md:grid-cols-2 lg:gap-10">
-          <FaqColumn startIndex={0} items={leftItems} justify={justify} renderAnswer={renderAnswer} />
-          <FaqColumn startIndex={mid} items={rightItems} justify={justify} renderAnswer={renderAnswer} />
-        </div>
-
-        {footerCta && footerHref ? (
-          <Reveal delay={motionStagger * 2} className="mt-10 text-center md:mt-12">
-            <Link
-              href={footerHref}
-              className="group inline-flex items-center gap-2 text-sm font-medium text-horizon-navy underline-offset-4 hover:text-primary hover:underline"
-            >
-              {footerCta}
-              <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden />
-            </Link>
-          </Reveal>
-        ) : null}
+        {heading}
+        {list}
+        {footer}
       </div>
     </section>
   );
