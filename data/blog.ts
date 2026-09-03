@@ -418,8 +418,8 @@ export const blogPosts: BlogPost[] = [
 		readTime: "8 min",
 		category: "Software Development",
 		image: {
-			src: "/blog/software-development.webp",
-			alt: "Software development planning and delivery",
+			src: "/blog/what-is-software-development.png",
+			alt: "What is software development illustration",
 			width: 1200,
 			height: 750,
 		},

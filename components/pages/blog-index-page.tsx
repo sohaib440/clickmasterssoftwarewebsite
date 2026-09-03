@@ -25,7 +25,7 @@ export function BlogIndexPage() {
         }
         description="Practical perspectives from our team on product strategy, user experience, and software delivery, grounded in the decisions and systems that help ambitious teams build with confidence."
       />
-      <BlogSection showHeading={false} showAll variant="light" />
+      <BlogSection showHeading={false} showAll searchable variant="light" />
       <section className="w-full bg-horizon-navy text-white">
         <div className={cn(container, sectionPad, "text-center")}>
           <Reveal>
