@@ -282,6 +282,7 @@ export function ContactPage({ initialValues }: ContactPageProps) {
               </div>
             </div>
 
+            {/*
             <Reveal delay={motionStagger} className="mt-12 md:mt-16">
               <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-[0_24px_70px_rgba(0,0,0,0.08)]">
                 <div className="border-b border-neutral-200 px-5 py-4 sm:px-8">
@@ -301,6 +302,7 @@ export function ContactPage({ initialValues }: ContactPageProps) {
                 />
               </div>
             </Reveal>
+            */}
           </div>
         </section>
 
