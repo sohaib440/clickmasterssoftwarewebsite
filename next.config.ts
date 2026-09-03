@@ -38,6 +38,40 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  async redirects() {
+    return [
+      {
+        source: "/blog/SDLC.png",
+        destination: "/blog/SDLC.webp",
+        permanent: true,
+      },
+      {
+        source: "/blog/what-is-software-development.png",
+        destination: "/blog/what-is-software-development.webp",
+        permanent: true,
+      },
+      {
+        source: "/locations/islamabad-headquater.png",
+        destination: "/locations/islamabad-headquater.webp",
+        permanent: true,
+      },
+      {
+        source: "/ratings/clutch-logo-white.png",
+        destination: "/ratings/clutch-logo-white.webp",
+        permanent: true,
+      },
+      {
+        source: "/ratings/clutch-logo.png",
+        destination: "/ratings/clutch-logo.webp",
+        permanent: true,
+      },
+      {
+        source: "/ratings/google-logo.png",
+        destination: "/ratings/google-logo.webp",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
