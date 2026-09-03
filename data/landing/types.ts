@@ -13,6 +13,9 @@ export type {
   TechStackLogoGroup,
   TechStackCategory,
   Client,
+  BlogAuthor,
+  BlogReviewer,
+  BlogBodyBlock,
   BlogPost,
   FaqItem,
 } from "../homepage-content";

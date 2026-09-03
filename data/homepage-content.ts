@@ -97,17 +97,36 @@ export type Client = {
   logo: string;
 };
 
+export type BlogBodyBlock =
+  | { type: "h2"; text: string }
+  | { type: "h3"; text: string }
+  | { type: "p"; text: string };
+
+export type BlogAuthor = {
+  name: string;
+  role: string;
+  bio: string;
+  image: ImageAsset;
+};
+
+export type BlogReviewer = {
+  name: string;
+  role: string;
+};
+
 export type BlogPost = {
   slug: string;
   title: string;
   excerpt: string;
-  author: string;
+  author: BlogAuthor;
+  reviewedBy: BlogReviewer;
   publishedAt: string;
   updatedAt: string;
   readTime: string;
   category: string;
   image: ImageAsset;
-  body: string[];
+  body: BlogBodyBlock[];
+  faqs: FaqItem[];
 };
 
 export type FaqItem = {

@@ -645,13 +645,27 @@ export function blogPostingSchema(options: {
   dateModified?: string;
   image?: string | ImageAsset;
   category?: string;
-  authorName?: string;
+  /** Required real person — never the company name */
+  authorName: string;
+  authorUrl: string;
+  authorRole?: string;
+  authorBio?: string;
+  authorImage?: string | ImageAsset;
+  reviewerName?: string;
+  reviewerRole?: string;
 }) {
   const imageUrl =
     typeof options.image === "string"
       ? absoluteUrl(options.image)
       : options.image
         ? absoluteUrl(options.image.src)
+        : undefined;
+
+  const authorImageUrl =
+    typeof options.authorImage === "string"
+      ? absoluteUrl(options.authorImage)
+      : options.authorImage
+        ? absoluteUrl(options.authorImage.src)
         : undefined;
 
   return {
@@ -671,8 +685,31 @@ export function blogPostingSchema(options: {
     inLanguage: "en",
     author: {
       "@type": "Person",
-      name: options.authorName ?? siteConfig.name,
+      name: options.authorName,
+      url: absoluteUrl(options.authorUrl),
+      ...(options.authorRole ? { jobTitle: options.authorRole } : {}),
+      ...(options.authorBio ? { description: options.authorBio } : {}),
+      ...(authorImageUrl ? { image: authorImageUrl } : {}),
+      worksFor: {
+        "@type": "Organization",
+        "@id": `${siteConfig.url}/#organization`,
+        name: siteConfig.name,
+      },
     },
+    ...(options.reviewerName
+      ? {
+          editor: {
+            "@type": "Organization",
+            name: options.reviewerName,
+            ...(options.reviewerRole ? { description: options.reviewerRole } : {}),
+            parentOrganization: {
+              "@type": "Organization",
+              "@id": `${siteConfig.url}/#organization`,
+              name: siteConfig.name,
+            },
+          },
+        }
+      : {}),
     publisher: {
       "@type": "Organization",
       "@id": `${siteConfig.url}/#organization`,

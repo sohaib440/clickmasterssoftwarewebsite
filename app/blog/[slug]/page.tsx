@@ -3,13 +3,14 @@ import { notFound } from "next/navigation";
 
 import { BlogPostPage } from "@/components/pages/blog-post-page";
 import {
+  blogAuthorPath,
   blogPostPath,
   getAllBlogSlugs,
   getBlogBySlug,
   isBlogSlug,
 } from "@/lib/landing/blog";
 import { selfCanonical, pageTitle, pageTitleString } from "@/seo/canonical";
-import { blogPostingSchema, breadcrumbSchema } from "@/seo/schema";
+import { blogPostingSchema, breadcrumbSchema, faqPageSchema } from "@/seo/schema";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -34,7 +35,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: "article",
       publishedTime: toIsoDate(post.publishedAt),
       modifiedTime: toIsoDate(post.updatedAt),
-      authors: [post.author],
+      authors: [post.author.name],
     },
   };
 }
@@ -66,15 +67,28 @@ export default async function BlogPostRoute({ params }: PageProps) {
       dateModified: toIsoDate(post.updatedAt),
       image: post.image,
       category: post.category,
-      authorName: post.author,
+      authorName: post.author.name,
+      authorUrl: blogAuthorPath(post.author.name),
+      authorRole: post.author.role,
+      authorBio: post.author.bio,
+      authorImage: post.author.image,
+      reviewerName: post.reviewedBy.name,
+      reviewerRole: post.reviewedBy.role,
     }),
     breadcrumbSchema([
       { name: "Home", path: "/" },
       { name: "Blog", path: "/blog" },
       { name: post.title, path },
     ]),
+    ...(post.faqs.length
+      ? [
+          faqPageSchema(post.faqs, {
+            id: `${path}#faqs`,
+            pageUrl: path,
+          }),
+        ]
+      : []),
   ];
-
   return (
     <>
       <script

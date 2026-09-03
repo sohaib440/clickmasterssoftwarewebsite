@@ -14,6 +14,7 @@ import {
 } from "@/lib/landing/constants";
 import { teamMembers } from "@/data/landing/team";
 import { teamPageMeta } from "@/data/teamPage";
+import { blogAuthorSlug } from "@/lib/landing/blog";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
 
@@ -37,7 +38,12 @@ function TeamMemberCard({
         </div>
 
         <div className="flex flex-1 flex-col p-5 sm:p-6">
-          <h2 className="font-heading text-xl font-medium text-horizon-navy">{member.name}</h2>
+          <h2
+            id={blogAuthorSlug(member.name)}
+            className="scroll-mt-28 font-heading text-xl font-medium text-horizon-navy"
+          >
+            {member.name}
+          </h2>
           <p className="mt-1 text-sm font-medium text-primary">{member.role}</p>
           <p className="mt-3 flex-1 text-sm leading-relaxed text-horizon-muted">{member.bio}</p>
         </div>

@@ -7,6 +7,8 @@ import { cn } from "@/lib/utils";
 
 type BlogSectionProps = {
   showHeading?: boolean;
+  /** Homepage stays dark; blog index uses a white band between black sections */
+  variant?: "dark" | "light";
 };
 
 const blogSectionDescription =
@@ -17,15 +19,19 @@ function getFrontTitle(category: string) {
   return short.length > 22 ? category.split(" ")[0] : short;
 }
 
-export function BlogSection({ showHeading = true }: BlogSectionProps) {
+export function BlogSection({ showHeading = true, variant = "dark" }: BlogSectionProps) {
   const featured = blogPosts.slice(0, 3);
+  const light = variant === "light";
 
   return (
-    <section id="blog" className="w-full bg-black text-white">
+    <section
+      id="blog"
+      className={cn("w-full", light ? "bg-white text-horizon-navy" : "bg-black text-white")}
+    >
       <LandingContainer className={!showHeading ? "pt-0 md:pt-0" : undefined}>
         {showHeading ? (
           <SectionHeading
-            dark
+            dark={!light}
             overlineText="Insights from our software house"
             title={
               <>
@@ -48,7 +54,8 @@ export function BlogSection({ showHeading = true }: BlogSectionProps) {
               category={post.category}
               title={post.title}
               excerpt={post.excerpt}
-              author={post.author}
+              author={post.author.name}
+              authorRole={post.author.role}
               publishedAt={post.publishedAt}
               readTime={post.readTime}
             />

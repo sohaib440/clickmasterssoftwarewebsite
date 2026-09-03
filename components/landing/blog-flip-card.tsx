@@ -79,6 +79,7 @@ export type BlogFlipCardProps = {
   title: string;
   excerpt: string;
   author: string;
+  authorRole: string;
   publishedAt: string;
   readTime: string;
 };
@@ -92,6 +93,7 @@ export function BlogFlipCard({
   title,
   excerpt,
   author,
+  authorRole,
   publishedAt,
   readTime,
 }: BlogFlipCardProps) {
@@ -127,12 +129,17 @@ export function BlogFlipCard({
 
           <p className="mt-3 flex-1 text-sm leading-relaxed text-white/65 sm:text-[0.95rem]">{excerpt}</p>
 
-          <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 text-xs text-white/45">
-            <span>{author}</span>
-            <span aria-hidden>·</span>
-            <span>{publishedAt}</span>
-            <span aria-hidden>·</span>
-            <span>{readTime} read</span>
+          <div className="mt-5 flex flex-col gap-1 text-xs text-white/45">
+            <span className="text-white/70">
+              {author}
+              <span className="text-white/40"> · </span>
+              {authorRole}
+            </span>
+            <span>
+              {publishedAt}
+              <span aria-hidden> · </span>
+              {readTime} read
+            </span>
           </div>
 
           <Link
