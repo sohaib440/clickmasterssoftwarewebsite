@@ -340,22 +340,22 @@ export const stats = companyStats.map(({ value, label, icon }) => ({
 }));
 
 export const clients: Client[] = [
-  { slug: "google", name: "Google", logo: "/trustedpartners/google.svg" },
-  { slug: "microsoft", name: "Microsoft", logo: "/trustedpartners/microsoft.svg" },
-  { slug: "amazon", name: "Amazon", logo: "/trustedpartners/amazon.svg" },
-  { slug: "apple", name: "Apple", logo: "/trustedpartners/apple.svg" },
-  { slug: "meta", name: "Meta", logo: "/trustedpartners/meta.svg" },
-  { slug: "netflix", name: "Netflix", logo: "/trustedpartners/netflix.svg" },
-  { slug: "adobe", name: "Adobe", logo: "/trustedpartners/adobe.svg" },
-  { slug: "salesforce", name: "Salesforce", logo: "/trustedpartners/salesforce.svg" },
-  { slug: "ibm", name: "IBM", logo: "/trustedpartners/ibm.svg" },
-  { slug: "intel", name: "Intel", logo: "/trustedpartners/intel.svg" },
-  { slug: "nvidia", name: "Nvidia", logo: "/trustedpartners/nvidia.svg" },
-  { slug: "tesla", name: "Tesla", logo: "/trustedpartners/tesla.svg" },
-  { slug: "shopify", name: "Shopify", logo: "/trustedpartners/shopify.svg" },
-  { slug: "slack", name: "Slack", logo: "/trustedpartners/slack.svg" },
-  { slug: "oracle", name: "Oracle", logo: "/trustedpartners/oracle.svg" },
-  { slug: "cisco", name: "Cisco", logo: "/trustedpartners/cisco.svg" },
+  { slug: "google", name: "Google", logo: "/technologies/google.svg" },
+  { slug: "microsoft", name: "Microsoft", logo: "/technologies/microsoft.svg" },
+  { slug: "amazon", name: "Amazon", logo: "/technologies/amazon.svg" },
+  { slug: "apple", name: "Apple", logo: "/technologies/apple.svg" },
+  { slug: "meta", name: "Meta", logo: "/technologies/meta.svg" },
+  { slug: "netflix", name: "Netflix", logo: "/technologies/netflix.svg" },
+  { slug: "adobe", name: "Adobe", logo: "/technologies/adobe.svg" },
+  { slug: "salesforce", name: "Salesforce", logo: "/technologies/salesforce.svg" },
+  { slug: "ibm", name: "IBM", logo: "/technologies/ibm.svg" },
+  { slug: "intel", name: "Intel", logo: "/technologies/intel.svg" },
+  { slug: "nvidia", name: "Nvidia", logo: "/technologies/nvidia.svg" },
+  { slug: "tesla", name: "Tesla", logo: "/technologies/tesla.svg" },
+  { slug: "shopify", name: "Shopify", logo: "/technologies/shopify.svg" },
+  { slug: "slack", name: "Slack", logo: "/technologies/slack.svg" },
+  { slug: "oracle", name: "Oracle", logo: "/technologies/oracle.svg" },
+  { slug: "cisco", name: "Cisco", logo: "/technologies/cisco.svg" },
 ];
 
 

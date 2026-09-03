@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: homepageSeo.title,
     description: homepageSeo.description,
     type: "website",
-    locale: "en_PK",
+    locale: "en_US",
     url: siteBrand.url,
     siteName: siteBrand.name,
     images: [
