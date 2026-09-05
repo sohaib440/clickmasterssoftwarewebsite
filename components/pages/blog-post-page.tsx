@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BarChart3, CircleMinus, Code2, TrendingUp, UserRound, Workflow } from "lucide-react";
 
 import { BlogShareLinks } from "@/components/blog/blog-share-links";
 import { BlogSidebarCta } from "@/components/blog/blog-sidebar-cta";
@@ -95,7 +96,7 @@ function BlogBodyContent({
           return (
             <div key={`${block.type}-${i}`} id={id} className="mt-12 scroll-mt-28">
               <Reveal delay={motionStagger * Math.min(i + 2, 8)}>
-                <h2 className="font-heading text-2xl font-normal leading-snug tracking-tight text-horizon-navy md:text-3xl">
+                <h2 className="font-heading text-2xl font-semibold leading-snug tracking-tight text-horizon-navy md:text-3xl">
                   {block.text}
                 </h2>
               </Reveal>
@@ -108,7 +109,7 @@ function BlogBodyContent({
           return (
             <div key={`${block.type}-${i}`} id={id} className="mt-8 scroll-mt-28">
               <Reveal delay={motionStagger * Math.min(i + 2, 8)}>
-                <h3 className="font-heading text-xl font-normal leading-snug tracking-tight text-horizon-navy md:text-2xl">
+                <h3 className="font-heading text-xl font-semibold leading-snug tracking-tight text-horizon-navy md:text-2xl">
                   {block.text}
                 </h3>
               </Reveal>
@@ -140,6 +141,161 @@ function BlogBodyContent({
                   </li>
                 ))}
               </ol>
+            </Reveal>
+          );
+        }
+
+        if (block.type === "stats") {
+          return (
+            <Reveal key={`${block.type}-${i}`} delay={motionStagger * Math.min(i + 2, 8)}>
+              <div className="mt-8 grid gap-3 sm:grid-cols-3">
+                {block.items.map((item) => (
+                  <div
+                    key={item.value}
+                    className="flex min-h-32 flex-col items-center justify-center rounded-sm border border-[#d9d0c1] bg-[#faf8f3] px-4 py-5 text-center"
+                  >
+                    <p className="font-heading text-3xl font-semibold leading-none text-horizon-navy md:text-4xl">
+                      {item.value}
+                    </p>
+                    <p className="mt-4 max-w-40 text-xs leading-relaxed text-horizon-navy/80 md:text-sm">
+                      {item.text}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          );
+        }
+
+        if (block.type === "category-grid") {
+          const icons = [CircleMinus, Workflow, TrendingUp, UserRound, Code2, BarChart3];
+
+          return (
+            <Reveal key={`${block.type}-${i}`} delay={motionStagger * Math.min(i + 2, 8)}>
+              <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {block.items.map((item, index) => {
+                  const Icon = icons[index % icons.length];
+
+                  return (
+                    <div
+                      key={item.title}
+                      className="min-h-40 rounded-sm border border-[#d9d0c1] bg-[#faf8f3] px-4 py-4"
+                    >
+                      <Icon className="size-5 text-primary" strokeWidth={1.8} aria-hidden="true" />
+                      <h3 className="mt-4 text-sm font-semibold text-horizon-navy">{item.title}</h3>
+                      <p className="mt-2 text-xs leading-relaxed text-horizon-navy/80 md:text-sm">
+                        {item.text}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </Reveal>
+          );
+        }
+
+        if (block.type === "comparison-table") {
+          return (
+            <Reveal key={`${block.type}-${i}`} delay={motionStagger * Math.min(i + 2, 8)}>
+              <div className="mt-6 overflow-hidden rounded-sm border border-[#d9d0c1] bg-[#faf8f3]">
+                <div className="overflow-x-auto">
+                  <table className="w-full min-w-[40rem] border-collapse text-left text-xs text-horizon-navy md:text-sm">
+                    <thead className="bg-[#123f63] text-white">
+                      <tr>
+                        {block.columns.map((column) => (
+                          <th key={column} className="border-r border-white/40 px-3 py-3 font-semibold last:border-r-0">
+                            {column}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {block.rows.map((row, rowIndex) => (
+                        <tr key={rowIndex} className="border-t border-[#d9d0c1]">
+                          {row.cells.map((cell, cellIndex) => (
+                            <td key={`${rowIndex}-${cellIndex}`} className="border-r border-[#d9d0c1] px-3 py-3 align-top leading-relaxed last:border-r-0">
+                              {cell}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                {block.note ? (
+                  <p className="border-t border-[#d9d0c1] px-3 py-2 text-[10px] leading-relaxed text-horizon-muted md:text-xs">
+                    {block.note}
+                  </p>
+                ) : null}
+              </div>
+            </Reveal>
+          );
+        }
+
+        if (block.type === "bullet-list") {
+          return (
+            <Reveal key={`${block.type}-${i}`} delay={motionStagger * Math.min(i + 2, 8)}>
+              <ul className="mt-4 list-disc space-y-2 pl-5 text-base leading-[1.7] text-horizon-muted marker:text-horizon-navy md:text-lg md:leading-[1.8]">
+                {block.items.map((item) => (
+                  <li key={item.lead} className="pl-1">
+                    <strong className="font-semibold text-horizon-navy">{item.lead}</strong>{" "}
+                    {item.text}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          );
+        }
+
+        if (block.type === "cost-chart") {
+          const maxValue = Math.max(...block.items.flatMap((item) => [item.advertised, item.total]));
+
+          return (
+            <Reveal key={`${block.type}-${i}`} delay={motionStagger * Math.min(i + 2, 8)}>
+              <div className="mt-7 rounded-sm bg-[#faf8f3] px-3 pb-3 pt-2 sm:px-6">
+                <div className="mb-4 flex justify-end gap-4 text-[10px] text-horizon-muted">
+                  <span className="inline-flex items-center gap-1.5">
+                    <span className="size-2 bg-[#14517d]" /> Advertised price
+                  </span>
+                  <span className="inline-flex items-center gap-1.5">
+                    <span className="size-2 bg-[#dc9023]" /> True cost
+                  </span>
+                </div>
+                <div className="grid grid-cols-3 gap-3 border-b border-horizon-border/70 pb-1 sm:gap-8">
+                  {block.items.map((item) => (
+                    <div key={item.label} className="flex h-44 items-end justify-center gap-1.5 border-b border-horizon-border/40 sm:gap-2">
+                      <div className="flex h-full flex-col items-center justify-end">
+                        <span className="mb-1 text-[9px] text-horizon-muted">${item.advertised}</span>
+                        <span
+                          className="w-5 bg-[#14517d] sm:w-7"
+                          style={{ height: `${Math.max((item.advertised / maxValue) * 100, 4)}%` }}
+                        />
+                      </div>
+                      <div className="flex h-full flex-col items-center justify-end">
+                        <span className="mb-1 text-[9px] text-horizon-muted">${item.total}+</span>
+                        <span
+                          className="w-5 bg-[#dc9023] sm:w-7"
+                          style={{ height: `${Math.max((item.total / maxValue) * 100, 4)}%` }}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="grid grid-cols-3 gap-3 pt-2 text-center text-[10px] font-medium text-horizon-navy sm:gap-8 sm:text-xs">
+                  {block.items.map((item) => <span key={item.label}>{item.label}</span>)}
+                </div>
+                {block.note ? <p className="mt-6 text-center text-[10px] text-horizon-muted">{block.note}</p> : null}
+              </div>
+            </Reveal>
+          );
+        }
+
+        if (block.type === "callout") {
+          return (
+            <Reveal key={`${block.type}-${i}`} delay={motionStagger * Math.min(i + 2, 8)}>
+              <div className="mt-7 border-l-2 border-primary bg-[#f9e9e2] px-4 py-3 text-sm leading-relaxed text-horizon-navy">
+                {block.text}
+              </div>
             </Reveal>
           );
         }

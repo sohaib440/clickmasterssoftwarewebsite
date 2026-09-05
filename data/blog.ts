@@ -593,6 +593,23 @@ export const blogPosts: BlogPost[] = [
 				text: "AI in business stopped being a pilot project a while ago. Most organizations now use artificial intelligence in at least one function, and adoption among large enterprises is close to universal. What changed in 2026 is not whether to adopt AI tools, but which ones actually pay for themselves once licensing, integrations, and usage-based fees are added up.",
 			},
 			{
+				type: "stats",
+				items: [
+					{
+						value: "88%",
+						text: "of organizations now use AI in at least one business function",
+					},
+					{
+						value: "80%",
+						text: "of Fortune 500 companies use generative AI in some capacity",
+					},
+					{
+						value: "49%",
+						text: "of UK workers report never having used AI at work, showing adoption is uneven",
+					},
+				],
+			},
+			{
 				type: "h2",
 				text: "Why the right AI tools matter more than ever in 2026",
 			},
@@ -615,57 +632,57 @@ export const blogPosts: BlogPost[] = [
 				text: "Almost every AI tool marketed to businesses falls into one of six functional categories. Knowing which one you actually need prevents the most common mistake: buying an expensive general platform to solve a narrow problem.",
 			},
 			{
-				type: "h3",
-				text: "General assistants",
-			},
-			{
-				type: "p",
-				text: "Chat-based AI for writing, research, and analysis. Tools such as ChatGPT, Claude, Gemini, and Copilot fit teams that need quick thinking, drafting, summarization, and content support in a familiar chat interface.",
-			},
-			{
-				type: "h3",
-				text: "Agents and automation",
-			},
-			{
-				type: "p",
-				text: "Tools that complete multi-step tasks without a prompt each time. These are stronger for lead follow-up, ticket triage, records updates, and repetitive workflow execution across business apps.",
-			},
-			{
-				type: "h3",
-				text: "Marketing and content",
-			},
-			{
-				type: "p",
-				text: "Brand-tuned copy, campaigns, and CRM content. These platforms work well when the goal is volume and consistency across landing pages, sales emails, or channel marketing assets.",
-			},
-			{
-				type: "h3",
-				text: "Meetings and productivity",
-			},
-			{
-				type: "p",
-				text: "Transcription, notes, and task capture. These tools reduce the cost of meeting follow-up and help teams make decisions from searchable records instead of scattered messages.",
-			},
-			{
-				type: "h3",
-				text: "Coding",
-			},
-			{
-				type: "p",
-				text: "In-editor code generation and review. These tools are most effective when they are used inside a defined software development process with clear architecture, testing, and design review.",
-			},
-			{
-				type: "h3",
-				text: "Analytics and BI",
-			},
-			{
-				type: "p",
-				text: "Plain-English queries over business data. These tools turn operational reporting into a conversational workflow for leaders, analysts, and non-technical teams.",
+				type: "category-grid",
+				items: [
+					{
+						title: "General assistants",
+						text: "Chat based AI for writing, research, and analysis. ChatGPT, Claude, Gemini, and Copilot.",
+					},
+					{
+						title: "Agents and automation",
+						text: "Tools that complete multi step tasks without a prompt each time. Zapier Agents and Agentforce.",
+					},
+					{
+						title: "Marketing and content",
+						text: "Brand tuned copy, campaigns, and CRM content. Jasper, HubSpot Breeze, and Copy.ai.",
+					},
+					{
+						title: "Meetings and productivity",
+						text: "Transcription, notes, and task capture. Fireflies, Notion AI, and ClickUp Brain.",
+					},
+					{
+						title: "Coding",
+						text: "In editor code generation and review. GitHub Copilot and Claude Code.",
+					},
+					{
+						title: "Analytics and BI",
+						text: "Plain English queries over business data. ThoughtSpot and Glean.",
+					},
+				],
 			},
 			{ type: "h2", text: "Best AI assistants by team type" },
 			{
 				type: "p",
 				text: "This is the category most businesses buy first, and it is also the category where pricing pages are most misleading. The important comparison is not just the sticker price, but the real all-in cost when the required software base is included.",
+			},
+			{
+				type: "comparison-table",
+				columns: ["Tool", "Best for", "Team plan price", "Context window", "Requires other software?"],
+				rows: [
+					{
+						cells: ["ChatGPT (Team)", "Versatile, general-purpose work across departments", "$25 / user / month", "~128K tokens", "No"],
+					},
+					{
+						cells: ["Claude (Team)", "Long documents, compliance-heavy work, coding", "$25 to $30 / seat / month", "200K tokens", "No"],
+					},
+					{
+						cells: ["Google Gemini", "Teams already living in Google Workspace", "From ~$20 / month", "Varies by app", "Works best with Google Workspace"],
+					},
+					{
+						cells: ["Microsoft 365 Copilot", "Microsoft-first teams needing inbox and calendar integration", "$30 / user / month add-on", "Varies by app", "Yes, requires Business Standard or E3 plus"],
+					},
+				],
+				note: "Pricing reflects published or independently reported team or business tiers as of September 2026. Confirm current rates directly with each vendor before purchasing.",
 			},
 			{
 				type: "p",
@@ -680,6 +697,19 @@ export const blogPosts: BlogPost[] = [
 				text: "Microsoft 365 Copilot is a classic example of a tool that looks affordable until the licensing floor is counted. It requires a qualifying Microsoft 365 base plan such as Business Standard, Business Premium, E3, or E5. Once that cost is included, the real per-seat price can be significantly higher than the advertised figure.",
 			},
 			{
+				type: "cost-chart",
+				items: [
+					{ label: "ChatGPT", advertised: 25, total: 25 },
+					{ label: "Claude", advertised: 30, total: 30 },
+					{ label: "M365 Copilot", advertised: 30, total: 90 },
+				],
+				note: "Advertised price versus true all in cost per seat, per month based on 2026 figures.",
+			},
+			{
+				type: "callout",
+				text: "Why this matters for budgeting: a 50 person team buying the Copilot add-on is not paying only the advertised amount. Once the required base license is included, the real bill lands closer to $4,500 per month. ChatGPT and Claude do not have an equivalent hidden floor because neither requires you to already own their software.",
+			},
+			{
 				type: "p",
 				text: "A second shift compounds this problem: several AI platforms are moving from flat seat pricing to usage-based billing for advanced features. GitHub Copilot still has a seat model for some functions, but chat, agent mode, and code review can draw from metered credits. Some businesses have seen monthly costs jump sharply as usage scales, which makes volume planning essential before buying.",
 			},
@@ -687,14 +717,29 @@ export const blogPosts: BlogPost[] = [
 				type: "p",
 				text: "The practical takeaway is simple: before you sign, ask each vendor two questions. What does this cost with everything I actually need turned on? And is any part of this billed by usage instead of a flat seat fee? The advertised number is rarely the final one.",
 			},
-			{ type: "h2", text: "What to choose for your business" },
+			{ type: "h2", text: "Best AI agents & automation tools" },
 			{
 				type: "p",
 				text: "Unlike a chat assistant, an AI agent runs in the background and completes multi-step tasks without a person prompting each step. This makes agents useful for following up on leads, updating records, triaging tickets, and coordinating operational work across apps.",
 			},
 			{
-				type: "h3",
-				text: "Best AI agents and automation tools",
+				type: "comparison-table",
+				columns: ["Tool", "Category", "Pricing model", "Autonomy", "Best for"],
+				rows: [
+					{
+						cells: ["Zapier Agents", "General ops automation", "Premium, from $20/mo. Team $70/mo", "Semi-autonomous", "Teams with an existing app stack to automate"],
+					},
+					{
+						cells: ["Salesforce Agentforce", "Sales and service", "Pay per task, from $2 per conversation", "Autonomous", "Existing Salesforce customers"],
+					},
+					{
+						cells: ["HubSpot Breeze", "Marketing and CRM", "Subscription, from $50/mo", "Semi-autonomous", "Teams already on HubSpot"],
+					},
+					{
+						cells: ["Jasper Agents", "Marketing content", "Subscription, from $49/mo", "Semi-autonomous", "Brand consistent campaign drafting"],
+					},
+				],
+				note: "Task based and per conversation pricing means real monthly cost scales with volume. Model your expected usage before comparing headline prices.",
 			},
 			{
 				type: "p",
@@ -702,19 +747,53 @@ export const blogPosts: BlogPost[] = [
 			},
 			{
 				type: "h3",
-				text: "Best AI tools for marketing and productivity",
+				text: "Best AI tools for marketing & content",
 			},
 			{
 				type: "p",
-				text: "For teams whose main AI need is on-brand writing at volume, three tools dominate. Jasper is strongest for maintaining a consistent brand voice across many writers and channels, HubSpot Breeze is best when content generation is tied directly to CRM and lifecycle data, and Copy.ai is a lower-cost entry point that can support outreach and workflow automation.",
+				text: "For teams whose main AI need is on-brand written content at volume rather than automation, three tools dominate:",
+			},
+			{
+				type: "bullet-list",
+				items: [
+					{
+						lead: "Jasper",
+						text: "strongest for maintaining a consistent brand voice across multiple writers and channels, with plans starting around $49 per month.",
+					},
+					{
+						lead: "HubSpot Breeze",
+						text: "best when content generation needs to be tied directly to CRM and lifecycle data already living in HubSpot.",
+					},
+					{
+						lead: "Copy.ai",
+						text: "a lower cost entry point with workflow automation for research, outreach, and quality focused sales copy.",
+					},
+				],
 			},
 			{
 				type: "h3",
-				text: "Best AI tools for meetings and productivity",
+				text: "Best AI tools for meetings & productivity",
 			},
 			{
 				type: "p",
-				text: "These tools remove the manual work of capturing and organizing step-by-step business activity. Fireflies.ai handles transcription and searchable meeting history, Notion AI helps with summarizing and organizing team knowledge, and ClickUp Brain brings AI-generated summaries and status updates directly into project management workflows.",
+				text: "These tools remove the manual work of capturing and organizing what happens in day-to-day operations:",
+			},
+			{
+				type: "bullet-list",
+				items: [
+					{
+						lead: "Fireflies.ai",
+						text: "automatic meeting transcription, searchable call history, and action item extraction.",
+					},
+					{
+						lead: "Notion AI",
+						text: "embedded directly in documents and wikis for summarizing, drafting, and organizing team knowledge.",
+					},
+					{
+						lead: "ClickUp Brain",
+						text: "task and project management with AI generated summaries and status updates built into the same workspace teams already use for planning.",
+					},
+				],
 			},
 			{
 				type: "h3",
@@ -722,7 +801,20 @@ export const blogPosts: BlogPost[] = [
 			},
 			{
 				type: "p",
-				text: "For businesses building or maintaining custom software, two tools lead the category. GitHub Copilot is strongest for fast in-editor completions and everyday development work, while Claude Code is better suited to multi-file reasoning, large codebase understanding, and refactoring tasks across many files.",
+				text: "For businesses building or maintaining their own software, two tools lead the category, and they solve different problems:",
+			},
+			{
+				type: "bullet-list",
+				items: [
+					{
+						lead: "GitHub Copilot",
+						text: "strongest for fast, in-editor code completion during everyday development. Its seat price stayed flat in 2026, but chat, agent mode, and code review now draw from a metered credit pool, so heavier users should model usage carefully.",
+					},
+					{
+						lead: "Claude Code",
+						text: "better suited to complex, multi-file reasoning, refactors, and understanding an existing large codebase end to end.",
+					},
+				],
 			},
 			{
 				type: "p",

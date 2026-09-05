@@ -33,8 +33,8 @@ function FaqColumn({ startIndex, items, justify = false, renderAnswer }: FaqColu
             >
               <summary
                 className={cn(
-                  "flex cursor-pointer list-none items-start gap-4",
-                  "px-5 py-4 md:px-6 md:py-5",
+                  "flex min-h-[7.25rem] cursor-pointer list-none items-center gap-4",
+                  "px-5 py-4 md:min-h-[7.5rem] md:px-6 md:py-5",
                   "[&::-webkit-details-marker]:hidden"
                 )}
               >
@@ -49,7 +49,7 @@ function FaqColumn({ startIndex, items, justify = false, renderAnswer }: FaqColu
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                <span className="min-w-0 flex-1 pt-0.5">
+                <span className="min-w-0 flex-1">
                   <span className="inline-flex rounded-full border border-horizon-border/80 bg-horizon-cream/80 px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.14em] text-horizon-muted">
                     {faq.tag}
                   </span>

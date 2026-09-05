@@ -102,6 +102,21 @@ export type BlogBodyBlock =
   | { type: "h3"; text: string }
   | { type: "p"; text: string; linkText?: string; linkHref?: string }
   | { type: "ol"; items: Array<{ lead: string; text: string; linkText?: string; linkHref?: string }> }
+  | { type: "stats"; items: Array<{ value: string; text: string }> }
+  | { type: "category-grid"; items: Array<{ title: string; text: string }> }
+  | { type: "bullet-list"; items: Array<{ lead: string; text: string }> }
+  | {
+      type: "comparison-table";
+      columns: string[];
+      rows: Array<{ cells: string[] }>;
+      note?: string;
+    }
+  | {
+      type: "cost-chart";
+      items: Array<{ label: string; advertised: number; total: number }>;
+      note?: string;
+    }
+  | { type: "callout"; text: string }
   | { type: "image"; src: string; alt: string; width: number; height: number };
 
 export type BlogAuthor = {
