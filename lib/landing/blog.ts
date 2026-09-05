@@ -11,12 +11,23 @@ export function getAllBlogSlugs(): string[] {
   return blogPosts.map((post) => post.slug);
 }
 
+/** Old middleware used to strip trailing years from blog slugs; keep those URLs working. */
+const blogSlugAliases: Record<string, string> = {
+  "best-ai-tools-for-business-in": "best-ai-tools-for-business-in-2026",
+};
+
+export function resolveBlogSlug(slug: string): string {
+  return blogSlugAliases[slug] ?? slug;
+}
+
 export function getBlogBySlug(slug: string) {
-  return blogPosts.find((post) => post.slug === slug);
+  const resolved = resolveBlogSlug(slug);
+  return blogPosts.find((post) => post.slug === resolved);
 }
 
 export function isBlogSlug(slug: string): boolean {
-  return blogPosts.some((post) => post.slug === slug);
+  const resolved = resolveBlogSlug(slug);
+  return blogPosts.some((post) => post.slug === resolved);
 }
 
 export function blogPostPath(slug: string): string {

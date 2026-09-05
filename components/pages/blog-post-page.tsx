@@ -31,11 +31,13 @@ function slugifyHeading(text: string) {
 
 function getHeadingItems(blocks: BlogBodyBlock[], includeFaqs = false): TocItem[] {
   const seen = new Map<string, number>();
+  const faqHeading = "frequently asked questions";
 
   const items = blocks
     .filter((block): block is Extract<BlogBodyBlock, { type: "h2" | "h3" }> => {
       return block.type === "h2" || block.type === "h3";
     })
+    .filter((block) => block.text.trim().toLowerCase() !== faqHeading)
     .map((block) => {
       const base = slugifyHeading(block.text) || "section";
       const count = seen.get(base) ?? 0;
@@ -49,7 +51,7 @@ function getHeadingItems(blocks: BlogBodyBlock[], includeFaqs = false): TocItem[
       };
     });
 
-  if (includeFaqs) {
+  if (includeFaqs && !items.some((item) => item.text.trim().toLowerCase() === faqHeading)) {
     items.push({
       id: "faqs",
       text: "Frequently asked questions",
@@ -114,6 +116,34 @@ function BlogBodyContent({
           );
         }
 
+        if (block.type === "ol") {
+          return (
+            <Reveal key={`${block.type}-${i}`} delay={motionStagger * Math.min(i + 2, 8)}>
+              <ol className="mt-5 list-decimal space-y-3 pl-5 text-base leading-[1.8] text-horizon-muted marker:font-semibold marker:text-horizon-navy md:text-lg md:leading-[1.85]">
+                {block.items.map((item) => (
+                  <li key={item.lead} className="pl-1">
+                    <strong className="font-semibold text-horizon-navy">{item.lead}</strong>{" "}
+                    {item.linkText && item.linkHref && item.text.includes(item.linkText) ? (
+                      <>
+                        {item.text.split(item.linkText)[0]}
+                        <Link
+                          href={item.linkHref}
+                          className="font-medium text-primary underline decoration-primary/50 underline-offset-4 transition-colors hover:text-horizon-navy"
+                        >
+                          {item.linkText}
+                        </Link>
+                        {item.text.split(item.linkText).slice(1).join(item.linkText)}
+                      </>
+                    ) : (
+                      item.text
+                    )}
+                  </li>
+                ))}
+              </ol>
+            </Reveal>
+          );
+        }
+
         return (
           <Reveal key={`${block.type}-${i}`} delay={motionStagger * Math.min(i + 2, 8)}>
             <p className="mt-5 text-justify text-base leading-[1.8] text-horizon-muted md:text-lg md:leading-[1.85]">
@@ -141,7 +171,7 @@ function BlogBodyContent({
 
 export function BlogPostPage({ post }: BlogPostPageProps) {
   const tocItems = getHeadingItems(post.body, post.faqs.length > 0);
-  const headingIds = tocItems.filter((item) => item.id !== "faqs").map((item) => item.id);
+  const headingIds = tocItems.map((item) => item.id);
   const shareUrl = `${siteBrand.url}${blogPostPath(post.slug)}`;
 
   return (
@@ -227,7 +257,7 @@ export function BlogPostPage({ post }: BlogPostPageProps) {
                   In this article
                 </summary>
                 <BlogTableOfContents
-                  items={tocItems.filter((item) => item.id !== "faqs")}
+                  items={tocItems}
                   className="mt-4 border-0 p-0 shadow-none [&>div]:hidden [&>p]:hidden"
                 />
               </details>

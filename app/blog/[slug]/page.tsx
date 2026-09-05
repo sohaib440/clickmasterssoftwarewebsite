@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: { absolute: post.title },
     description: post.excerpt,
-    ...selfCanonical(`/blog/${slug}`),
+    ...selfCanonical(`/blog/${post.slug}`),
     openGraph: {
       title: post.title,
       description: post.excerpt,
@@ -57,7 +57,7 @@ export default async function BlogPostRoute({ params }: PageProps) {
     notFound();
   }
 
-  const path = blogPostPath(slug);
+  const path = blogPostPath(post.slug);
   const schemas = [
     blogPostingSchema({
       title: post.title,
