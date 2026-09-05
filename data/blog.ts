@@ -594,6 +594,8 @@ export const blogPosts: BlogPost[] = [
 			{
 				type: "p",
 				text: "AI in business stopped being a pilot project a while ago. Most organizations now use artificial intelligence in at least one function, and adoption among large enterprises is close to universal. What changed in 2026 is not whether to adopt AI tools, but which ones actually pay for themselves once licensing, integrations, and usage-based fees are added up.",
+				linkText: "artificial intelligence",
+				linkHref: "/artificial-intelligence",
 			},
 			{
 				type: "stats",
