@@ -53,6 +53,7 @@ const EXACT: Record<string, string> = {
   "/about-us": "/about",
   "/pricing": "/contact",
   "/feed": "/blog",
+  "/blog/best-ai-tools-for-business-in": "/blog/best-ai-tools-for-business-in-2026",
 };
 
 const PARENT_ALIAS: Record<string, string> = {
