@@ -134,6 +134,8 @@ export type BlogReviewer = {
 export type BlogPost = {
   slug: string;
   title: string;
+  metaTitle?: string;
+  metaDescription?: string;
   excerpt: string;
   author: BlogAuthor;
   reviewedBy: BlogReviewer;

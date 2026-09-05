@@ -26,8 +26,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!post) notFound();
 
   return {
-    title: { absolute: post.title },
-    description: post.excerpt,
+    title: { absolute: post.metaTitle ?? post.title },
+    description: post.metaDescription ?? post.excerpt,
     ...selfCanonical(`/blog/${post.slug}`),
     openGraph: {
       title: post.title,
