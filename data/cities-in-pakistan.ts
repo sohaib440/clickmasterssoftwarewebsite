@@ -135,7 +135,7 @@ const cityCopy: Record<string, CityCopy> = {
   },
   Multan: {
     // --- SEO: edit these two fields for this city page ---
-    metaTitle: "Multan Software Development",
+    metaTitle: "Software Development Company in Multan",
     metaDescription:
       "Next Software Development Company is a software house in Multan. Custom web, mobile, HMS, and ERP for south Punjab businesses.",
     aboutTitle: "A software house in Multan",
@@ -321,7 +321,7 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is a software house in Quetta. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Quetta and across Balochistan.",
   },
   Sargodha: {
-    metaTitle: "Software House in Sargodha",
+    metaTitle: "Software Development Company in Sargodha",
     metaDescription:
       "Next Software Development Company is a software house in Sargodha. Custom software for agribusiness, clinics, and SMEs.",
     aboutTitle: "A software house in Sargodha",
