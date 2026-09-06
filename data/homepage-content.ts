@@ -113,7 +113,7 @@ export type BlogBodyBlock =
     }
   | {
       type: "cost-chart";
-      items: Array<{ label: string; advertised: number; total: number }>;
+      items: Array<{ label: string; advertised: number; total: number; displayValue?: string }>;
       note?: string;
     }
   | { type: "callout"; text: string }
