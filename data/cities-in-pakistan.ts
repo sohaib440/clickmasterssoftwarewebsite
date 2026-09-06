@@ -38,12 +38,12 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is a software house in Islamabad. Custom HMS, ERP, and digital products for the capital.",
     aboutTitle: "A software house in Islamabad",
     paragraphs: [
-      "Next Software Development Company is a software house in Islamabad. We deliver HMS, clinic ERP, government workflows, and digital products for capital-region clinics, schools, and enterprises.",
-      "As an experienced software company in Islamabad, our senior engineers and designers work closely with operators who need Urdu-ready staff tools, compliance-aware systems, and reliable English-first communication from a senior delivery team.",
+      "Next Software Development Company is a software house in Islamabad. We deliver HMS, clinic ERP, government workflows, and digital products for businesses across Blue Area, G-8, Bahria Town, Rawalpindi, and the wider capital region.",
+      "As an experienced software company in Islamabad, our senior engineers and designers work closely with clinics, schools, enterprises, and service businesses in Blue Area, G-8, Bahria Town, and twin-city Rawalpindi. We build Urdu-ready staff tools, compliance-aware systems, and reliable products with English-first communication.",
       "Whether you are launching a clinic platform with [[Rawalpindi]] twin-city teams or hiring a software house and software company in Islamabad for a longer product partnership, you get transparent scoping, senior-only delivery, and support after go-live from a [[software house in Pakistan]].",
     ],
     factDetail:
-      "Software house delivery for clinics, schools, and enterprises across Islamabad and the twin cities.",
+      "Software house delivery for clinics, schools, and enterprises across Blue Area, G-8, Bahria Town, Islamabad, and Rawalpindi.",
     heroImageSrc: cityHeroImageSrc,
     heroLead:
       "Next Software Development Company is a software house in Islamabad. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, and growing businesses in Islamabad and twin-city Rawalpindi.",
@@ -89,12 +89,12 @@ const cityCopy: Record<string, CityCopy> = {
       "If you are looking for a top-rated software house & software company in Faisalabad for custom software development, app development, web development, or AI automation, and you want to take your business to the next level, then you are at the right place. We are Next Software Development Company in Faisalabad, helping many Faisalabad businesses, organisations, institutes, and industries make their businesses smarter and more advanced with our different products like CMS, HMS, ERPs, websites, and automation workflows.",
     aboutTitle: "Who We Are?",
     paragraphs: [
-      "Next Software Development Company is the [[certified software house and top-rated software development company in Pakistan]], serving across Pakistan for a decade since 2019. We work with thousands of businesses, startups, and organisations on different software development projects, app development, and other software projects that help them make their businesses advanced and smart.",
-      "We are top-rated and loved by Pakistani business owners and the top-chosen software development company and software house in Pakistan, having an experienced team of software engineers, software designers, creative teams, and experienced strategists and planners who understand your requirements, the problems you face, and make plans that work best for you. We believe in quality work. Our first focus is to solve the problems that businesses face. Our vision is to make Next Software Development a leading software house in Pakistan that helps businesses with a customer-first approach.",
-      "For Faisalabad businesses, we have a dedicated [[team]] that helps Faisalabad businesses make their businesses or companies better with our multiple services that are listed below.",
+      "Next Software Development Company is the [[certified software house and top-rated software development company in Pakistan]], serving across Pakistan for a decade since 2019. In Faisalabad, we support the textile industry, manufacturers, industrial estates, startups, and service businesses with software that makes operations smarter.",
+      "We are top-rated and loved by Pakistani business owners and the top-chosen software development company and software house in Pakistan, with experienced software engineers, designers, strategists, and planners. For Faisalabad's textile industry and industrial estates, we build ERP, inventory, production, HR, and reporting systems around real workflows rather than generic templates.",
+      "For Faisalabad businesses, we have a dedicated [[team]] that helps manufacturers, textile companies, industrial-estate operators, institutes, and growing businesses improve their operations with the services listed below.",
     ],
     factDetail:
-      "ERP and operations platforms from a Faisalabad software house for industrial and commercial teams.",
+      "ERP and operations platforms from a Faisalabad software house serving the textile industry and industrial estates.",
     heroImageSrc: cityHeroImageSrc,
     heroLead:
       "If you are looking for a top-rated software house & software company in Faisalabad for custom software development, app development, web development, or AI automation, and you want to take your business to the next level, then you are at the right place. We are Next Software Development Company in Faisalabad, helping many Faisalabad businesses, organisations, institutes, and industries make their businesses smarter and more advanced with our different products like CMS, HMS, ERPs, websites, and automation workflows.",
@@ -174,12 +174,12 @@ const cityCopy: Record<string, CityCopy> = {
       "Next Software Development Company is a software house in Karachi. Custom retail, logistics, fintech, HMS, and ERP solutions.",
     aboutTitle: "A software house in Karachi",
     paragraphs: [
-      "Next Software Development Company is a software house in Karachi. Businesses need a software house and software company that keeps up with volume: retail POS, logistics visibility, fintech workflows, and multi-branch operations.",
-      "Our software development company builds cloud systems with real-time reporting, role-based access, and architecture ready for Pakistan’s largest market.",
+      "Next Software Development Company is a software house in Karachi. Businesses across Shahrah-e-Faisal, DHA, Korangi, and the SITE Area need software that keeps up with volume: retail POS, logistics visibility, fintech workflows, and multi-branch operations.",
+      "Our software development company builds cloud systems with real-time reporting, role-based access, and architecture ready for Pakistan's largest market. We support offices along Shahrah-e-Faisal, manufacturers in Korangi and the SITE Area, and service businesses in DHA.",
       "Choose a software house in Karachi that combines senior delivery with competitive pricing and post-launch support from a [[software house in Pakistan]].",
     ],
     factDetail:
-      "High-scale retail, logistics, and fintech builds from a Karachi software development company.",
+      "High-scale retail, logistics, and fintech builds from a Karachi software development company serving Shahrah-e-Faisal, DHA, Korangi, and the SITE Area.",
     heroImageSrc: cityHeroImageSrc,
     heroLead:
       "Next Software Development Company is a software house in Karachi. We build custom software, Hospital Management Systems (HMS), Enterprise Resource Planning (ERP) solutions, and digital products for clinics, schools, retailers, and growing businesses in Karachi and beyond.",
