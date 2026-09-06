@@ -86,14 +86,13 @@ function CityCard({ city, index }: { city: LocationCity; index: number }) {
       </div>
 
       <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-white/70 transition-colors group-hover:text-primary">
-        {isPlaceholder ? "Coming soon" : "Explore city"}
-        <ArrowUpRight
-          className={cn(
-            "size-4 transition-transform",
-            !isPlaceholder && "group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-          )}
-          aria-hidden
-        />
+        {isPlaceholder ? "Service area" : "Explore city"}
+        {!isPlaceholder ? (
+          <ArrowUpRight
+            className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            aria-hidden
+          />
+        ) : null}
       </span>
     </>
   );

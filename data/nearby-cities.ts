@@ -13,12 +13,34 @@ const cityRegions: string[][] = [
     "Attock",
     "Jhelum",
     "Chakwal",
+    "Mirpur",
+    "Muzaffarabad",
+    "Kotli",
+    "Rawalakot",
+    "Gilgit",
+    "Skardu",
   ],
-  ["Lahore", "Sheikhupura", "Kasur", "Okara", "Sahiwal"],
+  [
+    "Lahore",
+    "Sheikhupura",
+    "Kasur",
+    "Gujranwala",
+    "Gujrat",
+    "Sahiwal",
+    "Okara",
+    "Sialkot",
+    "Wazirabad",
+  ],
   ["Faisalabad", "Chiniot", "Jhang", "Toba Tek Singh", "Sargodha"],
-  ["Multan", "Bahawalpur", "Khanewal", "Vehari", "Muzaffargarh", "Dera Ghazi Khan"],
-  ["Gujranwala", "Sialkot", "Gujrat", "Wazirabad"],
-  ["Karachi", "Hyderabad", "Thatta", "Dadu"],
+  [
+    "Multan",
+    "Khanewal",
+    "Vehari",
+    "Bahawalpur",
+    "Muzaffargarh",
+    "D.G. Khan",
+    "Rahim Yar Khan",
+  ],
   [
     "Peshawar",
     "Mardan",
@@ -28,12 +50,29 @@ const cityRegions: string[][] = [
     "Kohat",
     "Abbottabad",
     "Mingora",
+    "Dera Ismail Khan",
   ],
-  ["Sukkur", "Larkana", "Khairpur", "Nawabshah", "Mirpur Khas"],
-  ["Quetta", "Gwadar", "Turbat", "Khuzdar"],
-  ["Mirpur", "Muzaffarabad", "Kotli", "Rawalakot"],
-  ["Gilgit", "Skardu"],
-  ["Rahim Yar Khan", "Bahawalpur"],
+  [
+    "Karachi",
+    "Hyderabad",
+    "Dadu",
+    "Thatta",
+    "Sukkur",
+    "Larkana",
+    "Nawabshah",
+    "Mirpur Khas",
+    "Khairpur",
+    "Jacobabad",
+  ],
+  [
+    "Azad Jammu and Kashmir",
+    "Mirpur",
+    "Muzaffarabad",
+    "Kotli",
+    "Rawalakot",
+  ],
+  ["Gilgit-Baltistan", "Gilgit", "Skardu"],
+  ["Balochistan", "Quetta", "Gwadar", "Turbat", "Khuzdar"],
 ];
 
 const cityByName = new Map(
@@ -44,12 +83,22 @@ const MAJOR_FALLBACK = [
   "Islamabad",
   "Lahore",
   "Karachi",
-  "Rawalpindi",
   "Faisalabad",
   "Multan",
   "Peshawar",
-  "Gujranwala",
 ];
+
+function serviceAreaCity(name: string): LocationCity {
+  const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+
+  return {
+    slug: `service-area-${slug}`,
+    label: `Software house and software development company in ${name}`,
+    href: "#",
+    city: name,
+    blurb: `We serve businesses in ${name} from the nearest regional location hub.`,
+  };
+}
 
 export function getNearbyCitiesFor(cityName: string): LocationCity[] {
   const normalized = cityName.toLowerCase();
@@ -61,7 +110,5 @@ export function getNearbyCitiesFor(cityName: string): LocationCity[] {
     (name) => name.toLowerCase() !== normalized
   );
 
-  return names
-    .map((name) => cityByName.get(name.toLowerCase()))
-    .filter((city): city is LocationCity => Boolean(city));
+  return names.map((name) => cityByName.get(name.toLowerCase()) ?? serviceAreaCity(name));
 }
