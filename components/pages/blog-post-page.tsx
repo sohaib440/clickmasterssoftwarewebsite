@@ -34,9 +34,9 @@ function getHeadingItems(blocks: BlogBodyBlock[], includeFaqs = false): TocItem[
   const seen = new Map<string, number>();
   const faqHeading = "frequently asked questions";
 
-  const items = blocks
-    .filter((block): block is Extract<BlogBodyBlock, { type: "h2" | "h3" }> => {
-      return block.type === "h2" || block.type === "h3";
+  const items: TocItem[] = blocks
+    .filter((block): block is Extract<BlogBodyBlock, { type: "h2" }> => {
+      return block.type === "h2";
     })
     .filter((block) => block.text.trim().toLowerCase() !== faqHeading)
     .map((block) => {
@@ -48,8 +48,8 @@ function getHeadingItems(blocks: BlogBodyBlock[], includeFaqs = false): TocItem[
       return {
         id,
         text: block.text,
-        level: (block.type === "h2" ? 2 : 3) as 2 | 3,
-      };
+        level: 2,
+      } satisfies TocItem;
     });
 
   if (includeFaqs && !items.some((item) => item.text.trim().toLowerCase() === faqHeading)) {
@@ -249,39 +249,30 @@ function BlogBodyContent({
 
         if (block.type === "cost-chart") {
           const maxValue = Math.max(...block.items.flatMap((item) => [item.advertised, item.total]));
+          const palette = ["#2a9d9a", "#2f5fa8", "#f1ae3b", "#b95d42", "#8d3e35"];
 
           return (
             <Reveal key={`${block.type}-${i}`} delay={motionStagger * Math.min(i + 2, 8)}>
               <div className="mt-7 rounded-sm bg-[#faf8f3] px-3 pb-3 pt-2 sm:px-6">
-                <div className="mb-4 flex justify-end gap-4 text-[10px] text-horizon-muted">
-                  <span className="inline-flex items-center gap-1.5">
-                    <span className="size-2 bg-[#14517d]" /> Advertised price
-                  </span>
-                  <span className="inline-flex items-center gap-1.5">
-                    <span className="size-2 bg-[#dc9023]" /> True cost
-                  </span>
-                </div>
-                <div className="grid grid-cols-3 gap-3 border-b border-horizon-border/70 pb-1 sm:gap-8">
-                  {block.items.map((item) => (
-                    <div key={item.label} className="flex h-44 items-end justify-center gap-1.5 border-b border-horizon-border/40 sm:gap-2">
-                      <div className="flex h-full flex-col items-center justify-end">
-                        <span className="mb-1 text-[9px] text-horizon-muted">${item.advertised}</span>
-                        <span
-                          className="w-5 bg-[#14517d] sm:w-7"
-                          style={{ height: `${Math.max((item.advertised / maxValue) * 100, 4)}%` }}
-                        />
+                <div className="grid grid-cols-5 gap-3 sm:gap-8">
+                  {block.items.map((item, index) => {
+                    const barColor = palette[index % palette.length];
+                    const height = Math.max((Math.max(item.advertised, item.total) / maxValue) * 100, 8);
+
+                    return (
+                      <div key={item.label} className="flex h-44 items-end justify-center">
+                        <div className="flex h-full w-full flex-col items-center justify-end">
+                          <span className="mb-1 text-[9px] text-horizon-muted sm:text-[10px]">{item.displayValue ?? `$${item.advertised}`}</span>
+                          <span
+                            className="w-14 rounded-t-sm sm:w-16"
+                            style={{ height: `${height}%`, backgroundColor: barColor }}
+                          />
+                        </div>
                       </div>
-                      <div className="flex h-full flex-col items-center justify-end">
-                        <span className="mb-1 text-[9px] text-horizon-muted">${item.total}+</span>
-                        <span
-                          className="w-5 bg-[#dc9023] sm:w-7"
-                          style={{ height: `${Math.max((item.total / maxValue) * 100, 4)}%` }}
-                        />
-                      </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
-                <div className="grid grid-cols-3 gap-3 pt-2 text-center text-[10px] font-medium text-horizon-navy sm:gap-8 sm:text-xs">
+                <div className="grid grid-cols-5 gap-3 pt-2 text-center text-[10px] font-medium text-horizon-navy sm:gap-8 sm:text-xs">
                   {block.items.map((item) => <span key={item.label}>{item.label}</span>)}
                 </div>
                 {block.note ? <p className="mt-6 text-center text-[10px] text-horizon-muted">{block.note}</p> : null}
