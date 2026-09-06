@@ -70,7 +70,7 @@ export const blogPosts: BlogPost[] = [
 		readTime: "15 min",
 		category: "Outsourcing & Vendor Strategy",
 		image: {
-			src: "/blog/choose-best-software-development-company-in-pakistan.png",
+			src: "/blog/choose-best-software-development-company-in-pakistan.webp",
 			alt: "software-development-company-in-pakistan",
 			width: 1200,
 			height: 750,
