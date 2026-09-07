@@ -8,7 +8,6 @@
 
 import {
 	BarChart3,
-	Bot,
 	Boxes,
 	Brain,
 	ShoppingCart,
@@ -29,7 +28,7 @@ const img = (src: string, alt: string, width = 800, height = 500) => ({
 export const solutions: SolutionContent[] = [
 	{
 		slug: "custom-erp-software-development",
-		label: "ERP System",
+		label: "Custom ERP Software Development",
 		category: "Enterprise",
 		icon: Workflow,
 		tagline: "Unify finance, inventory, and operations on one clear platform.",
@@ -105,40 +104,6 @@ export const solutions: SolutionContent[] = [
 			{ step: "02", title: "Prototype", description: "Clickable flows for pipeline and account views." },
 			{ step: "03", title: "Integrate", description: "Connect email, calendar, and existing data sources." },
 			{ step: "04", title: "Scale", description: "Roll out teams, measure adoption, iterate." },
-		],
-	},
-	{
-		slug: "ai-agent-development",
-		label: "AI Agent",
-		category: "AI & Automation",
-		icon: Bot,
-		tagline: "Intelligent assistants that work inside your product and workflows.",
-		description: "We design and deploy AI agents for support, sales, and internal ops, grounded in your data, guarded by policies, and measurable in production.",
-		metaDescription: "Custom AI agents for support, sales, and operations. RAG, tool use, and safe deployment by Next Software Development Company.",
-		heroImage: img("/services/artificial-intelligence.webp", "Abstract AI and neural network visualization"),
-		summary: ["RAG over your docs", "Tool & API actions", "Human handoff"],
-		projectSlugs: ["ai-school-erp", "e-learning-portal"],
-		features: [
-			{ title: "Grounded answers", description: "Retrieval over knowledge bases, tickets, and product docs, fewer hallucinations." },
-			{ title: "Action-capable agents", description: "Book meetings, update CRM records, or trigger workflows with guardrails." },
-			{ title: "Observability", description: "Logging, feedback loops, and quality metrics so you can improve over time." },
-		],
-		capabilities: ["Chat & voice interfaces", "Document ingestion & chunking", "LLM orchestration (OpenAI, Anthropic, etc.)", "Custom tools & function calling", "Moderation & policy layers", "Analytics & A/B testing"],
-		useCases: [
-			{ title: "Support deflection", description: "Resolve tier-1 questions and route complex cases to humans with full context." },
-			{ title: "Internal copilots", description: "HR, IT, and policy Q&A for employees on Slack or Teams." },
-			{ title: "Sales assistants", description: "Prep briefs, draft outreach, and summarize calls from your CRM." },
-		],
-		highlights: [
-			{ title: "Security-first", description: "PII handling, access controls, and deployment options that fit your compliance needs." },
-			{ title: "Cost-aware design", description: "Caching, routing, and model selection to balance quality and spend." },
-			{ title: "Human in the loop", description: "Escalation paths and review queues where automation should not decide alone." },
-		],
-		approach: [
-			{ step: "01", title: "Scope", description: "Use cases, data sources, and success metrics." },
-			{ step: "02", title: "Pilot", description: "Limited rollout with evaluation harness." },
-			{ step: "03", title: "Harden", description: "Policies, monitoring, and fallback behavior." },
-			{ step: "04", title: "Operate", description: "Continuous improvement from real conversations." },
 		],
 	},
 	{

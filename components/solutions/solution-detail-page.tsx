@@ -59,6 +59,9 @@ const engagementModels = [
 
 const deliveryStages = ["Discover", "Design", "Build", "Deploy"] as const;
 
+const erpModules = ["Finance", "Inventory", "Procurement", "Sales", "HR", "Analytics"] as const;
+const erpIntegrations = ["APIs", "Payments", "Accounting", "Logistics", "Third-party systems"] as const;
+
 function solutionFaqs(label: string) {
   return [
     {
@@ -93,6 +96,7 @@ type Props = {
 };
 
 export function SolutionDetailPage({ solution }: Props) {
+  const isErp = solution.slug === "custom-erp-software-development";
   const related = getAllSolutions().filter((s) => s.slug !== solution.slug).slice(0, 3);
   const projects = solution.projectSlugs
     .map((slug) => getProjectBySlug(slug))
@@ -102,8 +106,8 @@ export function SolutionDetailPage({ solution }: Props) {
     <div className="flex min-h-full w-full flex-col bg-horizon-cream text-foreground">
       <SiteHeader />
 
-      <main className="flex-1">
-        <section className="relative w-full overflow-hidden bg-gradient-to-b from-horizon-cream via-horizon-cream to-horizon-sky">
+      <main className="flex flex-1 flex-col">
+        <section className="relative order-1 w-full overflow-hidden bg-gradient-to-b from-horizon-cream via-horizon-cream to-horizon-sky">
           <div className={cn(container, sectionPad, "!pt-6 md:!pt-8 lg:!pt-10")}>
             <Reveal immediate>
               <nav className="mb-3 flex flex-wrap items-center gap-2 text-sm text-horizon-muted">
@@ -175,7 +179,7 @@ export function SolutionDetailPage({ solution }: Props) {
           </div>
         </section>
 
-        <section className="w-full bg-white" aria-labelledby="business-problem-heading">
+        <section className="order-2 w-full bg-white" aria-labelledby="business-problem-heading">
           <div className={cn(container, sectionPad)}>
             <Reveal>
               <p className={overline}>The business problem</p>
@@ -198,7 +202,7 @@ export function SolutionDetailPage({ solution }: Props) {
           </div>
         </section>
 
-        <section className="w-full bg-horizon-sky/35" aria-labelledby="our-solution-heading">
+        <section className="order-3 w-full bg-horizon-sky/35" aria-labelledby="our-solution-heading">
           <div className={cn(container, sectionPad)}>
             <Reveal>
               <p className={overline}>Our solution</p>
@@ -221,10 +225,35 @@ export function SolutionDetailPage({ solution }: Props) {
           </div>
         </section>
 
-        <section className="w-full bg-horizon-cream" aria-labelledby="how-we-solve-heading">
+        {isErp ? (
+          <section className="order-4 w-full bg-white" aria-labelledby="key-modules-heading">
+            <div className={cn(container, sectionPad)}>
+              <Reveal>
+                <p className={overline}>Key modules</p>
+                <h2 id="key-modules-heading" className="mt-3 font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
+                  One ERP for every <span className="italic">core function</span>
+                </h2>
+              </Reveal>
+              <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {erpModules.map((module, i) => (
+                  <li key={module}>
+                    <Reveal delay={i * motionStagger} className={cn(card, "h-full p-6")}>
+                      <h3 className="font-heading text-lg font-medium text-horizon-navy">{module}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-horizon-muted">
+                        Configurable {module.toLowerCase()} workflows, permissions, and reporting aligned to your operation.
+                      </p>
+                    </Reveal>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        ) : null}
+
+        <section className="order-5 w-full bg-horizon-cream" aria-labelledby="how-we-solve-heading">
           <div className={cn(container, sectionPad)}>
             <Reveal>
-              <p className={overline}>How we solve it</p>
+              <p className={overline}>{isErp ? "How we build it" : "How we solve it"}</p>
               <h2 id="how-we-solve-heading" className="mt-3 font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
                 Discover <span className="italic">to deploy</span>
               </h2>
@@ -245,7 +274,7 @@ export function SolutionDetailPage({ solution }: Props) {
           </div>
         </section>
 
-        <section className="w-full bg-white" aria-labelledby="features-heading">
+        <section className="order-6 w-full bg-white" aria-labelledby="features-heading">
           <div className={cn(container, sectionPad)}>
             <Reveal>
               <p className={overline}>Features / capabilities</p>
@@ -273,21 +302,22 @@ export function SolutionDetailPage({ solution }: Props) {
           </div>
         </section>
 
-        <section className="w-full bg-horizon-peach/40">
+        <section className="order-8 w-full bg-horizon-peach/40" aria-labelledby="integrations-heading">
           <div className={cn(container, sectionPad)}>
             <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
               <Reveal>
                 <h2 className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
-                  What&apos;s <span className="italic">included</span>
+                  {isErp ? "Integrations" : <>What&apos;s <span className="italic">included</span></>}
                 </h2>
                 <p className="mt-3 text-horizon-muted">
-                  Modules and features we typically deliver for {solution.label.toLowerCase()}{" "}
-                  engagements.
+                  {isErp
+                    ? "Connect your ERP to the systems your teams already use."
+                    : `Modules and features we typically deliver for ${solution.label.toLowerCase()} engagements.`}
                 </p>
               </Reveal>
               <Reveal delay={motionStagger}>
                 <ul className="grid gap-2 sm:grid-cols-2">
-                  {solution.capabilities.map((item) => (
+                  {(isErp ? erpIntegrations : solution.capabilities).map((item) => (
                     <li
                       key={item}
                       className="flex items-start gap-2.5 rounded-xl border border-horizon-border/80 bg-white/90 px-4 py-3 text-sm text-horizon-navy"
@@ -306,7 +336,7 @@ export function SolutionDetailPage({ solution }: Props) {
           </div>
         </section>
 
-        <section className="w-full bg-horizon-sky/35">
+        <section className="order-7 w-full bg-horizon-sky/35">
           <div className={cn(container, sectionPad)}>
             <Reveal>
               <p className={overline}>Industries &amp; use cases</p>
@@ -331,7 +361,7 @@ export function SolutionDetailPage({ solution }: Props) {
           </div>
         </section>
 
-        <section className="w-full bg-white" aria-labelledby="technology-heading">
+        <section className="order-10 w-full bg-white" aria-labelledby="technology-heading">
           <div className={cn(container, sectionPad)}>
             <Reveal>
               <p className={overline}>Technology</p>
@@ -354,7 +384,7 @@ export function SolutionDetailPage({ solution }: Props) {
           </div>
         </section>
 
-        <section className="w-full bg-horizon-peach/40" aria-labelledby="architecture-heading">
+        <section className="order-9 w-full bg-horizon-peach/40" aria-labelledby="architecture-heading">
           <div className={cn(container, sectionPad)}>
             <Reveal>
               <p className={overline}>Architecture / workflow</p>
@@ -376,7 +406,7 @@ export function SolutionDetailPage({ solution }: Props) {
           </div>
         </section>
 
-        <section className="w-full bg-white" aria-labelledby="case-study-heading">
+        <section className="order-11 w-full bg-white" aria-labelledby="case-study-heading">
           <div className={cn(container, sectionPad)}>
             <Reveal>
               <p className={overline}>Case study</p>
@@ -402,7 +432,7 @@ export function SolutionDetailPage({ solution }: Props) {
           </div>
         </section>
 
-        <section className="w-full bg-white">
+        <section className="order-12 w-full bg-white">
           <div className={cn(container, sectionPad)}>
             <Reveal>
               <p className={overline}>Why Next Software Development</p>
@@ -430,7 +460,7 @@ export function SolutionDetailPage({ solution }: Props) {
           </div>
         </section>
 
-        <section className="w-full bg-horizon-cream" aria-labelledby="engagement-models-heading">
+        <section className="order-13 w-full bg-horizon-cream" aria-labelledby="engagement-models-heading">
           <div className={cn(container, sectionPad)}>
             <Reveal>
               <p className={overline}>Engagement models</p>
@@ -452,7 +482,7 @@ export function SolutionDetailPage({ solution }: Props) {
         </section>
 
         {related.length > 0 ? (
-          <section className="w-full border-t border-horizon-border bg-white">
+          <section className="order-14 w-full border-t border-horizon-border bg-white">
             <div className={cn(container, sectionPad)}>
               <Reveal>
                 <h2 className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
@@ -491,6 +521,7 @@ export function SolutionDetailPage({ solution }: Props) {
           </section>
         ) : null}
 
+        <div className="order-15">
         <FaqSection
           items={solutionFaqs(solution.label)}
           overlineText={`${solution.label} FAQs`}
@@ -503,8 +534,9 @@ export function SolutionDetailPage({ solution }: Props) {
           footerCta="Ask about your project"
           footerHref={contactPath}
         />
+        </div>
 
-        <section className="w-full bg-horizon-navy text-white">
+        <section className="order-16 w-full bg-horizon-navy text-white">
           <div className={cn(container, sectionPad, "text-center")}>
             <Reveal>
               <h2 className="font-heading text-3xl font-normal md:text-4xl">

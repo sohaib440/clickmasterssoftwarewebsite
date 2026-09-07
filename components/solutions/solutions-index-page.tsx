@@ -15,15 +15,12 @@ import {
 } from "@/lib/landing/constants";
 import {
   getAllSolutions,
-  getSolutionCategories,
-  getSolutionsByCategory,
   solutionPath,
 } from "@/lib/content/solutions";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
 
 export function SolutionsIndexPage() {
-  const categories = getSolutionCategories();
   const allSolutions = getAllSolutions();
 
   return (
@@ -55,46 +52,22 @@ export function SolutionsIndexPage() {
               </div>
             </Reveal>
 
-            <Reveal immediate delay={motionStagger * 4} className="mt-10 flex flex-wrap gap-2">
-              {categories.map((category) => (
-                <span
-                  key={category}
-                  className="rounded-full border border-white/20 bg-white/5 px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-[0.14em] text-white/70"
-                >
-                  {category}
-                </span>
-              ))}
-              <span className="rounded-full border border-primary/50 bg-primary px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-[0.14em] text-primary-foreground">
-                {allSolutions.length} solutions
-              </span>
-            </Reveal>
           </div>
         </section>
 
-        {categories.map((category) => {
-          const items = getSolutionsByCategory(category);
+        <section className="w-full border-t border-horizon-border/60 bg-white" aria-labelledby="solutions-heading">
+          <div className={cn(container, sectionPad)}>
+            <Reveal>
+              <h2 id="solutions-heading" className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
+                Solutions for <span className="italic">real teams</span>
+              </h2>
+              <p className="mt-2 max-w-xl text-sm text-horizon-muted md:text-base">
+                Explore every platform and product solution in one place.
+              </p>
+            </Reveal>
 
-          return (
-            <section
-              key={category}
-              className="w-full border-t border-horizon-border/60 bg-white even:bg-horizon-cream/40"
-              aria-labelledby={`solutions-${category.replace(/\s+/g, "-").toLowerCase()}`}
-            >
-              <div className={cn(container, sectionPad)}>
-                <Reveal>
-                  <h2
-                    id={`solutions-${category.replace(/\s+/g, "-").toLowerCase()}`}
-                    className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl"
-                  >
-                    {category}
-                  </h2>
-                  <p className="mt-2 max-w-xl text-sm text-horizon-muted md:text-base">
-                    {items.length} solution{items.length === 1 ? "" : "s"} in this category
-                  </p>
-                </Reveal>
-
-                <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                  {items.map((solution, i) => (
+            <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {allSolutions.map((solution, i) => (
                     <li key={solution.slug}>
                       <Reveal delay={i * motionStagger} className="h-full">
                         <Link
@@ -142,12 +115,10 @@ export function SolutionsIndexPage() {
                         </Link>
                       </Reveal>
                     </li>
-                  ))}
-                </ul>
-              </div>
-            </section>
-          );
-        })}
+              ))}
+            </ul>
+          </div>
+        </section>
 
         <section className="w-full bg-horizon-navy text-white">
           <div className={cn(container, sectionPad, "text-center")}>
