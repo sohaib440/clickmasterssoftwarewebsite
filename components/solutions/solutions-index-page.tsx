@@ -5,13 +5,12 @@ import { CardImage } from "@/components/landing/card-image";
 import { Reveal } from "@/components/landing/reveal";
 import { SiteHeader } from "@/components/landing/navbar";
 import {
-  btnOutline,
+  btnOutlineDark,
   btnPrimary,
   cardSoft,
   contactPath,
   container,
   iconMuted,
-  overline,
   sectionPad,
 } from "@/lib/landing/constants";
 import {
@@ -32,25 +31,15 @@ export function SolutionsIndexPage() {
       <SiteHeader />
 
       <main className="flex-1">
-        <section className="relative w-full overflow-hidden bg-gradient-to-b from-horizon-cream via-horizon-cream to-horizon-sky">
-          <div
-            className="pointer-events-none absolute inset-0 overflow-hidden"
-            aria-hidden
-          >
-            <div className="absolute -right-20 top-0 h-64 w-64 rounded-full bg-horizon-peach/40 blur-3xl" />
-          </div>
-
-          <div className={cn(container, sectionPad, "relative")}>
-            <Reveal immediate>
-              <p className={overline}>Solutions</p>
-            </Reveal>
+        <section className="relative w-full overflow-hidden bg-black text-white">
+          <div className={cn(container, "relative pt-6 pb-12 md:pt-8 md:pb-14 lg:pt-10 lg:pb-16")}>
             <Reveal immediate delay={motionStagger}>
-              <h1 className="mt-4 max-w-3xl font-heading text-4xl font-normal leading-[1.1] tracking-tight text-horizon-navy sm:text-5xl lg:text-[3.25rem]">
+              <h1 className="max-w-3xl font-heading text-4xl font-normal leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
                 Products we&apos;ve built for <span className="italic">real teams</span>
               </h1>
             </Reveal>
             <Reveal immediate delay={motionStagger * 2}>
-              <p className="mt-5 max-w-2xl text-base leading-relaxed text-horizon-muted md:text-lg">
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
                 ERP, CRM, AI agents, and more, custom platforms designed for your workflows. Browse
                 our solution catalog or tell us what you need to ship next.
               </p>
@@ -60,7 +49,7 @@ export function SolutionsIndexPage() {
                 <Link href={contactPath} className={btnPrimary}>
                   Discuss your project
                 </Link>
-                <Link href={contactPath} className={btnOutline}>
+                <Link href={contactPath} className={btnOutlineDark}>
                   Contact us
                 </Link>
               </div>
@@ -70,12 +59,12 @@ export function SolutionsIndexPage() {
               {categories.map((category) => (
                 <span
                   key={category}
-                  className="rounded-full border border-horizon-border bg-white/80 px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-[0.14em] text-horizon-muted"
+                  className="rounded-full border border-white/20 bg-white/5 px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-[0.14em] text-white/70"
                 >
                   {category}
                 </span>
               ))}
-              <span className="rounded-full border border-horizon-navy/15 bg-horizon-navy px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-[0.14em] text-white">
+              <span className="rounded-full border border-primary/50 bg-primary px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-[0.14em] text-primary-foreground">
                 {allSolutions.length} solutions
               </span>
             </Reveal>

@@ -2,7 +2,9 @@ import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, Check } from "lucide-react";
 
 import { CardImage } from "@/components/landing/card-image";
+import { FaqSection } from "@/components/landing/faq-section";
 import { Reveal } from "@/components/landing/reveal";
+import { ProjectCard } from "@/components/project/project-card";
 import { SiteHeader } from "@/components/landing/navbar";
 import {
   btnOutline,
@@ -16,6 +18,7 @@ import {
   sectionPad,
 } from "@/lib/landing/constants";
 import type { SolutionContent } from "@/lib/content/solutions.types";
+import { getProjectBySlug } from "@/data/projects";
 import {
   getAllSolutions,
   solutionPath,
@@ -24,12 +27,76 @@ import {
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
 
+const architectureLayers = [
+  {
+    title: "Users and teams",
+    description: "Clear roles, permissions, and interfaces for everyone who relies on the system.",
+  },
+  {
+    title: "Core workflows",
+    description: "The business rules, approvals, records, and automations that make the solution useful.",
+  },
+  {
+    title: "Data and integrations",
+    description: "Reliable APIs, migrations, third-party connections, and reporting foundations.",
+  },
+] as const;
+
+const engagementModels = [
+  {
+    title: "Fixed scope",
+    description: "A defined roadmap, milestones, and acceptance criteria for a focused delivery.",
+  },
+  {
+    title: "Dedicated team",
+    description: "A senior product team that works continuously with your stakeholders and users.",
+  },
+  {
+    title: "Product partnership",
+    description: "Ongoing discovery, delivery, and improvement as your solution grows after launch.",
+  },
+] as const;
+
+const deliveryStages = ["Discover", "Design", "Build", "Deploy"] as const;
+
+function solutionFaqs(label: string) {
+  return [
+    {
+      question: `How long does a ${label.toLowerCase()} project take?`,
+      answer: "The timeline depends on scope, integrations, and rollout needs. We confirm milestones after discovery and can phase the first release around the highest-value workflow.",
+      tag: "Timeline",
+      column: "left" as const,
+    },
+    {
+      question: "Can you integrate it with our existing tools?",
+      answer: "Yes. We map your current systems and connect the APIs, data sources, and workflows that matter to the first release.",
+      tag: "Integrations",
+      column: "right" as const,
+    },
+    {
+      question: "Can the solution grow with our team?",
+      answer: "We design the data model, permissions, and architecture for the next stage of growth, not only the first demo.",
+      tag: "Scale",
+      column: "left" as const,
+    },
+    {
+      question: "What happens after launch?",
+      answer: "We support rollout, training, monitoring, fixes, and the next product decisions so ownership continues beyond go-live.",
+      tag: "Support",
+      column: "right" as const,
+    },
+  ];
+}
+
 type Props = {
   solution: SolutionContent;
 };
 
 export function SolutionDetailPage({ solution }: Props) {
   const related = getAllSolutions().filter((s) => s.slug !== solution.slug).slice(0, 3);
+  const projects = solution.projectSlugs
+    .map((slug) => getProjectBySlug(slug))
+    .filter((project): project is NonNullable<typeof project> => Boolean(project));
 
   return (
     <div className="flex min-h-full w-full flex-col bg-horizon-cream text-foreground">
@@ -108,12 +175,83 @@ export function SolutionDetailPage({ solution }: Props) {
           </div>
         </section>
 
+        <section className="w-full bg-white" aria-labelledby="business-problem-heading">
+          <div className={cn(container, sectionPad)}>
+            <Reveal>
+              <p className={overline}>The business problem</p>
+              <h2 id="business-problem-heading" className="mt-3 max-w-3xl font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
+                When work is spread across <span className="italic">too many places</span>
+              </h2>
+              <p className="mt-4 max-w-2xl text-base leading-relaxed text-horizon-muted md:text-lg">
+                Teams often outgrow disconnected tools, manual handoffs, and reporting they cannot trust. {solution.label} brings the critical workflow into one system built around how your business actually operates.
+              </p>
+            </Reveal>
+            <ul className="mt-10 grid gap-4 md:grid-cols-3">
+              {["Disconnected data and duplicate work", "Slow decisions without live visibility", "Processes that break as the team grows"].map((problem, i) => (
+                <li key={problem}>
+                  <Reveal delay={i * motionStagger} className={cn(cardSoft, "h-full p-6")}>
+                    <p className="font-heading text-lg font-medium text-horizon-navy">{problem}</p>
+                  </Reveal>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section className="w-full bg-horizon-sky/35" aria-labelledby="our-solution-heading">
+          <div className={cn(container, sectionPad)}>
+            <Reveal>
+              <p className={overline}>Our solution</p>
+              <h2 id="our-solution-heading" className="mt-3 font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
+                A platform shaped around your <span className="italic">priorities</span>
+              </h2>
+            </Reveal>
+            <ul className="mt-10 grid gap-4 md:grid-cols-3">
+              {solution.summary.map((item, i) => (
+                <li key={item}>
+                  <Reveal delay={i * motionStagger} className={cn(card, "h-full p-6")}>
+                    <p className="font-heading text-xl font-medium text-horizon-navy">{item}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-horizon-muted">
+                      A practical capability aligned to your people, processes, and growth goals.
+                    </p>
+                  </Reveal>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section className="w-full bg-horizon-cream" aria-labelledby="how-we-solve-heading">
+          <div className={cn(container, sectionPad)}>
+            <Reveal>
+              <p className={overline}>How we solve it</p>
+              <h2 id="how-we-solve-heading" className="mt-3 font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
+                Discover <span className="italic">to deploy</span>
+              </h2>
+            </Reveal>
+            <ol className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {solution.approach.map((step, i) => (
+                <li key={step.step}>
+                  <Reveal delay={i * motionStagger}>
+                    <span className="font-heading text-2xl text-horizon-navy/25">{step.step}</span>
+                    <h3 className="mt-2 font-heading text-lg font-medium text-horizon-navy">
+                      {deliveryStages[i] ?? step.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-horizon-muted">{step.description}</p>
+                  </Reveal>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
         <section className="w-full bg-white" aria-labelledby="features-heading">
           <div className={cn(container, sectionPad)}>
             <Reveal>
+              <p className={overline}>Features / capabilities</p>
               <h2
                 id="features-heading"
-                className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl"
+                className="mt-3 font-heading text-3xl font-normal text-horizon-navy md:text-4xl"
               >
                 Core <span className="italic">capabilities</span>
               </h2>
@@ -171,8 +309,9 @@ export function SolutionDetailPage({ solution }: Props) {
         <section className="w-full bg-horizon-sky/35">
           <div className={cn(container, sectionPad)}>
             <Reveal>
+              <p className={overline}>Industries &amp; use cases</p>
               <h2 className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
-                Use <span className="italic">cases</span>
+                Built for <span className="italic">real work</span>
               </h2>
             </Reveal>
             <ul className="mt-10 grid gap-4 md:grid-cols-3">
@@ -192,9 +331,81 @@ export function SolutionDetailPage({ solution }: Props) {
           </div>
         </section>
 
+        <section className="w-full bg-white" aria-labelledby="technology-heading">
+          <div className={cn(container, sectionPad)}>
+            <Reveal>
+              <p className={overline}>Technology</p>
+              <h2 id="technology-heading" className="mt-3 font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
+                The right stack for <span className="italic">the job</span>
+              </h2>
+              <p className="mt-3 max-w-2xl text-base leading-relaxed text-horizon-muted">
+                We choose dependable technologies around your product requirements, integrations, security needs, and long-term ownership plan.
+              </p>
+            </Reveal>
+            <ul className="mt-8 flex flex-wrap gap-3">
+              {["Web and mobile interfaces", "APIs and integrations", "Cloud-ready deployment", "Role-based security", "Analytics and reporting", "Testing and monitoring"].map((item, i) => (
+                <li key={item}>
+                  <Reveal delay={i * motionStagger}>
+                    <span className="inline-flex rounded-full border border-horizon-border bg-horizon-cream px-4 py-2 text-sm text-horizon-navy">{item}</span>
+                  </Reveal>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section className="w-full bg-horizon-peach/40" aria-labelledby="architecture-heading">
+          <div className={cn(container, sectionPad)}>
+            <Reveal>
+              <p className={overline}>Architecture / workflow</p>
+              <h2 id="architecture-heading" className="mt-3 font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
+                A foundation your team can <span className="italic">own</span>
+              </h2>
+            </Reveal>
+            <ol className="mt-10 grid gap-4 md:grid-cols-3">
+              {architectureLayers.map((layer, i) => (
+                <li key={layer.title}>
+                  <Reveal delay={i * motionStagger} className={cn(card, "h-full p-6")}>
+                    <span className="font-heading text-2xl text-horizon-navy/25">0{i + 1}</span>
+                    <h3 className="mt-3 font-heading text-lg font-medium text-horizon-navy">{layer.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-horizon-muted">{layer.description}</p>
+                  </Reveal>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        <section className="w-full bg-white" aria-labelledby="case-study-heading">
+          <div className={cn(container, sectionPad)}>
+            <Reveal>
+              <p className={overline}>Case study</p>
+              <h2 id="case-study-heading" className="mt-3 font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
+                Real products, <span className="italic">shipped</span>
+              </h2>
+              <p className="mt-3 max-w-2xl text-base leading-relaxed text-horizon-muted">
+                See related projects that show how we turn this type of solution into working software for real teams.
+              </p>
+            </Reveal>
+            {projects.length > 0 ? (
+              <div className="mt-10 grid gap-5 md:grid-cols-2">
+                {projects.map((project, i) => (
+                  <ProjectCard key={project.slug} item={project} index={i} />
+                ))}
+              </div>
+            ) : null}
+            <Reveal delay={motionStagger} className="mt-8">
+              <Link href="/projects" className={btnOutline}>
+                View all projects
+              </Link>
+            </Reveal>
+          </div>
+        </section>
+
         <section className="w-full bg-white">
           <div className={cn(container, sectionPad)}>
             <Reveal>
+              <p className={overline}>Why Next Software Development</p>
               <h2 className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
                 Why teams <span className="italic">choose us</span>
               </h2>
@@ -219,28 +430,24 @@ export function SolutionDetailPage({ solution }: Props) {
           </div>
         </section>
 
-        <section className="w-full bg-horizon-cream">
+        <section className="w-full bg-horizon-cream" aria-labelledby="engagement-models-heading">
           <div className={cn(container, sectionPad)}>
             <Reveal>
-              <h2 className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
-                How we <span className="italic">deliver</span>
+              <p className={overline}>Engagement models</p>
+              <h2 id="engagement-models-heading" className="mt-3 font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
+                A delivery model that fits <span className="italic">your team</span>
               </h2>
             </Reveal>
-            <ol className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {solution.approach.map((step, i) => (
-                <li key={step.step}>
-                  <Reveal delay={i * motionStagger}>
-                    <span className="font-heading text-2xl text-horizon-navy/25">{step.step}</span>
-                    <h3 className="mt-2 font-heading text-lg font-medium text-horizon-navy">
-                      {step.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-horizon-muted">
-                      {step.description}
-                    </p>
+            <ul className="mt-10 grid gap-4 md:grid-cols-3">
+              {engagementModels.map((model, i) => (
+                <li key={model.title}>
+                  <Reveal delay={i * motionStagger} className={cn(cardSoft, "h-full p-6")}>
+                    <h3 className="font-heading text-lg font-medium text-horizon-navy">{model.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-horizon-muted">{model.description}</p>
                   </Reveal>
                 </li>
               ))}
-            </ol>
+            </ul>
           </div>
         </section>
 
@@ -284,11 +491,24 @@ export function SolutionDetailPage({ solution }: Props) {
           </section>
         ) : null}
 
+        <FaqSection
+          items={solutionFaqs(solution.label)}
+          overlineText={`${solution.label} FAQs`}
+          title={
+            <>
+              Questions, <span className="italic">answered</span>
+            </>
+          }
+          intro={`Common questions about planning, building, and growing a ${solution.label.toLowerCase()} solution.`}
+          footerCta="Ask about your project"
+          footerHref={contactPath}
+        />
+
         <section className="w-full bg-horizon-navy text-white">
           <div className={cn(container, sectionPad, "text-center")}>
             <Reveal>
               <h2 className="font-heading text-3xl font-normal md:text-4xl">
-                Ready to build your <span className="italic">{solution.label}</span>?
+                Start your <span className="italic">{solution.label}</span> project
               </h2>
               <p className="mx-auto mt-4 max-w-lg text-sm text-white/75 md:text-base">
                 Tell us about your users, integrations, and timeline, we&apos;ll reply within one
@@ -298,7 +518,7 @@ export function SolutionDetailPage({ solution }: Props) {
                 href={contactPath}
                 className="mt-8 inline-flex h-11 items-center justify-center rounded-full bg-white px-8 text-sm font-medium text-horizon-navy transition-transform hover:scale-[1.02] active:scale-[0.98]"
               >
-                Get in touch
+                Start Your Project
               </Link>
             </Reveal>
           </div>

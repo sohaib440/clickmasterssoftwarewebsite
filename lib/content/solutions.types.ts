@@ -10,7 +10,7 @@ export type SolutionCategory =
 
 /**
  * Product solution one entry = /solutions/{slug}
- * Add rows to `solutions` in solutions.data.ts (no new route files needed).
+ * Add rows to `data/solutions.ts` (no new route files needed).
  */
 export type SolutionContent = {
   slug: string;
@@ -23,6 +23,8 @@ export type SolutionContent = {
   heroImage: ContentImage;
   /** Short bullets on index cards */
   summary: string[];
+  /** Real shipped projects shown on the solution detail page */
+  projectSlugs: string[];
   features: ContentBlock[];
   capabilities: string[];
   useCases: ContentBlock[];
