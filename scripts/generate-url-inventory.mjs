@@ -20,6 +20,7 @@ const PAGE_SITEMAPS = [
   { file: "sitemap_solutions.xml", category: "Solutions" },
   { file: "sitemap_projects.xml", category: "Projects" },
   { file: "sitemap_case_studies.xml", category: "Case Studies" },
+  { file: "sitemap_industries.xml", category: "Industries" },
   { file: "sitemap_locations.xml", category: "Locations (Country)" },
   { file: "sitemap_citiesofpakistan.xml", category: "Locations (Cities)" },
   { file: "sitemap_blog.xml", category: "Blog" },

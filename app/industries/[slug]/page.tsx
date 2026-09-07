@@ -30,10 +30,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: { absolute: industry.pageTitle },
     description: industry.metaDescription,
-    robots: {
-      index: false,
-      follow: true,
-    },
     ...selfCanonical(path),
     openGraph: {
       title: industry.pageTitle,

@@ -145,7 +145,14 @@ const internationalMarkets = [
 
 const featuredStats = companyStats.map(({ value, label }) => ({ value, label }));
 
-const POPULAR_CITY_NAMES = ["Islamabad", "Lahore", "Karachi", "Faisalabad", "Multan"] as const;
+const POPULAR_CITY_NAMES = [
+  "Islamabad",
+  "Lahore",
+  "Karachi",
+  "Faisalabad",
+  "Multan",
+  "Peshawar",
+] as const;
 
 function WorldMapBackdrop({ className }: { className?: string }) {
   return (

@@ -79,6 +79,67 @@ const CHILD_ALIAS: Record<string, string> = {
   "api-development": "api-development-integration",
 };
 
+const LOCATION_HUB_BY_CITY_SLUG: Record<string, string> = {
+  rawalpindi: "islamabad",
+  "wah-cantt": "islamabad",
+  taxila: "islamabad",
+  attock: "islamabad",
+  jhelum: "islamabad",
+  chakwal: "islamabad",
+  sheikhupura: "lahore",
+  kasur: "lahore",
+  gujranwala: "lahore",
+  gujrat: "lahore",
+  sialkot: "lahore",
+  wazirabad: "lahore",
+  chiniot: "faisalabad",
+  jhang: "faisalabad",
+  "toba-tek-singh": "faisalabad",
+  sargodha: "faisalabad",
+  sahiwal: "faisalabad",
+  okara: "faisalabad",
+  khanewal: "multan",
+  vehari: "multan",
+  bahawalpur: "multan",
+  muzaffargarh: "multan",
+  "dera-ghazi-khan": "multan",
+  "d-g-khan": "multan",
+  "rahim-yar-khan": "multan",
+  mardan: "peshawar",
+  nowshera: "peshawar",
+  charsadda: "peshawar",
+  swabi: "peshawar",
+  kohat: "peshawar",
+  abbottabad: "peshawar",
+  mingora: "peshawar",
+  "dera-ismail-khan": "peshawar",
+  hyderabad: "karachi",
+  dadu: "karachi",
+  thatta: "karachi",
+  sukkur: "karachi",
+  larkana: "karachi",
+  nawabshah: "karachi",
+  "mirpur-khas": "karachi",
+  khairpur: "karachi",
+  jacobabad: "karachi",
+  mirpur: "azad-jammu-and-kashmir",
+  muzaffarabad: "azad-jammu-and-kashmir",
+  kotli: "azad-jammu-and-kashmir",
+  rawalakot: "azad-jammu-and-kashmir",
+  gilgit: "gilgit-baltistan",
+  skardu: "gilgit-baltistan",
+  quetta: "balochistan",
+  gwadar: "balochistan",
+  turbat: "balochistan",
+  khuzdar: "balochistan",
+  ajk: "azad-jammu-and-kashmir",
+};
+
+const locationPathPrefixes = [
+  "/location/software-house-and-software-development-company-in-",
+  "/location/software-house-and-software-company-in-",
+] as const;
+
 function stripTrailingSlash(pathname: string) {
   if (pathname.length > 1 && pathname.endsWith("/")) {
     return pathname.slice(0, -1);
@@ -138,12 +199,21 @@ function lookupLegacy(path: string): string | null {
     return "/blog";
   }
 
-  const legacyLocationPrefix = "/location/software-house-and-software-company-in-";
-  if (path.startsWith(legacyLocationPrefix)) {
-    return path.replace(
-      "software-house-and-software-company-in-",
-      "software-house-and-software-development-company-in-"
-    );
+  for (const prefix of locationPathPrefixes) {
+    if (!path.startsWith(prefix)) continue;
+
+    const citySlug = path.slice(prefix.length);
+    const hubSlug = LOCATION_HUB_BY_CITY_SLUG[citySlug];
+    if (hubSlug) {
+      return `/location/software-house-and-software-development-company-in-${hubSlug}`;
+    }
+
+    if (prefix.endsWith("software-company-in-")) {
+      return path.replace(
+        "software-house-and-software-company-in-",
+        "software-house-and-software-development-company-in-"
+      );
+    }
   }
 
   if (EXACT[path]) {
