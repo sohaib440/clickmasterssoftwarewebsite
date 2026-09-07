@@ -8,10 +8,6 @@ import { breadcrumbSchema, itemListSchema } from "@/seo/schema";
 export const metadata: Metadata = {
   title: pageTitle(industriesPageMeta.title),
   description: industriesPageMeta.description,
-  robots: {
-    index: false,
-    follow: true,
-  },
   ...selfCanonical("/industries"),
   openGraph: {
     title: pageTitleString(industriesPageMeta.title),
