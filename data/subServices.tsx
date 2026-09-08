@@ -22,6 +22,8 @@ type SubInput = {
   pageTitle: string;
   content: string[];
   image?: SubCategoryContent["image"];
+  highlights?: SubCategoryContent["highlights"];
+  highlightsDescription?: SubCategoryContent["highlightsDescription"];
   whoWeAre?: SubCategoryContent["whoWeAre"];
 };
 
