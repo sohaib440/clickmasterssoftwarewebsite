@@ -3,6 +3,7 @@ import type {
   ContentBlock,
   ContentImage,
 } from "@/lib/content/types";
+import type { FaqItem } from "@/data/landing/types";
 
 export type ServiceBreadcrumb = {
   label: string;
@@ -53,6 +54,7 @@ export type MainServicePageContent = {
   highlights: {
     title: string;
     items: ContentBlock[];
+    description?: string;
   };
   approach: {
     title: string;
@@ -71,6 +73,13 @@ export type SubServicePageContent = {
   parent: { label: string; href: string };
   breadcrumbs: ServiceBreadcrumb[];
   hero: ServiceHeroContent;
+  whoWeAre?: {
+    overlineText?: string;
+    title?: string;
+    paragraphs: string[];
+  };
+  teamIntro?: string;
+  faqs?: FaqItem[];
   /** About / overview paragraphs for the sub-service (may include [label](/path) links) */
   contentParagraphs: string[];
   overviewTitle: string;

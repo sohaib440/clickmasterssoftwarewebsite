@@ -22,6 +22,7 @@ type SubInput = {
   pageTitle: string;
   content: string[];
   image?: SubCategoryContent["image"];
+  whoWeAre?: SubCategoryContent["whoWeAre"];
 };
 
 function sub(input: SubInput): SubCategoryContent {
@@ -1320,18 +1321,112 @@ const subServicesByCategoryRaw: SubServicesMap = {
     }),
     sub({
       slug: "supply-chain-management",
-      label: "Supply Chain Management (SCM)",
+      label: "Supply Chain Management (SCM) Software Development Services",
       description:
-        "Procurement, inventory, and logistics systems that improve visibility and control.",
+        "We are a software development company providing custom SCM software solutions for businesses worldwide. We design and develop secure, scalable, and user-friendly supply chain management systems for procurement, inventory management, warehouse operations, logistics, vendor coordination, and real-time supply chain visibility.\n\nOur supply chain software development services help businesses automate manual processes, connect ERP and existing business systems, improve inventory accuracy, track operations, and gain better visibility across the entire supply chain. From custom inventory and warehouse management software to enterprise supply chain platforms, we build solutions tailored to your workflows, operational requirements, and growth goals.",
       tagline:
-        "Supply chain management software for procurement, inventory, and logistics visibility from a best software development company enterprise practice.",
-      pageTitle: "Supply Chain Management Software",
+        "We are a software development company providing custom SCM software solutions for businesses worldwide. We design and develop secure, scalable, and user-friendly supply chain management systems for procurement, inventory management, warehouse operations, logistics, vendor coordination, and real-time supply chain visibility.\n\nOur supply chain software development services help businesses automate manual processes, connect ERP and existing business systems, improve inventory accuracy, track operations, and gain better visibility across the entire supply chain. From custom inventory and warehouse management software to enterprise supply chain platforms, we build solutions tailored to your workflows, operational requirements, and growth goals.",
+      pageTitle: "Supply Chain Management Software Development Company",
       metaDescription:
-        "Supply chain management software for procurement, inventory, and logistics control. Improve visibility. Free quote.",
+        "Next Software Development Company builds custom supply chain management software for procurement, inventory, warehouse, logistics, automation, and business operations.",
       content: [
-        "Supply chain management systems improve visibility from purchase to delivery. We build tools for inventory positions, vendor coordination, and exception handling.",
-        "Data from warehouses, carriers, and sales channels comes together so planners act on one picture of reality.",
+        "Supply chain management software services improve visibility from purchase to delivery. We build supply chain management software systems for inventory positions, vendor coordination, and exception handling, so data from warehouses, carriers, and sales channels comes together into one picture of reality that planners can actually act on.",
+        "How we approach supply chain software development starts with discovery: stakeholders, priorities, and success metrics. We map roles, approvals, and system-of-record boundaries so ERP, CRM, and internal platforms reinforce each other instead of working against one another.",
+        "During delivery you work with senior owners and visible checkpoints. Designs and increments are shared early, QA runs alongside development, and we prepare handoff notes so your team can operate and extend the supply chain management software solution we ship.",
+        "A typical supply chain management software development engagement includes architecture, implementation, integrations where needed, launch support, and a clear backlog for what comes next. That keeps procurement, inventory, and logistics systems connected to outcomes inside our Enterprise Solutions practice.",
+        "Our supply chain software development services cover the full lifecycle of a modern SCM platform:",
+        "• Procurement and purchase order automation\n• Real-time inventory and warehouse visibility\n• Vendor and supplier coordination portals\n• Logistics tracking and delivery exception handling\n• Demand planning and forecasting dashboards\n• Integrations with ERP, CRM, and existing systems of record",
+        "For organizations that need execution-level accuracy on the floor and in transit, we also build supply chain execution software that turns plans into action, tracking picks, packs, shipments, and exceptions in real time so operations teams can intervene before a delay becomes a customer complaint.",
+        "For organizations replacing legacy tools, we build supply chain management system software that migrates historical data cleanly, preserves audit trails, and rolls out in phases so operations never stop moving while the new platform comes online.",
       ],
+      highlights: [
+        {
+          title: "Senior-led delivery",
+          description: "Senior-led delivery, with no bait-and-switch to junior-only teams.",
+        },
+        {
+          title: "Maintainable by design",
+          description: "Clear architecture and documentation for handoff after launch.",
+        },
+        {
+          title: "Transparent progress",
+          description: "Weekly demos and honest timelines keep delivery visible.",
+        },
+        {
+          title: "Outcome-focused scoping",
+          description: "We focus on outcomes instead of a padded backlog of nice-to-haves.",
+        },
+        {
+          title: "Security and quality",
+          description: "Security and quality are built into delivery, not bolted on before go-live.",
+        },
+        {
+          title: "Global collaboration",
+          description:
+            "A single accountable team collaborates across the UK, USA, Canada, Australia, UAE, and Pakistan.",
+        },
+      ],
+      highlightsDescription:
+        "As a supply chain management software development company with 7+ years of experience, 500+ happy clients, and a 20+ engineer team, we combine practical pricing with senior technical craft, so you get an enterprise supply chain management software platform built to last, not just to launch.",
+      teamIntro:
+        "We are a focused team of 20+ software engineers, designers, and delivery specialists. Founded in 2019, we are small enough to stay close to every project and experienced enough to deliver from startup MVPs to enterprise supply chain management software systems. Each member is selected for technical craft, clear communication, and professional ownership, including full-stack developers, machine learning engineers, DevOps engineers, data engineers, and mobile developers.",
+      faqs: [
+        {
+          question: "What kinds of supply chain management software solutions do you build?",
+          answer:
+            "Everything from lightweight inventory trackers to full enterprise supply chain management software platforms, including procurement, vendor coordination, logistics tracking, and supply chain execution software for warehouse and delivery operations.",
+          tag: "SCM solutions",
+          column: "left",
+        },
+        {
+          question: "How much does a typical engagement cost?",
+          answer:
+            "Cost depends on scope, integrations, and platform complexity. After discovery, we provide a fixed project plan with milestones and a clear cost breakdown before development begins.",
+          tag: "Project cost",
+          column: "right",
+        },
+        {
+          question: "How long does it take to build a supply chain management system software platform?",
+          answer:
+            "Most engagements run in 2-week sprints, with a working demo at the end of each one. Timelines vary by scope, but we always agree on milestones upfront so there are no surprises.",
+          tag: "Timelines",
+          column: "left",
+        },
+        {
+          question: "Do you work with clients outside Pakistan?",
+          answer:
+            "Yes. We support clients across the USA, UK, UAE, Canada, Australia, and beyond, with timezone-flexible, English-speaking teams.",
+          tag: "Global delivery",
+          column: "right",
+        },
+        {
+          question: "What happens after launch?",
+          answer:
+            "We provide full handover documentation, code access, and team training, then offer flexible maintenance and support plans so your supply chain management software services keep pace with your business.",
+          tag: "Post-launch",
+          column: "left",
+        },
+        {
+          question: "Is my project idea safe with you?",
+          answer:
+            "Yes. We sign NDAs and treat every client's roadmap and data as confidential from the first conversation.",
+          tag: "Confidentiality",
+          column: "right",
+        },
+      ],
+      cta: {
+        title: "Let's Build Your Supply Chain Management Suite",
+        description:
+          "Share your goals for supply chain management software services and we'll reply within one business day with a clear path forward: no obligation, no sales pressure.",
+      },
+      whoWeAre: {
+        title: "Who We Are",
+        paragraphs: [
+          "Next Software Development is a trusted software partner to founders and operators around the world. We were founded in 2019 with one belief: that great software, including a serious supply chain management suite, should be accessible to every business, not just the Fortune 500.",
+          "Since 2019 we have built 7+ years of experience supporting 500+ happy clients across 6 countries with a team of 20+ software engineers, designers, QA specialists, and project managers. We turn complex operational challenges into clean, efficient supply chain software development, whether that means a mobile app for a growing startup or a full enterprise supply chain management software platform for a multi-warehouse manufacturer.",
+          "Clients choose us for senior delivery quality and practical pricing. You get English-speaking, timezone-flexible teams with strong technical craft, clear communication, and ownership that continues after launch.",
+        ],
+      },
     }),
     sub({
       slug: "enterprise-integration",

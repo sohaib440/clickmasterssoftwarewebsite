@@ -32,7 +32,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const titleSegment = data.sub.pageTitle || `${data.sub.label} | ${data.main.label}`;
 
   return {
-    title: pageTitle(titleSegment),
+    title: data.sub.pageTitle
+      ? { absolute: data.sub.pageTitle }
+      : pageTitle(titleSegment),
     description,
     ...selfCanonical(`/${slug}/${subSlug}`),
     openGraph: {

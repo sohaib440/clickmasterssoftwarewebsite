@@ -1350,14 +1350,14 @@ export const locationSoftwareSolutions: LocationSoftwareSolution[] = [
     title: "CRM",
     description:
       "Lead capture, pipeline visibility, and sales follow-ups in one system your team will actually use.",
-    href: solutionPath("crm"),
+    href: solutionPath("crm-development"),
     Icon: Users,
   },
   {
     title: "ERP",
     description:
       "Finance, inventory, production, and reporting connected so owners see one operational truth.",
-    href: solutionPath("erp"),
+    href: solutionPath("custom-erp-software-development"),
     Icon: Workflow,
   },
   {
@@ -1378,14 +1378,14 @@ export const locationSoftwareSolutions: LocationSoftwareSolution[] = [
     title: "Inventory",
     description:
       "Stock control, purchasing, and warehouse visibility built around how your warehouse actually runs.",
-    href: solutionPath("inventory-management"),
+    href: solutionPath("inventory-management-software-development"),
     Icon: Warehouse,
   },
   {
     title: "HRMS",
     description:
       "Attendance, payroll, leave, and employee records without spreadsheet chaos across departments.",
-    href: solutionPath("hrms"),
+    href: solutionPath("hr-management-software-development"),
     Icon: Boxes,
   },
 ];

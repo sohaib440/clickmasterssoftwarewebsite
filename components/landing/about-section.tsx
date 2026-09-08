@@ -29,8 +29,12 @@ type AboutSectionContent = {
   teamCta: string;
 };
 
+type AboutSectionCopy = Pick<AboutSectionContent, "paragraphs"> &
+  Partial<Pick<AboutSectionContent, "overlineText" | "title">>;
+
 type AboutSectionProps = {
   content?: AboutSectionContent;
+  copy?: AboutSectionCopy;
   /** When false, hides the values grid (use a dedicated Why Choose section instead). */
   showValues?: boolean;
   /** When set, wiki links that resolve to this path render as plain text (no self-links). */
@@ -153,10 +157,11 @@ export function renderParagraphWithCountryLinks(
 
 export function AboutSection({
   content,
+  copy,
   showValues = true,
   currentPath,
 }: AboutSectionProps = {}) {
-  const data = content ?? {
+  const defaultData = {
     overlineText: "About us",
     title: "Who we are?",
     paragraphs: aboutSection.paragraphs,
@@ -165,6 +170,7 @@ export function AboutSection({
     teamLink: aboutSection.teamLink,
     teamCta: aboutSection.teamCta,
   };
+  const data = { ...defaultData, ...content, ...copy };
 
   return (
     <section id="about" className="w-full bg-white text-horizon-navy">

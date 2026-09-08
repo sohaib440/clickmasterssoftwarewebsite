@@ -4,7 +4,6 @@ import { ArrowUpRight } from "lucide-react";
 import { AboutSection } from "@/components/landing/about-section";
 import { BlogSection } from "@/components/landing/blog-section";
 import { TrustedPartnersSection } from "@/components/landing/clients-section";
-import { ContactSection } from "@/components/landing/contact-section";
 import { FaqSection } from "@/components/landing/faq-section";
 import { IndustriesSection } from "@/components/landing/industries-section";
 import { ProcessSection } from "@/components/landing/process-section";
@@ -65,6 +64,9 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
   const {
     breadcrumbs,
     hero,
+    whoWeAre,
+    teamIntro,
+    faqs,
     contentParagraphs,
     overviewTitle,
     highlights,
@@ -81,7 +83,7 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
 
         <TrustNumbersSection className="[&>div]:!pt-2 [&>div]:md:!pt-3 [&>div]:!pb-6 [&>div]:md:!pb-8" />
         <TrustedPartnersSection className="border-horizon-border/60 bg-white" />
-        <AboutSection showValues={false} />
+        <AboutSection copy={whoWeAre} showValues={false} />
 
         <section className="w-full bg-black text-white" aria-labelledby="sub-service-overview-heading">
           <div className={cn(container, sectionPad)}>
@@ -98,7 +100,7 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
             <div className="mt-8 space-y-5">
               {contentParagraphs.map((paragraph, index) => (
                 <Reveal key={index} delay={index * motionStagger}>
-                  <p className="text-justify text-base leading-relaxed text-white/70 md:text-lg">
+                  <p className="whitespace-pre-line text-justify text-base leading-relaxed text-white/70 md:text-lg">
                     {textWithLinks(
                       paragraph,
                       "font-semibold text-primary decoration-primary/70 hover:text-primary/80"
@@ -144,10 +146,17 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
                 </li>
               ))}
             </ul>
+            {highlights.description ? (
+              <Reveal className="mt-8 max-w-4xl">
+                <p className="text-base leading-relaxed text-white/70 md:text-lg">
+                  {highlights.description}
+                </p>
+              </Reveal>
+            ) : null}
           </div>
         </section>
 
-        <TeamSection />
+        <TeamSection intro={teamIntro} />
 
         {relatedSubs.items.length > 0 ? (
           <section className="w-full bg-white">
@@ -191,8 +200,7 @@ export function SubServicePageLayout({ content }: SubServicePageLayoutProps) {
 
         <TestimonialsSection />
         <BlogSection />
-        <FaqSection />
-        <ContactSection />
+        <FaqSection items={faqs} />
 
         <section className="w-full bg-horizon-navy text-white">
           <div className={cn(container, sectionPad)}>

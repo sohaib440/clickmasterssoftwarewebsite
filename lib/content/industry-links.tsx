@@ -28,9 +28,9 @@ const PHRASES: PhraseLink[] = [
   { phrase: "testing & qa", href: "/testing-and-qa" },
   { phrase: "testing and qa", href: "/testing-and-qa" },
   { phrase: "ui/ux design", href: "/ui-ux-design" },
-  { phrase: "inventory management", href: "/solutions/inventory-management" },
-  { phrase: "workflow automation", href: "/solutions/workflow-automation" },
-  { phrase: "ecommerce platform", href: "/solutions/ecommerce-platform" },
+  { phrase: "inventory management", href: "/solutions/inventory-management-software-development" },
+  { phrase: "workflow automation", href: "/solutions/workflow-automation-software-development" },
+  { phrase: "ecommerce platform", href: "/solutions/ecommerce-platform-development" },
   { phrase: "hospital management", href: "/projects/hospital-management-system" },
   { phrase: "health & fitness", href: "/industries/health-fitness" },
   { phrase: "real estate", href: "/industries/real-estate" },
@@ -60,14 +60,14 @@ const PHRASES: PhraseLink[] = [
   { phrase: "hotels", href: "/industries/hospitality" },
   { phrase: "cloud", href: "/cloud-devops" },
   { phrase: "devops", href: "/cloud-devops" },
-  { phrase: "erp", href: "/solutions/erp" },
-  { phrase: "crm", href: "/solutions/crm" },
+  { phrase: "erp", href: "/solutions/custom-erp-software-development" },
+  { phrase: "crm", href: "/solutions/crm-development" },
   { phrase: "hms", href: "/healthcare-software-development" },
   { phrase: "lms", href: "/industries/education" },
   { phrase: "pos", href: "/ecommerce-development" },
   { phrase: "iot", href: "/cloud-devops" },
   { phrase: "kyc", href: "/industries/banking" },
-  { phrase: "mes", href: "/solutions/erp" },
+  { phrase: "mes", href: "/solutions/custom-erp-software-development" },
 ];
 
 const SORTED_PHRASES = [...PHRASES].sort((a, b) => b.phrase.length - a.phrase.length);
@@ -76,7 +76,7 @@ export const industryRelatedLinks: Record<string, { label: string; href: string 
   manufacturing: [
     { label: "Software development", href: "/software-development" },
     { label: "Enterprise solutions", href: "/enterprise-solutions" },
-    { label: "ERP systems", href: "/solutions/erp" },
+    { label: "ERP systems", href: "/solutions/custom-erp-software-development" },
     { label: "Cloud & DevOps", href: "/cloud-devops" },
   ],
   healthcare: [
@@ -88,12 +88,12 @@ export const industryRelatedLinks: Record<string, { label: string; href: string 
   retail: [
     { label: "Ecommerce development", href: "/ecommerce-development" },
     { label: "Web development", href: "/web-development" },
-    { label: "Ecommerce platforms", href: "/solutions/ecommerce-platform" },
-    { label: "Inventory management", href: "/solutions/inventory-management" },
+    { label: "Ecommerce platforms", href: "/solutions/ecommerce-platform-development" },
+    { label: "Inventory management", href: "/solutions/inventory-management-software-development" },
   ],
   "real-estate": [
     { label: "Custom software", href: "/software-development" },
-    { label: "CRM systems", href: "/solutions/crm" },
+    { label: "CRM systems", href: "/solutions/crm-development" },
     { label: "Web development", href: "/web-development" },
     { label: "Mobile apps", href: "/mobile-development" },
   ],
@@ -112,8 +112,8 @@ export const industryRelatedLinks: Record<string, { label: string; href: string 
   logistics: [
     { label: "Software development", href: "/software-development" },
     { label: "Mobile app development", href: "/mobile-development" },
-    { label: "Inventory management", href: "/solutions/inventory-management" },
-    { label: "Workflow automation", href: "/solutions/workflow-automation" },
+    { label: "Inventory management", href: "/solutions/inventory-management-software-development" },
+    { label: "Workflow automation", href: "/solutions/workflow-automation-software-development" },
   ],
   media: [
     { label: "Web development", href: "/web-development" },
@@ -124,7 +124,7 @@ export const industryRelatedLinks: Record<string, { label: string; href: string 
   banking: [
     { label: "Cybersecurity", href: "/cybersecurity" },
     { label: "Software development", href: "/software-development" },
-    { label: "CRM systems", href: "/solutions/crm" },
+    { label: "CRM systems", href: "/solutions/crm-development" },
     { label: "Testing & QA", href: "/testing-and-qa" },
   ],
   agriculture: [
@@ -153,14 +153,14 @@ export const industryRelatedLinks: Record<string, { label: string; href: string 
   ],
   insurance: [
     { label: "Software development", href: "/software-development" },
-    { label: "Workflow automation", href: "/solutions/workflow-automation" },
+    { label: "Workflow automation", href: "/solutions/workflow-automation-software-development" },
     { label: "Cybersecurity", href: "/cybersecurity" },
     { label: "Data & BI", href: "/data-business-intelligence" },
   ],
   consulting: [
     { label: "Software development", href: "/software-development" },
-    { label: "CRM systems", href: "/solutions/crm" },
-    { label: "Business analytics", href: "/solutions/business-analytics" },
+    { label: "CRM systems", href: "/solutions/crm-development" },
+    { label: "Business analytics", href: "/solutions/business-analytics-software-development" },
     { label: "Web development", href: "/web-development" },
   ],
 };

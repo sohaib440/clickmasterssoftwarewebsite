@@ -36,6 +36,25 @@ export type SubCategoryContent = {
   content?: string[];
   /** Optional; falls back to parent main category highlights */
   highlights?: ContentBlock[];
+  /** Optional closing copy shown below the highlights */
+  highlightsDescription?: string;
+  /** Optional page-specific copy for the team section */
+  teamIntro?: string;
+  /** Optional page-specific FAQs */
+  faqs?: FaqItem[];
+  /** Optional page-specific final CTA copy */
+  cta?: {
+    title?: string;
+    description?: string;
+    buttonLabel?: string;
+    buttonHref?: string;
+  };
+  /** Optional page-specific copy for the shared Who We Are section */
+  whoWeAre?: {
+    overlineText?: string;
+    title?: string;
+    paragraphs: string[];
+  };
 };
 
 /** Section headings override defaults on the template */
