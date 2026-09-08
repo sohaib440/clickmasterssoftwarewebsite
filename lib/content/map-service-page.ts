@@ -123,11 +123,15 @@ export function mapSubCategoryToServicePage(
       primaryCta: defaultPrimaryCta,
       secondaryCta: defaultSecondaryCta,
     },
+    whoWeAre: sub.whoWeAre,
+    teamIntro: sub.teamIntro,
+    faqs: sub.faqs,
     contentParagraphs,
     overviewTitle: `About ${sub.label}`,
     highlights: {
       title: `Why ${sub.label} with us`,
       items: highlights,
+      description: sub.highlightsDescription,
     },
     approach: {
       title: sections.approach.title,
@@ -154,10 +158,11 @@ export function mapSubCategoryToServicePage(
       })),
     },
     cta: {
-      title: `Let's talk about ${sub.label}`,
-      description: defaultSubCategorySections.cta.description(sub.label),
-      buttonLabel: defaultSubCategorySections.cta.buttonLabel,
-      buttonHref: defaultSubCategorySections.cta.buttonHref,
+      title: sub.cta?.title ?? `Let's talk about ${sub.label}`,
+      description:
+        sub.cta?.description ?? defaultSubCategorySections.cta.description(sub.label),
+      buttonLabel: sub.cta?.buttonLabel ?? defaultSubCategorySections.cta.buttonLabel,
+      buttonHref: sub.cta?.buttonHref ?? defaultSubCategorySections.cta.buttonHref,
     },
   };
 }

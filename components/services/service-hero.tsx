@@ -60,7 +60,7 @@ export function ServiceHero({ breadcrumbs, hero }: ServiceHeroProps) {
               </h1>
             </Reveal>
             <Reveal immediate delay={motionStagger * 2}>
-              <p className="text-justify text-base leading-relaxed text-white/85 md:text-[1.05rem]">
+              <p className="whitespace-pre-line text-justify text-base leading-relaxed text-white/85 md:text-[1.05rem]">
                 {hero.description}
               </p>
             </Reveal>
