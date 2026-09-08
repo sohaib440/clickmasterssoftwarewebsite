@@ -24,6 +24,9 @@ type SubInput = {
   image?: SubCategoryContent["image"];
   highlights?: SubCategoryContent["highlights"];
   highlightsDescription?: SubCategoryContent["highlightsDescription"];
+  teamIntro?: SubCategoryContent["teamIntro"];
+  faqs?: SubCategoryContent["faqs"];
+  cta?: SubCategoryContent["cta"];
   whoWeAre?: SubCategoryContent["whoWeAre"];
 };
 
