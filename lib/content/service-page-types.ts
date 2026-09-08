@@ -86,6 +86,7 @@ export type SubServicePageContent = {
   highlights: {
     title: string;
     items: ContentBlock[];
+    description?: string;
   };
   approach: {
     title: string;
