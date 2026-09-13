@@ -62,7 +62,7 @@ export default function PrivacyPage() {
             <p className="mt-4 text-sm text-horizon-muted">Last updated: August 7, 2026</p>
             <p className="mt-6 text-base leading-relaxed text-horizon-muted">
               This Privacy Policy explains how {siteBrand.name} (&quot;we&quot;, &quot;us&quot;, or
-              &quot;our&quot;), headquartered in {siteBrand.location}, collects, uses, stores, shares,
+              &quot;our&quot;), headquartered at {siteBrand.address}, collects, uses, stores, shares,
               and protects personal information when you visit {siteHost}, submit a contact or quote
               form, email us, or otherwise interact with our marketing site and related services.
             </p>
@@ -109,7 +109,7 @@ export default function PrivacyPage() {
                 <p>
                   Controller of personal data collected through this website:{" "}
                   <strong className="font-medium text-horizon-navy">{siteBrand.legalName}</strong>,{" "}
-                  {siteBrand.location}.
+                  {siteBrand.address}.
                 </p>
                 <ul className="list-disc space-y-1 pl-5">
                   <li>
@@ -336,7 +336,7 @@ export default function PrivacyPage() {
                 <Link href={contactPath} className="text-primary underline">
                   contact page
                 </Link>
-                  . Postal / office location: {siteBrand.location}.
+                  . Postal / office location: {siteBrand.address}.
                 </p>
                 <p>
                   Related:{" "}

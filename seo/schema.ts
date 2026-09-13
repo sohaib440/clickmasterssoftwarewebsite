@@ -35,7 +35,7 @@ const siteConfig = {
   logoWidth: siteBrand.logo.width,
   logoHeight: siteBrand.logo.height,
   description: siteMetadata.description,
-  locationLabel: siteBrand.location,
+  locationLabel: siteBrand.address,
 } as const;
 
 const logoImageObject = {
@@ -49,9 +49,10 @@ const logoImageObject = {
 /** Representative business / about photo (not the logo) */
 const organizationImageUrl = `${siteBrand.url}/about-us/software-development-company.webp`;
 
-/** HQ address — only fields confirmed on the site (Islamabad, Pakistan). No invented street. */
+/** HQ address — keep the structured address aligned with the confirmed contact address. */
 const hqAddress = {
   "@type": "PostalAddress",
+  streetAddress: siteBrand.address,
   addressLocality: "Islamabad",
   addressRegion: "Islamabad Capital Territory",
   addressCountry: "PK",
@@ -752,7 +753,7 @@ export const contactPageSchema = {
   "@id": `${siteConfig.url}/contact`,
   url: `${siteConfig.url}/contact`,
   name: `Contact ${siteConfig.name}`,
-  description: `Contact ${siteConfig.name} in ${siteBrand.location}.`,
+  description: `Contact ${siteConfig.name} at ${siteBrand.address}.`,
   isPartOf: { "@id": `${siteConfig.url}/#website` },
   mainEntity: {
     "@type": "Organization",

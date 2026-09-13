@@ -54,7 +54,7 @@ export function SiteFooter() {
                 </li>
                 <li className="site-footer__link inline-flex max-w-full items-start gap-2">
                   <MapPin className="site-footer__icon mt-0.5 size-4 shrink-0" aria-hidden />
-                  <span className="min-w-0 break-words">{siteBrand.location}</span>
+                  <span className="min-w-0 break-words">{siteBrand.address}</span>
                 </li>
               </ul>
               <SocialIconLinks className="pt-1" />

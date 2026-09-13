@@ -16,7 +16,7 @@ export function TopBar() {
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 sm:gap-x-5 lg:gap-8">
             <span className="inline-flex shrink-0 items-center gap-1.5">
               <MapPin className="size-4 shrink-0" aria-hidden />
-              <span className="whitespace-nowrap">{siteBrand.location}</span>
+              <span className="max-w-[18rem] break-words sm:max-w-none sm:whitespace-nowrap">{siteBrand.address}</span>
             </span>
             <PhoneLink className="inline-flex shrink-0 items-center gap-1.5 underline-offset-2 transition-colors hover:underline">
               <Phone className="size-4 shrink-0" aria-hidden />
