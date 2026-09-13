@@ -1406,7 +1406,7 @@ export const contactInfo = {
   phone: siteBrand.phone,
   responseTime: "Within 24 hours",
   hours: "Monday – Friday, 9:00 – 18:00 (PKT)",
-  location: siteBrand.location,
+  location: siteBrand.address,
 } as const;
 
 

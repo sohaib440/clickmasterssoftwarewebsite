@@ -75,7 +75,7 @@ const heroCards = [
 ] as const;
 
 const details = [
-  { icon: MapPin, label: "Our Location", value: siteBrand.location },
+  { icon: MapPin, label: "Our Location", value: siteBrand.address },
   { icon: Phone, label: "Call Us", value: siteBrand.phone, href: sitePhoneTel },
   { icon: Mail, label: "Email Us", value: siteBrand.email, isEmail: true },
   { icon: Clock, label: "Response Time", value: contactInfo.responseTime },

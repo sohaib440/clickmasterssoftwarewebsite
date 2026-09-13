@@ -63,7 +63,7 @@ export default function TermsPage() {
             <p className="mt-6 text-base leading-relaxed text-horizon-muted">
               These Terms of Service (&quot;Terms&quot;) govern access to and use of{" "}
               {siteHost} and related marketing pages operated by {siteBrand.name} (&quot;we&quot;,
-              &quot;us&quot;), based in {siteBrand.location}. By using the site you agree to these
+              &quot;us&quot;), based at {siteBrand.address}. By using the site you agree to these
               Terms. If you do not agree, do not use the site.
             </p>
             <p className="mt-3 text-base leading-relaxed text-horizon-muted">
@@ -272,7 +272,7 @@ export default function TermsPage() {
                   <Link href={contactPath} className="text-primary underline">
                     contact us
                   </Link>
-                  . Business location: {siteBrand.location}.
+                  . Business location: {siteBrand.address}.
                 </p>
               </Section>
             </div>
