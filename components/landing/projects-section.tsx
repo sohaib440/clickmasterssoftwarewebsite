@@ -208,9 +208,9 @@ export function ProjectsSection({
 
               <Link
                 href={projectDetailPath(project.slug)}
-                className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-white transition-colors hover:text-primary"
+                className="mt-6 inline-flex items-center gap-2 rounded-full border border-primary bg-primary px-4 py-2.5 text-sm font-medium text-black transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/90 hover:text-black"
               >
-                View case study
+                View project details
                 <ArrowRight className="size-4" aria-hidden />
               </Link>
             </div>
