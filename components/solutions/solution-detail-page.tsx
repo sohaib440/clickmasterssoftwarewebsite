@@ -314,6 +314,19 @@ export function SolutionDetailPage({ solution }: Props) {
   const projects = solution.projectSlugs
     .map((slug) => getProjectBySlug(slug))
     .filter((project): project is NonNullable<typeof project> => Boolean(project));
+  const processSteps = isErp
+    ? erpServiceItems.map((step, index) => ({
+        key: step.title,
+        number: `0${index + 1}`,
+        title: step.title,
+        description: step.description,
+      }))
+    : solution.approach.map((step, index) => ({
+        key: step.step,
+        number: step.step,
+        title: deliveryStages[index] ?? step.title,
+        description: step.description,
+      }));
 
   return (
     <div className="flex min-h-full w-full flex-col bg-black text-foreground">
@@ -525,12 +538,12 @@ export function SolutionDetailPage({ solution }: Props) {
               </h2>
             </Reveal>
             <ol className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-              {(isErp ? erpServiceItems : solution.approach).map((step, i) => (
-                <li key={isErp ? step.title : step.step}>
+              {processSteps.map((step, i) => (
+                <li key={step.key}>
                   <Reveal delay={i * motionStagger}>
-                    <span className="font-heading text-2xl text-white/20">{isErp ? `0${i + 1}` : step.step}</span>
+                    <span className="font-heading text-2xl text-white/20">{step.number}</span>
                     <h3 className="mt-2 font-heading text-lg font-medium text-white">
-                      {isErp ? step.title : (deliveryStages[i] ?? step.title)}
+                      {step.title}
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-white/70">{step.description}</p>
                   </Reveal>
