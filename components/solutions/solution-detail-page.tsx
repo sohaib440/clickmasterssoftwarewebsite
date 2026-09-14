@@ -21,11 +21,7 @@ import {
 } from "@/lib/landing/constants";
 import type { SolutionContent } from "@/lib/content/solutions.types";
 import { getProjectBySlug } from "@/data/projects";
-import {
-  getAllSolutions,
-  solutionPath,
-  solutionsIndexPath,
-} from "@/lib/content/solutions";
+import { solutionsIndexPath } from "@/lib/content/solutions";
 import { motionStagger } from "@/lib/landing/motion";
 import { cn } from "@/lib/utils";
 
@@ -60,6 +56,51 @@ const engagementModels = [
 ] as const;
 
 const deliveryStages = ["Discover", "Design", "Build", "Deploy"] as const;
+
+const businessBenefits = [
+  {
+    title: "Faster decision-making",
+    description: "Unify reporting and performance data so teams act on live numbers instead of stale spreadsheets.",
+  },
+  {
+    title: "Lower operational overhead",
+    description: "Reduce duplicate tasks, manual updates, and disconnected tools across day-to-day workflows.",
+  },
+  {
+    title: "Scalable growth foundations",
+    description: "Build a platform that supports more users, more locations, more products, and more complex operations over time.",
+  },
+] as const;
+
+const supportAndMaintenance = [
+  {
+    title: "Ongoing optimization",
+    description: "We monitor performance, review usage, and improve workflows as your business evolves.",
+  },
+  {
+    title: "Issue response and fixes",
+    description: "Fast turnaround for bugs, gaps, and change requests to keep operations stable and dependable.",
+  },
+  {
+    title: "Roadmap support",
+    description: "We help prioritize the next improvements based on real data, team feedback, and business priorities.",
+  },
+] as const;
+
+const securityAndReliability = [
+  {
+    title: "Role-based access control",
+    description: "Protect critical workflows and sensitive data with access policies that match team responsibilities.",
+  },
+  {
+    title: "Secure architecture",
+    description: "We implement safe defaults, secure integrations, and clean separation between internal and external data flows.",
+  },
+  {
+    title: "Resilience and observability",
+    description: "Monitoring, error tracking, backups, and operational safeguards help your system stay dependable.",
+  },
+] as const;
 
 const erpModules = ["Finance", "Inventory", "Procurement", "Sales", "HR", "Analytics"] as const;
 const erpIntegrations = ["APIs", "Payments", "Accounting", "Logistics", "Third-party systems"] as const;
@@ -99,7 +140,6 @@ type Props = {
 
 export function SolutionDetailPage({ solution }: Props) {
   const isErp = solution.slug === "custom-erp-software-development";
-  const related = getAllSolutions().filter((s) => s.slug !== solution.slug).slice(0, 3);
   const projects = solution.projectSlugs
     .map((slug) => getProjectBySlug(slug))
     .filter((project): project is NonNullable<typeof project> => Boolean(project));
@@ -451,25 +491,46 @@ export function SolutionDetailPage({ solution }: Props) {
           </div>
         </section>
 
-        <section className="order-12 w-full bg-white">
+        <section className="order-12 w-full bg-white" aria-labelledby="business-benefits-heading">
           <div className={cn(container, sectionPad)}>
             <Reveal>
-              <p className={overline}>Why Next Software Development</p>
-              <h2 className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
+              <p className={overline}>Business benefits / outcomes</p>
+              <h2 id="business-benefits-heading" className="mt-3 font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
+                Measurable value for <span className="italic">your business</span>
+              </h2>
+            </Reveal>
+            <ul className="mt-10 grid gap-4 md:grid-cols-3">
+              {businessBenefits.map((item, i) => (
+                <li key={item.title}>
+                  <Reveal delay={i * motionStagger} className={cn(card, "h-full p-6")}>
+                    <h3 className="font-heading text-lg font-medium text-horizon-navy">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-horizon-muted">{item.description}</p>
+                  </Reveal>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section className="order-13 w-full bg-black text-white">
+          <div className={cn(container, sectionPad)}>
+            <Reveal>
+              <p className={cn(overline, "text-white/60")}>Why Next Software Development</p>
+              <h2 className="font-heading text-3xl font-normal text-white md:text-4xl">
                 Why teams <span className="italic">choose us</span>
               </h2>
             </Reveal>
             <ul className="mt-10 grid gap-4 md:grid-cols-3">
               {solution.highlights.map((item, i) => (
                 <li key={item.title}>
-                  <Reveal delay={i * motionStagger} className={cn(card, "h-full p-6")}>
-                    <span className="flex size-9 items-center justify-center rounded-full bg-horizon-sky/60 text-horizon-navy">
+                  <Reveal delay={i * motionStagger} className={cn("h-full rounded-2xl border border-white/10 bg-zinc-950 p-6")}>
+                    <span className="flex size-9 items-center justify-center rounded-full bg-white/10 text-white">
                       <Check className="size-4" strokeWidth={2} aria-hidden />
                     </span>
-                    <h3 className="mt-4 font-heading text-lg font-medium text-horizon-navy">
+                    <h3 className="mt-4 font-heading text-lg font-medium text-white">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-horizon-muted">
+                    <p className="mt-2 text-sm leading-relaxed text-white/70">
                       {item.description}
                     </p>
                   </Reveal>
@@ -479,20 +540,20 @@ export function SolutionDetailPage({ solution }: Props) {
           </div>
         </section>
 
-        <section className="order-13 w-full bg-black text-white" aria-labelledby="engagement-models-heading">
+        <section className="order-14 w-full bg-white" aria-labelledby="engagement-models-heading">
           <div className={cn(container, sectionPad)}>
             <Reveal>
-              <p className={cn(overline, "text-white/60")}>Engagement models</p>
-              <h2 id="engagement-models-heading" className="mt-3 font-heading text-3xl font-normal text-white md:text-4xl">
+              <p className={overline}>Engagement models</p>
+              <h2 id="engagement-models-heading" className="mt-3 font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
                 A delivery model that fits <span className="italic">your team</span>
               </h2>
             </Reveal>
             <ul className="mt-10 grid gap-4 md:grid-cols-3">
               {engagementModels.map((model, i) => (
                 <li key={model.title}>
-                  <Reveal delay={i * motionStagger} className={cn("h-full rounded-2xl border border-white/10 bg-zinc-950 p-6")}>
-                    <h3 className="font-heading text-lg font-medium text-white">{model.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-white/70">{model.description}</p>
+                  <Reveal delay={i * motionStagger} className={cn(card, "h-full p-6")}>
+                    <h3 className="font-heading text-lg font-medium text-horizon-navy">{model.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-horizon-muted">{model.description}</p>
                   </Reveal>
                 </li>
               ))}
@@ -500,20 +561,62 @@ export function SolutionDetailPage({ solution }: Props) {
           </div>
         </section>
 
-        <div className="order-14">
-        <FaqSection
-          items={solutionFaqs(solution.label)}
-          overlineText={`${solution.label} FAQs`}
-          title={
-            <>
-              Frequently <span className="italic text-primary">Asked Questions</span>
-            </>
-          }
-          intro={`Common questions about planning, building, and growing a ${solution.label.toLowerCase()} solution.`}
-        />
+        <section className="order-15 w-full bg-black text-white" aria-labelledby="support-maintenance-heading">
+          <div className={cn(container, sectionPad)}>
+            <Reveal>
+              <p className={cn(overline, "text-white/60")}>Support &amp; maintenance</p>
+              <h2 id="support-maintenance-heading" className="mt-3 font-heading text-3xl font-normal text-white md:text-4xl">
+                Long-term care for <span className="italic">your product</span>
+              </h2>
+            </Reveal>
+            <ul className="mt-10 grid gap-4 md:grid-cols-3">
+              {supportAndMaintenance.map((item, i) => (
+                <li key={item.title}>
+                  <Reveal delay={i * motionStagger} className={cn("h-full rounded-2xl border border-white/10 bg-zinc-950 p-6")}>
+                    <h3 className="font-heading text-lg font-medium text-white">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-white/70">{item.description}</p>
+                  </Reveal>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section className="order-16 w-full bg-white" aria-labelledby="security-reliability-heading">
+          <div className={cn(container, sectionPad)}>
+            <Reveal>
+              <p className={overline}>Security &amp; reliability</p>
+              <h2 id="security-reliability-heading" className="mt-3 font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
+                Protected by design, <span className="italic">built to last</span>
+              </h2>
+            </Reveal>
+            <ul className="mt-10 grid gap-4 md:grid-cols-3">
+              {securityAndReliability.map((item, i) => (
+                <li key={item.title}>
+                  <Reveal delay={i * motionStagger} className={cn(card, "h-full p-6")}>
+                    <h3 className="font-heading text-lg font-medium text-horizon-navy">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-horizon-muted">{item.description}</p>
+                  </Reveal>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <div className="order-17">
+          <FaqSection
+            items={solutionFaqs(solution.label)}
+            overlineText={`${solution.label} FAQs`}
+            title={
+              <>
+                Frequently <span className="italic text-primary">Asked Questions</span>
+              </>
+            }
+            intro={`Common questions about planning, building, and growing a ${solution.label.toLowerCase()} solution.`}
+          />
         </div>
 
-        <section className="order-16 w-full bg-horizon-navy text-white">
+        <section className="order-18 w-full bg-horizon-navy text-white">
           <div className={cn(container, sectionPad, "text-center")}>
             <Reveal>
               <h2 className="font-heading text-3xl font-normal md:text-4xl">
