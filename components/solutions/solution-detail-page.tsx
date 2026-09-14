@@ -356,7 +356,7 @@ export function SolutionDetailPage({ solution }: Props) {
                   </p>
                 </Reveal>
                 <Reveal immediate delay={motionStagger * 3}>
-                  <div className="max-w-xl space-y-4">
+                  <div className="max-w-2xl space-y-4">
                     {heroParagraphs.map((paragraph, index) => (
                       <p
                         key={`${solution.slug}-hero-paragraph-${index}`}
@@ -618,7 +618,7 @@ export function SolutionDetailPage({ solution }: Props) {
         </section>
 
         {isErp ? (
-          <section className="order-9 w-full bg-white" aria-labelledby="migration-heading">
+          <section className="order-10 w-full bg-white" aria-labelledby="migration-heading">
             <div className={cn(container, sectionPad)}>
               <Reveal>
                 <p className={overline}>Data Migration</p>
@@ -658,7 +658,7 @@ export function SolutionDetailPage({ solution }: Props) {
           </section>
         ) : null}
 
-        <section className="order-7 w-full bg-white text-horizon-navy">
+        <section className="order-12 w-full bg-white text-horizon-navy">
           <div className={cn(container, sectionPad)}>
             <Reveal>
               <p className={overline}>Industries &amp; use cases</p>
@@ -691,7 +691,7 @@ export function SolutionDetailPage({ solution }: Props) {
           </div>
         </section>
 
-        <div className="order-10">
+        <div className="order-11">
           <TechStackSection
             overlineText={`${solution.label} technology`}
             title={
@@ -704,7 +704,7 @@ export function SolutionDetailPage({ solution }: Props) {
           />
         </div>
 
-        <section className="order-9 w-full bg-black text-white" aria-labelledby="architecture-heading">
+        <section className="order-7 w-full bg-black text-white" aria-labelledby="architecture-heading">
           <div className={cn(container, sectionPad)}>
             <Reveal>
               <p className={cn(overline, "text-white/60")}>Architecture / workflow</p>
@@ -726,7 +726,7 @@ export function SolutionDetailPage({ solution }: Props) {
           </div>
         </section>
 
-        <section className="order-11 w-full bg-black text-white" aria-labelledby="case-study-heading">
+        <section className="order-9 w-full bg-black text-white" aria-labelledby="case-study-heading">
           <div className={cn(container, sectionPad)}>
             <Reveal>
               <p className={cn(overline, "text-white/60")}>Case study</p>
