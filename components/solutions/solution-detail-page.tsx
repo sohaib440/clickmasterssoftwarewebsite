@@ -528,7 +528,7 @@ export function SolutionDetailPage({ solution }: Props) {
               {(isErp ? erpServiceItems : solution.approach).map((step, i) => (
                 <li key={isErp ? step.title : ("step" in step ? step.step : step.title)}>
                   <Reveal delay={i * motionStagger}>
-                    <span className="font-heading text-2xl text-white/20">{isErp ? `0${i + 1}` : step.step}</span>
+                    <span className="font-heading text-2xl text-white/20">{isErp ? `0${i + 1}` : ("step" in step ? step.step : step.title)}</span>
                     <h3 className="mt-2 font-heading text-lg font-medium text-white">
                       {isErp ? step.title : (deliveryStages[i] ?? step.title)}
                     </h3>
