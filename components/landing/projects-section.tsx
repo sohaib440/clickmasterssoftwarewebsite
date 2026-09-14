@@ -8,6 +8,8 @@ import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import CardSwap, { Card } from "@/components/landing/card-swap";
 import {
   btnOutlineDark,
+  btnPrimary,
+  contactPath,
   container,
   overline,
   projectPath,
@@ -206,13 +208,19 @@ export function ProjectsSection({
                 </ul>
               ) : null}
 
-              <Link
-                href={projectDetailPath(project.slug)}
-                className="mt-6 inline-flex items-center gap-2 rounded-full border border-primary bg-primary px-4 py-2.5 text-sm font-medium text-black transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/90 hover:text-black"
-              >
-                View project details
-                <ArrowRight className="size-4" aria-hidden />
-              </Link>
+              <div className="mt-6 flex flex-wrap items-center gap-3">
+                <Link
+                  href={projectDetailPath(project.slug)}
+                  className="inline-flex items-center gap-2 rounded-full border border-primary bg-primary px-4 py-2.5 text-sm font-medium text-black transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/90 hover:text-black"
+                >
+                  View project details
+                  <ArrowRight className="size-4" aria-hidden />
+                </Link>
+
+                <Link href={contactPath} className={cn(btnPrimary, "!px-4 !py-2.5") }>
+                  Book a consultation
+                </Link>
+              </div>
             </div>
 
             <div
@@ -331,7 +339,7 @@ export function ProjectsSection({
           {showViewAll ? (
             <div className="mt-8 flex justify-center sm:mt-10">
               <Link href={projectPath} className={btnOutlineDark}>
-                View all case studies and projects
+                View all projects
                 <ArrowRight className="ml-2 size-4" aria-hidden />
               </Link>
             </div>
