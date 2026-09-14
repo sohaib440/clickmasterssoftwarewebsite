@@ -145,7 +145,7 @@ const securityAndReliability = [
 const erpModules = [
   { title: "Finance & Accounting", description: "Manage financial transactions, accounts, expenses, income, budgets, invoices, payments, transfers, and financial reporting within a centralized system. Custom financial workflows can be aligned with your accounting structure, approval policies, and reporting requirements." },
   { title: "Inventory Management", description: "Track products, stock levels, warehouses, stock movements, purchases, transfers, adjustments, and inventory history. Real-time inventory information helps teams understand what is available, where it is located, and when additional stock may be required." },
-  { title: "Procurement Management", description: "Create structured purchasing workflows for purchase requests, supplier management, purchase orders, approvals, receiving, and procurement reporting. Automated approval processes can help reduce delays and improve purchasing control." },
+  { title: "Procurement Management", description: "As a custom procurement software development company, we create structured purchasing workflows for purchase requests, supplier management, purchase orders, approvals, receiving, and procurement reporting. Automated approval processes can help reduce delays and improve purchasing control." },
   { title: "Sales Management", description: "Manage customers, quotations, orders, invoices, payments, sales representatives, and sales reporting from one system. Sales information can be connected with inventory and finance so departments work from consistent data." },
   { title: "Human Resources", description: "Manage employee records, departments, roles, attendance, leave, payroll-related information, documents, and HR workflows according to your organization's requirements." },
   { title: "Manufacturing & Production", description: "For manufacturing organizations, ERP systems can connect production planning, raw materials, bills of materials, work orders, production activity, inventory, suppliers, and financial information." },
@@ -180,7 +180,7 @@ const erpSolutionItems = [
 ] as const;
 
 const erpServiceItems = [
-  { title: "ERP Discovery & Business Analysis", description: "We analyze your existing processes, systems, departments, users, pain points, reporting requirements, integrations, and future goals. The objective is to understand what the ERP needs to accomplish before development begins." },
+  { title: "ERP Discovery & Business Analysis", description: "As a custom ERP software developer, we analyze your existing processes, systems, departments, users, pain points, reporting requirements, integrations, and future goals. The objective is to understand what the ERP needs to accomplish before development begins." },
   { title: "ERP Architecture & System Design", description: "We define the system architecture, database structure, modules, APIs, permissions, workflows, integrations, and infrastructure requirements." },
   { title: "ERP UI/UX Design", description: "We design interfaces that make complex business workflows easier for employees to understand and use. Dashboards, forms, tables, reports, approval screens, and role-specific interfaces are designed around actual user requirements." },
   { title: "Custom ERP Development", description: "Our developers build the required modules, business rules, workflows, APIs, dashboards, integrations, and administrative functionality." },
@@ -580,7 +580,8 @@ export function SolutionDetailPage({ solution }: Props) {
                   {isErp ? (
                     <>
                       <p>Many businesses do not want to replace every application they already use.</p>
-                      <p className="mt-4">Our custom ERP development approach can integrate your ERP with existing business software and third-party services.</p>
+                      <p className="mt-4">Our custom ERP development approach supports CRM and ERP integration with existing business software and third-party services.</p>
+                      <p className="mt-4">As a custom integration software development company for CRM and ERP systems, we also deliver custom software development for integrating CRM, ERP and accounting tools when standard connectors are not enough.</p>
                       <p className="mt-4">Common integration areas include:</p>
                     </>
                   ) : (
@@ -786,7 +787,7 @@ export function SolutionDetailPage({ solution }: Props) {
                 { title: "Business-Focused Development", description: "We focus on your actual workflows, business rules, users, and reporting requirements rather than building features that do not solve operational problems." },
                 { title: "Transparent Development", description: "Regular demonstrations, feedback cycles, and defined milestones help stakeholders understand progress throughout the project." },
                 { title: "Scalable Architecture", description: "We design the platform with future modules, integrations, users, and operational growth in mind." },
-                { title: "Long-Term Ownership", description: "We provide documentation, training, maintainable architecture, and ongoing development support so your organization can continue improving the platform." },
+                { title: "Long-Term Ownership", description: "As a custom ERP development company, we provide documentation, training, maintainable architecture, and ongoing development support so your organization can continue improving the platform." },
               ] : solution.highlights).map((item, i) => (
                 <li key={item.title}>
                   <Reveal delay={i * motionStagger} className={cn("h-full rounded-2xl border border-white/10 bg-zinc-950 p-6")}>
