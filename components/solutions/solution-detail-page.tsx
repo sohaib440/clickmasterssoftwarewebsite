@@ -2,9 +2,11 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, Check } from "lucide-react";
 
 import { CardImage } from "@/components/landing/card-image";
+import { BlogSection } from "@/components/landing/blog-section";
 import { FaqSection } from "@/components/landing/faq-section";
 import { RatingBadges } from "@/components/landing/rating-badges";
 import { Reveal } from "@/components/landing/reveal";
+import { TechStackSection } from "@/components/landing/tech-stack-section";
 import { ProjectCard } from "@/components/project/project-card";
 import { SiteHeader } from "@/components/landing/navbar";
 import {
@@ -689,28 +691,18 @@ export function SolutionDetailPage({ solution }: Props) {
           </div>
         </section>
 
-        <section className="order-10 w-full bg-white" aria-labelledby="technology-heading">
-          <div className={cn(container, sectionPad)}>
-            <Reveal>
-              <p className={overline}>Technology</p>
-              <h2 id="technology-heading" className="mt-3 font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
-                The right stack for <span className="italic">the job</span>
-              </h2>
-              <p className="mt-3 max-w-2xl text-base leading-relaxed text-horizon-muted">
-                We choose dependable technologies around your product requirements, integrations, security needs, and long-term ownership plan.
-              </p>
-            </Reveal>
-            <ul className="mt-8 flex flex-wrap gap-3">
-              {["Web and mobile interfaces", "APIs and integrations", "Cloud-ready deployment", "Role-based security", "Analytics and reporting", "Testing and monitoring"].map((item, i) => (
-                <li key={item}>
-                  <Reveal delay={i * motionStagger}>
-                    <span className="inline-flex rounded-full border border-horizon-border bg-horizon-cream px-4 py-2 text-sm text-horizon-navy">{item}</span>
-                  </Reveal>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
+        <div className="order-10">
+          <TechStackSection
+            overlineText={`${solution.label} technology`}
+            title={
+              <>
+                The right stack for <span className="text-primary">{solution.label}</span>
+              </>
+            }
+            description={`We select proven technologies around your ${solution.label.toLowerCase()} requirements, integrations, security needs, and long-term ownership plan.`}
+            badgeText={`Built for ${solution.label}`}
+          />
+        </div>
 
         <section className="order-9 w-full bg-black text-white" aria-labelledby="architecture-heading">
           <div className={cn(container, sectionPad)}>
@@ -879,6 +871,10 @@ export function SolutionDetailPage({ solution }: Props) {
         </section>
 
         <div className="order-17">
+          <BlogSection />
+        </div>
+
+        <div className="order-18">
           <FaqSection
             items={solutionFaqs(solution.label)}
             overlineText={`${solution.label} FAQs`}
@@ -891,7 +887,7 @@ export function SolutionDetailPage({ solution }: Props) {
           />
         </div>
 
-        <section className="order-18 w-full bg-horizon-navy text-white">
+        <section className="order-19 w-full bg-horizon-navy text-white">
           <div className={cn(container, sectionPad, "text-center")}>
             <Reveal>
               <h2 className="font-heading text-3xl font-normal md:text-4xl">
