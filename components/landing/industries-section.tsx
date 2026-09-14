@@ -27,7 +27,7 @@ function IndustryCell({
 
       <div className="flex flex-1 flex-col">
         <h3 className="font-heading text-xl font-bold leading-snug tracking-tight text-horizon-navy sm:text-[1.35rem]">
-          {item.industry}
+          Software Development for {item.industry}
         </h3>
         <p className="mt-3 max-w-md flex-1 text-sm leading-relaxed text-horizon-muted sm:text-[0.95rem]">
           {item.description}

@@ -24,12 +24,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const solution = getSolutionBySlug(slug);
   if (!solution) return { title: "Not found" };
 
+  const title = solution.metaTitle ?? solution.label;
+
   return {
-    title: pageTitle(solution.label),
+    title: solution.metaTitle ? { absolute: solution.metaTitle } : pageTitle(title),
     description: solution.metaDescription,
     ...selfCanonical(`/solutions/${slug}`),
     openGraph: {
-      title: pageTitleString(solution.label),
+      title: solution.metaTitle ? solution.metaTitle : pageTitleString(title),
       description: solution.metaDescription,
       type: "website",
     },

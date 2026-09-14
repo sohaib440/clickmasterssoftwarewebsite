@@ -200,7 +200,7 @@ export default function CanadaLocationPage() {
           overlineText="Canada FAQs"
           title={
             <>
-              Software house questions, <span className="italic">answered</span>
+              Frequently <span className="italic text-primary">Asked Questions</span>
             </>
           }
         />

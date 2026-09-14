@@ -51,7 +51,7 @@ export function BlogSection({
             overlineText="Insights from our software house"
             title={
               <>
-                Insights from <span className="italic">our team</span>
+                <span className="text-primary">Blogs</span>
               </>
             }
             description={blogSectionDescription}

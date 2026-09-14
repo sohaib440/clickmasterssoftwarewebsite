@@ -236,7 +236,7 @@ export default async function CityLocationPage({ params }: CityLocationPageProps
           overlineText={`${cityName} FAQs`}
           title={
             <>
-              Software house questions, <span className="italic">answered</span>
+              Frequently <span className="italic text-primary">Asked Questions</span>
             </>
           }
         />

@@ -17,6 +17,7 @@ export type SolutionContent = {
   label: string;
   tagline: string;
   description: string;
+  metaTitle?: string;
   metaDescription: string;
   category: SolutionCategory;
   icon: LucideIcon;

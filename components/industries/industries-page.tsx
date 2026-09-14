@@ -33,7 +33,7 @@ function IndustryCard({ item, index }: { item: (typeof industries)[number]; inde
 
         <div className="flex flex-1 flex-col">
           <h2 className="font-heading text-xl font-medium leading-snug text-horizon-navy sm:text-[1.35rem]">
-            {item.industry}
+            Software Development for {item.industry}
           </h2>
           <p className="mt-3 flex-1 text-sm leading-relaxed text-horizon-muted sm:text-[0.95rem]">
             {item.description}
@@ -54,7 +54,7 @@ function IndustryCard({ item, index }: { item: (typeof industries)[number]; inde
             href={industryPath(item.slug)}
             className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-horizon-navy transition-colors group-hover:text-primary"
           >
-            Learn about {item.industry}
+            Learn About {item.industry}
             <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </div>

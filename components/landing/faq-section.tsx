@@ -111,7 +111,7 @@ export function FaqSection({
   overlineText = "Software development company FAQs",
   title = (
     <>
-      Questions, <span className="italic">answered</span>
+      Frequently <span className="italic text-primary">Asked Questions</span>
     </>
   ),
   footerCta,
