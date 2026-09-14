@@ -526,7 +526,7 @@ export function SolutionDetailPage({ solution }: Props) {
             </Reveal>
             <ol className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {(isErp ? erpServiceItems : solution.approach).map((step, i) => (
-                <li key={isErp ? step.title : step.step}>
+                <li key={isErp ? step.title : ("step" in step ? step.step : step.title)}>
                   <Reveal delay={i * motionStagger}>
                     <span className="font-heading text-2xl text-white/20">{isErp ? `0${i + 1}` : step.step}</span>
                     <h3 className="mt-2 font-heading text-lg font-medium text-white">
