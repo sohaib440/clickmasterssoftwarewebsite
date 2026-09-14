@@ -1,20 +1,22 @@
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight, Check } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Check } from "lucide-react";
 
 import { CardImage } from "@/components/landing/card-image";
 import { FaqSection } from "@/components/landing/faq-section";
+import { RatingBadges } from "@/components/landing/rating-badges";
 import { Reveal } from "@/components/landing/reveal";
 import { ProjectCard } from "@/components/project/project-card";
 import { SiteHeader } from "@/components/landing/navbar";
 import {
   btnOutline,
+  btnOutlineDark,
   btnPrimary,
   card,
   cardSoft,
   contactPath,
   container,
-  iconMuted,
   overline,
+  projectPath,
   sectionPad,
 } from "@/lib/landing/constants";
 import type { SolutionContent } from "@/lib/content/solutions.types";
@@ -103,77 +105,94 @@ export function SolutionDetailPage({ solution }: Props) {
     .filter((project): project is NonNullable<typeof project> => Boolean(project));
 
   return (
-    <div className="flex min-h-full w-full flex-col bg-horizon-cream text-foreground">
+    <div className="flex min-h-full w-full flex-col bg-black text-foreground">
       <SiteHeader />
 
       <main className="flex flex-1 flex-col">
-        <section className="relative order-1 w-full overflow-hidden bg-gradient-to-b from-horizon-cream via-horizon-cream to-horizon-sky">
-          <div className={cn(container, sectionPad, "!pt-6 md:!pt-8 lg:!pt-10")}>
+        <section className="relative order-1 w-full overflow-hidden bg-black text-white">
+          <div
+            className={cn(
+              container,
+              sectionPad,
+              "relative !pb-4 !pt-5 md:!pb-5 md:!pt-7 lg:!pb-6 lg:!pt-8"
+            )}
+          >
             <Reveal immediate>
-              <nav className="mb-3 flex flex-wrap items-center gap-2 text-sm text-horizon-muted">
-                <Link href="/" className="inline-flex items-center gap-1.5 hover:text-horizon-navy">
+              <nav className="mb-2 flex flex-wrap items-center gap-2 text-sm text-white/60" aria-label="Breadcrumb">
+                <Link href="/" className="inline-flex items-center gap-1.5 hover:text-white">
                   <ArrowLeft className="size-4" aria-hidden />
                   Home
                 </Link>
                 <span aria-hidden>/</span>
-                <Link href={solutionsIndexPath} className="hover:text-horizon-navy">
+                <Link href={solutionsIndexPath} className="hover:text-white">
                   Solutions
                 </Link>
                 <span aria-hidden>/</span>
-                <span className="text-horizon-navy">{solution.label}</span>
+                <span className="text-white">{solution.label}</span>
               </nav>
             </Reveal>
 
-            <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10">
-              <div className="min-w-0">
+            <div className="relative mt-3 grid items-stretch gap-8 lg:mt-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-10 xl:gap-12">
+              <div className="relative z-20 flex min-w-0 flex-col gap-5 lg:pt-1">
                 <Reveal immediate delay={motionStagger}>
-                  <div className="flex flex-wrap items-center gap-2">
-                    <p className={overline}>{solution.category}</p>
-                    <span className="flex size-9 items-center justify-center rounded-lg bg-horizon-sky/50 ring-1 ring-horizon-sky/50">
-                      <solution.icon
-                        className={cn("size-4", iconMuted)}
-                        strokeWidth={1.5}
-                        aria-hidden
-                      />
-                    </span>
-                  </div>
-                </Reveal>
-                <Reveal immediate delay={motionStagger * 2}>
-                  <h1 className="mt-4 font-heading text-4xl font-normal leading-[1.1] tracking-tight text-horizon-navy sm:text-5xl lg:text-[3.25rem]">
+                  <h1 className="font-heading text-4xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[2.85rem] xl:text-[3.15rem]">
                     {solution.label}
                   </h1>
                 </Reveal>
-                <Reveal immediate delay={motionStagger * 3}>
-                  <p className="mt-5 max-w-xl text-base leading-relaxed text-horizon-muted md:text-lg">
+                <Reveal immediate delay={motionStagger * 2}>
+                  <p className="whitespace-pre-line text-justify text-base leading-relaxed text-white/85 md:text-[1.05rem]">
                     {solution.tagline}
                   </p>
                 </Reveal>
-                <Reveal immediate delay={motionStagger * 4}>
-                  <p className="mt-4 max-w-xl text-sm leading-relaxed text-horizon-muted">
+                <Reveal immediate delay={motionStagger * 3}>
+                  <p className="max-w-xl text-sm leading-relaxed text-white/70 md:text-base">
                     {solution.description}
                   </p>
                 </Reveal>
-                <Reveal immediate delay={motionStagger * 5}>
-                  <div className="mt-8 flex flex-col gap-2 sm:flex-row sm:items-center">
-                    <Link href={contactPath} className={btnPrimary}>
+                <Reveal immediate delay={motionStagger * 4}>
+                  <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:items-center">
+                    <Link href={contactPath} className={cn(btnPrimary, "!text-black hover:!text-white")}>
                       Request a demo
                     </Link>
-                    <Link href={contactPath} className={btnOutline}>
-                      Contact us
+                    <Link href={projectPath} className={btnOutlineDark}>
+                      See our work
+                      <ArrowRight className="size-4" aria-hidden />
                     </Link>
                   </div>
                 </Reveal>
+                <div className="hidden h-[7.5rem] lg:block" aria-hidden />
               </div>
 
-              <Reveal immediate delay={motionStagger * 2} direction="right">
-                <div className={cn(card, "overflow-hidden p-0")}>
-                  <CardImage
-                    {...solution.heroImage}
-                    className="aspect-[4/3] w-full lg:aspect-[5/4]"
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 50vw"
+              <Reveal immediate delay={motionStagger} direction="right" className="relative z-0 min-h-[16rem] w-full min-w-0 sm:min-h-[20rem] lg:min-h-0">
+                <div className="relative h-full min-h-[inherit] overflow-hidden rounded-[1.5rem] border border-white/15 lg:absolute lg:inset-0 lg:min-h-0">
+                  {solution.heroImage ? (
+                    <CardImage
+                      {...solution.heroImage}
+                      className="h-full min-h-[16rem] w-full object-cover sm:min-h-[20rem] lg:min-h-full"
+                      priority
+                      quality={90}
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                  ) : (
+                    <div className="h-full min-h-[16rem] w-full bg-zinc-900 sm:min-h-[20rem] lg:min-h-full" />
+                  )}
+                  <div
+                    className="pointer-events-none absolute inset-0 hidden lg:block"
+                    style={{
+                      background:
+                        "radial-gradient(ellipse 60% 50% at 0% 100%, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.5) 40%, transparent 72%), linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 40%)",
+                    }}
+                    aria-hidden
                   />
                 </div>
+              </Reveal>
+
+              <Reveal
+                immediate
+                delay={motionStagger * 4}
+                className="relative z-30 w-full min-w-0 lg:absolute lg:bottom-0 lg:left-0 lg:w-[calc(50%+6.5rem)] xl:w-[calc(50%+7.5rem)]"
+              >
+                <RatingBadges variant="dark" appearance="cards" />
               </Reveal>
             </div>
           </div>
@@ -202,20 +221,20 @@ export function SolutionDetailPage({ solution }: Props) {
           </div>
         </section>
 
-        <section className="order-3 w-full bg-horizon-sky/35" aria-labelledby="our-solution-heading">
+        <section className="order-3 w-full bg-black text-white" aria-labelledby="our-solution-heading">
           <div className={cn(container, sectionPad)}>
             <Reveal>
-              <p className={overline}>Our solution</p>
-              <h2 id="our-solution-heading" className="mt-3 font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
+              <p className={cn(overline, "text-white/60")}>Our solution</p>
+              <h2 id="our-solution-heading" className="mt-3 font-heading text-3xl font-normal text-white md:text-4xl">
                 A platform shaped around your <span className="italic">priorities</span>
               </h2>
             </Reveal>
             <ul className="mt-10 grid gap-4 md:grid-cols-3">
               {solution.summary.map((item, i) => (
                 <li key={item}>
-                  <Reveal delay={i * motionStagger} className={cn(card, "h-full p-6")}>
-                    <p className="font-heading text-xl font-medium text-horizon-navy">{item}</p>
-                    <p className="mt-2 text-sm leading-relaxed text-horizon-muted">
+                  <Reveal delay={i * motionStagger} className={cn("h-full rounded-2xl border border-white/10 bg-zinc-950 p-6")}>
+                    <p className="font-heading text-xl font-medium text-white">{item}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-white/70">
                       A practical capability aligned to your people, processes, and growth goals.
                     </p>
                   </Reveal>
@@ -250,11 +269,11 @@ export function SolutionDetailPage({ solution }: Props) {
           </section>
         ) : null}
 
-        <section className="order-5 w-full bg-horizon-cream" aria-labelledby="how-we-solve-heading">
+        <section className="order-5 w-full bg-black text-white" aria-labelledby="how-we-solve-heading">
           <div className={cn(container, sectionPad)}>
             <Reveal>
-              <p className={overline}>{isErp ? "How we build it" : "How we solve it"}</p>
-              <h2 id="how-we-solve-heading" className="mt-3 font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
+              <p className={cn(overline, "text-white/60")}>{isErp ? "How we build it" : "How we solve it"}</p>
+              <h2 id="how-we-solve-heading" className="mt-3 font-heading text-3xl font-normal text-white md:text-4xl">
                 Discover <span className="italic">to deploy</span>
               </h2>
             </Reveal>
@@ -262,11 +281,11 @@ export function SolutionDetailPage({ solution }: Props) {
               {solution.approach.map((step, i) => (
                 <li key={step.step}>
                   <Reveal delay={i * motionStagger}>
-                    <span className="font-heading text-2xl text-horizon-navy/25">{step.step}</span>
-                    <h3 className="mt-2 font-heading text-lg font-medium text-horizon-navy">
+                    <span className="font-heading text-2xl text-white/20">{step.step}</span>
+                    <h3 className="mt-2 font-heading text-lg font-medium text-white">
                       {deliveryStages[i] ?? step.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-horizon-muted">{step.description}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-white/70">{step.description}</p>
                   </Reveal>
                 </li>
               ))}
@@ -302,7 +321,7 @@ export function SolutionDetailPage({ solution }: Props) {
           </div>
         </section>
 
-        <section className="order-8 w-full bg-horizon-peach/40" aria-labelledby="integrations-heading">
+        <section className="order-8 w-full bg-white" aria-labelledby="integrations-heading">
           <div className={cn(container, sectionPad)}>
             <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
               <Reveal>
@@ -336,22 +355,22 @@ export function SolutionDetailPage({ solution }: Props) {
           </div>
         </section>
 
-        <section className="order-7 w-full bg-horizon-sky/35">
+        <section className="order-7 w-full bg-black text-white">
           <div className={cn(container, sectionPad)}>
             <Reveal>
-              <p className={overline}>Industries &amp; use cases</p>
-              <h2 className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
+              <p className={cn(overline, "text-white/60")}>Industries &amp; use cases</p>
+              <h2 className="font-heading text-3xl font-normal text-white md:text-4xl">
                 Built for <span className="italic">real work</span>
               </h2>
             </Reveal>
             <ul className="mt-10 grid gap-4 md:grid-cols-3">
               {solution.useCases.map((item, i) => (
                 <li key={item.title}>
-                  <Reveal delay={i * motionStagger} className={cn(cardSoft, "h-full p-6")}>
-                    <h3 className="font-heading text-lg font-medium text-horizon-navy">
+                  <Reveal delay={i * motionStagger} className={cn("h-full rounded-2xl border border-white/10 bg-zinc-950 p-6")}>
+                    <h3 className="font-heading text-lg font-medium text-white">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-horizon-muted">
+                    <p className="mt-2 text-sm leading-relaxed text-white/70">
                       {item.description}
                     </p>
                   </Reveal>
@@ -384,21 +403,21 @@ export function SolutionDetailPage({ solution }: Props) {
           </div>
         </section>
 
-        <section className="order-9 w-full bg-horizon-peach/40" aria-labelledby="architecture-heading">
+        <section className="order-9 w-full bg-black text-white" aria-labelledby="architecture-heading">
           <div className={cn(container, sectionPad)}>
             <Reveal>
-              <p className={overline}>Architecture / workflow</p>
-              <h2 id="architecture-heading" className="mt-3 font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
+              <p className={cn(overline, "text-white/60")}>Architecture / workflow</p>
+              <h2 id="architecture-heading" className="mt-3 font-heading text-3xl font-normal text-white md:text-4xl">
                 A foundation your team can <span className="italic">own</span>
               </h2>
             </Reveal>
             <ol className="mt-10 grid gap-4 md:grid-cols-3">
               {architectureLayers.map((layer, i) => (
                 <li key={layer.title}>
-                  <Reveal delay={i * motionStagger} className={cn(card, "h-full p-6")}>
-                    <span className="font-heading text-2xl text-horizon-navy/25">0{i + 1}</span>
-                    <h3 className="mt-3 font-heading text-lg font-medium text-horizon-navy">{layer.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-horizon-muted">{layer.description}</p>
+                  <Reveal delay={i * motionStagger} className={cn("h-full rounded-2xl border border-white/10 bg-zinc-950 p-6")}>
+                    <span className="font-heading text-2xl text-white/20">0{i + 1}</span>
+                    <h3 className="mt-3 font-heading text-lg font-medium text-white">{layer.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-white/70">{layer.description}</p>
                   </Reveal>
                 </li>
               ))}
@@ -406,14 +425,14 @@ export function SolutionDetailPage({ solution }: Props) {
           </div>
         </section>
 
-        <section className="order-11 w-full bg-white" aria-labelledby="case-study-heading">
+        <section className="order-11 w-full bg-black text-white" aria-labelledby="case-study-heading">
           <div className={cn(container, sectionPad)}>
             <Reveal>
-              <p className={overline}>Case study</p>
-              <h2 id="case-study-heading" className="mt-3 font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
+              <p className={cn(overline, "text-white/60")}>Case study</p>
+              <h2 id="case-study-heading" className="mt-3 font-heading text-3xl font-normal text-white md:text-4xl">
                 Real products, <span className="italic">shipped</span>
               </h2>
-              <p className="mt-3 max-w-2xl text-base leading-relaxed text-horizon-muted">
+              <p className="mt-3 max-w-2xl text-base leading-relaxed text-white/70">
                 See related projects that show how we turn this type of solution into working software for real teams.
               </p>
             </Reveal>
@@ -460,20 +479,20 @@ export function SolutionDetailPage({ solution }: Props) {
           </div>
         </section>
 
-        <section className="order-13 w-full bg-horizon-cream" aria-labelledby="engagement-models-heading">
+        <section className="order-13 w-full bg-black text-white" aria-labelledby="engagement-models-heading">
           <div className={cn(container, sectionPad)}>
             <Reveal>
-              <p className={overline}>Engagement models</p>
-              <h2 id="engagement-models-heading" className="mt-3 font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
+              <p className={cn(overline, "text-white/60")}>Engagement models</p>
+              <h2 id="engagement-models-heading" className="mt-3 font-heading text-3xl font-normal text-white md:text-4xl">
                 A delivery model that fits <span className="italic">your team</span>
               </h2>
             </Reveal>
             <ul className="mt-10 grid gap-4 md:grid-cols-3">
               {engagementModels.map((model, i) => (
                 <li key={model.title}>
-                  <Reveal delay={i * motionStagger} className={cn(cardSoft, "h-full p-6")}>
-                    <h3 className="font-heading text-lg font-medium text-horizon-navy">{model.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-horizon-muted">{model.description}</p>
+                  <Reveal delay={i * motionStagger} className={cn("h-full rounded-2xl border border-white/10 bg-zinc-950 p-6")}>
+                    <h3 className="font-heading text-lg font-medium text-white">{model.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-white/70">{model.description}</p>
                   </Reveal>
                 </li>
               ))}
@@ -481,47 +500,7 @@ export function SolutionDetailPage({ solution }: Props) {
           </div>
         </section>
 
-        {related.length > 0 ? (
-          <section className="order-14 w-full border-t border-horizon-border bg-white">
-            <div className={cn(container, sectionPad)}>
-              <Reveal>
-                <h2 className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
-                  More <span className="italic">solutions</span>
-                </h2>
-              </Reveal>
-              <ul className="mt-8 grid gap-3 sm:grid-cols-3">
-                {related.map((item, i) => (
-                  <li key={item.slug}>
-                    <Reveal delay={i * motionStagger}>
-                      <Link
-                        href={solutionPath(item.slug)}
-                        className={cn(
-                          cardSoft,
-                          "group flex items-center justify-between gap-3 p-5 transition-colors hover:border-horizon-sky"
-                        )}
-                      >
-                        <div>
-                          <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-horizon-muted">
-                            {item.category}
-                          </p>
-                          <p className="mt-1 font-heading text-lg font-medium text-horizon-navy">
-                            {item.label}
-                          </p>
-                        </div>
-                        <ArrowUpRight
-                          className="size-5 shrink-0 text-horizon-muted transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-horizon-navy"
-                          aria-hidden
-                        />
-                      </Link>
-                    </Reveal>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </section>
-        ) : null}
-
-        <div className="order-15">
+        <div className="order-14">
         <FaqSection
           items={solutionFaqs(solution.label)}
           overlineText={`${solution.label} FAQs`}
@@ -531,8 +510,6 @@ export function SolutionDetailPage({ solution }: Props) {
             </>
           }
           intro={`Common questions about planning, building, and growing a ${solution.label.toLowerCase()} solution.`}
-          footerCta="Ask about your project"
-          footerHref={contactPath}
         />
         </div>
 
