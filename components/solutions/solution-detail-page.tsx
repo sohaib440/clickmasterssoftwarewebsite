@@ -55,6 +55,21 @@ const engagementModels = [
   },
 ] as const;
 
+const erpEngagementModels = [
+  {
+    title: "Fixed Scope",
+    description: "Best for projects with clearly defined requirements, deliverables, milestones, and acceptance criteria.",
+  },
+  {
+    title: "Dedicated Development Team",
+    description: "A dedicated team works continuously with your stakeholders to develop, improve, and maintain your ERP platform.",
+  },
+  {
+    title: "Product Partnership",
+    description: "An ongoing development relationship covering discovery, development, integrations, optimization, and future product improvements.",
+  },
+] as const;
+
 const deliveryStages = ["Discover", "Design", "Build", "Deploy"] as const;
 
 const businessBenefits = [
@@ -84,6 +99,29 @@ const supportAndMaintenance = [
   {
     title: "Roadmap support",
     description: "We help prioritize the next improvements based on real data, team feedback, and business priorities.",
+  },
+] as const;
+
+const erpSupportAndMaintenance = [
+  {
+    title: "Ongoing Optimization",
+    description: "Review system performance, workflows, user feedback, and operational requirements to identify opportunities for improvement.",
+  },
+  {
+    title: "Issue Resolution",
+    description: "Address software bugs, integration issues, workflow problems, and technical issues that affect daily operations.",
+  },
+  {
+    title: "Feature Development",
+    description: "Add new modules, reports, integrations, dashboards, workflows, and functionality as your business grows.",
+  },
+  {
+    title: "Infrastructure Support",
+    description: "Monitor application infrastructure, deployments, performance, backups, and system health according to the project's requirements.",
+  },
+  {
+    title: "Roadmap Planning",
+    description: "Prioritize future improvements based on business objectives, user feedback, operational data, and changing requirements.",
   },
 ] as const;
 
@@ -151,9 +189,88 @@ const erpServiceItems = [
   { title: "Ongoing ERP Support", description: "After launch, we can continue improving the platform through maintenance, optimization, monitoring, new features, integrations, and support." },
 ] as const;
 
-const erpIntegrations = ["APIs", "Payments", "Accounting", "Logistics", "Third-party systems"] as const;
+const erpIntegrations = [
+  "CRM systems",
+  "Accounting platforms",
+  "Payment gateways",
+  "Banking services",
+  "E-commerce platforms",
+  "POS systems",
+  "Inventory systems",
+  "Logistics platforms",
+  "HR systems",
+  "Customer communication tools",
+  "Email and SMS services",
+  "Business APIs",
+  "External databases",
+] as const;
 
 function solutionFaqs(label: string) {
+  if (label === "Custom ERP Software Development") {
+    return [
+      {
+        question: "What is custom ERP software development?",
+        answer: "Custom ERP software development is the process of designing and building an enterprise resource planning system around a company's specific business processes, departments, workflows, users, integrations, and reporting requirements.",
+        tag: "ERP",
+        column: "left" as const,
+      },
+      {
+        question: "Why choose a custom ERP instead of an off-the-shelf ERP?",
+        answer: "A custom ERP can be designed around your existing workflows and specific requirements. It can also provide greater flexibility for custom modules, integrations, reporting, permissions, and business processes that may not be supported by standard software.",
+        tag: "Custom Build",
+        column: "right" as const,
+      },
+      {
+        question: "How long does custom ERP development take?",
+        answer: "The timeline depends on the number of modules, complexity of workflows, integrations, data migration requirements, number of users, and deployment environment. We define the implementation roadmap after analyzing the project requirements.",
+        tag: "Timeline",
+        column: "left" as const,
+      },
+      {
+        question: "Can you integrate CRM, ERP, and accounting systems?",
+        answer: "Yes. We can develop integrations between CRM, ERP, accounting, payment, inventory, e-commerce, logistics, and other business systems using APIs and appropriate integration methods.",
+        tag: "Integrations",
+        column: "right" as const,
+      },
+      {
+        question: "Can you migrate our existing business data?",
+        answer: "Yes. Data migration can include information from spreadsheets, legacy applications, databases, accounting systems, and other existing platforms. The migration process can include data mapping, cleaning, transformation, validation, and production migration.",
+        tag: "Migration",
+        column: "left" as const,
+      },
+      {
+        question: "Can the ERP support multiple branches?",
+        answer: "Yes. A custom ERP can be designed to support multiple branches, locations, warehouses, departments, and business units with centralized reporting and role-based access.",
+        tag: "Scale",
+        column: "right" as const,
+      },
+      {
+        question: "Can we add new modules later?",
+        answer: "Yes. A modular architecture allows businesses to start with the most important functions and add additional modules as their requirements grow.",
+        tag: "Growth",
+        column: "left" as const,
+      },
+      {
+        question: "Can the ERP be accessed from mobile devices?",
+        answer: "Yes. Depending on the project requirements, we can develop responsive web interfaces or mobile applications for selected ERP functions.",
+        tag: "Access",
+        column: "right" as const,
+      },
+      {
+        question: "Do you provide ERP support after launch?",
+        answer: "Yes. We can provide ongoing maintenance, bug fixes, optimization, new features, integrations, infrastructure support, and roadmap development after deployment.",
+        tag: "Support",
+        column: "left" as const,
+      },
+      {
+        question: "Can the ERP support multiple departments with different roles and permissions?",
+        answer: "Yes. We can design role-based access, department-specific workflows, and permission levels that match how different teams use the ERP while keeping the platform centralized and controlled.",
+        tag: "Security",
+        column: "right" as const,
+      },
+    ];
+  }
+
   return [
     {
       question: `How long does a ${label.toLowerCase()} project take?`,
@@ -425,15 +542,15 @@ export function SolutionDetailPage({ solution }: Props) {
         <section className="order-6 w-full bg-white" aria-labelledby="features-heading">
           <div className={cn(container, sectionPad)}>
             <Reveal>
-              <p className={overline}>Features / capabilities</p>
+              <p className={overline}>{isErp ? "Core Capabilities" : "Features / capabilities"}</p>
               <h2
                 id="features-heading"
                 className="mt-3 font-heading text-3xl font-normal text-horizon-navy md:text-4xl"
               >
-                Core <span className="italic">capabilities</span>
+                {isErp ? "A Scalable Foundation for Business Operations" : <>Core <span className="italic">capabilities</span></>}
               </h2>
             </Reveal>
-            <ul className="mt-10 grid gap-4 md:grid-cols-3">
+            <ul className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
               {solution.features.map((feature, i) => (
                 <li key={feature.title}>
                   <Reveal delay={i * motionStagger} className={cn(card, "h-full p-6")}>
@@ -454,14 +571,23 @@ export function SolutionDetailPage({ solution }: Props) {
           <div className={cn(container, sectionPad)}>
             <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
               <Reveal>
-                <h2 className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
-                  {isErp ? "Integrations" : <>What&apos;s <span className="italic">included</span></>}
+                <p className={overline}>{isErp ? "CRM, ERP & Accounting Integrations" : "Integrations"}</p>
+                <h2 className="mt-3 font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
+                  {isErp ? "Connect Your Existing Business Systems" : <>What&apos;s <span className="italic">included</span></>}
                 </h2>
-                <p className="mt-3 text-horizon-muted">
-                  {isErp
-                    ? "Connect your ERP to the systems your teams already use."
-                    : `Modules and features we typically deliver for ${solution.label.toLowerCase()} engagements.`}
-                </p>
+                <div className="mt-4 text-horizon-muted">
+                  {isErp ? (
+                    <>
+                      <p>Many businesses do not want to replace every application they already use.</p>
+                      <p className="mt-4">Our custom ERP development approach can integrate your ERP with existing business software and third-party services.</p>
+                      <p className="mt-4">Common integration areas include:</p>
+                    </>
+                  ) : (
+                    <p>
+                      {`Modules and features we typically deliver for ${solution.label.toLowerCase()} engagements.`}
+                    </p>
+                  )}
+                </div>
               </Reveal>
               <Reveal delay={motionStagger}>
                 <ul className="grid gap-2 sm:grid-cols-2">
@@ -479,33 +605,87 @@ export function SolutionDetailPage({ solution }: Props) {
                     </li>
                   ))}
                 </ul>
+                {isErp ? (
+                  <p className="mt-5 text-sm leading-relaxed text-horizon-muted">
+                    We can also develop custom integration software for CRM and ERP systems when existing connectors are not sufficient.
+                  </p>
+                ) : null}
               </Reveal>
             </div>
           </div>
         </section>
 
-        <section className="order-7 w-full bg-black text-white">
+        {isErp ? (
+          <section className="order-9 w-full bg-white" aria-labelledby="migration-heading">
+            <div className={cn(container, sectionPad)}>
+              <Reveal>
+                <p className={overline}>Data Migration</p>
+                <h2 id="migration-heading" className="mt-3 font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
+                  Move From Legacy Systems With Confidence
+                </h2>
+              </Reveal>
+              <div className="mt-5 max-w-4xl text-base leading-relaxed text-horizon-muted md:text-lg">
+                <p>Replacing an existing business system requires more than building the new application.</p>
+                <p className="mt-4">Your historical and operational data may need to be moved from spreadsheets, databases, legacy applications, accounting systems, or other business platforms.</p>
+                <p className="mt-4">Our migration process can include:</p>
+              </div>
+              <ol className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                {[
+                  "Data discovery",
+                  "Data mapping",
+                  "Data cleaning",
+                  "Data transformation",
+                  "Migration planning",
+                  "Test migration",
+                  "Data validation",
+                  "Production migration",
+                  "Post-migration verification",
+                ].map((step, index) => (
+                  <li key={step}>
+                    <Reveal delay={index * motionStagger} className={cn(card, "h-full p-5")}> 
+                      <span className="font-heading text-2xl text-horizon-navy/25">0{index + 1}</span>
+                      <p className="mt-2 font-heading text-lg font-medium text-horizon-navy">{step}</p>
+                    </Reveal>
+                  </li>
+                ))}
+              </ol>
+              <p className="mt-8 max-w-3xl text-base leading-relaxed text-horizon-muted">
+                We work to ensure that important business information is structured correctly before users begin operating on the new ERP.
+              </p>
+            </div>
+          </section>
+        ) : null}
+
+        <section className="order-7 w-full bg-white text-horizon-navy">
           <div className={cn(container, sectionPad)}>
             <Reveal>
-              <p className={cn(overline, "text-white/60")}>Industries &amp; use cases</p>
-              <h2 className="font-heading text-3xl font-normal text-white md:text-4xl">
+              <p className={overline}>Industries &amp; use cases</p>
+              <h2 className="font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
                 Built for <span className="italic">real work</span>
               </h2>
             </Reveal>
-            <ul className="mt-10 grid gap-4 md:grid-cols-3">
-              {solution.useCases.map((item, i) => (
-                <li key={item.title}>
-                  <Reveal delay={i * motionStagger} className={cn("h-full rounded-2xl border border-white/10 bg-zinc-950 p-6")}>
-                    <h3 className="font-heading text-lg font-medium text-white">
-                      {item.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-white/70">
-                      {item.description}
-                    </p>
+            <div className="mt-10 overflow-hidden">
+              <div className="grid grid-cols-1 border-l border-t border-horizon-border md:grid-cols-2 lg:grid-cols-3">
+                {solution.useCases.map((item, i) => (
+                  <Reveal key={item.title} delay={i * motionStagger}>
+                    <div className="group relative flex min-h-[220px] flex-col bg-[#f5f6f8] p-8 transition-colors duration-300 hover:bg-white sm:min-h-[240px] sm:p-9 lg:min-h-[260px] lg:p-10 xl:p-12 border-r border-b border-horizon-border">
+                      <span
+                        className="absolute left-0 top-0 z-10 h-0.5 w-0 bg-primary transition-[width] duration-300 ease-out group-hover:w-full"
+                        aria-hidden
+                      />
+                      <div className="flex flex-1 flex-col">
+                        <h3 className="font-heading text-xl font-bold leading-snug tracking-tight text-horizon-navy sm:text-[1.35rem]">
+                          {item.title}
+                        </h3>
+                        <p className="mt-3 max-w-md flex-1 text-sm leading-relaxed text-horizon-muted sm:text-[0.95rem]">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
                   </Reveal>
-                </li>
-              ))}
-            </ul>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
@@ -604,13 +784,19 @@ export function SolutionDetailPage({ solution }: Props) {
         <section className="order-13 w-full bg-black text-white">
           <div className={cn(container, sectionPad)}>
             <Reveal>
-              <p className={cn(overline, "text-white/60")}>Why Next Software Development</p>
+              <p className={cn(overline, "text-white/60")}>{isErp ? "Why Choose Next Software Development Company" : "Why Next Software Development"}</p>
               <h2 className="font-heading text-3xl font-normal text-white md:text-4xl">
-                Why teams <span className="italic">choose us</span>
+                {isErp ? <>A Development Partner for Long-Term ERP Growth</> : <>Why teams <span className="italic">choose us</span></>}
               </h2>
             </Reveal>
             <ul className="mt-10 grid gap-4 md:grid-cols-3">
-              {solution.highlights.map((item, i) => (
+              {(isErp ? [
+                { title: "Phased Implementation", description: "We can launch essential modules first, validate them with users, and expand the platform in controlled stages." },
+                { title: "Business-Focused Development", description: "We focus on your actual workflows, business rules, users, and reporting requirements rather than building features that do not solve operational problems." },
+                { title: "Transparent Development", description: "Regular demonstrations, feedback cycles, and defined milestones help stakeholders understand progress throughout the project." },
+                { title: "Scalable Architecture", description: "We design the platform with future modules, integrations, users, and operational growth in mind." },
+                { title: "Long-Term Ownership", description: "We provide documentation, training, maintainable architecture, and ongoing development support so your organization can continue improving the platform." },
+              ] : solution.highlights).map((item, i) => (
                 <li key={item.title}>
                   <Reveal delay={i * motionStagger} className={cn("h-full rounded-2xl border border-white/10 bg-zinc-950 p-6")}>
                     <span className="flex size-9 items-center justify-center rounded-full bg-white/10 text-white">
@@ -632,13 +818,13 @@ export function SolutionDetailPage({ solution }: Props) {
         <section className="order-14 w-full bg-white" aria-labelledby="engagement-models-heading">
           <div className={cn(container, sectionPad)}>
             <Reveal>
-              <p className={overline}>Engagement models</p>
+              <p className={overline}>{isErp ? "Engagement Models" : "Engagement models"}</p>
               <h2 id="engagement-models-heading" className="mt-3 font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
-                A delivery model that fits <span className="italic">your team</span>
+                {isErp ? "A Delivery Model That Fits Your Organization" : <>A delivery model that fits <span className="italic">your team</span></>}
               </h2>
             </Reveal>
             <ul className="mt-10 grid gap-4 md:grid-cols-3">
-              {engagementModels.map((model, i) => (
+              {(isErp ? erpEngagementModels : engagementModels).map((model, i) => (
                 <li key={model.title}>
                   <Reveal delay={i * motionStagger} className={cn(card, "h-full p-6")}>
                     <h3 className="font-heading text-lg font-medium text-horizon-navy">{model.title}</h3>
@@ -653,13 +839,13 @@ export function SolutionDetailPage({ solution }: Props) {
         <section className="order-15 w-full bg-black text-white" aria-labelledby="support-maintenance-heading">
           <div className={cn(container, sectionPad)}>
             <Reveal>
-              <p className={cn(overline, "text-white/60")}>Support &amp; maintenance</p>
+              <p className={cn(overline, "text-white/60")}>{isErp ? "Support & Maintenance" : "Support & maintenance"}</p>
               <h2 id="support-maintenance-heading" className="mt-3 font-heading text-3xl font-normal text-white md:text-4xl">
-                Long-term care for <span className="italic">your product</span>
+                {isErp ? <>Long-Term Support for Your ERP Platform</> : <>Long-term care for <span className="italic">your product</span></>}
               </h2>
             </Reveal>
             <ul className="mt-10 grid gap-4 md:grid-cols-3">
-              {supportAndMaintenance.map((item, i) => (
+              {(isErp ? erpSupportAndMaintenance : supportAndMaintenance).map((item, i) => (
                 <li key={item.title}>
                   <Reveal delay={i * motionStagger} className={cn("h-full rounded-2xl border border-white/10 bg-zinc-950 p-6")}>
                     <h3 className="font-heading text-lg font-medium text-white">{item.title}</h3>
@@ -709,18 +895,29 @@ export function SolutionDetailPage({ solution }: Props) {
           <div className={cn(container, sectionPad, "text-center")}>
             <Reveal>
               <h2 className="font-heading text-3xl font-normal md:text-4xl">
-                Start your <span className="italic">{solution.label}</span> project
+                {isErp ? <>Build an ERP Around the Way Your Business Works</> : <>Start your <span className="italic">{solution.label}</span> project</>}
               </h2>
-              <p className="mx-auto mt-4 max-w-lg text-sm text-white/75 md:text-base">
-                Tell us about your users, integrations, and timeline, we&apos;ll reply within one
-                business day.
+              <p className="mx-auto mt-4 max-w-2xl text-sm text-white/75 md:text-base">
+                {isErp
+                  ? "Whether you are replacing spreadsheets, connecting disconnected business systems, modernizing a legacy application, or building an ERP platform from the ground up, we can help you plan and develop the right solution. Tell us about your business, users, existing systems, workflows, integrations, and goals. Our team will review your requirements and help define a practical ERP development roadmap."
+                  : "Tell us about your users, integrations, and timeline, we&apos;ll reply within one business day."}
               </p>
-              <Link
-                href={contactPath}
-                className="mt-8 inline-flex h-11 items-center justify-center rounded-full bg-white px-8 text-sm font-medium text-horizon-navy transition-transform hover:scale-[1.02] active:scale-[0.98]"
-              >
-                Start Your Project
-              </Link>
+              <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+                <Link
+                  href={contactPath}
+                  className="inline-flex h-11 items-center justify-center rounded-full bg-white px-8 text-sm font-medium text-horizon-navy transition-transform hover:scale-[1.02] active:scale-[0.98]"
+                >
+                  {isErp ? "Start Your Project" : "Start Your Project"}
+                </Link>
+                {isErp ? (
+                  <Link
+                    href={contactPath}
+                    className="inline-flex h-11 items-center justify-center rounded-full border border-white/25 bg-transparent px-8 text-sm font-medium text-white transition-transform hover:scale-[1.02] active:scale-[0.98]"
+                  >
+                    Talk to Next Software Development Company
+                  </Link>
+                ) : null}
+              </div>
             </Reveal>
           </div>
         </section>
