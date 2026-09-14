@@ -448,7 +448,6 @@ export function SolutionDetailPage({ solution }: Props) {
                 </li>
               ))}
             </ul>
-            {isErp ? <p className="mt-8 max-w-3xl text-base leading-relaxed text-horizon-muted">Custom ERP software development addresses these challenges by connecting the workflows and information that matter most to your organization.</p> : null}
           </div>
         </section>
 
