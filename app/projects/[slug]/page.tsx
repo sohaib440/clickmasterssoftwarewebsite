@@ -411,7 +411,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           justify
           title={
             <>
-              Project questions, <span className="italic">answered</span>
+              Frequently <span className="italic text-primary">Asked Questions</span>
             </>
           }
         />

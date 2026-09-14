@@ -433,7 +433,7 @@ export function CaseStudyDetailPage({ study }: CaseStudyDetailPageProps) {
           justify
           title={
             <>
-              Engagement questions, <span className="italic">answered</span>
+              Frequently <span className="italic text-primary">Asked Questions</span>
             </>
           }
         />

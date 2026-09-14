@@ -483,7 +483,7 @@ export default function LocationsPage() {
           overlineText="Locations FAQs"
           title={
             <>
-              Location questions, <span className="italic">answered</span>
+              Frequently <span className="italic text-primary">Asked Questions</span>
             </>
           }
           items={locationHubFaqs}

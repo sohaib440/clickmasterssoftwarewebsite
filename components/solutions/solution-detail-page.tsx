@@ -527,7 +527,7 @@ export function SolutionDetailPage({ solution }: Props) {
           overlineText={`${solution.label} FAQs`}
           title={
             <>
-              Questions, <span className="italic">answered</span>
+              Frequently <span className="italic text-primary">Asked Questions</span>
             </>
           }
           intro={`Common questions about planning, building, and growing a ${solution.label.toLowerCase()} solution.`}
