@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check } from "lucide-react";
 
 import { CardImage } from "@/components/landing/card-image";
 import { FaqSection } from "@/components/landing/faq-section";
@@ -102,7 +102,55 @@ const securityAndReliability = [
   },
 ] as const;
 
-const erpModules = ["Finance", "Inventory", "Procurement", "Sales", "HR", "Analytics"] as const;
+const erpModules = [
+  { title: "Finance & Accounting", description: "Manage financial transactions, accounts, expenses, income, budgets, invoices, payments, transfers, and financial reporting within a centralized system. Custom financial workflows can be aligned with your accounting structure, approval policies, and reporting requirements." },
+  { title: "Inventory Management", description: "Track products, stock levels, warehouses, stock movements, purchases, transfers, adjustments, and inventory history. Real-time inventory information helps teams understand what is available, where it is located, and when additional stock may be required." },
+  { title: "Procurement Management", description: "Create structured purchasing workflows for purchase requests, supplier management, purchase orders, approvals, receiving, and procurement reporting. Automated approval processes can help reduce delays and improve purchasing control." },
+  { title: "Sales Management", description: "Manage customers, quotations, orders, invoices, payments, sales representatives, and sales reporting from one system. Sales information can be connected with inventory and finance so departments work from consistent data." },
+  { title: "Human Resources", description: "Manage employee records, departments, roles, attendance, leave, payroll-related information, documents, and HR workflows according to your organization's requirements." },
+  { title: "Manufacturing & Production", description: "For manufacturing organizations, ERP systems can connect production planning, raw materials, bills of materials, work orders, production activity, inventory, suppliers, and financial information." },
+  { title: "Customer Relationship Management", description: "Connect customer records, leads, sales activities, communication, opportunities, orders, and customer history with the rest of the ERP environment." },
+  { title: "Analytics & Reporting", description: "Give managers access to dashboards and reports covering financial performance, sales, inventory, procurement, operations, employees, branches, and other important business metrics." },
+] as const;
+
+const erpBusinessProblems = [
+  { title: "Disconnected Data", description: "Finance, inventory, procurement, sales, and operations may maintain separate records, making it difficult to establish one reliable source of business information." },
+  { title: "Manual Processes", description: "Employees spend time entering the same information into multiple systems, preparing spreadsheets, sending approval requests, and manually reconciling records." },
+  { title: "Limited Visibility", description: "Management may not have real-time visibility into sales, inventory, expenses, procurement, cash flow, operational performance, or branch-level activity." },
+  { title: "Slow Approvals", description: "Important purchases, expenses, transfers, and operational requests can become delayed when approvals depend on emails, spreadsheets, or manual communication." },
+  { title: "Difficult Reporting", description: "Teams may need to combine information from multiple systems before they can produce accurate management reports." },
+  { title: "Systems That Cannot Scale", description: "A system that works for a small organization may become difficult to maintain when the company adds more employees, branches, products, customers, or business processes." },
+] as const;
+
+const erpSolutionItems = [
+  "Finance and accounting",
+  "Procurement and purchasing",
+  "Inventory and warehouse management",
+  "Sales and order management",
+  "Customer management",
+  "Human resources",
+  "Employee management",
+  "Manufacturing and production",
+  "Project management",
+  "Expense management",
+  "Business analytics",
+  "Management dashboards",
+  "Document and approval workflows",
+  "Third-party integrations",
+] as const;
+
+const erpServiceItems = [
+  { title: "ERP Discovery & Business Analysis", description: "We analyze your existing processes, systems, departments, users, pain points, reporting requirements, integrations, and future goals. The objective is to understand what the ERP needs to accomplish before development begins." },
+  { title: "ERP Architecture & System Design", description: "We define the system architecture, database structure, modules, APIs, permissions, workflows, integrations, and infrastructure requirements." },
+  { title: "ERP UI/UX Design", description: "We design interfaces that make complex business workflows easier for employees to understand and use. Dashboards, forms, tables, reports, approval screens, and role-specific interfaces are designed around actual user requirements." },
+  { title: "Custom ERP Development", description: "Our developers build the required modules, business rules, workflows, APIs, dashboards, integrations, and administrative functionality." },
+  { title: "ERP Integration", description: "We connect the ERP with existing business applications and external services through APIs and integration workflows." },
+  { title: "Data Migration", description: "We help move relevant information from spreadsheets, legacy applications, databases, and existing systems into the new ERP environment." },
+  { title: "Testing & Quality Assurance", description: "We test business workflows, permissions, integrations, calculations, reports, performance, and user journeys before deployment." },
+  { title: "Deployment & Training", description: "We deploy the system, configure the production environment, migrate approved data, train users, and support the transition to the new platform." },
+  { title: "Ongoing ERP Support", description: "After launch, we can continue improving the platform through maintenance, optimization, monitoring, new features, integrations, and support." },
+] as const;
+
 const erpIntegrations = ["APIs", "Payments", "Accounting", "Logistics", "Third-party systems"] as const;
 
 function solutionFaqs(label: string) {
@@ -140,6 +188,10 @@ type Props = {
 
 export function SolutionDetailPage({ solution }: Props) {
   const isErp = solution.slug === "custom-erp-software-development";
+  const heroParagraphs = solution.description
+    .split(/\n\s*\n/)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean);
   const projects = solution.projectSlugs
     .map((slug) => getProjectBySlug(slug))
     .filter((project): project is NonNullable<typeof project> => Boolean(project));
@@ -185,9 +237,16 @@ export function SolutionDetailPage({ solution }: Props) {
                   </p>
                 </Reveal>
                 <Reveal immediate delay={motionStagger * 3}>
-                  <p className="max-w-xl text-sm leading-relaxed text-white/70 md:text-base">
-                    {solution.description}
-                  </p>
+                  <div className="max-w-xl space-y-4">
+                    {heroParagraphs.map((paragraph, index) => (
+                      <p
+                        key={`${solution.slug}-hero-paragraph-${index}`}
+                        className="text-justify text-sm leading-relaxed text-white/70 md:text-base"
+                      >
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
                 </Reveal>
                 <Reveal immediate delay={motionStagger * 4}>
                   <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:items-center">
@@ -243,44 +302,73 @@ export function SolutionDetailPage({ solution }: Props) {
             <Reveal>
               <p className={overline}>The business problem</p>
               <h2 id="business-problem-heading" className="mt-3 max-w-3xl font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
-                When work is spread across <span className="italic">too many places</span>
+                {isErp ? "When Your Business Outgrows Disconnected Systems" : <>When work is spread across <span className="italic">too many places</span></>}
               </h2>
-              <p className="mt-4 max-w-2xl text-base leading-relaxed text-horizon-muted md:text-lg">
-                Teams often outgrow disconnected tools, manual handoffs, and reporting they cannot trust. {solution.label} brings the critical workflow into one system built around how your business actually operates.
-              </p>
+              {isErp ? (
+                <div className="mt-4 max-w-2xl text-base leading-relaxed text-horizon-muted md:text-lg">
+                  <p>As a business grows, operational complexity grows with it. Different departments often start using different tools for accounting, purchasing, inventory, sales, HR, and reporting.</p>
+                  <p className="mt-4">This creates fragmented information and unnecessary manual work.</p>
+                </div>
+              ) : (
+                <p className="mt-4 max-w-2xl text-base leading-relaxed text-horizon-muted md:text-lg">
+                  Teams often outgrow disconnected tools, manual handoffs, and reporting they cannot trust. {solution.label} brings the critical workflow into one system built around how your business actually operates.
+                </p>
+              )}
             </Reveal>
             <ul className="mt-10 grid gap-4 md:grid-cols-3">
-              {["Disconnected data and duplicate work", "Slow decisions without live visibility", "Processes that break as the team grows"].map((problem, i) => (
-                <li key={problem}>
+              {(isErp ? erpBusinessProblems : [
+                { title: "Disconnected data and duplicate work" },
+                { title: "Slow decisions without live visibility" },
+                { title: "Processes that break as the team grows" },
+              ]).map((problem, i) => (
+                <li key={problem.title}>
                   <Reveal delay={i * motionStagger} className={cn(cardSoft, "h-full p-6")}>
-                    <p className="font-heading text-lg font-medium text-horizon-navy">{problem}</p>
+                    <p className="font-heading text-lg font-medium text-horizon-navy">{problem.title}</p>
+                    {"description" in problem ? <p className="mt-3 text-sm leading-relaxed text-horizon-muted">{problem.description}</p> : null}
                   </Reveal>
                 </li>
               ))}
             </ul>
+            {isErp ? <p className="mt-8 max-w-3xl text-base leading-relaxed text-horizon-muted">Custom ERP software development addresses these challenges by connecting the workflows and information that matter most to your organization.</p> : null}
           </div>
         </section>
 
         <section className="order-3 w-full bg-black text-white" aria-labelledby="our-solution-heading">
           <div className={cn(container, sectionPad)}>
             <Reveal>
-              <p className={cn(overline, "text-white/60")}>Our solution</p>
+              <p className={cn(overline, "text-white/60")}>{isErp ? "Our ERP Solution" : "Our solution"}</p>
               <h2 id="our-solution-heading" className="mt-3 font-heading text-3xl font-normal text-white md:text-4xl">
-                A platform shaped around your <span className="italic">priorities</span>
+                {isErp ? "A Custom ERP Platform Built Around Your Business" : <>A platform shaped around your <span className="italic">priorities</span></>}
               </h2>
             </Reveal>
-            <ul className="mt-10 grid gap-4 md:grid-cols-3">
-              {solution.summary.map((item, i) => (
-                <li key={item}>
-                  <Reveal delay={i * motionStagger} className={cn("h-full rounded-2xl border border-white/10 bg-zinc-950 p-6")}>
-                    <p className="font-heading text-xl font-medium text-white">{item}</p>
-                    <p className="mt-2 text-sm leading-relaxed text-white/70">
-                      A practical capability aligned to your people, processes, and growth goals.
-                    </p>
-                  </Reveal>
-                </li>
-              ))}
-            </ul>
+            {isErp ? (
+              <div className="mt-8 max-w-4xl text-base leading-relaxed text-white/75 md:text-lg">
+                <p>Our approach to ERP development starts with understanding how your organization actually works.</p>
+                <p className="mt-4">Rather than forcing your business into a predefined workflow, we design the platform around your departments, approval structures, data relationships, reporting requirements, and operational goals.</p>
+                <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {erpSolutionItems.map((item) => (
+                    <li key={item} className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80">
+                      <span className="mt-1 size-2 rounded-full bg-white/80" aria-hidden />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-6">The result is a centralized operating platform that gives employees the tools they need while giving management better visibility and control.</p>
+              </div>
+            ) : (
+              <ul className="mt-10 grid gap-4 md:grid-cols-3">
+                {solution.summary.map((item, i) => (
+                  <li key={item}>
+                    <Reveal delay={i * motionStagger} className={cn("h-full rounded-2xl border border-white/10 bg-zinc-950 p-6")}>
+                      <p className="font-heading text-xl font-medium text-white">{item}</p>
+                      <p className="mt-2 text-sm leading-relaxed text-white/70">
+                        A practical capability aligned to your people, processes, and growth goals.
+                      </p>
+                    </Reveal>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </section>
 
@@ -288,19 +376,20 @@ export function SolutionDetailPage({ solution }: Props) {
           <section className="order-4 w-full bg-white" aria-labelledby="key-modules-heading">
             <div className={cn(container, sectionPad)}>
               <Reveal>
-                <p className={overline}>Key modules</p>
+                <p className={overline}>ERP Modules</p>
                 <h2 id="key-modules-heading" className="mt-3 font-heading text-3xl font-normal text-horizon-navy md:text-4xl">
-                  One ERP for every <span className="italic">core function</span>
+                  One Platform for Your Core Business Functions
                 </h2>
               </Reveal>
+              <p className="mt-4 max-w-3xl text-base leading-relaxed text-horizon-muted md:text-lg">
+                Every organization has different requirements. We can develop the modules you need and expand the platform as your business evolves.
+              </p>
               <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {erpModules.map((module, i) => (
-                  <li key={module}>
+                  <li key={module.title}>
                     <Reveal delay={i * motionStagger} className={cn(card, "h-full p-6")}>
-                      <h3 className="font-heading text-lg font-medium text-horizon-navy">{module}</h3>
-                      <p className="mt-2 text-sm leading-relaxed text-horizon-muted">
-                        Configurable {module.toLowerCase()} workflows, permissions, and reporting aligned to your operation.
-                      </p>
+                      <h3 className="font-heading text-lg font-medium text-horizon-navy">{module.title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-horizon-muted">{module.description}</p>
                     </Reveal>
                   </li>
                 ))}
@@ -312,18 +401,18 @@ export function SolutionDetailPage({ solution }: Props) {
         <section className="order-5 w-full bg-black text-white" aria-labelledby="how-we-solve-heading">
           <div className={cn(container, sectionPad)}>
             <Reveal>
-              <p className={cn(overline, "text-white/60")}>{isErp ? "How we build it" : "How we solve it"}</p>
+              <p className={cn(overline, "text-white/60")}>{isErp ? "Custom ERP Software Development Services" : "How we solve it"}</p>
               <h2 id="how-we-solve-heading" className="mt-3 font-heading text-3xl font-normal text-white md:text-4xl">
-                Discover <span className="italic">to deploy</span>
+                {isErp ? "ERP Development From Discovery to Deployment" : <>Discover <span className="italic">to deploy</span></>}
               </h2>
             </Reveal>
-            <ol className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {solution.approach.map((step, i) => (
-                <li key={step.step}>
+            <ol className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {(isErp ? erpServiceItems : solution.approach).map((step, i) => (
+                <li key={isErp ? step.title : step.step}>
                   <Reveal delay={i * motionStagger}>
-                    <span className="font-heading text-2xl text-white/20">{step.step}</span>
+                    <span className="font-heading text-2xl text-white/20">{isErp ? `0${i + 1}` : step.step}</span>
                     <h3 className="mt-2 font-heading text-lg font-medium text-white">
-                      {deliveryStages[i] ?? step.title}
+                      {isErp ? step.title : (deliveryStages[i] ?? step.title)}
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-white/70">{step.description}</p>
                   </Reveal>
