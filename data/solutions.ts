@@ -32,10 +32,11 @@ export const solutions: SolutionContent[] = [
 		category: "Enterprise",
 		icon: Workflow,
 		tagline: "Bring Your Business Operations Into One Connected System",
+		metaTitle: "Custom ERP Software Development Company | Enterprise ERP",
 		description:
 			"As a custom ERP development company, we provide custom ERP software development for businesses that need more than a standard, off-the-shelf platform. As a custom ERP software development company, our team designs and develops ERP systems around your processes, departments, users, data, reporting requirements, and long-term growth plans.\n\nInstead of managing finance, procurement, inventory, sales, HR, operations, and reporting across disconnected applications and spreadsheets, a custom ERP brings your critical business workflows together in one centralized platform.\n\nWith the right ERP architecture, your teams can work from the same data, automate repetitive processes, manage approvals, monitor performance, and give leadership a clear view of business operations.",
 		metaDescription:
-			"Custom ERP software for finance, inventory, procurement, sales, HR, and operations. Next Software Development Company builds scalable enterprise resource planning systems.",
+			"Custom ERP software for finance, inventory, procurement, sales, HR, and operations. Build scalable enterprise systems tailored to your business needs.",
 		heroImage: img(
 			"/projects/cash-management-system/cash-management-system-dashboard.webp",
 			"Enterprise dashboard with charts and KPIs"
